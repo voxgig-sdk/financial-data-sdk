@@ -1,0 +1,28 @@
+# BasicEventCalendarFlow
+
+main: kit: flow: BasicEventCalendarFlow:
+{
+  entity: "event_calendar",
+  kind: "basic",
+  name: "BasicEventCalendarFlow",
+  step: [
+    {
+      input: {
+        ref: "event_calendar_ref01",
+        srcdatavar: "event_calendar_ref01_data",
+        suffix: "_dt0"
+      }
+
+      op: "load",
+      valid: [
+        {
+          apply: "TextFieldMark",
+          def: {
+            mark: "Mark01-event_calendar_ref01"
+          }
+        }
+      ]
+    }
+  ],
+  "key$": "BasicEventCalendarFlow"
+}

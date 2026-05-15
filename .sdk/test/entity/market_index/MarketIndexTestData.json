@@ -1,0 +1,14 @@
+{
+  "existing": {
+    "market_index": {
+      "MARKET_INDEX00": {},
+      "MARKET_INDEX01": {},
+      "MARKET_INDEX02": {}
+    }
+  },
+  "new": {
+    "market_index": {
+      "market_index_ref01": {}
+    }
+  }
+}

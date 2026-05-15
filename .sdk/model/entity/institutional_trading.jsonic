@@ -1,0 +1,134 @@
+# Entity: institutional_trading
+
+main: kit: entity: institutional_trading: {
+
+  alias: field: {}
+
+  name: "institutional_trading"
+  op: {
+    load: {
+      name: "load"
+      points: [
+        {
+          args: {
+            query: [
+              {
+                example: "json"
+                kind: "query"
+                name: "format"
+                orig: "format"
+                reqd: false
+                type: "`$STRING`"
+              }
+              {
+                kind: "query"
+                name: "identifier"
+                orig: "identifier"
+                reqd: true
+                type: "`$STRING`"
+              }
+              {
+                kind: "query"
+                name: "key"
+                orig: "key"
+                reqd: true
+                type: "`$STRING`"
+              }
+            ]
+          }
+          method: "GET"
+          orig: "/institutional-holdings"
+          parts: [
+            "institutional-holdings"
+          ]
+          select: {
+            exist: [
+              "format"
+              "identifier"
+              "key"
+            ]
+          }
+          transform: {
+            req: "`reqdata`"
+            res: "`body`"
+          }
+        }
+        {
+          args: {
+            query: [
+              {
+                example: "json"
+                kind: "query"
+                name: "format"
+                orig: "format"
+                reqd: false
+                type: "`$STRING`"
+              }
+              {
+                kind: "query"
+                name: "key"
+                orig: "key"
+                reqd: true
+                type: "`$STRING`"
+              }
+            ]
+          }
+          method: "GET"
+          orig: "/institutional-investors"
+          parts: [
+            "institutional-investors"
+          ]
+          select: {
+            exist: [
+              "format"
+              "key"
+            ]
+          }
+          transform: {
+            req: "`reqdata`"
+            res: "`body`"
+          }
+        }
+        {
+          args: {
+            query: [
+              {
+                example: "json"
+                kind: "query"
+                name: "format"
+                orig: "format"
+                reqd: false
+                type: "`$STRING`"
+              }
+              {
+                kind: "query"
+                name: "key"
+                orig: "key"
+                reqd: true
+                type: "`$STRING`"
+              }
+            ]
+          }
+          method: "GET"
+          orig: "/institutional-portfolio-statistics"
+          parts: [
+            "institutional-portfolio-statistics"
+          ]
+          select: {
+            exist: [
+              "format"
+              "key"
+            ]
+          }
+          transform: {
+            req: "`reqdata`"
+            res: "`body`"
+          }
+        }
+      ]
+    }
+  }
+
+
+
+}

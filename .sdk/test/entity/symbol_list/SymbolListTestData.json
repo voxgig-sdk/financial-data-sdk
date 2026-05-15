@@ -1,0 +1,34 @@
+{
+  "existing": {
+    "symbol_list": {
+      "SYMBOL_LIST00": {
+        "description": "s28",
+        "registrant_name": "s29",
+        "title_of_security": "s2a",
+        "trading_symbol": "s2b"
+      },
+      "SYMBOL_LIST01": {
+        "description": "s50",
+        "registrant_name": "s51",
+        "title_of_security": "s52",
+        "trading_symbol": "s53"
+      },
+      "SYMBOL_LIST02": {
+        "description": "s78",
+        "registrant_name": "s79",
+        "title_of_security": "s7a",
+        "trading_symbol": "s7b"
+      }
+    }
+  },
+  "new": {
+    "symbol_list": {
+      "symbol_list_ref01": {
+        "description": "sa0",
+        "registrant_name": "sa1",
+        "title_of_security": "sa2",
+        "trading_symbol": "sa3"
+      }
+    }
+  }
+}

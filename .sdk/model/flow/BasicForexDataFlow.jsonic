@@ -1,0 +1,28 @@
+# BasicForexDataFlow
+
+main: kit: flow: BasicForexDataFlow:
+{
+  entity: "forex_data",
+  kind: "basic",
+  name: "BasicForexDataFlow",
+  step: [
+    {
+      input: {
+        ref: "forex_data_ref01",
+        srcdatavar: "forex_data_ref01_data",
+        suffix: "_dt0"
+      }
+
+      op: "load",
+      valid: [
+        {
+          apply: "TextFieldMark",
+          def: {
+            mark: "Mark01-forex_data_ref01"
+          }
+        }
+      ]
+    }
+  ],
+  "key$": "BasicForexDataFlow"
+}

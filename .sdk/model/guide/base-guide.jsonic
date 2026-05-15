@@ -1,0 +1,302 @@
+# Guide
+
+guide: {
+  metrics: count: entity: 18
+  metrics: count: path: 80
+  metrics: count: method: 80
+
+  entity: basic_information: {
+    path: "/company-information": {
+      op: load: method: *GET
+    }
+    path: "/employee-count": {
+      op: load: method: *GET
+    }
+    path: "/executive-compensation": {
+      op: load: method: *GET
+    }
+    path: "/international-company-information": {
+      op: load: method: *GET
+    }
+    path: "/key-metrics": {
+      op: load: method: *GET
+    }
+    path: "/market-cap": {
+      op: load: method: *GET
+    }
+    path: "/securities-information": {
+      op: load: method: *GET
+    }
+  }
+
+  entity: crypto_currency: {
+    path: "/crypto-information": {
+      op: load: method: *GET
+    }
+    path: "/crypto-minute-prices": {
+      op: load: method: *GET
+    }
+    path: "/crypto-prices": {
+      op: load: method: *GET
+    }
+    path: "/crypto-quotes": {
+      op: load: method: *GET
+    }
+    path: "/crypto-symbols": {
+      op: load: method: *GET
+    }
+  }
+
+  entity: derivatives_data: {
+    path: "/futures-prices": {
+      op: load: method: *GET
+    }
+    path: "/futures-symbols": {
+      op: load: method: *GET
+    }
+    path: "/option-chain": {
+      op: load: method: *GET
+    }
+    path: "/option-greeks": {
+      op: load: method: *GET
+    }
+    path: "/option-prices": {
+      op: load: method: *GET
+    }
+  }
+
+  entity: esg_data: {
+    path: "/esg-ratings": {
+      op: load: method: *GET
+    }
+    path: "/esg-scores": {
+      op: load: method: *GET
+    }
+    path: "/industry-esg-scores": {
+      op: load: method: *GET
+    }
+  }
+
+  entity: etf_data: {
+    path: "/etf-holdings": {
+      op: load: method: *GET
+    }
+    path: "/etf-prices": {
+      op: load: method: *GET
+    }
+    path: "/etf-quotes": {
+      op: load: method: *GET
+    }
+  }
+
+  entity: event_calendar: {
+    path: "/dividends-calendar": {
+      op: load: method: *GET
+    }
+    path: "/earnings-calendar": {
+      op: load: method: *GET
+    }
+    path: "/economic-calendar": {
+      op: load: method: *GET
+    }
+    path: "/ipo-calendar": {
+      op: load: method: *GET
+    }
+    path: "/splits-calendar": {
+      op: load: method: *GET
+    }
+  }
+
+  entity: financial_ratio: {
+    path: "/efficiency-ratios": {
+      op: load: method: *GET
+    }
+    path: "/liquidity-ratios": {
+      op: load: method: *GET
+    }
+    path: "/profitability-ratios": {
+      op: load: method: *GET
+    }
+    path: "/solvency-ratios": {
+      op: load: method: *GET
+    }
+    path: "/valuation-ratios": {
+      op: load: method: *GET
+    }
+  }
+
+  entity: financial_statement: {
+    path: "/balance-sheet-statements": {
+      op: load: method: *GET
+    }
+    path: "/cash-flow-statements": {
+      op: load: method: *GET
+    }
+    path: "/income-statements": {
+      op: load: method: *GET
+    }
+    path: "/international-balance-sheet-statements": {
+      op: load: method: *GET
+    }
+    path: "/international-cash-flow-statements": {
+      op: load: method: *GET
+    }
+    path: "/international-income-statements": {
+      op: load: method: *GET
+    }
+  }
+
+  entity: forex_data: {
+    path: "/forex-minute-prices": {
+      op: load: method: *GET
+    }
+    path: "/forex-prices": {
+      op: load: method: *GET
+    }
+    path: "/forex-quotes": {
+      op: load: method: *GET
+    }
+    path: "/forex-symbols": {
+      op: load: method: *GET
+    }
+  }
+
+  entity: insider_trading: {
+    path: "/house-trading": {
+      op: load: method: *GET
+    }
+    path: "/insider-transactions": {
+      op: load: method: *GET
+    }
+    path: "/proposed-sales": {
+      op: load: method: *GET
+    }
+    path: "/senate-trading": {
+      op: load: method: *GET
+    }
+  }
+
+  entity: institutional_trading: {
+    path: "/institutional-holdings": {
+      op: load: method: *GET
+    }
+    path: "/institutional-investors": {
+      op: load: method: *GET
+    }
+    path: "/institutional-portfolio-statistics": {
+      op: load: method: *GET
+    }
+  }
+
+  entity: investment_adviser: {
+    path: "/investment-adviser-information": {
+      op: load: method: *GET
+    }
+    path: "/investment-adviser-names": {
+      op: load: method: *GET
+    }
+  }
+
+  entity: market_data: {
+    path: "/commodity-prices": {
+      op: load: method: *GET
+    }
+    path: "/international-stock-prices": {
+      op: list: method: *GET
+    }
+    path: "/latest-prices": {
+      op: list: method: *GET
+    }
+    path: "/minute-prices": {
+      op: list: method: *GET
+    }
+    path: "/otc-prices": {
+      op: load: method: *GET
+    }
+    path: "/otc-volume": {
+      op: load: method: *GET
+    }
+    path: "/stock-prices": {
+      op: list: method: *GET
+    }
+    path: "/stock-quotes": {
+      op: list: method: *GET
+    }
+  }
+
+  entity: market_index: {
+    path: "/index-constituents": {
+      op: load: method: *GET
+    }
+    path: "/index-prices": {
+      op: load: method: *GET
+    }
+    path: "/index-quotes": {
+      op: load: method: *GET
+    }
+    path: "/index-symbols": {
+      op: load: method: *GET
+    }
+  }
+
+  entity: market_new: {
+    path: "/fed-press-releases": {
+      op: load: method: *GET
+    }
+    path: "/press-releases": {
+      op: load: method: *GET
+    }
+    path: "/sec-press-releases": {
+      op: load: method: *GET
+    }
+  }
+
+  entity: miscellaneous_data: {
+    path: "/dividends": {
+      op: load: method: *GET
+    }
+    path: "/earnings-releases": {
+      op: load: method: *GET
+    }
+    path: "/initial-public-offerings": {
+      op: load: method: *GET
+    }
+    path: "/short-interest": {
+      op: load: method: *GET
+    }
+    path: "/stock-splits": {
+      op: load: method: *GET
+    }
+  }
+
+  entity: mutual_fund: {
+    path: "/mutual-fund-holdings": {
+      op: load: method: *GET
+    }
+    path: "/mutual-fund-statistics": {
+      op: load: method: *GET
+    }
+    path: "/mutual-fund-symbols": {
+      op: load: method: *GET
+    }
+  }
+
+  entity: symbol_list: {
+    path: "/commodity-symbols": {
+      op: list: method: *GET
+    }
+    path: "/etf-symbols": {
+      op: list: method: *GET
+    }
+    path: "/international-stock-symbols": {
+      op: list: method: *GET
+    }
+    path: "/otc-symbols": {
+      op: list: method: *GET
+    }
+    path: "/stock-symbols": {
+      op: list: method: *GET
+    }
+  }
+
+}

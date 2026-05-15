@@ -1,0 +1,28 @@
+# BasicInsiderTradingFlow
+
+main: kit: flow: BasicInsiderTradingFlow:
+{
+  entity: "insider_trading",
+  kind: "basic",
+  name: "BasicInsiderTradingFlow",
+  step: [
+    {
+      input: {
+        ref: "insider_trading_ref01",
+        srcdatavar: "insider_trading_ref01_data",
+        suffix: "_dt0"
+      }
+
+      op: "load",
+      valid: [
+        {
+          apply: "TextFieldMark",
+          def: {
+            mark: "Mark01-insider_trading_ref01"
+          }
+        }
+      ]
+    }
+  ],
+  "key$": "BasicInsiderTradingFlow"
+}

@@ -1,0 +1,28 @@
+# BasicInstitutionalTradingFlow
+
+main: kit: flow: BasicInstitutionalTradingFlow:
+{
+  entity: "institutional_trading",
+  kind: "basic",
+  name: "BasicInstitutionalTradingFlow",
+  step: [
+    {
+      input: {
+        ref: "institutional_trading_ref01",
+        srcdatavar: "institutional_trading_ref01_data",
+        suffix: "_dt0"
+      }
+
+      op: "load",
+      valid: [
+        {
+          apply: "TextFieldMark",
+          def: {
+            mark: "Mark01-institutional_trading_ref01"
+          }
+        }
+      ]
+    }
+  ],
+  "key$": "BasicInstitutionalTradingFlow"
+}

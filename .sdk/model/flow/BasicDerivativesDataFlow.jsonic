@@ -1,0 +1,28 @@
+# BasicDerivativesDataFlow
+
+main: kit: flow: BasicDerivativesDataFlow:
+{
+  entity: "derivatives_data",
+  kind: "basic",
+  name: "BasicDerivativesDataFlow",
+  step: [
+    {
+      input: {
+        ref: "derivatives_data_ref01",
+        srcdatavar: "derivatives_data_ref01_data",
+        suffix: "_dt0"
+      }
+
+      op: "load",
+      valid: [
+        {
+          apply: "TextFieldMark",
+          def: {
+            mark: "Mark01-derivatives_data_ref01"
+          }
+        }
+      ]
+    }
+  ],
+  "key$": "BasicDerivativesDataFlow"
+}

@@ -1,0 +1,14 @@
+{
+  "existing": {
+    "miscellaneous_data": {
+      "MISCELLANEOUS_DATA00": {},
+      "MISCELLANEOUS_DATA01": {},
+      "MISCELLANEOUS_DATA02": {}
+    }
+  },
+  "new": {
+    "miscellaneous_data": {
+      "miscellaneous_data_ref01": {}
+    }
+  }
+}

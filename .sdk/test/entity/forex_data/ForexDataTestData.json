@@ -1,0 +1,14 @@
+{
+  "existing": {
+    "forex_data": {
+      "FOREX_DATA00": {},
+      "FOREX_DATA01": {},
+      "FOREX_DATA02": {}
+    }
+  },
+  "new": {
+    "forex_data": {
+      "forex_data_ref01": {}
+    }
+  }
+}

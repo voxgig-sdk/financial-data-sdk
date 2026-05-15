@@ -1,0 +1,66 @@
+{
+  "existing": {
+    "market_data": {
+      "MARKET_DATA00": {
+        "change": 120,
+        "close": 121,
+        "date": "s7a",
+        "high": 123,
+        "low": 124,
+        "open": 125,
+        "percentage_change": 126,
+        "price": 127,
+        "registrant_name": "s80",
+        "time": "s81",
+        "trading_symbol": "s82",
+        "volume": 131
+      },
+      "MARKET_DATA01": {
+        "change": 240,
+        "close": 241,
+        "date": "sf2",
+        "high": 243,
+        "low": 244,
+        "open": 245,
+        "percentage_change": 246,
+        "price": 247,
+        "registrant_name": "sf8",
+        "time": "sf9",
+        "trading_symbol": "sfa",
+        "volume": 251
+      },
+      "MARKET_DATA02": {
+        "change": 360,
+        "close": 361,
+        "date": "s16a",
+        "high": 363,
+        "low": 364,
+        "open": 365,
+        "percentage_change": 366,
+        "price": 367,
+        "registrant_name": "s170",
+        "time": "s171",
+        "trading_symbol": "s172",
+        "volume": 371
+      }
+    }
+  },
+  "new": {
+    "market_data": {
+      "market_data_ref01": {
+        "change": 480,
+        "close": 481,
+        "date": "s1e2",
+        "high": 483,
+        "low": 484,
+        "open": 485,
+        "percentage_change": 486,
+        "price": 487,
+        "registrant_name": "s1e8",
+        "time": "s1e9",
+        "trading_symbol": "s1ea",
+        "volume": 491
+      }
+    }
+  }
+}

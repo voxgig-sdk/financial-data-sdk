@@ -1,0 +1,28 @@
+# BasicFinancialRatioFlow
+
+main: kit: flow: BasicFinancialRatioFlow:
+{
+  entity: "financial_ratio",
+  kind: "basic",
+  name: "BasicFinancialRatioFlow",
+  step: [
+    {
+      input: {
+        ref: "financial_ratio_ref01",
+        srcdatavar: "financial_ratio_ref01_data",
+        suffix: "_dt0"
+      }
+
+      op: "load",
+      valid: [
+        {
+          apply: "TextFieldMark",
+          def: {
+            mark: "Mark01-financial_ratio_ref01"
+          }
+        }
+      ]
+    }
+  ],
+  "key$": "BasicFinancialRatioFlow"
+}

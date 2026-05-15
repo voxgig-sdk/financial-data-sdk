@@ -1,0 +1,14 @@
+{
+  "existing": {
+    "event_calendar": {
+      "EVENT_CALENDAR00": {},
+      "EVENT_CALENDAR01": {},
+      "EVENT_CALENDAR02": {}
+    }
+  },
+  "new": {
+    "event_calendar": {
+      "event_calendar_ref01": {}
+    }
+  }
+}

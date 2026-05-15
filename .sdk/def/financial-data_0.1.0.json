@@ -1,0 +1,4260 @@
+{
+  "openapi": "3.0.3",
+  "info": {
+    "title": "Financial Data API",
+    "description": "This API provides access to a wide range of financial data including market data, company fundamentals, and alternative data. Users can make requests to retrieve stock symbols, prices, company information, ESG scores and ratings, mutual fund holdings, and more. The data covers thousands of securities including stocks, ETFs, funds, and commodities.",
+    "version": "1.0.0",
+    "contact": {
+      "url": "https://financialdata.net/documentation"
+    }
+  },
+  "servers": [
+    {
+      "url": "https://financialdata.net/api/v1",
+      "description": "Production server"
+    }
+  ],
+  "security": [
+    {
+      "ApiKeyAuth": []
+    }
+  ],
+  "paths": {
+    "/stock-symbols": {
+      "get": {
+        "tags": [
+          "Symbol Lists"
+        ],
+        "summary": "Get stock symbols",
+        "description": "Get a list of stock symbols for publicly traded US and international companies. The list contains thousands of trading symbols as well as the names of the companies whose shares they identify. There is a limit of 500 records per API call.",
+        "operationId": "getStockSymbols",
+        "parameters": [
+          {
+            "name": "offset",
+            "in": "query",
+            "description": "The initial position of the record subset, which indicates how many records to skip. Defaults to 0.",
+            "required": false,
+            "schema": {
+              "type": "integer",
+              "default": 0,
+              "example": 500
+            }
+          },
+          {
+            "name": "format",
+            "in": "query",
+            "description": "The format of the returned data, either JSON (JavaScript Object Notation) or CSV (Comma Separated Values). Defaults to JSON.",
+            "required": false,
+            "schema": {
+              "type": "string",
+              "enum": [
+                "json",
+                "csv"
+              ],
+              "default": "json"
+            }
+          },
+          {
+            "name": "key",
+            "in": "query",
+            "description": "API key for authentication",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Successful response",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "type": "object",
+                    "properties": {
+                      "trading_symbol": {
+                        "type": "string",
+                        "example": "A"
+                      },
+                      "registrant_name": {
+                        "type": "string",
+                        "example": "AGILENT TECHNOLOGIES, INC."
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/international-stock-symbols": {
+      "get": {
+        "tags": [
+          "Symbol Lists"
+        ],
+        "summary": "Get international stock symbols",
+        "description": "Retrieve a list of stock symbols for publicly traded international companies. Data is available for the following stock exchanges: Toronto, London, Frankfurt, Euronext Paris, Euronext Amsterdam, Tokyo, Hong Kong, Singapore, Indonesia, Malaysia, Korea, Brazil, Mexico, India, Bombay. There is a limit of 500 records per API call.",
+        "operationId": "getInternationalStockSymbols",
+        "parameters": [
+          {
+            "name": "offset",
+            "in": "query",
+            "description": "The initial position of the record subset, which indicates how many records to skip. Defaults to 0.",
+            "required": false,
+            "schema": {
+              "type": "integer",
+              "default": 0,
+              "example": 500
+            }
+          },
+          {
+            "name": "format",
+            "in": "query",
+            "description": "The format of the returned data, either JSON or CSV. Defaults to JSON.",
+            "required": false,
+            "schema": {
+              "type": "string",
+              "enum": [
+                "json",
+                "csv"
+              ],
+              "default": "json"
+            }
+          },
+          {
+            "name": "key",
+            "in": "query",
+            "description": "API key for authentication",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Successful response",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "type": "object",
+                    "properties": {
+                      "trading_symbol": {
+                        "type": "string",
+                        "example": "000080.KS"
+                      },
+                      "registrant_name": {
+                        "type": "string",
+                        "example": "HiteJinro Co., Ltd."
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/etf-symbols": {
+      "get": {
+        "tags": [
+          "Symbol Lists"
+        ],
+        "summary": "Get ETF symbols",
+        "description": "Get a list of exchange-traded fund (ETF) trading symbols together with their descriptions. There is a limit of 500 records per API call.",
+        "operationId": "getEtfSymbols",
+        "parameters": [
+          {
+            "name": "offset",
+            "in": "query",
+            "description": "The initial position of the record subset, which indicates how many records to skip. Defaults to 0.",
+            "required": false,
+            "schema": {
+              "type": "integer",
+              "default": 0,
+              "example": 500
+            }
+          },
+          {
+            "name": "format",
+            "in": "query",
+            "description": "The format of the returned data, either JSON or CSV. Defaults to JSON.",
+            "required": false,
+            "schema": {
+              "type": "string",
+              "enum": [
+                "json",
+                "csv"
+              ],
+              "default": "json"
+            }
+          },
+          {
+            "name": "key",
+            "in": "query",
+            "description": "API key for authentication",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Successful response",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "type": "object",
+                    "properties": {
+                      "trading_symbol": {
+                        "type": "string",
+                        "example": "AAA"
+                      },
+                      "description": {
+                        "type": "string",
+                        "example": "AAF First Priority CLO Bond ETF"
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/commodity-symbols": {
+      "get": {
+        "tags": [
+          "Symbol Lists"
+        ],
+        "summary": "Get commodity symbols",
+        "description": "Get trading symbols and additional information for major commodities like oil, gold, coffee, etc.",
+        "operationId": "getCommoditySymbols",
+        "parameters": [
+          {
+            "name": "format",
+            "in": "query",
+            "description": "The format of the returned data, either JSON or CSV. Defaults to JSON.",
+            "required": false,
+            "schema": {
+              "type": "string",
+              "enum": [
+                "json",
+                "csv"
+              ],
+              "default": "json"
+            }
+          },
+          {
+            "name": "key",
+            "in": "query",
+            "description": "API key for authentication",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Successful response",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "type": "object",
+                    "properties": {
+                      "trading_symbol": {
+                        "type": "string",
+                        "example": "BZ"
+                      },
+                      "description": {
+                        "type": "string",
+                        "example": "Brent Crude Oil Futures (NYMEX)"
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/otc-symbols": {
+      "get": {
+        "tags": [
+          "Symbol Lists"
+        ],
+        "summary": "Get OTC symbols",
+        "description": "Get a list of over-the-counter (OTC) stock symbols and additional information. There is a limit of 500 records per API call.",
+        "operationId": "getOtcSymbols",
+        "parameters": [
+          {
+            "name": "offset",
+            "in": "query",
+            "description": "The initial position of the record subset, which indicates how many records to skip. Defaults to 0.",
+            "required": false,
+            "schema": {
+              "type": "integer",
+              "default": 0,
+              "example": 500
+            }
+          },
+          {
+            "name": "format",
+            "in": "query",
+            "description": "The format of the returned data, either JSON or CSV. Defaults to JSON.",
+            "required": false,
+            "schema": {
+              "type": "string",
+              "enum": [
+                "json",
+                "csv"
+              ],
+              "default": "json"
+            }
+          },
+          {
+            "name": "key",
+            "in": "query",
+            "description": "API key for authentication",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Successful response",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "type": "object",
+                    "properties": {
+                      "trading_symbol": {
+                        "type": "string",
+                        "example": "AAALY"
+                      },
+                      "title_of_security": {
+                        "type": "string",
+                        "example": "Aareal Bank AG Unsponsored American Depository Receipt (Germany)"
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/stock-quotes": {
+      "get": {
+        "tags": [
+          "Market Data"
+        ],
+        "summary": "Get stock quotes",
+        "description": "Get real-time stock quotes, including the last price, change, and percentage change. The data covers several thousand US and international companies. The timezone used for time values is EST (Eastern Standard Time). There is a limit of 300 records per API call.",
+        "operationId": "getStockQuotes",
+        "parameters": [
+          {
+            "name": "identifiers",
+            "in": "query",
+            "description": "The trading symbols for the securities (comma-separated).",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "example": "MSFT,AAPL"
+            }
+          },
+          {
+            "name": "format",
+            "in": "query",
+            "description": "The format of the returned data, either JSON or CSV. Defaults to JSON.",
+            "required": false,
+            "schema": {
+              "type": "string",
+              "enum": [
+                "json",
+                "csv"
+              ],
+              "default": "json"
+            }
+          },
+          {
+            "name": "key",
+            "in": "query",
+            "description": "API key for authentication",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Successful response",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "type": "object",
+                    "properties": {
+                      "trading_symbol": {
+                        "type": "string",
+                        "example": "AAPL"
+                      },
+                      "registrant_name": {
+                        "type": "string",
+                        "example": "Apple Inc."
+                      },
+                      "time": {
+                        "type": "string",
+                        "example": "2025-09-02 15:56:00"
+                      },
+                      "price": {
+                        "type": "number",
+                        "format": "float",
+                        "example": 238.08
+                      },
+                      "change": {
+                        "type": "number",
+                        "format": "float",
+                        "example": 8.36
+                      },
+                      "percentage_change": {
+                        "type": "number",
+                        "format": "float",
+                        "example": 3.64
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/stock-prices": {
+      "get": {
+        "tags": [
+          "Market Data"
+        ],
+        "summary": "Get stock prices",
+        "description": "Get more than 10 years of daily historical stock prices and volumes. The data covers several thousand US and international companies. There is a limit of 300 records per API call.",
+        "operationId": "getStockPrices",
+        "parameters": [
+          {
+            "name": "identifier",
+            "in": "query",
+            "description": "The trading symbol for a security.",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "example": "MSFT"
+            }
+          },
+          {
+            "name": "offset",
+            "in": "query",
+            "description": "The initial position of the record subset, which indicates how many records to skip. Defaults to 0.",
+            "required": false,
+            "schema": {
+              "type": "integer",
+              "default": 0,
+              "example": 300
+            }
+          },
+          {
+            "name": "format",
+            "in": "query",
+            "description": "The format of the returned data, either JSON or CSV. Defaults to JSON.",
+            "required": false,
+            "schema": {
+              "type": "string",
+              "enum": [
+                "json",
+                "csv"
+              ],
+              "default": "json"
+            }
+          },
+          {
+            "name": "key",
+            "in": "query",
+            "description": "API key for authentication",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Successful response",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "type": "object",
+                    "properties": {
+                      "trading_symbol": {
+                        "type": "string",
+                        "example": "MSFT"
+                      },
+                      "date": {
+                        "type": "string",
+                        "format": "date",
+                        "example": "2024-12-04"
+                      },
+                      "open": {
+                        "type": "number",
+                        "format": "float",
+                        "example": 433.03
+                      },
+                      "high": {
+                        "type": "number",
+                        "format": "float",
+                        "example": 439.67
+                      },
+                      "low": {
+                        "type": "number",
+                        "format": "float",
+                        "example": 432.63
+                      },
+                      "close": {
+                        "type": "number",
+                        "format": "float",
+                        "example": 437.42
+                      },
+                      "volume": {
+                        "type": "number",
+                        "format": "float",
+                        "example": 26009430
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/international-stock-prices": {
+      "get": {
+        "tags": [
+          "Market Data"
+        ],
+        "summary": "Get international stock prices",
+        "description": "Get more than 10 years of daily historical stock prices and volumes. Data is available for the following stock exchanges: Toronto, London, Frankfurt, Euronext Paris, Euronext Amsterdam, Tokyo, Hong Kong, Singapore, Indonesia, Malaysia, Korea, Brazil, Mexico, India, Bombay. There is a limit of 300 records per API call.",
+        "operationId": "getInternationalStockPrices",
+        "parameters": [
+          {
+            "name": "identifier",
+            "in": "query",
+            "description": "The trading symbol for a security.",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "example": "SHEL.L"
+            }
+          },
+          {
+            "name": "offset",
+            "in": "query",
+            "description": "The initial position of the record subset, which indicates how many records to skip. Defaults to 0.",
+            "required": false,
+            "schema": {
+              "type": "integer",
+              "default": 0,
+              "example": 300
+            }
+          },
+          {
+            "name": "format",
+            "in": "query",
+            "description": "The format of the returned data, either JSON or CSV. Defaults to JSON.",
+            "required": false,
+            "schema": {
+              "type": "string",
+              "enum": [
+                "json",
+                "csv"
+              ],
+              "default": "json"
+            }
+          },
+          {
+            "name": "key",
+            "in": "query",
+            "description": "API key for authentication",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Successful response",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "type": "object",
+                    "properties": {
+                      "trading_symbol": {
+                        "type": "string",
+                        "example": "SHEL.L"
+                      },
+                      "date": {
+                        "type": "string",
+                        "format": "date",
+                        "example": "2025-05-02"
+                      },
+                      "open": {
+                        "type": "number",
+                        "format": "float",
+                        "example": 2493
+                      },
+                      "high": {
+                        "type": "number",
+                        "format": "float",
+                        "example": 2543.5
+                      },
+                      "low": {
+                        "type": "number",
+                        "format": "float",
+                        "example": 2461.5
+                      },
+                      "close": {
+                        "type": "number",
+                        "format": "float",
+                        "example": 2486.5
+                      },
+                      "volume": {
+                        "type": "number",
+                        "format": "float",
+                        "example": 12476281
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/minute-prices": {
+      "get": {
+        "tags": [
+          "Market Data"
+        ],
+        "summary": "Get minute prices",
+        "description": "Get more than 7 years of one-minute historical prices and volumes. The data is available for over 10,000 securities, including US stocks, international stocks, and exchange-traded funds. The timezone used for time values is UTC (Coordinated Universal Time). There is a limit of 300 records per API call.",
+        "operationId": "getMinutePrices",
+        "parameters": [
+          {
+            "name": "identifier",
+            "in": "query",
+            "description": "The trading symbol for a security.",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "example": "MSFT"
+            }
+          },
+          {
+            "name": "date",
+            "in": "query",
+            "description": "The date in YYYY-MM-DD format.",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "format": "date",
+              "example": "2020-01-15"
+            }
+          },
+          {
+            "name": "offset",
+            "in": "query",
+            "description": "The initial position of the record subset, which indicates how many records to skip. Defaults to 0.",
+            "required": false,
+            "schema": {
+              "type": "integer",
+              "default": 0,
+              "example": 300
+            }
+          },
+          {
+            "name": "format",
+            "in": "query",
+            "description": "The format of the returned data, either JSON or CSV. Defaults to JSON.",
+            "required": false,
+            "schema": {
+              "type": "string",
+              "enum": [
+                "json",
+                "csv"
+              ],
+              "default": "json"
+            }
+          },
+          {
+            "name": "key",
+            "in": "query",
+            "description": "API key for authentication",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Successful response",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "type": "object",
+                    "properties": {
+                      "trading_symbol": {
+                        "type": "string",
+                        "example": "MSFT"
+                      },
+                      "time": {
+                        "type": "string",
+                        "example": "2020-01-15 20:59:00"
+                      },
+                      "open": {
+                        "type": "number",
+                        "format": "float",
+                        "example": 163.14
+                      },
+                      "high": {
+                        "type": "number",
+                        "format": "float",
+                        "example": 163.26
+                      },
+                      "low": {
+                        "type": "number",
+                        "format": "float",
+                        "example": 163.1
+                      },
+                      "close": {
+                        "type": "number",
+                        "format": "float",
+                        "example": 163.25
+                      },
+                      "volume": {
+                        "type": "number",
+                        "format": "float",
+                        "example": 5633
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/latest-prices": {
+      "get": {
+        "tags": [
+          "Market Data"
+        ],
+        "summary": "Get latest prices",
+        "description": "Get one-minute stock prices and trading volumes for the current week. Data is available for more than 10,000 securities.",
+        "operationId": "getLatestPrices",
+        "parameters": [
+          {
+            "name": "identifier",
+            "in": "query",
+            "description": "The trading symbol for a security.",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "offset",
+            "in": "query",
+            "description": "The initial position of the record subset, which indicates how many records to skip. Defaults to 0.",
+            "required": false,
+            "schema": {
+              "type": "integer",
+              "default": 0
+            }
+          },
+          {
+            "name": "format",
+            "in": "query",
+            "description": "The format of the returned data, either JSON or CSV. Defaults to JSON.",
+            "required": false,
+            "schema": {
+              "type": "string",
+              "enum": [
+                "json",
+                "csv"
+              ],
+              "default": "json"
+            }
+          },
+          {
+            "name": "key",
+            "in": "query",
+            "description": "API key for authentication",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Successful response",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "type": "object",
+                    "properties": {
+                      "trading_symbol": {
+                        "type": "string"
+                      },
+                      "time": {
+                        "type": "string"
+                      },
+                      "open": {
+                        "type": "number",
+                        "format": "float"
+                      },
+                      "high": {
+                        "type": "number",
+                        "format": "float"
+                      },
+                      "low": {
+                        "type": "number",
+                        "format": "float"
+                      },
+                      "close": {
+                        "type": "number",
+                        "format": "float"
+                      },
+                      "volume": {
+                        "type": "number",
+                        "format": "float"
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/commodity-prices": {
+      "get": {
+        "tags": [
+          "Market Data"
+        ],
+        "summary": "Get commodity prices",
+        "description": "Get historical prices for commodities.",
+        "operationId": "getCommodityPrices",
+        "parameters": [
+          {
+            "name": "identifier",
+            "in": "query",
+            "description": "The trading symbol for a commodity.",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "offset",
+            "in": "query",
+            "description": "The initial position of the record subset.",
+            "required": false,
+            "schema": {
+              "type": "integer",
+              "default": 0
+            }
+          },
+          {
+            "name": "format",
+            "in": "query",
+            "description": "The format of the returned data.",
+            "required": false,
+            "schema": {
+              "type": "string",
+              "enum": [
+                "json",
+                "csv"
+              ],
+              "default": "json"
+            }
+          },
+          {
+            "name": "key",
+            "in": "query",
+            "description": "API key for authentication",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Successful response"
+          }
+        }
+      }
+    },
+    "/otc-prices": {
+      "get": {
+        "tags": [
+          "Market Data"
+        ],
+        "summary": "Get OTC prices",
+        "description": "Get historical prices for over-the-counter securities.",
+        "operationId": "getOtcPrices",
+        "parameters": [
+          {
+            "name": "identifier",
+            "in": "query",
+            "description": "The trading symbol for an OTC security.",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "offset",
+            "in": "query",
+            "description": "The initial position of the record subset.",
+            "required": false,
+            "schema": {
+              "type": "integer",
+              "default": 0
+            }
+          },
+          {
+            "name": "format",
+            "in": "query",
+            "description": "The format of the returned data.",
+            "required": false,
+            "schema": {
+              "type": "string",
+              "enum": [
+                "json",
+                "csv"
+              ],
+              "default": "json"
+            }
+          },
+          {
+            "name": "key",
+            "in": "query",
+            "description": "API key for authentication",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Successful response"
+          }
+        }
+      }
+    },
+    "/otc-volume": {
+      "get": {
+        "tags": [
+          "Market Data"
+        ],
+        "summary": "Get OTC volume",
+        "description": "Get trading volume data for over-the-counter securities.",
+        "operationId": "getOtcVolume",
+        "parameters": [
+          {
+            "name": "identifier",
+            "in": "query",
+            "description": "The trading symbol for an OTC security.",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "format",
+            "in": "query",
+            "description": "The format of the returned data.",
+            "required": false,
+            "schema": {
+              "type": "string",
+              "enum": [
+                "json",
+                "csv"
+              ],
+              "default": "json"
+            }
+          },
+          {
+            "name": "key",
+            "in": "query",
+            "description": "API key for authentication",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Successful response"
+          }
+        }
+      }
+    },
+    "/index-symbols": {
+      "get": {
+        "tags": [
+          "Market Indexes"
+        ],
+        "summary": "Get index symbols",
+        "description": "Get a list of market index symbols.",
+        "operationId": "getIndexSymbols",
+        "parameters": [
+          {
+            "name": "format",
+            "in": "query",
+            "description": "The format of the returned data.",
+            "required": false,
+            "schema": {
+              "type": "string",
+              "enum": [
+                "json",
+                "csv"
+              ],
+              "default": "json"
+            }
+          },
+          {
+            "name": "key",
+            "in": "query",
+            "description": "API key for authentication",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Successful response"
+          }
+        }
+      }
+    },
+    "/index-quotes": {
+      "get": {
+        "tags": [
+          "Market Indexes"
+        ],
+        "summary": "Get index quotes",
+        "description": "Get real-time quotes for market indexes.",
+        "operationId": "getIndexQuotes",
+        "parameters": [
+          {
+            "name": "identifiers",
+            "in": "query",
+            "description": "The index symbols (comma-separated).",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "format",
+            "in": "query",
+            "description": "The format of the returned data.",
+            "required": false,
+            "schema": {
+              "type": "string",
+              "enum": [
+                "json",
+                "csv"
+              ],
+              "default": "json"
+            }
+          },
+          {
+            "name": "key",
+            "in": "query",
+            "description": "API key for authentication",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Successful response"
+          }
+        }
+      }
+    },
+    "/index-prices": {
+      "get": {
+        "tags": [
+          "Market Indexes"
+        ],
+        "summary": "Get index prices",
+        "description": "Get historical prices for market indexes.",
+        "operationId": "getIndexPrices",
+        "parameters": [
+          {
+            "name": "identifier",
+            "in": "query",
+            "description": "The index symbol.",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "offset",
+            "in": "query",
+            "description": "The initial position of the record subset.",
+            "required": false,
+            "schema": {
+              "type": "integer",
+              "default": 0
+            }
+          },
+          {
+            "name": "format",
+            "in": "query",
+            "description": "The format of the returned data.",
+            "required": false,
+            "schema": {
+              "type": "string",
+              "enum": [
+                "json",
+                "csv"
+              ],
+              "default": "json"
+            }
+          },
+          {
+            "name": "key",
+            "in": "query",
+            "description": "API key for authentication",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Successful response"
+          }
+        }
+      }
+    },
+    "/index-constituents": {
+      "get": {
+        "tags": [
+          "Market Indexes"
+        ],
+        "summary": "Get index constituents",
+        "description": "Get the constituent securities that make up a market index.",
+        "operationId": "getIndexConstituents",
+        "parameters": [
+          {
+            "name": "identifier",
+            "in": "query",
+            "description": "The index symbol.",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "format",
+            "in": "query",
+            "description": "The format of the returned data.",
+            "required": false,
+            "schema": {
+              "type": "string",
+              "enum": [
+                "json",
+                "csv"
+              ],
+              "default": "json"
+            }
+          },
+          {
+            "name": "key",
+            "in": "query",
+            "description": "API key for authentication",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Successful response"
+          }
+        }
+      }
+    },
+    "/option-chain": {
+      "get": {
+        "tags": [
+          "Derivatives Data"
+        ],
+        "summary": "Get option chain",
+        "description": "Get the option chain for a security.",
+        "operationId": "getOptionChain",
+        "parameters": [
+          {
+            "name": "identifier",
+            "in": "query",
+            "description": "The trading symbol.",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "format",
+            "in": "query",
+            "description": "The format of the returned data.",
+            "required": false,
+            "schema": {
+              "type": "string",
+              "enum": [
+                "json",
+                "csv"
+              ],
+              "default": "json"
+            }
+          },
+          {
+            "name": "key",
+            "in": "query",
+            "description": "API key for authentication",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Successful response"
+          }
+        }
+      }
+    },
+    "/option-prices": {
+      "get": {
+        "tags": [
+          "Derivatives Data"
+        ],
+        "summary": "Get option prices",
+        "description": "Get historical prices for options.",
+        "operationId": "getOptionPrices",
+        "parameters": [
+          {
+            "name": "identifier",
+            "in": "query",
+            "description": "The option identifier.",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "format",
+            "in": "query",
+            "description": "The format of the returned data.",
+            "required": false,
+            "schema": {
+              "type": "string",
+              "enum": [
+                "json",
+                "csv"
+              ],
+              "default": "json"
+            }
+          },
+          {
+            "name": "key",
+            "in": "query",
+            "description": "API key for authentication",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Successful response"
+          }
+        }
+      }
+    },
+    "/option-greeks": {
+      "get": {
+        "tags": [
+          "Derivatives Data"
+        ],
+        "summary": "Get option Greeks",
+        "description": "Get option Greeks (delta, gamma, theta, vega, rho) for options.",
+        "operationId": "getOptionGreeks",
+        "parameters": [
+          {
+            "name": "identifier",
+            "in": "query",
+            "description": "The option identifier.",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "format",
+            "in": "query",
+            "description": "The format of the returned data.",
+            "required": false,
+            "schema": {
+              "type": "string",
+              "enum": [
+                "json",
+                "csv"
+              ],
+              "default": "json"
+            }
+          },
+          {
+            "name": "key",
+            "in": "query",
+            "description": "API key for authentication",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Successful response"
+          }
+        }
+      }
+    },
+    "/futures-symbols": {
+      "get": {
+        "tags": [
+          "Derivatives Data"
+        ],
+        "summary": "Get futures symbols",
+        "description": "Get a list of futures symbols.",
+        "operationId": "getFuturesSymbols",
+        "parameters": [
+          {
+            "name": "format",
+            "in": "query",
+            "description": "The format of the returned data.",
+            "required": false,
+            "schema": {
+              "type": "string",
+              "enum": [
+                "json",
+                "csv"
+              ],
+              "default": "json"
+            }
+          },
+          {
+            "name": "key",
+            "in": "query",
+            "description": "API key for authentication",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Successful response"
+          }
+        }
+      }
+    },
+    "/futures-prices": {
+      "get": {
+        "tags": [
+          "Derivatives Data"
+        ],
+        "summary": "Get futures prices",
+        "description": "Get historical prices for futures contracts.",
+        "operationId": "getFuturesPrices",
+        "parameters": [
+          {
+            "name": "identifier",
+            "in": "query",
+            "description": "The futures symbol.",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "format",
+            "in": "query",
+            "description": "The format of the returned data.",
+            "required": false,
+            "schema": {
+              "type": "string",
+              "enum": [
+                "json",
+                "csv"
+              ],
+              "default": "json"
+            }
+          },
+          {
+            "name": "key",
+            "in": "query",
+            "description": "API key for authentication",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Successful response"
+          }
+        }
+      }
+    },
+    "/crypto-symbols": {
+      "get": {
+        "tags": [
+          "Crypto Currencies"
+        ],
+        "summary": "Get crypto symbols",
+        "description": "Get a list of cryptocurrency symbols.",
+        "operationId": "getCryptoSymbols",
+        "parameters": [
+          {
+            "name": "format",
+            "in": "query",
+            "description": "The format of the returned data.",
+            "required": false,
+            "schema": {
+              "type": "string",
+              "enum": [
+                "json",
+                "csv"
+              ],
+              "default": "json"
+            }
+          },
+          {
+            "name": "key",
+            "in": "query",
+            "description": "API key for authentication",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Successful response"
+          }
+        }
+      }
+    },
+    "/crypto-information": {
+      "get": {
+        "tags": [
+          "Crypto Currencies"
+        ],
+        "summary": "Get crypto information",
+        "description": "Get detailed information about cryptocurrencies.",
+        "operationId": "getCryptoInformation",
+        "parameters": [
+          {
+            "name": "identifier",
+            "in": "query",
+            "description": "The crypto symbol.",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "format",
+            "in": "query",
+            "description": "The format of the returned data.",
+            "required": false,
+            "schema": {
+              "type": "string",
+              "enum": [
+                "json",
+                "csv"
+              ],
+              "default": "json"
+            }
+          },
+          {
+            "name": "key",
+            "in": "query",
+            "description": "API key for authentication",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Successful response"
+          }
+        }
+      }
+    },
+    "/crypto-quotes": {
+      "get": {
+        "tags": [
+          "Crypto Currencies"
+        ],
+        "summary": "Get crypto quotes",
+        "description": "Get real-time quotes for cryptocurrencies.",
+        "operationId": "getCryptoQuotes",
+        "parameters": [
+          {
+            "name": "identifiers",
+            "in": "query",
+            "description": "The crypto symbols (comma-separated).",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "format",
+            "in": "query",
+            "description": "The format of the returned data.",
+            "required": false,
+            "schema": {
+              "type": "string",
+              "enum": [
+                "json",
+                "csv"
+              ],
+              "default": "json"
+            }
+          },
+          {
+            "name": "key",
+            "in": "query",
+            "description": "API key for authentication",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Successful response"
+          }
+        }
+      }
+    },
+    "/crypto-prices": {
+      "get": {
+        "tags": [
+          "Crypto Currencies"
+        ],
+        "summary": "Get crypto prices",
+        "description": "Get historical prices for cryptocurrencies.",
+        "operationId": "getCryptoPrices",
+        "parameters": [
+          {
+            "name": "identifier",
+            "in": "query",
+            "description": "The crypto symbol.",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "format",
+            "in": "query",
+            "description": "The format of the returned data.",
+            "required": false,
+            "schema": {
+              "type": "string",
+              "enum": [
+                "json",
+                "csv"
+              ],
+              "default": "json"
+            }
+          },
+          {
+            "name": "key",
+            "in": "query",
+            "description": "API key for authentication",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Successful response"
+          }
+        }
+      }
+    },
+    "/crypto-minute-prices": {
+      "get": {
+        "tags": [
+          "Crypto Currencies"
+        ],
+        "summary": "Get crypto minute prices",
+        "description": "Get minute-level historical prices for cryptocurrencies.",
+        "operationId": "getCryptoMinutePrices",
+        "parameters": [
+          {
+            "name": "identifier",
+            "in": "query",
+            "description": "The crypto symbol.",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "date",
+            "in": "query",
+            "description": "The date in YYYY-MM-DD format.",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "format": "date"
+            }
+          },
+          {
+            "name": "format",
+            "in": "query",
+            "description": "The format of the returned data.",
+            "required": false,
+            "schema": {
+              "type": "string",
+              "enum": [
+                "json",
+                "csv"
+              ],
+              "default": "json"
+            }
+          },
+          {
+            "name": "key",
+            "in": "query",
+            "description": "API key for authentication",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Successful response"
+          }
+        }
+      }
+    },
+    "/forex-symbols": {
+      "get": {
+        "tags": [
+          "Forex Data"
+        ],
+        "summary": "Get forex symbols",
+        "description": "Get a list of forex currency pair symbols.",
+        "operationId": "getForexSymbols",
+        "parameters": [
+          {
+            "name": "format",
+            "in": "query",
+            "description": "The format of the returned data.",
+            "required": false,
+            "schema": {
+              "type": "string",
+              "enum": [
+                "json",
+                "csv"
+              ],
+              "default": "json"
+            }
+          },
+          {
+            "name": "key",
+            "in": "query",
+            "description": "API key for authentication",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Successful response"
+          }
+        }
+      }
+    },
+    "/forex-quotes": {
+      "get": {
+        "tags": [
+          "Forex Data"
+        ],
+        "summary": "Get forex quotes",
+        "description": "Get real-time quotes for forex currency pairs.",
+        "operationId": "getForexQuotes",
+        "parameters": [
+          {
+            "name": "identifiers",
+            "in": "query",
+            "description": "The forex pair symbols (comma-separated).",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "format",
+            "in": "query",
+            "description": "The format of the returned data.",
+            "required": false,
+            "schema": {
+              "type": "string",
+              "enum": [
+                "json",
+                "csv"
+              ],
+              "default": "json"
+            }
+          },
+          {
+            "name": "key",
+            "in": "query",
+            "description": "API key for authentication",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Successful response"
+          }
+        }
+      }
+    },
+    "/forex-prices": {
+      "get": {
+        "tags": [
+          "Forex Data"
+        ],
+        "summary": "Get forex prices",
+        "description": "Get historical prices for forex currency pairs.",
+        "operationId": "getForexPrices",
+        "parameters": [
+          {
+            "name": "identifier",
+            "in": "query",
+            "description": "The forex pair symbol.",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "format",
+            "in": "query",
+            "description": "The format of the returned data.",
+            "required": false,
+            "schema": {
+              "type": "string",
+              "enum": [
+                "json",
+                "csv"
+              ],
+              "default": "json"
+            }
+          },
+          {
+            "name": "key",
+            "in": "query",
+            "description": "API key for authentication",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Successful response"
+          }
+        }
+      }
+    },
+    "/forex-minute-prices": {
+      "get": {
+        "tags": [
+          "Forex Data"
+        ],
+        "summary": "Get forex minute prices",
+        "description": "Get minute-level historical prices for forex currency pairs.",
+        "operationId": "getForexMinutePrices",
+        "parameters": [
+          {
+            "name": "identifier",
+            "in": "query",
+            "description": "The forex pair symbol.",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "date",
+            "in": "query",
+            "description": "The date in YYYY-MM-DD format.",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "format": "date"
+            }
+          },
+          {
+            "name": "format",
+            "in": "query",
+            "description": "The format of the returned data.",
+            "required": false,
+            "schema": {
+              "type": "string",
+              "enum": [
+                "json",
+                "csv"
+              ],
+              "default": "json"
+            }
+          },
+          {
+            "name": "key",
+            "in": "query",
+            "description": "API key for authentication",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Successful response"
+          }
+        }
+      }
+    },
+    "/company-information": {
+      "get": {
+        "tags": [
+          "Basic Information"
+        ],
+        "summary": "Get company information",
+        "description": "Get detailed information about a company.",
+        "operationId": "getCompanyInformation",
+        "parameters": [
+          {
+            "name": "identifier",
+            "in": "query",
+            "description": "The trading symbol.",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "format",
+            "in": "query",
+            "description": "The format of the returned data.",
+            "required": false,
+            "schema": {
+              "type": "string",
+              "enum": [
+                "json",
+                "csv"
+              ],
+              "default": "json"
+            }
+          },
+          {
+            "name": "key",
+            "in": "query",
+            "description": "API key for authentication",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Successful response"
+          }
+        }
+      }
+    },
+    "/international-company-information": {
+      "get": {
+        "tags": [
+          "Basic Information"
+        ],
+        "summary": "Get international company information",
+        "description": "Get detailed information about international companies.",
+        "operationId": "getInternationalCompanyInformation",
+        "parameters": [
+          {
+            "name": "identifier",
+            "in": "query",
+            "description": "The trading symbol.",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "format",
+            "in": "query",
+            "description": "The format of the returned data.",
+            "required": false,
+            "schema": {
+              "type": "string",
+              "enum": [
+                "json",
+                "csv"
+              ],
+              "default": "json"
+            }
+          },
+          {
+            "name": "key",
+            "in": "query",
+            "description": "API key for authentication",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Successful response"
+          }
+        }
+      }
+    },
+    "/key-metrics": {
+      "get": {
+        "tags": [
+          "Basic Information"
+        ],
+        "summary": "Get key metrics",
+        "description": "Get key financial metrics for a company.",
+        "operationId": "getKeyMetrics",
+        "parameters": [
+          {
+            "name": "identifier",
+            "in": "query",
+            "description": "The trading symbol.",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "format",
+            "in": "query",
+            "description": "The format of the returned data.",
+            "required": false,
+            "schema": {
+              "type": "string",
+              "enum": [
+                "json",
+                "csv"
+              ],
+              "default": "json"
+            }
+          },
+          {
+            "name": "key",
+            "in": "query",
+            "description": "API key for authentication",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Successful response"
+          }
+        }
+      }
+    },
+    "/market-cap": {
+      "get": {
+        "tags": [
+          "Basic Information"
+        ],
+        "summary": "Get market cap",
+        "description": "Get market capitalization data for a company.",
+        "operationId": "getMarketCap",
+        "parameters": [
+          {
+            "name": "identifier",
+            "in": "query",
+            "description": "The trading symbol.",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "format",
+            "in": "query",
+            "description": "The format of the returned data.",
+            "required": false,
+            "schema": {
+              "type": "string",
+              "enum": [
+                "json",
+                "csv"
+              ],
+              "default": "json"
+            }
+          },
+          {
+            "name": "key",
+            "in": "query",
+            "description": "API key for authentication",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Successful response"
+          }
+        }
+      }
+    },
+    "/employee-count": {
+      "get": {
+        "tags": [
+          "Basic Information"
+        ],
+        "summary": "Get employee count",
+        "description": "Get employee count data for a company.",
+        "operationId": "getEmployeeCount",
+        "parameters": [
+          {
+            "name": "identifier",
+            "in": "query",
+            "description": "The trading symbol.",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "format",
+            "in": "query",
+            "description": "The format of the returned data.",
+            "required": false,
+            "schema": {
+              "type": "string",
+              "enum": [
+                "json",
+                "csv"
+              ],
+              "default": "json"
+            }
+          },
+          {
+            "name": "key",
+            "in": "query",
+            "description": "API key for authentication",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Successful response"
+          }
+        }
+      }
+    },
+    "/executive-compensation": {
+      "get": {
+        "tags": [
+          "Basic Information"
+        ],
+        "summary": "Get executive compensation",
+        "description": "Get executive compensation data for a company.",
+        "operationId": "getExecutiveCompensation",
+        "parameters": [
+          {
+            "name": "identifier",
+            "in": "query",
+            "description": "The trading symbol.",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "format",
+            "in": "query",
+            "description": "The format of the returned data.",
+            "required": false,
+            "schema": {
+              "type": "string",
+              "enum": [
+                "json",
+                "csv"
+              ],
+              "default": "json"
+            }
+          },
+          {
+            "name": "key",
+            "in": "query",
+            "description": "API key for authentication",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Successful response"
+          }
+        }
+      }
+    },
+    "/securities-information": {
+      "get": {
+        "tags": [
+          "Basic Information"
+        ],
+        "summary": "Get securities information",
+        "description": "Get information about securities.",
+        "operationId": "getSecuritiesInformation",
+        "parameters": [
+          {
+            "name": "identifier",
+            "in": "query",
+            "description": "The trading symbol.",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "format",
+            "in": "query",
+            "description": "The format of the returned data.",
+            "required": false,
+            "schema": {
+              "type": "string",
+              "enum": [
+                "json",
+                "csv"
+              ],
+              "default": "json"
+            }
+          },
+          {
+            "name": "key",
+            "in": "query",
+            "description": "API key for authentication",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Successful response"
+          }
+        }
+      }
+    },
+    "/income-statements": {
+      "get": {
+        "tags": [
+          "Financial Statements"
+        ],
+        "summary": "Get income statements",
+        "description": "Get income statement data for a company.",
+        "operationId": "getIncomeStatements",
+        "parameters": [
+          {
+            "name": "identifier",
+            "in": "query",
+            "description": "The trading symbol.",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "format",
+            "in": "query",
+            "description": "The format of the returned data.",
+            "required": false,
+            "schema": {
+              "type": "string",
+              "enum": [
+                "json",
+                "csv"
+              ],
+              "default": "json"
+            }
+          },
+          {
+            "name": "key",
+            "in": "query",
+            "description": "API key for authentication",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Successful response"
+          }
+        }
+      }
+    },
+    "/balance-sheet-statements": {
+      "get": {
+        "tags": [
+          "Financial Statements"
+        ],
+        "summary": "Get balance sheet statements",
+        "description": "Get balance sheet data for a company.",
+        "operationId": "getBalanceSheetStatements",
+        "parameters": [
+          {
+            "name": "identifier",
+            "in": "query",
+            "description": "The trading symbol.",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "format",
+            "in": "query",
+            "description": "The format of the returned data.",
+            "required": false,
+            "schema": {
+              "type": "string",
+              "enum": [
+                "json",
+                "csv"
+              ],
+              "default": "json"
+            }
+          },
+          {
+            "name": "key",
+            "in": "query",
+            "description": "API key for authentication",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Successful response"
+          }
+        }
+      }
+    },
+    "/cash-flow-statements": {
+      "get": {
+        "tags": [
+          "Financial Statements"
+        ],
+        "summary": "Get cash flow statements",
+        "description": "Get cash flow statement data for a company.",
+        "operationId": "getCashFlowStatements",
+        "parameters": [
+          {
+            "name": "identifier",
+            "in": "query",
+            "description": "The trading symbol.",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "format",
+            "in": "query",
+            "description": "The format of the returned data.",
+            "required": false,
+            "schema": {
+              "type": "string",
+              "enum": [
+                "json",
+                "csv"
+              ],
+              "default": "json"
+            }
+          },
+          {
+            "name": "key",
+            "in": "query",
+            "description": "API key for authentication",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Successful response"
+          }
+        }
+      }
+    },
+    "/international-income-statements": {
+      "get": {
+        "tags": [
+          "Financial Statements"
+        ],
+        "summary": "Get international income statements",
+        "description": "Get income statement data for international companies.",
+        "operationId": "getInternationalIncomeStatements",
+        "parameters": [
+          {
+            "name": "identifier",
+            "in": "query",
+            "description": "The trading symbol.",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "format",
+            "in": "query",
+            "description": "The format of the returned data.",
+            "required": false,
+            "schema": {
+              "type": "string",
+              "enum": [
+                "json",
+                "csv"
+              ],
+              "default": "json"
+            }
+          },
+          {
+            "name": "key",
+            "in": "query",
+            "description": "API key for authentication",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Successful response"
+          }
+        }
+      }
+    },
+    "/international-balance-sheet-statements": {
+      "get": {
+        "tags": [
+          "Financial Statements"
+        ],
+        "summary": "Get international balance sheet statements",
+        "description": "Get balance sheet data for international companies.",
+        "operationId": "getInternationalBalanceSheetStatements",
+        "parameters": [
+          {
+            "name": "identifier",
+            "in": "query",
+            "description": "The trading symbol.",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "format",
+            "in": "query",
+            "description": "The format of the returned data.",
+            "required": false,
+            "schema": {
+              "type": "string",
+              "enum": [
+                "json",
+                "csv"
+              ],
+              "default": "json"
+            }
+          },
+          {
+            "name": "key",
+            "in": "query",
+            "description": "API key for authentication",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Successful response"
+          }
+        }
+      }
+    },
+    "/international-cash-flow-statements": {
+      "get": {
+        "tags": [
+          "Financial Statements"
+        ],
+        "summary": "Get international cash flow statements",
+        "description": "Get cash flow statement data for international companies.",
+        "operationId": "getInternationalCashFlowStatements",
+        "parameters": [
+          {
+            "name": "identifier",
+            "in": "query",
+            "description": "The trading symbol.",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "format",
+            "in": "query",
+            "description": "The format of the returned data.",
+            "required": false,
+            "schema": {
+              "type": "string",
+              "enum": [
+                "json",
+                "csv"
+              ],
+              "default": "json"
+            }
+          },
+          {
+            "name": "key",
+            "in": "query",
+            "description": "API key for authentication",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Successful response"
+          }
+        }
+      }
+    },
+    "/liquidity-ratios": {
+      "get": {
+        "tags": [
+          "Financial Ratios"
+        ],
+        "summary": "Get liquidity ratios",
+        "description": "Get liquidity ratio data for a company.",
+        "operationId": "getLiquidityRatios",
+        "parameters": [
+          {
+            "name": "identifier",
+            "in": "query",
+            "description": "The trading symbol.",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "format",
+            "in": "query",
+            "description": "The format of the returned data.",
+            "required": false,
+            "schema": {
+              "type": "string",
+              "enum": [
+                "json",
+                "csv"
+              ],
+              "default": "json"
+            }
+          },
+          {
+            "name": "key",
+            "in": "query",
+            "description": "API key for authentication",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Successful response"
+          }
+        }
+      }
+    },
+    "/solvency-ratios": {
+      "get": {
+        "tags": [
+          "Financial Ratios"
+        ],
+        "summary": "Get solvency ratios",
+        "description": "Get solvency ratio data for a company.",
+        "operationId": "getSolvencyRatios",
+        "parameters": [
+          {
+            "name": "identifier",
+            "in": "query",
+            "description": "The trading symbol.",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "format",
+            "in": "query",
+            "description": "The format of the returned data.",
+            "required": false,
+            "schema": {
+              "type": "string",
+              "enum": [
+                "json",
+                "csv"
+              ],
+              "default": "json"
+            }
+          },
+          {
+            "name": "key",
+            "in": "query",
+            "description": "API key for authentication",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Successful response"
+          }
+        }
+      }
+    },
+    "/efficiency-ratios": {
+      "get": {
+        "tags": [
+          "Financial Ratios"
+        ],
+        "summary": "Get efficiency ratios",
+        "description": "Get efficiency ratio data for a company.",
+        "operationId": "getEfficiencyRatios",
+        "parameters": [
+          {
+            "name": "identifier",
+            "in": "query",
+            "description": "The trading symbol.",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "format",
+            "in": "query",
+            "description": "The format of the returned data.",
+            "required": false,
+            "schema": {
+              "type": "string",
+              "enum": [
+                "json",
+                "csv"
+              ],
+              "default": "json"
+            }
+          },
+          {
+            "name": "key",
+            "in": "query",
+            "description": "API key for authentication",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Successful response"
+          }
+        }
+      }
+    },
+    "/profitability-ratios": {
+      "get": {
+        "tags": [
+          "Financial Ratios"
+        ],
+        "summary": "Get profitability ratios",
+        "description": "Get profitability ratio data for a company.",
+        "operationId": "getProfitabilityRatios",
+        "parameters": [
+          {
+            "name": "identifier",
+            "in": "query",
+            "description": "The trading symbol.",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "format",
+            "in": "query",
+            "description": "The format of the returned data.",
+            "required": false,
+            "schema": {
+              "type": "string",
+              "enum": [
+                "json",
+                "csv"
+              ],
+              "default": "json"
+            }
+          },
+          {
+            "name": "key",
+            "in": "query",
+            "description": "API key for authentication",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Successful response"
+          }
+        }
+      }
+    },
+    "/valuation-ratios": {
+      "get": {
+        "tags": [
+          "Financial Ratios"
+        ],
+        "summary": "Get valuation ratios",
+        "description": "Get valuation ratio data for a company.",
+        "operationId": "getValuationRatios",
+        "parameters": [
+          {
+            "name": "identifier",
+            "in": "query",
+            "description": "The trading symbol.",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "format",
+            "in": "query",
+            "description": "The format of the returned data.",
+            "required": false,
+            "schema": {
+              "type": "string",
+              "enum": [
+                "json",
+                "csv"
+              ],
+              "default": "json"
+            }
+          },
+          {
+            "name": "key",
+            "in": "query",
+            "description": "API key for authentication",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Successful response"
+          }
+        }
+      }
+    },
+    "/press-releases": {
+      "get": {
+        "tags": [
+          "Market News"
+        ],
+        "summary": "Get press releases",
+        "description": "Get press releases for companies.",
+        "operationId": "getPressReleases",
+        "parameters": [
+          {
+            "name": "identifier",
+            "in": "query",
+            "description": "The trading symbol.",
+            "required": false,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "format",
+            "in": "query",
+            "description": "The format of the returned data.",
+            "required": false,
+            "schema": {
+              "type": "string",
+              "enum": [
+                "json",
+                "csv"
+              ],
+              "default": "json"
+            }
+          },
+          {
+            "name": "key",
+            "in": "query",
+            "description": "API key for authentication",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Successful response"
+          }
+        }
+      }
+    },
+    "/sec-press-releases": {
+      "get": {
+        "tags": [
+          "Market News"
+        ],
+        "summary": "Get SEC press releases",
+        "description": "Get SEC press releases.",
+        "operationId": "getSecPressReleases",
+        "parameters": [
+          {
+            "name": "format",
+            "in": "query",
+            "description": "The format of the returned data.",
+            "required": false,
+            "schema": {
+              "type": "string",
+              "enum": [
+                "json",
+                "csv"
+              ],
+              "default": "json"
+            }
+          },
+          {
+            "name": "key",
+            "in": "query",
+            "description": "API key for authentication",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Successful response"
+          }
+        }
+      }
+    },
+    "/fed-press-releases": {
+      "get": {
+        "tags": [
+          "Market News"
+        ],
+        "summary": "Get Fed press releases",
+        "description": "Get Federal Reserve press releases.",
+        "operationId": "getFedPressReleases",
+        "parameters": [
+          {
+            "name": "format",
+            "in": "query",
+            "description": "The format of the returned data.",
+            "required": false,
+            "schema": {
+              "type": "string",
+              "enum": [
+                "json",
+                "csv"
+              ],
+              "default": "json"
+            }
+          },
+          {
+            "name": "key",
+            "in": "query",
+            "description": "API key for authentication",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Successful response"
+          }
+        }
+      }
+    },
+    "/earnings-calendar": {
+      "get": {
+        "tags": [
+          "Event Calendars"
+        ],
+        "summary": "Get earnings calendar",
+        "description": "Get upcoming earnings announcements.",
+        "operationId": "getEarningsCalendar",
+        "parameters": [
+          {
+            "name": "format",
+            "in": "query",
+            "description": "The format of the returned data.",
+            "required": false,
+            "schema": {
+              "type": "string",
+              "enum": [
+                "json",
+                "csv"
+              ],
+              "default": "json"
+            }
+          },
+          {
+            "name": "key",
+            "in": "query",
+            "description": "API key for authentication",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Successful response"
+          }
+        }
+      }
+    },
+    "/ipo-calendar": {
+      "get": {
+        "tags": [
+          "Event Calendars"
+        ],
+        "summary": "Get IPO calendar",
+        "description": "Get upcoming initial public offerings.",
+        "operationId": "getIpoCalendar",
+        "parameters": [
+          {
+            "name": "format",
+            "in": "query",
+            "description": "The format of the returned data.",
+            "required": false,
+            "schema": {
+              "type": "string",
+              "enum": [
+                "json",
+                "csv"
+              ],
+              "default": "json"
+            }
+          },
+          {
+            "name": "key",
+            "in": "query",
+            "description": "API key for authentication",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Successful response"
+          }
+        }
+      }
+    },
+    "/splits-calendar": {
+      "get": {
+        "tags": [
+          "Event Calendars"
+        ],
+        "summary": "Get splits calendar",
+        "description": "Get upcoming stock splits.",
+        "operationId": "getSplitsCalendar",
+        "parameters": [
+          {
+            "name": "format",
+            "in": "query",
+            "description": "The format of the returned data.",
+            "required": false,
+            "schema": {
+              "type": "string",
+              "enum": [
+                "json",
+                "csv"
+              ],
+              "default": "json"
+            }
+          },
+          {
+            "name": "key",
+            "in": "query",
+            "description": "API key for authentication",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Successful response"
+          }
+        }
+      }
+    },
+    "/dividends-calendar": {
+      "get": {
+        "tags": [
+          "Event Calendars"
+        ],
+        "summary": "Get dividends calendar",
+        "description": "Get upcoming dividend payments.",
+        "operationId": "getDividendsCalendar",
+        "parameters": [
+          {
+            "name": "format",
+            "in": "query",
+            "description": "The format of the returned data.",
+            "required": false,
+            "schema": {
+              "type": "string",
+              "enum": [
+                "json",
+                "csv"
+              ],
+              "default": "json"
+            }
+          },
+          {
+            "name": "key",
+            "in": "query",
+            "description": "API key for authentication",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Successful response"
+          }
+        }
+      }
+    },
+    "/economic-calendar": {
+      "get": {
+        "tags": [
+          "Event Calendars"
+        ],
+        "summary": "Get economic calendar",
+        "description": "Get upcoming economic events and releases.",
+        "operationId": "getEconomicCalendar",
+        "parameters": [
+          {
+            "name": "format",
+            "in": "query",
+            "description": "The format of the returned data.",
+            "required": false,
+            "schema": {
+              "type": "string",
+              "enum": [
+                "json",
+                "csv"
+              ],
+              "default": "json"
+            }
+          },
+          {
+            "name": "key",
+            "in": "query",
+            "description": "API key for authentication",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Successful response"
+          }
+        }
+      }
+    },
+    "/insider-transactions": {
+      "get": {
+        "tags": [
+          "Insider Trading"
+        ],
+        "summary": "Get insider transactions",
+        "description": "Get insider trading transaction data.",
+        "operationId": "getInsiderTransactions",
+        "parameters": [
+          {
+            "name": "identifier",
+            "in": "query",
+            "description": "The trading symbol.",
+            "required": false,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "format",
+            "in": "query",
+            "description": "The format of the returned data.",
+            "required": false,
+            "schema": {
+              "type": "string",
+              "enum": [
+                "json",
+                "csv"
+              ],
+              "default": "json"
+            }
+          },
+          {
+            "name": "key",
+            "in": "query",
+            "description": "API key for authentication",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Successful response"
+          }
+        }
+      }
+    },
+    "/proposed-sales": {
+      "get": {
+        "tags": [
+          "Insider Trading"
+        ],
+        "summary": "Get proposed sales",
+        "description": "Get proposed insider sales data.",
+        "operationId": "getProposedSales",
+        "parameters": [
+          {
+            "name": "format",
+            "in": "query",
+            "description": "The format of the returned data.",
+            "required": false,
+            "schema": {
+              "type": "string",
+              "enum": [
+                "json",
+                "csv"
+              ],
+              "default": "json"
+            }
+          },
+          {
+            "name": "key",
+            "in": "query",
+            "description": "API key for authentication",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Successful response"
+          }
+        }
+      }
+    },
+    "/senate-trading": {
+      "get": {
+        "tags": [
+          "Insider Trading"
+        ],
+        "summary": "Get Senate trading",
+        "description": "Get Senate member trading data.",
+        "operationId": "getSenateTrading",
+        "parameters": [
+          {
+            "name": "format",
+            "in": "query",
+            "description": "The format of the returned data.",
+            "required": false,
+            "schema": {
+              "type": "string",
+              "enum": [
+                "json",
+                "csv"
+              ],
+              "default": "json"
+            }
+          },
+          {
+            "name": "key",
+            "in": "query",
+            "description": "API key for authentication",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Successful response"
+          }
+        }
+      }
+    },
+    "/house-trading": {
+      "get": {
+        "tags": [
+          "Insider Trading"
+        ],
+        "summary": "Get House trading",
+        "description": "Get House of Representatives member trading data.",
+        "operationId": "getHouseTrading",
+        "parameters": [
+          {
+            "name": "format",
+            "in": "query",
+            "description": "The format of the returned data.",
+            "required": false,
+            "schema": {
+              "type": "string",
+              "enum": [
+                "json",
+                "csv"
+              ],
+              "default": "json"
+            }
+          },
+          {
+            "name": "key",
+            "in": "query",
+            "description": "API key for authentication",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Successful response"
+          }
+        }
+      }
+    },
+    "/institutional-investors": {
+      "get": {
+        "tags": [
+          "Institutional Trading"
+        ],
+        "summary": "Get institutional investors",
+        "description": "Get a list of institutional investors.",
+        "operationId": "getInstitutionalInvestors",
+        "parameters": [
+          {
+            "name": "format",
+            "in": "query",
+            "description": "The format of the returned data.",
+            "required": false,
+            "schema": {
+              "type": "string",
+              "enum": [
+                "json",
+                "csv"
+              ],
+              "default": "json"
+            }
+          },
+          {
+            "name": "key",
+            "in": "query",
+            "description": "API key for authentication",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Successful response"
+          }
+        }
+      }
+    },
+    "/institutional-holdings": {
+      "get": {
+        "tags": [
+          "Institutional Trading"
+        ],
+        "summary": "Get institutional holdings",
+        "description": "Get institutional holdings data for a security.",
+        "operationId": "getInstitutionalHoldings",
+        "parameters": [
+          {
+            "name": "identifier",
+            "in": "query",
+            "description": "The trading symbol.",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "format",
+            "in": "query",
+            "description": "The format of the returned data.",
+            "required": false,
+            "schema": {
+              "type": "string",
+              "enum": [
+                "json",
+                "csv"
+              ],
+              "default": "json"
+            }
+          },
+          {
+            "name": "key",
+            "in": "query",
+            "description": "API key for authentication",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Successful response"
+          }
+        }
+      }
+    },
+    "/institutional-portfolio-statistics": {
+      "get": {
+        "tags": [
+          "Institutional Trading"
+        ],
+        "summary": "Get institutional portfolio statistics",
+        "description": "Get portfolio statistics for institutional investors.",
+        "operationId": "getInstitutionalPortfolioStatistics",
+        "parameters": [
+          {
+            "name": "format",
+            "in": "query",
+            "description": "The format of the returned data.",
+            "required": false,
+            "schema": {
+              "type": "string",
+              "enum": [
+                "json",
+                "csv"
+              ],
+              "default": "json"
+            }
+          },
+          {
+            "name": "key",
+            "in": "query",
+            "description": "API key for authentication",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Successful response"
+          }
+        }
+      }
+    },
+    "/etf-quotes": {
+      "get": {
+        "tags": [
+          "ETF Data"
+        ],
+        "summary": "Get ETF quotes",
+        "description": "Get real-time quotes for ETFs.",
+        "operationId": "getEtfQuotes",
+        "parameters": [
+          {
+            "name": "identifiers",
+            "in": "query",
+            "description": "The ETF symbols (comma-separated).",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "format",
+            "in": "query",
+            "description": "The format of the returned data.",
+            "required": false,
+            "schema": {
+              "type": "string",
+              "enum": [
+                "json",
+                "csv"
+              ],
+              "default": "json"
+            }
+          },
+          {
+            "name": "key",
+            "in": "query",
+            "description": "API key for authentication",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Successful response"
+          }
+        }
+      }
+    },
+    "/etf-prices": {
+      "get": {
+        "tags": [
+          "ETF Data"
+        ],
+        "summary": "Get ETF prices",
+        "description": "Get historical prices for ETFs.",
+        "operationId": "getEtfPrices",
+        "parameters": [
+          {
+            "name": "identifier",
+            "in": "query",
+            "description": "The ETF symbol.",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "format",
+            "in": "query",
+            "description": "The format of the returned data.",
+            "required": false,
+            "schema": {
+              "type": "string",
+              "enum": [
+                "json",
+                "csv"
+              ],
+              "default": "json"
+            }
+          },
+          {
+            "name": "key",
+            "in": "query",
+            "description": "API key for authentication",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Successful response"
+          }
+        }
+      }
+    },
+    "/etf-holdings": {
+      "get": {
+        "tags": [
+          "ETF Data"
+        ],
+        "summary": "Get ETF holdings",
+        "description": "Get holdings data for an ETF.",
+        "operationId": "getEtfHoldings",
+        "parameters": [
+          {
+            "name": "identifier",
+            "in": "query",
+            "description": "The ETF symbol.",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "format",
+            "in": "query",
+            "description": "The format of the returned data.",
+            "required": false,
+            "schema": {
+              "type": "string",
+              "enum": [
+                "json",
+                "csv"
+              ],
+              "default": "json"
+            }
+          },
+          {
+            "name": "key",
+            "in": "query",
+            "description": "API key for authentication",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Successful response"
+          }
+        }
+      }
+    },
+    "/mutual-fund-symbols": {
+      "get": {
+        "tags": [
+          "Mutual Funds"
+        ],
+        "summary": "Get mutual fund symbols",
+        "description": "Get a list of mutual fund symbols.",
+        "operationId": "getMutualFundSymbols",
+        "parameters": [
+          {
+            "name": "format",
+            "in": "query",
+            "description": "The format of the returned data.",
+            "required": false,
+            "schema": {
+              "type": "string",
+              "enum": [
+                "json",
+                "csv"
+              ],
+              "default": "json"
+            }
+          },
+          {
+            "name": "key",
+            "in": "query",
+            "description": "API key for authentication",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Successful response"
+          }
+        }
+      }
+    },
+    "/mutual-fund-holdings": {
+      "get": {
+        "tags": [
+          "Mutual Funds"
+        ],
+        "summary": "Get mutual fund holdings",
+        "description": "Get holdings data for a mutual fund.",
+        "operationId": "getMutualFundHoldings",
+        "parameters": [
+          {
+            "name": "identifier",
+            "in": "query",
+            "description": "The mutual fund symbol.",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "format",
+            "in": "query",
+            "description": "The format of the returned data.",
+            "required": false,
+            "schema": {
+              "type": "string",
+              "enum": [
+                "json",
+                "csv"
+              ],
+              "default": "json"
+            }
+          },
+          {
+            "name": "key",
+            "in": "query",
+            "description": "API key for authentication",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Successful response"
+          }
+        }
+      }
+    },
+    "/mutual-fund-statistics": {
+      "get": {
+        "tags": [
+          "Mutual Funds"
+        ],
+        "summary": "Get mutual fund statistics",
+        "description": "Get statistical data for a mutual fund.",
+        "operationId": "getMutualFundStatistics",
+        "parameters": [
+          {
+            "name": "identifier",
+            "in": "query",
+            "description": "The mutual fund symbol.",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "format",
+            "in": "query",
+            "description": "The format of the returned data.",
+            "required": false,
+            "schema": {
+              "type": "string",
+              "enum": [
+                "json",
+                "csv"
+              ],
+              "default": "json"
+            }
+          },
+          {
+            "name": "key",
+            "in": "query",
+            "description": "API key for authentication",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Successful response"
+          }
+        }
+      }
+    },
+    "/esg-scores": {
+      "get": {
+        "tags": [
+          "ESG Data"
+        ],
+        "summary": "Get ESG scores",
+        "description": "Get Environmental, Social, and Governance (ESG) scores for companies.",
+        "operationId": "getEsgScores",
+        "parameters": [
+          {
+            "name": "identifier",
+            "in": "query",
+            "description": "The trading symbol.",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "format",
+            "in": "query",
+            "description": "The format of the returned data.",
+            "required": false,
+            "schema": {
+              "type": "string",
+              "enum": [
+                "json",
+                "csv"
+              ],
+              "default": "json"
+            }
+          },
+          {
+            "name": "key",
+            "in": "query",
+            "description": "API key for authentication",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Successful response"
+          }
+        }
+      }
+    },
+    "/esg-ratings": {
+      "get": {
+        "tags": [
+          "ESG Data"
+        ],
+        "summary": "Get ESG ratings",
+        "description": "Get Environmental, Social, and Governance (ESG) ratings for companies.",
+        "operationId": "getEsgRatings",
+        "parameters": [
+          {
+            "name": "identifier",
+            "in": "query",
+            "description": "The trading symbol.",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "format",
+            "in": "query",
+            "description": "The format of the returned data.",
+            "required": false,
+            "schema": {
+              "type": "string",
+              "enum": [
+                "json",
+                "csv"
+              ],
+              "default": "json"
+            }
+          },
+          {
+            "name": "key",
+            "in": "query",
+            "description": "API key for authentication",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Successful response"
+          }
+        }
+      }
+    },
+    "/industry-esg-scores": {
+      "get": {
+        "tags": [
+          "ESG Data"
+        ],
+        "summary": "Get industry ESG scores",
+        "description": "Get ESG scores aggregated by industry.",
+        "operationId": "getIndustryEsgScores",
+        "parameters": [
+          {
+            "name": "format",
+            "in": "query",
+            "description": "The format of the returned data.",
+            "required": false,
+            "schema": {
+              "type": "string",
+              "enum": [
+                "json",
+                "csv"
+              ],
+              "default": "json"
+            }
+          },
+          {
+            "name": "key",
+            "in": "query",
+            "description": "API key for authentication",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Successful response"
+          }
+        }
+      }
+    },
+    "/investment-adviser-names": {
+      "get": {
+        "tags": [
+          "Investment Advisers"
+        ],
+        "summary": "Get investment adviser names",
+        "description": "Get a list of investment adviser names.",
+        "operationId": "getInvestmentAdviserNames",
+        "parameters": [
+          {
+            "name": "format",
+            "in": "query",
+            "description": "The format of the returned data.",
+            "required": false,
+            "schema": {
+              "type": "string",
+              "enum": [
+                "json",
+                "csv"
+              ],
+              "default": "json"
+            }
+          },
+          {
+            "name": "key",
+            "in": "query",
+            "description": "API key for authentication",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Successful response"
+          }
+        }
+      }
+    },
+    "/investment-adviser-information": {
+      "get": {
+        "tags": [
+          "Investment Advisers"
+        ],
+        "summary": "Get investment adviser information",
+        "description": "Get detailed information about investment advisers.",
+        "operationId": "getInvestmentAdviserInformation",
+        "parameters": [
+          {
+            "name": "format",
+            "in": "query",
+            "description": "The format of the returned data.",
+            "required": false,
+            "schema": {
+              "type": "string",
+              "enum": [
+                "json",
+                "csv"
+              ],
+              "default": "json"
+            }
+          },
+          {
+            "name": "key",
+            "in": "query",
+            "description": "API key for authentication",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Successful response"
+          }
+        }
+      }
+    },
+    "/earnings-releases": {
+      "get": {
+        "tags": [
+          "Miscellaneous Data"
+        ],
+        "summary": "Get earnings releases",
+        "description": "Get earnings release data for companies.",
+        "operationId": "getEarningsReleases",
+        "parameters": [
+          {
+            "name": "identifier",
+            "in": "query",
+            "description": "The trading symbol.",
+            "required": false,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "format",
+            "in": "query",
+            "description": "The format of the returned data.",
+            "required": false,
+            "schema": {
+              "type": "string",
+              "enum": [
+                "json",
+                "csv"
+              ],
+              "default": "json"
+            }
+          },
+          {
+            "name": "key",
+            "in": "query",
+            "description": "API key for authentication",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Successful response"
+          }
+        }
+      }
+    },
+    "/initial-public-offerings": {
+      "get": {
+        "tags": [
+          "Miscellaneous Data"
+        ],
+        "summary": "Get initial public offerings",
+        "description": "Get data on initial public offerings (IPOs).",
+        "operationId": "getInitialPublicOfferings",
+        "parameters": [
+          {
+            "name": "format",
+            "in": "query",
+            "description": "The format of the returned data.",
+            "required": false,
+            "schema": {
+              "type": "string",
+              "enum": [
+                "json",
+                "csv"
+              ],
+              "default": "json"
+            }
+          },
+          {
+            "name": "key",
+            "in": "query",
+            "description": "API key for authentication",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Successful response"
+          }
+        }
+      }
+    },
+    "/stock-splits": {
+      "get": {
+        "tags": [
+          "Miscellaneous Data"
+        ],
+        "summary": "Get stock splits",
+        "description": "Get stock split data.",
+        "operationId": "getStockSplits",
+        "parameters": [
+          {
+            "name": "identifier",
+            "in": "query",
+            "description": "The trading symbol.",
+            "required": false,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "format",
+            "in": "query",
+            "description": "The format of the returned data.",
+            "required": false,
+            "schema": {
+              "type": "string",
+              "enum": [
+                "json",
+                "csv"
+              ],
+              "default": "json"
+            }
+          },
+          {
+            "name": "key",
+            "in": "query",
+            "description": "API key for authentication",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Successful response"
+          }
+        }
+      }
+    },
+    "/dividends": {
+      "get": {
+        "tags": [
+          "Miscellaneous Data"
+        ],
+        "summary": "Get dividends",
+        "description": "Get dividend payment data.",
+        "operationId": "getDividends",
+        "parameters": [
+          {
+            "name": "identifier",
+            "in": "query",
+            "description": "The trading symbol.",
+            "required": false,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "format",
+            "in": "query",
+            "description": "The format of the returned data.",
+            "required": false,
+            "schema": {
+              "type": "string",
+              "enum": [
+                "json",
+                "csv"
+              ],
+              "default": "json"
+            }
+          },
+          {
+            "name": "key",
+            "in": "query",
+            "description": "API key for authentication",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Successful response"
+          }
+        }
+      }
+    },
+    "/short-interest": {
+      "get": {
+        "tags": [
+          "Miscellaneous Data"
+        ],
+        "summary": "Get short interest",
+        "description": "Get short interest data for securities.",
+        "operationId": "getShortInterest",
+        "parameters": [
+          {
+            "name": "identifier",
+            "in": "query",
+            "description": "The trading symbol.",
+            "required": false,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "format",
+            "in": "query",
+            "description": "The format of the returned data.",
+            "required": false,
+            "schema": {
+              "type": "string",
+              "enum": [
+                "json",
+                "csv"
+              ],
+              "default": "json"
+            }
+          },
+          {
+            "name": "key",
+            "in": "query",
+            "description": "API key for authentication",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Successful response"
+          }
+        }
+      }
+    }
+  },
+  "components": {
+    "securitySchemes": {
+      "ApiKeyAuth": {
+        "type": "apiKey",
+        "in": "query",
+        "name": "key",
+        "description": "API key for authentication. Append ?key=API_KEY to each request URL or &key=API_KEY if other query parameters exist."
+      }
+    }
+  },
+  "tags": [
+    {
+      "name": "Symbol Lists",
+      "description": "Endpoints for retrieving lists of trading symbols for various security types"
+    },
+    {
+      "name": "Market Data",
+      "description": "Endpoints for retrieving market data including quotes, prices, and trading volumes"
+    },
+    {
+      "name": "Market Indexes",
+      "description": "Endpoints for retrieving market index data"
+    },
+    {
+      "name": "Derivatives Data",
+      "description": "Endpoints for retrieving options and futures data"
+    },
+    {
+      "name": "Crypto Currencies",
+      "description": "Endpoints for retrieving cryptocurrency data"
+    },
+    {
+      "name": "Forex Data",
+      "description": "Endpoints for retrieving foreign exchange data"
+    },
+    {
+      "name": "Basic Information",
+      "description": "Endpoints for retrieving company and securities information"
+    },
+    {
+      "name": "Financial Statements",
+      "description": "Endpoints for retrieving financial statement data"
+    },
+    {
+      "name": "Financial Ratios",
+      "description": "Endpoints for retrieving financial ratio data"
+    },
+    {
+      "name": "Market News",
+      "description": "Endpoints for retrieving news and press releases"
+    },
+    {
+      "name": "Event Calendars",
+      "description": "Endpoints for retrieving upcoming financial events"
+    },
+    {
+      "name": "Insider Trading",
+      "description": "Endpoints for retrieving insider trading data"
+    },
+    {
+      "name": "Institutional Trading",
+      "description": "Endpoints for retrieving institutional investor data"
+    },
+    {
+      "name": "ETF Data",
+      "description": "Endpoints for retrieving ETF-specific data"
+    },
+    {
+      "name": "Mutual Funds",
+      "description": "Endpoints for retrieving mutual fund data"
+    },
+    {
+      "name": "ESG Data",
+      "description": "Endpoints for retrieving Environmental, Social, and Governance data"
+    },
+    {
+      "name": "Investment Advisers",
+      "description": "Endpoints for retrieving investment adviser information"
+    },
+    {
+      "name": "Miscellaneous Data",
+      "description": "Endpoints for various other financial data"
+    }
+  ]
+}

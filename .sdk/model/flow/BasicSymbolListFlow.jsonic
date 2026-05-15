@@ -1,0 +1,22 @@
+# BasicSymbolListFlow
+
+main: kit: flow: BasicSymbolListFlow:
+{
+  entity: "symbol_list",
+  kind: "basic",
+  name: "BasicSymbolListFlow",
+  step: [
+    {
+      op: "list",
+      valid: [
+        {
+          apply: "ItemExists",
+          def: {
+            ref: "symbol_list_ref01"
+          }
+        }
+      ]
+    }
+  ],
+  "key$": "BasicSymbolListFlow"
+}

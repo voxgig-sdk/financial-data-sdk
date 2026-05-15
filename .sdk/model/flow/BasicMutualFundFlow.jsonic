@@ -1,0 +1,28 @@
+# BasicMutualFundFlow
+
+main: kit: flow: BasicMutualFundFlow:
+{
+  entity: "mutual_fund",
+  kind: "basic",
+  name: "BasicMutualFundFlow",
+  step: [
+    {
+      input: {
+        ref: "mutual_fund_ref01",
+        srcdatavar: "mutual_fund_ref01_data",
+        suffix: "_dt0"
+      }
+
+      op: "load",
+      valid: [
+        {
+          apply: "TextFieldMark",
+          def: {
+            mark: "Mark01-mutual_fund_ref01"
+          }
+        }
+      ]
+    }
+  ],
+  "key$": "BasicMutualFundFlow"
+}

@@ -1,0 +1,28 @@
+# BasicMiscellaneousDataFlow
+
+main: kit: flow: BasicMiscellaneousDataFlow:
+{
+  entity: "miscellaneous_data",
+  kind: "basic",
+  name: "BasicMiscellaneousDataFlow",
+  step: [
+    {
+      input: {
+        ref: "miscellaneous_data_ref01",
+        srcdatavar: "miscellaneous_data_ref01_data",
+        suffix: "_dt0"
+      }
+
+      op: "load",
+      valid: [
+        {
+          apply: "TextFieldMark",
+          def: {
+            mark: "Mark01-miscellaneous_data_ref01"
+          }
+        }
+      ]
+    }
+  ],
+  "key$": "BasicMiscellaneousDataFlow"
+}

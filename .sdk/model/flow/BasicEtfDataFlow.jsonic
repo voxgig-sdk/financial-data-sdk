@@ -1,0 +1,28 @@
+# BasicEtfDataFlow
+
+main: kit: flow: BasicEtfDataFlow:
+{
+  entity: "etf_data",
+  kind: "basic",
+  name: "BasicEtfDataFlow",
+  step: [
+    {
+      input: {
+        ref: "etf_data_ref01",
+        srcdatavar: "etf_data_ref01_data",
+        suffix: "_dt0"
+      }
+
+      op: "load",
+      valid: [
+        {
+          apply: "TextFieldMark",
+          def: {
+            mark: "Mark01-etf_data_ref01"
+          }
+        }
+      ]
+    }
+  ],
+  "key$": "BasicEtfDataFlow"
+}

@@ -1,0 +1,505 @@
+# Entity: market_data
+
+main: kit: entity: market_data: {
+
+  alias: field: {}
+
+  fields: [
+    {
+      name: "change"
+      req: false
+      type: "`$NUMBER`"
+    }
+    {
+      name: "close"
+      req: false
+      type: "`$NUMBER`"
+    }
+    {
+      name: "date"
+      req: false
+      type: "`$STRING`"
+    }
+    {
+      name: "high"
+      req: false
+      type: "`$NUMBER`"
+    }
+    {
+      name: "low"
+      req: false
+      type: "`$NUMBER`"
+    }
+    {
+      name: "open"
+      req: false
+      type: "`$NUMBER`"
+    }
+    {
+      name: "percentage_change"
+      req: false
+      type: "`$NUMBER`"
+    }
+    {
+      name: "price"
+      req: false
+      type: "`$NUMBER`"
+    }
+    {
+      name: "registrant_name"
+      req: false
+      type: "`$STRING`"
+    }
+    {
+      name: "time"
+      req: false
+      type: "`$STRING`"
+    }
+    {
+      name: "trading_symbol"
+      req: false
+      type: "`$STRING`"
+    }
+    {
+      name: "volume"
+      req: false
+      type: "`$NUMBER`"
+    }
+  ]
+
+  name: "market_data"
+  op: {
+    list: {
+      name: "list"
+      points: [
+        {
+          args: {
+            query: [
+              {
+                example: "2020-01-15"
+                kind: "query"
+                name: "date"
+                orig: "date"
+                reqd: true
+                type: "`$STRING`"
+              }
+              {
+                example: "json"
+                kind: "query"
+                name: "format"
+                orig: "format"
+                reqd: false
+                type: "`$STRING`"
+              }
+              {
+                example: "MSFT"
+                kind: "query"
+                name: "identifier"
+                orig: "identifier"
+                reqd: true
+                type: "`$STRING`"
+              }
+              {
+                kind: "query"
+                name: "key"
+                orig: "key"
+                reqd: true
+                type: "`$STRING`"
+              }
+              {
+                example: 300
+                kind: "query"
+                name: "offset"
+                orig: "offset"
+                reqd: false
+                type: "`$INTEGER`"
+              }
+            ]
+          }
+          method: "GET"
+          orig: "/minute-prices"
+          parts: [
+            "minute-prices"
+          ]
+          select: {
+            exist: [
+              "date"
+              "format"
+              "identifier"
+              "key"
+              "offset"
+            ]
+          }
+          transform: {
+            req: "`reqdata`"
+            res: "`body`"
+          }
+        }
+        {
+          args: {
+            query: [
+              {
+                example: "json"
+                kind: "query"
+                name: "format"
+                orig: "format"
+                reqd: false
+                type: "`$STRING`"
+              }
+              {
+                example: "SHEL.L"
+                kind: "query"
+                name: "identifier"
+                orig: "identifier"
+                reqd: true
+                type: "`$STRING`"
+              }
+              {
+                kind: "query"
+                name: "key"
+                orig: "key"
+                reqd: true
+                type: "`$STRING`"
+              }
+              {
+                example: 300
+                kind: "query"
+                name: "offset"
+                orig: "offset"
+                reqd: false
+                type: "`$INTEGER`"
+              }
+            ]
+          }
+          method: "GET"
+          orig: "/international-stock-prices"
+          parts: [
+            "international-stock-prices"
+          ]
+          select: {
+            exist: [
+              "format"
+              "identifier"
+              "key"
+              "offset"
+            ]
+          }
+          transform: {
+            req: "`reqdata`"
+            res: "`body`"
+          }
+        }
+        {
+          args: {
+            query: [
+              {
+                example: "json"
+                kind: "query"
+                name: "format"
+                orig: "format"
+                reqd: false
+                type: "`$STRING`"
+              }
+              {
+                kind: "query"
+                name: "identifier"
+                orig: "identifier"
+                reqd: true
+                type: "`$STRING`"
+              }
+              {
+                kind: "query"
+                name: "key"
+                orig: "key"
+                reqd: true
+                type: "`$STRING`"
+              }
+              {
+                example: 0
+                kind: "query"
+                name: "offset"
+                orig: "offset"
+                reqd: false
+                type: "`$INTEGER`"
+              }
+            ]
+          }
+          method: "GET"
+          orig: "/latest-prices"
+          parts: [
+            "latest-prices"
+          ]
+          select: {
+            exist: [
+              "format"
+              "identifier"
+              "key"
+              "offset"
+            ]
+          }
+          transform: {
+            req: "`reqdata`"
+            res: "`body`"
+          }
+        }
+        {
+          args: {
+            query: [
+              {
+                example: "json"
+                kind: "query"
+                name: "format"
+                orig: "format"
+                reqd: false
+                type: "`$STRING`"
+              }
+              {
+                example: "MSFT"
+                kind: "query"
+                name: "identifier"
+                orig: "identifier"
+                reqd: true
+                type: "`$STRING`"
+              }
+              {
+                kind: "query"
+                name: "key"
+                orig: "key"
+                reqd: true
+                type: "`$STRING`"
+              }
+              {
+                example: 300
+                kind: "query"
+                name: "offset"
+                orig: "offset"
+                reqd: false
+                type: "`$INTEGER`"
+              }
+            ]
+          }
+          method: "GET"
+          orig: "/stock-prices"
+          parts: [
+            "stock-prices"
+          ]
+          select: {
+            exist: [
+              "format"
+              "identifier"
+              "key"
+              "offset"
+            ]
+          }
+          transform: {
+            req: "`reqdata`"
+            res: "`body`"
+          }
+        }
+        {
+          args: {
+            query: [
+              {
+                example: "json"
+                kind: "query"
+                name: "format"
+                orig: "format"
+                reqd: false
+                type: "`$STRING`"
+              }
+              {
+                example: "MSFT,AAPL"
+                kind: "query"
+                name: "identifier"
+                orig: "identifier"
+                reqd: true
+                type: "`$STRING`"
+              }
+              {
+                kind: "query"
+                name: "key"
+                orig: "key"
+                reqd: true
+                type: "`$STRING`"
+              }
+            ]
+          }
+          method: "GET"
+          orig: "/stock-quotes"
+          parts: [
+            "stock-quotes"
+          ]
+          select: {
+            exist: [
+              "format"
+              "identifier"
+              "key"
+            ]
+          }
+          transform: {
+            req: "`reqdata`"
+            res: "`body`"
+          }
+        }
+      ]
+    }
+    load: {
+      name: "load"
+      points: [
+        {
+          args: {
+            query: [
+              {
+                example: "json"
+                kind: "query"
+                name: "format"
+                orig: "format"
+                reqd: false
+                type: "`$STRING`"
+              }
+              {
+                kind: "query"
+                name: "identifier"
+                orig: "identifier"
+                reqd: true
+                type: "`$STRING`"
+              }
+              {
+                kind: "query"
+                name: "key"
+                orig: "key"
+                reqd: true
+                type: "`$STRING`"
+              }
+              {
+                example: 0
+                kind: "query"
+                name: "offset"
+                orig: "offset"
+                reqd: false
+                type: "`$INTEGER`"
+              }
+            ]
+          }
+          method: "GET"
+          orig: "/commodity-prices"
+          parts: [
+            "commodity-prices"
+          ]
+          select: {
+            exist: [
+              "format"
+              "identifier"
+              "key"
+              "offset"
+            ]
+          }
+          transform: {
+            req: "`reqdata`"
+            res: "`body`"
+          }
+        }
+        {
+          args: {
+            query: [
+              {
+                example: "json"
+                kind: "query"
+                name: "format"
+                orig: "format"
+                reqd: false
+                type: "`$STRING`"
+              }
+              {
+                kind: "query"
+                name: "identifier"
+                orig: "identifier"
+                reqd: true
+                type: "`$STRING`"
+              }
+              {
+                kind: "query"
+                name: "key"
+                orig: "key"
+                reqd: true
+                type: "`$STRING`"
+              }
+              {
+                example: 0
+                kind: "query"
+                name: "offset"
+                orig: "offset"
+                reqd: false
+                type: "`$INTEGER`"
+              }
+            ]
+          }
+          method: "GET"
+          orig: "/otc-prices"
+          parts: [
+            "otc-prices"
+          ]
+          select: {
+            exist: [
+              "format"
+              "identifier"
+              "key"
+              "offset"
+            ]
+          }
+          transform: {
+            req: "`reqdata`"
+            res: "`body`"
+          }
+        }
+        {
+          args: {
+            query: [
+              {
+                example: "json"
+                kind: "query"
+                name: "format"
+                orig: "format"
+                reqd: false
+                type: "`$STRING`"
+              }
+              {
+                kind: "query"
+                name: "identifier"
+                orig: "identifier"
+                reqd: true
+                type: "`$STRING`"
+              }
+              {
+                kind: "query"
+                name: "key"
+                orig: "key"
+                reqd: true
+                type: "`$STRING`"
+              }
+            ]
+          }
+          method: "GET"
+          orig: "/otc-volume"
+          parts: [
+            "otc-volume"
+          ]
+          select: {
+            exist: [
+              "format"
+              "identifier"
+              "key"
+            ]
+          }
+          transform: {
+            req: "`reqdata`"
+            res: "`body`"
+          }
+        }
+      ]
+    }
+  }
+
+
+
+}

@@ -1,0 +1,28 @@
+# BasicFinancialStatementFlow
+
+main: kit: flow: BasicFinancialStatementFlow:
+{
+  entity: "financial_statement",
+  kind: "basic",
+  name: "BasicFinancialStatementFlow",
+  step: [
+    {
+      input: {
+        ref: "financial_statement_ref01",
+        srcdatavar: "financial_statement_ref01_data",
+        suffix: "_dt0"
+      }
+
+      op: "load",
+      valid: [
+        {
+          apply: "TextFieldMark",
+          def: {
+            mark: "Mark01-financial_statement_ref01"
+          }
+        }
+      ]
+    }
+  ],
+  "key$": "BasicFinancialStatementFlow"
+}

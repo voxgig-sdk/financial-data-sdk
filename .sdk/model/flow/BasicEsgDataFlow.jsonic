@@ -1,0 +1,28 @@
+# BasicEsgDataFlow
+
+main: kit: flow: BasicEsgDataFlow:
+{
+  entity: "esg_data",
+  kind: "basic",
+  name: "BasicEsgDataFlow",
+  step: [
+    {
+      input: {
+        ref: "esg_data_ref01",
+        srcdatavar: "esg_data_ref01_data",
+        suffix: "_dt0"
+      }
+
+      op: "load",
+      valid: [
+        {
+          apply: "TextFieldMark",
+          def: {
+            mark: "Mark01-esg_data_ref01"
+          }
+        }
+      ]
+    }
+  ],
+  "key$": "BasicEsgDataFlow"
+}

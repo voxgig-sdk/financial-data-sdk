@@ -1,0 +1,14 @@
+{
+  "existing": {
+    "mutual_fund": {
+      "MUTUAL_FUND00": {},
+      "MUTUAL_FUND01": {},
+      "MUTUAL_FUND02": {}
+    }
+  },
+  "new": {
+    "mutual_fund": {
+      "mutual_fund_ref01": {}
+    }
+  }
+}

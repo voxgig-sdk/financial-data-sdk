@@ -1,0 +1,14 @@
+{
+  "existing": {
+    "crypto_currency": {
+      "CRYPTO_CURRENCY00": {},
+      "CRYPTO_CURRENCY01": {},
+      "CRYPTO_CURRENCY02": {}
+    }
+  },
+  "new": {
+    "crypto_currency": {
+      "crypto_currency_ref01": {}
+    }
+  }
+}

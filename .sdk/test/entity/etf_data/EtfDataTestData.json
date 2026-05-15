@@ -1,0 +1,14 @@
+{
+  "existing": {
+    "etf_data": {
+      "ETF_DATA00": {},
+      "ETF_DATA01": {},
+      "ETF_DATA02": {}
+    }
+  },
+  "new": {
+    "etf_data": {
+      "etf_data_ref01": {}
+    }
+  }
+}

@@ -1,0 +1,28 @@
+# BasicCryptoCurrencyFlow
+
+main: kit: flow: BasicCryptoCurrencyFlow:
+{
+  entity: "crypto_currency",
+  kind: "basic",
+  name: "BasicCryptoCurrencyFlow",
+  step: [
+    {
+      input: {
+        ref: "crypto_currency_ref01",
+        srcdatavar: "crypto_currency_ref01_data",
+        suffix: "_dt0"
+      }
+
+      op: "load",
+      valid: [
+        {
+          apply: "TextFieldMark",
+          def: {
+            mark: "Mark01-crypto_currency_ref01"
+          }
+        }
+      ]
+    }
+  ],
+  "key$": "BasicCryptoCurrencyFlow"
+}

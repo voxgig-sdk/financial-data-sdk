@@ -1,0 +1,28 @@
+# BasicInvestmentAdviserFlow
+
+main: kit: flow: BasicInvestmentAdviserFlow:
+{
+  entity: "investment_adviser",
+  kind: "basic",
+  name: "BasicInvestmentAdviserFlow",
+  step: [
+    {
+      input: {
+        ref: "investment_adviser_ref01",
+        srcdatavar: "investment_adviser_ref01_data",
+        suffix: "_dt0"
+      }
+
+      op: "load",
+      valid: [
+        {
+          apply: "TextFieldMark",
+          def: {
+            mark: "Mark01-investment_adviser_ref01"
+          }
+        }
+      ]
+    }
+  ],
+  "key$": "BasicInvestmentAdviserFlow"
+}

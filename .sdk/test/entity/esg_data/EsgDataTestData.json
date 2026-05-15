@@ -1,0 +1,14 @@
+{
+  "existing": {
+    "esg_data": {
+      "ESG_DATA00": {},
+      "ESG_DATA01": {},
+      "ESG_DATA02": {}
+    }
+  },
+  "new": {
+    "esg_data": {
+      "esg_data_ref01": {}
+    }
+  }
+}
