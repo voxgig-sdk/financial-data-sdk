@@ -1,9 +1,15 @@
 {
   "existing": {
     "derivatives_data": {
-      "DERIVATIVES_DATA00": {},
-      "DERIVATIVES_DATA01": {},
-      "DERIVATIVES_DATA02": {}
+      "DERIVATIVES_DATA00": {
+        "id": "DERIVATIVES_DATA00"
+      },
+      "DERIVATIVES_DATA01": {
+        "id": "DERIVATIVES_DATA01"
+      },
+      "DERIVATIVES_DATA02": {
+        "id": "DERIVATIVES_DATA02"
+      }
     }
   },
   "new": {

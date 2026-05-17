@@ -1,9 +1,9 @@
 package entity
 
 import (
-	"github.com/voxgig-sdk/financial-data-sdk/core"
+	"github.com/voxgig-sdk/financial-data-sdk/go/core"
 
-	vs "github.com/voxgig/struct"
+	vs "github.com/voxgig-sdk/financial-data-sdk/go/utility/struct"
 )
 
 type InsiderTradingEntity struct {

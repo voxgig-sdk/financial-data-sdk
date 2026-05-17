@@ -1,9 +1,15 @@
 {
   "existing": {
     "etf_data": {
-      "ETF_DATA00": {},
-      "ETF_DATA01": {},
-      "ETF_DATA02": {}
+      "ETF_DATA00": {
+        "id": "ETF_DATA00"
+      },
+      "ETF_DATA01": {
+        "id": "ETF_DATA01"
+      },
+      "ETF_DATA02": {
+        "id": "ETF_DATA02"
+      }
     }
   },
   "new": {

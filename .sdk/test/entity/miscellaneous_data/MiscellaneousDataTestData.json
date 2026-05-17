@@ -1,9 +1,15 @@
 {
   "existing": {
     "miscellaneous_data": {
-      "MISCELLANEOUS_DATA00": {},
-      "MISCELLANEOUS_DATA01": {},
-      "MISCELLANEOUS_DATA02": {}
+      "MISCELLANEOUS_DATA00": {
+        "id": "MISCELLANEOUS_DATA00"
+      },
+      "MISCELLANEOUS_DATA01": {
+        "id": "MISCELLANEOUS_DATA01"
+      },
+      "MISCELLANEOUS_DATA02": {
+        "id": "MISCELLANEOUS_DATA02"
+      }
     }
   },
   "new": {

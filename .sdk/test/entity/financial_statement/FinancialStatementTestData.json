@@ -1,9 +1,15 @@
 {
   "existing": {
     "financial_statement": {
-      "FINANCIAL_STATEMENT00": {},
-      "FINANCIAL_STATEMENT01": {},
-      "FINANCIAL_STATEMENT02": {}
+      "FINANCIAL_STATEMENT00": {
+        "id": "FINANCIAL_STATEMENT00"
+      },
+      "FINANCIAL_STATEMENT01": {
+        "id": "FINANCIAL_STATEMENT01"
+      },
+      "FINANCIAL_STATEMENT02": {
+        "id": "FINANCIAL_STATEMENT02"
+      }
     }
   },
   "new": {

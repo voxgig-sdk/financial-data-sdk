@@ -1,7 +1,7 @@
 package feature
 
 import (
-	"github.com/voxgig-sdk/financial-data-sdk/core"
+	"github.com/voxgig-sdk/financial-data-sdk/go/core"
 )
 
 type BaseFeature struct {

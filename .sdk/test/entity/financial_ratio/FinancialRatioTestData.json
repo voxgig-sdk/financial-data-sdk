@@ -1,9 +1,15 @@
 {
   "existing": {
     "financial_ratio": {
-      "FINANCIAL_RATIO00": {},
-      "FINANCIAL_RATIO01": {},
-      "FINANCIAL_RATIO02": {}
+      "FINANCIAL_RATIO00": {
+        "id": "FINANCIAL_RATIO00"
+      },
+      "FINANCIAL_RATIO01": {
+        "id": "FINANCIAL_RATIO01"
+      },
+      "FINANCIAL_RATIO02": {
+        "id": "FINANCIAL_RATIO02"
+      }
     }
   },
   "new": {

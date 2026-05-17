@@ -1,9 +1,15 @@
 {
   "existing": {
     "market_index": {
-      "MARKET_INDEX00": {},
-      "MARKET_INDEX01": {},
-      "MARKET_INDEX02": {}
+      "MARKET_INDEX00": {
+        "id": "MARKET_INDEX00"
+      },
+      "MARKET_INDEX01": {
+        "id": "MARKET_INDEX01"
+      },
+      "MARKET_INDEX02": {
+        "id": "MARKET_INDEX02"
+      }
     }
   },
   "new": {

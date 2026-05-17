@@ -13,7 +13,8 @@
         "registrant_name": "s80",
         "time": "s81",
         "trading_symbol": "s82",
-        "volume": 131
+        "volume": 131,
+        "id": "MARKET_DATA00"
       },
       "MARKET_DATA01": {
         "change": 240,
@@ -27,7 +28,8 @@
         "registrant_name": "sf8",
         "time": "sf9",
         "trading_symbol": "sfa",
-        "volume": 251
+        "volume": 251,
+        "id": "MARKET_DATA01"
       },
       "MARKET_DATA02": {
         "change": 360,
@@ -41,7 +43,8 @@
         "registrant_name": "s170",
         "time": "s171",
         "trading_symbol": "s172",
-        "volume": 371
+        "volume": 371,
+        "id": "MARKET_DATA02"
       }
     }
   },

@@ -1,9 +1,15 @@
 {
   "existing": {
     "mutual_fund": {
-      "MUTUAL_FUND00": {},
-      "MUTUAL_FUND01": {},
-      "MUTUAL_FUND02": {}
+      "MUTUAL_FUND00": {
+        "id": "MUTUAL_FUND00"
+      },
+      "MUTUAL_FUND01": {
+        "id": "MUTUAL_FUND01"
+      },
+      "MUTUAL_FUND02": {
+        "id": "MUTUAL_FUND02"
+      }
     }
   },
   "new": {

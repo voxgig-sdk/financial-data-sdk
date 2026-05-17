@@ -1,9 +1,15 @@
 {
   "existing": {
     "insider_trading": {
-      "INSIDER_TRADING00": {},
-      "INSIDER_TRADING01": {},
-      "INSIDER_TRADING02": {}
+      "INSIDER_TRADING00": {
+        "id": "INSIDER_TRADING00"
+      },
+      "INSIDER_TRADING01": {
+        "id": "INSIDER_TRADING01"
+      },
+      "INSIDER_TRADING02": {
+        "id": "INSIDER_TRADING02"
+      }
     }
   },
   "new": {

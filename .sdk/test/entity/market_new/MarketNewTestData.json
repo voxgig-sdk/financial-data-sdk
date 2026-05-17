@@ -1,9 +1,15 @@
 {
   "existing": {
     "market_new": {
-      "MARKET_NEW00": {},
-      "MARKET_NEW01": {},
-      "MARKET_NEW02": {}
+      "MARKET_NEW00": {
+        "id": "MARKET_NEW00"
+      },
+      "MARKET_NEW01": {
+        "id": "MARKET_NEW01"
+      },
+      "MARKET_NEW02": {
+        "id": "MARKET_NEW02"
+      }
     }
   },
   "new": {

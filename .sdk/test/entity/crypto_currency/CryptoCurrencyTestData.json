@@ -1,9 +1,15 @@
 {
   "existing": {
     "crypto_currency": {
-      "CRYPTO_CURRENCY00": {},
-      "CRYPTO_CURRENCY01": {},
-      "CRYPTO_CURRENCY02": {}
+      "CRYPTO_CURRENCY00": {
+        "id": "CRYPTO_CURRENCY00"
+      },
+      "CRYPTO_CURRENCY01": {
+        "id": "CRYPTO_CURRENCY01"
+      },
+      "CRYPTO_CURRENCY02": {
+        "id": "CRYPTO_CURRENCY02"
+      }
     }
   },
   "new": {

@@ -1,9 +1,15 @@
 {
   "existing": {
     "institutional_trading": {
-      "INSTITUTIONAL_TRADING00": {},
-      "INSTITUTIONAL_TRADING01": {},
-      "INSTITUTIONAL_TRADING02": {}
+      "INSTITUTIONAL_TRADING00": {
+        "id": "INSTITUTIONAL_TRADING00"
+      },
+      "INSTITUTIONAL_TRADING01": {
+        "id": "INSTITUTIONAL_TRADING01"
+      },
+      "INSTITUTIONAL_TRADING02": {
+        "id": "INSTITUTIONAL_TRADING02"
+      }
     }
   },
   "new": {

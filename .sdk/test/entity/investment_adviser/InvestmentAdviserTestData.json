@@ -1,9 +1,15 @@
 {
   "existing": {
     "investment_adviser": {
-      "INVESTMENT_ADVISER00": {},
-      "INVESTMENT_ADVISER01": {},
-      "INVESTMENT_ADVISER02": {}
+      "INVESTMENT_ADVISER00": {
+        "id": "INVESTMENT_ADVISER00"
+      },
+      "INVESTMENT_ADVISER01": {
+        "id": "INVESTMENT_ADVISER01"
+      },
+      "INVESTMENT_ADVISER02": {
+        "id": "INVESTMENT_ADVISER02"
+      }
     }
   },
   "new": {

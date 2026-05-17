@@ -1,6 +1,6 @@
 package utility
 
-import "github.com/voxgig-sdk/financial-data-sdk/core"
+import "github.com/voxgig-sdk/financial-data-sdk/go/core"
 
 func prepareBodyUtil(ctx *core.Context) any {
 	op := ctx.Op

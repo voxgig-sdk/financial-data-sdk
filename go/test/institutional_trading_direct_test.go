@@ -6,8 +6,8 @@ import (
 	"strings"
 	"testing"
 
-	sdk "github.com/voxgig-sdk/financial-data-sdk"
-	"github.com/voxgig-sdk/financial-data-sdk/core"
+	sdk "github.com/voxgig-sdk/financial-data-sdk/go"
+	"github.com/voxgig-sdk/financial-data-sdk/go/core"
 )
 
 func TestInstitutionalTradingDirect(t *testing.T) {

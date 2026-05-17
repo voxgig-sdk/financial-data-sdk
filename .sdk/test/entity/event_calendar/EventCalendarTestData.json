@@ -1,9 +1,15 @@
 {
   "existing": {
     "event_calendar": {
-      "EVENT_CALENDAR00": {},
-      "EVENT_CALENDAR01": {},
-      "EVENT_CALENDAR02": {}
+      "EVENT_CALENDAR00": {
+        "id": "EVENT_CALENDAR00"
+      },
+      "EVENT_CALENDAR01": {
+        "id": "EVENT_CALENDAR01"
+      },
+      "EVENT_CALENDAR02": {
+        "id": "EVENT_CALENDAR02"
+      }
     }
   },
   "new": {
