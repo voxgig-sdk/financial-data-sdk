@@ -68,14 +68,12 @@ function symbol_list_direct_setup($mockres)
     $env = Runner::env_override([
         "FINANCIALDATA_TEST_SYMBOL_LIST_ENTID" => [],
         "FINANCIALDATA_TEST_LIVE" => "FALSE",
-        "FINANCIALDATA_APIKEY" => "NONE",
     ]);
 
     $live = $env["FINANCIALDATA_TEST_LIVE"] === "TRUE";
 
     if ($live) {
         $merged_opts = [
-            "apikey" => $env["FINANCIALDATA_APIKEY"],
         ];
         $client = new FinancialDataSDK($merged_opts);
         return [

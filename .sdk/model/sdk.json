@@ -16,7 +16,34 @@
           }
         ],
         "title": "Financial Data API",
-        "version": "1.0.0"
+        "version": "1.0.0",
+        "tagline": "Stock, ETF, crypto, forex, options, futures and fundamentals across US and international markets from a single REST API",
+        "homepage": "https://financialdata.net",
+        "docs_url": "https://financialdata.net/documentation",
+        "license_short": "Tiered subscription (Free, Standard, Premium); API key required.",
+        "license_md": "- Operated commercially by financialdata.net with Free, Standard and Premium tiers\n- Requires an API key, passed as a `key` query parameter on every request\n- Pricing, redistribution rules and per-tier quotas are governed by the financialdata.net terms of service\n- CORS is disabled, so requests should be made from a backend rather than directly from a browser",
+        "about_md": "[Financial Data API](https://financialdata.net) is a commercial REST service that aggregates market data, company fundamentals and alternative datasets for equities, ETFs, mutual funds, options, futures, cryptocurrencies and forex pairs. It covers both US-listed and international securities through a single endpoint surface at `https://financialdata.net/api/v1`.\n\nWhat you get from the API:\n\n- Symbol catalogues for stocks, international stocks, ETFs, commodities, OTC, indexes, options, futures, crypto and forex\n- Real-time and historical quotes and prices, including minute bars for stocks, crypto and forex\n- Company basics, key metrics, market cap, employee counts, executive compensation and securities information\n- Income statements, balance sheets and cash flow statements for US and international issuers\n- Financial ratios across liquidity, solvency, efficiency, profitability and valuation\n- Option chains with Greeks, plus futures prices\n- Event calendars (earnings, IPOs, dividends), press releases and SEC/Fed releases\n- Insider trading, institutional holdings, ETF and mutual fund holdings, ESG scores and investment adviser records\n\nAuthentication is via an API key appended as `?key=API_KEY` (or `&key=API_KEY` when other parameters are present). Most list endpoints return 300-500 records per call and support an `offset` parameter for pagination. CORS is disabled on the service.",
+        "entity_desc": {
+          "basic_information": "Company-level reference data such as profile, key metrics, market cap, employee count and executive compensation.",
+          "crypto_currency": "Cryptocurrency symbols, metadata, quotes and historical/minute prices.",
+          "derivatives_data": "Option chains with prices and Greeks, plus futures symbols and prices.",
+          "esg_data": "Environmental, social and governance ratings and scores for covered companies.",
+          "etf_data": "ETF reference data, prices and holdings.",
+          "event_calendar": "Forward-looking calendars for earnings, IPOs and dividends.",
+          "financial_ratio": "Computed liquidity, solvency, efficiency, profitability and valuation ratios per issuer.",
+          "financial_statement": "Income statements, balance sheets and cash flow statements for US and international companies.",
+          "forex_data": "Currency pair symbols, quotes and historical/minute prices.",
+          "insider_trading": "Reported insider transactions for covered securities.",
+          "institutional_trading": "Institutional holdings and position changes for covered securities.",
+          "investment_adviser": "Reference records for registered investment advisers.",
+          "market_data": "Real-time and historical quotes, latest prices, minute bars and volumes across stocks, OTC and commodities.",
+          "market_index": "Index symbols, quotes, historical prices and constituent membership.",
+          "market_new": "Press releases plus SEC and Federal Reserve releases relevant to covered issuers.",
+          "miscellaneous_data": "Supplementary datasets that do not fall into the other entity groups.",
+          "mutual_fund": "Mutual fund reference data, prices and holdings.",
+          "symbol_list": "Master symbol catalogues for stocks, international stocks, ETFs, commodities and OTC securities."
+        },
+        "auth": false
       },
       "config": {
         "auth": {
@@ -24,7 +51,15 @@
         },
         "headers": {
           "content-type": "application/json"
-        }
+        },
+        "docs_order": [
+          "ts",
+          "py",
+          "php",
+          "go",
+          "rb",
+          "lua"
+        ]
       },
       "entity": {
         "basic_information": {

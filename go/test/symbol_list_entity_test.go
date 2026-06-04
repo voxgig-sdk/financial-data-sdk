@@ -119,7 +119,6 @@ func symbol_listBasicSetup(extra map[string]any) *entityTestSetup {
 		"FINANCIALDATA_TEST_SYMBOL_LIST_ENTID": idmap,
 		"FINANCIALDATA_TEST_LIVE":      "FALSE",
 		"FINANCIALDATA_TEST_EXPLAIN":   "FALSE",
-		"FINANCIALDATA_APIKEY":         "NONE",
 	})
 
 	idmapResolved := core.ToMapAny(env["FINANCIALDATA_TEST_SYMBOL_LIST_ENTID"])
@@ -130,7 +129,6 @@ func symbol_listBasicSetup(extra map[string]any) *entityTestSetup {
 	if env["FINANCIALDATA_TEST_LIVE"] == "TRUE" {
 		mergedOpts := vs.Merge([]any{
 			map[string]any{
-				"apikey": env["FINANCIALDATA_APIKEY"],
 			},
 			extra,
 		})

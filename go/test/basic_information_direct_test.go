@@ -99,14 +99,12 @@ func basic_informationDirectSetup(mockres any) *basic_informationDirectSetupResu
 	env := envOverride(map[string]any{
 		"FINANCIALDATA_TEST_BASIC_INFORMATION_ENTID": map[string]any{},
 		"FINANCIALDATA_TEST_LIVE":    "FALSE",
-		"FINANCIALDATA_APIKEY":       "NONE",
 	})
 
 	live := env["FINANCIALDATA_TEST_LIVE"] == "TRUE"
 
 	if live {
 		mergedOpts := map[string]any{
-			"apikey": env["FINANCIALDATA_APIKEY"],
 		}
 		client := sdk.NewFinancialDataSDK(mergedOpts)
 

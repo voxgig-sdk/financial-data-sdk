@@ -117,7 +117,6 @@ func basic_informationBasicSetup(extra map[string]any) *entityTestSetup {
 		"FINANCIALDATA_TEST_BASIC_INFORMATION_ENTID": idmap,
 		"FINANCIALDATA_TEST_LIVE":      "FALSE",
 		"FINANCIALDATA_TEST_EXPLAIN":   "FALSE",
-		"FINANCIALDATA_APIKEY":         "NONE",
 	})
 
 	idmapResolved := core.ToMapAny(env["FINANCIALDATA_TEST_BASIC_INFORMATION_ENTID"])
@@ -128,7 +127,6 @@ func basic_informationBasicSetup(extra map[string]any) *entityTestSetup {
 	if env["FINANCIALDATA_TEST_LIVE"] == "TRUE" {
 		mergedOpts := vs.Merge([]any{
 			map[string]any{
-				"apikey": env["FINANCIALDATA_APIKEY"],
 			},
 			extra,
 		})

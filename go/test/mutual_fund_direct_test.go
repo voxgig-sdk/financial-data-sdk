@@ -99,14 +99,12 @@ func mutual_fundDirectSetup(mockres any) *mutual_fundDirectSetupResult {
 	env := envOverride(map[string]any{
 		"FINANCIALDATA_TEST_MUTUAL_FUND_ENTID": map[string]any{},
 		"FINANCIALDATA_TEST_LIVE":    "FALSE",
-		"FINANCIALDATA_APIKEY":       "NONE",
 	})
 
 	live := env["FINANCIALDATA_TEST_LIVE"] == "TRUE"
 
 	if live {
 		mergedOpts := map[string]any{
-			"apikey": env["FINANCIALDATA_APIKEY"],
 		}
 		client := sdk.NewFinancialDataSDK(mergedOpts)
 

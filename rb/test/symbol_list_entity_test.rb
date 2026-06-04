@@ -83,7 +83,6 @@ def symbol_list_basic_setup(extra)
     "FINANCIALDATA_TEST_SYMBOL_LIST_ENTID" => idmap,
     "FINANCIALDATA_TEST_LIVE" => "FALSE",
     "FINANCIALDATA_TEST_EXPLAIN" => "FALSE",
-    "FINANCIALDATA_APIKEY" => "NONE",
   })
 
   idmap_resolved = Helpers.to_map(
@@ -95,7 +94,6 @@ def symbol_list_basic_setup(extra)
   if env["FINANCIALDATA_TEST_LIVE"] == "TRUE"
     merged_opts = Vs.merge([
       {
-        "apikey" => env["FINANCIALDATA_APIKEY"],
       },
       extra || {},
     ])

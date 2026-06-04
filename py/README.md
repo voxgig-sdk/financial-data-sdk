@@ -23,12 +23,9 @@ loading a specific record.
 ### 1. Create a client
 
 ```python
-import os
 from financialdata_sdk import FinancialDataSDK
 
-client = FinancialDataSDK({
-    "apikey": os.environ.get("FINANCIAL-DATA_APIKEY"),
-})
+client = FinancialDataSDK({})
 ```
 
 ### 3. Load a basicinformation
@@ -117,7 +114,6 @@ Create a `.env.local` file at the project root:
 
 ```
 FINANCIAL-DATA_TEST_LIVE=TRUE
-FINANCIAL-DATA_APIKEY=<your-key>
 ```
 
 Then run:
@@ -141,7 +137,6 @@ Creates a new SDK client.
 
 | Option | Type | Description |
 | --- | --- | --- |
-| `apikey` | `str` | API key for authentication. |
 | `base` | `str` | Base URL of the API server. |
 | `prefix` | `str` | URL path prefix prepended to all requests. |
 | `suffix` | `str` | URL path suffix appended to all requests. |

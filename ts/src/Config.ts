@@ -38,10 +38,6 @@ class Config {
   options = {
     base: 'https://financialdata.net/api/v1',
 
-    auth: {
-      prefix: 'Bearer',
-    },
-
     headers: {
       "content-type": "application/json"
     },
