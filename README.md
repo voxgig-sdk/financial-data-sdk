@@ -1,25 +1,8 @@
 # FinancialData SDK
 
-Stock, ETF, crypto, forex, options, futures and fundamentals across US and international markets from a single REST API
+Financial Data API client, generated from the OpenAPI spec.
 
 > TypeScript, Python, PHP, Golang, Ruby, Lua SDKs, a CLI, an interactive REPL, and an MCP server for AI agents — all generated from one OpenAPI spec by [@voxgig/sdkgen](https://github.com/voxgig/sdkgen).
-
-## About Financial Data API
-
-[Financial Data API](https://financialdata.net) is a commercial REST service that aggregates market data, company fundamentals and alternative datasets for equities, ETFs, mutual funds, options, futures, cryptocurrencies and forex pairs. It covers both US-listed and international securities through a single endpoint surface at `https://financialdata.net/api/v1`.
-
-What you get from the API:
-
-- Symbol catalogues for stocks, international stocks, ETFs, commodities, OTC, indexes, options, futures, crypto and forex
-- Real-time and historical quotes and prices, including minute bars for stocks, crypto and forex
-- Company basics, key metrics, market cap, employee counts, executive compensation and securities information
-- Income statements, balance sheets and cash flow statements for US and international issuers
-- Financial ratios across liquidity, solvency, efficiency, profitability and valuation
-- Option chains with Greeks, plus futures prices
-- Event calendars (earnings, IPOs, dividends), press releases and SEC/Fed releases
-- Insider trading, institutional holdings, ETF and mutual fund holdings, ESG scores and investment adviser records
-
-Authentication is via an API key appended as `?key=API_KEY` (or `&key=API_KEY` when other parameters are present). Most list endpoints return 300-500 records per call and support an `offset` parameter for pagination. CORS is disabled on the service.
 
 ## Try it
 
@@ -53,27 +36,31 @@ gem install financial-data-sdk
 luarocks install financial-data-sdk
 ```
 
-## 30-second quickstart
+## Quickstart
 
 ### TypeScript
 
 ```ts
 import { FinancialDataSDK } from 'financial-data'
 
-const client = new FinancialDataSDK({})
+const client = new FinancialDataSDK({
+  apikey: process.env.FINANCIAL-DATA_APIKEY,
+})
 
+// Load basicinformation data
+const basicinformation = await client.BasicInformation().load({})
+console.log(basicinformation.data)
 ```
 
-See the [TypeScript README](ts/README.md) for the
-full guide, or scroll down for the same example in other languages.
+See the [TypeScript README](ts/README.md) for the full guide.
 
-## What's in the box
+## Surfaces
 
-| Surface | Use it for | Path |
-| --- | --- | --- |
-| **SDK** (TypeScript, Python, PHP, Golang, Ruby, Lua) | App integration | `ts/` `py/` `php/` `go/` `rb/` `lua/` |
-| **CLI** | Scripts, CI, ops, one-off API calls | `go-cli/` |
-| **MCP server** | AI agents (Claude, Cursor, Cline) | `go-mcp/` |
+| Surface | Path |
+| --- | --- |
+| **SDK** (TypeScript, Python, PHP, Golang, Ruby, Lua) | `ts/` `py/` `php/` `go/` `rb/` `lua/` |
+| **CLI** | `go-cli/` |
+| **MCP server** | `go-mcp/` |
 
 ## Use it from an AI agent (MCP)
 
@@ -103,24 +90,24 @@ The API exposes 18 entities:
 
 | Entity | Description | API path |
 | --- | --- | --- |
-| **BasicInformation** | Company-level reference data such as profile, key metrics, market cap, employee count and executive compensation. | `/company-information` |
-| **CryptoCurrency** | Cryptocurrency symbols, metadata, quotes and historical/minute prices. | `/crypto-minute-prices` |
-| **DerivativesData** | Option chains with prices and Greeks, plus futures symbols and prices. | `/futures-prices` |
-| **EsgData** | Environmental, social and governance ratings and scores for covered companies. | `/esg-ratings` |
-| **EtfData** | ETF reference data, prices and holdings. | `/etf-holdings` |
-| **EventCalendar** | Forward-looking calendars for earnings, IPOs and dividends. | `/dividends-calendar` |
-| **FinancialRatio** | Computed liquidity, solvency, efficiency, profitability and valuation ratios per issuer. | `/efficiency-ratios` |
-| **FinancialStatement** | Income statements, balance sheets and cash flow statements for US and international companies. | `/balance-sheet-statements` |
-| **ForexData** | Currency pair symbols, quotes and historical/minute prices. | `/forex-minute-prices` |
-| **InsiderTrading** | Reported insider transactions for covered securities. | `/insider-transactions` |
-| **InstitutionalTrading** | Institutional holdings and position changes for covered securities. | `/institutional-holdings` |
-| **InvestmentAdviser** | Reference records for registered investment advisers. | `/investment-adviser-information` |
-| **MarketData** | Real-time and historical quotes, latest prices, minute bars and volumes across stocks, OTC and commodities. | `/minute-prices` |
-| **MarketIndex** | Index symbols, quotes, historical prices and constituent membership. | `/index-prices` |
-| **MarketNew** | Press releases plus SEC and Federal Reserve releases relevant to covered issuers. | `/press-releases` |
-| **MiscellaneousData** | Supplementary datasets that do not fall into the other entity groups. | `/dividends` |
-| **MutualFund** | Mutual fund reference data, prices and holdings. | `/mutual-fund-holdings` |
-| **SymbolList** | Master symbol catalogues for stocks, international stocks, ETFs, commodities and OTC securities. | `/etf-symbols` |
+| **BasicInformation** |  | `/company-information` |
+| **CryptoCurrency** |  | `/crypto-minute-prices` |
+| **DerivativesData** |  | `/futures-prices` |
+| **EsgData** |  | `/esg-ratings` |
+| **EtfData** |  | `/etf-holdings` |
+| **EventCalendar** |  | `/dividends-calendar` |
+| **FinancialRatio** |  | `/efficiency-ratios` |
+| **FinancialStatement** |  | `/balance-sheet-statements` |
+| **ForexData** |  | `/forex-minute-prices` |
+| **InsiderTrading** |  | `/insider-transactions` |
+| **InstitutionalTrading** |  | `/institutional-holdings` |
+| **InvestmentAdviser** |  | `/investment-adviser-information` |
+| **MarketData** |  | `/minute-prices` |
+| **MarketIndex** |  | `/index-prices` |
+| **MarketNew** |  | `/press-releases` |
+| **MiscellaneousData** |  | `/dividends` |
+| **MutualFund** |  | `/mutual-fund-holdings` |
+| **SymbolList** |  | `/etf-symbols` |
 
 Each entity supports the following operations where available: **load**,
 **list**, **create**, **update**, and **remove**.
@@ -130,15 +117,17 @@ Each entity supports the following operations where available: **load**,
 ### Python
 
 ```python
+import os
 from financialdata_sdk import FinancialDataSDK
 
-client = FinancialDataSDK({})
+client = FinancialDataSDK({
+    "apikey": os.environ.get("FINANCIAL-DATA_APIKEY"),
+})
 
 
 # Load a specific basicinformation
-basicinformation, err = client.BasicInformation(None).load(
-    {"id": "example_id"}, None
-)
+basicinformation, err = client.BasicInformation().load({"id": "example_id"})
+print(basicinformation)
 ```
 
 ### PHP
@@ -147,13 +136,14 @@ basicinformation, err = client.BasicInformation(None).load(
 <?php
 require_once 'financialdata_sdk.php';
 
-$client = new FinancialDataSDK([]);
+$client = new FinancialDataSDK([
+    "apikey" => getenv("FINANCIAL-DATA_APIKEY"),
+]);
 
 
 // Load a specific basicinformation
-[$basicinformation, $err] = $client->BasicInformation(null)->load(
-    ["id" => "example_id"], null
-);
+[$basicinformation, $err] = $client->BasicInformation()->load(["id" => "example_id"]);
+print_r($basicinformation);
 ```
 
 ### Golang
@@ -161,8 +151,13 @@ $client = new FinancialDataSDK([]);
 ```go
 import sdk "github.com/voxgig-sdk/financial-data-sdk/go"
 
-client := sdk.NewFinancialDataSDK(map[string]any{})
+client := sdk.NewFinancialDataSDK(map[string]any{
+    "apikey": os.Getenv("FINANCIAL-DATA_APIKEY"),
+})
 
+// Load basicinformation data
+basicinformation, err := client.BasicInformation(nil).Load(map[string]any{}, nil)
+fmt.Println(basicinformation)
 ```
 
 ### Ruby
@@ -170,13 +165,14 @@ client := sdk.NewFinancialDataSDK(map[string]any{})
 ```ruby
 require_relative "FinancialData_sdk"
 
-client = FinancialDataSDK.new({})
+client = FinancialDataSDK.new({
+  "apikey" => ENV["FINANCIAL-DATA_APIKEY"],
+})
 
 
 # Load a specific basicinformation
-basicinformation, err = client.BasicInformation(nil).load(
-  { "id" => "example_id" }, nil
-)
+basicinformation, err = client.BasicInformation().load({ "id" => "example_id" })
+puts basicinformation
 ```
 
 ### Lua
@@ -184,13 +180,14 @@ basicinformation, err = client.BasicInformation(nil).load(
 ```lua
 local sdk = require("financial-data_sdk")
 
-local client = sdk.new({})
+local client = sdk.new({
+  apikey = os.getenv("FINANCIAL-DATA_APIKEY"),
+})
 
 
 -- Load a specific basicinformation
-local basicinformation, err = client:BasicInformation(nil):load(
-  { id = "example_id" }, nil
-)
+local basicinformation, err = client:BasicInformation():load({ id = "example_id" })
+print(basicinformation)
 ```
 
 ## Unit testing in offline mode
@@ -209,25 +206,21 @@ const result = await client.BasicInformation().load({ id: 'test01' })
 ### Python
 
 ```python
-client = FinancialDataSDK.test(None, None)
-result, err = client.BasicInformation(None).load(
-    {"id": "test01"}, None
-)
+client = FinancialDataSDK.test()
+result, err = client.BasicInformation().load({"id": "test01"})
 ```
 
 ### PHP
 
 ```php
-$client = FinancialDataSDK::test(null, null);
-[$result, $err] = $client->BasicInformation(null)->load(
-    ["id" => "test01"], null
-);
+$client = FinancialDataSDK::test();
+[$result, $err] = $client->BasicInformation()->load(["id" => "test01"]);
 ```
 
 ### Golang
 
 ```go
-client := sdk.TestSDK(nil, nil)
+client := sdk.Test()
 result, err := client.BasicInformation(nil).Load(
     map[string]any{"id": "test01"}, nil,
 )
@@ -236,19 +229,15 @@ result, err := client.BasicInformation(nil).Load(
 ### Ruby
 
 ```ruby
-client = FinancialDataSDK.test(nil, nil)
-result, err = client.BasicInformation(nil).load(
-  { "id" => "test01" }, nil
-)
+client = FinancialDataSDK.test
+result, err = client.BasicInformation().load({ "id" => "test01" })
 ```
 
 ### Lua
 
 ```lua
-local client = sdk.test(nil, nil)
-local result, err = client:BasicInformation(nil):load(
-  { id = "test01" }, nil
-)
+local client = sdk.test()
+local result, err = client:BasicInformation():load({ id = "test01" })
 ```
 
 ## How it works
@@ -352,16 +341,6 @@ local result, err = client:direct({
 - [Golang](go/README.md)
 - [Ruby](rb/README.md)
 - [Lua](lua/README.md)
-
-## Using the Financial Data API
-
-- Upstream: [https://financialdata.net](https://financialdata.net)
-- API docs: [https://financialdata.net/documentation](https://financialdata.net/documentation)
-
-- Operated commercially by financialdata.net with Free, Standard and Premium tiers
-- Requires an API key, passed as a `key` query parameter on every request
-- Pricing, redistribution rules and per-tier quotas are governed by the financialdata.net terms of service
-- CORS is disabled, so requests should be made from a backend rather than directly from a browser
 
 ---
 

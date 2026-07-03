@@ -91,6 +91,7 @@ function market_new_basic_setup(extra)
     ["FINANCIALDATA_TEST_MARKET_NEW_ENTID"] = idmap,
     ["FINANCIALDATA_TEST_LIVE"] = "FALSE",
     ["FINANCIALDATA_TEST_EXPLAIN"] = "FALSE",
+    ["FINANCIALDATA_APIKEY"] = "NONE",
   })
 
   local idmap_resolved = helpers.to_map(
@@ -102,6 +103,7 @@ function market_new_basic_setup(extra)
   if env["FINANCIALDATA_TEST_LIVE"] == "TRUE" then
     local merged_opts = vs.merge({
       {
+        apikey = env["FINANCIALDATA_APIKEY"],
       },
       extra or {},
     })

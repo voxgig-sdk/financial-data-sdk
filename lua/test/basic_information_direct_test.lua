@@ -62,12 +62,14 @@ function basic_information_direct_setup(mockres)
   local env = runner.env_override({
     ["FINANCIALDATA_TEST_BASIC_INFORMATION_ENTID"] = {},
     ["FINANCIALDATA_TEST_LIVE"] = "FALSE",
+    ["FINANCIALDATA_APIKEY"] = "NONE",
   })
 
   local live = env["FINANCIALDATA_TEST_LIVE"] == "TRUE"
 
   if live then
     local merged_opts = {
+      apikey = env["FINANCIALDATA_APIKEY"],
     }
     local client = sdk.new(merged_opts)
     return {

@@ -99,12 +99,14 @@ func event_calendarDirectSetup(mockres any) *event_calendarDirectSetupResult {
 	env := envOverride(map[string]any{
 		"FINANCIALDATA_TEST_EVENT_CALENDAR_ENTID": map[string]any{},
 		"FINANCIALDATA_TEST_LIVE":    "FALSE",
+		"FINANCIALDATA_APIKEY":       "NONE",
 	})
 
 	live := env["FINANCIALDATA_TEST_LIVE"] == "TRUE"
 
 	if live {
 		mergedOpts := map[string]any{
+			"apikey": env["FINANCIALDATA_APIKEY"],
 		}
 		client := sdk.NewFinancialDataSDK(mergedOpts)
 

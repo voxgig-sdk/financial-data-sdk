@@ -99,12 +99,14 @@ func investment_adviserDirectSetup(mockres any) *investment_adviserDirectSetupRe
 	env := envOverride(map[string]any{
 		"FINANCIALDATA_TEST_INVESTMENT_ADVISER_ENTID": map[string]any{},
 		"FINANCIALDATA_TEST_LIVE":    "FALSE",
+		"FINANCIALDATA_APIKEY":       "NONE",
 	})
 
 	live := env["FINANCIALDATA_TEST_LIVE"] == "TRUE"
 
 	if live {
 		mergedOpts := map[string]any{
+			"apikey": env["FINANCIALDATA_APIKEY"],
 		}
 		client := sdk.NewFinancialDataSDK(mergedOpts)
 

@@ -85,6 +85,7 @@ function mutual_fund_basic_setup($extra)
         "FINANCIALDATA_TEST_MUTUAL_FUND_ENTID" => $idmap,
         "FINANCIALDATA_TEST_LIVE" => "FALSE",
         "FINANCIALDATA_TEST_EXPLAIN" => "FALSE",
+        "FINANCIALDATA_APIKEY" => "NONE",
     ]);
 
     $idmap_resolved = Helpers::to_map(
@@ -96,6 +97,7 @@ function mutual_fund_basic_setup($extra)
     if ($env["FINANCIALDATA_TEST_LIVE"] === "TRUE") {
         $merged_opts = Vs::merge([
             [
+                "apikey" => $env["FINANCIALDATA_APIKEY"],
             ],
             $extra ?? [],
         ]);

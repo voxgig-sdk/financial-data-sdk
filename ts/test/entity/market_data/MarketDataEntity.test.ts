@@ -119,6 +119,7 @@ function basicSetup(extra?: any) {
     'FINANCIAL_DATA_TEST_MARKET_DATA_ENTID': idmap,
     'FINANCIAL_DATA_TEST_LIVE': 'FALSE',
     'FINANCIAL_DATA_TEST_EXPLAIN': 'FALSE',
+    'FINANCIAL_DATA_APIKEY': 'NONE',
   })
 
   idmap = env['FINANCIAL_DATA_TEST_MARKET_DATA_ENTID']
@@ -128,6 +129,7 @@ function basicSetup(extra?: any) {
   if (live) {
     client = new FinancialDataSDK(merge([
       {
+        apikey: env.FINANCIAL_DATA_APIKEY,
       },
       extra
     ]))

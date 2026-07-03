@@ -91,6 +91,7 @@ def _esg_data_basic_setup(extra):
         "FINANCIALDATA_TEST_ESG_DATA_ENTID": idmap,
         "FINANCIALDATA_TEST_LIVE": "FALSE",
         "FINANCIALDATA_TEST_EXPLAIN": "FALSE",
+        "FINANCIALDATA_APIKEY": "NONE",
     })
 
     idmap_resolved = helpers.to_map(
@@ -101,6 +102,7 @@ def _esg_data_basic_setup(extra):
     if env.get("FINANCIALDATA_TEST_LIVE") == "TRUE":
         merged_opts = vs.merge([
             {
+                "apikey": env.get("FINANCIALDATA_APIKEY"),
             },
             extra or {},
         ])

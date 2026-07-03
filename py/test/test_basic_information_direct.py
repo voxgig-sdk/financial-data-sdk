@@ -59,12 +59,14 @@ def _basic_information_direct_setup(mockres):
     env = runner.env_override({
         "FINANCIALDATA_TEST_BASIC_INFORMATION_ENTID": {},
         "FINANCIALDATA_TEST_LIVE": "FALSE",
+        "FINANCIALDATA_APIKEY": "NONE",
     })
 
     live = env.get("FINANCIALDATA_TEST_LIVE") == "TRUE"
 
     if live:
         merged_opts = {
+            "apikey": env.get("FINANCIALDATA_APIKEY"),
         }
         client = FinancialDataSDK(merged_opts)
         return {

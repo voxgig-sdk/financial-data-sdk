@@ -93,12 +93,14 @@ func symbol_listDirectSetup(mockres any) *symbol_listDirectSetupResult {
 	env := envOverride(map[string]any{
 		"FINANCIALDATA_TEST_SYMBOL_LIST_ENTID": map[string]any{},
 		"FINANCIALDATA_TEST_LIVE":    "FALSE",
+		"FINANCIALDATA_APIKEY":       "NONE",
 	})
 
 	live := env["FINANCIALDATA_TEST_LIVE"] == "TRUE"
 
 	if live {
 		mergedOpts := map[string]any{
+			"apikey": env["FINANCIALDATA_APIKEY"],
 		}
 		client := sdk.NewFinancialDataSDK(mergedOpts)
 

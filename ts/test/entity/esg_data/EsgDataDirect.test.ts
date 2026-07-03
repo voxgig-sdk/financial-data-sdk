@@ -74,12 +74,14 @@ function directSetup(mockres?: any) {
   const env = envOverride({
     'FINANCIALDATA_TEST_ESG_DATA_ENTID': {},
     'FINANCIALDATA_TEST_LIVE': 'FALSE',
+    'FINANCIALDATA_APIKEY': 'NONE',
   })
 
   const live = 'TRUE' === env.FINANCIALDATA_TEST_LIVE
 
   if (live) {
     const client = new FinancialDataSDK({
+      apikey: env.FINANCIALDATA_APIKEY,
     })
 
     let idmap: any = env['FINANCIALDATA_TEST_ESG_DATA_ENTID']

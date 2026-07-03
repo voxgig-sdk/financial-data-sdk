@@ -99,12 +99,14 @@ func market_newDirectSetup(mockres any) *market_newDirectSetupResult {
 	env := envOverride(map[string]any{
 		"FINANCIALDATA_TEST_MARKET_NEW_ENTID": map[string]any{},
 		"FINANCIALDATA_TEST_LIVE":    "FALSE",
+		"FINANCIALDATA_APIKEY":       "NONE",
 	})
 
 	live := env["FINANCIALDATA_TEST_LIVE"] == "TRUE"
 
 	if live {
 		mergedOpts := map[string]any{
+			"apikey": env["FINANCIALDATA_APIKEY"],
 		}
 		client := sdk.NewFinancialDataSDK(mergedOpts)
 
