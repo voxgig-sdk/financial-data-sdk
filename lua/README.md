@@ -10,7 +10,7 @@ The Lua SDK for the FinancialData API — an entity-oriented client using Lua co
 
 ## Install
 ```bash
-luarocks install financial-data-sdk
+luarocks install voxgig-sdk-financial-data
 ```
 
 If the module is not yet published, add the source directory to

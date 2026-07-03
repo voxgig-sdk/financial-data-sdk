@@ -10,13 +10,13 @@ The Ruby SDK for the FinancialData API — an entity-oriented client using idiom
 
 ## Install
 ```bash
-gem install financial-data-sdk
+gem install voxgig-sdk-financial-data
 ```
 
 Or add to your `Gemfile`:
 
 ```ruby
-gem "financial-data-sdk"
+gem "voxgig-sdk-financial-data"
 ```
 
 Then run:

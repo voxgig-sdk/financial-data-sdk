@@ -10,7 +10,7 @@ The Python SDK for the FinancialData API — an entity-oriented client following
 
 ## Install
 ```bash
-pip install financial-data-sdk
+pip install voxgig-sdk-financial-data
 ```
 
 Or install from source:

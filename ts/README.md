@@ -10,7 +10,7 @@ The TypeScript SDK for the FinancialData API — a type-safe, entity-oriented cl
 
 ## Install
 ```bash
-npm install financial-data
+npm install @voxgig-sdk/financial-data
 ```
 ## Tutorial: your first API call
 

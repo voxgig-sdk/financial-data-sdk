@@ -10,7 +10,7 @@ The PHP SDK for the FinancialData API — an entity-oriented client using PHP co
 
 ## Install
 ```bash
-composer require voxgig/financial-data-sdk
+composer require voxgig-sdk/financial-data
 ```
 
 
