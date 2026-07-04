@@ -42,8 +42,7 @@ class EtfDataEntityTest < Minitest::Test
     # LOAD
     etf_data_ref01_ent = client.EtfData(nil)
     etf_data_ref01_match_dt0 = {}
-    etf_data_ref01_data_dt0_loaded, err = etf_data_ref01_ent.load(etf_data_ref01_match_dt0, nil)
-    assert_nil err
+    etf_data_ref01_data_dt0_loaded = etf_data_ref01_ent.load(etf_data_ref01_match_dt0, nil)
     assert !etf_data_ref01_data_dt0_loaded.nil?
 
   end

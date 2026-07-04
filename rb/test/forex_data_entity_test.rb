@@ -42,8 +42,7 @@ class ForexDataEntityTest < Minitest::Test
     # LOAD
     forex_data_ref01_ent = client.ForexData(nil)
     forex_data_ref01_match_dt0 = {}
-    forex_data_ref01_data_dt0_loaded, err = forex_data_ref01_ent.load(forex_data_ref01_match_dt0, nil)
-    assert_nil err
+    forex_data_ref01_data_dt0_loaded = forex_data_ref01_ent.load(forex_data_ref01_match_dt0, nil)
     assert !forex_data_ref01_data_dt0_loaded.nil?
 
   end

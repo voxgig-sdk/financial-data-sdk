@@ -79,6 +79,10 @@ end
 
 
 
+---@param reqmatch InstitutionalTradingLoadMatch
+---@param ctrl? table
+---@return InstitutionalTrading
+---@return string? err
 function InstitutionalTradingEntity:load(reqmatch, ctrl)
   local utility = self._utility
   local ctx = utility.make_context({

@@ -49,8 +49,7 @@ class MutualFundEntityTest extends TestCase
         // LOAD
         $mutual_fund_ref01_ent = $client->MutualFund(null);
         $mutual_fund_ref01_match_dt0 = [];
-        [$mutual_fund_ref01_data_dt0_loaded, $err] = $mutual_fund_ref01_ent->load($mutual_fund_ref01_match_dt0, null);
-        $this->assertNull($err);
+        $mutual_fund_ref01_data_dt0_loaded = $mutual_fund_ref01_ent->load($mutual_fund_ref01_match_dt0, null);
         $this->assertNotNull($mutual_fund_ref01_data_dt0_loaded);
 
     }

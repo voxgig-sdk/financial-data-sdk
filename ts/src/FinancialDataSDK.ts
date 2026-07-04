@@ -19,6 +19,8 @@ import { MiscellaneousDataEntity } from './entity/MiscellaneousDataEntity'
 import { MutualFundEntity } from './entity/MutualFundEntity'
 import { SymbolListEntity } from './entity/SymbolListEntity'
 
+export type * from './FinancialDataTypes'
+
 
 import { inspect } from 'node:util'
 
@@ -219,108 +221,252 @@ class FinancialDataSDK {
 
 
 
+  _basic_information?: BasicInformationEntity
+
+  // Idiomatic facade: `client.basic_information.list()` / `client.basic_information.load({ id })`.
+  get basic_information(): BasicInformationEntity {
+    return (this._basic_information ??= new BasicInformationEntity(this, undefined))
+  }
+
+  /** @deprecated Use `client.basic_information` instead. */
   BasicInformation(data?: any) {
     const self = this
     return new BasicInformationEntity(self,data)
   }
 
 
+  _crypto_currency?: CryptoCurrencyEntity
+
+  // Idiomatic facade: `client.crypto_currency.list()` / `client.crypto_currency.load({ id })`.
+  get crypto_currency(): CryptoCurrencyEntity {
+    return (this._crypto_currency ??= new CryptoCurrencyEntity(this, undefined))
+  }
+
+  /** @deprecated Use `client.crypto_currency` instead. */
   CryptoCurrency(data?: any) {
     const self = this
     return new CryptoCurrencyEntity(self,data)
   }
 
 
+  _derivatives_data?: DerivativesDataEntity
+
+  // Idiomatic facade: `client.derivatives_data.list()` / `client.derivatives_data.load({ id })`.
+  get derivatives_data(): DerivativesDataEntity {
+    return (this._derivatives_data ??= new DerivativesDataEntity(this, undefined))
+  }
+
+  /** @deprecated Use `client.derivatives_data` instead. */
   DerivativesData(data?: any) {
     const self = this
     return new DerivativesDataEntity(self,data)
   }
 
 
+  _esg_data?: EsgDataEntity
+
+  // Idiomatic facade: `client.esg_data.list()` / `client.esg_data.load({ id })`.
+  get esg_data(): EsgDataEntity {
+    return (this._esg_data ??= new EsgDataEntity(this, undefined))
+  }
+
+  /** @deprecated Use `client.esg_data` instead. */
   EsgData(data?: any) {
     const self = this
     return new EsgDataEntity(self,data)
   }
 
 
+  _etf_data?: EtfDataEntity
+
+  // Idiomatic facade: `client.etf_data.list()` / `client.etf_data.load({ id })`.
+  get etf_data(): EtfDataEntity {
+    return (this._etf_data ??= new EtfDataEntity(this, undefined))
+  }
+
+  /** @deprecated Use `client.etf_data` instead. */
   EtfData(data?: any) {
     const self = this
     return new EtfDataEntity(self,data)
   }
 
 
+  _event_calendar?: EventCalendarEntity
+
+  // Idiomatic facade: `client.event_calendar.list()` / `client.event_calendar.load({ id })`.
+  get event_calendar(): EventCalendarEntity {
+    return (this._event_calendar ??= new EventCalendarEntity(this, undefined))
+  }
+
+  /** @deprecated Use `client.event_calendar` instead. */
   EventCalendar(data?: any) {
     const self = this
     return new EventCalendarEntity(self,data)
   }
 
 
+  _financial_ratio?: FinancialRatioEntity
+
+  // Idiomatic facade: `client.financial_ratio.list()` / `client.financial_ratio.load({ id })`.
+  get financial_ratio(): FinancialRatioEntity {
+    return (this._financial_ratio ??= new FinancialRatioEntity(this, undefined))
+  }
+
+  /** @deprecated Use `client.financial_ratio` instead. */
   FinancialRatio(data?: any) {
     const self = this
     return new FinancialRatioEntity(self,data)
   }
 
 
+  _financial_statement?: FinancialStatementEntity
+
+  // Idiomatic facade: `client.financial_statement.list()` / `client.financial_statement.load({ id })`.
+  get financial_statement(): FinancialStatementEntity {
+    return (this._financial_statement ??= new FinancialStatementEntity(this, undefined))
+  }
+
+  /** @deprecated Use `client.financial_statement` instead. */
   FinancialStatement(data?: any) {
     const self = this
     return new FinancialStatementEntity(self,data)
   }
 
 
+  _forex_data?: ForexDataEntity
+
+  // Idiomatic facade: `client.forex_data.list()` / `client.forex_data.load({ id })`.
+  get forex_data(): ForexDataEntity {
+    return (this._forex_data ??= new ForexDataEntity(this, undefined))
+  }
+
+  /** @deprecated Use `client.forex_data` instead. */
   ForexData(data?: any) {
     const self = this
     return new ForexDataEntity(self,data)
   }
 
 
+  _insider_trading?: InsiderTradingEntity
+
+  // Idiomatic facade: `client.insider_trading.list()` / `client.insider_trading.load({ id })`.
+  get insider_trading(): InsiderTradingEntity {
+    return (this._insider_trading ??= new InsiderTradingEntity(this, undefined))
+  }
+
+  /** @deprecated Use `client.insider_trading` instead. */
   InsiderTrading(data?: any) {
     const self = this
     return new InsiderTradingEntity(self,data)
   }
 
 
+  _institutional_trading?: InstitutionalTradingEntity
+
+  // Idiomatic facade: `client.institutional_trading.list()` / `client.institutional_trading.load({ id })`.
+  get institutional_trading(): InstitutionalTradingEntity {
+    return (this._institutional_trading ??= new InstitutionalTradingEntity(this, undefined))
+  }
+
+  /** @deprecated Use `client.institutional_trading` instead. */
   InstitutionalTrading(data?: any) {
     const self = this
     return new InstitutionalTradingEntity(self,data)
   }
 
 
+  _investment_adviser?: InvestmentAdviserEntity
+
+  // Idiomatic facade: `client.investment_adviser.list()` / `client.investment_adviser.load({ id })`.
+  get investment_adviser(): InvestmentAdviserEntity {
+    return (this._investment_adviser ??= new InvestmentAdviserEntity(this, undefined))
+  }
+
+  /** @deprecated Use `client.investment_adviser` instead. */
   InvestmentAdviser(data?: any) {
     const self = this
     return new InvestmentAdviserEntity(self,data)
   }
 
 
+  _market_data?: MarketDataEntity
+
+  // Idiomatic facade: `client.market_data.list()` / `client.market_data.load({ id })`.
+  get market_data(): MarketDataEntity {
+    return (this._market_data ??= new MarketDataEntity(this, undefined))
+  }
+
+  /** @deprecated Use `client.market_data` instead. */
   MarketData(data?: any) {
     const self = this
     return new MarketDataEntity(self,data)
   }
 
 
+  _market_index?: MarketIndexEntity
+
+  // Idiomatic facade: `client.market_index.list()` / `client.market_index.load({ id })`.
+  get market_index(): MarketIndexEntity {
+    return (this._market_index ??= new MarketIndexEntity(this, undefined))
+  }
+
+  /** @deprecated Use `client.market_index` instead. */
   MarketIndex(data?: any) {
     const self = this
     return new MarketIndexEntity(self,data)
   }
 
 
+  _market_new?: MarketNewEntity
+
+  // Idiomatic facade: `client.market_new.list()` / `client.market_new.load({ id })`.
+  get market_new(): MarketNewEntity {
+    return (this._market_new ??= new MarketNewEntity(this, undefined))
+  }
+
+  /** @deprecated Use `client.market_new` instead. */
   MarketNew(data?: any) {
     const self = this
     return new MarketNewEntity(self,data)
   }
 
 
+  _miscellaneous_data?: MiscellaneousDataEntity
+
+  // Idiomatic facade: `client.miscellaneous_data.list()` / `client.miscellaneous_data.load({ id })`.
+  get miscellaneous_data(): MiscellaneousDataEntity {
+    return (this._miscellaneous_data ??= new MiscellaneousDataEntity(this, undefined))
+  }
+
+  /** @deprecated Use `client.miscellaneous_data` instead. */
   MiscellaneousData(data?: any) {
     const self = this
     return new MiscellaneousDataEntity(self,data)
   }
 
 
+  _mutual_fund?: MutualFundEntity
+
+  // Idiomatic facade: `client.mutual_fund.list()` / `client.mutual_fund.load({ id })`.
+  get mutual_fund(): MutualFundEntity {
+    return (this._mutual_fund ??= new MutualFundEntity(this, undefined))
+  }
+
+  /** @deprecated Use `client.mutual_fund` instead. */
   MutualFund(data?: any) {
     const self = this
     return new MutualFundEntity(self,data)
   }
 
 
+  _symbol_list?: SymbolListEntity
+
+  // Idiomatic facade: `client.symbol_list.list()` / `client.symbol_list.load({ id })`.
+  get symbol_list(): SymbolListEntity {
+    return (this._symbol_list ??= new SymbolListEntity(this, undefined))
+  }
+
+  /** @deprecated Use `client.symbol_list` instead. */
   SymbolList(data?: any) {
     const self = this
     return new SymbolListEntity(self,data)

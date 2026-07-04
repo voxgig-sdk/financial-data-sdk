@@ -42,8 +42,7 @@ class CryptoCurrencyEntityTest < Minitest::Test
     # LOAD
     crypto_currency_ref01_ent = client.CryptoCurrency(nil)
     crypto_currency_ref01_match_dt0 = {}
-    crypto_currency_ref01_data_dt0_loaded, err = crypto_currency_ref01_ent.load(crypto_currency_ref01_match_dt0, nil)
-    assert_nil err
+    crypto_currency_ref01_data_dt0_loaded = crypto_currency_ref01_ent.load(crypto_currency_ref01_match_dt0, nil)
     assert !crypto_currency_ref01_data_dt0_loaded.nil?
 
   end

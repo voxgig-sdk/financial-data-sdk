@@ -79,6 +79,10 @@ end
 
 
 
+---@param reqmatch ForexDataLoadMatch
+---@param ctrl? table
+---@return ForexData
+---@return string? err
 function ForexDataEntity:load(reqmatch, ctrl)
   local utility = self._utility
   local ctx = utility.make_context({

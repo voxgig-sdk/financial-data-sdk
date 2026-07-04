@@ -49,8 +49,7 @@ class TestFinancialRatioEntity:
         # LOAD
         financial_ratio_ref01_ent = client.FinancialRatio(None)
         financial_ratio_ref01_match_dt0 = {}
-        financial_ratio_ref01_data_dt0_loaded, err = financial_ratio_ref01_ent.load(financial_ratio_ref01_match_dt0, None)
-        assert err is None
+        financial_ratio_ref01_data_dt0_loaded = financial_ratio_ref01_ent.load(financial_ratio_ref01_match_dt0, None)
         assert financial_ratio_ref01_data_dt0_loaded is not None
 
 

@@ -79,6 +79,10 @@ end
 
 
 
+---@param reqmatch CryptoCurrencyLoadMatch
+---@param ctrl? table
+---@return CryptoCurrency
+---@return string? err
 function CryptoCurrencyEntity:load(reqmatch, ctrl)
   local utility = self._utility
   local ctx = utility.make_context({

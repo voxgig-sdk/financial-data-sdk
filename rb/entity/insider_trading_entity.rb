@@ -45,6 +45,7 @@ class InsiderTradingEntity
     end
   end
 
+  # @return [InsiderTrading, Hash] the current InsiderTrading data
   def data_get
     @_utility.feature_hook.call(@_entctx, "GetData")
     VoxgigStruct.clone(@_data)
@@ -57,12 +58,18 @@ class InsiderTradingEntity
     end
   end
 
+  # @return [Hash] the current match filter (any subset of InsiderTrading fields)
   def match_get
     @_utility.feature_hook.call(@_entctx, "GetMatch")
     VoxgigStruct.clone(@_match)
   end
 
   
+  # Load a single InsiderTrading.
+  #
+  # @param reqmatch [InsiderTradingLoadMatch, Hash, nil] match criteria (id/query fields)
+  # @param ctrl [Object, nil] optional per-call control
+  # @return [InsiderTrading, Hash] the loaded InsiderTrading; raises FinancialDataError on failure
   def load(reqmatch, ctrl = nil)
     utility = @_utility
     ctx = utility.make_context.call({

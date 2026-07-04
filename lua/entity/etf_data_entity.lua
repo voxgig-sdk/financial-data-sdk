@@ -79,6 +79,10 @@ end
 
 
 
+---@param reqmatch EtfDataLoadMatch
+---@param ctrl? table
+---@return EtfData
+---@return string? err
 function EtfDataEntity:load(reqmatch, ctrl)
   local utility = self._utility
   local ctx = utility.make_context({

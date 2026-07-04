@@ -42,8 +42,7 @@ class FinancialStatementEntityTest < Minitest::Test
     # LOAD
     financial_statement_ref01_ent = client.FinancialStatement(nil)
     financial_statement_ref01_match_dt0 = {}
-    financial_statement_ref01_data_dt0_loaded, err = financial_statement_ref01_ent.load(financial_statement_ref01_match_dt0, nil)
-    assert_nil err
+    financial_statement_ref01_data_dt0_loaded = financial_statement_ref01_ent.load(financial_statement_ref01_match_dt0, nil)
     assert !financial_statement_ref01_data_dt0_loaded.nil?
 
   end

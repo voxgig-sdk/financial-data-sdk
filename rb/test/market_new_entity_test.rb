@@ -42,8 +42,7 @@ class MarketNewEntityTest < Minitest::Test
     # LOAD
     market_new_ref01_ent = client.MarketNew(nil)
     market_new_ref01_match_dt0 = {}
-    market_new_ref01_data_dt0_loaded, err = market_new_ref01_ent.load(market_new_ref01_match_dt0, nil)
-    assert_nil err
+    market_new_ref01_data_dt0_loaded = market_new_ref01_ent.load(market_new_ref01_match_dt0, nil)
     assert !market_new_ref01_data_dt0_loaded.nil?
 
   end

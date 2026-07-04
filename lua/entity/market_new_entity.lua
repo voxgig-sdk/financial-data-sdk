@@ -79,6 +79,10 @@ end
 
 
 
+---@param reqmatch MarketNewLoadMatch
+---@param ctrl? table
+---@return MarketNew
+---@return string? err
 function MarketNewEntity:load(reqmatch, ctrl)
   local utility = self._utility
   local ctx = utility.make_context({

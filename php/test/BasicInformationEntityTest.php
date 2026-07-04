@@ -49,8 +49,7 @@ class BasicInformationEntityTest extends TestCase
         // LOAD
         $basic_information_ref01_ent = $client->BasicInformation(null);
         $basic_information_ref01_match_dt0 = [];
-        [$basic_information_ref01_data_dt0_loaded, $err] = $basic_information_ref01_ent->load($basic_information_ref01_match_dt0, null);
-        $this->assertNull($err);
+        $basic_information_ref01_data_dt0_loaded = $basic_information_ref01_ent->load($basic_information_ref01_match_dt0, null);
         $this->assertNotNull($basic_information_ref01_data_dt0_loaded);
 
     }

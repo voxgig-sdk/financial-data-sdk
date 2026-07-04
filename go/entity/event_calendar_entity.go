@@ -85,6 +85,27 @@ func (e *EventCalendarEntity) Match(args ...any) any {
 	return out
 }
 
+// DataTyped is the statically-typed accessor for this entity's data. With no
+// argument it returns the current data as an EventCalendar; with an argument it
+// sets the data and returns the stored value. It delegates to the untyped Data
+// (identical runtime) and converts at the typed boundary.
+func (e *EventCalendarEntity) DataTyped(data ...EventCalendar) EventCalendar {
+	if len(data) > 0 {
+		return typedFrom[EventCalendar](e.Data(asMap(data[0])))
+	}
+	return typedFrom[EventCalendar](e.Data())
+}
+
+// MatchTyped mirrors DataTyped for the entity's match filter. The match is a
+// partial of the entity, so it round-trips through EventCalendar (all fields
+// optional at the wire level).
+func (e *EventCalendarEntity) MatchTyped(match ...EventCalendar) EventCalendar {
+	if len(match) > 0 {
+		return typedFrom[EventCalendar](e.Match(asMap(match[0])))
+	}
+	return typedFrom[EventCalendar](e.Match())
+}
+
 
 func (e *EventCalendarEntity) Load(reqmatch map[string]any, ctrl map[string]any) (any, error) {
 	utility := e.utility
@@ -109,6 +130,17 @@ func (e *EventCalendarEntity) Load(reqmatch map[string]any, ctrl map[string]any)
 			}
 		}
 	})
+}
+
+// LoadTyped is the statically-typed variant of Load: it takes an
+// EventCalendarLoadMatch and returns an EventCalendar. It delegates to the untyped
+// Load (identical runtime) and converts at the typed boundary.
+func (e *EventCalendarEntity) LoadTyped(reqmatch EventCalendarLoadMatch, ctrl map[string]any) (EventCalendar, error) {
+	res, err := e.Load(asMap(reqmatch), ctrl)
+	if err != nil {
+		return EventCalendar{}, err
+	}
+	return typedFrom[EventCalendar](res), nil
 }
 
 

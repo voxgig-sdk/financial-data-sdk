@@ -42,8 +42,7 @@ class InsiderTradingEntityTest < Minitest::Test
     # LOAD
     insider_trading_ref01_ent = client.InsiderTrading(nil)
     insider_trading_ref01_match_dt0 = {}
-    insider_trading_ref01_data_dt0_loaded, err = insider_trading_ref01_ent.load(insider_trading_ref01_match_dt0, nil)
-    assert_nil err
+    insider_trading_ref01_data_dt0_loaded = insider_trading_ref01_ent.load(insider_trading_ref01_match_dt0, nil)
     assert !insider_trading_ref01_data_dt0_loaded.nil?
 
   end

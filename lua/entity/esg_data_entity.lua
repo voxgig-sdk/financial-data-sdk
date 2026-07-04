@@ -79,6 +79,10 @@ end
 
 
 
+---@param reqmatch EsgDataLoadMatch
+---@param ctrl? table
+---@return EsgData
+---@return string? err
 function EsgDataEntity:load(reqmatch, ctrl)
   local utility = self._utility
   local ctx = utility.make_context({

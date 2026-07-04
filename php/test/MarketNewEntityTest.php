@@ -49,8 +49,7 @@ class MarketNewEntityTest extends TestCase
         // LOAD
         $market_new_ref01_ent = $client->MarketNew(null);
         $market_new_ref01_match_dt0 = [];
-        [$market_new_ref01_data_dt0_loaded, $err] = $market_new_ref01_ent->load($market_new_ref01_match_dt0, null);
-        $this->assertNull($err);
+        $market_new_ref01_data_dt0_loaded = $market_new_ref01_ent->load($market_new_ref01_match_dt0, null);
         $this->assertNotNull($market_new_ref01_data_dt0_loaded);
 
     }

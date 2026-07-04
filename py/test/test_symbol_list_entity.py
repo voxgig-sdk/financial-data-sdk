@@ -50,8 +50,7 @@ class TestSymbolListEntity:
         symbol_list_ref01_ent = client.SymbolList(None)
         symbol_list_ref01_match = {}
 
-        symbol_list_ref01_list_result, err = symbol_list_ref01_ent.list(symbol_list_ref01_match, None)
-        assert err is None
+        symbol_list_ref01_list_result = symbol_list_ref01_ent.list(symbol_list_ref01_match, None)
         assert isinstance(symbol_list_ref01_list_result, list)
 
 

@@ -49,8 +49,7 @@ class EventCalendarEntityTest extends TestCase
         // LOAD
         $event_calendar_ref01_ent = $client->EventCalendar(null);
         $event_calendar_ref01_match_dt0 = [];
-        [$event_calendar_ref01_data_dt0_loaded, $err] = $event_calendar_ref01_ent->load($event_calendar_ref01_match_dt0, null);
-        $this->assertNull($err);
+        $event_calendar_ref01_data_dt0_loaded = $event_calendar_ref01_ent->load($event_calendar_ref01_match_dt0, null);
         $this->assertNotNull($event_calendar_ref01_data_dt0_loaded);
 
     }

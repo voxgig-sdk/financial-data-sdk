@@ -49,8 +49,7 @@ class TestMiscellaneousDataEntity:
         # LOAD
         miscellaneous_data_ref01_ent = client.MiscellaneousData(None)
         miscellaneous_data_ref01_match_dt0 = {}
-        miscellaneous_data_ref01_data_dt0_loaded, err = miscellaneous_data_ref01_ent.load(miscellaneous_data_ref01_match_dt0, None)
-        assert err is None
+        miscellaneous_data_ref01_data_dt0_loaded = miscellaneous_data_ref01_ent.load(miscellaneous_data_ref01_match_dt0, None)
         assert miscellaneous_data_ref01_data_dt0_loaded is not None
 
 

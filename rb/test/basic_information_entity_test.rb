@@ -42,8 +42,7 @@ class BasicInformationEntityTest < Minitest::Test
     # LOAD
     basic_information_ref01_ent = client.BasicInformation(nil)
     basic_information_ref01_match_dt0 = {}
-    basic_information_ref01_data_dt0_loaded, err = basic_information_ref01_ent.load(basic_information_ref01_match_dt0, nil)
-    assert_nil err
+    basic_information_ref01_data_dt0_loaded = basic_information_ref01_ent.load(basic_information_ref01_match_dt0, nil)
     assert !basic_information_ref01_data_dt0_loaded.nil?
 
   end

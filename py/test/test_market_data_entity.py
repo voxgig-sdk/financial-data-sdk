@@ -50,14 +50,12 @@ class TestMarketDataEntity:
         market_data_ref01_ent = client.MarketData(None)
         market_data_ref01_match = {}
 
-        market_data_ref01_list_result, err = market_data_ref01_ent.list(market_data_ref01_match, None)
-        assert err is None
+        market_data_ref01_list_result = market_data_ref01_ent.list(market_data_ref01_match, None)
         assert isinstance(market_data_ref01_list_result, list)
 
         # LOAD
         market_data_ref01_match_dt0 = {}
-        market_data_ref01_data_dt0_loaded, err = market_data_ref01_ent.load(market_data_ref01_match_dt0, None)
-        assert err is None
+        market_data_ref01_data_dt0_loaded = market_data_ref01_ent.load(market_data_ref01_match_dt0, None)
         assert market_data_ref01_data_dt0_loaded is not None
 
 

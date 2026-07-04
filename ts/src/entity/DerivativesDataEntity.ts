@@ -14,9 +14,13 @@ import type {
   Control,
 } from '../types'
 
+import type {
+  DerivativesData,
+  DerivativesDataLoadMatch,
+} from '../FinancialDataTypes'
 
 // TODO: needs Entity superclass
-class DerivativesDataEntity extends FinancialDataEntityBase {
+class DerivativesDataEntity extends FinancialDataEntityBase<DerivativesData> {
 
   constructor(client: FinancialDataSDK, entopts: any) {
     super(client, entopts)
@@ -32,7 +36,7 @@ class DerivativesDataEntity extends FinancialDataEntityBase {
 
 
 
-  async load(this: any, reqmatch?: any, ctrl?: Control) {
+  async load(this: any, reqmatch?: DerivativesDataLoadMatch, ctrl?: Control): Promise<DerivativesData> {
 
     const utility = this._utility
 
@@ -136,7 +140,9 @@ class DerivativesDataEntity extends FinancialDataEntityBase {
         throw err
       }
       else {
-        return undefined
+        // Off-happy-path (throw disabled): typed as any so the method's
+        // Promise<DerivativesData> return stays clean under strict null checks.
+        return undefined as any
       }
     }
   }

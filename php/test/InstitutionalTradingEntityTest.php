@@ -49,8 +49,7 @@ class InstitutionalTradingEntityTest extends TestCase
         // LOAD
         $institutional_trading_ref01_ent = $client->InstitutionalTrading(null);
         $institutional_trading_ref01_match_dt0 = [];
-        [$institutional_trading_ref01_data_dt0_loaded, $err] = $institutional_trading_ref01_ent->load($institutional_trading_ref01_match_dt0, null);
-        $this->assertNull($err);
+        $institutional_trading_ref01_data_dt0_loaded = $institutional_trading_ref01_ent->load($institutional_trading_ref01_match_dt0, null);
         $this->assertNotNull($institutional_trading_ref01_data_dt0_loaded);
 
     }

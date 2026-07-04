@@ -49,8 +49,7 @@ class TestInvestmentAdviserEntity:
         # LOAD
         investment_adviser_ref01_ent = client.InvestmentAdviser(None)
         investment_adviser_ref01_match_dt0 = {}
-        investment_adviser_ref01_data_dt0_loaded, err = investment_adviser_ref01_ent.load(investment_adviser_ref01_match_dt0, None)
-        assert err is None
+        investment_adviser_ref01_data_dt0_loaded = investment_adviser_ref01_ent.load(investment_adviser_ref01_match_dt0, None)
         assert investment_adviser_ref01_data_dt0_loaded is not None
 
 

@@ -79,6 +79,10 @@ end
 
 
 
+---@param reqmatch FinancialStatementLoadMatch
+---@param ctrl? table
+---@return FinancialStatement
+---@return string? err
 function FinancialStatementEntity:load(reqmatch, ctrl)
   local utility = self._utility
   local ctx = utility.make_context({

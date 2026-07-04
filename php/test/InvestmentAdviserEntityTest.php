@@ -49,8 +49,7 @@ class InvestmentAdviserEntityTest extends TestCase
         // LOAD
         $investment_adviser_ref01_ent = $client->InvestmentAdviser(null);
         $investment_adviser_ref01_match_dt0 = [];
-        [$investment_adviser_ref01_data_dt0_loaded, $err] = $investment_adviser_ref01_ent->load($investment_adviser_ref01_match_dt0, null);
-        $this->assertNull($err);
+        $investment_adviser_ref01_data_dt0_loaded = $investment_adviser_ref01_ent->load($investment_adviser_ref01_match_dt0, null);
         $this->assertNotNull($investment_adviser_ref01_data_dt0_loaded);
 
     }

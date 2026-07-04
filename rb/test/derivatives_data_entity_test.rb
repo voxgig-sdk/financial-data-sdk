@@ -42,8 +42,7 @@ class DerivativesDataEntityTest < Minitest::Test
     # LOAD
     derivatives_data_ref01_ent = client.DerivativesData(nil)
     derivatives_data_ref01_match_dt0 = {}
-    derivatives_data_ref01_data_dt0_loaded, err = derivatives_data_ref01_ent.load(derivatives_data_ref01_match_dt0, nil)
-    assert_nil err
+    derivatives_data_ref01_data_dt0_loaded = derivatives_data_ref01_ent.load(derivatives_data_ref01_match_dt0, nil)
     assert !derivatives_data_ref01_data_dt0_loaded.nil?
 
   end

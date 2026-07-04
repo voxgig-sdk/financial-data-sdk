@@ -49,8 +49,7 @@ class TestMutualFundEntity:
         # LOAD
         mutual_fund_ref01_ent = client.MutualFund(None)
         mutual_fund_ref01_match_dt0 = {}
-        mutual_fund_ref01_data_dt0_loaded, err = mutual_fund_ref01_ent.load(mutual_fund_ref01_match_dt0, None)
-        assert err is None
+        mutual_fund_ref01_data_dt0_loaded = mutual_fund_ref01_ent.load(mutual_fund_ref01_match_dt0, None)
         assert mutual_fund_ref01_data_dt0_loaded is not None
 
 

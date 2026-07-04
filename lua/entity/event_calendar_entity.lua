@@ -79,6 +79,10 @@ end
 
 
 
+---@param reqmatch EventCalendarLoadMatch
+---@param ctrl? table
+---@return EventCalendar
+---@return string? err
 function EventCalendarEntity:load(reqmatch, ctrl)
   local utility = self._utility
   local ctx = utility.make_context({

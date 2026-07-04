@@ -42,8 +42,7 @@ class InvestmentAdviserEntityTest < Minitest::Test
     # LOAD
     investment_adviser_ref01_ent = client.InvestmentAdviser(nil)
     investment_adviser_ref01_match_dt0 = {}
-    investment_adviser_ref01_data_dt0_loaded, err = investment_adviser_ref01_ent.load(investment_adviser_ref01_match_dt0, nil)
-    assert_nil err
+    investment_adviser_ref01_data_dt0_loaded = investment_adviser_ref01_ent.load(investment_adviser_ref01_match_dt0, nil)
     assert !investment_adviser_ref01_data_dt0_loaded.nil?
 
   end

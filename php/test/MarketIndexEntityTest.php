@@ -49,8 +49,7 @@ class MarketIndexEntityTest extends TestCase
         // LOAD
         $market_index_ref01_ent = $client->MarketIndex(null);
         $market_index_ref01_match_dt0 = [];
-        [$market_index_ref01_data_dt0_loaded, $err] = $market_index_ref01_ent->load($market_index_ref01_match_dt0, null);
-        $this->assertNull($err);
+        $market_index_ref01_data_dt0_loaded = $market_index_ref01_ent->load($market_index_ref01_match_dt0, null);
         $this->assertNotNull($market_index_ref01_data_dt0_loaded);
 
     }

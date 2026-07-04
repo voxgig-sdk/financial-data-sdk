@@ -43,8 +43,7 @@ class SymbolListEntityTest < Minitest::Test
     symbol_list_ref01_ent = client.SymbolList(nil)
     symbol_list_ref01_match = {}
 
-    symbol_list_ref01_list_result, err = symbol_list_ref01_ent.list(symbol_list_ref01_match, nil)
-    assert_nil err
+    symbol_list_ref01_list_result = symbol_list_ref01_ent.list(symbol_list_ref01_match, nil)
     assert symbol_list_ref01_list_result.is_a?(Array)
 
   end

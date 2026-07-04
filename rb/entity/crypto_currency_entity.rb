@@ -45,6 +45,7 @@ class CryptoCurrencyEntity
     end
   end
 
+  # @return [CryptoCurrency, Hash] the current CryptoCurrency data
   def data_get
     @_utility.feature_hook.call(@_entctx, "GetData")
     VoxgigStruct.clone(@_data)
@@ -57,12 +58,18 @@ class CryptoCurrencyEntity
     end
   end
 
+  # @return [Hash] the current match filter (any subset of CryptoCurrency fields)
   def match_get
     @_utility.feature_hook.call(@_entctx, "GetMatch")
     VoxgigStruct.clone(@_match)
   end
 
   
+  # Load a single CryptoCurrency.
+  #
+  # @param reqmatch [CryptoCurrencyLoadMatch, Hash, nil] match criteria (id/query fields)
+  # @param ctrl [Object, nil] optional per-call control
+  # @return [CryptoCurrency, Hash] the loaded CryptoCurrency; raises FinancialDataError on failure
   def load(reqmatch, ctrl = nil)
     utility = @_utility
     ctx = utility.make_context.call({

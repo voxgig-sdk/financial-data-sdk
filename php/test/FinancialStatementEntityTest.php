@@ -49,8 +49,7 @@ class FinancialStatementEntityTest extends TestCase
         // LOAD
         $financial_statement_ref01_ent = $client->FinancialStatement(null);
         $financial_statement_ref01_match_dt0 = [];
-        [$financial_statement_ref01_data_dt0_loaded, $err] = $financial_statement_ref01_ent->load($financial_statement_ref01_match_dt0, null);
-        $this->assertNull($err);
+        $financial_statement_ref01_data_dt0_loaded = $financial_statement_ref01_ent->load($financial_statement_ref01_match_dt0, null);
         $this->assertNotNull($financial_statement_ref01_data_dt0_loaded);
 
     }

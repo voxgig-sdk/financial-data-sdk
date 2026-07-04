@@ -49,8 +49,7 @@ class TestDerivativesDataEntity:
         # LOAD
         derivatives_data_ref01_ent = client.DerivativesData(None)
         derivatives_data_ref01_match_dt0 = {}
-        derivatives_data_ref01_data_dt0_loaded, err = derivatives_data_ref01_ent.load(derivatives_data_ref01_match_dt0, None)
-        assert err is None
+        derivatives_data_ref01_data_dt0_loaded = derivatives_data_ref01_ent.load(derivatives_data_ref01_match_dt0, None)
         assert derivatives_data_ref01_data_dt0_loaded is not None
 
 

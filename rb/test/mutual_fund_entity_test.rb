@@ -42,8 +42,7 @@ class MutualFundEntityTest < Minitest::Test
     # LOAD
     mutual_fund_ref01_ent = client.MutualFund(nil)
     mutual_fund_ref01_match_dt0 = {}
-    mutual_fund_ref01_data_dt0_loaded, err = mutual_fund_ref01_ent.load(mutual_fund_ref01_match_dt0, nil)
-    assert_nil err
+    mutual_fund_ref01_data_dt0_loaded = mutual_fund_ref01_ent.load(mutual_fund_ref01_match_dt0, nil)
     assert !mutual_fund_ref01_data_dt0_loaded.nil?
 
   end

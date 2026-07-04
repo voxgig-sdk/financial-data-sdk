@@ -49,8 +49,7 @@ class MiscellaneousDataEntityTest extends TestCase
         // LOAD
         $miscellaneous_data_ref01_ent = $client->MiscellaneousData(null);
         $miscellaneous_data_ref01_match_dt0 = [];
-        [$miscellaneous_data_ref01_data_dt0_loaded, $err] = $miscellaneous_data_ref01_ent->load($miscellaneous_data_ref01_match_dt0, null);
-        $this->assertNull($err);
+        $miscellaneous_data_ref01_data_dt0_loaded = $miscellaneous_data_ref01_ent->load($miscellaneous_data_ref01_match_dt0, null);
         $this->assertNotNull($miscellaneous_data_ref01_data_dt0_loaded);
 
     }

@@ -50,8 +50,7 @@ class SymbolListEntityTest extends TestCase
         $symbol_list_ref01_ent = $client->SymbolList(null);
         $symbol_list_ref01_match = [];
 
-        [$symbol_list_ref01_list_result, $err] = $symbol_list_ref01_ent->list($symbol_list_ref01_match, null);
-        $this->assertNull($err);
+        $symbol_list_ref01_list_result = $symbol_list_ref01_ent->list($symbol_list_ref01_match, null);
         $this->assertIsArray($symbol_list_ref01_list_result);
 
     }

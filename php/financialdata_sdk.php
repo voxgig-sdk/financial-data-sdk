@@ -103,7 +103,7 @@ class FinancialDataSDK
         return $this->_rootctx;
     }
 
-    public function prepare(array $fetchargs = []): array
+    public function prepare(array $fetchargs = []): mixed
     {
         $utility = $this->_utility;
         $fetchargs = $fetchargs ?? [];
@@ -149,19 +149,27 @@ class FinancialDataSDK
 
         [$_, $err] = ($utility->prepare_auth)($ctx);
         if ($err) {
-            return [null, $err];
+            return ($utility->make_error)($ctx, $err);
         }
 
-        return ($utility->make_fetch_def)($ctx);
+        [$fetchdef, $fd_err] = ($utility->make_fetch_def)($ctx);
+        if ($fd_err) {
+            return ($utility->make_error)($ctx, $fd_err);
+        }
+        return $fetchdef;
     }
 
-    public function direct(array $fetchargs = []): array
+    public function direct(array $fetchargs = []): mixed
     {
         $utility = $this->_utility;
 
-        [$fetchdef, $err] = $this->prepare($fetchargs);
-        if ($err) {
-            return [["ok" => false, "err" => $err], null];
+        // direct() is the raw-HTTP escape hatch: it never throws, it returns
+        // an {ok, err, ...} dict. prepare() now raises on error, so catch it
+        // and surface the failure through the dict instead.
+        try {
+            $fetchdef = $this->prepare($fetchargs);
+        } catch (\Throwable $err) {
+            return ["ok" => false, "err" => $err];
         }
 
         $fetchargs = $fetchargs ?? [];
@@ -176,14 +184,14 @@ class FinancialDataSDK
         [$fetched, $fetch_err] = ($utility->fetcher)($ctx, $url, $fetchdef);
 
         if ($fetch_err) {
-            return [["ok" => false, "err" => $fetch_err], null];
+            return ["ok" => false, "err" => $fetch_err];
         }
 
         if ($fetched === null) {
-            return [[
+            return [
                 "ok" => false,
                 "err" => $ctx->make_error("direct_no_response", "response: undefined"),
-            ], null];
+            ];
         }
 
         if (is_array($fetched)) {
@@ -208,143 +216,341 @@ class FinancialDataSDK
                 }
             }
 
-            return [[
+            return [
                 "ok" => $status >= 200 && $status < 300,
                 "status" => $status,
                 "headers" => Struct::getprop($fetched, "headers"),
                 "data" => $json_data,
-            ], null];
+            ];
         }
 
-        return [[
+        return [
             "ok" => false,
             "err" => $ctx->make_error("direct_invalid", "invalid response type"),
-        ], null];
+        ];
     }
 
 
-    public function BasicInformation($data = null)
+    private $_basic_information = null;
+
+    // Idiomatic facade: $client->basic_information()->list() / ->load(["id" => ...]).
+    // Also serves the deprecated PascalCase alias BasicInformation() (PHP method
+    // names are case-insensitive).
+    public function basic_information($data = null)
     {
         require_once __DIR__ . '/entity/basic_information_entity.php';
+        if ($data === null) {
+            if ($this->_basic_information === null) {
+                $this->_basic_information = new BasicInformationEntity($this, null);
+            }
+            return $this->_basic_information;
+        }
         return new BasicInformationEntity($this, $data);
     }
 
 
-    public function CryptoCurrency($data = null)
+    private $_crypto_currency = null;
+
+    // Idiomatic facade: $client->crypto_currency()->list() / ->load(["id" => ...]).
+    // Also serves the deprecated PascalCase alias CryptoCurrency() (PHP method
+    // names are case-insensitive).
+    public function crypto_currency($data = null)
     {
         require_once __DIR__ . '/entity/crypto_currency_entity.php';
+        if ($data === null) {
+            if ($this->_crypto_currency === null) {
+                $this->_crypto_currency = new CryptoCurrencyEntity($this, null);
+            }
+            return $this->_crypto_currency;
+        }
         return new CryptoCurrencyEntity($this, $data);
     }
 
 
-    public function DerivativesData($data = null)
+    private $_derivatives_data = null;
+
+    // Idiomatic facade: $client->derivatives_data()->list() / ->load(["id" => ...]).
+    // Also serves the deprecated PascalCase alias DerivativesData() (PHP method
+    // names are case-insensitive).
+    public function derivatives_data($data = null)
     {
         require_once __DIR__ . '/entity/derivatives_data_entity.php';
+        if ($data === null) {
+            if ($this->_derivatives_data === null) {
+                $this->_derivatives_data = new DerivativesDataEntity($this, null);
+            }
+            return $this->_derivatives_data;
+        }
         return new DerivativesDataEntity($this, $data);
     }
 
 
-    public function EsgData($data = null)
+    private $_esg_data = null;
+
+    // Idiomatic facade: $client->esg_data()->list() / ->load(["id" => ...]).
+    // Also serves the deprecated PascalCase alias EsgData() (PHP method
+    // names are case-insensitive).
+    public function esg_data($data = null)
     {
         require_once __DIR__ . '/entity/esg_data_entity.php';
+        if ($data === null) {
+            if ($this->_esg_data === null) {
+                $this->_esg_data = new EsgDataEntity($this, null);
+            }
+            return $this->_esg_data;
+        }
         return new EsgDataEntity($this, $data);
     }
 
 
-    public function EtfData($data = null)
+    private $_etf_data = null;
+
+    // Idiomatic facade: $client->etf_data()->list() / ->load(["id" => ...]).
+    // Also serves the deprecated PascalCase alias EtfData() (PHP method
+    // names are case-insensitive).
+    public function etf_data($data = null)
     {
         require_once __DIR__ . '/entity/etf_data_entity.php';
+        if ($data === null) {
+            if ($this->_etf_data === null) {
+                $this->_etf_data = new EtfDataEntity($this, null);
+            }
+            return $this->_etf_data;
+        }
         return new EtfDataEntity($this, $data);
     }
 
 
-    public function EventCalendar($data = null)
+    private $_event_calendar = null;
+
+    // Idiomatic facade: $client->event_calendar()->list() / ->load(["id" => ...]).
+    // Also serves the deprecated PascalCase alias EventCalendar() (PHP method
+    // names are case-insensitive).
+    public function event_calendar($data = null)
     {
         require_once __DIR__ . '/entity/event_calendar_entity.php';
+        if ($data === null) {
+            if ($this->_event_calendar === null) {
+                $this->_event_calendar = new EventCalendarEntity($this, null);
+            }
+            return $this->_event_calendar;
+        }
         return new EventCalendarEntity($this, $data);
     }
 
 
-    public function FinancialRatio($data = null)
+    private $_financial_ratio = null;
+
+    // Idiomatic facade: $client->financial_ratio()->list() / ->load(["id" => ...]).
+    // Also serves the deprecated PascalCase alias FinancialRatio() (PHP method
+    // names are case-insensitive).
+    public function financial_ratio($data = null)
     {
         require_once __DIR__ . '/entity/financial_ratio_entity.php';
+        if ($data === null) {
+            if ($this->_financial_ratio === null) {
+                $this->_financial_ratio = new FinancialRatioEntity($this, null);
+            }
+            return $this->_financial_ratio;
+        }
         return new FinancialRatioEntity($this, $data);
     }
 
 
-    public function FinancialStatement($data = null)
+    private $_financial_statement = null;
+
+    // Idiomatic facade: $client->financial_statement()->list() / ->load(["id" => ...]).
+    // Also serves the deprecated PascalCase alias FinancialStatement() (PHP method
+    // names are case-insensitive).
+    public function financial_statement($data = null)
     {
         require_once __DIR__ . '/entity/financial_statement_entity.php';
+        if ($data === null) {
+            if ($this->_financial_statement === null) {
+                $this->_financial_statement = new FinancialStatementEntity($this, null);
+            }
+            return $this->_financial_statement;
+        }
         return new FinancialStatementEntity($this, $data);
     }
 
 
-    public function ForexData($data = null)
+    private $_forex_data = null;
+
+    // Idiomatic facade: $client->forex_data()->list() / ->load(["id" => ...]).
+    // Also serves the deprecated PascalCase alias ForexData() (PHP method
+    // names are case-insensitive).
+    public function forex_data($data = null)
     {
         require_once __DIR__ . '/entity/forex_data_entity.php';
+        if ($data === null) {
+            if ($this->_forex_data === null) {
+                $this->_forex_data = new ForexDataEntity($this, null);
+            }
+            return $this->_forex_data;
+        }
         return new ForexDataEntity($this, $data);
     }
 
 
-    public function InsiderTrading($data = null)
+    private $_insider_trading = null;
+
+    // Idiomatic facade: $client->insider_trading()->list() / ->load(["id" => ...]).
+    // Also serves the deprecated PascalCase alias InsiderTrading() (PHP method
+    // names are case-insensitive).
+    public function insider_trading($data = null)
     {
         require_once __DIR__ . '/entity/insider_trading_entity.php';
+        if ($data === null) {
+            if ($this->_insider_trading === null) {
+                $this->_insider_trading = new InsiderTradingEntity($this, null);
+            }
+            return $this->_insider_trading;
+        }
         return new InsiderTradingEntity($this, $data);
     }
 
 
-    public function InstitutionalTrading($data = null)
+    private $_institutional_trading = null;
+
+    // Idiomatic facade: $client->institutional_trading()->list() / ->load(["id" => ...]).
+    // Also serves the deprecated PascalCase alias InstitutionalTrading() (PHP method
+    // names are case-insensitive).
+    public function institutional_trading($data = null)
     {
         require_once __DIR__ . '/entity/institutional_trading_entity.php';
+        if ($data === null) {
+            if ($this->_institutional_trading === null) {
+                $this->_institutional_trading = new InstitutionalTradingEntity($this, null);
+            }
+            return $this->_institutional_trading;
+        }
         return new InstitutionalTradingEntity($this, $data);
     }
 
 
-    public function InvestmentAdviser($data = null)
+    private $_investment_adviser = null;
+
+    // Idiomatic facade: $client->investment_adviser()->list() / ->load(["id" => ...]).
+    // Also serves the deprecated PascalCase alias InvestmentAdviser() (PHP method
+    // names are case-insensitive).
+    public function investment_adviser($data = null)
     {
         require_once __DIR__ . '/entity/investment_adviser_entity.php';
+        if ($data === null) {
+            if ($this->_investment_adviser === null) {
+                $this->_investment_adviser = new InvestmentAdviserEntity($this, null);
+            }
+            return $this->_investment_adviser;
+        }
         return new InvestmentAdviserEntity($this, $data);
     }
 
 
-    public function MarketData($data = null)
+    private $_market_data = null;
+
+    // Idiomatic facade: $client->market_data()->list() / ->load(["id" => ...]).
+    // Also serves the deprecated PascalCase alias MarketData() (PHP method
+    // names are case-insensitive).
+    public function market_data($data = null)
     {
         require_once __DIR__ . '/entity/market_data_entity.php';
+        if ($data === null) {
+            if ($this->_market_data === null) {
+                $this->_market_data = new MarketDataEntity($this, null);
+            }
+            return $this->_market_data;
+        }
         return new MarketDataEntity($this, $data);
     }
 
 
-    public function MarketIndex($data = null)
+    private $_market_index = null;
+
+    // Idiomatic facade: $client->market_index()->list() / ->load(["id" => ...]).
+    // Also serves the deprecated PascalCase alias MarketIndex() (PHP method
+    // names are case-insensitive).
+    public function market_index($data = null)
     {
         require_once __DIR__ . '/entity/market_index_entity.php';
+        if ($data === null) {
+            if ($this->_market_index === null) {
+                $this->_market_index = new MarketIndexEntity($this, null);
+            }
+            return $this->_market_index;
+        }
         return new MarketIndexEntity($this, $data);
     }
 
 
-    public function MarketNew($data = null)
+    private $_market_new = null;
+
+    // Idiomatic facade: $client->market_new()->list() / ->load(["id" => ...]).
+    // Also serves the deprecated PascalCase alias MarketNew() (PHP method
+    // names are case-insensitive).
+    public function market_new($data = null)
     {
         require_once __DIR__ . '/entity/market_new_entity.php';
+        if ($data === null) {
+            if ($this->_market_new === null) {
+                $this->_market_new = new MarketNewEntity($this, null);
+            }
+            return $this->_market_new;
+        }
         return new MarketNewEntity($this, $data);
     }
 
 
-    public function MiscellaneousData($data = null)
+    private $_miscellaneous_data = null;
+
+    // Idiomatic facade: $client->miscellaneous_data()->list() / ->load(["id" => ...]).
+    // Also serves the deprecated PascalCase alias MiscellaneousData() (PHP method
+    // names are case-insensitive).
+    public function miscellaneous_data($data = null)
     {
         require_once __DIR__ . '/entity/miscellaneous_data_entity.php';
+        if ($data === null) {
+            if ($this->_miscellaneous_data === null) {
+                $this->_miscellaneous_data = new MiscellaneousDataEntity($this, null);
+            }
+            return $this->_miscellaneous_data;
+        }
         return new MiscellaneousDataEntity($this, $data);
     }
 
 
-    public function MutualFund($data = null)
+    private $_mutual_fund = null;
+
+    // Idiomatic facade: $client->mutual_fund()->list() / ->load(["id" => ...]).
+    // Also serves the deprecated PascalCase alias MutualFund() (PHP method
+    // names are case-insensitive).
+    public function mutual_fund($data = null)
     {
         require_once __DIR__ . '/entity/mutual_fund_entity.php';
+        if ($data === null) {
+            if ($this->_mutual_fund === null) {
+                $this->_mutual_fund = new MutualFundEntity($this, null);
+            }
+            return $this->_mutual_fund;
+        }
         return new MutualFundEntity($this, $data);
     }
 
 
-    public function SymbolList($data = null)
+    private $_symbol_list = null;
+
+    // Idiomatic facade: $client->symbol_list()->list() / ->load(["id" => ...]).
+    // Also serves the deprecated PascalCase alias SymbolList() (PHP method
+    // names are case-insensitive).
+    public function symbol_list($data = null)
     {
         require_once __DIR__ . '/entity/symbol_list_entity.php';
+        if ($data === null) {
+            if ($this->_symbol_list === null) {
+                $this->_symbol_list = new SymbolListEntity($this, null);
+            }
+            return $this->_symbol_list;
+        }
         return new SymbolListEntity($this, $data);
     }
 

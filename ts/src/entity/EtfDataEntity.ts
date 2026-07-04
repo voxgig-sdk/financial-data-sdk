@@ -14,9 +14,13 @@ import type {
   Control,
 } from '../types'
 
+import type {
+  EtfData,
+  EtfDataLoadMatch,
+} from '../FinancialDataTypes'
 
 // TODO: needs Entity superclass
-class EtfDataEntity extends FinancialDataEntityBase {
+class EtfDataEntity extends FinancialDataEntityBase<EtfData> {
 
   constructor(client: FinancialDataSDK, entopts: any) {
     super(client, entopts)
@@ -32,7 +36,7 @@ class EtfDataEntity extends FinancialDataEntityBase {
 
 
 
-  async load(this: any, reqmatch?: any, ctrl?: Control) {
+  async load(this: any, reqmatch?: EtfDataLoadMatch, ctrl?: Control): Promise<EtfData> {
 
     const utility = this._utility
 
@@ -136,7 +140,9 @@ class EtfDataEntity extends FinancialDataEntityBase {
         throw err
       }
       else {
-        return undefined
+        // Off-happy-path (throw disabled): typed as any so the method's
+        // Promise<EtfData> return stays clean under strict null checks.
+        return undefined as any
       }
     }
   }

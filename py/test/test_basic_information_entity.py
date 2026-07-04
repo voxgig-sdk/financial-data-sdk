@@ -49,8 +49,7 @@ class TestBasicInformationEntity:
         # LOAD
         basic_information_ref01_ent = client.BasicInformation(None)
         basic_information_ref01_match_dt0 = {}
-        basic_information_ref01_data_dt0_loaded, err = basic_information_ref01_ent.load(basic_information_ref01_match_dt0, None)
-        assert err is None
+        basic_information_ref01_data_dt0_loaded = basic_information_ref01_ent.load(basic_information_ref01_match_dt0, None)
         assert basic_information_ref01_data_dt0_loaded is not None
 
 

@@ -14,9 +14,13 @@ import type {
   Control,
 } from '../types'
 
+import type {
+  FinancialRatio,
+  FinancialRatioLoadMatch,
+} from '../FinancialDataTypes'
 
 // TODO: needs Entity superclass
-class FinancialRatioEntity extends FinancialDataEntityBase {
+class FinancialRatioEntity extends FinancialDataEntityBase<FinancialRatio> {
 
   constructor(client: FinancialDataSDK, entopts: any) {
     super(client, entopts)
@@ -32,7 +36,7 @@ class FinancialRatioEntity extends FinancialDataEntityBase {
 
 
 
-  async load(this: any, reqmatch?: any, ctrl?: Control) {
+  async load(this: any, reqmatch?: FinancialRatioLoadMatch, ctrl?: Control): Promise<FinancialRatio> {
 
     const utility = this._utility
 
@@ -136,7 +140,9 @@ class FinancialRatioEntity extends FinancialDataEntityBase {
         throw err
       }
       else {
-        return undefined
+        // Off-happy-path (throw disabled): typed as any so the method's
+        // Promise<FinancialRatio> return stays clean under strict null checks.
+        return undefined as any
       }
     }
   }

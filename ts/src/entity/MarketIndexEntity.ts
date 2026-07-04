@@ -14,9 +14,13 @@ import type {
   Control,
 } from '../types'
 
+import type {
+  MarketIndex,
+  MarketIndexLoadMatch,
+} from '../FinancialDataTypes'
 
 // TODO: needs Entity superclass
-class MarketIndexEntity extends FinancialDataEntityBase {
+class MarketIndexEntity extends FinancialDataEntityBase<MarketIndex> {
 
   constructor(client: FinancialDataSDK, entopts: any) {
     super(client, entopts)
@@ -32,7 +36,7 @@ class MarketIndexEntity extends FinancialDataEntityBase {
 
 
 
-  async load(this: any, reqmatch?: any, ctrl?: Control) {
+  async load(this: any, reqmatch?: MarketIndexLoadMatch, ctrl?: Control): Promise<MarketIndex> {
 
     const utility = this._utility
 
@@ -136,7 +140,9 @@ class MarketIndexEntity extends FinancialDataEntityBase {
         throw err
       }
       else {
-        return undefined
+        // Off-happy-path (throw disabled): typed as any so the method's
+        // Promise<MarketIndex> return stays clean under strict null checks.
+        return undefined as any
       }
     }
   }

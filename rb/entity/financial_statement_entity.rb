@@ -45,6 +45,7 @@ class FinancialStatementEntity
     end
   end
 
+  # @return [FinancialStatement, Hash] the current FinancialStatement data
   def data_get
     @_utility.feature_hook.call(@_entctx, "GetData")
     VoxgigStruct.clone(@_data)
@@ -57,12 +58,18 @@ class FinancialStatementEntity
     end
   end
 
+  # @return [Hash] the current match filter (any subset of FinancialStatement fields)
   def match_get
     @_utility.feature_hook.call(@_entctx, "GetMatch")
     VoxgigStruct.clone(@_match)
   end
 
   
+  # Load a single FinancialStatement.
+  #
+  # @param reqmatch [FinancialStatementLoadMatch, Hash, nil] match criteria (id/query fields)
+  # @param ctrl [Object, nil] optional per-call control
+  # @return [FinancialStatement, Hash] the loaded FinancialStatement; raises FinancialDataError on failure
   def load(reqmatch, ctrl = nil)
     utility = @_utility
     ctx = utility.make_context.call({

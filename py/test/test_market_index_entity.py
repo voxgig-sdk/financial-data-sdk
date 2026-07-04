@@ -49,8 +49,7 @@ class TestMarketIndexEntity:
         # LOAD
         market_index_ref01_ent = client.MarketIndex(None)
         market_index_ref01_match_dt0 = {}
-        market_index_ref01_data_dt0_loaded, err = market_index_ref01_ent.load(market_index_ref01_match_dt0, None)
-        assert err is None
+        market_index_ref01_data_dt0_loaded = market_index_ref01_ent.load(market_index_ref01_match_dt0, None)
         assert market_index_ref01_data_dt0_loaded is not None
 
 

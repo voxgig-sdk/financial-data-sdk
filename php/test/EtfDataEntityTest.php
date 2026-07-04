@@ -49,8 +49,7 @@ class EtfDataEntityTest extends TestCase
         // LOAD
         $etf_data_ref01_ent = $client->EtfData(null);
         $etf_data_ref01_match_dt0 = [];
-        [$etf_data_ref01_data_dt0_loaded, $err] = $etf_data_ref01_ent->load($etf_data_ref01_match_dt0, null);
-        $this->assertNull($err);
+        $etf_data_ref01_data_dt0_loaded = $etf_data_ref01_ent->load($etf_data_ref01_match_dt0, null);
         $this->assertNotNull($etf_data_ref01_data_dt0_loaded);
 
     }

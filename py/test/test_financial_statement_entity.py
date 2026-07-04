@@ -49,8 +49,7 @@ class TestFinancialStatementEntity:
         # LOAD
         financial_statement_ref01_ent = client.FinancialStatement(None)
         financial_statement_ref01_match_dt0 = {}
-        financial_statement_ref01_data_dt0_loaded, err = financial_statement_ref01_ent.load(financial_statement_ref01_match_dt0, None)
-        assert err is None
+        financial_statement_ref01_data_dt0_loaded = financial_statement_ref01_ent.load(financial_statement_ref01_match_dt0, None)
         assert financial_statement_ref01_data_dt0_loaded is not None
 
 

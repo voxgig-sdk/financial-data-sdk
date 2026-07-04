@@ -49,8 +49,7 @@ class TestInsiderTradingEntity:
         # LOAD
         insider_trading_ref01_ent = client.InsiderTrading(None)
         insider_trading_ref01_match_dt0 = {}
-        insider_trading_ref01_data_dt0_loaded, err = insider_trading_ref01_ent.load(insider_trading_ref01_match_dt0, None)
-        assert err is None
+        insider_trading_ref01_data_dt0_loaded = insider_trading_ref01_ent.load(insider_trading_ref01_match_dt0, None)
         assert insider_trading_ref01_data_dt0_loaded is not None
 
 

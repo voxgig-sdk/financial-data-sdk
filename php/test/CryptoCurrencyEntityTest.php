@@ -49,8 +49,7 @@ class CryptoCurrencyEntityTest extends TestCase
         // LOAD
         $crypto_currency_ref01_ent = $client->CryptoCurrency(null);
         $crypto_currency_ref01_match_dt0 = [];
-        [$crypto_currency_ref01_data_dt0_loaded, $err] = $crypto_currency_ref01_ent->load($crypto_currency_ref01_match_dt0, null);
-        $this->assertNull($err);
+        $crypto_currency_ref01_data_dt0_loaded = $crypto_currency_ref01_ent->load($crypto_currency_ref01_match_dt0, null);
         $this->assertNotNull($crypto_currency_ref01_data_dt0_loaded);
 
     }

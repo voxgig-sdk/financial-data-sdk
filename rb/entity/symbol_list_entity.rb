@@ -45,6 +45,7 @@ class SymbolListEntity
     end
   end
 
+  # @return [SymbolList, Hash] the current SymbolList data
   def data_get
     @_utility.feature_hook.call(@_entctx, "GetData")
     VoxgigStruct.clone(@_data)
@@ -57,6 +58,7 @@ class SymbolListEntity
     end
   end
 
+  # @return [Hash] the current match filter (any subset of SymbolList fields)
   def match_get
     @_utility.feature_hook.call(@_entctx, "GetMatch")
     VoxgigStruct.clone(@_match)
@@ -65,6 +67,11 @@ class SymbolListEntity
   
 
   
+  # List SymbolList items matching the given filter.
+  #
+  # @param reqmatch [SymbolListListMatch, Hash, nil] match filter (any subset of SymbolList fields)
+  # @param ctrl [Object, nil] optional per-call control
+  # @return [Array<SymbolList>, Array] the matching SymbolList items; raises FinancialDataError on failure
   def list(reqmatch, ctrl = nil)
     utility = @_utility
     ctx = utility.make_context.call({

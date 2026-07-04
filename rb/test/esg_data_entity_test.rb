@@ -42,8 +42,7 @@ class EsgDataEntityTest < Minitest::Test
     # LOAD
     esg_data_ref01_ent = client.EsgData(nil)
     esg_data_ref01_match_dt0 = {}
-    esg_data_ref01_data_dt0_loaded, err = esg_data_ref01_ent.load(esg_data_ref01_match_dt0, nil)
-    assert_nil err
+    esg_data_ref01_data_dt0_loaded = esg_data_ref01_ent.load(esg_data_ref01_match_dt0, nil)
     assert !esg_data_ref01_data_dt0_loaded.nil?
 
   end

@@ -79,6 +79,10 @@ end
 
 
 
+---@param reqmatch MutualFundLoadMatch
+---@param ctrl? table
+---@return MutualFund
+---@return string? err
 function MutualFundEntity:load(reqmatch, ctrl)
   local utility = self._utility
   local ctx = utility.make_context({

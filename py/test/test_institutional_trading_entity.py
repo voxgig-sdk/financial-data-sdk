@@ -49,8 +49,7 @@ class TestInstitutionalTradingEntity:
         # LOAD
         institutional_trading_ref01_ent = client.InstitutionalTrading(None)
         institutional_trading_ref01_match_dt0 = {}
-        institutional_trading_ref01_data_dt0_loaded, err = institutional_trading_ref01_ent.load(institutional_trading_ref01_match_dt0, None)
-        assert err is None
+        institutional_trading_ref01_data_dt0_loaded = institutional_trading_ref01_ent.load(institutional_trading_ref01_match_dt0, None)
         assert institutional_trading_ref01_data_dt0_loaded is not None
 
 

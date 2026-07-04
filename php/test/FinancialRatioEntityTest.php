@@ -49,8 +49,7 @@ class FinancialRatioEntityTest extends TestCase
         // LOAD
         $financial_ratio_ref01_ent = $client->FinancialRatio(null);
         $financial_ratio_ref01_match_dt0 = [];
-        [$financial_ratio_ref01_data_dt0_loaded, $err] = $financial_ratio_ref01_ent->load($financial_ratio_ref01_match_dt0, null);
-        $this->assertNull($err);
+        $financial_ratio_ref01_data_dt0_loaded = $financial_ratio_ref01_ent->load($financial_ratio_ref01_match_dt0, null);
         $this->assertNotNull($financial_ratio_ref01_data_dt0_loaded);
 
     }

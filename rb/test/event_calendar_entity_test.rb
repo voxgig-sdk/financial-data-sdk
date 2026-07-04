@@ -42,8 +42,7 @@ class EventCalendarEntityTest < Minitest::Test
     # LOAD
     event_calendar_ref01_ent = client.EventCalendar(nil)
     event_calendar_ref01_match_dt0 = {}
-    event_calendar_ref01_data_dt0_loaded, err = event_calendar_ref01_ent.load(event_calendar_ref01_match_dt0, nil)
-    assert_nil err
+    event_calendar_ref01_data_dt0_loaded = event_calendar_ref01_ent.load(event_calendar_ref01_match_dt0, nil)
     assert !event_calendar_ref01_data_dt0_loaded.nil?
 
   end

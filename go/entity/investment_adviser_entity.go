@@ -85,6 +85,27 @@ func (e *InvestmentAdviserEntity) Match(args ...any) any {
 	return out
 }
 
+// DataTyped is the statically-typed accessor for this entity's data. With no
+// argument it returns the current data as an InvestmentAdviser; with an argument it
+// sets the data and returns the stored value. It delegates to the untyped Data
+// (identical runtime) and converts at the typed boundary.
+func (e *InvestmentAdviserEntity) DataTyped(data ...InvestmentAdviser) InvestmentAdviser {
+	if len(data) > 0 {
+		return typedFrom[InvestmentAdviser](e.Data(asMap(data[0])))
+	}
+	return typedFrom[InvestmentAdviser](e.Data())
+}
+
+// MatchTyped mirrors DataTyped for the entity's match filter. The match is a
+// partial of the entity, so it round-trips through InvestmentAdviser (all fields
+// optional at the wire level).
+func (e *InvestmentAdviserEntity) MatchTyped(match ...InvestmentAdviser) InvestmentAdviser {
+	if len(match) > 0 {
+		return typedFrom[InvestmentAdviser](e.Match(asMap(match[0])))
+	}
+	return typedFrom[InvestmentAdviser](e.Match())
+}
+
 
 func (e *InvestmentAdviserEntity) Load(reqmatch map[string]any, ctrl map[string]any) (any, error) {
 	utility := e.utility
@@ -109,6 +130,17 @@ func (e *InvestmentAdviserEntity) Load(reqmatch map[string]any, ctrl map[string]
 			}
 		}
 	})
+}
+
+// LoadTyped is the statically-typed variant of Load: it takes an
+// InvestmentAdviserLoadMatch and returns an InvestmentAdviser. It delegates to the untyped
+// Load (identical runtime) and converts at the typed boundary.
+func (e *InvestmentAdviserEntity) LoadTyped(reqmatch InvestmentAdviserLoadMatch, ctrl map[string]any) (InvestmentAdviser, error) {
+	res, err := e.Load(asMap(reqmatch), ctrl)
+	if err != nil {
+		return InvestmentAdviser{}, err
+	}
+	return typedFrom[InvestmentAdviser](res), nil
 }
 
 

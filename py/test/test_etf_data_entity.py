@@ -49,8 +49,7 @@ class TestEtfDataEntity:
         # LOAD
         etf_data_ref01_ent = client.EtfData(None)
         etf_data_ref01_match_dt0 = {}
-        etf_data_ref01_data_dt0_loaded, err = etf_data_ref01_ent.load(etf_data_ref01_match_dt0, None)
-        assert err is None
+        etf_data_ref01_data_dt0_loaded = etf_data_ref01_ent.load(etf_data_ref01_match_dt0, None)
         assert etf_data_ref01_data_dt0_loaded is not None
 
 

@@ -245,91 +245,145 @@ func (sdk *FinancialDataSDK) Direct(fetchargs map[string]any) (map[string]any, e
 }
 
 
+// BasicInformation returns a BasicInformation entity bound to this client.
+// Idiomatic usage: client.BasicInformation(nil).List(nil, nil) or
+// client.BasicInformation(nil).Load(map[string]any{"id": ...}, nil).
 func (sdk *FinancialDataSDK) BasicInformation(data map[string]any) FinancialDataEntity {
 	return NewBasicInformationEntityFunc(sdk, data)
 }
 
 
+// CryptoCurrency returns a CryptoCurrency entity bound to this client.
+// Idiomatic usage: client.CryptoCurrency(nil).List(nil, nil) or
+// client.CryptoCurrency(nil).Load(map[string]any{"id": ...}, nil).
 func (sdk *FinancialDataSDK) CryptoCurrency(data map[string]any) FinancialDataEntity {
 	return NewCryptoCurrencyEntityFunc(sdk, data)
 }
 
 
+// DerivativesData returns a DerivativesData entity bound to this client.
+// Idiomatic usage: client.DerivativesData(nil).List(nil, nil) or
+// client.DerivativesData(nil).Load(map[string]any{"id": ...}, nil).
 func (sdk *FinancialDataSDK) DerivativesData(data map[string]any) FinancialDataEntity {
 	return NewDerivativesDataEntityFunc(sdk, data)
 }
 
 
+// EsgData returns a EsgData entity bound to this client.
+// Idiomatic usage: client.EsgData(nil).List(nil, nil) or
+// client.EsgData(nil).Load(map[string]any{"id": ...}, nil).
 func (sdk *FinancialDataSDK) EsgData(data map[string]any) FinancialDataEntity {
 	return NewEsgDataEntityFunc(sdk, data)
 }
 
 
+// EtfData returns a EtfData entity bound to this client.
+// Idiomatic usage: client.EtfData(nil).List(nil, nil) or
+// client.EtfData(nil).Load(map[string]any{"id": ...}, nil).
 func (sdk *FinancialDataSDK) EtfData(data map[string]any) FinancialDataEntity {
 	return NewEtfDataEntityFunc(sdk, data)
 }
 
 
+// EventCalendar returns a EventCalendar entity bound to this client.
+// Idiomatic usage: client.EventCalendar(nil).List(nil, nil) or
+// client.EventCalendar(nil).Load(map[string]any{"id": ...}, nil).
 func (sdk *FinancialDataSDK) EventCalendar(data map[string]any) FinancialDataEntity {
 	return NewEventCalendarEntityFunc(sdk, data)
 }
 
 
+// FinancialRatio returns a FinancialRatio entity bound to this client.
+// Idiomatic usage: client.FinancialRatio(nil).List(nil, nil) or
+// client.FinancialRatio(nil).Load(map[string]any{"id": ...}, nil).
 func (sdk *FinancialDataSDK) FinancialRatio(data map[string]any) FinancialDataEntity {
 	return NewFinancialRatioEntityFunc(sdk, data)
 }
 
 
+// FinancialStatement returns a FinancialStatement entity bound to this client.
+// Idiomatic usage: client.FinancialStatement(nil).List(nil, nil) or
+// client.FinancialStatement(nil).Load(map[string]any{"id": ...}, nil).
 func (sdk *FinancialDataSDK) FinancialStatement(data map[string]any) FinancialDataEntity {
 	return NewFinancialStatementEntityFunc(sdk, data)
 }
 
 
+// ForexData returns a ForexData entity bound to this client.
+// Idiomatic usage: client.ForexData(nil).List(nil, nil) or
+// client.ForexData(nil).Load(map[string]any{"id": ...}, nil).
 func (sdk *FinancialDataSDK) ForexData(data map[string]any) FinancialDataEntity {
 	return NewForexDataEntityFunc(sdk, data)
 }
 
 
+// InsiderTrading returns a InsiderTrading entity bound to this client.
+// Idiomatic usage: client.InsiderTrading(nil).List(nil, nil) or
+// client.InsiderTrading(nil).Load(map[string]any{"id": ...}, nil).
 func (sdk *FinancialDataSDK) InsiderTrading(data map[string]any) FinancialDataEntity {
 	return NewInsiderTradingEntityFunc(sdk, data)
 }
 
 
+// InstitutionalTrading returns a InstitutionalTrading entity bound to this client.
+// Idiomatic usage: client.InstitutionalTrading(nil).List(nil, nil) or
+// client.InstitutionalTrading(nil).Load(map[string]any{"id": ...}, nil).
 func (sdk *FinancialDataSDK) InstitutionalTrading(data map[string]any) FinancialDataEntity {
 	return NewInstitutionalTradingEntityFunc(sdk, data)
 }
 
 
+// InvestmentAdviser returns a InvestmentAdviser entity bound to this client.
+// Idiomatic usage: client.InvestmentAdviser(nil).List(nil, nil) or
+// client.InvestmentAdviser(nil).Load(map[string]any{"id": ...}, nil).
 func (sdk *FinancialDataSDK) InvestmentAdviser(data map[string]any) FinancialDataEntity {
 	return NewInvestmentAdviserEntityFunc(sdk, data)
 }
 
 
+// MarketData returns a MarketData entity bound to this client.
+// Idiomatic usage: client.MarketData(nil).List(nil, nil) or
+// client.MarketData(nil).Load(map[string]any{"id": ...}, nil).
 func (sdk *FinancialDataSDK) MarketData(data map[string]any) FinancialDataEntity {
 	return NewMarketDataEntityFunc(sdk, data)
 }
 
 
+// MarketIndex returns a MarketIndex entity bound to this client.
+// Idiomatic usage: client.MarketIndex(nil).List(nil, nil) or
+// client.MarketIndex(nil).Load(map[string]any{"id": ...}, nil).
 func (sdk *FinancialDataSDK) MarketIndex(data map[string]any) FinancialDataEntity {
 	return NewMarketIndexEntityFunc(sdk, data)
 }
 
 
+// MarketNew returns a MarketNew entity bound to this client.
+// Idiomatic usage: client.MarketNew(nil).List(nil, nil) or
+// client.MarketNew(nil).Load(map[string]any{"id": ...}, nil).
 func (sdk *FinancialDataSDK) MarketNew(data map[string]any) FinancialDataEntity {
 	return NewMarketNewEntityFunc(sdk, data)
 }
 
 
+// MiscellaneousData returns a MiscellaneousData entity bound to this client.
+// Idiomatic usage: client.MiscellaneousData(nil).List(nil, nil) or
+// client.MiscellaneousData(nil).Load(map[string]any{"id": ...}, nil).
 func (sdk *FinancialDataSDK) MiscellaneousData(data map[string]any) FinancialDataEntity {
 	return NewMiscellaneousDataEntityFunc(sdk, data)
 }
 
 
+// MutualFund returns a MutualFund entity bound to this client.
+// Idiomatic usage: client.MutualFund(nil).List(nil, nil) or
+// client.MutualFund(nil).Load(map[string]any{"id": ...}, nil).
 func (sdk *FinancialDataSDK) MutualFund(data map[string]any) FinancialDataEntity {
 	return NewMutualFundEntityFunc(sdk, data)
 }
 
 
+// SymbolList returns a SymbolList entity bound to this client.
+// Idiomatic usage: client.SymbolList(nil).List(nil, nil) or
+// client.SymbolList(nil).Load(map[string]any{"id": ...}, nil).
 func (sdk *FinancialDataSDK) SymbolList(data map[string]any) FinancialDataEntity {
 	return NewSymbolListEntityFunc(sdk, data)
 }

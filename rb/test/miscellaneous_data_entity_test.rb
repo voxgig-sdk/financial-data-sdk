@@ -42,8 +42,7 @@ class MiscellaneousDataEntityTest < Minitest::Test
     # LOAD
     miscellaneous_data_ref01_ent = client.MiscellaneousData(nil)
     miscellaneous_data_ref01_match_dt0 = {}
-    miscellaneous_data_ref01_data_dt0_loaded, err = miscellaneous_data_ref01_ent.load(miscellaneous_data_ref01_match_dt0, nil)
-    assert_nil err
+    miscellaneous_data_ref01_data_dt0_loaded = miscellaneous_data_ref01_ent.load(miscellaneous_data_ref01_match_dt0, nil)
     assert !miscellaneous_data_ref01_data_dt0_loaded.nil?
 
   end

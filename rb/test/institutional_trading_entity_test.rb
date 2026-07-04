@@ -42,8 +42,7 @@ class InstitutionalTradingEntityTest < Minitest::Test
     # LOAD
     institutional_trading_ref01_ent = client.InstitutionalTrading(nil)
     institutional_trading_ref01_match_dt0 = {}
-    institutional_trading_ref01_data_dt0_loaded, err = institutional_trading_ref01_ent.load(institutional_trading_ref01_match_dt0, nil)
-    assert_nil err
+    institutional_trading_ref01_data_dt0_loaded = institutional_trading_ref01_ent.load(institutional_trading_ref01_match_dt0, nil)
     assert !institutional_trading_ref01_data_dt0_loaded.nil?
 
   end

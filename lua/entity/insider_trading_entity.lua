@@ -79,6 +79,10 @@ end
 
 
 
+---@param reqmatch InsiderTradingLoadMatch
+---@param ctrl? table
+---@return InsiderTrading
+---@return string? err
 function InsiderTradingEntity:load(reqmatch, ctrl)
   local utility = self._utility
   local ctx = utility.make_context({

@@ -49,8 +49,7 @@ class TestForexDataEntity:
         # LOAD
         forex_data_ref01_ent = client.ForexData(None)
         forex_data_ref01_match_dt0 = {}
-        forex_data_ref01_data_dt0_loaded, err = forex_data_ref01_ent.load(forex_data_ref01_match_dt0, None)
-        assert err is None
+        forex_data_ref01_data_dt0_loaded = forex_data_ref01_ent.load(forex_data_ref01_match_dt0, None)
         assert forex_data_ref01_data_dt0_loaded is not None
 
 

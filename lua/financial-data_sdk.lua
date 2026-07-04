@@ -244,108 +244,342 @@ end
 
 
 
+-- Idiomatic facade: client:basic_information():list() / client:basic_information():load({ id = ... })
+function FinancialDataSDK:basic_information(data)
+  local EntityMod = require("entity.basic_information_entity")
+  if data == nil then
+    if self._basic_information == nil then
+      self._basic_information = EntityMod.new(self, nil)
+    end
+    return self._basic_information
+  end
+  return EntityMod.new(self, data)
+end
+
+-- Deprecated: use client:basic_information() instead.
 function FinancialDataSDK:BasicInformation(data)
   local EntityMod = require("entity.basic_information_entity")
   return EntityMod.new(self, data)
 end
 
 
+-- Idiomatic facade: client:crypto_currency():list() / client:crypto_currency():load({ id = ... })
+function FinancialDataSDK:crypto_currency(data)
+  local EntityMod = require("entity.crypto_currency_entity")
+  if data == nil then
+    if self._crypto_currency == nil then
+      self._crypto_currency = EntityMod.new(self, nil)
+    end
+    return self._crypto_currency
+  end
+  return EntityMod.new(self, data)
+end
+
+-- Deprecated: use client:crypto_currency() instead.
 function FinancialDataSDK:CryptoCurrency(data)
   local EntityMod = require("entity.crypto_currency_entity")
   return EntityMod.new(self, data)
 end
 
 
+-- Idiomatic facade: client:derivatives_data():list() / client:derivatives_data():load({ id = ... })
+function FinancialDataSDK:derivatives_data(data)
+  local EntityMod = require("entity.derivatives_data_entity")
+  if data == nil then
+    if self._derivatives_data == nil then
+      self._derivatives_data = EntityMod.new(self, nil)
+    end
+    return self._derivatives_data
+  end
+  return EntityMod.new(self, data)
+end
+
+-- Deprecated: use client:derivatives_data() instead.
 function FinancialDataSDK:DerivativesData(data)
   local EntityMod = require("entity.derivatives_data_entity")
   return EntityMod.new(self, data)
 end
 
 
+-- Idiomatic facade: client:esg_data():list() / client:esg_data():load({ id = ... })
+function FinancialDataSDK:esg_data(data)
+  local EntityMod = require("entity.esg_data_entity")
+  if data == nil then
+    if self._esg_data == nil then
+      self._esg_data = EntityMod.new(self, nil)
+    end
+    return self._esg_data
+  end
+  return EntityMod.new(self, data)
+end
+
+-- Deprecated: use client:esg_data() instead.
 function FinancialDataSDK:EsgData(data)
   local EntityMod = require("entity.esg_data_entity")
   return EntityMod.new(self, data)
 end
 
 
+-- Idiomatic facade: client:etf_data():list() / client:etf_data():load({ id = ... })
+function FinancialDataSDK:etf_data(data)
+  local EntityMod = require("entity.etf_data_entity")
+  if data == nil then
+    if self._etf_data == nil then
+      self._etf_data = EntityMod.new(self, nil)
+    end
+    return self._etf_data
+  end
+  return EntityMod.new(self, data)
+end
+
+-- Deprecated: use client:etf_data() instead.
 function FinancialDataSDK:EtfData(data)
   local EntityMod = require("entity.etf_data_entity")
   return EntityMod.new(self, data)
 end
 
 
+-- Idiomatic facade: client:event_calendar():list() / client:event_calendar():load({ id = ... })
+function FinancialDataSDK:event_calendar(data)
+  local EntityMod = require("entity.event_calendar_entity")
+  if data == nil then
+    if self._event_calendar == nil then
+      self._event_calendar = EntityMod.new(self, nil)
+    end
+    return self._event_calendar
+  end
+  return EntityMod.new(self, data)
+end
+
+-- Deprecated: use client:event_calendar() instead.
 function FinancialDataSDK:EventCalendar(data)
   local EntityMod = require("entity.event_calendar_entity")
   return EntityMod.new(self, data)
 end
 
 
+-- Idiomatic facade: client:financial_ratio():list() / client:financial_ratio():load({ id = ... })
+function FinancialDataSDK:financial_ratio(data)
+  local EntityMod = require("entity.financial_ratio_entity")
+  if data == nil then
+    if self._financial_ratio == nil then
+      self._financial_ratio = EntityMod.new(self, nil)
+    end
+    return self._financial_ratio
+  end
+  return EntityMod.new(self, data)
+end
+
+-- Deprecated: use client:financial_ratio() instead.
 function FinancialDataSDK:FinancialRatio(data)
   local EntityMod = require("entity.financial_ratio_entity")
   return EntityMod.new(self, data)
 end
 
 
+-- Idiomatic facade: client:financial_statement():list() / client:financial_statement():load({ id = ... })
+function FinancialDataSDK:financial_statement(data)
+  local EntityMod = require("entity.financial_statement_entity")
+  if data == nil then
+    if self._financial_statement == nil then
+      self._financial_statement = EntityMod.new(self, nil)
+    end
+    return self._financial_statement
+  end
+  return EntityMod.new(self, data)
+end
+
+-- Deprecated: use client:financial_statement() instead.
 function FinancialDataSDK:FinancialStatement(data)
   local EntityMod = require("entity.financial_statement_entity")
   return EntityMod.new(self, data)
 end
 
 
+-- Idiomatic facade: client:forex_data():list() / client:forex_data():load({ id = ... })
+function FinancialDataSDK:forex_data(data)
+  local EntityMod = require("entity.forex_data_entity")
+  if data == nil then
+    if self._forex_data == nil then
+      self._forex_data = EntityMod.new(self, nil)
+    end
+    return self._forex_data
+  end
+  return EntityMod.new(self, data)
+end
+
+-- Deprecated: use client:forex_data() instead.
 function FinancialDataSDK:ForexData(data)
   local EntityMod = require("entity.forex_data_entity")
   return EntityMod.new(self, data)
 end
 
 
+-- Idiomatic facade: client:insider_trading():list() / client:insider_trading():load({ id = ... })
+function FinancialDataSDK:insider_trading(data)
+  local EntityMod = require("entity.insider_trading_entity")
+  if data == nil then
+    if self._insider_trading == nil then
+      self._insider_trading = EntityMod.new(self, nil)
+    end
+    return self._insider_trading
+  end
+  return EntityMod.new(self, data)
+end
+
+-- Deprecated: use client:insider_trading() instead.
 function FinancialDataSDK:InsiderTrading(data)
   local EntityMod = require("entity.insider_trading_entity")
   return EntityMod.new(self, data)
 end
 
 
+-- Idiomatic facade: client:institutional_trading():list() / client:institutional_trading():load({ id = ... })
+function FinancialDataSDK:institutional_trading(data)
+  local EntityMod = require("entity.institutional_trading_entity")
+  if data == nil then
+    if self._institutional_trading == nil then
+      self._institutional_trading = EntityMod.new(self, nil)
+    end
+    return self._institutional_trading
+  end
+  return EntityMod.new(self, data)
+end
+
+-- Deprecated: use client:institutional_trading() instead.
 function FinancialDataSDK:InstitutionalTrading(data)
   local EntityMod = require("entity.institutional_trading_entity")
   return EntityMod.new(self, data)
 end
 
 
+-- Idiomatic facade: client:investment_adviser():list() / client:investment_adviser():load({ id = ... })
+function FinancialDataSDK:investment_adviser(data)
+  local EntityMod = require("entity.investment_adviser_entity")
+  if data == nil then
+    if self._investment_adviser == nil then
+      self._investment_adviser = EntityMod.new(self, nil)
+    end
+    return self._investment_adviser
+  end
+  return EntityMod.new(self, data)
+end
+
+-- Deprecated: use client:investment_adviser() instead.
 function FinancialDataSDK:InvestmentAdviser(data)
   local EntityMod = require("entity.investment_adviser_entity")
   return EntityMod.new(self, data)
 end
 
 
+-- Idiomatic facade: client:market_data():list() / client:market_data():load({ id = ... })
+function FinancialDataSDK:market_data(data)
+  local EntityMod = require("entity.market_data_entity")
+  if data == nil then
+    if self._market_data == nil then
+      self._market_data = EntityMod.new(self, nil)
+    end
+    return self._market_data
+  end
+  return EntityMod.new(self, data)
+end
+
+-- Deprecated: use client:market_data() instead.
 function FinancialDataSDK:MarketData(data)
   local EntityMod = require("entity.market_data_entity")
   return EntityMod.new(self, data)
 end
 
 
+-- Idiomatic facade: client:market_index():list() / client:market_index():load({ id = ... })
+function FinancialDataSDK:market_index(data)
+  local EntityMod = require("entity.market_index_entity")
+  if data == nil then
+    if self._market_index == nil then
+      self._market_index = EntityMod.new(self, nil)
+    end
+    return self._market_index
+  end
+  return EntityMod.new(self, data)
+end
+
+-- Deprecated: use client:market_index() instead.
 function FinancialDataSDK:MarketIndex(data)
   local EntityMod = require("entity.market_index_entity")
   return EntityMod.new(self, data)
 end
 
 
+-- Idiomatic facade: client:market_new():list() / client:market_new():load({ id = ... })
+function FinancialDataSDK:market_new(data)
+  local EntityMod = require("entity.market_new_entity")
+  if data == nil then
+    if self._market_new == nil then
+      self._market_new = EntityMod.new(self, nil)
+    end
+    return self._market_new
+  end
+  return EntityMod.new(self, data)
+end
+
+-- Deprecated: use client:market_new() instead.
 function FinancialDataSDK:MarketNew(data)
   local EntityMod = require("entity.market_new_entity")
   return EntityMod.new(self, data)
 end
 
 
+-- Idiomatic facade: client:miscellaneous_data():list() / client:miscellaneous_data():load({ id = ... })
+function FinancialDataSDK:miscellaneous_data(data)
+  local EntityMod = require("entity.miscellaneous_data_entity")
+  if data == nil then
+    if self._miscellaneous_data == nil then
+      self._miscellaneous_data = EntityMod.new(self, nil)
+    end
+    return self._miscellaneous_data
+  end
+  return EntityMod.new(self, data)
+end
+
+-- Deprecated: use client:miscellaneous_data() instead.
 function FinancialDataSDK:MiscellaneousData(data)
   local EntityMod = require("entity.miscellaneous_data_entity")
   return EntityMod.new(self, data)
 end
 
 
+-- Idiomatic facade: client:mutual_fund():list() / client:mutual_fund():load({ id = ... })
+function FinancialDataSDK:mutual_fund(data)
+  local EntityMod = require("entity.mutual_fund_entity")
+  if data == nil then
+    if self._mutual_fund == nil then
+      self._mutual_fund = EntityMod.new(self, nil)
+    end
+    return self._mutual_fund
+  end
+  return EntityMod.new(self, data)
+end
+
+-- Deprecated: use client:mutual_fund() instead.
 function FinancialDataSDK:MutualFund(data)
   local EntityMod = require("entity.mutual_fund_entity")
   return EntityMod.new(self, data)
 end
 
 
+-- Idiomatic facade: client:symbol_list():list() / client:symbol_list():load({ id = ... })
+function FinancialDataSDK:symbol_list(data)
+  local EntityMod = require("entity.symbol_list_entity")
+  if data == nil then
+    if self._symbol_list == nil then
+      self._symbol_list = EntityMod.new(self, nil)
+    end
+    return self._symbol_list
+  end
+  return EntityMod.new(self, data)
+end
+
+-- Deprecated: use client:symbol_list() instead.
 function FinancialDataSDK:SymbolList(data)
   local EntityMod = require("entity.symbol_list_entity")
   return EntityMod.new(self, data)

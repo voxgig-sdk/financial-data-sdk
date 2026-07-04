@@ -14,9 +14,13 @@ import type {
   Control,
 } from '../types'
 
+import type {
+  MiscellaneousData,
+  MiscellaneousDataLoadMatch,
+} from '../FinancialDataTypes'
 
 // TODO: needs Entity superclass
-class MiscellaneousDataEntity extends FinancialDataEntityBase {
+class MiscellaneousDataEntity extends FinancialDataEntityBase<MiscellaneousData> {
 
   constructor(client: FinancialDataSDK, entopts: any) {
     super(client, entopts)
@@ -32,7 +36,7 @@ class MiscellaneousDataEntity extends FinancialDataEntityBase {
 
 
 
-  async load(this: any, reqmatch?: any, ctrl?: Control) {
+  async load(this: any, reqmatch?: MiscellaneousDataLoadMatch, ctrl?: Control): Promise<MiscellaneousData> {
 
     const utility = this._utility
 
@@ -136,7 +140,9 @@ class MiscellaneousDataEntity extends FinancialDataEntityBase {
         throw err
       }
       else {
-        return undefined
+        // Off-happy-path (throw disabled): typed as any so the method's
+        // Promise<MiscellaneousData> return stays clean under strict null checks.
+        return undefined as any
       }
     }
   }

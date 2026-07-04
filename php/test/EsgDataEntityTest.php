@@ -49,8 +49,7 @@ class EsgDataEntityTest extends TestCase
         // LOAD
         $esg_data_ref01_ent = $client->EsgData(null);
         $esg_data_ref01_match_dt0 = [];
-        [$esg_data_ref01_data_dt0_loaded, $err] = $esg_data_ref01_ent->load($esg_data_ref01_match_dt0, null);
-        $this->assertNull($err);
+        $esg_data_ref01_data_dt0_loaded = $esg_data_ref01_ent->load($esg_data_ref01_match_dt0, null);
         $this->assertNotNull($esg_data_ref01_data_dt0_loaded);
 
     }

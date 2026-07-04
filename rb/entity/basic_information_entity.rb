@@ -45,6 +45,7 @@ class BasicInformationEntity
     end
   end
 
+  # @return [BasicInformation, Hash] the current BasicInformation data
   def data_get
     @_utility.feature_hook.call(@_entctx, "GetData")
     VoxgigStruct.clone(@_data)
@@ -57,12 +58,18 @@ class BasicInformationEntity
     end
   end
 
+  # @return [Hash] the current match filter (any subset of BasicInformation fields)
   def match_get
     @_utility.feature_hook.call(@_entctx, "GetMatch")
     VoxgigStruct.clone(@_match)
   end
 
   
+  # Load a single BasicInformation.
+  #
+  # @param reqmatch [BasicInformationLoadMatch, Hash, nil] match criteria (id/query fields)
+  # @param ctrl [Object, nil] optional per-call control
+  # @return [BasicInformation, Hash] the loaded BasicInformation; raises FinancialDataError on failure
   def load(reqmatch, ctrl = nil)
     utility = @_utility
     ctx = utility.make_context.call({
