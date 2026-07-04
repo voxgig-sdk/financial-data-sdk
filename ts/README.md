@@ -32,11 +32,14 @@ const client = new FinancialDataSDK({
 
 ### 3. Load a basicinformation
 
-```ts
-const result = await client.basicinformation.load({ id: 'example_id' })
+`load()` returns the entity directly and throws on failure:
 
-if (result.ok) {
-  console.log(result.data)
+```ts
+try {
+  const basicinformation = await client.BasicInformation().load({ id: 'example_id' })
+  console.log(basicinformation)
+} catch (err) {
+  console.error('load failed:', err)
 }
 ```
 
@@ -54,6 +57,9 @@ const result = await client.direct({
   params: { id: 'example' },
 })
 
+if (result instanceof Error) {
+  throw result
+}
 if (result.ok) {
   console.log(result.status)  // 200
   console.log(result.data)    // response body
@@ -82,9 +88,9 @@ Create a mock client for unit testing — no server required:
 ```ts
 const client = FinancialDataSDK.test()
 
-const result = await client.basicinformation.load({ id: 'test01' })
-// result.ok === true
-// result.data contains mock response data
+const basicinformation = await client.BasicInformation().load({ id: 'test01' })
+// basicinformation is a bare entity populated with mock response data
+console.log(basicinformation)
 ```
 
 You can also use the instance method:
@@ -99,7 +105,7 @@ const testClient = client.tester()
 Entity instances remember their last match and data:
 
 ```ts
-const entity = client.basicinformation
+const entity = client.BasicInformation()
 
 // First call sets internal match
 await entity.load({ id: 'example' })
@@ -184,15 +190,15 @@ new FinancialDataSDK(options?: {
 | `BasicInformation(data?)` | `BasicInformationEntity` | Create a BasicInformation entity instance. |
 | `CryptoCurrency(data?)` | `CryptoCurrencyEntity` | Create a CryptoCurrency entity instance. |
 | `DerivativesData(data?)` | `DerivativesDataEntity` | Create a DerivativesData entity instance. |
-| `EsgData(data?)` | `EsgDataEntity` | Create a EsgData entity instance. |
-| `EtfData(data?)` | `EtfDataEntity` | Create a EtfData entity instance. |
-| `EventCalendar(data?)` | `EventCalendarEntity` | Create a EventCalendar entity instance. |
+| `EsgData(data?)` | `EsgDataEntity` | Create an EsgData entity instance. |
+| `EtfData(data?)` | `EtfDataEntity` | Create an EtfData entity instance. |
+| `EventCalendar(data?)` | `EventCalendarEntity` | Create an EventCalendar entity instance. |
 | `FinancialRatio(data?)` | `FinancialRatioEntity` | Create a FinancialRatio entity instance. |
 | `FinancialStatement(data?)` | `FinancialStatementEntity` | Create a FinancialStatement entity instance. |
 | `ForexData(data?)` | `ForexDataEntity` | Create a ForexData entity instance. |
-| `InsiderTrading(data?)` | `InsiderTradingEntity` | Create a InsiderTrading entity instance. |
-| `InstitutionalTrading(data?)` | `InstitutionalTradingEntity` | Create a InstitutionalTrading entity instance. |
-| `InvestmentAdviser(data?)` | `InvestmentAdviserEntity` | Create a InvestmentAdviser entity instance. |
+| `InsiderTrading(data?)` | `InsiderTradingEntity` | Create an InsiderTrading entity instance. |
+| `InstitutionalTrading(data?)` | `InstitutionalTradingEntity` | Create an InstitutionalTrading entity instance. |
+| `InvestmentAdviser(data?)` | `InvestmentAdviserEntity` | Create an InvestmentAdviser entity instance. |
 | `MarketData(data?)` | `MarketDataEntity` | Create a MarketData entity instance. |
 | `MarketIndex(data?)` | `MarketIndexEntity` | Create a MarketIndex entity instance. |
 | `MarketNew(data?)` | `MarketNewEntity` | Create a MarketNew entity instance. |
@@ -215,29 +221,30 @@ All entities share the same interface.
 
 | Method | Signature | Description |
 | --- | --- | --- |
-| `load` | `load(reqmatch?, ctrl?): Promise<Result>` | Load a single entity by match criteria. |
-| `list` | `list(reqmatch?, ctrl?): Promise<Result>` | List entities matching the criteria. |
-| `create` | `create(reqdata?, ctrl?): Promise<Result>` | Create a new entity. |
-| `update` | `update(reqdata?, ctrl?): Promise<Result>` | Update an existing entity. |
-| `remove` | `remove(reqmatch?, ctrl?): Promise<Result>` | Remove an entity. |
+| `load` | `load(reqmatch?, ctrl?): Promise<Entity>` | Load a single entity by match criteria. |
+| `list` | `list(reqmatch?, ctrl?): Promise<Entity[]>` | List entities matching the criteria. |
+| `create` | `create(reqdata?, ctrl?): Promise<Entity>` | Create a new entity. |
+| `update` | `update(reqdata?, ctrl?): Promise<Entity>` | Update an existing entity. |
+| `remove` | `remove(reqmatch?, ctrl?): Promise<void>` | Remove an entity. |
 | `data` | `data(data?): any` | Get or set entity data. |
 | `match` | `match(match?): any` | Get or set entity match criteria. |
 | `make` | `make(): Entity` | Create a new instance with the same options. |
 | `client` | `client(): FinancialDataSDK` | Return the parent SDK client. |
 | `entopts` | `entopts(): object` | Return a copy of the entity options. |
 
-#### Result shape
+#### Return values
 
-All entity operations return a Result object:
+Entity operations resolve to the entity data directly — there is no
+result envelope:
 
-```ts
-{
-  ok: boolean      // true if the HTTP status is 2xx
-  status: number   // HTTP status code
-  headers: object  // response headers
-  data: any        // parsed JSON response body
-}
-```
+- `load`, `create` and `update` resolve to a single entity object.
+- `list` resolves to an **array** of entity objects (iterate it directly;
+  there is no `.data` and no `.ok`).
+- `remove` resolves to `void`.
+
+On a failed request these methods **throw**, so wrap calls in
+`try`/`catch` to handle errors. Only `direct()` returns the result
+envelope described below.
 
 ### DirectResult shape
 
@@ -454,7 +461,7 @@ API path: `/etf-symbols`
 
 ### BasicInformation
 
-Create an instance: `const basic_information = client.basic_information`
+Create an instance: `const basic_information = client.BasicInformation()`
 
 #### Operations
 
@@ -465,13 +472,13 @@ Create an instance: `const basic_information = client.basic_information`
 #### Example: Load
 
 ```ts
-const basic_information = await client.basic_information.load({ id: 'basic_information_id' })
+const basic_information = await client.BasicInformation().load({ id: 'basic_information_id' })
 ```
 
 
 ### CryptoCurrency
 
-Create an instance: `const crypto_currency = client.crypto_currency`
+Create an instance: `const crypto_currency = client.CryptoCurrency()`
 
 #### Operations
 
@@ -482,13 +489,13 @@ Create an instance: `const crypto_currency = client.crypto_currency`
 #### Example: Load
 
 ```ts
-const crypto_currency = await client.crypto_currency.load({ id: 'crypto_currency_id' })
+const crypto_currency = await client.CryptoCurrency().load({ id: 'crypto_currency_id' })
 ```
 
 
 ### DerivativesData
 
-Create an instance: `const derivatives_data = client.derivatives_data`
+Create an instance: `const derivatives_data = client.DerivativesData()`
 
 #### Operations
 
@@ -499,13 +506,13 @@ Create an instance: `const derivatives_data = client.derivatives_data`
 #### Example: Load
 
 ```ts
-const derivatives_data = await client.derivatives_data.load({ id: 'derivatives_data_id' })
+const derivatives_data = await client.DerivativesData().load({ id: 'derivatives_data_id' })
 ```
 
 
 ### EsgData
 
-Create an instance: `const esg_data = client.esg_data`
+Create an instance: `const esg_data = client.EsgData()`
 
 #### Operations
 
@@ -516,13 +523,13 @@ Create an instance: `const esg_data = client.esg_data`
 #### Example: Load
 
 ```ts
-const esg_data = await client.esg_data.load({ id: 'esg_data_id' })
+const esg_data = await client.EsgData().load({ id: 'esg_data_id' })
 ```
 
 
 ### EtfData
 
-Create an instance: `const etf_data = client.etf_data`
+Create an instance: `const etf_data = client.EtfData()`
 
 #### Operations
 
@@ -533,13 +540,13 @@ Create an instance: `const etf_data = client.etf_data`
 #### Example: Load
 
 ```ts
-const etf_data = await client.etf_data.load({ id: 'etf_data_id' })
+const etf_data = await client.EtfData().load({ id: 'etf_data_id' })
 ```
 
 
 ### EventCalendar
 
-Create an instance: `const event_calendar = client.event_calendar`
+Create an instance: `const event_calendar = client.EventCalendar()`
 
 #### Operations
 
@@ -550,13 +557,13 @@ Create an instance: `const event_calendar = client.event_calendar`
 #### Example: Load
 
 ```ts
-const event_calendar = await client.event_calendar.load({ id: 'event_calendar_id' })
+const event_calendar = await client.EventCalendar().load({ id: 'event_calendar_id' })
 ```
 
 
 ### FinancialRatio
 
-Create an instance: `const financial_ratio = client.financial_ratio`
+Create an instance: `const financial_ratio = client.FinancialRatio()`
 
 #### Operations
 
@@ -567,13 +574,13 @@ Create an instance: `const financial_ratio = client.financial_ratio`
 #### Example: Load
 
 ```ts
-const financial_ratio = await client.financial_ratio.load({ id: 'financial_ratio_id' })
+const financial_ratio = await client.FinancialRatio().load({ id: 'financial_ratio_id' })
 ```
 
 
 ### FinancialStatement
 
-Create an instance: `const financial_statement = client.financial_statement`
+Create an instance: `const financial_statement = client.FinancialStatement()`
 
 #### Operations
 
@@ -584,13 +591,13 @@ Create an instance: `const financial_statement = client.financial_statement`
 #### Example: Load
 
 ```ts
-const financial_statement = await client.financial_statement.load({ id: 'financial_statement_id' })
+const financial_statement = await client.FinancialStatement().load({ id: 'financial_statement_id' })
 ```
 
 
 ### ForexData
 
-Create an instance: `const forex_data = client.forex_data`
+Create an instance: `const forex_data = client.ForexData()`
 
 #### Operations
 
@@ -601,13 +608,13 @@ Create an instance: `const forex_data = client.forex_data`
 #### Example: Load
 
 ```ts
-const forex_data = await client.forex_data.load({ id: 'forex_data_id' })
+const forex_data = await client.ForexData().load({ id: 'forex_data_id' })
 ```
 
 
 ### InsiderTrading
 
-Create an instance: `const insider_trading = client.insider_trading`
+Create an instance: `const insider_trading = client.InsiderTrading()`
 
 #### Operations
 
@@ -618,13 +625,13 @@ Create an instance: `const insider_trading = client.insider_trading`
 #### Example: Load
 
 ```ts
-const insider_trading = await client.insider_trading.load({ id: 'insider_trading_id' })
+const insider_trading = await client.InsiderTrading().load({ id: 'insider_trading_id' })
 ```
 
 
 ### InstitutionalTrading
 
-Create an instance: `const institutional_trading = client.institutional_trading`
+Create an instance: `const institutional_trading = client.InstitutionalTrading()`
 
 #### Operations
 
@@ -635,13 +642,13 @@ Create an instance: `const institutional_trading = client.institutional_trading`
 #### Example: Load
 
 ```ts
-const institutional_trading = await client.institutional_trading.load({ id: 'institutional_trading_id' })
+const institutional_trading = await client.InstitutionalTrading().load({ id: 'institutional_trading_id' })
 ```
 
 
 ### InvestmentAdviser
 
-Create an instance: `const investment_adviser = client.investment_adviser`
+Create an instance: `const investment_adviser = client.InvestmentAdviser()`
 
 #### Operations
 
@@ -652,13 +659,13 @@ Create an instance: `const investment_adviser = client.investment_adviser`
 #### Example: Load
 
 ```ts
-const investment_adviser = await client.investment_adviser.load({ id: 'investment_adviser_id' })
+const investment_adviser = await client.InvestmentAdviser().load({ id: 'investment_adviser_id' })
 ```
 
 
 ### MarketData
 
-Create an instance: `const market_data = client.market_data`
+Create an instance: `const market_data = client.MarketData()`
 
 #### Operations
 
@@ -687,19 +694,19 @@ Create an instance: `const market_data = client.market_data`
 #### Example: Load
 
 ```ts
-const market_data = await client.market_data.load({ id: 'market_data_id' })
+const market_data = await client.MarketData().load({ id: 'market_data_id' })
 ```
 
 #### Example: List
 
 ```ts
-const market_datas = await client.market_data.list()
+const market_datas = await client.MarketData().list()
 ```
 
 
 ### MarketIndex
 
-Create an instance: `const market_index = client.market_index`
+Create an instance: `const market_index = client.MarketIndex()`
 
 #### Operations
 
@@ -710,13 +717,13 @@ Create an instance: `const market_index = client.market_index`
 #### Example: Load
 
 ```ts
-const market_index = await client.market_index.load({ id: 'market_index_id' })
+const market_index = await client.MarketIndex().load({ id: 'market_index_id' })
 ```
 
 
 ### MarketNew
 
-Create an instance: `const market_new = client.market_new`
+Create an instance: `const market_new = client.MarketNew()`
 
 #### Operations
 
@@ -727,13 +734,13 @@ Create an instance: `const market_new = client.market_new`
 #### Example: Load
 
 ```ts
-const market_new = await client.market_new.load({ id: 'market_new_id' })
+const market_new = await client.MarketNew().load({ id: 'market_new_id' })
 ```
 
 
 ### MiscellaneousData
 
-Create an instance: `const miscellaneous_data = client.miscellaneous_data`
+Create an instance: `const miscellaneous_data = client.MiscellaneousData()`
 
 #### Operations
 
@@ -744,13 +751,13 @@ Create an instance: `const miscellaneous_data = client.miscellaneous_data`
 #### Example: Load
 
 ```ts
-const miscellaneous_data = await client.miscellaneous_data.load({ id: 'miscellaneous_data_id' })
+const miscellaneous_data = await client.MiscellaneousData().load({ id: 'miscellaneous_data_id' })
 ```
 
 
 ### MutualFund
 
-Create an instance: `const mutual_fund = client.mutual_fund`
+Create an instance: `const mutual_fund = client.MutualFund()`
 
 #### Operations
 
@@ -761,13 +768,13 @@ Create an instance: `const mutual_fund = client.mutual_fund`
 #### Example: Load
 
 ```ts
-const mutual_fund = await client.mutual_fund.load({ id: 'mutual_fund_id' })
+const mutual_fund = await client.MutualFund().load({ id: 'mutual_fund_id' })
 ```
 
 
 ### SymbolList
 
-Create an instance: `const symbol_list = client.symbol_list`
+Create an instance: `const symbol_list = client.SymbolList()`
 
 #### Operations
 
@@ -787,7 +794,7 @@ Create an instance: `const symbol_list = client.symbol_list`
 #### Example: List
 
 ```ts
-const symbol_lists = await client.symbol_list.list()
+const symbol_lists = await client.SymbolList().list()
 ```
 
 
@@ -858,7 +865,7 @@ stores the returned data and match criteria internally. Subsequent
 calls on the same instance can rely on this state.
 
 ```ts
-const basicinformation = client.basicinformation
+const basicinformation = client.BasicInformation()
 await basicinformation.load({ id: "example_id" })
 
 // basicinformation.data() now returns the loaded basicinformation data

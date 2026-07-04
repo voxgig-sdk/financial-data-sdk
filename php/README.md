@@ -35,9 +35,10 @@ $client = new FinancialDataSDK([
 
 ```php
 try {
-    $result = $client->basicinformation()->load(["id" => "example_id"]);
-    print_r($result);
-} catch (\Exception $err) {
+    // load() returns the bare BasicInformation record (throws on error).
+    $basicinformation = $client->BasicInformation()->load(["id" => "example_id"]);
+    print_r($basicinformation);
+} catch (\Throwable $err) {
     echo "Error: " . $err->getMessage();
 }
 ```
@@ -83,13 +84,17 @@ print_r($fetchdef["headers"]);
 
 ### Use test mode
 
-Create a mock client for unit testing — no server required:
+Create a mock client for unit testing — no server required. Seed fixture
+data via the `entity` option so offline calls resolve without a live server:
 
 ```php
-$client = FinancialDataSDK::test();
+$client = FinancialDataSDK::test([
+    "entity" => ["basicinformation" => ["test01" => ["id" => "test01"]]],
+]);
 
-$result = $client->basicinformation()->load(["id" => "test01"]);
-// $result contains mock response data
+// load() returns the bare mock record (throws on error).
+$basicinformation = $client->BasicInformation()->load(["id" => "test01"]);
+print_r($basicinformation);
 ```
 
 ### Use a custom fetch function
@@ -173,15 +178,15 @@ Creates a test-mode client with mock transport. Both arguments may be `null`.
 | `BasicInformation` | `($data): BasicInformationEntity` | Create a BasicInformation entity instance. |
 | `CryptoCurrency` | `($data): CryptoCurrencyEntity` | Create a CryptoCurrency entity instance. |
 | `DerivativesData` | `($data): DerivativesDataEntity` | Create a DerivativesData entity instance. |
-| `EsgData` | `($data): EsgDataEntity` | Create a EsgData entity instance. |
-| `EtfData` | `($data): EtfDataEntity` | Create a EtfData entity instance. |
-| `EventCalendar` | `($data): EventCalendarEntity` | Create a EventCalendar entity instance. |
+| `EsgData` | `($data): EsgDataEntity` | Create an EsgData entity instance. |
+| `EtfData` | `($data): EtfDataEntity` | Create an EtfData entity instance. |
+| `EventCalendar` | `($data): EventCalendarEntity` | Create an EventCalendar entity instance. |
 | `FinancialRatio` | `($data): FinancialRatioEntity` | Create a FinancialRatio entity instance. |
 | `FinancialStatement` | `($data): FinancialStatementEntity` | Create a FinancialStatement entity instance. |
 | `ForexData` | `($data): ForexDataEntity` | Create a ForexData entity instance. |
-| `InsiderTrading` | `($data): InsiderTradingEntity` | Create a InsiderTrading entity instance. |
-| `InstitutionalTrading` | `($data): InstitutionalTradingEntity` | Create a InstitutionalTrading entity instance. |
-| `InvestmentAdviser` | `($data): InvestmentAdviserEntity` | Create a InvestmentAdviser entity instance. |
+| `InsiderTrading` | `($data): InsiderTradingEntity` | Create an InsiderTrading entity instance. |
+| `InstitutionalTrading` | `($data): InstitutionalTradingEntity` | Create an InstitutionalTrading entity instance. |
+| `InvestmentAdviser` | `($data): InvestmentAdviserEntity` | Create an InvestmentAdviser entity instance. |
 | `MarketData` | `($data): MarketDataEntity` | Create a MarketData entity instance. |
 | `MarketIndex` | `($data): MarketIndexEntity` | Create a MarketIndex entity instance. |
 | `MarketNew` | `($data): MarketNewEntity` | Create a MarketNew entity instance. |
@@ -412,7 +417,7 @@ API path: `/etf-symbols`
 
 ### BasicInformation
 
-Create an instance: `const basic_information = client.basic_information`
+Create an instance: `$basic_information = $client->BasicInformation();`
 
 #### Operations
 
@@ -422,14 +427,15 @@ Create an instance: `const basic_information = client.basic_information`
 
 #### Example: Load
 
-```ts
-const basic_information = await client.basic_information.load({ id: 'basic_information_id' })
+```php
+// load() returns the bare BasicInformation record (throws on error).
+$basic_information = $client->BasicInformation()->load(["id" => "basic_information_id"]);
 ```
 
 
 ### CryptoCurrency
 
-Create an instance: `const crypto_currency = client.crypto_currency`
+Create an instance: `$crypto_currency = $client->CryptoCurrency();`
 
 #### Operations
 
@@ -439,14 +445,15 @@ Create an instance: `const crypto_currency = client.crypto_currency`
 
 #### Example: Load
 
-```ts
-const crypto_currency = await client.crypto_currency.load({ id: 'crypto_currency_id' })
+```php
+// load() returns the bare CryptoCurrency record (throws on error).
+$crypto_currency = $client->CryptoCurrency()->load(["id" => "crypto_currency_id"]);
 ```
 
 
 ### DerivativesData
 
-Create an instance: `const derivatives_data = client.derivatives_data`
+Create an instance: `$derivatives_data = $client->DerivativesData();`
 
 #### Operations
 
@@ -456,14 +463,15 @@ Create an instance: `const derivatives_data = client.derivatives_data`
 
 #### Example: Load
 
-```ts
-const derivatives_data = await client.derivatives_data.load({ id: 'derivatives_data_id' })
+```php
+// load() returns the bare DerivativesData record (throws on error).
+$derivatives_data = $client->DerivativesData()->load(["id" => "derivatives_data_id"]);
 ```
 
 
 ### EsgData
 
-Create an instance: `const esg_data = client.esg_data`
+Create an instance: `$esg_data = $client->EsgData();`
 
 #### Operations
 
@@ -473,14 +481,15 @@ Create an instance: `const esg_data = client.esg_data`
 
 #### Example: Load
 
-```ts
-const esg_data = await client.esg_data.load({ id: 'esg_data_id' })
+```php
+// load() returns the bare EsgData record (throws on error).
+$esg_data = $client->EsgData()->load(["id" => "esg_data_id"]);
 ```
 
 
 ### EtfData
 
-Create an instance: `const etf_data = client.etf_data`
+Create an instance: `$etf_data = $client->EtfData();`
 
 #### Operations
 
@@ -490,14 +499,15 @@ Create an instance: `const etf_data = client.etf_data`
 
 #### Example: Load
 
-```ts
-const etf_data = await client.etf_data.load({ id: 'etf_data_id' })
+```php
+// load() returns the bare EtfData record (throws on error).
+$etf_data = $client->EtfData()->load(["id" => "etf_data_id"]);
 ```
 
 
 ### EventCalendar
 
-Create an instance: `const event_calendar = client.event_calendar`
+Create an instance: `$event_calendar = $client->EventCalendar();`
 
 #### Operations
 
@@ -507,14 +517,15 @@ Create an instance: `const event_calendar = client.event_calendar`
 
 #### Example: Load
 
-```ts
-const event_calendar = await client.event_calendar.load({ id: 'event_calendar_id' })
+```php
+// load() returns the bare EventCalendar record (throws on error).
+$event_calendar = $client->EventCalendar()->load(["id" => "event_calendar_id"]);
 ```
 
 
 ### FinancialRatio
 
-Create an instance: `const financial_ratio = client.financial_ratio`
+Create an instance: `$financial_ratio = $client->FinancialRatio();`
 
 #### Operations
 
@@ -524,14 +535,15 @@ Create an instance: `const financial_ratio = client.financial_ratio`
 
 #### Example: Load
 
-```ts
-const financial_ratio = await client.financial_ratio.load({ id: 'financial_ratio_id' })
+```php
+// load() returns the bare FinancialRatio record (throws on error).
+$financial_ratio = $client->FinancialRatio()->load(["id" => "financial_ratio_id"]);
 ```
 
 
 ### FinancialStatement
 
-Create an instance: `const financial_statement = client.financial_statement`
+Create an instance: `$financial_statement = $client->FinancialStatement();`
 
 #### Operations
 
@@ -541,14 +553,15 @@ Create an instance: `const financial_statement = client.financial_statement`
 
 #### Example: Load
 
-```ts
-const financial_statement = await client.financial_statement.load({ id: 'financial_statement_id' })
+```php
+// load() returns the bare FinancialStatement record (throws on error).
+$financial_statement = $client->FinancialStatement()->load(["id" => "financial_statement_id"]);
 ```
 
 
 ### ForexData
 
-Create an instance: `const forex_data = client.forex_data`
+Create an instance: `$forex_data = $client->ForexData();`
 
 #### Operations
 
@@ -558,14 +571,15 @@ Create an instance: `const forex_data = client.forex_data`
 
 #### Example: Load
 
-```ts
-const forex_data = await client.forex_data.load({ id: 'forex_data_id' })
+```php
+// load() returns the bare ForexData record (throws on error).
+$forex_data = $client->ForexData()->load(["id" => "forex_data_id"]);
 ```
 
 
 ### InsiderTrading
 
-Create an instance: `const insider_trading = client.insider_trading`
+Create an instance: `$insider_trading = $client->InsiderTrading();`
 
 #### Operations
 
@@ -575,14 +589,15 @@ Create an instance: `const insider_trading = client.insider_trading`
 
 #### Example: Load
 
-```ts
-const insider_trading = await client.insider_trading.load({ id: 'insider_trading_id' })
+```php
+// load() returns the bare InsiderTrading record (throws on error).
+$insider_trading = $client->InsiderTrading()->load(["id" => "insider_trading_id"]);
 ```
 
 
 ### InstitutionalTrading
 
-Create an instance: `const institutional_trading = client.institutional_trading`
+Create an instance: `$institutional_trading = $client->InstitutionalTrading();`
 
 #### Operations
 
@@ -592,14 +607,15 @@ Create an instance: `const institutional_trading = client.institutional_trading`
 
 #### Example: Load
 
-```ts
-const institutional_trading = await client.institutional_trading.load({ id: 'institutional_trading_id' })
+```php
+// load() returns the bare InstitutionalTrading record (throws on error).
+$institutional_trading = $client->InstitutionalTrading()->load(["id" => "institutional_trading_id"]);
 ```
 
 
 ### InvestmentAdviser
 
-Create an instance: `const investment_adviser = client.investment_adviser`
+Create an instance: `$investment_adviser = $client->InvestmentAdviser();`
 
 #### Operations
 
@@ -609,14 +625,15 @@ Create an instance: `const investment_adviser = client.investment_adviser`
 
 #### Example: Load
 
-```ts
-const investment_adviser = await client.investment_adviser.load({ id: 'investment_adviser_id' })
+```php
+// load() returns the bare InvestmentAdviser record (throws on error).
+$investment_adviser = $client->InvestmentAdviser()->load(["id" => "investment_adviser_id"]);
 ```
 
 
 ### MarketData
 
-Create an instance: `const market_data = client.market_data`
+Create an instance: `$market_data = $client->MarketData();`
 
 #### Operations
 
@@ -644,20 +661,22 @@ Create an instance: `const market_data = client.market_data`
 
 #### Example: Load
 
-```ts
-const market_data = await client.market_data.load({ id: 'market_data_id' })
+```php
+// load() returns the bare MarketData record (throws on error).
+$market_data = $client->MarketData()->load(["id" => "market_data_id"]);
 ```
 
 #### Example: List
 
-```ts
-const market_datas = await client.market_data.list()
+```php
+// list() returns an array of MarketData records (throws on error).
+$market_datas = $client->MarketData()->list();
 ```
 
 
 ### MarketIndex
 
-Create an instance: `const market_index = client.market_index`
+Create an instance: `$market_index = $client->MarketIndex();`
 
 #### Operations
 
@@ -667,14 +686,15 @@ Create an instance: `const market_index = client.market_index`
 
 #### Example: Load
 
-```ts
-const market_index = await client.market_index.load({ id: 'market_index_id' })
+```php
+// load() returns the bare MarketIndex record (throws on error).
+$market_index = $client->MarketIndex()->load(["id" => "market_index_id"]);
 ```
 
 
 ### MarketNew
 
-Create an instance: `const market_new = client.market_new`
+Create an instance: `$market_new = $client->MarketNew();`
 
 #### Operations
 
@@ -684,14 +704,15 @@ Create an instance: `const market_new = client.market_new`
 
 #### Example: Load
 
-```ts
-const market_new = await client.market_new.load({ id: 'market_new_id' })
+```php
+// load() returns the bare MarketNew record (throws on error).
+$market_new = $client->MarketNew()->load(["id" => "market_new_id"]);
 ```
 
 
 ### MiscellaneousData
 
-Create an instance: `const miscellaneous_data = client.miscellaneous_data`
+Create an instance: `$miscellaneous_data = $client->MiscellaneousData();`
 
 #### Operations
 
@@ -701,14 +722,15 @@ Create an instance: `const miscellaneous_data = client.miscellaneous_data`
 
 #### Example: Load
 
-```ts
-const miscellaneous_data = await client.miscellaneous_data.load({ id: 'miscellaneous_data_id' })
+```php
+// load() returns the bare MiscellaneousData record (throws on error).
+$miscellaneous_data = $client->MiscellaneousData()->load(["id" => "miscellaneous_data_id"]);
 ```
 
 
 ### MutualFund
 
-Create an instance: `const mutual_fund = client.mutual_fund`
+Create an instance: `$mutual_fund = $client->MutualFund();`
 
 #### Operations
 
@@ -718,14 +740,15 @@ Create an instance: `const mutual_fund = client.mutual_fund`
 
 #### Example: Load
 
-```ts
-const mutual_fund = await client.mutual_fund.load({ id: 'mutual_fund_id' })
+```php
+// load() returns the bare MutualFund record (throws on error).
+$mutual_fund = $client->MutualFund()->load(["id" => "mutual_fund_id"]);
 ```
 
 
 ### SymbolList
 
-Create an instance: `const symbol_list = client.symbol_list`
+Create an instance: `$symbol_list = $client->SymbolList();`
 
 #### Operations
 
@@ -744,8 +767,9 @@ Create an instance: `const symbol_list = client.symbol_list`
 
 #### Example: List
 
-```ts
-const symbol_lists = await client.symbol_list.list()
+```php
+// list() returns an array of SymbolList records (throws on error).
+$symbol_lists = $client->SymbolList()->list();
 ```
 
 
@@ -820,7 +844,7 @@ Entity instances are stateful. After a successful `load`, the entity
 stores the returned data and match criteria internally.
 
 ```php
-$basicinformation = $client->basicinformation();
+$basicinformation = $client->BasicInformation();
 $basicinformation->load(["id" => "example_id"]);
 
 // $basicinformation->dataGet() now returns the loaded basicinformation data

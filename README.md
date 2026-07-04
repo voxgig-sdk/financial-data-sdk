@@ -28,9 +28,9 @@ const client = new FinancialDataSDK({
   apikey: process.env.FINANCIAL_DATA_APIKEY,
 })
 
-// Load basicinformation data
-const basicinformation = await client.basicinformation.load({})
-console.log(basicinformation.data)
+// Load basicinformation data (returns a BasicInformation)
+const basicinformation = await client.BasicInformation().load()
+console.log(basicinformation)
 ```
 
 See the [TypeScript README](ts/README.md) for the full guide.
@@ -106,8 +106,8 @@ client = FinancialDataSDK({
 })
 
 
-# Load a specific basicinformation
-basicinformation = client.basicinformation.load({"id": "example_id"})
+# Load a specific basicinformation (returns the record, raises on error)
+basicinformation = client.BasicInformation().load({"id": "example_id"})
 print(basicinformation)
 ```
 
@@ -122,8 +122,8 @@ $client = new FinancialDataSDK([
 ]);
 
 
-// Load a specific basicinformation
-$basicinformation = $client->basicinformation()->load(["id" => "example_id"]);
+// Load a specific basicinformation (returns the bare record; throws on error)
+$basicinformation = $client->BasicInformation()->load(["id" => "example_id"]);
 print_r($basicinformation);
 ```
 
@@ -151,8 +151,8 @@ client = FinancialDataSDK.new({
 })
 
 
-# Load a specific basicinformation
-basicinformation = client.basicinformation.load({ "id" => "example_id" })
+# Load a specific basicinformation (returns the bare record; raises on error)
+basicinformation = client.BasicInformation.load({ "id" => "example_id" })
 puts basicinformation
 ```
 
@@ -167,7 +167,7 @@ local client = sdk.new({
 
 
 -- Load a specific basicinformation
-local basicinformation, err = client:basicinformation():load({ id = "example_id" })
+local basicinformation, err = client:BasicInformation():load({ id = "example_id" })
 print(basicinformation)
 ```
 
@@ -180,22 +180,27 @@ in-memory mock, so unit tests run offline.
 
 ```ts
 const client = FinancialDataSDK.test()
-const result = await client.basicinformation.load({ id: 'test01' })
-// result.ok === true, result.data contains mock data
+const basicinformation = await client.BasicInformation().load({ id: 'test01' })
+// basicinformation is a bare BasicInformation populated with mock data
+console.log(basicinformation)
 ```
 
 ### Python
 
 ```python
 client = FinancialDataSDK.test()
-result = client.basicinformation.load({"id": "test01"})
+basicinformation = client.BasicInformation().load({"id": "test01"})
+print(basicinformation)
 ```
 
 ### PHP
 
 ```php
-$client = FinancialDataSDK::test();
-$result = $client->basicinformation()->load(["id" => "test01"]);
+// Seed fixture data so offline calls resolve without a live server.
+$client = FinancialDataSDK::test([
+    "entity" => ["basicinformation" => ["test01" => ["id" => "test01"]]],
+]);
+$basicinformation = $client->BasicInformation()->load(["id" => "test01"]);
 ```
 
 ### Golang
@@ -210,15 +215,18 @@ result, err := client.BasicInformation(nil).Load(
 ### Ruby
 
 ```ruby
-client = FinancialDataSDK.test
-result = client.basicinformation.load({ "id" => "test01" })
+# Seed fixture data so offline calls resolve without a live server.
+client = FinancialDataSDK.test({
+  "entity" => { "basicinformation" => { "test01" => { "id" => "test01" } } },
+})
+basicinformation = client.BasicInformation.load({ "id" => "test01" })
 ```
 
 ### Lua
 
 ```lua
 local client = sdk.test()
-local result, err = client:basicinformation():load({ id = "test01" })
+local result, err = client:BasicInformation():load({ id = "test01" })
 ```
 
 ## How it works
@@ -266,6 +274,9 @@ const result = await client.direct({
   method: 'GET',
   params: { id: 'example' },
 })
+if (result instanceof Error) {
+  throw result
+}
 console.log(result.data)
 ```
 

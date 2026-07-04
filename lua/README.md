@@ -36,9 +36,9 @@ local client = sdk.new({
 ### 3. Load a basicinformation
 
 ```lua
-local result, err = client:basicinformation():load({ id = "example_id" })
+local basicinformation, err = client:BasicInformation():load({ id = "example_id" })
 if err then error(err) end
-print(result)
+print(basicinformation)
 ```
 
 
@@ -84,8 +84,8 @@ Create a mock client for unit testing — no server required:
 ```lua
 local client = sdk.test()
 
-local result, err = client:basicinformation():load({ id = "test01" })
--- result contains mock response data
+local result, err = client:BasicInformation():load({ id = "test01" })
+-- result is the loaded data; err is set on failure
 ```
 
 ### Use a custom fetch function
@@ -168,15 +168,15 @@ Creates a test-mode client with mock transport. Both arguments may be `nil`.
 | `BasicInformation` | `(data) -> BasicInformationEntity` | Create a BasicInformation entity instance. |
 | `CryptoCurrency` | `(data) -> CryptoCurrencyEntity` | Create a CryptoCurrency entity instance. |
 | `DerivativesData` | `(data) -> DerivativesDataEntity` | Create a DerivativesData entity instance. |
-| `EsgData` | `(data) -> EsgDataEntity` | Create a EsgData entity instance. |
-| `EtfData` | `(data) -> EtfDataEntity` | Create a EtfData entity instance. |
-| `EventCalendar` | `(data) -> EventCalendarEntity` | Create a EventCalendar entity instance. |
+| `EsgData` | `(data) -> EsgDataEntity` | Create an EsgData entity instance. |
+| `EtfData` | `(data) -> EtfDataEntity` | Create an EtfData entity instance. |
+| `EventCalendar` | `(data) -> EventCalendarEntity` | Create an EventCalendar entity instance. |
 | `FinancialRatio` | `(data) -> FinancialRatioEntity` | Create a FinancialRatio entity instance. |
 | `FinancialStatement` | `(data) -> FinancialStatementEntity` | Create a FinancialStatement entity instance. |
 | `ForexData` | `(data) -> ForexDataEntity` | Create a ForexData entity instance. |
-| `InsiderTrading` | `(data) -> InsiderTradingEntity` | Create a InsiderTrading entity instance. |
-| `InstitutionalTrading` | `(data) -> InstitutionalTradingEntity` | Create a InstitutionalTrading entity instance. |
-| `InvestmentAdviser` | `(data) -> InvestmentAdviserEntity` | Create a InvestmentAdviser entity instance. |
+| `InsiderTrading` | `(data) -> InsiderTradingEntity` | Create an InsiderTrading entity instance. |
+| `InstitutionalTrading` | `(data) -> InstitutionalTradingEntity` | Create an InstitutionalTrading entity instance. |
+| `InvestmentAdviser` | `(data) -> InvestmentAdviserEntity` | Create an InvestmentAdviser entity instance. |
 | `MarketData` | `(data) -> MarketDataEntity` | Create a MarketData entity instance. |
 | `MarketIndex` | `(data) -> MarketIndexEntity` | Create a MarketIndex entity instance. |
 | `MarketNew` | `(data) -> MarketNewEntity` | Create a MarketNew entity instance. |
@@ -204,17 +204,22 @@ All entities share the same interface.
 
 ### Result shape
 
-Entity operations return `(any, err)`. The first value is a
-`table` with these keys:
+Entity operations return `(value, err)`. The `value` is the operation's
+data **directly** — there is no wrapper:
 
-| Key | Type | Description |
-| --- | --- | --- |
-| `ok` | `boolean` | `true` if the HTTP status is 2xx. |
-| `status` | `number` | HTTP status code. |
-| `headers` | `table` | Response headers. |
-| `data` | `any` | Parsed JSON response body. |
+| Operation | `value` |
+| --- | --- |
+| `load` / `create` / `update` / `remove` | the entity record (a `table`) |
+| `list` | an array (`table`) of entity records |
 
-On error, `ok` is `false` and `err` contains the error value.
+Check `err` first (it is non-`nil` on failure), then use `value`:
+
+    local basic_information, err = client:BasicInformation():load({ id = "example_id" })
+    if err then error(err) end
+    -- basic_information is the loaded record
+
+Only `direct()` returns a response envelope — a `table` with `ok`,
+`status`, `headers`, and `data` keys.
 
 ### Entities
 
@@ -403,7 +408,7 @@ API path: `/etf-symbols`
 
 ### BasicInformation
 
-Create an instance: `const basic_information = client.basic_information`
+Create an instance: `local basic_information = client:BasicInformation(nil)`
 
 #### Operations
 
@@ -413,14 +418,14 @@ Create an instance: `const basic_information = client.basic_information`
 
 #### Example: Load
 
-```ts
-const basic_information = await client.basic_information.load({ id: 'basic_information_id' })
+```lua
+local basic_information, err = client:BasicInformation():load({ id = "basic_information_id" })
 ```
 
 
 ### CryptoCurrency
 
-Create an instance: `const crypto_currency = client.crypto_currency`
+Create an instance: `local crypto_currency = client:CryptoCurrency(nil)`
 
 #### Operations
 
@@ -430,14 +435,14 @@ Create an instance: `const crypto_currency = client.crypto_currency`
 
 #### Example: Load
 
-```ts
-const crypto_currency = await client.crypto_currency.load({ id: 'crypto_currency_id' })
+```lua
+local crypto_currency, err = client:CryptoCurrency():load({ id = "crypto_currency_id" })
 ```
 
 
 ### DerivativesData
 
-Create an instance: `const derivatives_data = client.derivatives_data`
+Create an instance: `local derivatives_data = client:DerivativesData(nil)`
 
 #### Operations
 
@@ -447,14 +452,14 @@ Create an instance: `const derivatives_data = client.derivatives_data`
 
 #### Example: Load
 
-```ts
-const derivatives_data = await client.derivatives_data.load({ id: 'derivatives_data_id' })
+```lua
+local derivatives_data, err = client:DerivativesData():load({ id = "derivatives_data_id" })
 ```
 
 
 ### EsgData
 
-Create an instance: `const esg_data = client.esg_data`
+Create an instance: `local esg_data = client:EsgData(nil)`
 
 #### Operations
 
@@ -464,14 +469,14 @@ Create an instance: `const esg_data = client.esg_data`
 
 #### Example: Load
 
-```ts
-const esg_data = await client.esg_data.load({ id: 'esg_data_id' })
+```lua
+local esg_data, err = client:EsgData():load({ id = "esg_data_id" })
 ```
 
 
 ### EtfData
 
-Create an instance: `const etf_data = client.etf_data`
+Create an instance: `local etf_data = client:EtfData(nil)`
 
 #### Operations
 
@@ -481,14 +486,14 @@ Create an instance: `const etf_data = client.etf_data`
 
 #### Example: Load
 
-```ts
-const etf_data = await client.etf_data.load({ id: 'etf_data_id' })
+```lua
+local etf_data, err = client:EtfData():load({ id = "etf_data_id" })
 ```
 
 
 ### EventCalendar
 
-Create an instance: `const event_calendar = client.event_calendar`
+Create an instance: `local event_calendar = client:EventCalendar(nil)`
 
 #### Operations
 
@@ -498,14 +503,14 @@ Create an instance: `const event_calendar = client.event_calendar`
 
 #### Example: Load
 
-```ts
-const event_calendar = await client.event_calendar.load({ id: 'event_calendar_id' })
+```lua
+local event_calendar, err = client:EventCalendar():load({ id = "event_calendar_id" })
 ```
 
 
 ### FinancialRatio
 
-Create an instance: `const financial_ratio = client.financial_ratio`
+Create an instance: `local financial_ratio = client:FinancialRatio(nil)`
 
 #### Operations
 
@@ -515,14 +520,14 @@ Create an instance: `const financial_ratio = client.financial_ratio`
 
 #### Example: Load
 
-```ts
-const financial_ratio = await client.financial_ratio.load({ id: 'financial_ratio_id' })
+```lua
+local financial_ratio, err = client:FinancialRatio():load({ id = "financial_ratio_id" })
 ```
 
 
 ### FinancialStatement
 
-Create an instance: `const financial_statement = client.financial_statement`
+Create an instance: `local financial_statement = client:FinancialStatement(nil)`
 
 #### Operations
 
@@ -532,14 +537,14 @@ Create an instance: `const financial_statement = client.financial_statement`
 
 #### Example: Load
 
-```ts
-const financial_statement = await client.financial_statement.load({ id: 'financial_statement_id' })
+```lua
+local financial_statement, err = client:FinancialStatement():load({ id = "financial_statement_id" })
 ```
 
 
 ### ForexData
 
-Create an instance: `const forex_data = client.forex_data`
+Create an instance: `local forex_data = client:ForexData(nil)`
 
 #### Operations
 
@@ -549,14 +554,14 @@ Create an instance: `const forex_data = client.forex_data`
 
 #### Example: Load
 
-```ts
-const forex_data = await client.forex_data.load({ id: 'forex_data_id' })
+```lua
+local forex_data, err = client:ForexData():load({ id = "forex_data_id" })
 ```
 
 
 ### InsiderTrading
 
-Create an instance: `const insider_trading = client.insider_trading`
+Create an instance: `local insider_trading = client:InsiderTrading(nil)`
 
 #### Operations
 
@@ -566,14 +571,14 @@ Create an instance: `const insider_trading = client.insider_trading`
 
 #### Example: Load
 
-```ts
-const insider_trading = await client.insider_trading.load({ id: 'insider_trading_id' })
+```lua
+local insider_trading, err = client:InsiderTrading():load({ id = "insider_trading_id" })
 ```
 
 
 ### InstitutionalTrading
 
-Create an instance: `const institutional_trading = client.institutional_trading`
+Create an instance: `local institutional_trading = client:InstitutionalTrading(nil)`
 
 #### Operations
 
@@ -583,14 +588,14 @@ Create an instance: `const institutional_trading = client.institutional_trading`
 
 #### Example: Load
 
-```ts
-const institutional_trading = await client.institutional_trading.load({ id: 'institutional_trading_id' })
+```lua
+local institutional_trading, err = client:InstitutionalTrading():load({ id = "institutional_trading_id" })
 ```
 
 
 ### InvestmentAdviser
 
-Create an instance: `const investment_adviser = client.investment_adviser`
+Create an instance: `local investment_adviser = client:InvestmentAdviser(nil)`
 
 #### Operations
 
@@ -600,14 +605,14 @@ Create an instance: `const investment_adviser = client.investment_adviser`
 
 #### Example: Load
 
-```ts
-const investment_adviser = await client.investment_adviser.load({ id: 'investment_adviser_id' })
+```lua
+local investment_adviser, err = client:InvestmentAdviser():load({ id = "investment_adviser_id" })
 ```
 
 
 ### MarketData
 
-Create an instance: `const market_data = client.market_data`
+Create an instance: `local market_data = client:MarketData(nil)`
 
 #### Operations
 
@@ -635,20 +640,20 @@ Create an instance: `const market_data = client.market_data`
 
 #### Example: Load
 
-```ts
-const market_data = await client.market_data.load({ id: 'market_data_id' })
+```lua
+local market_data, err = client:MarketData():load({ id = "market_data_id" })
 ```
 
 #### Example: List
 
-```ts
-const market_datas = await client.market_data.list()
+```lua
+local market_datas, err = client:MarketData():list()
 ```
 
 
 ### MarketIndex
 
-Create an instance: `const market_index = client.market_index`
+Create an instance: `local market_index = client:MarketIndex(nil)`
 
 #### Operations
 
@@ -658,14 +663,14 @@ Create an instance: `const market_index = client.market_index`
 
 #### Example: Load
 
-```ts
-const market_index = await client.market_index.load({ id: 'market_index_id' })
+```lua
+local market_index, err = client:MarketIndex():load({ id = "market_index_id" })
 ```
 
 
 ### MarketNew
 
-Create an instance: `const market_new = client.market_new`
+Create an instance: `local market_new = client:MarketNew(nil)`
 
 #### Operations
 
@@ -675,14 +680,14 @@ Create an instance: `const market_new = client.market_new`
 
 #### Example: Load
 
-```ts
-const market_new = await client.market_new.load({ id: 'market_new_id' })
+```lua
+local market_new, err = client:MarketNew():load({ id = "market_new_id" })
 ```
 
 
 ### MiscellaneousData
 
-Create an instance: `const miscellaneous_data = client.miscellaneous_data`
+Create an instance: `local miscellaneous_data = client:MiscellaneousData(nil)`
 
 #### Operations
 
@@ -692,14 +697,14 @@ Create an instance: `const miscellaneous_data = client.miscellaneous_data`
 
 #### Example: Load
 
-```ts
-const miscellaneous_data = await client.miscellaneous_data.load({ id: 'miscellaneous_data_id' })
+```lua
+local miscellaneous_data, err = client:MiscellaneousData():load({ id = "miscellaneous_data_id" })
 ```
 
 
 ### MutualFund
 
-Create an instance: `const mutual_fund = client.mutual_fund`
+Create an instance: `local mutual_fund = client:MutualFund(nil)`
 
 #### Operations
 
@@ -709,14 +714,14 @@ Create an instance: `const mutual_fund = client.mutual_fund`
 
 #### Example: Load
 
-```ts
-const mutual_fund = await client.mutual_fund.load({ id: 'mutual_fund_id' })
+```lua
+local mutual_fund, err = client:MutualFund():load({ id = "mutual_fund_id" })
 ```
 
 
 ### SymbolList
 
-Create an instance: `const symbol_list = client.symbol_list`
+Create an instance: `local symbol_list = client:SymbolList(nil)`
 
 #### Operations
 
@@ -735,8 +740,8 @@ Create an instance: `const symbol_list = client.symbol_list`
 
 #### Example: List
 
-```ts
-const symbol_lists = await client.symbol_list.list()
+```lua
+local symbol_lists, err = client:SymbolList():list()
 ```
 
 
@@ -811,7 +816,7 @@ Entity instances are stateful. After a successful `load`, the entity
 stores the returned data and match criteria internally.
 
 ```lua
-local basicinformation = client:basicinformation()
+local basicinformation = client:BasicInformation()
 basicinformation:load({ id = "example_id" })
 
 -- basicinformation:data_get() now returns the loaded basicinformation data

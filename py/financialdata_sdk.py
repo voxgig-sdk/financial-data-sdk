@@ -220,297 +220,117 @@ class FinancialDataSDK:
         }
 
 
-    @property
-    def basic_information(self):
-        """Idiomatic facade: client.basic_information.list() / client.basic_information.load({"id": ...})."""
-        from entity.basic_information_entity import BasicInformationEntity
-        cached = getattr(self, "_basic_information", None)
-        if cached is None:
-            cached = BasicInformationEntity(self, None)
-            self._basic_information = cached
-        return cached
-
-    def BasicInformation(self, data=None):
-        # Deprecated: use client.basic_information instead.
+    def BasicInformation(self, data=None) -> "BasicInformationEntity":
+        """Entity factory: client.BasicInformation().list({}) / client.BasicInformation().load({"id": ...})."""
         from entity.basic_information_entity import BasicInformationEntity
         return BasicInformationEntity(self, data)
 
 
-    @property
-    def crypto_currency(self):
-        """Idiomatic facade: client.crypto_currency.list() / client.crypto_currency.load({"id": ...})."""
-        from entity.crypto_currency_entity import CryptoCurrencyEntity
-        cached = getattr(self, "_crypto_currency", None)
-        if cached is None:
-            cached = CryptoCurrencyEntity(self, None)
-            self._crypto_currency = cached
-        return cached
-
-    def CryptoCurrency(self, data=None):
-        # Deprecated: use client.crypto_currency instead.
+    def CryptoCurrency(self, data=None) -> "CryptoCurrencyEntity":
+        """Entity factory: client.CryptoCurrency().list({}) / client.CryptoCurrency().load({"id": ...})."""
         from entity.crypto_currency_entity import CryptoCurrencyEntity
         return CryptoCurrencyEntity(self, data)
 
 
-    @property
-    def derivatives_data(self):
-        """Idiomatic facade: client.derivatives_data.list() / client.derivatives_data.load({"id": ...})."""
-        from entity.derivatives_data_entity import DerivativesDataEntity
-        cached = getattr(self, "_derivatives_data", None)
-        if cached is None:
-            cached = DerivativesDataEntity(self, None)
-            self._derivatives_data = cached
-        return cached
-
-    def DerivativesData(self, data=None):
-        # Deprecated: use client.derivatives_data instead.
+    def DerivativesData(self, data=None) -> "DerivativesDataEntity":
+        """Entity factory: client.DerivativesData().list({}) / client.DerivativesData().load({"id": ...})."""
         from entity.derivatives_data_entity import DerivativesDataEntity
         return DerivativesDataEntity(self, data)
 
 
-    @property
-    def esg_data(self):
-        """Idiomatic facade: client.esg_data.list() / client.esg_data.load({"id": ...})."""
-        from entity.esg_data_entity import EsgDataEntity
-        cached = getattr(self, "_esg_data", None)
-        if cached is None:
-            cached = EsgDataEntity(self, None)
-            self._esg_data = cached
-        return cached
-
-    def EsgData(self, data=None):
-        # Deprecated: use client.esg_data instead.
+    def EsgData(self, data=None) -> "EsgDataEntity":
+        """Entity factory: client.EsgData().list({}) / client.EsgData().load({"id": ...})."""
         from entity.esg_data_entity import EsgDataEntity
         return EsgDataEntity(self, data)
 
 
-    @property
-    def etf_data(self):
-        """Idiomatic facade: client.etf_data.list() / client.etf_data.load({"id": ...})."""
-        from entity.etf_data_entity import EtfDataEntity
-        cached = getattr(self, "_etf_data", None)
-        if cached is None:
-            cached = EtfDataEntity(self, None)
-            self._etf_data = cached
-        return cached
-
-    def EtfData(self, data=None):
-        # Deprecated: use client.etf_data instead.
+    def EtfData(self, data=None) -> "EtfDataEntity":
+        """Entity factory: client.EtfData().list({}) / client.EtfData().load({"id": ...})."""
         from entity.etf_data_entity import EtfDataEntity
         return EtfDataEntity(self, data)
 
 
-    @property
-    def event_calendar(self):
-        """Idiomatic facade: client.event_calendar.list() / client.event_calendar.load({"id": ...})."""
-        from entity.event_calendar_entity import EventCalendarEntity
-        cached = getattr(self, "_event_calendar", None)
-        if cached is None:
-            cached = EventCalendarEntity(self, None)
-            self._event_calendar = cached
-        return cached
-
-    def EventCalendar(self, data=None):
-        # Deprecated: use client.event_calendar instead.
+    def EventCalendar(self, data=None) -> "EventCalendarEntity":
+        """Entity factory: client.EventCalendar().list({}) / client.EventCalendar().load({"id": ...})."""
         from entity.event_calendar_entity import EventCalendarEntity
         return EventCalendarEntity(self, data)
 
 
-    @property
-    def financial_ratio(self):
-        """Idiomatic facade: client.financial_ratio.list() / client.financial_ratio.load({"id": ...})."""
-        from entity.financial_ratio_entity import FinancialRatioEntity
-        cached = getattr(self, "_financial_ratio", None)
-        if cached is None:
-            cached = FinancialRatioEntity(self, None)
-            self._financial_ratio = cached
-        return cached
-
-    def FinancialRatio(self, data=None):
-        # Deprecated: use client.financial_ratio instead.
+    def FinancialRatio(self, data=None) -> "FinancialRatioEntity":
+        """Entity factory: client.FinancialRatio().list({}) / client.FinancialRatio().load({"id": ...})."""
         from entity.financial_ratio_entity import FinancialRatioEntity
         return FinancialRatioEntity(self, data)
 
 
-    @property
-    def financial_statement(self):
-        """Idiomatic facade: client.financial_statement.list() / client.financial_statement.load({"id": ...})."""
-        from entity.financial_statement_entity import FinancialStatementEntity
-        cached = getattr(self, "_financial_statement", None)
-        if cached is None:
-            cached = FinancialStatementEntity(self, None)
-            self._financial_statement = cached
-        return cached
-
-    def FinancialStatement(self, data=None):
-        # Deprecated: use client.financial_statement instead.
+    def FinancialStatement(self, data=None) -> "FinancialStatementEntity":
+        """Entity factory: client.FinancialStatement().list({}) / client.FinancialStatement().load({"id": ...})."""
         from entity.financial_statement_entity import FinancialStatementEntity
         return FinancialStatementEntity(self, data)
 
 
-    @property
-    def forex_data(self):
-        """Idiomatic facade: client.forex_data.list() / client.forex_data.load({"id": ...})."""
-        from entity.forex_data_entity import ForexDataEntity
-        cached = getattr(self, "_forex_data", None)
-        if cached is None:
-            cached = ForexDataEntity(self, None)
-            self._forex_data = cached
-        return cached
-
-    def ForexData(self, data=None):
-        # Deprecated: use client.forex_data instead.
+    def ForexData(self, data=None) -> "ForexDataEntity":
+        """Entity factory: client.ForexData().list({}) / client.ForexData().load({"id": ...})."""
         from entity.forex_data_entity import ForexDataEntity
         return ForexDataEntity(self, data)
 
 
-    @property
-    def insider_trading(self):
-        """Idiomatic facade: client.insider_trading.list() / client.insider_trading.load({"id": ...})."""
-        from entity.insider_trading_entity import InsiderTradingEntity
-        cached = getattr(self, "_insider_trading", None)
-        if cached is None:
-            cached = InsiderTradingEntity(self, None)
-            self._insider_trading = cached
-        return cached
-
-    def InsiderTrading(self, data=None):
-        # Deprecated: use client.insider_trading instead.
+    def InsiderTrading(self, data=None) -> "InsiderTradingEntity":
+        """Entity factory: client.InsiderTrading().list({}) / client.InsiderTrading().load({"id": ...})."""
         from entity.insider_trading_entity import InsiderTradingEntity
         return InsiderTradingEntity(self, data)
 
 
-    @property
-    def institutional_trading(self):
-        """Idiomatic facade: client.institutional_trading.list() / client.institutional_trading.load({"id": ...})."""
-        from entity.institutional_trading_entity import InstitutionalTradingEntity
-        cached = getattr(self, "_institutional_trading", None)
-        if cached is None:
-            cached = InstitutionalTradingEntity(self, None)
-            self._institutional_trading = cached
-        return cached
-
-    def InstitutionalTrading(self, data=None):
-        # Deprecated: use client.institutional_trading instead.
+    def InstitutionalTrading(self, data=None) -> "InstitutionalTradingEntity":
+        """Entity factory: client.InstitutionalTrading().list({}) / client.InstitutionalTrading().load({"id": ...})."""
         from entity.institutional_trading_entity import InstitutionalTradingEntity
         return InstitutionalTradingEntity(self, data)
 
 
-    @property
-    def investment_adviser(self):
-        """Idiomatic facade: client.investment_adviser.list() / client.investment_adviser.load({"id": ...})."""
-        from entity.investment_adviser_entity import InvestmentAdviserEntity
-        cached = getattr(self, "_investment_adviser", None)
-        if cached is None:
-            cached = InvestmentAdviserEntity(self, None)
-            self._investment_adviser = cached
-        return cached
-
-    def InvestmentAdviser(self, data=None):
-        # Deprecated: use client.investment_adviser instead.
+    def InvestmentAdviser(self, data=None) -> "InvestmentAdviserEntity":
+        """Entity factory: client.InvestmentAdviser().list({}) / client.InvestmentAdviser().load({"id": ...})."""
         from entity.investment_adviser_entity import InvestmentAdviserEntity
         return InvestmentAdviserEntity(self, data)
 
 
-    @property
-    def market_data(self):
-        """Idiomatic facade: client.market_data.list() / client.market_data.load({"id": ...})."""
-        from entity.market_data_entity import MarketDataEntity
-        cached = getattr(self, "_market_data", None)
-        if cached is None:
-            cached = MarketDataEntity(self, None)
-            self._market_data = cached
-        return cached
-
-    def MarketData(self, data=None):
-        # Deprecated: use client.market_data instead.
+    def MarketData(self, data=None) -> "MarketDataEntity":
+        """Entity factory: client.MarketData().list({}) / client.MarketData().load({"id": ...})."""
         from entity.market_data_entity import MarketDataEntity
         return MarketDataEntity(self, data)
 
 
-    @property
-    def market_index(self):
-        """Idiomatic facade: client.market_index.list() / client.market_index.load({"id": ...})."""
-        from entity.market_index_entity import MarketIndexEntity
-        cached = getattr(self, "_market_index", None)
-        if cached is None:
-            cached = MarketIndexEntity(self, None)
-            self._market_index = cached
-        return cached
-
-    def MarketIndex(self, data=None):
-        # Deprecated: use client.market_index instead.
+    def MarketIndex(self, data=None) -> "MarketIndexEntity":
+        """Entity factory: client.MarketIndex().list({}) / client.MarketIndex().load({"id": ...})."""
         from entity.market_index_entity import MarketIndexEntity
         return MarketIndexEntity(self, data)
 
 
-    @property
-    def market_new(self):
-        """Idiomatic facade: client.market_new.list() / client.market_new.load({"id": ...})."""
-        from entity.market_new_entity import MarketNewEntity
-        cached = getattr(self, "_market_new", None)
-        if cached is None:
-            cached = MarketNewEntity(self, None)
-            self._market_new = cached
-        return cached
-
-    def MarketNew(self, data=None):
-        # Deprecated: use client.market_new instead.
+    def MarketNew(self, data=None) -> "MarketNewEntity":
+        """Entity factory: client.MarketNew().list({}) / client.MarketNew().load({"id": ...})."""
         from entity.market_new_entity import MarketNewEntity
         return MarketNewEntity(self, data)
 
 
-    @property
-    def miscellaneous_data(self):
-        """Idiomatic facade: client.miscellaneous_data.list() / client.miscellaneous_data.load({"id": ...})."""
-        from entity.miscellaneous_data_entity import MiscellaneousDataEntity
-        cached = getattr(self, "_miscellaneous_data", None)
-        if cached is None:
-            cached = MiscellaneousDataEntity(self, None)
-            self._miscellaneous_data = cached
-        return cached
-
-    def MiscellaneousData(self, data=None):
-        # Deprecated: use client.miscellaneous_data instead.
+    def MiscellaneousData(self, data=None) -> "MiscellaneousDataEntity":
+        """Entity factory: client.MiscellaneousData().list({}) / client.MiscellaneousData().load({"id": ...})."""
         from entity.miscellaneous_data_entity import MiscellaneousDataEntity
         return MiscellaneousDataEntity(self, data)
 
 
-    @property
-    def mutual_fund(self):
-        """Idiomatic facade: client.mutual_fund.list() / client.mutual_fund.load({"id": ...})."""
-        from entity.mutual_fund_entity import MutualFundEntity
-        cached = getattr(self, "_mutual_fund", None)
-        if cached is None:
-            cached = MutualFundEntity(self, None)
-            self._mutual_fund = cached
-        return cached
-
-    def MutualFund(self, data=None):
-        # Deprecated: use client.mutual_fund instead.
+    def MutualFund(self, data=None) -> "MutualFundEntity":
+        """Entity factory: client.MutualFund().list({}) / client.MutualFund().load({"id": ...})."""
         from entity.mutual_fund_entity import MutualFundEntity
         return MutualFundEntity(self, data)
 
 
-    @property
-    def symbol_list(self):
-        """Idiomatic facade: client.symbol_list.list() / client.symbol_list.load({"id": ...})."""
-        from entity.symbol_list_entity import SymbolListEntity
-        cached = getattr(self, "_symbol_list", None)
-        if cached is None:
-            cached = SymbolListEntity(self, None)
-            self._symbol_list = cached
-        return cached
-
-    def SymbolList(self, data=None):
-        # Deprecated: use client.symbol_list instead.
+    def SymbolList(self, data=None) -> "SymbolListEntity":
+        """Entity factory: client.SymbolList().list({}) / client.SymbolList().load({"id": ...})."""
         from entity.symbol_list_entity import SymbolListEntity
         return SymbolListEntity(self, data)
 
 
 
     @classmethod
-    def test(cls, testopts=None, sdkopts=None):
+    def test(cls, testopts=None, sdkopts=None) -> "FinancialDataSDK":
         if sdkopts is None:
             sdkopts = {}
         sdkopts = vs.clone(sdkopts)
@@ -530,3 +350,26 @@ class FinancialDataSDK:
         sdk.mode = "test"
 
         return sdk
+
+
+from typing import TYPE_CHECKING
+
+if TYPE_CHECKING:
+    from entity.basic_information_entity import BasicInformationEntity
+    from entity.crypto_currency_entity import CryptoCurrencyEntity
+    from entity.derivatives_data_entity import DerivativesDataEntity
+    from entity.esg_data_entity import EsgDataEntity
+    from entity.etf_data_entity import EtfDataEntity
+    from entity.event_calendar_entity import EventCalendarEntity
+    from entity.financial_ratio_entity import FinancialRatioEntity
+    from entity.financial_statement_entity import FinancialStatementEntity
+    from entity.forex_data_entity import ForexDataEntity
+    from entity.insider_trading_entity import InsiderTradingEntity
+    from entity.institutional_trading_entity import InstitutionalTradingEntity
+    from entity.investment_adviser_entity import InvestmentAdviserEntity
+    from entity.market_data_entity import MarketDataEntity
+    from entity.market_index_entity import MarketIndexEntity
+    from entity.market_new_entity import MarketNewEntity
+    from entity.miscellaneous_data_entity import MiscellaneousDataEntity
+    from entity.mutual_fund_entity import MutualFundEntity
+    from entity.symbol_list_entity import SymbolListEntity

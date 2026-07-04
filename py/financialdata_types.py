@@ -4,233 +4,200 @@
 # params (op.<name>.points[].args.params[]). Field/param types come from the
 # canonical type sentinels via @voxgig/sdkgen canonToType (source of truth:
 # @voxgig/apidef VALID_CANON). Do not edit by hand.
+#
+# These are TypedDicts, not dataclasses: the SDK ops return/accept plain dicts
+# at runtime, and a TypedDict IS a dict shape, so the types match the runtime.
+# Optional (req:false) keys are modelled as TypedDict key-optionality
+# (total=False), split into a required base + total=False subclass when a type
+# has both required and optional keys.
 
 from __future__ import annotations
 
-from dataclasses import dataclass
-from typing import Optional, Any
+from typing import TypedDict, Any
 
 
-@dataclass
-class BasicInformation:
+class BasicInformation(TypedDict):
     pass
 
 
-@dataclass
-class BasicInformationLoadMatch:
+class BasicInformationLoadMatch(TypedDict):
     pass
 
 
-@dataclass
-class CryptoCurrency:
+class CryptoCurrency(TypedDict):
     pass
 
 
-@dataclass
-class CryptoCurrencyLoadMatch:
+class CryptoCurrencyLoadMatch(TypedDict):
     pass
 
 
-@dataclass
-class DerivativesData:
+class DerivativesData(TypedDict):
     pass
 
 
-@dataclass
-class DerivativesDataLoadMatch:
+class DerivativesDataLoadMatch(TypedDict):
     pass
 
 
-@dataclass
-class EsgData:
+class EsgData(TypedDict):
     pass
 
 
-@dataclass
-class EsgDataLoadMatch:
+class EsgDataLoadMatch(TypedDict):
     pass
 
 
-@dataclass
-class EtfData:
+class EtfData(TypedDict):
     pass
 
 
-@dataclass
-class EtfDataLoadMatch:
+class EtfDataLoadMatch(TypedDict):
     pass
 
 
-@dataclass
-class EventCalendar:
+class EventCalendar(TypedDict):
     pass
 
 
-@dataclass
-class EventCalendarLoadMatch:
+class EventCalendarLoadMatch(TypedDict):
     pass
 
 
-@dataclass
-class FinancialRatio:
+class FinancialRatio(TypedDict):
     pass
 
 
-@dataclass
-class FinancialRatioLoadMatch:
+class FinancialRatioLoadMatch(TypedDict):
     pass
 
 
-@dataclass
-class FinancialStatement:
+class FinancialStatement(TypedDict):
     pass
 
 
-@dataclass
-class FinancialStatementLoadMatch:
+class FinancialStatementLoadMatch(TypedDict):
     pass
 
 
-@dataclass
-class ForexData:
+class ForexData(TypedDict):
     pass
 
 
-@dataclass
-class ForexDataLoadMatch:
+class ForexDataLoadMatch(TypedDict):
     pass
 
 
-@dataclass
-class InsiderTrading:
+class InsiderTrading(TypedDict):
     pass
 
 
-@dataclass
-class InsiderTradingLoadMatch:
+class InsiderTradingLoadMatch(TypedDict):
     pass
 
 
-@dataclass
-class InstitutionalTrading:
+class InstitutionalTrading(TypedDict):
     pass
 
 
-@dataclass
-class InstitutionalTradingLoadMatch:
+class InstitutionalTradingLoadMatch(TypedDict):
     pass
 
 
-@dataclass
-class InvestmentAdviser:
+class InvestmentAdviser(TypedDict):
     pass
 
 
-@dataclass
-class InvestmentAdviserLoadMatch:
+class InvestmentAdviserLoadMatch(TypedDict):
     pass
 
 
-@dataclass
-class MarketData:
-    change: Optional[float] = None
-    close: Optional[float] = None
-    date: Optional[str] = None
-    high: Optional[float] = None
-    low: Optional[float] = None
-    open: Optional[float] = None
-    percentage_change: Optional[float] = None
-    price: Optional[float] = None
-    registrant_name: Optional[str] = None
-    time: Optional[str] = None
-    trading_symbol: Optional[str] = None
-    volume: Optional[float] = None
+class MarketData(TypedDict, total=False):
+    change: float
+    close: float
+    date: str
+    high: float
+    low: float
+    open: float
+    percentage_change: float
+    price: float
+    registrant_name: str
+    time: str
+    trading_symbol: str
+    volume: float
 
 
-@dataclass
-class MarketDataLoadMatch:
-    change: Optional[float] = None
-    close: Optional[float] = None
-    date: Optional[str] = None
-    high: Optional[float] = None
-    low: Optional[float] = None
-    open: Optional[float] = None
-    percentage_change: Optional[float] = None
-    price: Optional[float] = None
-    registrant_name: Optional[str] = None
-    time: Optional[str] = None
-    trading_symbol: Optional[str] = None
-    volume: Optional[float] = None
+class MarketDataLoadMatch(TypedDict, total=False):
+    change: float
+    close: float
+    date: str
+    high: float
+    low: float
+    open: float
+    percentage_change: float
+    price: float
+    registrant_name: str
+    time: str
+    trading_symbol: str
+    volume: float
 
 
-@dataclass
-class MarketDataListMatch:
-    change: Optional[float] = None
-    close: Optional[float] = None
-    date: Optional[str] = None
-    high: Optional[float] = None
-    low: Optional[float] = None
-    open: Optional[float] = None
-    percentage_change: Optional[float] = None
-    price: Optional[float] = None
-    registrant_name: Optional[str] = None
-    time: Optional[str] = None
-    trading_symbol: Optional[str] = None
-    volume: Optional[float] = None
+class MarketDataListMatch(TypedDict, total=False):
+    change: float
+    close: float
+    date: str
+    high: float
+    low: float
+    open: float
+    percentage_change: float
+    price: float
+    registrant_name: str
+    time: str
+    trading_symbol: str
+    volume: float
 
 
-@dataclass
-class MarketIndex:
+class MarketIndex(TypedDict):
     pass
 
 
-@dataclass
-class MarketIndexLoadMatch:
+class MarketIndexLoadMatch(TypedDict):
     pass
 
 
-@dataclass
-class MarketNew:
+class MarketNew(TypedDict):
     pass
 
 
-@dataclass
-class MarketNewLoadMatch:
+class MarketNewLoadMatch(TypedDict):
     pass
 
 
-@dataclass
-class MiscellaneousData:
+class MiscellaneousData(TypedDict):
     pass
 
 
-@dataclass
-class MiscellaneousDataLoadMatch:
+class MiscellaneousDataLoadMatch(TypedDict):
     pass
 
 
-@dataclass
-class MutualFund:
+class MutualFund(TypedDict):
     pass
 
 
-@dataclass
-class MutualFundLoadMatch:
+class MutualFundLoadMatch(TypedDict):
     pass
 
 
-@dataclass
-class SymbolList:
-    description: Optional[str] = None
-    registrant_name: Optional[str] = None
-    title_of_security: Optional[str] = None
-    trading_symbol: Optional[str] = None
+class SymbolList(TypedDict, total=False):
+    description: str
+    registrant_name: str
+    title_of_security: str
+    trading_symbol: str
 
 
-@dataclass
-class SymbolListListMatch:
-    description: Optional[str] = None
-    registrant_name: Optional[str] = None
-    title_of_security: Optional[str] = None
-    trading_symbol: Optional[str] = None
-
+class SymbolListListMatch(TypedDict, total=False):
+    description: str
+    registrant_name: str
+    title_of_security: str
+    trading_symbol: str

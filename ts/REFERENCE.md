@@ -314,7 +314,7 @@ Alias for `FinancialDataSDK.test()`.
 ## BasicInformationEntity
 
 ```ts
-const basic_information = client.basic_information
+const basic_information = client.BasicInformation()
 ```
 
 ### Operations
@@ -324,7 +324,7 @@ const basic_information = client.basic_information
 Load a single entity matching the given criteria.
 
 ```ts
-const result = await client.basic_information.load({ id: 'basic_information_id' })
+const result = await client.BasicInformation().load({ id: 'basic_information_id' })
 ```
 
 ### Common Methods
@@ -358,7 +358,7 @@ Return a copy of the entity options.
 ## CryptoCurrencyEntity
 
 ```ts
-const crypto_currency = client.crypto_currency
+const crypto_currency = client.CryptoCurrency()
 ```
 
 ### Operations
@@ -368,7 +368,7 @@ const crypto_currency = client.crypto_currency
 Load a single entity matching the given criteria.
 
 ```ts
-const result = await client.crypto_currency.load({ id: 'crypto_currency_id' })
+const result = await client.CryptoCurrency().load({ id: 'crypto_currency_id' })
 ```
 
 ### Common Methods
@@ -402,7 +402,7 @@ Return a copy of the entity options.
 ## DerivativesDataEntity
 
 ```ts
-const derivatives_data = client.derivatives_data
+const derivatives_data = client.DerivativesData()
 ```
 
 ### Operations
@@ -412,7 +412,7 @@ const derivatives_data = client.derivatives_data
 Load a single entity matching the given criteria.
 
 ```ts
-const result = await client.derivatives_data.load({ id: 'derivatives_data_id' })
+const result = await client.DerivativesData().load({ id: 'derivatives_data_id' })
 ```
 
 ### Common Methods
@@ -446,7 +446,7 @@ Return a copy of the entity options.
 ## EsgDataEntity
 
 ```ts
-const esg_data = client.esg_data
+const esg_data = client.EsgData()
 ```
 
 ### Operations
@@ -456,7 +456,7 @@ const esg_data = client.esg_data
 Load a single entity matching the given criteria.
 
 ```ts
-const result = await client.esg_data.load({ id: 'esg_data_id' })
+const result = await client.EsgData().load({ id: 'esg_data_id' })
 ```
 
 ### Common Methods
@@ -490,7 +490,7 @@ Return a copy of the entity options.
 ## EtfDataEntity
 
 ```ts
-const etf_data = client.etf_data
+const etf_data = client.EtfData()
 ```
 
 ### Operations
@@ -500,7 +500,7 @@ const etf_data = client.etf_data
 Load a single entity matching the given criteria.
 
 ```ts
-const result = await client.etf_data.load({ id: 'etf_data_id' })
+const result = await client.EtfData().load({ id: 'etf_data_id' })
 ```
 
 ### Common Methods
@@ -534,7 +534,7 @@ Return a copy of the entity options.
 ## EventCalendarEntity
 
 ```ts
-const event_calendar = client.event_calendar
+const event_calendar = client.EventCalendar()
 ```
 
 ### Operations
@@ -544,7 +544,7 @@ const event_calendar = client.event_calendar
 Load a single entity matching the given criteria.
 
 ```ts
-const result = await client.event_calendar.load({ id: 'event_calendar_id' })
+const result = await client.EventCalendar().load({ id: 'event_calendar_id' })
 ```
 
 ### Common Methods
@@ -578,7 +578,7 @@ Return a copy of the entity options.
 ## FinancialRatioEntity
 
 ```ts
-const financial_ratio = client.financial_ratio
+const financial_ratio = client.FinancialRatio()
 ```
 
 ### Operations
@@ -588,7 +588,7 @@ const financial_ratio = client.financial_ratio
 Load a single entity matching the given criteria.
 
 ```ts
-const result = await client.financial_ratio.load({ id: 'financial_ratio_id' })
+const result = await client.FinancialRatio().load({ id: 'financial_ratio_id' })
 ```
 
 ### Common Methods
@@ -622,7 +622,7 @@ Return a copy of the entity options.
 ## FinancialStatementEntity
 
 ```ts
-const financial_statement = client.financial_statement
+const financial_statement = client.FinancialStatement()
 ```
 
 ### Operations
@@ -632,7 +632,7 @@ const financial_statement = client.financial_statement
 Load a single entity matching the given criteria.
 
 ```ts
-const result = await client.financial_statement.load({ id: 'financial_statement_id' })
+const result = await client.FinancialStatement().load({ id: 'financial_statement_id' })
 ```
 
 ### Common Methods
@@ -666,7 +666,7 @@ Return a copy of the entity options.
 ## ForexDataEntity
 
 ```ts
-const forex_data = client.forex_data
+const forex_data = client.ForexData()
 ```
 
 ### Operations
@@ -676,7 +676,7 @@ const forex_data = client.forex_data
 Load a single entity matching the given criteria.
 
 ```ts
-const result = await client.forex_data.load({ id: 'forex_data_id' })
+const result = await client.ForexData().load({ id: 'forex_data_id' })
 ```
 
 ### Common Methods
@@ -710,7 +710,7 @@ Return a copy of the entity options.
 ## InsiderTradingEntity
 
 ```ts
-const insider_trading = client.insider_trading
+const insider_trading = client.InsiderTrading()
 ```
 
 ### Operations
@@ -720,7 +720,7 @@ const insider_trading = client.insider_trading
 Load a single entity matching the given criteria.
 
 ```ts
-const result = await client.insider_trading.load({ id: 'insider_trading_id' })
+const result = await client.InsiderTrading().load({ id: 'insider_trading_id' })
 ```
 
 ### Common Methods
@@ -754,7 +754,7 @@ Return a copy of the entity options.
 ## InstitutionalTradingEntity
 
 ```ts
-const institutional_trading = client.institutional_trading
+const institutional_trading = client.InstitutionalTrading()
 ```
 
 ### Operations
@@ -764,7 +764,7 @@ const institutional_trading = client.institutional_trading
 Load a single entity matching the given criteria.
 
 ```ts
-const result = await client.institutional_trading.load({ id: 'institutional_trading_id' })
+const result = await client.InstitutionalTrading().load({ id: 'institutional_trading_id' })
 ```
 
 ### Common Methods
@@ -798,7 +798,7 @@ Return a copy of the entity options.
 ## InvestmentAdviserEntity
 
 ```ts
-const investment_adviser = client.investment_adviser
+const investment_adviser = client.InvestmentAdviser()
 ```
 
 ### Operations
@@ -808,7 +808,7 @@ const investment_adviser = client.investment_adviser
 Load a single entity matching the given criteria.
 
 ```ts
-const result = await client.investment_adviser.load({ id: 'investment_adviser_id' })
+const result = await client.InvestmentAdviser().load({ id: 'investment_adviser_id' })
 ```
 
 ### Common Methods
@@ -842,7 +842,7 @@ Return a copy of the entity options.
 ## MarketDataEntity
 
 ```ts
-const market_data = client.market_data
+const market_data = client.MarketData()
 ```
 
 ### Fields
@@ -869,7 +869,7 @@ const market_data = client.market_data
 List entities matching the given criteria. Returns an array.
 
 ```ts
-const results = await client.market_data.list()
+const results = await client.MarketData().list()
 ```
 
 #### `load(match: object, ctrl?: object)`
@@ -877,7 +877,7 @@ const results = await client.market_data.list()
 Load a single entity matching the given criteria.
 
 ```ts
-const result = await client.market_data.load({ id: 'market_data_id' })
+const result = await client.MarketData().load({ id: 'market_data_id' })
 ```
 
 ### Common Methods
@@ -911,7 +911,7 @@ Return a copy of the entity options.
 ## MarketIndexEntity
 
 ```ts
-const market_index = client.market_index
+const market_index = client.MarketIndex()
 ```
 
 ### Operations
@@ -921,7 +921,7 @@ const market_index = client.market_index
 Load a single entity matching the given criteria.
 
 ```ts
-const result = await client.market_index.load({ id: 'market_index_id' })
+const result = await client.MarketIndex().load({ id: 'market_index_id' })
 ```
 
 ### Common Methods
@@ -955,7 +955,7 @@ Return a copy of the entity options.
 ## MarketNewEntity
 
 ```ts
-const market_new = client.market_new
+const market_new = client.MarketNew()
 ```
 
 ### Operations
@@ -965,7 +965,7 @@ const market_new = client.market_new
 Load a single entity matching the given criteria.
 
 ```ts
-const result = await client.market_new.load({ id: 'market_new_id' })
+const result = await client.MarketNew().load({ id: 'market_new_id' })
 ```
 
 ### Common Methods
@@ -999,7 +999,7 @@ Return a copy of the entity options.
 ## MiscellaneousDataEntity
 
 ```ts
-const miscellaneous_data = client.miscellaneous_data
+const miscellaneous_data = client.MiscellaneousData()
 ```
 
 ### Operations
@@ -1009,7 +1009,7 @@ const miscellaneous_data = client.miscellaneous_data
 Load a single entity matching the given criteria.
 
 ```ts
-const result = await client.miscellaneous_data.load({ id: 'miscellaneous_data_id' })
+const result = await client.MiscellaneousData().load({ id: 'miscellaneous_data_id' })
 ```
 
 ### Common Methods
@@ -1043,7 +1043,7 @@ Return a copy of the entity options.
 ## MutualFundEntity
 
 ```ts
-const mutual_fund = client.mutual_fund
+const mutual_fund = client.MutualFund()
 ```
 
 ### Operations
@@ -1053,7 +1053,7 @@ const mutual_fund = client.mutual_fund
 Load a single entity matching the given criteria.
 
 ```ts
-const result = await client.mutual_fund.load({ id: 'mutual_fund_id' })
+const result = await client.MutualFund().load({ id: 'mutual_fund_id' })
 ```
 
 ### Common Methods
@@ -1087,7 +1087,7 @@ Return a copy of the entity options.
 ## SymbolListEntity
 
 ```ts
-const symbol_list = client.symbol_list
+const symbol_list = client.SymbolList()
 ```
 
 ### Fields
@@ -1106,7 +1106,7 @@ const symbol_list = client.symbol_list
 List entities matching the given criteria. Returns an array.
 
 ```ts
-const results = await client.symbol_list.list()
+const results = await client.SymbolList().list()
 ```
 
 ### Common Methods

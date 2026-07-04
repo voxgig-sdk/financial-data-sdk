@@ -233,10 +233,10 @@ class FinancialDataSDK
 
     private $_basic_information = null;
 
-    // Idiomatic facade: $client->basic_information()->list() / ->load(["id" => ...]).
-    // Also serves the deprecated PascalCase alias BasicInformation() (PHP method
-    // names are case-insensitive).
-    public function basic_information($data = null)
+    // Canonical facade: $client->BasicInformation()->list() / ->load(["id" => ...]).
+    // PHP method names are case-insensitive, so lowercase $client->basic_information()
+    // resolves here too.
+    public function BasicInformation($data = null)
     {
         require_once __DIR__ . '/entity/basic_information_entity.php';
         if ($data === null) {
@@ -251,10 +251,10 @@ class FinancialDataSDK
 
     private $_crypto_currency = null;
 
-    // Idiomatic facade: $client->crypto_currency()->list() / ->load(["id" => ...]).
-    // Also serves the deprecated PascalCase alias CryptoCurrency() (PHP method
-    // names are case-insensitive).
-    public function crypto_currency($data = null)
+    // Canonical facade: $client->CryptoCurrency()->list() / ->load(["id" => ...]).
+    // PHP method names are case-insensitive, so lowercase $client->crypto_currency()
+    // resolves here too.
+    public function CryptoCurrency($data = null)
     {
         require_once __DIR__ . '/entity/crypto_currency_entity.php';
         if ($data === null) {
@@ -269,10 +269,10 @@ class FinancialDataSDK
 
     private $_derivatives_data = null;
 
-    // Idiomatic facade: $client->derivatives_data()->list() / ->load(["id" => ...]).
-    // Also serves the deprecated PascalCase alias DerivativesData() (PHP method
-    // names are case-insensitive).
-    public function derivatives_data($data = null)
+    // Canonical facade: $client->DerivativesData()->list() / ->load(["id" => ...]).
+    // PHP method names are case-insensitive, so lowercase $client->derivatives_data()
+    // resolves here too.
+    public function DerivativesData($data = null)
     {
         require_once __DIR__ . '/entity/derivatives_data_entity.php';
         if ($data === null) {
@@ -287,10 +287,10 @@ class FinancialDataSDK
 
     private $_esg_data = null;
 
-    // Idiomatic facade: $client->esg_data()->list() / ->load(["id" => ...]).
-    // Also serves the deprecated PascalCase alias EsgData() (PHP method
-    // names are case-insensitive).
-    public function esg_data($data = null)
+    // Canonical facade: $client->EsgData()->list() / ->load(["id" => ...]).
+    // PHP method names are case-insensitive, so lowercase $client->esg_data()
+    // resolves here too.
+    public function EsgData($data = null)
     {
         require_once __DIR__ . '/entity/esg_data_entity.php';
         if ($data === null) {
@@ -305,10 +305,10 @@ class FinancialDataSDK
 
     private $_etf_data = null;
 
-    // Idiomatic facade: $client->etf_data()->list() / ->load(["id" => ...]).
-    // Also serves the deprecated PascalCase alias EtfData() (PHP method
-    // names are case-insensitive).
-    public function etf_data($data = null)
+    // Canonical facade: $client->EtfData()->list() / ->load(["id" => ...]).
+    // PHP method names are case-insensitive, so lowercase $client->etf_data()
+    // resolves here too.
+    public function EtfData($data = null)
     {
         require_once __DIR__ . '/entity/etf_data_entity.php';
         if ($data === null) {
@@ -323,10 +323,10 @@ class FinancialDataSDK
 
     private $_event_calendar = null;
 
-    // Idiomatic facade: $client->event_calendar()->list() / ->load(["id" => ...]).
-    // Also serves the deprecated PascalCase alias EventCalendar() (PHP method
-    // names are case-insensitive).
-    public function event_calendar($data = null)
+    // Canonical facade: $client->EventCalendar()->list() / ->load(["id" => ...]).
+    // PHP method names are case-insensitive, so lowercase $client->event_calendar()
+    // resolves here too.
+    public function EventCalendar($data = null)
     {
         require_once __DIR__ . '/entity/event_calendar_entity.php';
         if ($data === null) {
@@ -341,10 +341,10 @@ class FinancialDataSDK
 
     private $_financial_ratio = null;
 
-    // Idiomatic facade: $client->financial_ratio()->list() / ->load(["id" => ...]).
-    // Also serves the deprecated PascalCase alias FinancialRatio() (PHP method
-    // names are case-insensitive).
-    public function financial_ratio($data = null)
+    // Canonical facade: $client->FinancialRatio()->list() / ->load(["id" => ...]).
+    // PHP method names are case-insensitive, so lowercase $client->financial_ratio()
+    // resolves here too.
+    public function FinancialRatio($data = null)
     {
         require_once __DIR__ . '/entity/financial_ratio_entity.php';
         if ($data === null) {
@@ -359,10 +359,10 @@ class FinancialDataSDK
 
     private $_financial_statement = null;
 
-    // Idiomatic facade: $client->financial_statement()->list() / ->load(["id" => ...]).
-    // Also serves the deprecated PascalCase alias FinancialStatement() (PHP method
-    // names are case-insensitive).
-    public function financial_statement($data = null)
+    // Canonical facade: $client->FinancialStatement()->list() / ->load(["id" => ...]).
+    // PHP method names are case-insensitive, so lowercase $client->financial_statement()
+    // resolves here too.
+    public function FinancialStatement($data = null)
     {
         require_once __DIR__ . '/entity/financial_statement_entity.php';
         if ($data === null) {
@@ -377,10 +377,10 @@ class FinancialDataSDK
 
     private $_forex_data = null;
 
-    // Idiomatic facade: $client->forex_data()->list() / ->load(["id" => ...]).
-    // Also serves the deprecated PascalCase alias ForexData() (PHP method
-    // names are case-insensitive).
-    public function forex_data($data = null)
+    // Canonical facade: $client->ForexData()->list() / ->load(["id" => ...]).
+    // PHP method names are case-insensitive, so lowercase $client->forex_data()
+    // resolves here too.
+    public function ForexData($data = null)
     {
         require_once __DIR__ . '/entity/forex_data_entity.php';
         if ($data === null) {
@@ -395,10 +395,10 @@ class FinancialDataSDK
 
     private $_insider_trading = null;
 
-    // Idiomatic facade: $client->insider_trading()->list() / ->load(["id" => ...]).
-    // Also serves the deprecated PascalCase alias InsiderTrading() (PHP method
-    // names are case-insensitive).
-    public function insider_trading($data = null)
+    // Canonical facade: $client->InsiderTrading()->list() / ->load(["id" => ...]).
+    // PHP method names are case-insensitive, so lowercase $client->insider_trading()
+    // resolves here too.
+    public function InsiderTrading($data = null)
     {
         require_once __DIR__ . '/entity/insider_trading_entity.php';
         if ($data === null) {
@@ -413,10 +413,10 @@ class FinancialDataSDK
 
     private $_institutional_trading = null;
 
-    // Idiomatic facade: $client->institutional_trading()->list() / ->load(["id" => ...]).
-    // Also serves the deprecated PascalCase alias InstitutionalTrading() (PHP method
-    // names are case-insensitive).
-    public function institutional_trading($data = null)
+    // Canonical facade: $client->InstitutionalTrading()->list() / ->load(["id" => ...]).
+    // PHP method names are case-insensitive, so lowercase $client->institutional_trading()
+    // resolves here too.
+    public function InstitutionalTrading($data = null)
     {
         require_once __DIR__ . '/entity/institutional_trading_entity.php';
         if ($data === null) {
@@ -431,10 +431,10 @@ class FinancialDataSDK
 
     private $_investment_adviser = null;
 
-    // Idiomatic facade: $client->investment_adviser()->list() / ->load(["id" => ...]).
-    // Also serves the deprecated PascalCase alias InvestmentAdviser() (PHP method
-    // names are case-insensitive).
-    public function investment_adviser($data = null)
+    // Canonical facade: $client->InvestmentAdviser()->list() / ->load(["id" => ...]).
+    // PHP method names are case-insensitive, so lowercase $client->investment_adviser()
+    // resolves here too.
+    public function InvestmentAdviser($data = null)
     {
         require_once __DIR__ . '/entity/investment_adviser_entity.php';
         if ($data === null) {
@@ -449,10 +449,10 @@ class FinancialDataSDK
 
     private $_market_data = null;
 
-    // Idiomatic facade: $client->market_data()->list() / ->load(["id" => ...]).
-    // Also serves the deprecated PascalCase alias MarketData() (PHP method
-    // names are case-insensitive).
-    public function market_data($data = null)
+    // Canonical facade: $client->MarketData()->list() / ->load(["id" => ...]).
+    // PHP method names are case-insensitive, so lowercase $client->market_data()
+    // resolves here too.
+    public function MarketData($data = null)
     {
         require_once __DIR__ . '/entity/market_data_entity.php';
         if ($data === null) {
@@ -467,10 +467,10 @@ class FinancialDataSDK
 
     private $_market_index = null;
 
-    // Idiomatic facade: $client->market_index()->list() / ->load(["id" => ...]).
-    // Also serves the deprecated PascalCase alias MarketIndex() (PHP method
-    // names are case-insensitive).
-    public function market_index($data = null)
+    // Canonical facade: $client->MarketIndex()->list() / ->load(["id" => ...]).
+    // PHP method names are case-insensitive, so lowercase $client->market_index()
+    // resolves here too.
+    public function MarketIndex($data = null)
     {
         require_once __DIR__ . '/entity/market_index_entity.php';
         if ($data === null) {
@@ -485,10 +485,10 @@ class FinancialDataSDK
 
     private $_market_new = null;
 
-    // Idiomatic facade: $client->market_new()->list() / ->load(["id" => ...]).
-    // Also serves the deprecated PascalCase alias MarketNew() (PHP method
-    // names are case-insensitive).
-    public function market_new($data = null)
+    // Canonical facade: $client->MarketNew()->list() / ->load(["id" => ...]).
+    // PHP method names are case-insensitive, so lowercase $client->market_new()
+    // resolves here too.
+    public function MarketNew($data = null)
     {
         require_once __DIR__ . '/entity/market_new_entity.php';
         if ($data === null) {
@@ -503,10 +503,10 @@ class FinancialDataSDK
 
     private $_miscellaneous_data = null;
 
-    // Idiomatic facade: $client->miscellaneous_data()->list() / ->load(["id" => ...]).
-    // Also serves the deprecated PascalCase alias MiscellaneousData() (PHP method
-    // names are case-insensitive).
-    public function miscellaneous_data($data = null)
+    // Canonical facade: $client->MiscellaneousData()->list() / ->load(["id" => ...]).
+    // PHP method names are case-insensitive, so lowercase $client->miscellaneous_data()
+    // resolves here too.
+    public function MiscellaneousData($data = null)
     {
         require_once __DIR__ . '/entity/miscellaneous_data_entity.php';
         if ($data === null) {
@@ -521,10 +521,10 @@ class FinancialDataSDK
 
     private $_mutual_fund = null;
 
-    // Idiomatic facade: $client->mutual_fund()->list() / ->load(["id" => ...]).
-    // Also serves the deprecated PascalCase alias MutualFund() (PHP method
-    // names are case-insensitive).
-    public function mutual_fund($data = null)
+    // Canonical facade: $client->MutualFund()->list() / ->load(["id" => ...]).
+    // PHP method names are case-insensitive, so lowercase $client->mutual_fund()
+    // resolves here too.
+    public function MutualFund($data = null)
     {
         require_once __DIR__ . '/entity/mutual_fund_entity.php';
         if ($data === null) {
@@ -539,10 +539,10 @@ class FinancialDataSDK
 
     private $_symbol_list = null;
 
-    // Idiomatic facade: $client->symbol_list()->list() / ->load(["id" => ...]).
-    // Also serves the deprecated PascalCase alias SymbolList() (PHP method
-    // names are case-insensitive).
-    public function symbol_list($data = null)
+    // Canonical facade: $client->SymbolList()->list() / ->load(["id" => ...]).
+    // PHP method names are case-insensitive, so lowercase $client->symbol_list()
+    // resolves here too.
+    public function SymbolList($data = null)
     {
         require_once __DIR__ . '/entity/symbol_list_entity.php';
         if ($data === null) {

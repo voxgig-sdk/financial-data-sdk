@@ -152,7 +152,7 @@ same parameters as `direct()`.
 ## BasicInformationEntity
 
 ```lua
-local basic_information = client:basic_information(nil)
+local basic_information = client:BasicInformation(nil)
 ```
 
 ### Operations
@@ -162,7 +162,7 @@ local basic_information = client:basic_information(nil)
 Load a single entity matching the given criteria.
 
 ```lua
-local result, err = client:basic_information():load({ id = "basic_information_id" })
+local result, err = client:BasicInformation():load({ id = "basic_information_id" })
 ```
 
 ### Common Methods
@@ -198,7 +198,7 @@ Return the entity name.
 ## CryptoCurrencyEntity
 
 ```lua
-local crypto_currency = client:crypto_currency(nil)
+local crypto_currency = client:CryptoCurrency(nil)
 ```
 
 ### Operations
@@ -208,7 +208,7 @@ local crypto_currency = client:crypto_currency(nil)
 Load a single entity matching the given criteria.
 
 ```lua
-local result, err = client:crypto_currency():load({ id = "crypto_currency_id" })
+local result, err = client:CryptoCurrency():load({ id = "crypto_currency_id" })
 ```
 
 ### Common Methods
@@ -244,7 +244,7 @@ Return the entity name.
 ## DerivativesDataEntity
 
 ```lua
-local derivatives_data = client:derivatives_data(nil)
+local derivatives_data = client:DerivativesData(nil)
 ```
 
 ### Operations
@@ -254,7 +254,7 @@ local derivatives_data = client:derivatives_data(nil)
 Load a single entity matching the given criteria.
 
 ```lua
-local result, err = client:derivatives_data():load({ id = "derivatives_data_id" })
+local result, err = client:DerivativesData():load({ id = "derivatives_data_id" })
 ```
 
 ### Common Methods
@@ -290,7 +290,7 @@ Return the entity name.
 ## EsgDataEntity
 
 ```lua
-local esg_data = client:esg_data(nil)
+local esg_data = client:EsgData(nil)
 ```
 
 ### Operations
@@ -300,7 +300,7 @@ local esg_data = client:esg_data(nil)
 Load a single entity matching the given criteria.
 
 ```lua
-local result, err = client:esg_data():load({ id = "esg_data_id" })
+local result, err = client:EsgData():load({ id = "esg_data_id" })
 ```
 
 ### Common Methods
@@ -336,7 +336,7 @@ Return the entity name.
 ## EtfDataEntity
 
 ```lua
-local etf_data = client:etf_data(nil)
+local etf_data = client:EtfData(nil)
 ```
 
 ### Operations
@@ -346,7 +346,7 @@ local etf_data = client:etf_data(nil)
 Load a single entity matching the given criteria.
 
 ```lua
-local result, err = client:etf_data():load({ id = "etf_data_id" })
+local result, err = client:EtfData():load({ id = "etf_data_id" })
 ```
 
 ### Common Methods
@@ -382,7 +382,7 @@ Return the entity name.
 ## EventCalendarEntity
 
 ```lua
-local event_calendar = client:event_calendar(nil)
+local event_calendar = client:EventCalendar(nil)
 ```
 
 ### Operations
@@ -392,7 +392,7 @@ local event_calendar = client:event_calendar(nil)
 Load a single entity matching the given criteria.
 
 ```lua
-local result, err = client:event_calendar():load({ id = "event_calendar_id" })
+local result, err = client:EventCalendar():load({ id = "event_calendar_id" })
 ```
 
 ### Common Methods
@@ -428,7 +428,7 @@ Return the entity name.
 ## FinancialRatioEntity
 
 ```lua
-local financial_ratio = client:financial_ratio(nil)
+local financial_ratio = client:FinancialRatio(nil)
 ```
 
 ### Operations
@@ -438,7 +438,7 @@ local financial_ratio = client:financial_ratio(nil)
 Load a single entity matching the given criteria.
 
 ```lua
-local result, err = client:financial_ratio():load({ id = "financial_ratio_id" })
+local result, err = client:FinancialRatio():load({ id = "financial_ratio_id" })
 ```
 
 ### Common Methods
@@ -474,7 +474,7 @@ Return the entity name.
 ## FinancialStatementEntity
 
 ```lua
-local financial_statement = client:financial_statement(nil)
+local financial_statement = client:FinancialStatement(nil)
 ```
 
 ### Operations
@@ -484,7 +484,7 @@ local financial_statement = client:financial_statement(nil)
 Load a single entity matching the given criteria.
 
 ```lua
-local result, err = client:financial_statement():load({ id = "financial_statement_id" })
+local result, err = client:FinancialStatement():load({ id = "financial_statement_id" })
 ```
 
 ### Common Methods
@@ -520,7 +520,7 @@ Return the entity name.
 ## ForexDataEntity
 
 ```lua
-local forex_data = client:forex_data(nil)
+local forex_data = client:ForexData(nil)
 ```
 
 ### Operations
@@ -530,7 +530,7 @@ local forex_data = client:forex_data(nil)
 Load a single entity matching the given criteria.
 
 ```lua
-local result, err = client:forex_data():load({ id = "forex_data_id" })
+local result, err = client:ForexData():load({ id = "forex_data_id" })
 ```
 
 ### Common Methods
@@ -566,7 +566,7 @@ Return the entity name.
 ## InsiderTradingEntity
 
 ```lua
-local insider_trading = client:insider_trading(nil)
+local insider_trading = client:InsiderTrading(nil)
 ```
 
 ### Operations
@@ -576,7 +576,7 @@ local insider_trading = client:insider_trading(nil)
 Load a single entity matching the given criteria.
 
 ```lua
-local result, err = client:insider_trading():load({ id = "insider_trading_id" })
+local result, err = client:InsiderTrading():load({ id = "insider_trading_id" })
 ```
 
 ### Common Methods
@@ -612,7 +612,7 @@ Return the entity name.
 ## InstitutionalTradingEntity
 
 ```lua
-local institutional_trading = client:institutional_trading(nil)
+local institutional_trading = client:InstitutionalTrading(nil)
 ```
 
 ### Operations
@@ -622,7 +622,7 @@ local institutional_trading = client:institutional_trading(nil)
 Load a single entity matching the given criteria.
 
 ```lua
-local result, err = client:institutional_trading():load({ id = "institutional_trading_id" })
+local result, err = client:InstitutionalTrading():load({ id = "institutional_trading_id" })
 ```
 
 ### Common Methods
@@ -658,7 +658,7 @@ Return the entity name.
 ## InvestmentAdviserEntity
 
 ```lua
-local investment_adviser = client:investment_adviser(nil)
+local investment_adviser = client:InvestmentAdviser(nil)
 ```
 
 ### Operations
@@ -668,7 +668,7 @@ local investment_adviser = client:investment_adviser(nil)
 Load a single entity matching the given criteria.
 
 ```lua
-local result, err = client:investment_adviser():load({ id = "investment_adviser_id" })
+local result, err = client:InvestmentAdviser():load({ id = "investment_adviser_id" })
 ```
 
 ### Common Methods
@@ -704,7 +704,7 @@ Return the entity name.
 ## MarketDataEntity
 
 ```lua
-local market_data = client:market_data(nil)
+local market_data = client:MarketData(nil)
 ```
 
 ### Fields
@@ -731,7 +731,7 @@ local market_data = client:market_data(nil)
 List entities matching the given criteria. Returns an array.
 
 ```lua
-local results, err = client:market_data():list()
+local results, err = client:MarketData():list()
 ```
 
 #### `load(reqmatch, ctrl) -> any, err`
@@ -739,7 +739,7 @@ local results, err = client:market_data():list()
 Load a single entity matching the given criteria.
 
 ```lua
-local result, err = client:market_data():load({ id = "market_data_id" })
+local result, err = client:MarketData():load({ id = "market_data_id" })
 ```
 
 ### Common Methods
@@ -775,7 +775,7 @@ Return the entity name.
 ## MarketIndexEntity
 
 ```lua
-local market_index = client:market_index(nil)
+local market_index = client:MarketIndex(nil)
 ```
 
 ### Operations
@@ -785,7 +785,7 @@ local market_index = client:market_index(nil)
 Load a single entity matching the given criteria.
 
 ```lua
-local result, err = client:market_index():load({ id = "market_index_id" })
+local result, err = client:MarketIndex():load({ id = "market_index_id" })
 ```
 
 ### Common Methods
@@ -821,7 +821,7 @@ Return the entity name.
 ## MarketNewEntity
 
 ```lua
-local market_new = client:market_new(nil)
+local market_new = client:MarketNew(nil)
 ```
 
 ### Operations
@@ -831,7 +831,7 @@ local market_new = client:market_new(nil)
 Load a single entity matching the given criteria.
 
 ```lua
-local result, err = client:market_new():load({ id = "market_new_id" })
+local result, err = client:MarketNew():load({ id = "market_new_id" })
 ```
 
 ### Common Methods
@@ -867,7 +867,7 @@ Return the entity name.
 ## MiscellaneousDataEntity
 
 ```lua
-local miscellaneous_data = client:miscellaneous_data(nil)
+local miscellaneous_data = client:MiscellaneousData(nil)
 ```
 
 ### Operations
@@ -877,7 +877,7 @@ local miscellaneous_data = client:miscellaneous_data(nil)
 Load a single entity matching the given criteria.
 
 ```lua
-local result, err = client:miscellaneous_data():load({ id = "miscellaneous_data_id" })
+local result, err = client:MiscellaneousData():load({ id = "miscellaneous_data_id" })
 ```
 
 ### Common Methods
@@ -913,7 +913,7 @@ Return the entity name.
 ## MutualFundEntity
 
 ```lua
-local mutual_fund = client:mutual_fund(nil)
+local mutual_fund = client:MutualFund(nil)
 ```
 
 ### Operations
@@ -923,7 +923,7 @@ local mutual_fund = client:mutual_fund(nil)
 Load a single entity matching the given criteria.
 
 ```lua
-local result, err = client:mutual_fund():load({ id = "mutual_fund_id" })
+local result, err = client:MutualFund():load({ id = "mutual_fund_id" })
 ```
 
 ### Common Methods
@@ -959,7 +959,7 @@ Return the entity name.
 ## SymbolListEntity
 
 ```lua
-local symbol_list = client:symbol_list(nil)
+local symbol_list = client:SymbolList(nil)
 ```
 
 ### Fields
@@ -978,7 +978,7 @@ local symbol_list = client:symbol_list(nil)
 List entities matching the given criteria. Returns an array.
 
 ```lua
-local results, err = client:symbol_list():list()
+local results, err = client:SymbolList():list()
 ```
 
 ### Common Methods

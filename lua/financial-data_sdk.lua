@@ -244,8 +244,9 @@ end
 
 
 
--- Idiomatic facade: client:basic_information():list() / client:basic_information():load({ id = ... })
-function FinancialDataSDK:basic_information(data)
+-- Idiomatic facade: client:BasicInformation():list() / client:BasicInformation():load({ id = ... })
+-- Entity access is capitalised (PascalCase) for parity with the other SDKs.
+function FinancialDataSDK:BasicInformation(data)
   local EntityMod = require("entity.basic_information_entity")
   if data == nil then
     if self._basic_information == nil then
@@ -256,15 +257,10 @@ function FinancialDataSDK:basic_information(data)
   return EntityMod.new(self, data)
 end
 
--- Deprecated: use client:basic_information() instead.
-function FinancialDataSDK:BasicInformation(data)
-  local EntityMod = require("entity.basic_information_entity")
-  return EntityMod.new(self, data)
-end
 
-
--- Idiomatic facade: client:crypto_currency():list() / client:crypto_currency():load({ id = ... })
-function FinancialDataSDK:crypto_currency(data)
+-- Idiomatic facade: client:CryptoCurrency():list() / client:CryptoCurrency():load({ id = ... })
+-- Entity access is capitalised (PascalCase) for parity with the other SDKs.
+function FinancialDataSDK:CryptoCurrency(data)
   local EntityMod = require("entity.crypto_currency_entity")
   if data == nil then
     if self._crypto_currency == nil then
@@ -275,15 +271,10 @@ function FinancialDataSDK:crypto_currency(data)
   return EntityMod.new(self, data)
 end
 
--- Deprecated: use client:crypto_currency() instead.
-function FinancialDataSDK:CryptoCurrency(data)
-  local EntityMod = require("entity.crypto_currency_entity")
-  return EntityMod.new(self, data)
-end
 
-
--- Idiomatic facade: client:derivatives_data():list() / client:derivatives_data():load({ id = ... })
-function FinancialDataSDK:derivatives_data(data)
+-- Idiomatic facade: client:DerivativesData():list() / client:DerivativesData():load({ id = ... })
+-- Entity access is capitalised (PascalCase) for parity with the other SDKs.
+function FinancialDataSDK:DerivativesData(data)
   local EntityMod = require("entity.derivatives_data_entity")
   if data == nil then
     if self._derivatives_data == nil then
@@ -294,15 +285,10 @@ function FinancialDataSDK:derivatives_data(data)
   return EntityMod.new(self, data)
 end
 
--- Deprecated: use client:derivatives_data() instead.
-function FinancialDataSDK:DerivativesData(data)
-  local EntityMod = require("entity.derivatives_data_entity")
-  return EntityMod.new(self, data)
-end
 
-
--- Idiomatic facade: client:esg_data():list() / client:esg_data():load({ id = ... })
-function FinancialDataSDK:esg_data(data)
+-- Idiomatic facade: client:EsgData():list() / client:EsgData():load({ id = ... })
+-- Entity access is capitalised (PascalCase) for parity with the other SDKs.
+function FinancialDataSDK:EsgData(data)
   local EntityMod = require("entity.esg_data_entity")
   if data == nil then
     if self._esg_data == nil then
@@ -313,15 +299,10 @@ function FinancialDataSDK:esg_data(data)
   return EntityMod.new(self, data)
 end
 
--- Deprecated: use client:esg_data() instead.
-function FinancialDataSDK:EsgData(data)
-  local EntityMod = require("entity.esg_data_entity")
-  return EntityMod.new(self, data)
-end
 
-
--- Idiomatic facade: client:etf_data():list() / client:etf_data():load({ id = ... })
-function FinancialDataSDK:etf_data(data)
+-- Idiomatic facade: client:EtfData():list() / client:EtfData():load({ id = ... })
+-- Entity access is capitalised (PascalCase) for parity with the other SDKs.
+function FinancialDataSDK:EtfData(data)
   local EntityMod = require("entity.etf_data_entity")
   if data == nil then
     if self._etf_data == nil then
@@ -332,15 +313,10 @@ function FinancialDataSDK:etf_data(data)
   return EntityMod.new(self, data)
 end
 
--- Deprecated: use client:etf_data() instead.
-function FinancialDataSDK:EtfData(data)
-  local EntityMod = require("entity.etf_data_entity")
-  return EntityMod.new(self, data)
-end
 
-
--- Idiomatic facade: client:event_calendar():list() / client:event_calendar():load({ id = ... })
-function FinancialDataSDK:event_calendar(data)
+-- Idiomatic facade: client:EventCalendar():list() / client:EventCalendar():load({ id = ... })
+-- Entity access is capitalised (PascalCase) for parity with the other SDKs.
+function FinancialDataSDK:EventCalendar(data)
   local EntityMod = require("entity.event_calendar_entity")
   if data == nil then
     if self._event_calendar == nil then
@@ -351,15 +327,10 @@ function FinancialDataSDK:event_calendar(data)
   return EntityMod.new(self, data)
 end
 
--- Deprecated: use client:event_calendar() instead.
-function FinancialDataSDK:EventCalendar(data)
-  local EntityMod = require("entity.event_calendar_entity")
-  return EntityMod.new(self, data)
-end
 
-
--- Idiomatic facade: client:financial_ratio():list() / client:financial_ratio():load({ id = ... })
-function FinancialDataSDK:financial_ratio(data)
+-- Idiomatic facade: client:FinancialRatio():list() / client:FinancialRatio():load({ id = ... })
+-- Entity access is capitalised (PascalCase) for parity with the other SDKs.
+function FinancialDataSDK:FinancialRatio(data)
   local EntityMod = require("entity.financial_ratio_entity")
   if data == nil then
     if self._financial_ratio == nil then
@@ -370,15 +341,10 @@ function FinancialDataSDK:financial_ratio(data)
   return EntityMod.new(self, data)
 end
 
--- Deprecated: use client:financial_ratio() instead.
-function FinancialDataSDK:FinancialRatio(data)
-  local EntityMod = require("entity.financial_ratio_entity")
-  return EntityMod.new(self, data)
-end
 
-
--- Idiomatic facade: client:financial_statement():list() / client:financial_statement():load({ id = ... })
-function FinancialDataSDK:financial_statement(data)
+-- Idiomatic facade: client:FinancialStatement():list() / client:FinancialStatement():load({ id = ... })
+-- Entity access is capitalised (PascalCase) for parity with the other SDKs.
+function FinancialDataSDK:FinancialStatement(data)
   local EntityMod = require("entity.financial_statement_entity")
   if data == nil then
     if self._financial_statement == nil then
@@ -389,15 +355,10 @@ function FinancialDataSDK:financial_statement(data)
   return EntityMod.new(self, data)
 end
 
--- Deprecated: use client:financial_statement() instead.
-function FinancialDataSDK:FinancialStatement(data)
-  local EntityMod = require("entity.financial_statement_entity")
-  return EntityMod.new(self, data)
-end
 
-
--- Idiomatic facade: client:forex_data():list() / client:forex_data():load({ id = ... })
-function FinancialDataSDK:forex_data(data)
+-- Idiomatic facade: client:ForexData():list() / client:ForexData():load({ id = ... })
+-- Entity access is capitalised (PascalCase) for parity with the other SDKs.
+function FinancialDataSDK:ForexData(data)
   local EntityMod = require("entity.forex_data_entity")
   if data == nil then
     if self._forex_data == nil then
@@ -408,15 +369,10 @@ function FinancialDataSDK:forex_data(data)
   return EntityMod.new(self, data)
 end
 
--- Deprecated: use client:forex_data() instead.
-function FinancialDataSDK:ForexData(data)
-  local EntityMod = require("entity.forex_data_entity")
-  return EntityMod.new(self, data)
-end
 
-
--- Idiomatic facade: client:insider_trading():list() / client:insider_trading():load({ id = ... })
-function FinancialDataSDK:insider_trading(data)
+-- Idiomatic facade: client:InsiderTrading():list() / client:InsiderTrading():load({ id = ... })
+-- Entity access is capitalised (PascalCase) for parity with the other SDKs.
+function FinancialDataSDK:InsiderTrading(data)
   local EntityMod = require("entity.insider_trading_entity")
   if data == nil then
     if self._insider_trading == nil then
@@ -427,15 +383,10 @@ function FinancialDataSDK:insider_trading(data)
   return EntityMod.new(self, data)
 end
 
--- Deprecated: use client:insider_trading() instead.
-function FinancialDataSDK:InsiderTrading(data)
-  local EntityMod = require("entity.insider_trading_entity")
-  return EntityMod.new(self, data)
-end
 
-
--- Idiomatic facade: client:institutional_trading():list() / client:institutional_trading():load({ id = ... })
-function FinancialDataSDK:institutional_trading(data)
+-- Idiomatic facade: client:InstitutionalTrading():list() / client:InstitutionalTrading():load({ id = ... })
+-- Entity access is capitalised (PascalCase) for parity with the other SDKs.
+function FinancialDataSDK:InstitutionalTrading(data)
   local EntityMod = require("entity.institutional_trading_entity")
   if data == nil then
     if self._institutional_trading == nil then
@@ -446,15 +397,10 @@ function FinancialDataSDK:institutional_trading(data)
   return EntityMod.new(self, data)
 end
 
--- Deprecated: use client:institutional_trading() instead.
-function FinancialDataSDK:InstitutionalTrading(data)
-  local EntityMod = require("entity.institutional_trading_entity")
-  return EntityMod.new(self, data)
-end
 
-
--- Idiomatic facade: client:investment_adviser():list() / client:investment_adviser():load({ id = ... })
-function FinancialDataSDK:investment_adviser(data)
+-- Idiomatic facade: client:InvestmentAdviser():list() / client:InvestmentAdviser():load({ id = ... })
+-- Entity access is capitalised (PascalCase) for parity with the other SDKs.
+function FinancialDataSDK:InvestmentAdviser(data)
   local EntityMod = require("entity.investment_adviser_entity")
   if data == nil then
     if self._investment_adviser == nil then
@@ -465,15 +411,10 @@ function FinancialDataSDK:investment_adviser(data)
   return EntityMod.new(self, data)
 end
 
--- Deprecated: use client:investment_adviser() instead.
-function FinancialDataSDK:InvestmentAdviser(data)
-  local EntityMod = require("entity.investment_adviser_entity")
-  return EntityMod.new(self, data)
-end
 
-
--- Idiomatic facade: client:market_data():list() / client:market_data():load({ id = ... })
-function FinancialDataSDK:market_data(data)
+-- Idiomatic facade: client:MarketData():list() / client:MarketData():load({ id = ... })
+-- Entity access is capitalised (PascalCase) for parity with the other SDKs.
+function FinancialDataSDK:MarketData(data)
   local EntityMod = require("entity.market_data_entity")
   if data == nil then
     if self._market_data == nil then
@@ -484,15 +425,10 @@ function FinancialDataSDK:market_data(data)
   return EntityMod.new(self, data)
 end
 
--- Deprecated: use client:market_data() instead.
-function FinancialDataSDK:MarketData(data)
-  local EntityMod = require("entity.market_data_entity")
-  return EntityMod.new(self, data)
-end
 
-
--- Idiomatic facade: client:market_index():list() / client:market_index():load({ id = ... })
-function FinancialDataSDK:market_index(data)
+-- Idiomatic facade: client:MarketIndex():list() / client:MarketIndex():load({ id = ... })
+-- Entity access is capitalised (PascalCase) for parity with the other SDKs.
+function FinancialDataSDK:MarketIndex(data)
   local EntityMod = require("entity.market_index_entity")
   if data == nil then
     if self._market_index == nil then
@@ -503,15 +439,10 @@ function FinancialDataSDK:market_index(data)
   return EntityMod.new(self, data)
 end
 
--- Deprecated: use client:market_index() instead.
-function FinancialDataSDK:MarketIndex(data)
-  local EntityMod = require("entity.market_index_entity")
-  return EntityMod.new(self, data)
-end
 
-
--- Idiomatic facade: client:market_new():list() / client:market_new():load({ id = ... })
-function FinancialDataSDK:market_new(data)
+-- Idiomatic facade: client:MarketNew():list() / client:MarketNew():load({ id = ... })
+-- Entity access is capitalised (PascalCase) for parity with the other SDKs.
+function FinancialDataSDK:MarketNew(data)
   local EntityMod = require("entity.market_new_entity")
   if data == nil then
     if self._market_new == nil then
@@ -522,15 +453,10 @@ function FinancialDataSDK:market_new(data)
   return EntityMod.new(self, data)
 end
 
--- Deprecated: use client:market_new() instead.
-function FinancialDataSDK:MarketNew(data)
-  local EntityMod = require("entity.market_new_entity")
-  return EntityMod.new(self, data)
-end
 
-
--- Idiomatic facade: client:miscellaneous_data():list() / client:miscellaneous_data():load({ id = ... })
-function FinancialDataSDK:miscellaneous_data(data)
+-- Idiomatic facade: client:MiscellaneousData():list() / client:MiscellaneousData():load({ id = ... })
+-- Entity access is capitalised (PascalCase) for parity with the other SDKs.
+function FinancialDataSDK:MiscellaneousData(data)
   local EntityMod = require("entity.miscellaneous_data_entity")
   if data == nil then
     if self._miscellaneous_data == nil then
@@ -541,15 +467,10 @@ function FinancialDataSDK:miscellaneous_data(data)
   return EntityMod.new(self, data)
 end
 
--- Deprecated: use client:miscellaneous_data() instead.
-function FinancialDataSDK:MiscellaneousData(data)
-  local EntityMod = require("entity.miscellaneous_data_entity")
-  return EntityMod.new(self, data)
-end
 
-
--- Idiomatic facade: client:mutual_fund():list() / client:mutual_fund():load({ id = ... })
-function FinancialDataSDK:mutual_fund(data)
+-- Idiomatic facade: client:MutualFund():list() / client:MutualFund():load({ id = ... })
+-- Entity access is capitalised (PascalCase) for parity with the other SDKs.
+function FinancialDataSDK:MutualFund(data)
   local EntityMod = require("entity.mutual_fund_entity")
   if data == nil then
     if self._mutual_fund == nil then
@@ -560,15 +481,10 @@ function FinancialDataSDK:mutual_fund(data)
   return EntityMod.new(self, data)
 end
 
--- Deprecated: use client:mutual_fund() instead.
-function FinancialDataSDK:MutualFund(data)
-  local EntityMod = require("entity.mutual_fund_entity")
-  return EntityMod.new(self, data)
-end
 
-
--- Idiomatic facade: client:symbol_list():list() / client:symbol_list():load({ id = ... })
-function FinancialDataSDK:symbol_list(data)
+-- Idiomatic facade: client:SymbolList():list() / client:SymbolList():load({ id = ... })
+-- Entity access is capitalised (PascalCase) for parity with the other SDKs.
+function FinancialDataSDK:SymbolList(data)
   local EntityMod = require("entity.symbol_list_entity")
   if data == nil then
     if self._symbol_list == nil then
@@ -576,12 +492,6 @@ function FinancialDataSDK:symbol_list(data)
     end
     return self._symbol_list
   end
-  return EntityMod.new(self, data)
-end
-
--- Deprecated: use client:symbol_list() instead.
-function FinancialDataSDK:SymbolList(data)
-  local EntityMod = require("entity.symbol_list_entity")
   return EntityMod.new(self, data)
 end
 
