@@ -221,109 +221,109 @@ class FinancialDataSDK:
 
 
     def BasicInformation(self, data=None) -> "BasicInformationEntity":
-        """Entity factory: client.BasicInformation().list({}) / client.BasicInformation().load({"id": ...})."""
+        """Entity factory: client.BasicInformation().list() / client.BasicInformation().load({"id": ...})."""
         from entity.basic_information_entity import BasicInformationEntity
         return BasicInformationEntity(self, data)
 
 
     def CryptoCurrency(self, data=None) -> "CryptoCurrencyEntity":
-        """Entity factory: client.CryptoCurrency().list({}) / client.CryptoCurrency().load({"id": ...})."""
+        """Entity factory: client.CryptoCurrency().list() / client.CryptoCurrency().load({"id": ...})."""
         from entity.crypto_currency_entity import CryptoCurrencyEntity
         return CryptoCurrencyEntity(self, data)
 
 
     def DerivativesData(self, data=None) -> "DerivativesDataEntity":
-        """Entity factory: client.DerivativesData().list({}) / client.DerivativesData().load({"id": ...})."""
+        """Entity factory: client.DerivativesData().list() / client.DerivativesData().load({"id": ...})."""
         from entity.derivatives_data_entity import DerivativesDataEntity
         return DerivativesDataEntity(self, data)
 
 
     def EsgData(self, data=None) -> "EsgDataEntity":
-        """Entity factory: client.EsgData().list({}) / client.EsgData().load({"id": ...})."""
+        """Entity factory: client.EsgData().list() / client.EsgData().load({"id": ...})."""
         from entity.esg_data_entity import EsgDataEntity
         return EsgDataEntity(self, data)
 
 
     def EtfData(self, data=None) -> "EtfDataEntity":
-        """Entity factory: client.EtfData().list({}) / client.EtfData().load({"id": ...})."""
+        """Entity factory: client.EtfData().list() / client.EtfData().load({"id": ...})."""
         from entity.etf_data_entity import EtfDataEntity
         return EtfDataEntity(self, data)
 
 
     def EventCalendar(self, data=None) -> "EventCalendarEntity":
-        """Entity factory: client.EventCalendar().list({}) / client.EventCalendar().load({"id": ...})."""
+        """Entity factory: client.EventCalendar().list() / client.EventCalendar().load({"id": ...})."""
         from entity.event_calendar_entity import EventCalendarEntity
         return EventCalendarEntity(self, data)
 
 
     def FinancialRatio(self, data=None) -> "FinancialRatioEntity":
-        """Entity factory: client.FinancialRatio().list({}) / client.FinancialRatio().load({"id": ...})."""
+        """Entity factory: client.FinancialRatio().list() / client.FinancialRatio().load({"id": ...})."""
         from entity.financial_ratio_entity import FinancialRatioEntity
         return FinancialRatioEntity(self, data)
 
 
     def FinancialStatement(self, data=None) -> "FinancialStatementEntity":
-        """Entity factory: client.FinancialStatement().list({}) / client.FinancialStatement().load({"id": ...})."""
+        """Entity factory: client.FinancialStatement().list() / client.FinancialStatement().load({"id": ...})."""
         from entity.financial_statement_entity import FinancialStatementEntity
         return FinancialStatementEntity(self, data)
 
 
     def ForexData(self, data=None) -> "ForexDataEntity":
-        """Entity factory: client.ForexData().list({}) / client.ForexData().load({"id": ...})."""
+        """Entity factory: client.ForexData().list() / client.ForexData().load({"id": ...})."""
         from entity.forex_data_entity import ForexDataEntity
         return ForexDataEntity(self, data)
 
 
     def InsiderTrading(self, data=None) -> "InsiderTradingEntity":
-        """Entity factory: client.InsiderTrading().list({}) / client.InsiderTrading().load({"id": ...})."""
+        """Entity factory: client.InsiderTrading().list() / client.InsiderTrading().load({"id": ...})."""
         from entity.insider_trading_entity import InsiderTradingEntity
         return InsiderTradingEntity(self, data)
 
 
     def InstitutionalTrading(self, data=None) -> "InstitutionalTradingEntity":
-        """Entity factory: client.InstitutionalTrading().list({}) / client.InstitutionalTrading().load({"id": ...})."""
+        """Entity factory: client.InstitutionalTrading().list() / client.InstitutionalTrading().load({"id": ...})."""
         from entity.institutional_trading_entity import InstitutionalTradingEntity
         return InstitutionalTradingEntity(self, data)
 
 
     def InvestmentAdviser(self, data=None) -> "InvestmentAdviserEntity":
-        """Entity factory: client.InvestmentAdviser().list({}) / client.InvestmentAdviser().load({"id": ...})."""
+        """Entity factory: client.InvestmentAdviser().list() / client.InvestmentAdviser().load({"id": ...})."""
         from entity.investment_adviser_entity import InvestmentAdviserEntity
         return InvestmentAdviserEntity(self, data)
 
 
     def MarketData(self, data=None) -> "MarketDataEntity":
-        """Entity factory: client.MarketData().list({}) / client.MarketData().load({"id": ...})."""
+        """Entity factory: client.MarketData().list() / client.MarketData().load({"id": ...})."""
         from entity.market_data_entity import MarketDataEntity
         return MarketDataEntity(self, data)
 
 
     def MarketIndex(self, data=None) -> "MarketIndexEntity":
-        """Entity factory: client.MarketIndex().list({}) / client.MarketIndex().load({"id": ...})."""
+        """Entity factory: client.MarketIndex().list() / client.MarketIndex().load({"id": ...})."""
         from entity.market_index_entity import MarketIndexEntity
         return MarketIndexEntity(self, data)
 
 
     def MarketNew(self, data=None) -> "MarketNewEntity":
-        """Entity factory: client.MarketNew().list({}) / client.MarketNew().load({"id": ...})."""
+        """Entity factory: client.MarketNew().list() / client.MarketNew().load({"id": ...})."""
         from entity.market_new_entity import MarketNewEntity
         return MarketNewEntity(self, data)
 
 
     def MiscellaneousData(self, data=None) -> "MiscellaneousDataEntity":
-        """Entity factory: client.MiscellaneousData().list({}) / client.MiscellaneousData().load({"id": ...})."""
+        """Entity factory: client.MiscellaneousData().list() / client.MiscellaneousData().load({"id": ...})."""
         from entity.miscellaneous_data_entity import MiscellaneousDataEntity
         return MiscellaneousDataEntity(self, data)
 
 
     def MutualFund(self, data=None) -> "MutualFundEntity":
-        """Entity factory: client.MutualFund().list({}) / client.MutualFund().load({"id": ...})."""
+        """Entity factory: client.MutualFund().list() / client.MutualFund().load({"id": ...})."""
         from entity.mutual_fund_entity import MutualFundEntity
         return MutualFundEntity(self, data)
 
 
     def SymbolList(self, data=None) -> "SymbolListEntity":
-        """Entity factory: client.SymbolList().list({}) / client.SymbolList().load({"id": ...})."""
+        """Entity factory: client.SymbolList().list() / client.SymbolList().load({"id": ...})."""
         from entity.symbol_list_entity import SymbolListEntity
         return SymbolListEntity(self, data)
 

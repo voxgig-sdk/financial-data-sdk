@@ -4,6 +4,8 @@
 
 The PHP SDK for the FinancialData API — an entity-oriented client using PHP conventions.
 
+The SDK exposes the API as capitalised, semantic **Entities** — for example `$client->BasicInformation()` — with named operations (`list`/`load`) instead of raw URL paths and query strings. Working with resources and verbs keeps call sites self-describing and reduces cognitive load.
+
 > Other languages, the CLI, and MCP server live alongside this one — see
 > the [top-level README](../README.md).
 
@@ -36,10 +38,41 @@ $client = new FinancialDataSDK([
 ```php
 try {
     // load() returns the bare BasicInformation record (throws on error).
-    $basicinformation = $client->BasicInformation()->load(["id" => "example_id"]);
+    $basicinformation = $client->BasicInformation()->load();
     print_r($basicinformation);
 } catch (\Throwable $err) {
     echo "Error: " . $err->getMessage();
+}
+```
+
+
+## Error handling
+
+Entity operations throw a `\Throwable` on failure, so wrap them in
+`try` / `catch`:
+
+```php
+try {
+    $basicinformation = $client->BasicInformation()->load();
+} catch (\Throwable $err) {
+    echo "Error: " . $err->getMessage();
+}
+```
+
+`direct()` does **not** throw — it returns the result array. Branch on
+`ok`; on failure `status` holds the HTTP status (for error responses) and
+`err` holds a transport error, so read both defensively:
+
+```php
+$result = $client->direct([
+    "path" => "/api/resource/{id}",
+    "method" => "GET",
+    "params" => ["id" => "example_id"],
+]);
+
+if (! $result["ok"]) {
+    $err = $result["err"] ?? null;
+    echo "request failed: " . ($err ? $err->getMessage() : "HTTP " . $result["status"]);
 }
 ```
 
@@ -63,7 +96,10 @@ if ($result["ok"]) {
     echo $result["status"];  // 200
     print_r($result["data"]);  // response body
 } else {
-    echo "Error: " . $result["err"]->getMessage();
+    // On an HTTP error status there is no err (only a transport failure sets
+    // it), so fall back to the status code.
+    $err = $result["err"] ?? null;
+    echo "Error: " . ($err ? $err->getMessage() : "HTTP " . $result["status"]);
 }
 ```
 
@@ -84,16 +120,13 @@ print_r($fetchdef["headers"]);
 
 ### Use test mode
 
-Create a mock client for unit testing — no server required. Seed fixture
-data via the `entity` option so offline calls resolve without a live server:
+Create a mock client for unit testing — no server required:
 
 ```php
-$client = FinancialDataSDK::test([
-    "entity" => ["basicinformation" => ["test01" => ["id" => "test01"]]],
-]);
+$client = FinancialDataSDK::test();
 
-// load() returns the bare mock record (throws on error).
-$basicinformation = $client->BasicInformation()->load(["id" => "test01"]);
+// Entity ops return the bare mock record (throws on error).
+$basicinformation = $client->BasicInformation()->load();
 print_r($basicinformation);
 ```
 
@@ -201,10 +234,7 @@ All entities share the same interface.
 | Method | Signature | Description |
 | --- | --- | --- |
 | `load` | `($reqmatch, $ctrl): array` | Load a single entity by match criteria. |
-| `list` | `($reqmatch, $ctrl): array` | List entities matching the criteria. |
-| `create` | `($reqdata, $ctrl): array` | Create a new entity. |
-| `update` | `($reqdata, $ctrl): array` | Update an existing entity. |
-| `remove` | `($reqmatch, $ctrl): array` | Remove an entity. |
+| `list` | `(?array $reqmatch = null, $ctrl): array` | List entities matching the criteria (call with no argument to list all). |
 | `data_get` | `(): array` | Get entity data. |
 | `data_set` | `($data): void` | Set entity data. |
 | `match_get` | `(): array` | Get entity match criteria. |
@@ -429,7 +459,7 @@ Create an instance: `$basic_information = $client->BasicInformation();`
 
 ```php
 // load() returns the bare BasicInformation record (throws on error).
-$basic_information = $client->BasicInformation()->load(["id" => "basic_information_id"]);
+$basic_information = $client->BasicInformation()->load();
 ```
 
 
@@ -447,7 +477,7 @@ Create an instance: `$crypto_currency = $client->CryptoCurrency();`
 
 ```php
 // load() returns the bare CryptoCurrency record (throws on error).
-$crypto_currency = $client->CryptoCurrency()->load(["id" => "crypto_currency_id"]);
+$crypto_currency = $client->CryptoCurrency()->load();
 ```
 
 
@@ -465,7 +495,7 @@ Create an instance: `$derivatives_data = $client->DerivativesData();`
 
 ```php
 // load() returns the bare DerivativesData record (throws on error).
-$derivatives_data = $client->DerivativesData()->load(["id" => "derivatives_data_id"]);
+$derivatives_data = $client->DerivativesData()->load();
 ```
 
 
@@ -483,7 +513,7 @@ Create an instance: `$esg_data = $client->EsgData();`
 
 ```php
 // load() returns the bare EsgData record (throws on error).
-$esg_data = $client->EsgData()->load(["id" => "esg_data_id"]);
+$esg_data = $client->EsgData()->load();
 ```
 
 
@@ -501,7 +531,7 @@ Create an instance: `$etf_data = $client->EtfData();`
 
 ```php
 // load() returns the bare EtfData record (throws on error).
-$etf_data = $client->EtfData()->load(["id" => "etf_data_id"]);
+$etf_data = $client->EtfData()->load();
 ```
 
 
@@ -519,7 +549,7 @@ Create an instance: `$event_calendar = $client->EventCalendar();`
 
 ```php
 // load() returns the bare EventCalendar record (throws on error).
-$event_calendar = $client->EventCalendar()->load(["id" => "event_calendar_id"]);
+$event_calendar = $client->EventCalendar()->load();
 ```
 
 
@@ -537,7 +567,7 @@ Create an instance: `$financial_ratio = $client->FinancialRatio();`
 
 ```php
 // load() returns the bare FinancialRatio record (throws on error).
-$financial_ratio = $client->FinancialRatio()->load(["id" => "financial_ratio_id"]);
+$financial_ratio = $client->FinancialRatio()->load();
 ```
 
 
@@ -555,7 +585,7 @@ Create an instance: `$financial_statement = $client->FinancialStatement();`
 
 ```php
 // load() returns the bare FinancialStatement record (throws on error).
-$financial_statement = $client->FinancialStatement()->load(["id" => "financial_statement_id"]);
+$financial_statement = $client->FinancialStatement()->load();
 ```
 
 
@@ -573,7 +603,7 @@ Create an instance: `$forex_data = $client->ForexData();`
 
 ```php
 // load() returns the bare ForexData record (throws on error).
-$forex_data = $client->ForexData()->load(["id" => "forex_data_id"]);
+$forex_data = $client->ForexData()->load();
 ```
 
 
@@ -591,7 +621,7 @@ Create an instance: `$insider_trading = $client->InsiderTrading();`
 
 ```php
 // load() returns the bare InsiderTrading record (throws on error).
-$insider_trading = $client->InsiderTrading()->load(["id" => "insider_trading_id"]);
+$insider_trading = $client->InsiderTrading()->load();
 ```
 
 
@@ -609,7 +639,7 @@ Create an instance: `$institutional_trading = $client->InstitutionalTrading();`
 
 ```php
 // load() returns the bare InstitutionalTrading record (throws on error).
-$institutional_trading = $client->InstitutionalTrading()->load(["id" => "institutional_trading_id"]);
+$institutional_trading = $client->InstitutionalTrading()->load();
 ```
 
 
@@ -627,7 +657,7 @@ Create an instance: `$investment_adviser = $client->InvestmentAdviser();`
 
 ```php
 // load() returns the bare InvestmentAdviser record (throws on error).
-$investment_adviser = $client->InvestmentAdviser()->load(["id" => "investment_adviser_id"]);
+$investment_adviser = $client->InvestmentAdviser()->load();
 ```
 
 
@@ -646,24 +676,24 @@ Create an instance: `$market_data = $client->MarketData();`
 
 | Field | Type | Description |
 | --- | --- | --- |
-| `change` | ``$NUMBER`` |  |
-| `close` | ``$NUMBER`` |  |
-| `date` | ``$STRING`` |  |
-| `high` | ``$NUMBER`` |  |
-| `low` | ``$NUMBER`` |  |
-| `open` | ``$NUMBER`` |  |
-| `percentage_change` | ``$NUMBER`` |  |
-| `price` | ``$NUMBER`` |  |
-| `registrant_name` | ``$STRING`` |  |
-| `time` | ``$STRING`` |  |
-| `trading_symbol` | ``$STRING`` |  |
-| `volume` | ``$NUMBER`` |  |
+| `change` | `float` |  |
+| `close` | `float` |  |
+| `date` | `string` |  |
+| `high` | `float` |  |
+| `low` | `float` |  |
+| `open` | `float` |  |
+| `percentage_change` | `float` |  |
+| `price` | `float` |  |
+| `registrant_name` | `string` |  |
+| `time` | `string` |  |
+| `trading_symbol` | `string` |  |
+| `volume` | `float` |  |
 
 #### Example: Load
 
 ```php
 // load() returns the bare MarketData record (throws on error).
-$market_data = $client->MarketData()->load(["id" => "market_data_id"]);
+$market_data = $client->MarketData()->load();
 ```
 
 #### Example: List
@@ -688,7 +718,7 @@ Create an instance: `$market_index = $client->MarketIndex();`
 
 ```php
 // load() returns the bare MarketIndex record (throws on error).
-$market_index = $client->MarketIndex()->load(["id" => "market_index_id"]);
+$market_index = $client->MarketIndex()->load();
 ```
 
 
@@ -706,7 +736,7 @@ Create an instance: `$market_new = $client->MarketNew();`
 
 ```php
 // load() returns the bare MarketNew record (throws on error).
-$market_new = $client->MarketNew()->load(["id" => "market_new_id"]);
+$market_new = $client->MarketNew()->load();
 ```
 
 
@@ -724,7 +754,7 @@ Create an instance: `$miscellaneous_data = $client->MiscellaneousData();`
 
 ```php
 // load() returns the bare MiscellaneousData record (throws on error).
-$miscellaneous_data = $client->MiscellaneousData()->load(["id" => "miscellaneous_data_id"]);
+$miscellaneous_data = $client->MiscellaneousData()->load();
 ```
 
 
@@ -742,7 +772,7 @@ Create an instance: `$mutual_fund = $client->MutualFund();`
 
 ```php
 // load() returns the bare MutualFund record (throws on error).
-$mutual_fund = $client->MutualFund()->load(["id" => "mutual_fund_id"]);
+$mutual_fund = $client->MutualFund()->load();
 ```
 
 
@@ -760,10 +790,10 @@ Create an instance: `$symbol_list = $client->SymbolList();`
 
 | Field | Type | Description |
 | --- | --- | --- |
-| `description` | ``$STRING`` |  |
-| `registrant_name` | ``$STRING`` |  |
-| `title_of_security` | ``$STRING`` |  |
-| `trading_symbol` | ``$STRING`` |  |
+| `description` | `string` |  |
+| `registrant_name` | `string` |  |
+| `title_of_security` | `string` |  |
+| `trading_symbol` | `string` |  |
 
 #### Example: List
 
@@ -773,12 +803,16 @@ $symbol_lists = $client->SymbolList()->list();
 ```
 
 
-## Explanation
+## Advanced
+
+> The sections above cover everyday use. The material below explains the
+> SDK's internals — useful when extending it with custom features, but not
+> needed for normal use.
 
 ### The operation pipeline
 
-Every entity operation (load, list, create, update, remove) follows a
-six-stage pipeline. Each stage fires a feature hook before executing:
+Every entity operation follows a six-stage pipeline. Each stage fires a
+feature hook before executing:
 
 ```
 PrePoint → PreSpec → PreRequest → PreResponse → PreResult → PreDone
@@ -795,8 +829,9 @@ PrePoint → PreSpec → PreRequest → PreResponse → PreResult → PreDone
 - **PreDone**: Final stage before returning to the caller. Entity
   state (match, data) is updated here.
 
-If any stage returns an error, the pipeline short-circuits and the
-error is returned to the caller as the second element in the return array.
+If any stage errors, the pipeline short-circuits and the error surfaces
+to the caller — see [Error handling](#error-handling) for how that looks
+in this language.
 
 ### Features and hooks
 
@@ -845,10 +880,10 @@ stores the returned data and match criteria internally.
 
 ```php
 $basicinformation = $client->BasicInformation();
-$basicinformation->load(["id" => "example_id"]);
+$basicinformation->load();
 
-// $basicinformation->dataGet() now returns the loaded basicinformation data
-// $basicinformation->matchGet() returns the last match criteria
+// $basicinformation->data_get() now returns the basicinformation data from the last load
+// $basicinformation->match_get() returns the last match criteria
 ```
 
 Call `make()` to create a fresh instance with the same configuration

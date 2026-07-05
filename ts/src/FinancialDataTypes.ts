@@ -8,62 +8,74 @@
 export interface BasicInformation {
 }
 
-export type BasicInformationLoadMatch = Partial<BasicInformation>
+export interface BasicInformationLoadMatch {
+}
 
 export interface CryptoCurrency {
 }
 
-export type CryptoCurrencyLoadMatch = Partial<CryptoCurrency>
+export interface CryptoCurrencyLoadMatch {
+}
 
 export interface DerivativesData {
 }
 
-export type DerivativesDataLoadMatch = Partial<DerivativesData>
+export interface DerivativesDataLoadMatch {
+}
 
 export interface EsgData {
 }
 
-export type EsgDataLoadMatch = Partial<EsgData>
+export interface EsgDataLoadMatch {
+}
 
 export interface EtfData {
 }
 
-export type EtfDataLoadMatch = Partial<EtfData>
+export interface EtfDataLoadMatch {
+}
 
 export interface EventCalendar {
 }
 
-export type EventCalendarLoadMatch = Partial<EventCalendar>
+export interface EventCalendarLoadMatch {
+}
 
 export interface FinancialRatio {
 }
 
-export type FinancialRatioLoadMatch = Partial<FinancialRatio>
+export interface FinancialRatioLoadMatch {
+}
 
 export interface FinancialStatement {
 }
 
-export type FinancialStatementLoadMatch = Partial<FinancialStatement>
+export interface FinancialStatementLoadMatch {
+}
 
 export interface ForexData {
 }
 
-export type ForexDataLoadMatch = Partial<ForexData>
+export interface ForexDataLoadMatch {
+}
 
 export interface InsiderTrading {
 }
 
-export type InsiderTradingLoadMatch = Partial<InsiderTrading>
+export interface InsiderTradingLoadMatch {
+}
 
 export interface InstitutionalTrading {
 }
 
-export type InstitutionalTradingLoadMatch = Partial<InstitutionalTrading>
+export interface InstitutionalTradingLoadMatch {
+}
 
 export interface InvestmentAdviser {
 }
 
-export type InvestmentAdviserLoadMatch = Partial<InvestmentAdviser>
+export interface InvestmentAdviserLoadMatch {
+}
 
 export interface MarketData {
   change?: number
@@ -80,29 +92,59 @@ export interface MarketData {
   volume?: number
 }
 
-export type MarketDataLoadMatch = Partial<MarketData>
+export interface MarketDataLoadMatch {
+  change?: number
+  close?: number
+  date?: string
+  high?: number
+  low?: number
+  open?: number
+  percentage_change?: number
+  price?: number
+  registrant_name?: string
+  time?: string
+  trading_symbol?: string
+  volume?: number
+}
 
-export type MarketDataListMatch = Partial<MarketData>
+export interface MarketDataListMatch {
+  change?: number
+  close?: number
+  date?: string
+  high?: number
+  low?: number
+  open?: number
+  percentage_change?: number
+  price?: number
+  registrant_name?: string
+  time?: string
+  trading_symbol?: string
+  volume?: number
+}
 
 export interface MarketIndex {
 }
 
-export type MarketIndexLoadMatch = Partial<MarketIndex>
+export interface MarketIndexLoadMatch {
+}
 
 export interface MarketNew {
 }
 
-export type MarketNewLoadMatch = Partial<MarketNew>
+export interface MarketNewLoadMatch {
+}
 
 export interface MiscellaneousData {
 }
 
-export type MiscellaneousDataLoadMatch = Partial<MiscellaneousData>
+export interface MiscellaneousDataLoadMatch {
+}
 
 export interface MutualFund {
 }
 
-export type MutualFundLoadMatch = Partial<MutualFund>
+export interface MutualFundLoadMatch {
+}
 
 export interface SymbolList {
   description?: string
@@ -111,5 +153,10 @@ export interface SymbolList {
   trading_symbol?: string
 }
 
-export type SymbolListListMatch = Partial<SymbolList>
+export interface SymbolListListMatch {
+  description?: string
+  registrant_name?: string
+  title_of_security?: string
+  trading_symbol?: string
+}
 

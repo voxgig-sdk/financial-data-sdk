@@ -8,7 +8,7 @@ Complete API reference for the FinancialData Ruby SDK.
 ### Constructor
 
 ```ruby
-require_relative 'financial-data_sdk'
+require_relative 'FinancialData_sdk'
 
 client = FinancialDataSDK.new(options)
 ```
@@ -165,7 +165,7 @@ basic_information = client.BasicInformation
 Load a single entity matching the given criteria. Raises on error.
 
 ```ruby
-result = client.BasicInformation.load({ "id" => "basic_information_id" })
+result = client.BasicInformation.load()
 ```
 
 ### Common Methods
@@ -211,7 +211,7 @@ crypto_currency = client.CryptoCurrency
 Load a single entity matching the given criteria. Raises on error.
 
 ```ruby
-result = client.CryptoCurrency.load({ "id" => "crypto_currency_id" })
+result = client.CryptoCurrency.load()
 ```
 
 ### Common Methods
@@ -257,7 +257,7 @@ derivatives_data = client.DerivativesData
 Load a single entity matching the given criteria. Raises on error.
 
 ```ruby
-result = client.DerivativesData.load({ "id" => "derivatives_data_id" })
+result = client.DerivativesData.load()
 ```
 
 ### Common Methods
@@ -303,7 +303,7 @@ esg_data = client.EsgData
 Load a single entity matching the given criteria. Raises on error.
 
 ```ruby
-result = client.EsgData.load({ "id" => "esg_data_id" })
+result = client.EsgData.load()
 ```
 
 ### Common Methods
@@ -349,7 +349,7 @@ etf_data = client.EtfData
 Load a single entity matching the given criteria. Raises on error.
 
 ```ruby
-result = client.EtfData.load({ "id" => "etf_data_id" })
+result = client.EtfData.load()
 ```
 
 ### Common Methods
@@ -395,7 +395,7 @@ event_calendar = client.EventCalendar
 Load a single entity matching the given criteria. Raises on error.
 
 ```ruby
-result = client.EventCalendar.load({ "id" => "event_calendar_id" })
+result = client.EventCalendar.load()
 ```
 
 ### Common Methods
@@ -441,7 +441,7 @@ financial_ratio = client.FinancialRatio
 Load a single entity matching the given criteria. Raises on error.
 
 ```ruby
-result = client.FinancialRatio.load({ "id" => "financial_ratio_id" })
+result = client.FinancialRatio.load()
 ```
 
 ### Common Methods
@@ -487,7 +487,7 @@ financial_statement = client.FinancialStatement
 Load a single entity matching the given criteria. Raises on error.
 
 ```ruby
-result = client.FinancialStatement.load({ "id" => "financial_statement_id" })
+result = client.FinancialStatement.load()
 ```
 
 ### Common Methods
@@ -533,7 +533,7 @@ forex_data = client.ForexData
 Load a single entity matching the given criteria. Raises on error.
 
 ```ruby
-result = client.ForexData.load({ "id" => "forex_data_id" })
+result = client.ForexData.load()
 ```
 
 ### Common Methods
@@ -579,7 +579,7 @@ insider_trading = client.InsiderTrading
 Load a single entity matching the given criteria. Raises on error.
 
 ```ruby
-result = client.InsiderTrading.load({ "id" => "insider_trading_id" })
+result = client.InsiderTrading.load()
 ```
 
 ### Common Methods
@@ -625,7 +625,7 @@ institutional_trading = client.InstitutionalTrading
 Load a single entity matching the given criteria. Raises on error.
 
 ```ruby
-result = client.InstitutionalTrading.load({ "id" => "institutional_trading_id" })
+result = client.InstitutionalTrading.load()
 ```
 
 ### Common Methods
@@ -671,7 +671,7 @@ investment_adviser = client.InvestmentAdviser
 Load a single entity matching the given criteria. Raises on error.
 
 ```ruby
-result = client.InvestmentAdviser.load({ "id" => "investment_adviser_id" })
+result = client.InvestmentAdviser.load()
 ```
 
 ### Common Methods
@@ -714,27 +714,27 @@ market_data = client.MarketData
 
 | Field | Type | Required | Description |
 | --- | --- | --- | --- |
-| `change` | ``$NUMBER`` | No |  |
-| `close` | ``$NUMBER`` | No |  |
-| `date` | ``$STRING`` | No |  |
-| `high` | ``$NUMBER`` | No |  |
-| `low` | ``$NUMBER`` | No |  |
-| `open` | ``$NUMBER`` | No |  |
-| `percentage_change` | ``$NUMBER`` | No |  |
-| `price` | ``$NUMBER`` | No |  |
-| `registrant_name` | ``$STRING`` | No |  |
-| `time` | ``$STRING`` | No |  |
-| `trading_symbol` | ``$STRING`` | No |  |
-| `volume` | ``$NUMBER`` | No |  |
+| `change` | `Float` | No |  |
+| `close` | `Float` | No |  |
+| `date` | `String` | No |  |
+| `high` | `Float` | No |  |
+| `low` | `Float` | No |  |
+| `open` | `Float` | No |  |
+| `percentage_change` | `Float` | No |  |
+| `price` | `Float` | No |  |
+| `registrant_name` | `String` | No |  |
+| `time` | `String` | No |  |
+| `trading_symbol` | `String` | No |  |
+| `volume` | `Float` | No |  |
 
 ### Operations
 
-#### `list(reqmatch, ctrl = nil) -> Array`
+#### `list(reqmatch = nil, ctrl = nil) -> Array`
 
-List entities matching the given criteria. Returns an array. Raises on error.
+List entities matching the given criteria (call with no argument to list all). Returns an array. Raises on error.
 
 ```ruby
-results = client.MarketData.list(nil)
+results = client.MarketData.list
 ```
 
 #### `load(reqmatch, ctrl = nil) -> result`
@@ -742,7 +742,7 @@ results = client.MarketData.list(nil)
 Load a single entity matching the given criteria. Raises on error.
 
 ```ruby
-result = client.MarketData.load({ "id" => "market_data_id" })
+result = client.MarketData.load()
 ```
 
 ### Common Methods
@@ -788,7 +788,7 @@ market_index = client.MarketIndex
 Load a single entity matching the given criteria. Raises on error.
 
 ```ruby
-result = client.MarketIndex.load({ "id" => "market_index_id" })
+result = client.MarketIndex.load()
 ```
 
 ### Common Methods
@@ -834,7 +834,7 @@ market_new = client.MarketNew
 Load a single entity matching the given criteria. Raises on error.
 
 ```ruby
-result = client.MarketNew.load({ "id" => "market_new_id" })
+result = client.MarketNew.load()
 ```
 
 ### Common Methods
@@ -880,7 +880,7 @@ miscellaneous_data = client.MiscellaneousData
 Load a single entity matching the given criteria. Raises on error.
 
 ```ruby
-result = client.MiscellaneousData.load({ "id" => "miscellaneous_data_id" })
+result = client.MiscellaneousData.load()
 ```
 
 ### Common Methods
@@ -926,7 +926,7 @@ mutual_fund = client.MutualFund
 Load a single entity matching the given criteria. Raises on error.
 
 ```ruby
-result = client.MutualFund.load({ "id" => "mutual_fund_id" })
+result = client.MutualFund.load()
 ```
 
 ### Common Methods
@@ -969,19 +969,19 @@ symbol_list = client.SymbolList
 
 | Field | Type | Required | Description |
 | --- | --- | --- | --- |
-| `description` | ``$STRING`` | No |  |
-| `registrant_name` | ``$STRING`` | No |  |
-| `title_of_security` | ``$STRING`` | No |  |
-| `trading_symbol` | ``$STRING`` | No |  |
+| `description` | `String` | No |  |
+| `registrant_name` | `String` | No |  |
+| `title_of_security` | `String` | No |  |
+| `trading_symbol` | `String` | No |  |
 
 ### Operations
 
-#### `list(reqmatch, ctrl = nil) -> Array`
+#### `list(reqmatch = nil, ctrl = nil) -> Array`
 
-List entities matching the given criteria. Returns an array. Raises on error.
+List entities matching the given criteria (call with no argument to list all). Returns an array. Raises on error.
 
 ```ruby
-results = client.SymbolList.list(nil)
+results = client.SymbolList.list
 ```
 
 ### Common Methods

@@ -12,8 +12,7 @@ import "encoding/json"
 type BasicInformation struct {
 }
 
-// BasicInformationLoadMatch mirrors the basic_information fields as an all-optional match
-// filter (Go analog of Partial<BasicInformation>).
+// BasicInformationLoadMatch is the typed request payload for BasicInformation.LoadTyped.
 type BasicInformationLoadMatch struct {
 }
 
@@ -21,8 +20,7 @@ type BasicInformationLoadMatch struct {
 type CryptoCurrency struct {
 }
 
-// CryptoCurrencyLoadMatch mirrors the crypto_currency fields as an all-optional match
-// filter (Go analog of Partial<CryptoCurrency>).
+// CryptoCurrencyLoadMatch is the typed request payload for CryptoCurrency.LoadTyped.
 type CryptoCurrencyLoadMatch struct {
 }
 
@@ -30,8 +28,7 @@ type CryptoCurrencyLoadMatch struct {
 type DerivativesData struct {
 }
 
-// DerivativesDataLoadMatch mirrors the derivatives_data fields as an all-optional match
-// filter (Go analog of Partial<DerivativesData>).
+// DerivativesDataLoadMatch is the typed request payload for DerivativesData.LoadTyped.
 type DerivativesDataLoadMatch struct {
 }
 
@@ -39,8 +36,7 @@ type DerivativesDataLoadMatch struct {
 type EsgData struct {
 }
 
-// EsgDataLoadMatch mirrors the esg_data fields as an all-optional match
-// filter (Go analog of Partial<EsgData>).
+// EsgDataLoadMatch is the typed request payload for EsgData.LoadTyped.
 type EsgDataLoadMatch struct {
 }
 
@@ -48,8 +44,7 @@ type EsgDataLoadMatch struct {
 type EtfData struct {
 }
 
-// EtfDataLoadMatch mirrors the etf_data fields as an all-optional match
-// filter (Go analog of Partial<EtfData>).
+// EtfDataLoadMatch is the typed request payload for EtfData.LoadTyped.
 type EtfDataLoadMatch struct {
 }
 
@@ -57,8 +52,7 @@ type EtfDataLoadMatch struct {
 type EventCalendar struct {
 }
 
-// EventCalendarLoadMatch mirrors the event_calendar fields as an all-optional match
-// filter (Go analog of Partial<EventCalendar>).
+// EventCalendarLoadMatch is the typed request payload for EventCalendar.LoadTyped.
 type EventCalendarLoadMatch struct {
 }
 
@@ -66,8 +60,7 @@ type EventCalendarLoadMatch struct {
 type FinancialRatio struct {
 }
 
-// FinancialRatioLoadMatch mirrors the financial_ratio fields as an all-optional match
-// filter (Go analog of Partial<FinancialRatio>).
+// FinancialRatioLoadMatch is the typed request payload for FinancialRatio.LoadTyped.
 type FinancialRatioLoadMatch struct {
 }
 
@@ -75,8 +68,7 @@ type FinancialRatioLoadMatch struct {
 type FinancialStatement struct {
 }
 
-// FinancialStatementLoadMatch mirrors the financial_statement fields as an all-optional match
-// filter (Go analog of Partial<FinancialStatement>).
+// FinancialStatementLoadMatch is the typed request payload for FinancialStatement.LoadTyped.
 type FinancialStatementLoadMatch struct {
 }
 
@@ -84,8 +76,7 @@ type FinancialStatementLoadMatch struct {
 type ForexData struct {
 }
 
-// ForexDataLoadMatch mirrors the forex_data fields as an all-optional match
-// filter (Go analog of Partial<ForexData>).
+// ForexDataLoadMatch is the typed request payload for ForexData.LoadTyped.
 type ForexDataLoadMatch struct {
 }
 
@@ -93,8 +84,7 @@ type ForexDataLoadMatch struct {
 type InsiderTrading struct {
 }
 
-// InsiderTradingLoadMatch mirrors the insider_trading fields as an all-optional match
-// filter (Go analog of Partial<InsiderTrading>).
+// InsiderTradingLoadMatch is the typed request payload for InsiderTrading.LoadTyped.
 type InsiderTradingLoadMatch struct {
 }
 
@@ -102,8 +92,7 @@ type InsiderTradingLoadMatch struct {
 type InstitutionalTrading struct {
 }
 
-// InstitutionalTradingLoadMatch mirrors the institutional_trading fields as an all-optional match
-// filter (Go analog of Partial<InstitutionalTrading>).
+// InstitutionalTradingLoadMatch is the typed request payload for InstitutionalTrading.LoadTyped.
 type InstitutionalTradingLoadMatch struct {
 }
 
@@ -111,8 +100,7 @@ type InstitutionalTradingLoadMatch struct {
 type InvestmentAdviser struct {
 }
 
-// InvestmentAdviserLoadMatch mirrors the investment_adviser fields as an all-optional match
-// filter (Go analog of Partial<InvestmentAdviser>).
+// InvestmentAdviserLoadMatch is the typed request payload for InvestmentAdviser.LoadTyped.
 type InvestmentAdviserLoadMatch struct {
 }
 
@@ -132,8 +120,7 @@ type MarketData struct {
 	Volume *float64 `json:"volume,omitempty"`
 }
 
-// MarketDataLoadMatch mirrors the market_data fields as an all-optional match
-// filter (Go analog of Partial<MarketData>).
+// MarketDataLoadMatch is the typed request payload for MarketData.LoadTyped.
 type MarketDataLoadMatch struct {
 	Change *float64 `json:"change,omitempty"`
 	Close *float64 `json:"close,omitempty"`
@@ -149,8 +136,7 @@ type MarketDataLoadMatch struct {
 	Volume *float64 `json:"volume,omitempty"`
 }
 
-// MarketDataListMatch mirrors the market_data fields as an all-optional match
-// filter (Go analog of Partial<MarketData>).
+// MarketDataListMatch is the typed request payload for MarketData.ListTyped.
 type MarketDataListMatch struct {
 	Change *float64 `json:"change,omitempty"`
 	Close *float64 `json:"close,omitempty"`
@@ -170,8 +156,7 @@ type MarketDataListMatch struct {
 type MarketIndex struct {
 }
 
-// MarketIndexLoadMatch mirrors the market_index fields as an all-optional match
-// filter (Go analog of Partial<MarketIndex>).
+// MarketIndexLoadMatch is the typed request payload for MarketIndex.LoadTyped.
 type MarketIndexLoadMatch struct {
 }
 
@@ -179,8 +164,7 @@ type MarketIndexLoadMatch struct {
 type MarketNew struct {
 }
 
-// MarketNewLoadMatch mirrors the market_new fields as an all-optional match
-// filter (Go analog of Partial<MarketNew>).
+// MarketNewLoadMatch is the typed request payload for MarketNew.LoadTyped.
 type MarketNewLoadMatch struct {
 }
 
@@ -188,8 +172,7 @@ type MarketNewLoadMatch struct {
 type MiscellaneousData struct {
 }
 
-// MiscellaneousDataLoadMatch mirrors the miscellaneous_data fields as an all-optional match
-// filter (Go analog of Partial<MiscellaneousData>).
+// MiscellaneousDataLoadMatch is the typed request payload for MiscellaneousData.LoadTyped.
 type MiscellaneousDataLoadMatch struct {
 }
 
@@ -197,8 +180,7 @@ type MiscellaneousDataLoadMatch struct {
 type MutualFund struct {
 }
 
-// MutualFundLoadMatch mirrors the mutual_fund fields as an all-optional match
-// filter (Go analog of Partial<MutualFund>).
+// MutualFundLoadMatch is the typed request payload for MutualFund.LoadTyped.
 type MutualFundLoadMatch struct {
 }
 
@@ -210,8 +192,7 @@ type SymbolList struct {
 	TradingSymbol *string `json:"trading_symbol,omitempty"`
 }
 
-// SymbolListListMatch mirrors the symbol_list fields as an all-optional match
-// filter (Go analog of Partial<SymbolList>).
+// SymbolListListMatch is the typed request payload for SymbolList.ListTyped.
 type SymbolListListMatch struct {
 	Description *string `json:"description,omitempty"`
 	RegistrantName *string `json:"registrant_name,omitempty"`

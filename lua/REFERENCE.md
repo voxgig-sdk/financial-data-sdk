@@ -162,7 +162,7 @@ local basic_information = client:BasicInformation(nil)
 Load a single entity matching the given criteria.
 
 ```lua
-local result, err = client:BasicInformation():load({ id = "basic_information_id" })
+local result, err = client:BasicInformation():load()
 ```
 
 ### Common Methods
@@ -208,7 +208,7 @@ local crypto_currency = client:CryptoCurrency(nil)
 Load a single entity matching the given criteria.
 
 ```lua
-local result, err = client:CryptoCurrency():load({ id = "crypto_currency_id" })
+local result, err = client:CryptoCurrency():load()
 ```
 
 ### Common Methods
@@ -254,7 +254,7 @@ local derivatives_data = client:DerivativesData(nil)
 Load a single entity matching the given criteria.
 
 ```lua
-local result, err = client:DerivativesData():load({ id = "derivatives_data_id" })
+local result, err = client:DerivativesData():load()
 ```
 
 ### Common Methods
@@ -300,7 +300,7 @@ local esg_data = client:EsgData(nil)
 Load a single entity matching the given criteria.
 
 ```lua
-local result, err = client:EsgData():load({ id = "esg_data_id" })
+local result, err = client:EsgData():load()
 ```
 
 ### Common Methods
@@ -346,7 +346,7 @@ local etf_data = client:EtfData(nil)
 Load a single entity matching the given criteria.
 
 ```lua
-local result, err = client:EtfData():load({ id = "etf_data_id" })
+local result, err = client:EtfData():load()
 ```
 
 ### Common Methods
@@ -392,7 +392,7 @@ local event_calendar = client:EventCalendar(nil)
 Load a single entity matching the given criteria.
 
 ```lua
-local result, err = client:EventCalendar():load({ id = "event_calendar_id" })
+local result, err = client:EventCalendar():load()
 ```
 
 ### Common Methods
@@ -438,7 +438,7 @@ local financial_ratio = client:FinancialRatio(nil)
 Load a single entity matching the given criteria.
 
 ```lua
-local result, err = client:FinancialRatio():load({ id = "financial_ratio_id" })
+local result, err = client:FinancialRatio():load()
 ```
 
 ### Common Methods
@@ -484,7 +484,7 @@ local financial_statement = client:FinancialStatement(nil)
 Load a single entity matching the given criteria.
 
 ```lua
-local result, err = client:FinancialStatement():load({ id = "financial_statement_id" })
+local result, err = client:FinancialStatement():load()
 ```
 
 ### Common Methods
@@ -530,7 +530,7 @@ local forex_data = client:ForexData(nil)
 Load a single entity matching the given criteria.
 
 ```lua
-local result, err = client:ForexData():load({ id = "forex_data_id" })
+local result, err = client:ForexData():load()
 ```
 
 ### Common Methods
@@ -576,7 +576,7 @@ local insider_trading = client:InsiderTrading(nil)
 Load a single entity matching the given criteria.
 
 ```lua
-local result, err = client:InsiderTrading():load({ id = "insider_trading_id" })
+local result, err = client:InsiderTrading():load()
 ```
 
 ### Common Methods
@@ -622,7 +622,7 @@ local institutional_trading = client:InstitutionalTrading(nil)
 Load a single entity matching the given criteria.
 
 ```lua
-local result, err = client:InstitutionalTrading():load({ id = "institutional_trading_id" })
+local result, err = client:InstitutionalTrading():load()
 ```
 
 ### Common Methods
@@ -668,7 +668,7 @@ local investment_adviser = client:InvestmentAdviser(nil)
 Load a single entity matching the given criteria.
 
 ```lua
-local result, err = client:InvestmentAdviser():load({ id = "investment_adviser_id" })
+local result, err = client:InvestmentAdviser():load()
 ```
 
 ### Common Methods
@@ -711,18 +711,18 @@ local market_data = client:MarketData(nil)
 
 | Field | Type | Required | Description |
 | --- | --- | --- | --- |
-| `change` | ``$NUMBER`` | No |  |
-| `close` | ``$NUMBER`` | No |  |
-| `date` | ``$STRING`` | No |  |
-| `high` | ``$NUMBER`` | No |  |
-| `low` | ``$NUMBER`` | No |  |
-| `open` | ``$NUMBER`` | No |  |
-| `percentage_change` | ``$NUMBER`` | No |  |
-| `price` | ``$NUMBER`` | No |  |
-| `registrant_name` | ``$STRING`` | No |  |
-| `time` | ``$STRING`` | No |  |
-| `trading_symbol` | ``$STRING`` | No |  |
-| `volume` | ``$NUMBER`` | No |  |
+| `change` | `number` | No |  |
+| `close` | `number` | No |  |
+| `date` | `string` | No |  |
+| `high` | `number` | No |  |
+| `low` | `number` | No |  |
+| `open` | `number` | No |  |
+| `percentage_change` | `number` | No |  |
+| `price` | `number` | No |  |
+| `registrant_name` | `string` | No |  |
+| `time` | `string` | No |  |
+| `trading_symbol` | `string` | No |  |
+| `volume` | `number` | No |  |
 
 ### Operations
 
@@ -739,7 +739,7 @@ local results, err = client:MarketData():list()
 Load a single entity matching the given criteria.
 
 ```lua
-local result, err = client:MarketData():load({ id = "market_data_id" })
+local result, err = client:MarketData():load()
 ```
 
 ### Common Methods
@@ -785,7 +785,7 @@ local market_index = client:MarketIndex(nil)
 Load a single entity matching the given criteria.
 
 ```lua
-local result, err = client:MarketIndex():load({ id = "market_index_id" })
+local result, err = client:MarketIndex():load()
 ```
 
 ### Common Methods
@@ -831,7 +831,7 @@ local market_new = client:MarketNew(nil)
 Load a single entity matching the given criteria.
 
 ```lua
-local result, err = client:MarketNew():load({ id = "market_new_id" })
+local result, err = client:MarketNew():load()
 ```
 
 ### Common Methods
@@ -877,7 +877,7 @@ local miscellaneous_data = client:MiscellaneousData(nil)
 Load a single entity matching the given criteria.
 
 ```lua
-local result, err = client:MiscellaneousData():load({ id = "miscellaneous_data_id" })
+local result, err = client:MiscellaneousData():load()
 ```
 
 ### Common Methods
@@ -923,7 +923,7 @@ local mutual_fund = client:MutualFund(nil)
 Load a single entity matching the given criteria.
 
 ```lua
-local result, err = client:MutualFund():load({ id = "mutual_fund_id" })
+local result, err = client:MutualFund():load()
 ```
 
 ### Common Methods
@@ -966,10 +966,10 @@ local symbol_list = client:SymbolList(nil)
 
 | Field | Type | Required | Description |
 | --- | --- | --- | --- |
-| `description` | ``$STRING`` | No |  |
-| `registrant_name` | ``$STRING`` | No |  |
-| `title_of_security` | ``$STRING`` | No |  |
-| `trading_symbol` | ``$STRING`` | No |  |
+| `description` | `string` | No |  |
+| `registrant_name` | `string` | No |  |
+| `title_of_security` | `string` | No |  |
+| `trading_symbol` | `string` | No |  |
 
 ### Operations
 

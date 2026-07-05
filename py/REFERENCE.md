@@ -8,7 +8,7 @@ Complete API reference for the FinancialData Python SDK.
 ### Constructor
 
 ```python
-from financial-data_sdk import FinancialDataSDK
+from financialdata_sdk import FinancialDataSDK
 
 client = FinancialDataSDK(options)
 ```
@@ -159,7 +159,7 @@ basic_information = client.BasicInformation()
 Load a single entity matching the given criteria. Returns the entity data and raises on error.
 
 ```python
-result = client.BasicInformation().load({"id": "basic_information_id"})
+result = client.BasicInformation().load()
 ```
 
 ### Common Methods
@@ -204,7 +204,7 @@ crypto_currency = client.CryptoCurrency()
 Load a single entity matching the given criteria. Returns the entity data and raises on error.
 
 ```python
-result = client.CryptoCurrency().load({"id": "crypto_currency_id"})
+result = client.CryptoCurrency().load()
 ```
 
 ### Common Methods
@@ -249,7 +249,7 @@ derivatives_data = client.DerivativesData()
 Load a single entity matching the given criteria. Returns the entity data and raises on error.
 
 ```python
-result = client.DerivativesData().load({"id": "derivatives_data_id"})
+result = client.DerivativesData().load()
 ```
 
 ### Common Methods
@@ -294,7 +294,7 @@ esg_data = client.EsgData()
 Load a single entity matching the given criteria. Returns the entity data and raises on error.
 
 ```python
-result = client.EsgData().load({"id": "esg_data_id"})
+result = client.EsgData().load()
 ```
 
 ### Common Methods
@@ -339,7 +339,7 @@ etf_data = client.EtfData()
 Load a single entity matching the given criteria. Returns the entity data and raises on error.
 
 ```python
-result = client.EtfData().load({"id": "etf_data_id"})
+result = client.EtfData().load()
 ```
 
 ### Common Methods
@@ -384,7 +384,7 @@ event_calendar = client.EventCalendar()
 Load a single entity matching the given criteria. Returns the entity data and raises on error.
 
 ```python
-result = client.EventCalendar().load({"id": "event_calendar_id"})
+result = client.EventCalendar().load()
 ```
 
 ### Common Methods
@@ -429,7 +429,7 @@ financial_ratio = client.FinancialRatio()
 Load a single entity matching the given criteria. Returns the entity data and raises on error.
 
 ```python
-result = client.FinancialRatio().load({"id": "financial_ratio_id"})
+result = client.FinancialRatio().load()
 ```
 
 ### Common Methods
@@ -474,7 +474,7 @@ financial_statement = client.FinancialStatement()
 Load a single entity matching the given criteria. Returns the entity data and raises on error.
 
 ```python
-result = client.FinancialStatement().load({"id": "financial_statement_id"})
+result = client.FinancialStatement().load()
 ```
 
 ### Common Methods
@@ -519,7 +519,7 @@ forex_data = client.ForexData()
 Load a single entity matching the given criteria. Returns the entity data and raises on error.
 
 ```python
-result = client.ForexData().load({"id": "forex_data_id"})
+result = client.ForexData().load()
 ```
 
 ### Common Methods
@@ -564,7 +564,7 @@ insider_trading = client.InsiderTrading()
 Load a single entity matching the given criteria. Returns the entity data and raises on error.
 
 ```python
-result = client.InsiderTrading().load({"id": "insider_trading_id"})
+result = client.InsiderTrading().load()
 ```
 
 ### Common Methods
@@ -609,7 +609,7 @@ institutional_trading = client.InstitutionalTrading()
 Load a single entity matching the given criteria. Returns the entity data and raises on error.
 
 ```python
-result = client.InstitutionalTrading().load({"id": "institutional_trading_id"})
+result = client.InstitutionalTrading().load()
 ```
 
 ### Common Methods
@@ -654,7 +654,7 @@ investment_adviser = client.InvestmentAdviser()
 Load a single entity matching the given criteria. Returns the entity data and raises on error.
 
 ```python
-result = client.InvestmentAdviser().load({"id": "investment_adviser_id"})
+result = client.InvestmentAdviser().load()
 ```
 
 ### Common Methods
@@ -696,27 +696,27 @@ market_data = client.MarketData()
 
 | Field | Type | Required | Description |
 | --- | --- | --- | --- |
-| `change` | ``$NUMBER`` | No |  |
-| `close` | ``$NUMBER`` | No |  |
-| `date` | ``$STRING`` | No |  |
-| `high` | ``$NUMBER`` | No |  |
-| `low` | ``$NUMBER`` | No |  |
-| `open` | ``$NUMBER`` | No |  |
-| `percentage_change` | ``$NUMBER`` | No |  |
-| `price` | ``$NUMBER`` | No |  |
-| `registrant_name` | ``$STRING`` | No |  |
-| `time` | ``$STRING`` | No |  |
-| `trading_symbol` | ``$STRING`` | No |  |
-| `volume` | ``$NUMBER`` | No |  |
+| `change` | `float` | No |  |
+| `close` | `float` | No |  |
+| `date` | `str` | No |  |
+| `high` | `float` | No |  |
+| `low` | `float` | No |  |
+| `open` | `float` | No |  |
+| `percentage_change` | `float` | No |  |
+| `price` | `float` | No |  |
+| `registrant_name` | `str` | No |  |
+| `time` | `str` | No |  |
+| `trading_symbol` | `str` | No |  |
+| `volume` | `float` | No |  |
 
 ### Operations
 
-#### `list(reqmatch, ctrl=None) -> list`
+#### `list(reqmatch=None, ctrl=None) -> list`
 
-List entities matching the given criteria. Returns a list and raises on error.
+List entities matching the given criteria. The match is optional — call `list()` with no argument to list all records. Returns a list and raises on error.
 
 ```python
-results = client.MarketData().list({})
+results = client.MarketData().list()
 for market_data in results:
     print(market_data)
 ```
@@ -726,7 +726,7 @@ for market_data in results:
 Load a single entity matching the given criteria. Returns the entity data and raises on error.
 
 ```python
-result = client.MarketData().load({"id": "market_data_id"})
+result = client.MarketData().load()
 ```
 
 ### Common Methods
@@ -771,7 +771,7 @@ market_index = client.MarketIndex()
 Load a single entity matching the given criteria. Returns the entity data and raises on error.
 
 ```python
-result = client.MarketIndex().load({"id": "market_index_id"})
+result = client.MarketIndex().load()
 ```
 
 ### Common Methods
@@ -816,7 +816,7 @@ market_new = client.MarketNew()
 Load a single entity matching the given criteria. Returns the entity data and raises on error.
 
 ```python
-result = client.MarketNew().load({"id": "market_new_id"})
+result = client.MarketNew().load()
 ```
 
 ### Common Methods
@@ -861,7 +861,7 @@ miscellaneous_data = client.MiscellaneousData()
 Load a single entity matching the given criteria. Returns the entity data and raises on error.
 
 ```python
-result = client.MiscellaneousData().load({"id": "miscellaneous_data_id"})
+result = client.MiscellaneousData().load()
 ```
 
 ### Common Methods
@@ -906,7 +906,7 @@ mutual_fund = client.MutualFund()
 Load a single entity matching the given criteria. Returns the entity data and raises on error.
 
 ```python
-result = client.MutualFund().load({"id": "mutual_fund_id"})
+result = client.MutualFund().load()
 ```
 
 ### Common Methods
@@ -948,19 +948,19 @@ symbol_list = client.SymbolList()
 
 | Field | Type | Required | Description |
 | --- | --- | --- | --- |
-| `description` | ``$STRING`` | No |  |
-| `registrant_name` | ``$STRING`` | No |  |
-| `title_of_security` | ``$STRING`` | No |  |
-| `trading_symbol` | ``$STRING`` | No |  |
+| `description` | `str` | No |  |
+| `registrant_name` | `str` | No |  |
+| `title_of_security` | `str` | No |  |
+| `trading_symbol` | `str` | No |  |
 
 ### Operations
 
-#### `list(reqmatch, ctrl=None) -> list`
+#### `list(reqmatch=None, ctrl=None) -> list`
 
-List entities matching the given criteria. Returns a list and raises on error.
+List entities matching the given criteria. The match is optional — call `list()` with no argument to list all records. Returns a list and raises on error.
 
 ```python
-results = client.SymbolList().list({})
+results = client.SymbolList().list()
 for symbol_list in results:
     print(symbol_list)
 ```

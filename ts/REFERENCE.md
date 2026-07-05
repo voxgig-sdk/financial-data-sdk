@@ -324,7 +324,7 @@ const basic_information = client.BasicInformation()
 Load a single entity matching the given criteria.
 
 ```ts
-const result = await client.BasicInformation().load({ id: 'basic_information_id' })
+const result = await client.BasicInformation().load()
 ```
 
 ### Common Methods
@@ -368,7 +368,7 @@ const crypto_currency = client.CryptoCurrency()
 Load a single entity matching the given criteria.
 
 ```ts
-const result = await client.CryptoCurrency().load({ id: 'crypto_currency_id' })
+const result = await client.CryptoCurrency().load()
 ```
 
 ### Common Methods
@@ -412,7 +412,7 @@ const derivatives_data = client.DerivativesData()
 Load a single entity matching the given criteria.
 
 ```ts
-const result = await client.DerivativesData().load({ id: 'derivatives_data_id' })
+const result = await client.DerivativesData().load()
 ```
 
 ### Common Methods
@@ -456,7 +456,7 @@ const esg_data = client.EsgData()
 Load a single entity matching the given criteria.
 
 ```ts
-const result = await client.EsgData().load({ id: 'esg_data_id' })
+const result = await client.EsgData().load()
 ```
 
 ### Common Methods
@@ -500,7 +500,7 @@ const etf_data = client.EtfData()
 Load a single entity matching the given criteria.
 
 ```ts
-const result = await client.EtfData().load({ id: 'etf_data_id' })
+const result = await client.EtfData().load()
 ```
 
 ### Common Methods
@@ -544,7 +544,7 @@ const event_calendar = client.EventCalendar()
 Load a single entity matching the given criteria.
 
 ```ts
-const result = await client.EventCalendar().load({ id: 'event_calendar_id' })
+const result = await client.EventCalendar().load()
 ```
 
 ### Common Methods
@@ -588,7 +588,7 @@ const financial_ratio = client.FinancialRatio()
 Load a single entity matching the given criteria.
 
 ```ts
-const result = await client.FinancialRatio().load({ id: 'financial_ratio_id' })
+const result = await client.FinancialRatio().load()
 ```
 
 ### Common Methods
@@ -632,7 +632,7 @@ const financial_statement = client.FinancialStatement()
 Load a single entity matching the given criteria.
 
 ```ts
-const result = await client.FinancialStatement().load({ id: 'financial_statement_id' })
+const result = await client.FinancialStatement().load()
 ```
 
 ### Common Methods
@@ -676,7 +676,7 @@ const forex_data = client.ForexData()
 Load a single entity matching the given criteria.
 
 ```ts
-const result = await client.ForexData().load({ id: 'forex_data_id' })
+const result = await client.ForexData().load()
 ```
 
 ### Common Methods
@@ -720,7 +720,7 @@ const insider_trading = client.InsiderTrading()
 Load a single entity matching the given criteria.
 
 ```ts
-const result = await client.InsiderTrading().load({ id: 'insider_trading_id' })
+const result = await client.InsiderTrading().load()
 ```
 
 ### Common Methods
@@ -764,7 +764,7 @@ const institutional_trading = client.InstitutionalTrading()
 Load a single entity matching the given criteria.
 
 ```ts
-const result = await client.InstitutionalTrading().load({ id: 'institutional_trading_id' })
+const result = await client.InstitutionalTrading().load()
 ```
 
 ### Common Methods
@@ -808,7 +808,7 @@ const investment_adviser = client.InvestmentAdviser()
 Load a single entity matching the given criteria.
 
 ```ts
-const result = await client.InvestmentAdviser().load({ id: 'investment_adviser_id' })
+const result = await client.InvestmentAdviser().load()
 ```
 
 ### Common Methods
@@ -849,18 +849,18 @@ const market_data = client.MarketData()
 
 | Field | Type | Required | Description |
 | --- | --- | --- | --- |
-| `change` | ``$NUMBER`` | No |  |
-| `close` | ``$NUMBER`` | No |  |
-| `date` | ``$STRING`` | No |  |
-| `high` | ``$NUMBER`` | No |  |
-| `low` | ``$NUMBER`` | No |  |
-| `open` | ``$NUMBER`` | No |  |
-| `percentage_change` | ``$NUMBER`` | No |  |
-| `price` | ``$NUMBER`` | No |  |
-| `registrant_name` | ``$STRING`` | No |  |
-| `time` | ``$STRING`` | No |  |
-| `trading_symbol` | ``$STRING`` | No |  |
-| `volume` | ``$NUMBER`` | No |  |
+| `change` | `number` | No |  |
+| `close` | `number` | No |  |
+| `date` | `string` | No |  |
+| `high` | `number` | No |  |
+| `low` | `number` | No |  |
+| `open` | `number` | No |  |
+| `percentage_change` | `number` | No |  |
+| `price` | `number` | No |  |
+| `registrant_name` | `string` | No |  |
+| `time` | `string` | No |  |
+| `trading_symbol` | `string` | No |  |
+| `volume` | `number` | No |  |
 
 ### Operations
 
@@ -877,7 +877,7 @@ const results = await client.MarketData().list()
 Load a single entity matching the given criteria.
 
 ```ts
-const result = await client.MarketData().load({ id: 'market_data_id' })
+const result = await client.MarketData().load()
 ```
 
 ### Common Methods
@@ -921,7 +921,7 @@ const market_index = client.MarketIndex()
 Load a single entity matching the given criteria.
 
 ```ts
-const result = await client.MarketIndex().load({ id: 'market_index_id' })
+const result = await client.MarketIndex().load()
 ```
 
 ### Common Methods
@@ -965,7 +965,7 @@ const market_new = client.MarketNew()
 Load a single entity matching the given criteria.
 
 ```ts
-const result = await client.MarketNew().load({ id: 'market_new_id' })
+const result = await client.MarketNew().load()
 ```
 
 ### Common Methods
@@ -1009,7 +1009,7 @@ const miscellaneous_data = client.MiscellaneousData()
 Load a single entity matching the given criteria.
 
 ```ts
-const result = await client.MiscellaneousData().load({ id: 'miscellaneous_data_id' })
+const result = await client.MiscellaneousData().load()
 ```
 
 ### Common Methods
@@ -1053,7 +1053,7 @@ const mutual_fund = client.MutualFund()
 Load a single entity matching the given criteria.
 
 ```ts
-const result = await client.MutualFund().load({ id: 'mutual_fund_id' })
+const result = await client.MutualFund().load()
 ```
 
 ### Common Methods
@@ -1094,10 +1094,10 @@ const symbol_list = client.SymbolList()
 
 | Field | Type | Required | Description |
 | --- | --- | --- | --- |
-| `description` | ``$STRING`` | No |  |
-| `registrant_name` | ``$STRING`` | No |  |
-| `title_of_security` | ``$STRING`` | No |  |
-| `trading_symbol` | ``$STRING`` | No |  |
+| `description` | `string` | No |  |
+| `registrant_name` | `string` | No |  |
+| `title_of_security` | `string` | No |  |
+| `trading_symbol` | `string` | No |  |
 
 ### Operations
 

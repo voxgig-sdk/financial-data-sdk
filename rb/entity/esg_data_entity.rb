@@ -67,10 +67,12 @@ class EsgDataEntity
   
   # Load a single EsgData.
   #
-  # @param reqmatch [EsgDataLoadMatch, Hash, nil] match criteria (id/query fields)
+  # @param reqmatch [EsgDataLoadMatch, Hash, nil] match criteria (id/query fields);
+  #   optional — an entity with no id-like key loads with no match (nil is treated
+  #   as an empty match, so client.EsgData.load works with no args).
   # @param ctrl [Object, nil] optional per-call control
   # @return [EsgData, Hash] the loaded EsgData; raises FinancialDataError on failure
-  def load(reqmatch, ctrl = nil)
+  def load(reqmatch = nil, ctrl = nil)
     utility = @_utility
     ctx = utility.make_context.call({
       "opname" => "load",

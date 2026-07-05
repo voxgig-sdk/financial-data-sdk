@@ -17,7 +17,7 @@ class BasicInformation
 {
 }
 
-/** Match filter for BasicInformation#load (any subset of BasicInformation fields). */
+/** Request payload for BasicInformation#load. */
 class BasicInformationLoadMatch
 {
 }
@@ -27,7 +27,7 @@ class CryptoCurrency
 {
 }
 
-/** Match filter for CryptoCurrency#load (any subset of CryptoCurrency fields). */
+/** Request payload for CryptoCurrency#load. */
 class CryptoCurrencyLoadMatch
 {
 }
@@ -37,7 +37,7 @@ class DerivativesData
 {
 }
 
-/** Match filter for DerivativesData#load (any subset of DerivativesData fields). */
+/** Request payload for DerivativesData#load. */
 class DerivativesDataLoadMatch
 {
 }
@@ -47,7 +47,7 @@ class EsgData
 {
 }
 
-/** Match filter for EsgData#load (any subset of EsgData fields). */
+/** Request payload for EsgData#load. */
 class EsgDataLoadMatch
 {
 }
@@ -57,7 +57,7 @@ class EtfData
 {
 }
 
-/** Match filter for EtfData#load (any subset of EtfData fields). */
+/** Request payload for EtfData#load. */
 class EtfDataLoadMatch
 {
 }
@@ -67,7 +67,7 @@ class EventCalendar
 {
 }
 
-/** Match filter for EventCalendar#load (any subset of EventCalendar fields). */
+/** Request payload for EventCalendar#load. */
 class EventCalendarLoadMatch
 {
 }
@@ -77,7 +77,7 @@ class FinancialRatio
 {
 }
 
-/** Match filter for FinancialRatio#load (any subset of FinancialRatio fields). */
+/** Request payload for FinancialRatio#load. */
 class FinancialRatioLoadMatch
 {
 }
@@ -87,7 +87,7 @@ class FinancialStatement
 {
 }
 
-/** Match filter for FinancialStatement#load (any subset of FinancialStatement fields). */
+/** Request payload for FinancialStatement#load. */
 class FinancialStatementLoadMatch
 {
 }
@@ -97,7 +97,7 @@ class ForexData
 {
 }
 
-/** Match filter for ForexData#load (any subset of ForexData fields). */
+/** Request payload for ForexData#load. */
 class ForexDataLoadMatch
 {
 }
@@ -107,7 +107,7 @@ class InsiderTrading
 {
 }
 
-/** Match filter for InsiderTrading#load (any subset of InsiderTrading fields). */
+/** Request payload for InsiderTrading#load. */
 class InsiderTradingLoadMatch
 {
 }
@@ -117,7 +117,7 @@ class InstitutionalTrading
 {
 }
 
-/** Match filter for InstitutionalTrading#load (any subset of InstitutionalTrading fields). */
+/** Request payload for InstitutionalTrading#load. */
 class InstitutionalTradingLoadMatch
 {
 }
@@ -127,7 +127,7 @@ class InvestmentAdviser
 {
 }
 
-/** Match filter for InvestmentAdviser#load (any subset of InvestmentAdviser fields). */
+/** Request payload for InvestmentAdviser#load. */
 class InvestmentAdviserLoadMatch
 {
 }
@@ -149,7 +149,7 @@ class MarketData
     public ?float $volume = null;
 }
 
-/** Match filter for MarketData#load (any subset of MarketData fields). */
+/** Request payload for MarketData#load. */
 class MarketDataLoadMatch
 {
     public ?float $change = null;
@@ -166,7 +166,7 @@ class MarketDataLoadMatch
     public ?float $volume = null;
 }
 
-/** Match filter for MarketData#list (any subset of MarketData fields). */
+/** Request payload for MarketData#list. */
 class MarketDataListMatch
 {
     public ?float $change = null;
@@ -188,7 +188,7 @@ class MarketIndex
 {
 }
 
-/** Match filter for MarketIndex#load (any subset of MarketIndex fields). */
+/** Request payload for MarketIndex#load. */
 class MarketIndexLoadMatch
 {
 }
@@ -198,7 +198,7 @@ class MarketNew
 {
 }
 
-/** Match filter for MarketNew#load (any subset of MarketNew fields). */
+/** Request payload for MarketNew#load. */
 class MarketNewLoadMatch
 {
 }
@@ -208,7 +208,7 @@ class MiscellaneousData
 {
 }
 
-/** Match filter for MiscellaneousData#load (any subset of MiscellaneousData fields). */
+/** Request payload for MiscellaneousData#load. */
 class MiscellaneousDataLoadMatch
 {
 }
@@ -218,7 +218,7 @@ class MutualFund
 {
 }
 
-/** Match filter for MutualFund#load (any subset of MutualFund fields). */
+/** Request payload for MutualFund#load. */
 class MutualFundLoadMatch
 {
 }
@@ -232,7 +232,7 @@ class SymbolList
     public ?string $trading_symbol = null;
 }
 
-/** Match filter for SymbolList#list (any subset of SymbolList fields). */
+/** Request payload for SymbolList#list. */
 class SymbolListListMatch
 {
     public ?string $description = null;

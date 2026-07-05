@@ -12,7 +12,7 @@
 class BasicInformation
 end
 
-# Match filter for BasicInformation#load (any subset of BasicInformation fields).
+# Request payload for BasicInformation#load.
 class BasicInformationLoadMatch
 end
 
@@ -20,7 +20,7 @@ end
 class CryptoCurrency
 end
 
-# Match filter for CryptoCurrency#load (any subset of CryptoCurrency fields).
+# Request payload for CryptoCurrency#load.
 class CryptoCurrencyLoadMatch
 end
 
@@ -28,7 +28,7 @@ end
 class DerivativesData
 end
 
-# Match filter for DerivativesData#load (any subset of DerivativesData fields).
+# Request payload for DerivativesData#load.
 class DerivativesDataLoadMatch
 end
 
@@ -36,7 +36,7 @@ end
 class EsgData
 end
 
-# Match filter for EsgData#load (any subset of EsgData fields).
+# Request payload for EsgData#load.
 class EsgDataLoadMatch
 end
 
@@ -44,7 +44,7 @@ end
 class EtfData
 end
 
-# Match filter for EtfData#load (any subset of EtfData fields).
+# Request payload for EtfData#load.
 class EtfDataLoadMatch
 end
 
@@ -52,7 +52,7 @@ end
 class EventCalendar
 end
 
-# Match filter for EventCalendar#load (any subset of EventCalendar fields).
+# Request payload for EventCalendar#load.
 class EventCalendarLoadMatch
 end
 
@@ -60,7 +60,7 @@ end
 class FinancialRatio
 end
 
-# Match filter for FinancialRatio#load (any subset of FinancialRatio fields).
+# Request payload for FinancialRatio#load.
 class FinancialRatioLoadMatch
 end
 
@@ -68,7 +68,7 @@ end
 class FinancialStatement
 end
 
-# Match filter for FinancialStatement#load (any subset of FinancialStatement fields).
+# Request payload for FinancialStatement#load.
 class FinancialStatementLoadMatch
 end
 
@@ -76,7 +76,7 @@ end
 class ForexData
 end
 
-# Match filter for ForexData#load (any subset of ForexData fields).
+# Request payload for ForexData#load.
 class ForexDataLoadMatch
 end
 
@@ -84,7 +84,7 @@ end
 class InsiderTrading
 end
 
-# Match filter for InsiderTrading#load (any subset of InsiderTrading fields).
+# Request payload for InsiderTrading#load.
 class InsiderTradingLoadMatch
 end
 
@@ -92,7 +92,7 @@ end
 class InstitutionalTrading
 end
 
-# Match filter for InstitutionalTrading#load (any subset of InstitutionalTrading fields).
+# Request payload for InstitutionalTrading#load.
 class InstitutionalTradingLoadMatch
 end
 
@@ -100,7 +100,7 @@ end
 class InvestmentAdviser
 end
 
-# Match filter for InvestmentAdviser#load (any subset of InvestmentAdviser fields).
+# Request payload for InvestmentAdviser#load.
 class InvestmentAdviserLoadMatch
 end
 
@@ -157,7 +157,7 @@ MarketData = Struct.new(
   keyword_init: true
 )
 
-# Match filter for MarketData#load (any subset of MarketData fields).
+# Request payload for MarketData#load.
 #
 # @!attribute [rw] change
 #   @return [Float, nil]
@@ -210,7 +210,7 @@ MarketDataLoadMatch = Struct.new(
   keyword_init: true
 )
 
-# Match filter for MarketData#list (any subset of MarketData fields).
+# Request payload for MarketData#list.
 #
 # @!attribute [rw] change
 #   @return [Float, nil]
@@ -267,7 +267,7 @@ MarketDataListMatch = Struct.new(
 class MarketIndex
 end
 
-# Match filter for MarketIndex#load (any subset of MarketIndex fields).
+# Request payload for MarketIndex#load.
 class MarketIndexLoadMatch
 end
 
@@ -275,7 +275,7 @@ end
 class MarketNew
 end
 
-# Match filter for MarketNew#load (any subset of MarketNew fields).
+# Request payload for MarketNew#load.
 class MarketNewLoadMatch
 end
 
@@ -283,7 +283,7 @@ end
 class MiscellaneousData
 end
 
-# Match filter for MiscellaneousData#load (any subset of MiscellaneousData fields).
+# Request payload for MiscellaneousData#load.
 class MiscellaneousDataLoadMatch
 end
 
@@ -291,7 +291,7 @@ end
 class MutualFund
 end
 
-# Match filter for MutualFund#load (any subset of MutualFund fields).
+# Request payload for MutualFund#load.
 class MutualFundLoadMatch
 end
 
@@ -316,7 +316,7 @@ SymbolList = Struct.new(
   keyword_init: true
 )
 
-# Match filter for SymbolList#list (any subset of SymbolList fields).
+# Request payload for SymbolList#list.
 #
 # @!attribute [rw] description
 #   @return [String, nil]

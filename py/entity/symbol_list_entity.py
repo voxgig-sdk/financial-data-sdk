@@ -66,8 +66,12 @@ class SymbolListEntity:
     
 
     
-    def list(self, reqmatch: SymbolListListMatch, ctrl=None) -> list[SymbolList]:
+    def list(self, reqmatch=None, ctrl=None) -> list[SymbolList]:
         utility = self._utility
+        # reqmatch is optional: an omitted match lists all records. Treat None
+        # as an empty match so client.SymbolList().list() works with no args.
+        if reqmatch is None:
+            reqmatch = {}
         ctx = utility.make_context({
             "opname": "list",
             "ctrl": ctrl,

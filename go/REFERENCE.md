@@ -169,7 +169,7 @@ basic_information := client.BasicInformation(nil)
 Load a single entity matching the given criteria.
 
 ```go
-result, err := client.BasicInformation(nil).Load(map[string]any{"id": "basic_information_id"}, nil)
+result, err := client.BasicInformation(nil).Load(nil, nil)
 ```
 
 ### Common Methods
@@ -209,7 +209,7 @@ crypto_currency := client.CryptoCurrency(nil)
 Load a single entity matching the given criteria.
 
 ```go
-result, err := client.CryptoCurrency(nil).Load(map[string]any{"id": "crypto_currency_id"}, nil)
+result, err := client.CryptoCurrency(nil).Load(nil, nil)
 ```
 
 ### Common Methods
@@ -249,7 +249,7 @@ derivatives_data := client.DerivativesData(nil)
 Load a single entity matching the given criteria.
 
 ```go
-result, err := client.DerivativesData(nil).Load(map[string]any{"id": "derivatives_data_id"}, nil)
+result, err := client.DerivativesData(nil).Load(nil, nil)
 ```
 
 ### Common Methods
@@ -289,7 +289,7 @@ esg_data := client.EsgData(nil)
 Load a single entity matching the given criteria.
 
 ```go
-result, err := client.EsgData(nil).Load(map[string]any{"id": "esg_data_id"}, nil)
+result, err := client.EsgData(nil).Load(nil, nil)
 ```
 
 ### Common Methods
@@ -329,7 +329,7 @@ etf_data := client.EtfData(nil)
 Load a single entity matching the given criteria.
 
 ```go
-result, err := client.EtfData(nil).Load(map[string]any{"id": "etf_data_id"}, nil)
+result, err := client.EtfData(nil).Load(nil, nil)
 ```
 
 ### Common Methods
@@ -369,7 +369,7 @@ event_calendar := client.EventCalendar(nil)
 Load a single entity matching the given criteria.
 
 ```go
-result, err := client.EventCalendar(nil).Load(map[string]any{"id": "event_calendar_id"}, nil)
+result, err := client.EventCalendar(nil).Load(nil, nil)
 ```
 
 ### Common Methods
@@ -409,7 +409,7 @@ financial_ratio := client.FinancialRatio(nil)
 Load a single entity matching the given criteria.
 
 ```go
-result, err := client.FinancialRatio(nil).Load(map[string]any{"id": "financial_ratio_id"}, nil)
+result, err := client.FinancialRatio(nil).Load(nil, nil)
 ```
 
 ### Common Methods
@@ -449,7 +449,7 @@ financial_statement := client.FinancialStatement(nil)
 Load a single entity matching the given criteria.
 
 ```go
-result, err := client.FinancialStatement(nil).Load(map[string]any{"id": "financial_statement_id"}, nil)
+result, err := client.FinancialStatement(nil).Load(nil, nil)
 ```
 
 ### Common Methods
@@ -489,7 +489,7 @@ forex_data := client.ForexData(nil)
 Load a single entity matching the given criteria.
 
 ```go
-result, err := client.ForexData(nil).Load(map[string]any{"id": "forex_data_id"}, nil)
+result, err := client.ForexData(nil).Load(nil, nil)
 ```
 
 ### Common Methods
@@ -529,7 +529,7 @@ insider_trading := client.InsiderTrading(nil)
 Load a single entity matching the given criteria.
 
 ```go
-result, err := client.InsiderTrading(nil).Load(map[string]any{"id": "insider_trading_id"}, nil)
+result, err := client.InsiderTrading(nil).Load(nil, nil)
 ```
 
 ### Common Methods
@@ -569,7 +569,7 @@ institutional_trading := client.InstitutionalTrading(nil)
 Load a single entity matching the given criteria.
 
 ```go
-result, err := client.InstitutionalTrading(nil).Load(map[string]any{"id": "institutional_trading_id"}, nil)
+result, err := client.InstitutionalTrading(nil).Load(nil, nil)
 ```
 
 ### Common Methods
@@ -609,7 +609,7 @@ investment_adviser := client.InvestmentAdviser(nil)
 Load a single entity matching the given criteria.
 
 ```go
-result, err := client.InvestmentAdviser(nil).Load(map[string]any{"id": "investment_adviser_id"}, nil)
+result, err := client.InvestmentAdviser(nil).Load(nil, nil)
 ```
 
 ### Common Methods
@@ -646,18 +646,18 @@ market_data := client.MarketData(nil)
 
 | Field | Type | Required | Description |
 | --- | --- | --- | --- |
-| `change` | ``$NUMBER`` | No |  |
-| `close` | ``$NUMBER`` | No |  |
-| `date` | ``$STRING`` | No |  |
-| `high` | ``$NUMBER`` | No |  |
-| `low` | ``$NUMBER`` | No |  |
-| `open` | ``$NUMBER`` | No |  |
-| `percentage_change` | ``$NUMBER`` | No |  |
-| `price` | ``$NUMBER`` | No |  |
-| `registrant_name` | ``$STRING`` | No |  |
-| `time` | ``$STRING`` | No |  |
-| `trading_symbol` | ``$STRING`` | No |  |
-| `volume` | ``$NUMBER`` | No |  |
+| `change` | `float64` | No |  |
+| `close` | `float64` | No |  |
+| `date` | `string` | No |  |
+| `high` | `float64` | No |  |
+| `low` | `float64` | No |  |
+| `open` | `float64` | No |  |
+| `percentage_change` | `float64` | No |  |
+| `price` | `float64` | No |  |
+| `registrant_name` | `string` | No |  |
+| `time` | `string` | No |  |
+| `trading_symbol` | `string` | No |  |
+| `volume` | `float64` | No |  |
 
 ### Operations
 
@@ -674,7 +674,7 @@ results, err := client.MarketData(nil).List(nil, nil)
 Load a single entity matching the given criteria.
 
 ```go
-result, err := client.MarketData(nil).Load(map[string]any{"id": "market_data_id"}, nil)
+result, err := client.MarketData(nil).Load(nil, nil)
 ```
 
 ### Common Methods
@@ -714,7 +714,7 @@ market_index := client.MarketIndex(nil)
 Load a single entity matching the given criteria.
 
 ```go
-result, err := client.MarketIndex(nil).Load(map[string]any{"id": "market_index_id"}, nil)
+result, err := client.MarketIndex(nil).Load(nil, nil)
 ```
 
 ### Common Methods
@@ -754,7 +754,7 @@ market_new := client.MarketNew(nil)
 Load a single entity matching the given criteria.
 
 ```go
-result, err := client.MarketNew(nil).Load(map[string]any{"id": "market_new_id"}, nil)
+result, err := client.MarketNew(nil).Load(nil, nil)
 ```
 
 ### Common Methods
@@ -794,7 +794,7 @@ miscellaneous_data := client.MiscellaneousData(nil)
 Load a single entity matching the given criteria.
 
 ```go
-result, err := client.MiscellaneousData(nil).Load(map[string]any{"id": "miscellaneous_data_id"}, nil)
+result, err := client.MiscellaneousData(nil).Load(nil, nil)
 ```
 
 ### Common Methods
@@ -834,7 +834,7 @@ mutual_fund := client.MutualFund(nil)
 Load a single entity matching the given criteria.
 
 ```go
-result, err := client.MutualFund(nil).Load(map[string]any{"id": "mutual_fund_id"}, nil)
+result, err := client.MutualFund(nil).Load(nil, nil)
 ```
 
 ### Common Methods
@@ -871,10 +871,10 @@ symbol_list := client.SymbolList(nil)
 
 | Field | Type | Required | Description |
 | --- | --- | --- | --- |
-| `description` | ``$STRING`` | No |  |
-| `registrant_name` | ``$STRING`` | No |  |
-| `title_of_security` | ``$STRING`` | No |  |
-| `trading_symbol` | ``$STRING`` | No |  |
+| `description` | `string` | No |  |
+| `registrant_name` | `string` | No |  |
+| `title_of_security` | `string` | No |  |
+| `trading_symbol` | `string` | No |  |
 
 ### Operations
 

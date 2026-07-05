@@ -69,8 +69,32 @@
 ---@field volume? number
 
 ---@class MarketDataLoadMatch
+---@field change? number
+---@field close? number
+---@field date? string
+---@field high? number
+---@field low? number
+---@field open? number
+---@field percentage_change? number
+---@field price? number
+---@field registrant_name? string
+---@field time? string
+---@field trading_symbol? string
+---@field volume? number
 
 ---@class MarketDataListMatch
+---@field change? number
+---@field close? number
+---@field date? string
+---@field high? number
+---@field low? number
+---@field open? number
+---@field percentage_change? number
+---@field price? number
+---@field registrant_name? string
+---@field time? string
+---@field trading_symbol? string
+---@field volume? number
 
 ---@class MarketIndex
 
@@ -95,6 +119,10 @@
 ---@field trading_symbol? string
 
 ---@class SymbolListListMatch
+---@field description? string
+---@field registrant_name? string
+---@field title_of_security? string
+---@field trading_symbol? string
 
 local M = {}
 

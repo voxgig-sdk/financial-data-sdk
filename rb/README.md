@@ -4,6 +4,8 @@
 
 The Ruby SDK for the FinancialData API — an entity-oriented client using idiomatic Ruby conventions.
 
+The SDK exposes the API as capitalised, semantic **Entities** — for example `client.BasicInformation` — with named operations (`list`/`load`) instead of raw URL paths and query strings. Working with resources and verbs keeps call sites self-describing and reduces cognitive load.
+
 > Other languages, the CLI, and MCP server live alongside this one — see
 > the [top-level README](../README.md).
 
@@ -35,11 +37,38 @@ client = FinancialDataSDK.new({
 ```ruby
 begin
   # load returns the bare BasicInformation record (raises on error).
-  basicinformation = client.BasicInformation.load({ "id" => "example_id" })
+  basicinformation = client.BasicInformation.load()
   puts basicinformation
 rescue => err
   warn "load failed: #{err}"
 end
+```
+
+
+## Error handling
+
+Entity operations raise on failure, so rescue them:
+
+```ruby
+begin
+  basicinformation = client.BasicInformation.load()
+rescue => err
+  warn "load failed: #{err}"
+end
+```
+
+`direct` does **not** raise — it returns the result hash. Branch on
+`ok`; on failure `status` holds the HTTP status (for error responses) and
+`err` holds a transport error, so read both defensively:
+
+```ruby
+result = client.direct({
+  "path" => "/api/resource/{id}",
+  "method" => "GET",
+  "params" => { "id" => "example_id" },
+})
+
+warn "request failed: #{result["err"] || "HTTP #{result["status"]}"}" unless result["ok"]
 ```
 
 
@@ -60,7 +89,9 @@ if result["ok"]
   puts result["status"]  # 200
   puts result["data"]    # response body
 else
-  warn result["err"]
+  # On an HTTP error status there is no err (only a transport failure sets
+  # it), so fall back to the status code.
+  warn(result["err"] || "HTTP #{result["status"]}")
 end
 ```
 
@@ -83,16 +114,13 @@ end
 
 ### Use test mode
 
-Create a mock client for unit testing — no server required. Seed fixture
-data via the `entity` option so offline calls resolve without a live server:
+Create a mock client for unit testing — no server required:
 
 ```ruby
-client = FinancialDataSDK.test({
-  "entity" => { "basicinformation" => { "test01" => { "id" => "test01" } } },
-})
+client = FinancialDataSDK.test
 
-# load returns the bare mock record (raises on error).
-basicinformation = client.BasicInformation.load({ "id" => "test01" })
+# Entity ops return the bare mock record (raises on error).
+basicinformation = client.BasicInformation.load()
 puts basicinformation
 ```
 
@@ -197,10 +225,7 @@ All entities share the same interface.
 | Method | Signature | Description |
 | --- | --- | --- |
 | `load` | `(reqmatch, ctrl) -> any` | Load a single entity by match criteria. Raises on error. |
-| `list` | `(reqmatch, ctrl) -> Array` | List entities matching the criteria. Raises on error. |
-| `create` | `(reqdata, ctrl) -> any` | Create a new entity. Raises on error. |
-| `update` | `(reqdata, ctrl) -> any` | Update an existing entity. Raises on error. |
-| `remove` | `(reqmatch, ctrl) -> any` | Remove an entity. Raises on error. |
+| `list` | `(reqmatch = nil, ctrl) -> Array` | List entities matching the criteria (call with no argument to list all). Raises on error. |
 | `data_get` | `() -> Hash` | Get entity data. |
 | `data_set` | `(data)` | Set entity data. |
 | `match_get` | `() -> Hash` | Get entity match criteria. |
@@ -424,7 +449,7 @@ Create an instance: `basic_information = client.BasicInformation`
 
 ```ruby
 # load returns the bare BasicInformation record (raises on error).
-basic_information = client.BasicInformation.load({ "id" => "basic_information_id" })
+basic_information = client.BasicInformation.load()
 ```
 
 
@@ -442,7 +467,7 @@ Create an instance: `crypto_currency = client.CryptoCurrency`
 
 ```ruby
 # load returns the bare CryptoCurrency record (raises on error).
-crypto_currency = client.CryptoCurrency.load({ "id" => "crypto_currency_id" })
+crypto_currency = client.CryptoCurrency.load()
 ```
 
 
@@ -460,7 +485,7 @@ Create an instance: `derivatives_data = client.DerivativesData`
 
 ```ruby
 # load returns the bare DerivativesData record (raises on error).
-derivatives_data = client.DerivativesData.load({ "id" => "derivatives_data_id" })
+derivatives_data = client.DerivativesData.load()
 ```
 
 
@@ -478,7 +503,7 @@ Create an instance: `esg_data = client.EsgData`
 
 ```ruby
 # load returns the bare EsgData record (raises on error).
-esg_data = client.EsgData.load({ "id" => "esg_data_id" })
+esg_data = client.EsgData.load()
 ```
 
 
@@ -496,7 +521,7 @@ Create an instance: `etf_data = client.EtfData`
 
 ```ruby
 # load returns the bare EtfData record (raises on error).
-etf_data = client.EtfData.load({ "id" => "etf_data_id" })
+etf_data = client.EtfData.load()
 ```
 
 
@@ -514,7 +539,7 @@ Create an instance: `event_calendar = client.EventCalendar`
 
 ```ruby
 # load returns the bare EventCalendar record (raises on error).
-event_calendar = client.EventCalendar.load({ "id" => "event_calendar_id" })
+event_calendar = client.EventCalendar.load()
 ```
 
 
@@ -532,7 +557,7 @@ Create an instance: `financial_ratio = client.FinancialRatio`
 
 ```ruby
 # load returns the bare FinancialRatio record (raises on error).
-financial_ratio = client.FinancialRatio.load({ "id" => "financial_ratio_id" })
+financial_ratio = client.FinancialRatio.load()
 ```
 
 
@@ -550,7 +575,7 @@ Create an instance: `financial_statement = client.FinancialStatement`
 
 ```ruby
 # load returns the bare FinancialStatement record (raises on error).
-financial_statement = client.FinancialStatement.load({ "id" => "financial_statement_id" })
+financial_statement = client.FinancialStatement.load()
 ```
 
 
@@ -568,7 +593,7 @@ Create an instance: `forex_data = client.ForexData`
 
 ```ruby
 # load returns the bare ForexData record (raises on error).
-forex_data = client.ForexData.load({ "id" => "forex_data_id" })
+forex_data = client.ForexData.load()
 ```
 
 
@@ -586,7 +611,7 @@ Create an instance: `insider_trading = client.InsiderTrading`
 
 ```ruby
 # load returns the bare InsiderTrading record (raises on error).
-insider_trading = client.InsiderTrading.load({ "id" => "insider_trading_id" })
+insider_trading = client.InsiderTrading.load()
 ```
 
 
@@ -604,7 +629,7 @@ Create an instance: `institutional_trading = client.InstitutionalTrading`
 
 ```ruby
 # load returns the bare InstitutionalTrading record (raises on error).
-institutional_trading = client.InstitutionalTrading.load({ "id" => "institutional_trading_id" })
+institutional_trading = client.InstitutionalTrading.load()
 ```
 
 
@@ -622,7 +647,7 @@ Create an instance: `investment_adviser = client.InvestmentAdviser`
 
 ```ruby
 # load returns the bare InvestmentAdviser record (raises on error).
-investment_adviser = client.InvestmentAdviser.load({ "id" => "investment_adviser_id" })
+investment_adviser = client.InvestmentAdviser.load()
 ```
 
 
@@ -641,24 +666,24 @@ Create an instance: `market_data = client.MarketData`
 
 | Field | Type | Description |
 | --- | --- | --- |
-| `change` | ``$NUMBER`` |  |
-| `close` | ``$NUMBER`` |  |
-| `date` | ``$STRING`` |  |
-| `high` | ``$NUMBER`` |  |
-| `low` | ``$NUMBER`` |  |
-| `open` | ``$NUMBER`` |  |
-| `percentage_change` | ``$NUMBER`` |  |
-| `price` | ``$NUMBER`` |  |
-| `registrant_name` | ``$STRING`` |  |
-| `time` | ``$STRING`` |  |
-| `trading_symbol` | ``$STRING`` |  |
-| `volume` | ``$NUMBER`` |  |
+| `change` | `Float` |  |
+| `close` | `Float` |  |
+| `date` | `String` |  |
+| `high` | `Float` |  |
+| `low` | `Float` |  |
+| `open` | `Float` |  |
+| `percentage_change` | `Float` |  |
+| `price` | `Float` |  |
+| `registrant_name` | `String` |  |
+| `time` | `String` |  |
+| `trading_symbol` | `String` |  |
+| `volume` | `Float` |  |
 
 #### Example: Load
 
 ```ruby
 # load returns the bare MarketData record (raises on error).
-market_data = client.MarketData.load({ "id" => "market_data_id" })
+market_data = client.MarketData.load()
 ```
 
 #### Example: List
@@ -683,7 +708,7 @@ Create an instance: `market_index = client.MarketIndex`
 
 ```ruby
 # load returns the bare MarketIndex record (raises on error).
-market_index = client.MarketIndex.load({ "id" => "market_index_id" })
+market_index = client.MarketIndex.load()
 ```
 
 
@@ -701,7 +726,7 @@ Create an instance: `market_new = client.MarketNew`
 
 ```ruby
 # load returns the bare MarketNew record (raises on error).
-market_new = client.MarketNew.load({ "id" => "market_new_id" })
+market_new = client.MarketNew.load()
 ```
 
 
@@ -719,7 +744,7 @@ Create an instance: `miscellaneous_data = client.MiscellaneousData`
 
 ```ruby
 # load returns the bare MiscellaneousData record (raises on error).
-miscellaneous_data = client.MiscellaneousData.load({ "id" => "miscellaneous_data_id" })
+miscellaneous_data = client.MiscellaneousData.load()
 ```
 
 
@@ -737,7 +762,7 @@ Create an instance: `mutual_fund = client.MutualFund`
 
 ```ruby
 # load returns the bare MutualFund record (raises on error).
-mutual_fund = client.MutualFund.load({ "id" => "mutual_fund_id" })
+mutual_fund = client.MutualFund.load()
 ```
 
 
@@ -755,10 +780,10 @@ Create an instance: `symbol_list = client.SymbolList`
 
 | Field | Type | Description |
 | --- | --- | --- |
-| `description` | ``$STRING`` |  |
-| `registrant_name` | ``$STRING`` |  |
-| `title_of_security` | ``$STRING`` |  |
-| `trading_symbol` | ``$STRING`` |  |
+| `description` | `String` |  |
+| `registrant_name` | `String` |  |
+| `title_of_security` | `String` |  |
+| `trading_symbol` | `String` |  |
 
 #### Example: List
 
@@ -768,12 +793,16 @@ symbol_lists = client.SymbolList.list
 ```
 
 
-## Explanation
+## Advanced
+
+> The sections above cover everyday use. The material below explains the
+> SDK's internals — useful when extending it with custom features, but not
+> needed for normal use.
 
 ### The operation pipeline
 
-Every entity operation (load, list, create, update, remove) follows a
-six-stage pipeline. Each stage fires a feature hook before executing:
+Every entity operation follows a six-stage pipeline. Each stage fires a
+feature hook before executing:
 
 ```
 PrePoint → PreSpec → PreRequest → PreResponse → PreResult → PreDone
@@ -790,8 +819,9 @@ PrePoint → PreSpec → PreRequest → PreResponse → PreResult → PreDone
 - **PreDone**: Final stage before returning to the caller. Entity
   state (match, data) is updated here.
 
-If any stage returns an error, the pipeline short-circuits and the
-error is returned to the caller as a second return value.
+If any stage errors, the pipeline short-circuits and the error surfaces
+to the caller — see [Error handling](#error-handling) for how that looks
+in this language.
 
 ### Features and hooks
 
@@ -840,9 +870,9 @@ stores the returned data and match criteria internally.
 
 ```ruby
 basicinformation = client.BasicInformation
-basicinformation.load({ "id" => "example_id" })
+basicinformation.load()
 
-# basicinformation.data_get now returns the loaded basicinformation data
+# basicinformation.data_get now returns the basicinformation data from the last load
 # basicinformation.match_get returns the last match criteria
 ```
 

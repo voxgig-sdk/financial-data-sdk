@@ -4,6 +4,11 @@
 
 The Python SDK for the FinancialData API — an entity-oriented client following Pythonic conventions.
 
+The SDK exposes the API as capitalised, semantic **Entities** — for example `client.BasicInformation()` — each
+carrying a small, uniform set of operations (`list`, `load`) instead of raw URL
+paths and query strings. You work with named resources and verbs, which
+keeps the cognitive load low.
+
 > Other languages, the CLI, and MCP server live alongside this one — see
 > the [top-level README](../README.md).
 
@@ -40,10 +45,38 @@ client = FinancialDataSDK({
 
 ```python
 try:
-    basicinformation = client.BasicInformation().load({"id": "example_id"})
+    basicinformation = client.BasicInformation().load()
     print(basicinformation)
 except Exception as err:
     print(f"load failed: {err}")
+```
+
+
+## Error handling
+
+Entity operations raise on failure, so wrap them in `try` / `except`:
+
+```python
+try:
+    basicinformation = client.BasicInformation().load()
+    print(basicinformation)
+except Exception as err:
+    print(f"load failed: {err}")
+```
+
+`direct()` does **not** raise — it returns the result envelope. Branch
+on `ok`; on failure `status` holds the HTTP status (for error responses)
+and `err` holds a transport error, so read both defensively:
+
+```python
+result = client.direct({
+    "path": "/api/resource/{id}",
+    "method": "GET",
+    "params": {"id": "example_id"},
+})
+
+if not result["ok"]:
+    print("request failed:", result.get("status"), result.get("err"))
 ```
 
 
@@ -64,7 +97,10 @@ if result["ok"]:
     print(result["status"])  # 200
     print(result["data"])    # response body
 else:
-    print(result["err"])     # error value
+    # A non-2xx response carries status + data (the error body); a
+    # transport-level failure carries err instead. Only one is present, so
+    # read both with .get() rather than indexing a key that may be absent.
+    print(result.get("status"), result.get("err"))
 ```
 
 ### Prepare a request without sending it
@@ -90,7 +126,7 @@ Create a mock client for unit testing — no server required:
 client = FinancialDataSDK.test()
 
 # Entity ops return the bare record and raise on error.
-basicinformation = client.BasicInformation().load({"id": "test01"})
+basicinformation = client.BasicInformation().load()
 # basicinformation contains the mock response record
 ```
 
@@ -196,9 +232,6 @@ All entities share the same interface.
 | --- | --- | --- |
 | `load` | `(reqmatch, ctrl) -> any` | Load a single entity by match criteria. Raises on error. |
 | `list` | `(reqmatch, ctrl) -> list` | List entities matching the criteria. Raises on error. |
-| `create` | `(reqdata, ctrl) -> any` | Create a new entity. Raises on error. |
-| `update` | `(reqdata, ctrl) -> any` | Update an existing entity. Raises on error. |
-| `remove` | `(reqmatch, ctrl) -> any` | Remove an entity. Raises on error. |
 | `data_get` | `() -> dict` | Get entity data. |
 | `data_set` | `(data)` | Set entity data. |
 | `match_get` | `() -> dict` | Get entity match criteria. |
@@ -422,7 +455,7 @@ Create an instance: `basic_information = client.BasicInformation()`
 #### Example: Load
 
 ```python
-basic_information = client.BasicInformation().load({"id": "basic_information_id"})
+basic_information = client.BasicInformation().load()
 ```
 
 
@@ -439,7 +472,7 @@ Create an instance: `crypto_currency = client.CryptoCurrency()`
 #### Example: Load
 
 ```python
-crypto_currency = client.CryptoCurrency().load({"id": "crypto_currency_id"})
+crypto_currency = client.CryptoCurrency().load()
 ```
 
 
@@ -456,7 +489,7 @@ Create an instance: `derivatives_data = client.DerivativesData()`
 #### Example: Load
 
 ```python
-derivatives_data = client.DerivativesData().load({"id": "derivatives_data_id"})
+derivatives_data = client.DerivativesData().load()
 ```
 
 
@@ -473,7 +506,7 @@ Create an instance: `esg_data = client.EsgData()`
 #### Example: Load
 
 ```python
-esg_data = client.EsgData().load({"id": "esg_data_id"})
+esg_data = client.EsgData().load()
 ```
 
 
@@ -490,7 +523,7 @@ Create an instance: `etf_data = client.EtfData()`
 #### Example: Load
 
 ```python
-etf_data = client.EtfData().load({"id": "etf_data_id"})
+etf_data = client.EtfData().load()
 ```
 
 
@@ -507,7 +540,7 @@ Create an instance: `event_calendar = client.EventCalendar()`
 #### Example: Load
 
 ```python
-event_calendar = client.EventCalendar().load({"id": "event_calendar_id"})
+event_calendar = client.EventCalendar().load()
 ```
 
 
@@ -524,7 +557,7 @@ Create an instance: `financial_ratio = client.FinancialRatio()`
 #### Example: Load
 
 ```python
-financial_ratio = client.FinancialRatio().load({"id": "financial_ratio_id"})
+financial_ratio = client.FinancialRatio().load()
 ```
 
 
@@ -541,7 +574,7 @@ Create an instance: `financial_statement = client.FinancialStatement()`
 #### Example: Load
 
 ```python
-financial_statement = client.FinancialStatement().load({"id": "financial_statement_id"})
+financial_statement = client.FinancialStatement().load()
 ```
 
 
@@ -558,7 +591,7 @@ Create an instance: `forex_data = client.ForexData()`
 #### Example: Load
 
 ```python
-forex_data = client.ForexData().load({"id": "forex_data_id"})
+forex_data = client.ForexData().load()
 ```
 
 
@@ -575,7 +608,7 @@ Create an instance: `insider_trading = client.InsiderTrading()`
 #### Example: Load
 
 ```python
-insider_trading = client.InsiderTrading().load({"id": "insider_trading_id"})
+insider_trading = client.InsiderTrading().load()
 ```
 
 
@@ -592,7 +625,7 @@ Create an instance: `institutional_trading = client.InstitutionalTrading()`
 #### Example: Load
 
 ```python
-institutional_trading = client.InstitutionalTrading().load({"id": "institutional_trading_id"})
+institutional_trading = client.InstitutionalTrading().load()
 ```
 
 
@@ -609,7 +642,7 @@ Create an instance: `investment_adviser = client.InvestmentAdviser()`
 #### Example: Load
 
 ```python
-investment_adviser = client.InvestmentAdviser().load({"id": "investment_adviser_id"})
+investment_adviser = client.InvestmentAdviser().load()
 ```
 
 
@@ -621,36 +654,36 @@ Create an instance: `market_data = client.MarketData()`
 
 | Method | Description |
 | --- | --- |
-| `list(match)` | List entities matching the criteria. |
+| `list()` | List entities, optionally matching the given criteria. |
 | `load(match)` | Load a single entity by match criteria. |
 
 #### Fields
 
 | Field | Type | Description |
 | --- | --- | --- |
-| `change` | ``$NUMBER`` |  |
-| `close` | ``$NUMBER`` |  |
-| `date` | ``$STRING`` |  |
-| `high` | ``$NUMBER`` |  |
-| `low` | ``$NUMBER`` |  |
-| `open` | ``$NUMBER`` |  |
-| `percentage_change` | ``$NUMBER`` |  |
-| `price` | ``$NUMBER`` |  |
-| `registrant_name` | ``$STRING`` |  |
-| `time` | ``$STRING`` |  |
-| `trading_symbol` | ``$STRING`` |  |
-| `volume` | ``$NUMBER`` |  |
+| `change` | `float` |  |
+| `close` | `float` |  |
+| `date` | `str` |  |
+| `high` | `float` |  |
+| `low` | `float` |  |
+| `open` | `float` |  |
+| `percentage_change` | `float` |  |
+| `price` | `float` |  |
+| `registrant_name` | `str` |  |
+| `time` | `str` |  |
+| `trading_symbol` | `str` |  |
+| `volume` | `float` |  |
 
 #### Example: Load
 
 ```python
-market_data = client.MarketData().load({"id": "market_data_id"})
+market_data = client.MarketData().load()
 ```
 
 #### Example: List
 
 ```python
-market_datas = client.MarketData().list({})
+market_datas = client.MarketData().list()
 ```
 
 
@@ -667,7 +700,7 @@ Create an instance: `market_index = client.MarketIndex()`
 #### Example: Load
 
 ```python
-market_index = client.MarketIndex().load({"id": "market_index_id"})
+market_index = client.MarketIndex().load()
 ```
 
 
@@ -684,7 +717,7 @@ Create an instance: `market_new = client.MarketNew()`
 #### Example: Load
 
 ```python
-market_new = client.MarketNew().load({"id": "market_new_id"})
+market_new = client.MarketNew().load()
 ```
 
 
@@ -701,7 +734,7 @@ Create an instance: `miscellaneous_data = client.MiscellaneousData()`
 #### Example: Load
 
 ```python
-miscellaneous_data = client.MiscellaneousData().load({"id": "miscellaneous_data_id"})
+miscellaneous_data = client.MiscellaneousData().load()
 ```
 
 
@@ -718,7 +751,7 @@ Create an instance: `mutual_fund = client.MutualFund()`
 #### Example: Load
 
 ```python
-mutual_fund = client.MutualFund().load({"id": "mutual_fund_id"})
+mutual_fund = client.MutualFund().load()
 ```
 
 
@@ -730,30 +763,34 @@ Create an instance: `symbol_list = client.SymbolList()`
 
 | Method | Description |
 | --- | --- |
-| `list(match)` | List entities matching the criteria. |
+| `list()` | List entities, optionally matching the given criteria. |
 
 #### Fields
 
 | Field | Type | Description |
 | --- | --- | --- |
-| `description` | ``$STRING`` |  |
-| `registrant_name` | ``$STRING`` |  |
-| `title_of_security` | ``$STRING`` |  |
-| `trading_symbol` | ``$STRING`` |  |
+| `description` | `str` |  |
+| `registrant_name` | `str` |  |
+| `title_of_security` | `str` |  |
+| `trading_symbol` | `str` |  |
 
 #### Example: List
 
 ```python
-symbol_lists = client.SymbolList().list({})
+symbol_lists = client.SymbolList().list()
 ```
 
 
-## Explanation
+## Advanced
+
+> The sections above cover everyday use. The material below explains the
+> SDK's internals — useful when extending it with custom features, but not
+> needed for normal use.
 
 ### The operation pipeline
 
-Every entity operation (load, list, create, update, remove) follows a
-six-stage pipeline. Each stage fires a feature hook before executing:
+Every entity operation follows a six-stage pipeline. Each stage fires a
+feature hook before executing:
 
 ```
 PrePoint → PreSpec → PreRequest → PreResponse → PreResult → PreDone
@@ -770,8 +807,9 @@ PrePoint → PreSpec → PreRequest → PreResponse → PreResult → PreDone
 - **PreDone**: Final stage before returning to the caller. Entity
   state (match, data) is updated here.
 
-If any stage returns an error, the pipeline short-circuits and the
-error is returned to the caller as the second element in the return tuple.
+If any stage errors, the pipeline short-circuits and the error surfaces
+to the caller — see [Error handling](#error-handling) for how that looks
+in this language.
 
 ### Features and hooks
 
@@ -819,9 +857,9 @@ stores the returned data and match criteria internally.
 
 ```python
 basicinformation = client.BasicInformation()
-basicinformation.load({"id": "example_id"})
+basicinformation.load()
 
-# basicinformation.data_get() now returns the loaded basicinformation data
+# basicinformation.data_get() now returns the basicinformation data from the last load
 # basicinformation.match_get() returns the last match criteria
 ```
 
