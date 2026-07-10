@@ -6,9 +6,6 @@
     },
     "kit": {
       "config": {
-        "auth": {
-          "prefix": "Bearer"
-        },
         "docs_order": [
           "ts",
           "py",
@@ -4869,14 +4866,24 @@
           "url": "https://financialdata.net/documentation"
         },
         "description": "This API provides access to a wide range of financial data including market data, company fundamentals, and alternative data. Users can make requests to retrieve stock symbols, prices, company information, ESG scores and ratings, mutual fund holdings, and more. The data covers thousands of securities including stocks, ETFs, funds, and commodities.",
+        "meta_source": "https://www.freepublicapis.com",
+        "security": {
+          "in": "query",
+          "name": "key",
+          "prefix": "",
+          "scheme": "ApiKeyAuth",
+          "type": "apiKey"
+        },
         "servers": [
           {
             "description": "Production server",
             "url": "https://financialdata.net/api/v1"
           }
         ],
+        "summary": "This API provides access to a wide range of financial data including market data, company fundamentals, and alternative data.",
         "title": "Financial Data API",
-        "version": "1.0.0"
+        "version": "1.0.0",
+        "website": "https://financialdata.net"
       },
       "option": {},
       "target": {
@@ -4929,6 +4936,9 @@
           },
           "name": "go-cli",
           "phase": {
+            "agentguide": {
+              "active": false
+            },
             "entity": {
               "active": false
             },
@@ -4979,6 +4989,9 @@
           },
           "name": "go-mcp",
           "phase": {
+            "agentguide": {
+              "active": false
+            },
             "entity": {
               "active": false
             },

@@ -15,7 +15,7 @@ func MakeConfig() map[string]any {
 		"options": map[string]any{
 			"base": "https://financialdata.net/api/v1",
 			"auth": map[string]any{
-				"prefix": "Bearer",
+				"prefix": "",
 			},
 			"headers": map[string]any{
 				"content-type": "application/json",

@@ -53,12 +53,12 @@ func main() {
         "apikey": os.Getenv("FINANCIAL_DATA_APIKEY"),
     })
 
-    // Load a single basicinformation — the value is the loaded record.
-    basicinformation, err := client.BasicInformation(nil).Load(nil, nil)
+    // Load a single basicInformation — the value is the loaded record.
+    basicInformation, err := client.BasicInformation(nil).Load(nil, nil)
     if err != nil {
         panic(err)
     }
-    fmt.Println(basicinformation)
+    fmt.Println(basicInformation)
 }
 ```
 
@@ -138,13 +138,13 @@ Create a mock client for unit testing — no server required:
 ```go
 client := sdk.Test()
 
-basicinformation, err := client.BasicInformation(nil).Load(
+basicInformation, err := client.BasicInformation(nil).Load(
     nil, nil,
 )
 if err != nil {
     panic(err)
 }
-fmt.Println(basicinformation) // the returned mock data
+fmt.Println(basicInformation) // the returned mock data
 ```
 
 ### Use a custom fetch function
@@ -269,9 +269,9 @@ Check `err` first, then use the value directly (or the typed
 `...Typed` variants, which return the entity's model struct and a typed
 slice):
 
-    basicinformation, err := client.BasicInformation(nil).Load(nil, nil)
+    basicInformation, err := client.BasicInformation(nil).Load(nil, nil)
     if err != nil { /* handle */ }
-    // basicinformation is the returned record
+    // basicInformation is the returned record
 
 Only `Direct()` returns a response envelope — a `map[string]any` with
 `"ok"`, `"status"`, `"headers"`, and `"data"` keys.
@@ -463,7 +463,7 @@ API path: `/etf-symbols`
 
 ### BasicInformation
 
-Create an instance: `basic_information := client.BasicInformation(nil)`
+Create an instance: `basicInformation := client.BasicInformation(nil)`
 
 #### Operations
 
@@ -474,17 +474,17 @@ Create an instance: `basic_information := client.BasicInformation(nil)`
 #### Example: Load
 
 ```go
-basic_information, err := client.BasicInformation(nil).Load(nil, nil)
+basicInformation, err := client.BasicInformation(nil).Load(nil, nil)
 if err != nil {
     panic(err)
 }
-fmt.Println(basic_information) // the loaded record
+fmt.Println(basicInformation) // the loaded record
 ```
 
 
 ### CryptoCurrency
 
-Create an instance: `crypto_currency := client.CryptoCurrency(nil)`
+Create an instance: `cryptoCurrency := client.CryptoCurrency(nil)`
 
 #### Operations
 
@@ -495,17 +495,17 @@ Create an instance: `crypto_currency := client.CryptoCurrency(nil)`
 #### Example: Load
 
 ```go
-crypto_currency, err := client.CryptoCurrency(nil).Load(nil, nil)
+cryptoCurrency, err := client.CryptoCurrency(nil).Load(nil, nil)
 if err != nil {
     panic(err)
 }
-fmt.Println(crypto_currency) // the loaded record
+fmt.Println(cryptoCurrency) // the loaded record
 ```
 
 
 ### DerivativesData
 
-Create an instance: `derivatives_data := client.DerivativesData(nil)`
+Create an instance: `derivativesData := client.DerivativesData(nil)`
 
 #### Operations
 
@@ -516,17 +516,17 @@ Create an instance: `derivatives_data := client.DerivativesData(nil)`
 #### Example: Load
 
 ```go
-derivatives_data, err := client.DerivativesData(nil).Load(nil, nil)
+derivativesData, err := client.DerivativesData(nil).Load(nil, nil)
 if err != nil {
     panic(err)
 }
-fmt.Println(derivatives_data) // the loaded record
+fmt.Println(derivativesData) // the loaded record
 ```
 
 
 ### EsgData
 
-Create an instance: `esg_data := client.EsgData(nil)`
+Create an instance: `esgData := client.EsgData(nil)`
 
 #### Operations
 
@@ -537,17 +537,17 @@ Create an instance: `esg_data := client.EsgData(nil)`
 #### Example: Load
 
 ```go
-esg_data, err := client.EsgData(nil).Load(nil, nil)
+esgData, err := client.EsgData(nil).Load(nil, nil)
 if err != nil {
     panic(err)
 }
-fmt.Println(esg_data) // the loaded record
+fmt.Println(esgData) // the loaded record
 ```
 
 
 ### EtfData
 
-Create an instance: `etf_data := client.EtfData(nil)`
+Create an instance: `etfData := client.EtfData(nil)`
 
 #### Operations
 
@@ -558,17 +558,17 @@ Create an instance: `etf_data := client.EtfData(nil)`
 #### Example: Load
 
 ```go
-etf_data, err := client.EtfData(nil).Load(nil, nil)
+etfData, err := client.EtfData(nil).Load(nil, nil)
 if err != nil {
     panic(err)
 }
-fmt.Println(etf_data) // the loaded record
+fmt.Println(etfData) // the loaded record
 ```
 
 
 ### EventCalendar
 
-Create an instance: `event_calendar := client.EventCalendar(nil)`
+Create an instance: `eventCalendar := client.EventCalendar(nil)`
 
 #### Operations
 
@@ -579,17 +579,17 @@ Create an instance: `event_calendar := client.EventCalendar(nil)`
 #### Example: Load
 
 ```go
-event_calendar, err := client.EventCalendar(nil).Load(nil, nil)
+eventCalendar, err := client.EventCalendar(nil).Load(nil, nil)
 if err != nil {
     panic(err)
 }
-fmt.Println(event_calendar) // the loaded record
+fmt.Println(eventCalendar) // the loaded record
 ```
 
 
 ### FinancialRatio
 
-Create an instance: `financial_ratio := client.FinancialRatio(nil)`
+Create an instance: `financialRatio := client.FinancialRatio(nil)`
 
 #### Operations
 
@@ -600,17 +600,17 @@ Create an instance: `financial_ratio := client.FinancialRatio(nil)`
 #### Example: Load
 
 ```go
-financial_ratio, err := client.FinancialRatio(nil).Load(nil, nil)
+financialRatio, err := client.FinancialRatio(nil).Load(nil, nil)
 if err != nil {
     panic(err)
 }
-fmt.Println(financial_ratio) // the loaded record
+fmt.Println(financialRatio) // the loaded record
 ```
 
 
 ### FinancialStatement
 
-Create an instance: `financial_statement := client.FinancialStatement(nil)`
+Create an instance: `financialStatement := client.FinancialStatement(nil)`
 
 #### Operations
 
@@ -621,17 +621,17 @@ Create an instance: `financial_statement := client.FinancialStatement(nil)`
 #### Example: Load
 
 ```go
-financial_statement, err := client.FinancialStatement(nil).Load(nil, nil)
+financialStatement, err := client.FinancialStatement(nil).Load(nil, nil)
 if err != nil {
     panic(err)
 }
-fmt.Println(financial_statement) // the loaded record
+fmt.Println(financialStatement) // the loaded record
 ```
 
 
 ### ForexData
 
-Create an instance: `forex_data := client.ForexData(nil)`
+Create an instance: `forexData := client.ForexData(nil)`
 
 #### Operations
 
@@ -642,17 +642,17 @@ Create an instance: `forex_data := client.ForexData(nil)`
 #### Example: Load
 
 ```go
-forex_data, err := client.ForexData(nil).Load(nil, nil)
+forexData, err := client.ForexData(nil).Load(nil, nil)
 if err != nil {
     panic(err)
 }
-fmt.Println(forex_data) // the loaded record
+fmt.Println(forexData) // the loaded record
 ```
 
 
 ### InsiderTrading
 
-Create an instance: `insider_trading := client.InsiderTrading(nil)`
+Create an instance: `insiderTrading := client.InsiderTrading(nil)`
 
 #### Operations
 
@@ -663,17 +663,17 @@ Create an instance: `insider_trading := client.InsiderTrading(nil)`
 #### Example: Load
 
 ```go
-insider_trading, err := client.InsiderTrading(nil).Load(nil, nil)
+insiderTrading, err := client.InsiderTrading(nil).Load(nil, nil)
 if err != nil {
     panic(err)
 }
-fmt.Println(insider_trading) // the loaded record
+fmt.Println(insiderTrading) // the loaded record
 ```
 
 
 ### InstitutionalTrading
 
-Create an instance: `institutional_trading := client.InstitutionalTrading(nil)`
+Create an instance: `institutionalTrading := client.InstitutionalTrading(nil)`
 
 #### Operations
 
@@ -684,17 +684,17 @@ Create an instance: `institutional_trading := client.InstitutionalTrading(nil)`
 #### Example: Load
 
 ```go
-institutional_trading, err := client.InstitutionalTrading(nil).Load(nil, nil)
+institutionalTrading, err := client.InstitutionalTrading(nil).Load(nil, nil)
 if err != nil {
     panic(err)
 }
-fmt.Println(institutional_trading) // the loaded record
+fmt.Println(institutionalTrading) // the loaded record
 ```
 
 
 ### InvestmentAdviser
 
-Create an instance: `investment_adviser := client.InvestmentAdviser(nil)`
+Create an instance: `investmentAdviser := client.InvestmentAdviser(nil)`
 
 #### Operations
 
@@ -705,17 +705,17 @@ Create an instance: `investment_adviser := client.InvestmentAdviser(nil)`
 #### Example: Load
 
 ```go
-investment_adviser, err := client.InvestmentAdviser(nil).Load(nil, nil)
+investmentAdviser, err := client.InvestmentAdviser(nil).Load(nil, nil)
 if err != nil {
     panic(err)
 }
-fmt.Println(investment_adviser) // the loaded record
+fmt.Println(investmentAdviser) // the loaded record
 ```
 
 
 ### MarketData
 
-Create an instance: `market_data := client.MarketData(nil)`
+Create an instance: `marketData := client.MarketData(nil)`
 
 #### Operations
 
@@ -744,27 +744,27 @@ Create an instance: `market_data := client.MarketData(nil)`
 #### Example: Load
 
 ```go
-market_data, err := client.MarketData(nil).Load(nil, nil)
+marketData, err := client.MarketData(nil).Load(nil, nil)
 if err != nil {
     panic(err)
 }
-fmt.Println(market_data) // the loaded record
+fmt.Println(marketData) // the loaded record
 ```
 
 #### Example: List
 
 ```go
-market_datas, err := client.MarketData(nil).List(nil, nil)
+marketDatas, err := client.MarketData(nil).List(nil, nil)
 if err != nil {
     panic(err)
 }
-fmt.Println(market_datas) // the array of records
+fmt.Println(marketDatas) // the array of records
 ```
 
 
 ### MarketIndex
 
-Create an instance: `market_index := client.MarketIndex(nil)`
+Create an instance: `marketIndex := client.MarketIndex(nil)`
 
 #### Operations
 
@@ -775,17 +775,17 @@ Create an instance: `market_index := client.MarketIndex(nil)`
 #### Example: Load
 
 ```go
-market_index, err := client.MarketIndex(nil).Load(nil, nil)
+marketIndex, err := client.MarketIndex(nil).Load(nil, nil)
 if err != nil {
     panic(err)
 }
-fmt.Println(market_index) // the loaded record
+fmt.Println(marketIndex) // the loaded record
 ```
 
 
 ### MarketNew
 
-Create an instance: `market_new := client.MarketNew(nil)`
+Create an instance: `marketNew := client.MarketNew(nil)`
 
 #### Operations
 
@@ -796,17 +796,17 @@ Create an instance: `market_new := client.MarketNew(nil)`
 #### Example: Load
 
 ```go
-market_new, err := client.MarketNew(nil).Load(nil, nil)
+marketNew, err := client.MarketNew(nil).Load(nil, nil)
 if err != nil {
     panic(err)
 }
-fmt.Println(market_new) // the loaded record
+fmt.Println(marketNew) // the loaded record
 ```
 
 
 ### MiscellaneousData
 
-Create an instance: `miscellaneous_data := client.MiscellaneousData(nil)`
+Create an instance: `miscellaneousData := client.MiscellaneousData(nil)`
 
 #### Operations
 
@@ -817,17 +817,17 @@ Create an instance: `miscellaneous_data := client.MiscellaneousData(nil)`
 #### Example: Load
 
 ```go
-miscellaneous_data, err := client.MiscellaneousData(nil).Load(nil, nil)
+miscellaneousData, err := client.MiscellaneousData(nil).Load(nil, nil)
 if err != nil {
     panic(err)
 }
-fmt.Println(miscellaneous_data) // the loaded record
+fmt.Println(miscellaneousData) // the loaded record
 ```
 
 
 ### MutualFund
 
-Create an instance: `mutual_fund := client.MutualFund(nil)`
+Create an instance: `mutualFund := client.MutualFund(nil)`
 
 #### Operations
 
@@ -838,17 +838,17 @@ Create an instance: `mutual_fund := client.MutualFund(nil)`
 #### Example: Load
 
 ```go
-mutual_fund, err := client.MutualFund(nil).Load(nil, nil)
+mutualFund, err := client.MutualFund(nil).Load(nil, nil)
 if err != nil {
     panic(err)
 }
-fmt.Println(mutual_fund) // the loaded record
+fmt.Println(mutualFund) // the loaded record
 ```
 
 
 ### SymbolList
 
-Create an instance: `symbol_list := client.SymbolList(nil)`
+Create an instance: `symbolList := client.SymbolList(nil)`
 
 #### Operations
 
@@ -868,11 +868,11 @@ Create an instance: `symbol_list := client.SymbolList(nil)`
 #### Example: List
 
 ```go
-symbol_lists, err := client.SymbolList(nil).List(nil, nil)
+symbolLists, err := client.SymbolList(nil).List(nil, nil)
 if err != nil {
     panic(err)
 }
-fmt.Println(symbol_lists) // the array of records
+fmt.Println(symbolLists) // the array of records
 ```
 
 

@@ -159,7 +159,8 @@ same parameters as `Direct()`.
 ## BasicInformationEntity
 
 ```go
-basic_information := client.BasicInformation(nil)
+basicInformation := client.BasicInformation(nil)
+fmt.Println(basicInformation.GetName()) // "basic_information"
 ```
 
 ### Operations
@@ -170,6 +171,10 @@ Load a single entity matching the given criteria.
 
 ```go
 result, err := client.BasicInformation(nil).Load(nil, nil)
+if err != nil {
+    panic(err)
+}
+fmt.Println(result)
 ```
 
 ### Common Methods
@@ -199,7 +204,8 @@ Return the entity name.
 ## CryptoCurrencyEntity
 
 ```go
-crypto_currency := client.CryptoCurrency(nil)
+cryptoCurrency := client.CryptoCurrency(nil)
+fmt.Println(cryptoCurrency.GetName()) // "crypto_currency"
 ```
 
 ### Operations
@@ -210,6 +216,10 @@ Load a single entity matching the given criteria.
 
 ```go
 result, err := client.CryptoCurrency(nil).Load(nil, nil)
+if err != nil {
+    panic(err)
+}
+fmt.Println(result)
 ```
 
 ### Common Methods
@@ -239,7 +249,8 @@ Return the entity name.
 ## DerivativesDataEntity
 
 ```go
-derivatives_data := client.DerivativesData(nil)
+derivativesData := client.DerivativesData(nil)
+fmt.Println(derivativesData.GetName()) // "derivatives_data"
 ```
 
 ### Operations
@@ -250,6 +261,10 @@ Load a single entity matching the given criteria.
 
 ```go
 result, err := client.DerivativesData(nil).Load(nil, nil)
+if err != nil {
+    panic(err)
+}
+fmt.Println(result)
 ```
 
 ### Common Methods
@@ -279,7 +294,8 @@ Return the entity name.
 ## EsgDataEntity
 
 ```go
-esg_data := client.EsgData(nil)
+esgData := client.EsgData(nil)
+fmt.Println(esgData.GetName()) // "esg_data"
 ```
 
 ### Operations
@@ -290,6 +306,10 @@ Load a single entity matching the given criteria.
 
 ```go
 result, err := client.EsgData(nil).Load(nil, nil)
+if err != nil {
+    panic(err)
+}
+fmt.Println(result)
 ```
 
 ### Common Methods
@@ -319,7 +339,8 @@ Return the entity name.
 ## EtfDataEntity
 
 ```go
-etf_data := client.EtfData(nil)
+etfData := client.EtfData(nil)
+fmt.Println(etfData.GetName()) // "etf_data"
 ```
 
 ### Operations
@@ -330,6 +351,10 @@ Load a single entity matching the given criteria.
 
 ```go
 result, err := client.EtfData(nil).Load(nil, nil)
+if err != nil {
+    panic(err)
+}
+fmt.Println(result)
 ```
 
 ### Common Methods
@@ -359,7 +384,8 @@ Return the entity name.
 ## EventCalendarEntity
 
 ```go
-event_calendar := client.EventCalendar(nil)
+eventCalendar := client.EventCalendar(nil)
+fmt.Println(eventCalendar.GetName()) // "event_calendar"
 ```
 
 ### Operations
@@ -370,6 +396,10 @@ Load a single entity matching the given criteria.
 
 ```go
 result, err := client.EventCalendar(nil).Load(nil, nil)
+if err != nil {
+    panic(err)
+}
+fmt.Println(result)
 ```
 
 ### Common Methods
@@ -399,7 +429,8 @@ Return the entity name.
 ## FinancialRatioEntity
 
 ```go
-financial_ratio := client.FinancialRatio(nil)
+financialRatio := client.FinancialRatio(nil)
+fmt.Println(financialRatio.GetName()) // "financial_ratio"
 ```
 
 ### Operations
@@ -410,6 +441,10 @@ Load a single entity matching the given criteria.
 
 ```go
 result, err := client.FinancialRatio(nil).Load(nil, nil)
+if err != nil {
+    panic(err)
+}
+fmt.Println(result)
 ```
 
 ### Common Methods
@@ -439,7 +474,8 @@ Return the entity name.
 ## FinancialStatementEntity
 
 ```go
-financial_statement := client.FinancialStatement(nil)
+financialStatement := client.FinancialStatement(nil)
+fmt.Println(financialStatement.GetName()) // "financial_statement"
 ```
 
 ### Operations
@@ -450,6 +486,10 @@ Load a single entity matching the given criteria.
 
 ```go
 result, err := client.FinancialStatement(nil).Load(nil, nil)
+if err != nil {
+    panic(err)
+}
+fmt.Println(result)
 ```
 
 ### Common Methods
@@ -479,7 +519,8 @@ Return the entity name.
 ## ForexDataEntity
 
 ```go
-forex_data := client.ForexData(nil)
+forexData := client.ForexData(nil)
+fmt.Println(forexData.GetName()) // "forex_data"
 ```
 
 ### Operations
@@ -490,6 +531,10 @@ Load a single entity matching the given criteria.
 
 ```go
 result, err := client.ForexData(nil).Load(nil, nil)
+if err != nil {
+    panic(err)
+}
+fmt.Println(result)
 ```
 
 ### Common Methods
@@ -519,7 +564,8 @@ Return the entity name.
 ## InsiderTradingEntity
 
 ```go
-insider_trading := client.InsiderTrading(nil)
+insiderTrading := client.InsiderTrading(nil)
+fmt.Println(insiderTrading.GetName()) // "insider_trading"
 ```
 
 ### Operations
@@ -530,6 +576,10 @@ Load a single entity matching the given criteria.
 
 ```go
 result, err := client.InsiderTrading(nil).Load(nil, nil)
+if err != nil {
+    panic(err)
+}
+fmt.Println(result)
 ```
 
 ### Common Methods
@@ -559,7 +609,8 @@ Return the entity name.
 ## InstitutionalTradingEntity
 
 ```go
-institutional_trading := client.InstitutionalTrading(nil)
+institutionalTrading := client.InstitutionalTrading(nil)
+fmt.Println(institutionalTrading.GetName()) // "institutional_trading"
 ```
 
 ### Operations
@@ -570,6 +621,10 @@ Load a single entity matching the given criteria.
 
 ```go
 result, err := client.InstitutionalTrading(nil).Load(nil, nil)
+if err != nil {
+    panic(err)
+}
+fmt.Println(result)
 ```
 
 ### Common Methods
@@ -599,7 +654,8 @@ Return the entity name.
 ## InvestmentAdviserEntity
 
 ```go
-investment_adviser := client.InvestmentAdviser(nil)
+investmentAdviser := client.InvestmentAdviser(nil)
+fmt.Println(investmentAdviser.GetName()) // "investment_adviser"
 ```
 
 ### Operations
@@ -610,6 +666,10 @@ Load a single entity matching the given criteria.
 
 ```go
 result, err := client.InvestmentAdviser(nil).Load(nil, nil)
+if err != nil {
+    panic(err)
+}
+fmt.Println(result)
 ```
 
 ### Common Methods
@@ -639,7 +699,8 @@ Return the entity name.
 ## MarketDataEntity
 
 ```go
-market_data := client.MarketData(nil)
+marketData := client.MarketData(nil)
+fmt.Println(marketData.GetName()) // "market_data"
 ```
 
 ### Fields
@@ -667,6 +728,10 @@ List entities matching the given criteria. Returns an array.
 
 ```go
 results, err := client.MarketData(nil).List(nil, nil)
+if err != nil {
+    panic(err)
+}
+fmt.Println(results)
 ```
 
 #### `Load(reqmatch, ctrl map[string]any) (any, error)`
@@ -675,6 +740,10 @@ Load a single entity matching the given criteria.
 
 ```go
 result, err := client.MarketData(nil).Load(nil, nil)
+if err != nil {
+    panic(err)
+}
+fmt.Println(result)
 ```
 
 ### Common Methods
@@ -704,7 +773,8 @@ Return the entity name.
 ## MarketIndexEntity
 
 ```go
-market_index := client.MarketIndex(nil)
+marketIndex := client.MarketIndex(nil)
+fmt.Println(marketIndex.GetName()) // "market_index"
 ```
 
 ### Operations
@@ -715,6 +785,10 @@ Load a single entity matching the given criteria.
 
 ```go
 result, err := client.MarketIndex(nil).Load(nil, nil)
+if err != nil {
+    panic(err)
+}
+fmt.Println(result)
 ```
 
 ### Common Methods
@@ -744,7 +818,8 @@ Return the entity name.
 ## MarketNewEntity
 
 ```go
-market_new := client.MarketNew(nil)
+marketNew := client.MarketNew(nil)
+fmt.Println(marketNew.GetName()) // "market_new"
 ```
 
 ### Operations
@@ -755,6 +830,10 @@ Load a single entity matching the given criteria.
 
 ```go
 result, err := client.MarketNew(nil).Load(nil, nil)
+if err != nil {
+    panic(err)
+}
+fmt.Println(result)
 ```
 
 ### Common Methods
@@ -784,7 +863,8 @@ Return the entity name.
 ## MiscellaneousDataEntity
 
 ```go
-miscellaneous_data := client.MiscellaneousData(nil)
+miscellaneousData := client.MiscellaneousData(nil)
+fmt.Println(miscellaneousData.GetName()) // "miscellaneous_data"
 ```
 
 ### Operations
@@ -795,6 +875,10 @@ Load a single entity matching the given criteria.
 
 ```go
 result, err := client.MiscellaneousData(nil).Load(nil, nil)
+if err != nil {
+    panic(err)
+}
+fmt.Println(result)
 ```
 
 ### Common Methods
@@ -824,7 +908,8 @@ Return the entity name.
 ## MutualFundEntity
 
 ```go
-mutual_fund := client.MutualFund(nil)
+mutualFund := client.MutualFund(nil)
+fmt.Println(mutualFund.GetName()) // "mutual_fund"
 ```
 
 ### Operations
@@ -835,6 +920,10 @@ Load a single entity matching the given criteria.
 
 ```go
 result, err := client.MutualFund(nil).Load(nil, nil)
+if err != nil {
+    panic(err)
+}
+fmt.Println(result)
 ```
 
 ### Common Methods
@@ -864,7 +953,8 @@ Return the entity name.
 ## SymbolListEntity
 
 ```go
-symbol_list := client.SymbolList(nil)
+symbolList := client.SymbolList(nil)
+fmt.Println(symbolList.GetName()) // "symbol_list"
 ```
 
 ### Fields
@@ -884,6 +974,10 @@ List entities matching the given criteria. Returns an array.
 
 ```go
 results, err := client.SymbolList(nil).List(nil, nil)
+if err != nil {
+    panic(err)
+}
+fmt.Println(results)
 ```
 
 ### Common Methods

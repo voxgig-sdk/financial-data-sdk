@@ -39,7 +39,7 @@ class Config {
     base: 'https://financialdata.net/api/v1',
 
     auth: {
-      prefix: 'Bearer',
+      prefix: '',
     },
 
     headers: {
