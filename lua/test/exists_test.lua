@@ -1,4 +1,4 @@
--- ProjectName SDK exists test
+-- FinancialData SDK exists test
 
 local sdk = require("financial-data_sdk")
 
