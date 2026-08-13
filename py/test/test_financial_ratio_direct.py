@@ -3,9 +3,9 @@
 import json
 import pytest
 
-from utility.voxgig_struct import voxgig_struct as vs
+from financialdata_sdk.utility.voxgig_struct import voxgig_struct as vs
 from financialdata_sdk import FinancialDataSDK
-from core import helpers
+from financialdata_sdk.core import helpers
 from test import runner
 
 
@@ -56,16 +56,16 @@ def _financial_ratio_direct_setup(mockres):
     calls = []
 
     env = runner.env_override({
-        "FINANCIALDATA_TEST_FINANCIAL_RATIO_ENTID": {},
-        "FINANCIALDATA_TEST_LIVE": "FALSE",
-        "FINANCIALDATA_APIKEY": "NONE",
+        "FINANCIAL_DATA_TEST_FINANCIAL_RATIO_ENTID": {},
+        "FINANCIAL_DATA_TEST_LIVE": "FALSE",
+        "FINANCIAL_DATA_APIKEY": "NONE",
     })
 
-    live = env.get("FINANCIALDATA_TEST_LIVE") == "TRUE"
+    live = env.get("FINANCIAL_DATA_TEST_LIVE") == "TRUE"
 
     if live:
         merged_opts = {
-            "apikey": env.get("FINANCIALDATA_APIKEY"),
+            "apikey": env.get("FINANCIAL_DATA_APIKEY"),
         }
         client = FinancialDataSDK(merged_opts)
         return {

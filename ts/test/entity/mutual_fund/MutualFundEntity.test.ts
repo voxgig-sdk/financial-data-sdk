@@ -26,8 +26,8 @@ import {
 describe('MutualFundEntity', async () => {
 
   // Per-test live pacing. Delay is read from sdk-test-control.json's
-  // `test.live.delayMs`; only sleeps when FINANCIALDATA_TEST_LIVE=TRUE.
-  afterEach(liveDelay('FINANCIALDATA_TEST_LIVE'))
+  // `test.live.delayMs`; only sleeps when FINANCIAL_DATA_TEST_LIVE=TRUE.
+  afterEach(liveDelay('FINANCIAL_DATA_TEST_LIVE'))
 
   test('instance', async () => {
     const testsdk = FinancialDataSDK.test()
@@ -62,7 +62,7 @@ describe('MutualFundEntity', async () => {
     // LOAD
     const mutual_fund_ref01_ent = client.MutualFund()
     const mutual_fund_ref01_match_dt0: any = {}
-    const mutual_fund_ref01_data_dt0 = await mutual_fund_ref01_ent.load(mutual_fund_ref01_match_dt0)
+    const mutual_fund_ref01_data_dt0 = (await mutual_fund_ref01_ent.load(mutual_fund_ref01_match_dt0)).data()
     assert(null != mutual_fund_ref01_data_dt0)
 
 

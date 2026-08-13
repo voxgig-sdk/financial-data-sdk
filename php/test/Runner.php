@@ -43,8 +43,8 @@ class FinancialDataTestRunner
 
     public static function env_override(array $m): array
     {
-        $live = self::getenv('FINANCIALDATA_TEST_LIVE');
-        $override = self::getenv('FINANCIALDATA_TEST_OVERRIDE');
+        $live = self::getenv('FINANCIAL_DATA_TEST_LIVE');
+        $override = self::getenv('FINANCIAL_DATA_TEST_OVERRIDE');
 
         if ($live === 'TRUE' || $override === 'TRUE') {
             foreach (array_keys($m) as $key) {
@@ -63,9 +63,9 @@ class FinancialDataTestRunner
             }
         }
 
-        $explain = self::getenv('FINANCIALDATA_TEST_EXPLAIN');
+        $explain = self::getenv('FINANCIAL_DATA_TEST_EXPLAIN');
         if ($explain !== null && $explain !== '') {
-            $m['FINANCIALDATA_TEST_EXPLAIN'] = $explain;
+            $m['FINANCIAL_DATA_TEST_EXPLAIN'] = $explain;
         }
 
         return $m;

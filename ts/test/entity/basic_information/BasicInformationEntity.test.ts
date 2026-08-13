@@ -26,8 +26,8 @@ import {
 describe('BasicInformationEntity', async () => {
 
   // Per-test live pacing. Delay is read from sdk-test-control.json's
-  // `test.live.delayMs`; only sleeps when FINANCIALDATA_TEST_LIVE=TRUE.
-  afterEach(liveDelay('FINANCIALDATA_TEST_LIVE'))
+  // `test.live.delayMs`; only sleeps when FINANCIAL_DATA_TEST_LIVE=TRUE.
+  afterEach(liveDelay('FINANCIAL_DATA_TEST_LIVE'))
 
   test('instance', async () => {
     const testsdk = FinancialDataSDK.test()
@@ -62,7 +62,7 @@ describe('BasicInformationEntity', async () => {
     // LOAD
     const basic_information_ref01_ent = client.BasicInformation()
     const basic_information_ref01_match_dt0: any = {}
-    const basic_information_ref01_data_dt0 = await basic_information_ref01_ent.load(basic_information_ref01_match_dt0)
+    const basic_information_ref01_data_dt0 = (await basic_information_ref01_ent.load(basic_information_ref01_match_dt0)).data()
     assert(null != basic_information_ref01_data_dt0)
 
 

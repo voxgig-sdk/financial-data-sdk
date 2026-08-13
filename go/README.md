@@ -69,12 +69,12 @@ Every entity operation returns `(value, error)`. Check `err` before
 using the value — there is no exception to catch:
 
 ```go
-basicinformation, err := client.BasicInformation(nil).Load(nil, nil)
+cryptocurrency, err := client.CryptoCurrency(nil).Load(nil, nil)
 if err != nil {
     // handle err
     return
 }
-_ = basicinformation
+_ = cryptocurrency
 ```
 
 `Direct` follows the same `(value, error)` convention:
@@ -138,13 +138,13 @@ Create a mock client for unit testing — no server required:
 ```go
 client := sdk.Test()
 
-basicInformation, err := client.BasicInformation(nil).Load(
+cryptoCurrency, err := client.CryptoCurrency(nil).Load(
     nil, nil,
 )
 if err != nil {
     panic(err)
 }
-fmt.Println(basicInformation) // the returned mock data
+fmt.Println(cryptoCurrency) // the returned mock data
 ```
 
 ### Use a custom fetch function
@@ -949,11 +949,11 @@ Entity instances are stateful. After a successful `Load`, the entity
 stores the returned data and match criteria internally.
 
 ```go
-basicinformation := client.BasicInformation(nil)
-basicinformation.Load(nil, nil)
+cryptocurrency := client.CryptoCurrency(nil)
+cryptocurrency.Load(nil, nil)
 
-// basicinformation.Data() now returns the basicinformation data from the last load
-// basicinformation.Match() returns the last match criteria
+// cryptocurrency.Data() now returns the cryptocurrency data from the last load
+// cryptocurrency.Match() returns the last match criteria
 ```
 
 Call `Make()` to create a fresh instance with the same configuration

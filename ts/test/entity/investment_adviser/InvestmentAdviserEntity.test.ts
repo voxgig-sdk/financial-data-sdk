@@ -26,8 +26,8 @@ import {
 describe('InvestmentAdviserEntity', async () => {
 
   // Per-test live pacing. Delay is read from sdk-test-control.json's
-  // `test.live.delayMs`; only sleeps when FINANCIALDATA_TEST_LIVE=TRUE.
-  afterEach(liveDelay('FINANCIALDATA_TEST_LIVE'))
+  // `test.live.delayMs`; only sleeps when FINANCIAL_DATA_TEST_LIVE=TRUE.
+  afterEach(liveDelay('FINANCIAL_DATA_TEST_LIVE'))
 
   test('instance', async () => {
     const testsdk = FinancialDataSDK.test()
@@ -62,7 +62,7 @@ describe('InvestmentAdviserEntity', async () => {
     // LOAD
     const investment_adviser_ref01_ent = client.InvestmentAdviser()
     const investment_adviser_ref01_match_dt0: any = {}
-    const investment_adviser_ref01_data_dt0 = await investment_adviser_ref01_ent.load(investment_adviser_ref01_match_dt0)
+    const investment_adviser_ref01_data_dt0 = (await investment_adviser_ref01_ent.load(investment_adviser_ref01_match_dt0)).data()
     assert(null != investment_adviser_ref01_data_dt0)
 
 

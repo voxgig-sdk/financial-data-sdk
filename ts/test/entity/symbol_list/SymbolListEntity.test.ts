@@ -26,8 +26,8 @@ import {
 describe('SymbolListEntity', async () => {
 
   // Per-test live pacing. Delay is read from sdk-test-control.json's
-  // `test.live.delayMs`; only sleeps when FINANCIALDATA_TEST_LIVE=TRUE.
-  afterEach(liveDelay('FINANCIALDATA_TEST_LIVE'))
+  // `test.live.delayMs`; only sleeps when FINANCIAL_DATA_TEST_LIVE=TRUE.
+  afterEach(liveDelay('FINANCIAL_DATA_TEST_LIVE'))
 
   test('instance', async () => {
     const testsdk = FinancialDataSDK.test()
@@ -63,7 +63,7 @@ describe('SymbolListEntity', async () => {
     const symbol_list_ref01_ent = client.SymbolList()
     const symbol_list_ref01_match: any = {}
 
-    const symbol_list_ref01_list = await symbol_list_ref01_ent.list(symbol_list_ref01_match)
+    const symbol_list_ref01_list = (await symbol_list_ref01_ent.list(symbol_list_ref01_match)).map((e: any) => e.data())
 
 
   })

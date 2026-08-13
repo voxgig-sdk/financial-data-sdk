@@ -163,8 +163,29 @@ class FinancialDataSDK {
   }
 
 
+  // Raw endpoint access is operator-controllable, like every entity op.
+  // Blocking it means denying BOTH the 'direct' and 'graphql' tokens, since
+  // either one reaches the same endpoint.
   async direct(fetchargs?: any) {
+    if (!this._options.allow.op.includes('direct')) {
+      return {
+        ok: false,
+        err: new Error('FinancialDataSDK: direct: operation not allowed by' +
+          ' SDK option allow.op value: "' + this._options.allow.op + '"'),
+      }
+    }
+
+    return this._rawRequest(fetchargs)
+  }
+
+
+  // Ungated request path shared by direct() and graphql(), each of which
+  // checks its own allow.op token first. Private, rather than a flag on
+  // fetchargs: a caller-supplied marker would let anyone opt straight back
+  // out of the gate by passing it.
+  async _rawRequest(fetchargs?: any) {
     const utility = this._utility
+
     const fetcher = utility.fetcher
     const makeContext = utility.makeContext
 
@@ -225,129 +246,219 @@ class FinancialDataSDK {
 
 
 
+  // Raw GraphQL access: the pressure valve that makes the generated
+  // surface's deliberate omissions (per-call selection sets, typed filter
+  // builders, batching, subscriptions) livable — the whole schema stays
+  // reachable.
+  //
+  // Thin wrapper over the same prepare/fetch path `direct` uses, with the
+  // one thing raw `direct` cannot do for GraphQL: a GraphQL failure rides
+  // HTTP 200 as a top-level `errors` array, so status alone would report a
+  // failed query as ok.
+  //
+  // NOTE: like `direct`, this bypasses the feature pipeline — no retry,
+  // ratelimit or paging features apply.
+  async graphql(query: string, variables?: any, ctrl?: any) {
+    const options = this._options
+
+    if (!options.allow.op.includes('graphql')) {
+      return {
+        ok: false,
+        err: new Error('FinancialDataSDK: graphql: operation not allowed by' +
+          ' SDK option allow.op value: "' + options.allow.op + '"'),
+      }
+    }
+
+    const res: any = await this._rawRequest({
+      method: 'POST',
+      headers: { 'content-type': 'application/json' },
+      body: { query, variables: variables || {} },
+      ctrl,
+    })
+
+    if (res instanceof Error) {
+      return res
+    }
+
+    // Errors are read BEFORE any status check: a GraphQL parse or validation
+    // failure comes back as HTTP 400 carrying the standard { errors: [...] }
+    // body, and the raw path represents a non-2xx as { ok: false } with no
+    // err — so returning early on status would discard the server's own
+    // diagnostics, which are the only useful part of that response.
+    const errors = null == res.data ? undefined : res.data.errors
+
+    if (null != errors && Array.isArray(errors) && 0 < errors.length) {
+      const first = errors[0] || {}
+      const err: any = new Error('FinancialDataSDK: graphql: ' +
+        (first.message || 'graphql error'))
+      err.graphql = errors
+      return { ok: false, status: res.status, headers: res.headers, err, data: res.data }
+    }
+
+    return res
+  }
+
+
+
   // Entity access: `client.BasicInformation().list()` / `client.BasicInformation().load({ id })`.
-  BasicInformation(data?: any) {
+  // The argument is the entity OPTIONS object (passed to the entity
+  // constructor as entopts), not initial entity data.
+  BasicInformation(entopts?: Record<string, any>) {
     const self = this
-    return new BasicInformationEntity(self,data)
+    return new BasicInformationEntity(self, entopts)
   }
 
 
   // Entity access: `client.CryptoCurrency().list()` / `client.CryptoCurrency().load({ id })`.
-  CryptoCurrency(data?: any) {
+  // The argument is the entity OPTIONS object (passed to the entity
+  // constructor as entopts), not initial entity data.
+  CryptoCurrency(entopts?: Record<string, any>) {
     const self = this
-    return new CryptoCurrencyEntity(self,data)
+    return new CryptoCurrencyEntity(self, entopts)
   }
 
 
   // Entity access: `client.DerivativesData().list()` / `client.DerivativesData().load({ id })`.
-  DerivativesData(data?: any) {
+  // The argument is the entity OPTIONS object (passed to the entity
+  // constructor as entopts), not initial entity data.
+  DerivativesData(entopts?: Record<string, any>) {
     const self = this
-    return new DerivativesDataEntity(self,data)
+    return new DerivativesDataEntity(self, entopts)
   }
 
 
   // Entity access: `client.EsgData().list()` / `client.EsgData().load({ id })`.
-  EsgData(data?: any) {
+  // The argument is the entity OPTIONS object (passed to the entity
+  // constructor as entopts), not initial entity data.
+  EsgData(entopts?: Record<string, any>) {
     const self = this
-    return new EsgDataEntity(self,data)
+    return new EsgDataEntity(self, entopts)
   }
 
 
   // Entity access: `client.EtfData().list()` / `client.EtfData().load({ id })`.
-  EtfData(data?: any) {
+  // The argument is the entity OPTIONS object (passed to the entity
+  // constructor as entopts), not initial entity data.
+  EtfData(entopts?: Record<string, any>) {
     const self = this
-    return new EtfDataEntity(self,data)
+    return new EtfDataEntity(self, entopts)
   }
 
 
   // Entity access: `client.EventCalendar().list()` / `client.EventCalendar().load({ id })`.
-  EventCalendar(data?: any) {
+  // The argument is the entity OPTIONS object (passed to the entity
+  // constructor as entopts), not initial entity data.
+  EventCalendar(entopts?: Record<string, any>) {
     const self = this
-    return new EventCalendarEntity(self,data)
+    return new EventCalendarEntity(self, entopts)
   }
 
 
   // Entity access: `client.FinancialRatio().list()` / `client.FinancialRatio().load({ id })`.
-  FinancialRatio(data?: any) {
+  // The argument is the entity OPTIONS object (passed to the entity
+  // constructor as entopts), not initial entity data.
+  FinancialRatio(entopts?: Record<string, any>) {
     const self = this
-    return new FinancialRatioEntity(self,data)
+    return new FinancialRatioEntity(self, entopts)
   }
 
 
   // Entity access: `client.FinancialStatement().list()` / `client.FinancialStatement().load({ id })`.
-  FinancialStatement(data?: any) {
+  // The argument is the entity OPTIONS object (passed to the entity
+  // constructor as entopts), not initial entity data.
+  FinancialStatement(entopts?: Record<string, any>) {
     const self = this
-    return new FinancialStatementEntity(self,data)
+    return new FinancialStatementEntity(self, entopts)
   }
 
 
   // Entity access: `client.ForexData().list()` / `client.ForexData().load({ id })`.
-  ForexData(data?: any) {
+  // The argument is the entity OPTIONS object (passed to the entity
+  // constructor as entopts), not initial entity data.
+  ForexData(entopts?: Record<string, any>) {
     const self = this
-    return new ForexDataEntity(self,data)
+    return new ForexDataEntity(self, entopts)
   }
 
 
   // Entity access: `client.InsiderTrading().list()` / `client.InsiderTrading().load({ id })`.
-  InsiderTrading(data?: any) {
+  // The argument is the entity OPTIONS object (passed to the entity
+  // constructor as entopts), not initial entity data.
+  InsiderTrading(entopts?: Record<string, any>) {
     const self = this
-    return new InsiderTradingEntity(self,data)
+    return new InsiderTradingEntity(self, entopts)
   }
 
 
   // Entity access: `client.InstitutionalTrading().list()` / `client.InstitutionalTrading().load({ id })`.
-  InstitutionalTrading(data?: any) {
+  // The argument is the entity OPTIONS object (passed to the entity
+  // constructor as entopts), not initial entity data.
+  InstitutionalTrading(entopts?: Record<string, any>) {
     const self = this
-    return new InstitutionalTradingEntity(self,data)
+    return new InstitutionalTradingEntity(self, entopts)
   }
 
 
   // Entity access: `client.InvestmentAdviser().list()` / `client.InvestmentAdviser().load({ id })`.
-  InvestmentAdviser(data?: any) {
+  // The argument is the entity OPTIONS object (passed to the entity
+  // constructor as entopts), not initial entity data.
+  InvestmentAdviser(entopts?: Record<string, any>) {
     const self = this
-    return new InvestmentAdviserEntity(self,data)
+    return new InvestmentAdviserEntity(self, entopts)
   }
 
 
   // Entity access: `client.MarketData().list()` / `client.MarketData().load({ id })`.
-  MarketData(data?: any) {
+  // The argument is the entity OPTIONS object (passed to the entity
+  // constructor as entopts), not initial entity data.
+  MarketData(entopts?: Record<string, any>) {
     const self = this
-    return new MarketDataEntity(self,data)
+    return new MarketDataEntity(self, entopts)
   }
 
 
   // Entity access: `client.MarketIndex().list()` / `client.MarketIndex().load({ id })`.
-  MarketIndex(data?: any) {
+  // The argument is the entity OPTIONS object (passed to the entity
+  // constructor as entopts), not initial entity data.
+  MarketIndex(entopts?: Record<string, any>) {
     const self = this
-    return new MarketIndexEntity(self,data)
+    return new MarketIndexEntity(self, entopts)
   }
 
 
   // Entity access: `client.MarketNew().list()` / `client.MarketNew().load({ id })`.
-  MarketNew(data?: any) {
+  // The argument is the entity OPTIONS object (passed to the entity
+  // constructor as entopts), not initial entity data.
+  MarketNew(entopts?: Record<string, any>) {
     const self = this
-    return new MarketNewEntity(self,data)
+    return new MarketNewEntity(self, entopts)
   }
 
 
   // Entity access: `client.MiscellaneousData().list()` / `client.MiscellaneousData().load({ id })`.
-  MiscellaneousData(data?: any) {
+  // The argument is the entity OPTIONS object (passed to the entity
+  // constructor as entopts), not initial entity data.
+  MiscellaneousData(entopts?: Record<string, any>) {
     const self = this
-    return new MiscellaneousDataEntity(self,data)
+    return new MiscellaneousDataEntity(self, entopts)
   }
 
 
   // Entity access: `client.MutualFund().list()` / `client.MutualFund().load({ id })`.
-  MutualFund(data?: any) {
+  // The argument is the entity OPTIONS object (passed to the entity
+  // constructor as entopts), not initial entity data.
+  MutualFund(entopts?: Record<string, any>) {
     const self = this
-    return new MutualFundEntity(self,data)
+    return new MutualFundEntity(self, entopts)
   }
 
 
   // Entity access: `client.SymbolList().list()` / `client.SymbolList().load({ id })`.
-  SymbolList(data?: any) {
+  // The argument is the entity OPTIONS object (passed to the entity
+  // constructor as entopts), not initial entity data.
+  SymbolList(entopts?: Record<string, any>) {
     const self = this
-    return new SymbolListEntity(self,data)
+    return new SymbolListEntity(self, entopts)
   }
 
 

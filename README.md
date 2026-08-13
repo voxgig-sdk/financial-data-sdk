@@ -38,18 +38,27 @@ network, and no credentials:
 ### TypeScript
 
 ```ts
-const client = FinancialDataSDK.test()
-const basicinformation = await client.BasicInformation().load()
-// basicinformation is a bare BasicInformation populated with mock data
-console.log(basicinformation)
+// The offline mock starts EMPTY — seed it with the records the test needs.
+// Shape: { entity: { <entity-name>: { <id>: <record> } } }
+const client = FinancialDataSDK.test({
+  entity: {
+    crypto_currency: {
+      test01: { id: 'test01' },
+    },
+  },
+})
+const cryptocurrency = await client.CryptoCurrency().load()
+// cryptocurrency is the CryptoCurrency entity, populated with mock data
+// — call cryptocurrency.data() for the record itself
+console.log(cryptocurrency)
 ```
 
 ### Python
 
 ```python
 client = FinancialDataSDK.test()
-basicinformation = client.BasicInformation().load()
-print(basicinformation)
+cryptocurrency = client.CryptoCurrency().load()
+print(cryptocurrency)
 ```
 
 ### PHP
@@ -57,16 +66,16 @@ print(basicinformation)
 ```php
 // Seed fixture data so offline calls resolve without a live server.
 $client = FinancialDataSDK::test([
-    "entity" => ["basicinformation" => ["test01" => []]],
+    "entity" => ["cryptocurrency" => ["test01" => []]],
 ]);
-$basicinformation = $client->BasicInformation()->load();
+$cryptocurrency = $client->CryptoCurrency()->load();
 ```
 
 ### Golang
 
 ```go
 client := sdk.Test()
-result, err := client.BasicInformation(nil).Load(
+result, err := client.CryptoCurrency(nil).Load(
     nil, nil,
 )
 ```
@@ -76,16 +85,16 @@ result, err := client.BasicInformation(nil).Load(
 ```ruby
 # Seed fixture data so offline calls resolve without a live server.
 client = FinancialDataSDK.test({
-  "entity" => { "basicinformation" => { "test01" => {} } },
+  "entity" => { "cryptocurrency" => { "test01" => {} } },
 })
-basicinformation = client.BasicInformation.load()
+cryptocurrency = client.CryptoCurrency.load()
 ```
 
 ### Lua
 
 ```lua
 local client = sdk.test()
-local result, err = client:BasicInformation():load()
+local result, err = client:CryptoCurrency():load()
 ```
 
 ## Packages
@@ -206,7 +215,7 @@ $client = new FinancialDataSDK([
 ]);
 
 
-// Load a specific basicinformation (returns the bare record; throws on error)
+// Load a specific basicinformation (returns the ENTITY; call data_get() for the record; throws on error)
 $basicinformation = $client->BasicInformation()->load();
 print_r($basicinformation);
 ```
@@ -238,7 +247,7 @@ client = FinancialDataSDK.new({
 })
 
 
-# Load a specific basicinformation (returns the bare record; raises on error)
+# Load a specific basicinformation (returns the ENTITY; call data_get for the record)
 basicinformation = client.BasicInformation.load()
 puts basicinformation
 ```
@@ -374,6 +383,9 @@ Pass custom features via the `extend` option at construction time.
 
 This SDK is generated from the upstream OpenAPI specification. It is an
 unofficial client and is not affiliated with the API provider.
+
+The OpenAPI spec(s) this SDK was generated from are kept in the
+[`.sdk/def/`](.sdk/def/) folder.
 
 - Upstream API: [https://financialdata.net/documentation](https://financialdata.net/documentation)
 

@@ -24,6 +24,7 @@ require_relative 'prepare_method'
 require_relative 'prepare_params'
 require_relative 'prepare_path'
 require_relative 'prepare_query'
+require_relative 'graphql'
 require_relative 'result_basic'
 require_relative 'result_body'
 require_relative 'result_headers'
@@ -55,6 +56,8 @@ FinancialDataUtility.registrar = ->(u) {
   u.prepare_params = FinancialDataUtilities::PrepareParams
   u.prepare_path = FinancialDataUtilities::PreparePath
   u.prepare_query = FinancialDataUtilities::PrepareQuery
+  u.graphql_body = FinancialDataUtilities::GraphqlBody
+  u.graphql_errors = FinancialDataUtilities::GraphqlErrors
   u.result_basic = FinancialDataUtilities::ResultBasic
   u.result_body = FinancialDataUtilities::ResultBody
   u.result_headers = FinancialDataUtilities::ResultHeaders

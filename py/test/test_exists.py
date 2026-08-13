@@ -1,4 +1,4 @@
-# ProjectName SDK exists test
+# FinancialData SDK exists test
 
 import pytest
 from financialdata_sdk import FinancialDataSDK

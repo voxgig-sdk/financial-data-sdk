@@ -81,6 +81,7 @@ local function make_config()
                     },
                   },
                 },
+                ["kind"] = "http",
                 ["method"] = "GET",
                 ["orig"] = "/company-information",
                 ["parts"] = {
@@ -130,6 +131,7 @@ local function make_config()
                     },
                   },
                 },
+                ["kind"] = "http",
                 ["method"] = "GET",
                 ["orig"] = "/employee-count",
                 ["parts"] = {
@@ -179,6 +181,7 @@ local function make_config()
                     },
                   },
                 },
+                ["kind"] = "http",
                 ["method"] = "GET",
                 ["orig"] = "/executive-compensation",
                 ["parts"] = {
@@ -228,6 +231,7 @@ local function make_config()
                     },
                   },
                 },
+                ["kind"] = "http",
                 ["method"] = "GET",
                 ["orig"] = "/international-company-information",
                 ["parts"] = {
@@ -277,6 +281,7 @@ local function make_config()
                     },
                   },
                 },
+                ["kind"] = "http",
                 ["method"] = "GET",
                 ["orig"] = "/key-metrics",
                 ["parts"] = {
@@ -326,6 +331,7 @@ local function make_config()
                     },
                   },
                 },
+                ["kind"] = "http",
                 ["method"] = "GET",
                 ["orig"] = "/market-cap",
                 ["parts"] = {
@@ -375,6 +381,7 @@ local function make_config()
                     },
                   },
                 },
+                ["kind"] = "http",
                 ["method"] = "GET",
                 ["orig"] = "/securities-information",
                 ["parts"] = {
@@ -448,6 +455,7 @@ local function make_config()
                     },
                   },
                 },
+                ["kind"] = "http",
                 ["method"] = "GET",
                 ["orig"] = "/crypto-minute-prices",
                 ["parts"] = {
@@ -498,6 +506,7 @@ local function make_config()
                     },
                   },
                 },
+                ["kind"] = "http",
                 ["method"] = "GET",
                 ["orig"] = "/crypto-information",
                 ["parts"] = {
@@ -547,6 +556,7 @@ local function make_config()
                     },
                   },
                 },
+                ["kind"] = "http",
                 ["method"] = "GET",
                 ["orig"] = "/crypto-prices",
                 ["parts"] = {
@@ -596,6 +606,7 @@ local function make_config()
                     },
                   },
                 },
+                ["kind"] = "http",
                 ["method"] = "GET",
                 ["orig"] = "/crypto-quotes",
                 ["parts"] = {
@@ -637,6 +648,7 @@ local function make_config()
                     },
                   },
                 },
+                ["kind"] = "http",
                 ["method"] = "GET",
                 ["orig"] = "/crypto-symbols",
                 ["parts"] = {
@@ -701,6 +713,7 @@ local function make_config()
                     },
                   },
                 },
+                ["kind"] = "http",
                 ["method"] = "GET",
                 ["orig"] = "/futures-prices",
                 ["parts"] = {
@@ -750,6 +763,7 @@ local function make_config()
                     },
                   },
                 },
+                ["kind"] = "http",
                 ["method"] = "GET",
                 ["orig"] = "/option-chain",
                 ["parts"] = {
@@ -799,6 +813,7 @@ local function make_config()
                     },
                   },
                 },
+                ["kind"] = "http",
                 ["method"] = "GET",
                 ["orig"] = "/option-greeks",
                 ["parts"] = {
@@ -848,6 +863,7 @@ local function make_config()
                     },
                   },
                 },
+                ["kind"] = "http",
                 ["method"] = "GET",
                 ["orig"] = "/option-prices",
                 ["parts"] = {
@@ -889,6 +905,7 @@ local function make_config()
                     },
                   },
                 },
+                ["kind"] = "http",
                 ["method"] = "GET",
                 ["orig"] = "/futures-symbols",
                 ["parts"] = {
@@ -953,6 +970,7 @@ local function make_config()
                     },
                   },
                 },
+                ["kind"] = "http",
                 ["method"] = "GET",
                 ["orig"] = "/esg-ratings",
                 ["parts"] = {
@@ -1002,6 +1020,7 @@ local function make_config()
                     },
                   },
                 },
+                ["kind"] = "http",
                 ["method"] = "GET",
                 ["orig"] = "/esg-scores",
                 ["parts"] = {
@@ -1043,6 +1062,7 @@ local function make_config()
                     },
                   },
                 },
+                ["kind"] = "http",
                 ["method"] = "GET",
                 ["orig"] = "/industry-esg-scores",
                 ["parts"] = {
@@ -1107,6 +1127,7 @@ local function make_config()
                     },
                   },
                 },
+                ["kind"] = "http",
                 ["method"] = "GET",
                 ["orig"] = "/etf-holdings",
                 ["parts"] = {
@@ -1156,6 +1177,7 @@ local function make_config()
                     },
                   },
                 },
+                ["kind"] = "http",
                 ["method"] = "GET",
                 ["orig"] = "/etf-prices",
                 ["parts"] = {
@@ -1205,6 +1227,7 @@ local function make_config()
                     },
                   },
                 },
+                ["kind"] = "http",
                 ["method"] = "GET",
                 ["orig"] = "/etf-quotes",
                 ["parts"] = {
@@ -1262,6 +1285,7 @@ local function make_config()
                     },
                   },
                 },
+                ["kind"] = "http",
                 ["method"] = "GET",
                 ["orig"] = "/dividends-calendar",
                 ["parts"] = {
@@ -1302,6 +1326,7 @@ local function make_config()
                     },
                   },
                 },
+                ["kind"] = "http",
                 ["method"] = "GET",
                 ["orig"] = "/earnings-calendar",
                 ["parts"] = {
@@ -1342,6 +1367,7 @@ local function make_config()
                     },
                   },
                 },
+                ["kind"] = "http",
                 ["method"] = "GET",
                 ["orig"] = "/economic-calendar",
                 ["parts"] = {
@@ -1382,6 +1408,7 @@ local function make_config()
                     },
                   },
                 },
+                ["kind"] = "http",
                 ["method"] = "GET",
                 ["orig"] = "/ipo-calendar",
                 ["parts"] = {
@@ -1422,6 +1449,7 @@ local function make_config()
                     },
                   },
                 },
+                ["kind"] = "http",
                 ["method"] = "GET",
                 ["orig"] = "/splits-calendar",
                 ["parts"] = {
@@ -1486,6 +1514,7 @@ local function make_config()
                     },
                   },
                 },
+                ["kind"] = "http",
                 ["method"] = "GET",
                 ["orig"] = "/efficiency-ratios",
                 ["parts"] = {
@@ -1535,6 +1564,7 @@ local function make_config()
                     },
                   },
                 },
+                ["kind"] = "http",
                 ["method"] = "GET",
                 ["orig"] = "/liquidity-ratios",
                 ["parts"] = {
@@ -1584,6 +1614,7 @@ local function make_config()
                     },
                   },
                 },
+                ["kind"] = "http",
                 ["method"] = "GET",
                 ["orig"] = "/profitability-ratios",
                 ["parts"] = {
@@ -1633,6 +1664,7 @@ local function make_config()
                     },
                   },
                 },
+                ["kind"] = "http",
                 ["method"] = "GET",
                 ["orig"] = "/solvency-ratios",
                 ["parts"] = {
@@ -1682,6 +1714,7 @@ local function make_config()
                     },
                   },
                 },
+                ["kind"] = "http",
                 ["method"] = "GET",
                 ["orig"] = "/valuation-ratios",
                 ["parts"] = {
@@ -1747,6 +1780,7 @@ local function make_config()
                     },
                   },
                 },
+                ["kind"] = "http",
                 ["method"] = "GET",
                 ["orig"] = "/balance-sheet-statements",
                 ["parts"] = {
@@ -1796,6 +1830,7 @@ local function make_config()
                     },
                   },
                 },
+                ["kind"] = "http",
                 ["method"] = "GET",
                 ["orig"] = "/cash-flow-statements",
                 ["parts"] = {
@@ -1845,6 +1880,7 @@ local function make_config()
                     },
                   },
                 },
+                ["kind"] = "http",
                 ["method"] = "GET",
                 ["orig"] = "/income-statements",
                 ["parts"] = {
@@ -1894,6 +1930,7 @@ local function make_config()
                     },
                   },
                 },
+                ["kind"] = "http",
                 ["method"] = "GET",
                 ["orig"] = "/international-balance-sheet-statements",
                 ["parts"] = {
@@ -1943,6 +1980,7 @@ local function make_config()
                     },
                   },
                 },
+                ["kind"] = "http",
                 ["method"] = "GET",
                 ["orig"] = "/international-cash-flow-statements",
                 ["parts"] = {
@@ -1992,6 +2030,7 @@ local function make_config()
                     },
                   },
                 },
+                ["kind"] = "http",
                 ["method"] = "GET",
                 ["orig"] = "/international-income-statements",
                 ["parts"] = {
@@ -2065,6 +2104,7 @@ local function make_config()
                     },
                   },
                 },
+                ["kind"] = "http",
                 ["method"] = "GET",
                 ["orig"] = "/forex-minute-prices",
                 ["parts"] = {
@@ -2115,6 +2155,7 @@ local function make_config()
                     },
                   },
                 },
+                ["kind"] = "http",
                 ["method"] = "GET",
                 ["orig"] = "/forex-prices",
                 ["parts"] = {
@@ -2164,6 +2205,7 @@ local function make_config()
                     },
                   },
                 },
+                ["kind"] = "http",
                 ["method"] = "GET",
                 ["orig"] = "/forex-quotes",
                 ["parts"] = {
@@ -2205,6 +2247,7 @@ local function make_config()
                     },
                   },
                 },
+                ["kind"] = "http",
                 ["method"] = "GET",
                 ["orig"] = "/forex-symbols",
                 ["parts"] = {
@@ -2269,6 +2312,7 @@ local function make_config()
                     },
                   },
                 },
+                ["kind"] = "http",
                 ["method"] = "GET",
                 ["orig"] = "/insider-transactions",
                 ["parts"] = {
@@ -2310,6 +2354,7 @@ local function make_config()
                     },
                   },
                 },
+                ["kind"] = "http",
                 ["method"] = "GET",
                 ["orig"] = "/house-trading",
                 ["parts"] = {
@@ -2350,6 +2395,7 @@ local function make_config()
                     },
                   },
                 },
+                ["kind"] = "http",
                 ["method"] = "GET",
                 ["orig"] = "/proposed-sales",
                 ["parts"] = {
@@ -2390,6 +2436,7 @@ local function make_config()
                     },
                   },
                 },
+                ["kind"] = "http",
                 ["method"] = "GET",
                 ["orig"] = "/senate-trading",
                 ["parts"] = {
@@ -2454,6 +2501,7 @@ local function make_config()
                     },
                   },
                 },
+                ["kind"] = "http",
                 ["method"] = "GET",
                 ["orig"] = "/institutional-holdings",
                 ["parts"] = {
@@ -2495,6 +2543,7 @@ local function make_config()
                     },
                   },
                 },
+                ["kind"] = "http",
                 ["method"] = "GET",
                 ["orig"] = "/institutional-investors",
                 ["parts"] = {
@@ -2535,6 +2584,7 @@ local function make_config()
                     },
                   },
                 },
+                ["kind"] = "http",
                 ["method"] = "GET",
                 ["orig"] = "/institutional-portfolio-statistics",
                 ["parts"] = {
@@ -2591,6 +2641,7 @@ local function make_config()
                     },
                   },
                 },
+                ["kind"] = "http",
                 ["method"] = "GET",
                 ["orig"] = "/investment-adviser-information",
                 ["parts"] = {
@@ -2631,6 +2682,7 @@ local function make_config()
                     },
                   },
                 },
+                ["kind"] = "http",
                 ["method"] = "GET",
                 ["orig"] = "/investment-adviser-names",
                 ["parts"] = {
@@ -2799,6 +2851,7 @@ local function make_config()
                     },
                   },
                 },
+                ["kind"] = "http",
                 ["method"] = "GET",
                 ["orig"] = "/minute-prices",
                 ["parts"] = {
@@ -2860,6 +2913,7 @@ local function make_config()
                     },
                   },
                 },
+                ["kind"] = "http",
                 ["method"] = "GET",
                 ["orig"] = "/international-stock-prices",
                 ["parts"] = {
@@ -2919,6 +2973,7 @@ local function make_config()
                     },
                   },
                 },
+                ["kind"] = "http",
                 ["method"] = "GET",
                 ["orig"] = "/latest-prices",
                 ["parts"] = {
@@ -2979,6 +3034,7 @@ local function make_config()
                     },
                   },
                 },
+                ["kind"] = "http",
                 ["method"] = "GET",
                 ["orig"] = "/stock-prices",
                 ["parts"] = {
@@ -3030,6 +3086,7 @@ local function make_config()
                     },
                   },
                 },
+                ["kind"] = "http",
                 ["method"] = "GET",
                 ["orig"] = "/stock-quotes",
                 ["parts"] = {
@@ -3095,6 +3152,7 @@ local function make_config()
                     },
                   },
                 },
+                ["kind"] = "http",
                 ["method"] = "GET",
                 ["orig"] = "/commodity-prices",
                 ["parts"] = {
@@ -3154,6 +3212,7 @@ local function make_config()
                     },
                   },
                 },
+                ["kind"] = "http",
                 ["method"] = "GET",
                 ["orig"] = "/otc-prices",
                 ["parts"] = {
@@ -3204,6 +3263,7 @@ local function make_config()
                     },
                   },
                 },
+                ["kind"] = "http",
                 ["method"] = "GET",
                 ["orig"] = "/otc-volume",
                 ["parts"] = {
@@ -3278,6 +3338,7 @@ local function make_config()
                     },
                   },
                 },
+                ["kind"] = "http",
                 ["method"] = "GET",
                 ["orig"] = "/index-prices",
                 ["parts"] = {
@@ -3328,6 +3389,7 @@ local function make_config()
                     },
                   },
                 },
+                ["kind"] = "http",
                 ["method"] = "GET",
                 ["orig"] = "/index-constituents",
                 ["parts"] = {
@@ -3377,6 +3439,7 @@ local function make_config()
                     },
                   },
                 },
+                ["kind"] = "http",
                 ["method"] = "GET",
                 ["orig"] = "/index-quotes",
                 ["parts"] = {
@@ -3418,6 +3481,7 @@ local function make_config()
                     },
                   },
                 },
+                ["kind"] = "http",
                 ["method"] = "GET",
                 ["orig"] = "/index-symbols",
                 ["parts"] = {
@@ -3482,6 +3546,7 @@ local function make_config()
                     },
                   },
                 },
+                ["kind"] = "http",
                 ["method"] = "GET",
                 ["orig"] = "/press-releases",
                 ["parts"] = {
@@ -3523,6 +3588,7 @@ local function make_config()
                     },
                   },
                 },
+                ["kind"] = "http",
                 ["method"] = "GET",
                 ["orig"] = "/fed-press-releases",
                 ["parts"] = {
@@ -3563,6 +3629,7 @@ local function make_config()
                     },
                   },
                 },
+                ["kind"] = "http",
                 ["method"] = "GET",
                 ["orig"] = "/sec-press-releases",
                 ["parts"] = {
@@ -3627,6 +3694,7 @@ local function make_config()
                     },
                   },
                 },
+                ["kind"] = "http",
                 ["method"] = "GET",
                 ["orig"] = "/dividends",
                 ["parts"] = {
@@ -3676,6 +3744,7 @@ local function make_config()
                     },
                   },
                 },
+                ["kind"] = "http",
                 ["method"] = "GET",
                 ["orig"] = "/earnings-releases",
                 ["parts"] = {
@@ -3725,6 +3794,7 @@ local function make_config()
                     },
                   },
                 },
+                ["kind"] = "http",
                 ["method"] = "GET",
                 ["orig"] = "/short-interest",
                 ["parts"] = {
@@ -3774,6 +3844,7 @@ local function make_config()
                     },
                   },
                 },
+                ["kind"] = "http",
                 ["method"] = "GET",
                 ["orig"] = "/stock-splits",
                 ["parts"] = {
@@ -3815,6 +3886,7 @@ local function make_config()
                     },
                   },
                 },
+                ["kind"] = "http",
                 ["method"] = "GET",
                 ["orig"] = "/initial-public-offerings",
                 ["parts"] = {
@@ -3879,6 +3951,7 @@ local function make_config()
                     },
                   },
                 },
+                ["kind"] = "http",
                 ["method"] = "GET",
                 ["orig"] = "/mutual-fund-holdings",
                 ["parts"] = {
@@ -3928,6 +4001,7 @@ local function make_config()
                     },
                   },
                 },
+                ["kind"] = "http",
                 ["method"] = "GET",
                 ["orig"] = "/mutual-fund-statistics",
                 ["parts"] = {
@@ -3969,6 +4043,7 @@ local function make_config()
                     },
                   },
                 },
+                ["kind"] = "http",
                 ["method"] = "GET",
                 ["orig"] = "/mutual-fund-symbols",
                 ["parts"] = {
@@ -4063,6 +4138,7 @@ local function make_config()
                     },
                   },
                 },
+                ["kind"] = "http",
                 ["method"] = "GET",
                 ["orig"] = "/etf-symbols",
                 ["parts"] = {
@@ -4113,6 +4189,7 @@ local function make_config()
                     },
                   },
                 },
+                ["kind"] = "http",
                 ["method"] = "GET",
                 ["orig"] = "/international-stock-symbols",
                 ["parts"] = {
@@ -4163,6 +4240,7 @@ local function make_config()
                     },
                   },
                 },
+                ["kind"] = "http",
                 ["method"] = "GET",
                 ["orig"] = "/otc-symbols",
                 ["parts"] = {
@@ -4213,6 +4291,7 @@ local function make_config()
                     },
                   },
                 },
+                ["kind"] = "http",
                 ["method"] = "GET",
                 ["orig"] = "/stock-symbols",
                 ["parts"] = {
@@ -4254,6 +4333,7 @@ local function make_config()
                     },
                   },
                 },
+                ["kind"] = "http",
                 ["method"] = "GET",
                 ["orig"] = "/commodity-symbols",
                 ["parts"] = {

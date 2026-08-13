@@ -26,8 +26,8 @@ import {
 describe('MarketNewEntity', async () => {
 
   // Per-test live pacing. Delay is read from sdk-test-control.json's
-  // `test.live.delayMs`; only sleeps when FINANCIALDATA_TEST_LIVE=TRUE.
-  afterEach(liveDelay('FINANCIALDATA_TEST_LIVE'))
+  // `test.live.delayMs`; only sleeps when FINANCIAL_DATA_TEST_LIVE=TRUE.
+  afterEach(liveDelay('FINANCIAL_DATA_TEST_LIVE'))
 
   test('instance', async () => {
     const testsdk = FinancialDataSDK.test()
@@ -62,7 +62,7 @@ describe('MarketNewEntity', async () => {
     // LOAD
     const market_new_ref01_ent = client.MarketNew()
     const market_new_ref01_match_dt0: any = {}
-    const market_new_ref01_data_dt0 = await market_new_ref01_ent.load(market_new_ref01_match_dt0)
+    const market_new_ref01_data_dt0 = (await market_new_ref01_ent.load(market_new_ref01_match_dt0)).data()
     assert(null != market_new_ref01_data_dt0)
 
 

@@ -60,16 +60,16 @@ function mutual_fund_direct_setup(mockres)
   local calls = {}
 
   local env = runner.env_override({
-    ["FINANCIALDATA_TEST_MUTUAL_FUND_ENTID"] = {},
-    ["FINANCIALDATA_TEST_LIVE"] = "FALSE",
-    ["FINANCIALDATA_APIKEY"] = "NONE",
+    ["FINANCIAL_DATA_TEST_MUTUAL_FUND_ENTID"] = {},
+    ["FINANCIAL_DATA_TEST_LIVE"] = "FALSE",
+    ["FINANCIAL_DATA_APIKEY"] = "NONE",
   })
 
-  local live = env["FINANCIALDATA_TEST_LIVE"] == "TRUE"
+  local live = env["FINANCIAL_DATA_TEST_LIVE"] == "TRUE"
 
   if live then
     local merged_opts = {
-      apikey = env["FINANCIALDATA_APIKEY"],
+      apikey = env["FINANCIAL_DATA_APIKEY"],
     }
     local client = sdk.new(merged_opts)
     return {

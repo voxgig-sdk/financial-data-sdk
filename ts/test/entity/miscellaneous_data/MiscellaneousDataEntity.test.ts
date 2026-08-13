@@ -26,8 +26,8 @@ import {
 describe('MiscellaneousDataEntity', async () => {
 
   // Per-test live pacing. Delay is read from sdk-test-control.json's
-  // `test.live.delayMs`; only sleeps when FINANCIALDATA_TEST_LIVE=TRUE.
-  afterEach(liveDelay('FINANCIALDATA_TEST_LIVE'))
+  // `test.live.delayMs`; only sleeps when FINANCIAL_DATA_TEST_LIVE=TRUE.
+  afterEach(liveDelay('FINANCIAL_DATA_TEST_LIVE'))
 
   test('instance', async () => {
     const testsdk = FinancialDataSDK.test()
@@ -62,7 +62,7 @@ describe('MiscellaneousDataEntity', async () => {
     // LOAD
     const miscellaneous_data_ref01_ent = client.MiscellaneousData()
     const miscellaneous_data_ref01_match_dt0: any = {}
-    const miscellaneous_data_ref01_data_dt0 = await miscellaneous_data_ref01_ent.load(miscellaneous_data_ref01_match_dt0)
+    const miscellaneous_data_ref01_data_dt0 = (await miscellaneous_data_ref01_ent.load(miscellaneous_data_ref01_match_dt0)).data()
     assert(null != miscellaneous_data_ref01_data_dt0)
 
 

@@ -50,7 +50,7 @@ Entity operations return `(value, err)`. Check `err` before using
 the value:
 
 ```lua
-local basicinformation, err = client:BasicInformation():load()
+local cryptocurrency, err = client:CryptoCurrency():load()
 if err then error(err) end
 ```
 
@@ -108,7 +108,7 @@ Create a mock client for unit testing — no server required:
 ```lua
 local client = sdk.test()
 
-local result, err = client:BasicInformation():load()
+local result, err = client:CryptoCurrency():load()
 -- result is the returned data; err is set on failure
 ```
 
@@ -842,11 +842,11 @@ Entity instances are stateful. After a successful `load`, the entity
 stores the returned data and match criteria internally.
 
 ```lua
-local basicinformation = client:BasicInformation()
-basicinformation:load()
+local cryptocurrency = client:CryptoCurrency()
+cryptocurrency:load()
 
--- basicinformation:data_get() now returns the basicinformation data from the last load
--- basicinformation:match_get() returns the last match criteria
+-- cryptocurrency:data_get() now returns the cryptocurrency data from the last load
+-- cryptocurrency:match_get() returns the last match criteria
 ```
 
 Call `make()` to create a fresh instance with the same configuration

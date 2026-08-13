@@ -23,6 +23,7 @@ require_once __DIR__ . '/MakeUrl.php';
 require_once __DIR__ . '/Param.php';
 require_once __DIR__ . '/PrepareAuth.php';
 require_once __DIR__ . '/PrepareBody.php';
+require_once __DIR__ . '/Graphql.php';
 require_once __DIR__ . '/PrepareHeaders.php';
 require_once __DIR__ . '/PrepareMethod.php';
 require_once __DIR__ . '/PrepareParams.php';
@@ -59,6 +60,8 @@ FinancialDataUtility::setRegistrar(function (FinancialDataUtility $u): void {
     $u->prepare_params = [FinancialDataPrepareParams::class, 'call'];
     $u->prepare_path = [FinancialDataPreparePath::class, 'call'];
     $u->prepare_query = [FinancialDataPrepareQuery::class, 'call'];
+    $u->graphql_body = [FinancialDataGraphql::class, 'body'];
+    $u->graphql_errors = [FinancialDataGraphql::class, 'errors'];
     $u->result_basic = [FinancialDataResultBasic::class, 'call'];
     $u->result_body = [FinancialDataResultBody::class, 'call'];
     $u->result_headers = [FinancialDataResultHeaders::class, 'call'];

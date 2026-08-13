@@ -37,7 +37,7 @@ class SymbolListEntity extends FinancialDataEntityBase<SymbolList> {
 
 
 
-  async list(this: any, reqmatch?: SymbolListListMatch, ctrl?: Control): Promise<SymbolList[]> {
+  async list(this: any, reqmatch?: SymbolListListMatch, ctrl?: Control): Promise<SymbolListEntity[]> {
 
     const utility = this._utility
 

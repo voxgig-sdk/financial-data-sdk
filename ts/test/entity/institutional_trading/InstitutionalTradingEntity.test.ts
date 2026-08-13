@@ -26,8 +26,8 @@ import {
 describe('InstitutionalTradingEntity', async () => {
 
   // Per-test live pacing. Delay is read from sdk-test-control.json's
-  // `test.live.delayMs`; only sleeps when FINANCIALDATA_TEST_LIVE=TRUE.
-  afterEach(liveDelay('FINANCIALDATA_TEST_LIVE'))
+  // `test.live.delayMs`; only sleeps when FINANCIAL_DATA_TEST_LIVE=TRUE.
+  afterEach(liveDelay('FINANCIAL_DATA_TEST_LIVE'))
 
   test('instance', async () => {
     const testsdk = FinancialDataSDK.test()
@@ -62,7 +62,7 @@ describe('InstitutionalTradingEntity', async () => {
     // LOAD
     const institutional_trading_ref01_ent = client.InstitutionalTrading()
     const institutional_trading_ref01_match_dt0: any = {}
-    const institutional_trading_ref01_data_dt0 = await institutional_trading_ref01_ent.load(institutional_trading_ref01_match_dt0)
+    const institutional_trading_ref01_data_dt0 = (await institutional_trading_ref01_ent.load(institutional_trading_ref01_match_dt0)).data()
     assert(null != institutional_trading_ref01_data_dt0)
 
 

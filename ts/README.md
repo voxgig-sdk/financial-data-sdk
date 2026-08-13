@@ -55,8 +55,8 @@ Entity operations reject on failure, so wrap them in `try` / `catch`:
 
 ```ts
 try {
-  const basicinformation = await client.BasicInformation().load()
-  console.log(basicinformation)
+  const cryptocurrency = await client.CryptoCurrency().load()
+  console.log(cryptocurrency)
 } catch (err) {
   console.error('load failed:', err)
 }
@@ -122,9 +122,10 @@ Create a mock client for unit testing — no server required:
 ```ts
 const client = FinancialDataSDK.test()
 
-const basicinformation = await client.BasicInformation().load()
-// basicinformation is a bare entity populated with mock response data
-console.log(basicinformation)
+const cryptocurrency = await client.CryptoCurrency().load()
+// cryptocurrency is the entity, populated with mock response data
+// — call cryptocurrency.data() for the record itself
+console.log(cryptocurrency)
 ```
 
 You can also use the instance method:
@@ -139,7 +140,7 @@ const testClient = client.tester()
 Entity instances remember their last match and data:
 
 ```ts
-const entity = client.BasicInformation()
+const entity = client.CryptoCurrency()
 
 // First call runs the operation and stores its result
 await entity.load()
@@ -897,11 +898,11 @@ stores the returned data and match criteria internally. Subsequent
 calls on the same instance can rely on this state.
 
 ```ts
-const basicinformation = client.BasicInformation()
-await basicinformation.load()
+const cryptocurrency = client.CryptoCurrency()
+await cryptocurrency.load()
 
-// basicinformation.data() now returns the basicinformation data from the last `load`
-// basicinformation.match() returns the last match criteria
+// cryptocurrency.data() now returns the cryptocurrency data from the last `load`
+// cryptocurrency.match() returns the last match criteria
 ```
 
 Call `make()` to create a fresh instance with the same configuration

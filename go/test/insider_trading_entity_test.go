@@ -44,7 +44,7 @@ func TestInsiderTradingEntity(t *testing.T) {
 		// The basic flow consumes synthetic IDs from the fixture. In live mode
 		// without an *_ENTID env override, those IDs hit the live API and 4xx.
 		if setup.syntheticOnly {
-			t.Skip("live entity test uses synthetic IDs from fixture — set FINANCIALDATA_TEST_INSIDER_TRADING_ENTID JSON to run live")
+			t.Skip("live entity test uses synthetic IDs from fixture — set FINANCIAL_DATA_TEST_INSIDER_TRADING_ENTID JSON to run live")
 			return
 		}
 		client := setup.client
@@ -110,38 +110,38 @@ func insider_tradingBasicSetup(extra map[string]any) *entityTestSetup {
 	// Detect ENTID env override before envOverride consumes it. When live
 	// mode is on without a real override, the basic test runs against synthetic
 	// IDs from the fixture and 4xx's. Surface this so the test can skip.
-	entidEnvRaw := os.Getenv("FINANCIALDATA_TEST_INSIDER_TRADING_ENTID")
+	entidEnvRaw := os.Getenv("FINANCIAL_DATA_TEST_INSIDER_TRADING_ENTID")
 	idmapOverridden := entidEnvRaw != "" && strings.HasPrefix(strings.TrimSpace(entidEnvRaw), "{")
 
 	env := envOverride(map[string]any{
-		"FINANCIALDATA_TEST_INSIDER_TRADING_ENTID": idmap,
-		"FINANCIALDATA_TEST_LIVE":      "FALSE",
-		"FINANCIALDATA_TEST_EXPLAIN":   "FALSE",
-		"FINANCIALDATA_APIKEY":         "NONE",
+		"FINANCIAL_DATA_TEST_INSIDER_TRADING_ENTID": idmap,
+		"FINANCIAL_DATA_TEST_LIVE":      "FALSE",
+		"FINANCIAL_DATA_TEST_EXPLAIN":   "FALSE",
+		"FINANCIAL_DATA_APIKEY":         "NONE",
 	})
 
-	idmapResolved := core.ToMapAny(env["FINANCIALDATA_TEST_INSIDER_TRADING_ENTID"])
+	idmapResolved := core.ToMapAny(env["FINANCIAL_DATA_TEST_INSIDER_TRADING_ENTID"])
 	if idmapResolved == nil {
 		idmapResolved = core.ToMapAny(idmap)
 	}
 
-	if env["FINANCIALDATA_TEST_LIVE"] == "TRUE" {
+	if env["FINANCIAL_DATA_TEST_LIVE"] == "TRUE" {
 		mergedOpts := vs.Merge([]any{
 			map[string]any{
-				"apikey": env["FINANCIALDATA_APIKEY"],
+				"apikey": env["FINANCIAL_DATA_APIKEY"],
 			},
 			extra,
 		})
 		client = sdk.NewFinancialDataSDK(core.ToMapAny(mergedOpts))
 	}
 
-	live := env["FINANCIALDATA_TEST_LIVE"] == "TRUE"
+	live := env["FINANCIAL_DATA_TEST_LIVE"] == "TRUE"
 	return &entityTestSetup{
 		client:        client,
 		data:          entityData,
 		idmap:         idmapResolved,
 		env:           env,
-		explain:       env["FINANCIALDATA_TEST_EXPLAIN"] == "TRUE",
+		explain:       env["FINANCIAL_DATA_TEST_EXPLAIN"] == "TRUE",
 		live:          live,
 		syntheticOnly: live && !idmapOverridden,
 		now:           time.Now().UnixMilli(),

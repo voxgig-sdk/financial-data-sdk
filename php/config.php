@@ -87,6 +87,7 @@ class FinancialDataConfig
                       ],
                     ],
                   ],
+                  'kind' => 'http',
                   'method' => 'GET',
                   'orig' => '/company-information',
                   'parts' => [
@@ -136,6 +137,7 @@ class FinancialDataConfig
                       ],
                     ],
                   ],
+                  'kind' => 'http',
                   'method' => 'GET',
                   'orig' => '/employee-count',
                   'parts' => [
@@ -185,6 +187,7 @@ class FinancialDataConfig
                       ],
                     ],
                   ],
+                  'kind' => 'http',
                   'method' => 'GET',
                   'orig' => '/executive-compensation',
                   'parts' => [
@@ -234,6 +237,7 @@ class FinancialDataConfig
                       ],
                     ],
                   ],
+                  'kind' => 'http',
                   'method' => 'GET',
                   'orig' => '/international-company-information',
                   'parts' => [
@@ -283,6 +287,7 @@ class FinancialDataConfig
                       ],
                     ],
                   ],
+                  'kind' => 'http',
                   'method' => 'GET',
                   'orig' => '/key-metrics',
                   'parts' => [
@@ -332,6 +337,7 @@ class FinancialDataConfig
                       ],
                     ],
                   ],
+                  'kind' => 'http',
                   'method' => 'GET',
                   'orig' => '/market-cap',
                   'parts' => [
@@ -381,6 +387,7 @@ class FinancialDataConfig
                       ],
                     ],
                   ],
+                  'kind' => 'http',
                   'method' => 'GET',
                   'orig' => '/securities-information',
                   'parts' => [
@@ -454,6 +461,7 @@ class FinancialDataConfig
                       ],
                     ],
                   ],
+                  'kind' => 'http',
                   'method' => 'GET',
                   'orig' => '/crypto-minute-prices',
                   'parts' => [
@@ -504,6 +512,7 @@ class FinancialDataConfig
                       ],
                     ],
                   ],
+                  'kind' => 'http',
                   'method' => 'GET',
                   'orig' => '/crypto-information',
                   'parts' => [
@@ -553,6 +562,7 @@ class FinancialDataConfig
                       ],
                     ],
                   ],
+                  'kind' => 'http',
                   'method' => 'GET',
                   'orig' => '/crypto-prices',
                   'parts' => [
@@ -602,6 +612,7 @@ class FinancialDataConfig
                       ],
                     ],
                   ],
+                  'kind' => 'http',
                   'method' => 'GET',
                   'orig' => '/crypto-quotes',
                   'parts' => [
@@ -643,6 +654,7 @@ class FinancialDataConfig
                       ],
                     ],
                   ],
+                  'kind' => 'http',
                   'method' => 'GET',
                   'orig' => '/crypto-symbols',
                   'parts' => [
@@ -707,6 +719,7 @@ class FinancialDataConfig
                       ],
                     ],
                   ],
+                  'kind' => 'http',
                   'method' => 'GET',
                   'orig' => '/futures-prices',
                   'parts' => [
@@ -756,6 +769,7 @@ class FinancialDataConfig
                       ],
                     ],
                   ],
+                  'kind' => 'http',
                   'method' => 'GET',
                   'orig' => '/option-chain',
                   'parts' => [
@@ -805,6 +819,7 @@ class FinancialDataConfig
                       ],
                     ],
                   ],
+                  'kind' => 'http',
                   'method' => 'GET',
                   'orig' => '/option-greeks',
                   'parts' => [
@@ -854,6 +869,7 @@ class FinancialDataConfig
                       ],
                     ],
                   ],
+                  'kind' => 'http',
                   'method' => 'GET',
                   'orig' => '/option-prices',
                   'parts' => [
@@ -895,6 +911,7 @@ class FinancialDataConfig
                       ],
                     ],
                   ],
+                  'kind' => 'http',
                   'method' => 'GET',
                   'orig' => '/futures-symbols',
                   'parts' => [
@@ -959,6 +976,7 @@ class FinancialDataConfig
                       ],
                     ],
                   ],
+                  'kind' => 'http',
                   'method' => 'GET',
                   'orig' => '/esg-ratings',
                   'parts' => [
@@ -1008,6 +1026,7 @@ class FinancialDataConfig
                       ],
                     ],
                   ],
+                  'kind' => 'http',
                   'method' => 'GET',
                   'orig' => '/esg-scores',
                   'parts' => [
@@ -1049,6 +1068,7 @@ class FinancialDataConfig
                       ],
                     ],
                   ],
+                  'kind' => 'http',
                   'method' => 'GET',
                   'orig' => '/industry-esg-scores',
                   'parts' => [
@@ -1113,6 +1133,7 @@ class FinancialDataConfig
                       ],
                     ],
                   ],
+                  'kind' => 'http',
                   'method' => 'GET',
                   'orig' => '/etf-holdings',
                   'parts' => [
@@ -1162,6 +1183,7 @@ class FinancialDataConfig
                       ],
                     ],
                   ],
+                  'kind' => 'http',
                   'method' => 'GET',
                   'orig' => '/etf-prices',
                   'parts' => [
@@ -1211,6 +1233,7 @@ class FinancialDataConfig
                       ],
                     ],
                   ],
+                  'kind' => 'http',
                   'method' => 'GET',
                   'orig' => '/etf-quotes',
                   'parts' => [
@@ -1268,6 +1291,7 @@ class FinancialDataConfig
                       ],
                     ],
                   ],
+                  'kind' => 'http',
                   'method' => 'GET',
                   'orig' => '/dividends-calendar',
                   'parts' => [
@@ -1308,6 +1332,7 @@ class FinancialDataConfig
                       ],
                     ],
                   ],
+                  'kind' => 'http',
                   'method' => 'GET',
                   'orig' => '/earnings-calendar',
                   'parts' => [
@@ -1348,6 +1373,7 @@ class FinancialDataConfig
                       ],
                     ],
                   ],
+                  'kind' => 'http',
                   'method' => 'GET',
                   'orig' => '/economic-calendar',
                   'parts' => [
@@ -1388,6 +1414,7 @@ class FinancialDataConfig
                       ],
                     ],
                   ],
+                  'kind' => 'http',
                   'method' => 'GET',
                   'orig' => '/ipo-calendar',
                   'parts' => [
@@ -1428,6 +1455,7 @@ class FinancialDataConfig
                       ],
                     ],
                   ],
+                  'kind' => 'http',
                   'method' => 'GET',
                   'orig' => '/splits-calendar',
                   'parts' => [
@@ -1492,6 +1520,7 @@ class FinancialDataConfig
                       ],
                     ],
                   ],
+                  'kind' => 'http',
                   'method' => 'GET',
                   'orig' => '/efficiency-ratios',
                   'parts' => [
@@ -1541,6 +1570,7 @@ class FinancialDataConfig
                       ],
                     ],
                   ],
+                  'kind' => 'http',
                   'method' => 'GET',
                   'orig' => '/liquidity-ratios',
                   'parts' => [
@@ -1590,6 +1620,7 @@ class FinancialDataConfig
                       ],
                     ],
                   ],
+                  'kind' => 'http',
                   'method' => 'GET',
                   'orig' => '/profitability-ratios',
                   'parts' => [
@@ -1639,6 +1670,7 @@ class FinancialDataConfig
                       ],
                     ],
                   ],
+                  'kind' => 'http',
                   'method' => 'GET',
                   'orig' => '/solvency-ratios',
                   'parts' => [
@@ -1688,6 +1720,7 @@ class FinancialDataConfig
                       ],
                     ],
                   ],
+                  'kind' => 'http',
                   'method' => 'GET',
                   'orig' => '/valuation-ratios',
                   'parts' => [
@@ -1753,6 +1786,7 @@ class FinancialDataConfig
                       ],
                     ],
                   ],
+                  'kind' => 'http',
                   'method' => 'GET',
                   'orig' => '/balance-sheet-statements',
                   'parts' => [
@@ -1802,6 +1836,7 @@ class FinancialDataConfig
                       ],
                     ],
                   ],
+                  'kind' => 'http',
                   'method' => 'GET',
                   'orig' => '/cash-flow-statements',
                   'parts' => [
@@ -1851,6 +1886,7 @@ class FinancialDataConfig
                       ],
                     ],
                   ],
+                  'kind' => 'http',
                   'method' => 'GET',
                   'orig' => '/income-statements',
                   'parts' => [
@@ -1900,6 +1936,7 @@ class FinancialDataConfig
                       ],
                     ],
                   ],
+                  'kind' => 'http',
                   'method' => 'GET',
                   'orig' => '/international-balance-sheet-statements',
                   'parts' => [
@@ -1949,6 +1986,7 @@ class FinancialDataConfig
                       ],
                     ],
                   ],
+                  'kind' => 'http',
                   'method' => 'GET',
                   'orig' => '/international-cash-flow-statements',
                   'parts' => [
@@ -1998,6 +2036,7 @@ class FinancialDataConfig
                       ],
                     ],
                   ],
+                  'kind' => 'http',
                   'method' => 'GET',
                   'orig' => '/international-income-statements',
                   'parts' => [
@@ -2071,6 +2110,7 @@ class FinancialDataConfig
                       ],
                     ],
                   ],
+                  'kind' => 'http',
                   'method' => 'GET',
                   'orig' => '/forex-minute-prices',
                   'parts' => [
@@ -2121,6 +2161,7 @@ class FinancialDataConfig
                       ],
                     ],
                   ],
+                  'kind' => 'http',
                   'method' => 'GET',
                   'orig' => '/forex-prices',
                   'parts' => [
@@ -2170,6 +2211,7 @@ class FinancialDataConfig
                       ],
                     ],
                   ],
+                  'kind' => 'http',
                   'method' => 'GET',
                   'orig' => '/forex-quotes',
                   'parts' => [
@@ -2211,6 +2253,7 @@ class FinancialDataConfig
                       ],
                     ],
                   ],
+                  'kind' => 'http',
                   'method' => 'GET',
                   'orig' => '/forex-symbols',
                   'parts' => [
@@ -2275,6 +2318,7 @@ class FinancialDataConfig
                       ],
                     ],
                   ],
+                  'kind' => 'http',
                   'method' => 'GET',
                   'orig' => '/insider-transactions',
                   'parts' => [
@@ -2316,6 +2360,7 @@ class FinancialDataConfig
                       ],
                     ],
                   ],
+                  'kind' => 'http',
                   'method' => 'GET',
                   'orig' => '/house-trading',
                   'parts' => [
@@ -2356,6 +2401,7 @@ class FinancialDataConfig
                       ],
                     ],
                   ],
+                  'kind' => 'http',
                   'method' => 'GET',
                   'orig' => '/proposed-sales',
                   'parts' => [
@@ -2396,6 +2442,7 @@ class FinancialDataConfig
                       ],
                     ],
                   ],
+                  'kind' => 'http',
                   'method' => 'GET',
                   'orig' => '/senate-trading',
                   'parts' => [
@@ -2460,6 +2507,7 @@ class FinancialDataConfig
                       ],
                     ],
                   ],
+                  'kind' => 'http',
                   'method' => 'GET',
                   'orig' => '/institutional-holdings',
                   'parts' => [
@@ -2501,6 +2549,7 @@ class FinancialDataConfig
                       ],
                     ],
                   ],
+                  'kind' => 'http',
                   'method' => 'GET',
                   'orig' => '/institutional-investors',
                   'parts' => [
@@ -2541,6 +2590,7 @@ class FinancialDataConfig
                       ],
                     ],
                   ],
+                  'kind' => 'http',
                   'method' => 'GET',
                   'orig' => '/institutional-portfolio-statistics',
                   'parts' => [
@@ -2597,6 +2647,7 @@ class FinancialDataConfig
                       ],
                     ],
                   ],
+                  'kind' => 'http',
                   'method' => 'GET',
                   'orig' => '/investment-adviser-information',
                   'parts' => [
@@ -2637,6 +2688,7 @@ class FinancialDataConfig
                       ],
                     ],
                   ],
+                  'kind' => 'http',
                   'method' => 'GET',
                   'orig' => '/investment-adviser-names',
                   'parts' => [
@@ -2805,6 +2857,7 @@ class FinancialDataConfig
                       ],
                     ],
                   ],
+                  'kind' => 'http',
                   'method' => 'GET',
                   'orig' => '/minute-prices',
                   'parts' => [
@@ -2866,6 +2919,7 @@ class FinancialDataConfig
                       ],
                     ],
                   ],
+                  'kind' => 'http',
                   'method' => 'GET',
                   'orig' => '/international-stock-prices',
                   'parts' => [
@@ -2925,6 +2979,7 @@ class FinancialDataConfig
                       ],
                     ],
                   ],
+                  'kind' => 'http',
                   'method' => 'GET',
                   'orig' => '/latest-prices',
                   'parts' => [
@@ -2985,6 +3040,7 @@ class FinancialDataConfig
                       ],
                     ],
                   ],
+                  'kind' => 'http',
                   'method' => 'GET',
                   'orig' => '/stock-prices',
                   'parts' => [
@@ -3036,6 +3092,7 @@ class FinancialDataConfig
                       ],
                     ],
                   ],
+                  'kind' => 'http',
                   'method' => 'GET',
                   'orig' => '/stock-quotes',
                   'parts' => [
@@ -3101,6 +3158,7 @@ class FinancialDataConfig
                       ],
                     ],
                   ],
+                  'kind' => 'http',
                   'method' => 'GET',
                   'orig' => '/commodity-prices',
                   'parts' => [
@@ -3160,6 +3218,7 @@ class FinancialDataConfig
                       ],
                     ],
                   ],
+                  'kind' => 'http',
                   'method' => 'GET',
                   'orig' => '/otc-prices',
                   'parts' => [
@@ -3210,6 +3269,7 @@ class FinancialDataConfig
                       ],
                     ],
                   ],
+                  'kind' => 'http',
                   'method' => 'GET',
                   'orig' => '/otc-volume',
                   'parts' => [
@@ -3284,6 +3344,7 @@ class FinancialDataConfig
                       ],
                     ],
                   ],
+                  'kind' => 'http',
                   'method' => 'GET',
                   'orig' => '/index-prices',
                   'parts' => [
@@ -3334,6 +3395,7 @@ class FinancialDataConfig
                       ],
                     ],
                   ],
+                  'kind' => 'http',
                   'method' => 'GET',
                   'orig' => '/index-constituents',
                   'parts' => [
@@ -3383,6 +3445,7 @@ class FinancialDataConfig
                       ],
                     ],
                   ],
+                  'kind' => 'http',
                   'method' => 'GET',
                   'orig' => '/index-quotes',
                   'parts' => [
@@ -3424,6 +3487,7 @@ class FinancialDataConfig
                       ],
                     ],
                   ],
+                  'kind' => 'http',
                   'method' => 'GET',
                   'orig' => '/index-symbols',
                   'parts' => [
@@ -3488,6 +3552,7 @@ class FinancialDataConfig
                       ],
                     ],
                   ],
+                  'kind' => 'http',
                   'method' => 'GET',
                   'orig' => '/press-releases',
                   'parts' => [
@@ -3529,6 +3594,7 @@ class FinancialDataConfig
                       ],
                     ],
                   ],
+                  'kind' => 'http',
                   'method' => 'GET',
                   'orig' => '/fed-press-releases',
                   'parts' => [
@@ -3569,6 +3635,7 @@ class FinancialDataConfig
                       ],
                     ],
                   ],
+                  'kind' => 'http',
                   'method' => 'GET',
                   'orig' => '/sec-press-releases',
                   'parts' => [
@@ -3633,6 +3700,7 @@ class FinancialDataConfig
                       ],
                     ],
                   ],
+                  'kind' => 'http',
                   'method' => 'GET',
                   'orig' => '/dividends',
                   'parts' => [
@@ -3682,6 +3750,7 @@ class FinancialDataConfig
                       ],
                     ],
                   ],
+                  'kind' => 'http',
                   'method' => 'GET',
                   'orig' => '/earnings-releases',
                   'parts' => [
@@ -3731,6 +3800,7 @@ class FinancialDataConfig
                       ],
                     ],
                   ],
+                  'kind' => 'http',
                   'method' => 'GET',
                   'orig' => '/short-interest',
                   'parts' => [
@@ -3780,6 +3850,7 @@ class FinancialDataConfig
                       ],
                     ],
                   ],
+                  'kind' => 'http',
                   'method' => 'GET',
                   'orig' => '/stock-splits',
                   'parts' => [
@@ -3821,6 +3892,7 @@ class FinancialDataConfig
                       ],
                     ],
                   ],
+                  'kind' => 'http',
                   'method' => 'GET',
                   'orig' => '/initial-public-offerings',
                   'parts' => [
@@ -3885,6 +3957,7 @@ class FinancialDataConfig
                       ],
                     ],
                   ],
+                  'kind' => 'http',
                   'method' => 'GET',
                   'orig' => '/mutual-fund-holdings',
                   'parts' => [
@@ -3934,6 +4007,7 @@ class FinancialDataConfig
                       ],
                     ],
                   ],
+                  'kind' => 'http',
                   'method' => 'GET',
                   'orig' => '/mutual-fund-statistics',
                   'parts' => [
@@ -3975,6 +4049,7 @@ class FinancialDataConfig
                       ],
                     ],
                   ],
+                  'kind' => 'http',
                   'method' => 'GET',
                   'orig' => '/mutual-fund-symbols',
                   'parts' => [
@@ -4069,6 +4144,7 @@ class FinancialDataConfig
                       ],
                     ],
                   ],
+                  'kind' => 'http',
                   'method' => 'GET',
                   'orig' => '/etf-symbols',
                   'parts' => [
@@ -4119,6 +4195,7 @@ class FinancialDataConfig
                       ],
                     ],
                   ],
+                  'kind' => 'http',
                   'method' => 'GET',
                   'orig' => '/international-stock-symbols',
                   'parts' => [
@@ -4169,6 +4246,7 @@ class FinancialDataConfig
                       ],
                     ],
                   ],
+                  'kind' => 'http',
                   'method' => 'GET',
                   'orig' => '/otc-symbols',
                   'parts' => [
@@ -4219,6 +4297,7 @@ class FinancialDataConfig
                       ],
                     ],
                   ],
+                  'kind' => 'http',
                   'method' => 'GET',
                   'orig' => '/stock-symbols',
                   'parts' => [
@@ -4260,6 +4339,7 @@ class FinancialDataConfig
                       ],
                     ],
                   ],
+                  'kind' => 'http',
                   'method' => 'GET',
                   'orig' => '/commodity-symbols',
                   'parts' => [

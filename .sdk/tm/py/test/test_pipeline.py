@@ -16,11 +16,11 @@
 import pytest
 
 from projectname_sdk import FinancialDataSDK
-from core.error import FinancialDataError
-from core.result import FinancialDataResult
-from core.response import FinancialDataResponse
-from core.spec import FinancialDataSpec
-from feature.base_feature import FinancialDataBaseFeature
+from projectname_sdk.core.error import FinancialDataError
+from projectname_sdk.core.result import FinancialDataResult
+from projectname_sdk.core.response import FinancialDataResponse
+from projectname_sdk.core.spec import FinancialDataSpec
+from projectname_sdk.feature.base_feature import FinancialDataBaseFeature
 
 
 def _client():

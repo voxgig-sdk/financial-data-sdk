@@ -14,12 +14,12 @@ from __future__ import annotations
 
 from urllib.parse import quote
 
-from config import make_config
-from features import _make_feature
-from core.control import FinancialDataControl
-from core.error import FinancialDataError
-from core.result import FinancialDataResult
-from core.spec import FinancialDataSpec
+from projectname_sdk.config import make_config
+from projectname_sdk.features import _make_feature
+from projectname_sdk.core.control import FinancialDataControl
+from projectname_sdk.core.error import FinancialDataError
+from projectname_sdk.core.result import FinancialDataResult
+from projectname_sdk.core.spec import FinancialDataSpec
 
 
 # True when this SDK was generated with the named feature.

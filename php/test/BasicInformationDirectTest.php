@@ -65,16 +65,16 @@ function basic_information_direct_setup($mockres)
     $calls = new \ArrayObject();
 
     $env = Runner::env_override([
-        "FINANCIALDATA_TEST_BASIC_INFORMATION_ENTID" => [],
-        "FINANCIALDATA_TEST_LIVE" => "FALSE",
-        "FINANCIALDATA_APIKEY" => "NONE",
+        "FINANCIAL_DATA_TEST_BASIC_INFORMATION_ENTID" => [],
+        "FINANCIAL_DATA_TEST_LIVE" => "FALSE",
+        "FINANCIAL_DATA_APIKEY" => "NONE",
     ]);
 
-    $live = $env["FINANCIALDATA_TEST_LIVE"] === "TRUE";
+    $live = $env["FINANCIAL_DATA_TEST_LIVE"] === "TRUE";
 
     if ($live) {
         $merged_opts = [
-            "apikey" => $env["FINANCIALDATA_APIKEY"],
+            "apikey" => $env["FINANCIAL_DATA_APIKEY"],
         ];
         $client = new FinancialDataSDK($merged_opts);
         return [

@@ -37,7 +37,7 @@ $client = new FinancialDataSDK([
 
 ```php
 try {
-    // load() returns the bare BasicInformation record (throws on error).
+    // load() returns the ENTITY — call data_get() for the BasicInformation record (throws on error).
     $basicinformation = $client->BasicInformation()->load();
     print_r($basicinformation);
 } catch (\Throwable $err) {
@@ -53,7 +53,7 @@ Entity operations throw a `\Throwable` on failure, so wrap them in
 
 ```php
 try {
-    $basicinformation = $client->BasicInformation()->load();
+    $cryptocurrency = $client->CryptoCurrency()->load();
 } catch (\Throwable $err) {
     echo "Error: " . $err->getMessage();
 }
@@ -125,9 +125,10 @@ Create a mock client for unit testing — no server required:
 ```php
 $client = FinancialDataSDK::test();
 
-// Entity ops return the bare mock record (throws on error).
-$basicinformation = $client->BasicInformation()->load();
-print_r($basicinformation);
+// Entity ops return the ENTITY (throws on error);
+// call data_get() for the mock record.
+$cryptocurrency = $client->CryptoCurrency()->load();
+print_r($cryptocurrency);
 ```
 
 ### Use a custom fetch function
@@ -244,7 +245,7 @@ All entities share the same interface.
 
 ### Result shape
 
-Entity operations return the bare result data (an `array` for single-entity
+Entity operations return the ENTITY (call data_get() for the record) (an `array` for single-entity
 ops, a `list` for `list`) and throw on error. Wrap calls in
 `try`/`catch` to handle failures.
 
@@ -458,7 +459,7 @@ Create an instance: `$basic_information = $client->BasicInformation();`
 #### Example: Load
 
 ```php
-// load() returns the bare BasicInformation record (throws on error).
+// load() returns the ENTITY — call data_get() for the BasicInformation record (throws on error).
 $basic_information = $client->BasicInformation()->load();
 ```
 
@@ -476,7 +477,7 @@ Create an instance: `$crypto_currency = $client->CryptoCurrency();`
 #### Example: Load
 
 ```php
-// load() returns the bare CryptoCurrency record (throws on error).
+// load() returns the ENTITY — call data_get() for the CryptoCurrency record (throws on error).
 $crypto_currency = $client->CryptoCurrency()->load();
 ```
 
@@ -494,7 +495,7 @@ Create an instance: `$derivatives_data = $client->DerivativesData();`
 #### Example: Load
 
 ```php
-// load() returns the bare DerivativesData record (throws on error).
+// load() returns the ENTITY — call data_get() for the DerivativesData record (throws on error).
 $derivatives_data = $client->DerivativesData()->load();
 ```
 
@@ -512,7 +513,7 @@ Create an instance: `$esg_data = $client->EsgData();`
 #### Example: Load
 
 ```php
-// load() returns the bare EsgData record (throws on error).
+// load() returns the ENTITY — call data_get() for the EsgData record (throws on error).
 $esg_data = $client->EsgData()->load();
 ```
 
@@ -530,7 +531,7 @@ Create an instance: `$etf_data = $client->EtfData();`
 #### Example: Load
 
 ```php
-// load() returns the bare EtfData record (throws on error).
+// load() returns the ENTITY — call data_get() for the EtfData record (throws on error).
 $etf_data = $client->EtfData()->load();
 ```
 
@@ -548,7 +549,7 @@ Create an instance: `$event_calendar = $client->EventCalendar();`
 #### Example: Load
 
 ```php
-// load() returns the bare EventCalendar record (throws on error).
+// load() returns the ENTITY — call data_get() for the EventCalendar record (throws on error).
 $event_calendar = $client->EventCalendar()->load();
 ```
 
@@ -566,7 +567,7 @@ Create an instance: `$financial_ratio = $client->FinancialRatio();`
 #### Example: Load
 
 ```php
-// load() returns the bare FinancialRatio record (throws on error).
+// load() returns the ENTITY — call data_get() for the FinancialRatio record (throws on error).
 $financial_ratio = $client->FinancialRatio()->load();
 ```
 
@@ -584,7 +585,7 @@ Create an instance: `$financial_statement = $client->FinancialStatement();`
 #### Example: Load
 
 ```php
-// load() returns the bare FinancialStatement record (throws on error).
+// load() returns the ENTITY — call data_get() for the FinancialStatement record (throws on error).
 $financial_statement = $client->FinancialStatement()->load();
 ```
 
@@ -602,7 +603,7 @@ Create an instance: `$forex_data = $client->ForexData();`
 #### Example: Load
 
 ```php
-// load() returns the bare ForexData record (throws on error).
+// load() returns the ENTITY — call data_get() for the ForexData record (throws on error).
 $forex_data = $client->ForexData()->load();
 ```
 
@@ -620,7 +621,7 @@ Create an instance: `$insider_trading = $client->InsiderTrading();`
 #### Example: Load
 
 ```php
-// load() returns the bare InsiderTrading record (throws on error).
+// load() returns the ENTITY — call data_get() for the InsiderTrading record (throws on error).
 $insider_trading = $client->InsiderTrading()->load();
 ```
 
@@ -638,7 +639,7 @@ Create an instance: `$institutional_trading = $client->InstitutionalTrading();`
 #### Example: Load
 
 ```php
-// load() returns the bare InstitutionalTrading record (throws on error).
+// load() returns the ENTITY — call data_get() for the InstitutionalTrading record (throws on error).
 $institutional_trading = $client->InstitutionalTrading()->load();
 ```
 
@@ -656,7 +657,7 @@ Create an instance: `$investment_adviser = $client->InvestmentAdviser();`
 #### Example: Load
 
 ```php
-// load() returns the bare InvestmentAdviser record (throws on error).
+// load() returns the ENTITY — call data_get() for the InvestmentAdviser record (throws on error).
 $investment_adviser = $client->InvestmentAdviser()->load();
 ```
 
@@ -692,7 +693,7 @@ Create an instance: `$market_data = $client->MarketData();`
 #### Example: Load
 
 ```php
-// load() returns the bare MarketData record (throws on error).
+// load() returns the ENTITY — call data_get() for the MarketData record (throws on error).
 $market_data = $client->MarketData()->load();
 ```
 
@@ -717,7 +718,7 @@ Create an instance: `$market_index = $client->MarketIndex();`
 #### Example: Load
 
 ```php
-// load() returns the bare MarketIndex record (throws on error).
+// load() returns the ENTITY — call data_get() for the MarketIndex record (throws on error).
 $market_index = $client->MarketIndex()->load();
 ```
 
@@ -735,7 +736,7 @@ Create an instance: `$market_new = $client->MarketNew();`
 #### Example: Load
 
 ```php
-// load() returns the bare MarketNew record (throws on error).
+// load() returns the ENTITY — call data_get() for the MarketNew record (throws on error).
 $market_new = $client->MarketNew()->load();
 ```
 
@@ -753,7 +754,7 @@ Create an instance: `$miscellaneous_data = $client->MiscellaneousData();`
 #### Example: Load
 
 ```php
-// load() returns the bare MiscellaneousData record (throws on error).
+// load() returns the ENTITY — call data_get() for the MiscellaneousData record (throws on error).
 $miscellaneous_data = $client->MiscellaneousData()->load();
 ```
 
@@ -771,7 +772,7 @@ Create an instance: `$mutual_fund = $client->MutualFund();`
 #### Example: Load
 
 ```php
-// load() returns the bare MutualFund record (throws on error).
+// load() returns the ENTITY — call data_get() for the MutualFund record (throws on error).
 $mutual_fund = $client->MutualFund()->load();
 ```
 
@@ -879,11 +880,11 @@ Entity instances are stateful. After a successful `load`, the entity
 stores the returned data and match criteria internally.
 
 ```php
-$basicinformation = $client->BasicInformation();
-$basicinformation->load();
+$cryptocurrency = $client->CryptoCurrency();
+$cryptocurrency->load();
 
-// $basicinformation->data_get() now returns the basicinformation data from the last load
-// $basicinformation->match_get() returns the last match criteria
+// $cryptocurrency->data_get() now returns the cryptocurrency data from the last load
+// $cryptocurrency->match_get() returns the last match criteria
 ```
 
 Call `make()` to create a fresh instance with the same configuration

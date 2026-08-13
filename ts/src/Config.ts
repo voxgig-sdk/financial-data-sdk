@@ -21,7 +21,7 @@ class Config {
 
 
   main = {
-    name: 'ProjectName',
+    name: 'FinancialData',
   }
 
 
@@ -146,6 +146,7 @@ class Config {
                   }
                 ]
               },
+              "kind": "http",
               "method": "GET",
               "orig": "/company-information",
               "parts": [
@@ -195,6 +196,7 @@ class Config {
                   }
                 ]
               },
+              "kind": "http",
               "method": "GET",
               "orig": "/employee-count",
               "parts": [
@@ -244,6 +246,7 @@ class Config {
                   }
                 ]
               },
+              "kind": "http",
               "method": "GET",
               "orig": "/executive-compensation",
               "parts": [
@@ -293,6 +296,7 @@ class Config {
                   }
                 ]
               },
+              "kind": "http",
               "method": "GET",
               "orig": "/international-company-information",
               "parts": [
@@ -342,6 +346,7 @@ class Config {
                   }
                 ]
               },
+              "kind": "http",
               "method": "GET",
               "orig": "/key-metrics",
               "parts": [
@@ -391,6 +396,7 @@ class Config {
                   }
                 ]
               },
+              "kind": "http",
               "method": "GET",
               "orig": "/market-cap",
               "parts": [
@@ -440,6 +446,7 @@ class Config {
                   }
                 ]
               },
+              "kind": "http",
               "method": "GET",
               "orig": "/securities-information",
               "parts": [
@@ -513,6 +520,7 @@ class Config {
                   }
                 ]
               },
+              "kind": "http",
               "method": "GET",
               "orig": "/crypto-minute-prices",
               "parts": [
@@ -563,6 +571,7 @@ class Config {
                   }
                 ]
               },
+              "kind": "http",
               "method": "GET",
               "orig": "/crypto-information",
               "parts": [
@@ -612,6 +621,7 @@ class Config {
                   }
                 ]
               },
+              "kind": "http",
               "method": "GET",
               "orig": "/crypto-prices",
               "parts": [
@@ -661,6 +671,7 @@ class Config {
                   }
                 ]
               },
+              "kind": "http",
               "method": "GET",
               "orig": "/crypto-quotes",
               "parts": [
@@ -702,6 +713,7 @@ class Config {
                   }
                 ]
               },
+              "kind": "http",
               "method": "GET",
               "orig": "/crypto-symbols",
               "parts": [
@@ -766,6 +778,7 @@ class Config {
                   }
                 ]
               },
+              "kind": "http",
               "method": "GET",
               "orig": "/futures-prices",
               "parts": [
@@ -815,6 +828,7 @@ class Config {
                   }
                 ]
               },
+              "kind": "http",
               "method": "GET",
               "orig": "/option-chain",
               "parts": [
@@ -864,6 +878,7 @@ class Config {
                   }
                 ]
               },
+              "kind": "http",
               "method": "GET",
               "orig": "/option-greeks",
               "parts": [
@@ -913,6 +928,7 @@ class Config {
                   }
                 ]
               },
+              "kind": "http",
               "method": "GET",
               "orig": "/option-prices",
               "parts": [
@@ -954,6 +970,7 @@ class Config {
                   }
                 ]
               },
+              "kind": "http",
               "method": "GET",
               "orig": "/futures-symbols",
               "parts": [
@@ -1018,6 +1035,7 @@ class Config {
                   }
                 ]
               },
+              "kind": "http",
               "method": "GET",
               "orig": "/esg-ratings",
               "parts": [
@@ -1067,6 +1085,7 @@ class Config {
                   }
                 ]
               },
+              "kind": "http",
               "method": "GET",
               "orig": "/esg-scores",
               "parts": [
@@ -1108,6 +1127,7 @@ class Config {
                   }
                 ]
               },
+              "kind": "http",
               "method": "GET",
               "orig": "/industry-esg-scores",
               "parts": [
@@ -1172,6 +1192,7 @@ class Config {
                   }
                 ]
               },
+              "kind": "http",
               "method": "GET",
               "orig": "/etf-holdings",
               "parts": [
@@ -1221,6 +1242,7 @@ class Config {
                   }
                 ]
               },
+              "kind": "http",
               "method": "GET",
               "orig": "/etf-prices",
               "parts": [
@@ -1270,6 +1292,7 @@ class Config {
                   }
                 ]
               },
+              "kind": "http",
               "method": "GET",
               "orig": "/etf-quotes",
               "parts": [
@@ -1327,6 +1350,7 @@ class Config {
                   }
                 ]
               },
+              "kind": "http",
               "method": "GET",
               "orig": "/dividends-calendar",
               "parts": [
@@ -1367,6 +1391,7 @@ class Config {
                   }
                 ]
               },
+              "kind": "http",
               "method": "GET",
               "orig": "/earnings-calendar",
               "parts": [
@@ -1407,6 +1432,7 @@ class Config {
                   }
                 ]
               },
+              "kind": "http",
               "method": "GET",
               "orig": "/economic-calendar",
               "parts": [
@@ -1447,6 +1473,7 @@ class Config {
                   }
                 ]
               },
+              "kind": "http",
               "method": "GET",
               "orig": "/ipo-calendar",
               "parts": [
@@ -1487,6 +1514,7 @@ class Config {
                   }
                 ]
               },
+              "kind": "http",
               "method": "GET",
               "orig": "/splits-calendar",
               "parts": [
@@ -1551,6 +1579,7 @@ class Config {
                   }
                 ]
               },
+              "kind": "http",
               "method": "GET",
               "orig": "/efficiency-ratios",
               "parts": [
@@ -1600,6 +1629,7 @@ class Config {
                   }
                 ]
               },
+              "kind": "http",
               "method": "GET",
               "orig": "/liquidity-ratios",
               "parts": [
@@ -1649,6 +1679,7 @@ class Config {
                   }
                 ]
               },
+              "kind": "http",
               "method": "GET",
               "orig": "/profitability-ratios",
               "parts": [
@@ -1698,6 +1729,7 @@ class Config {
                   }
                 ]
               },
+              "kind": "http",
               "method": "GET",
               "orig": "/solvency-ratios",
               "parts": [
@@ -1747,6 +1779,7 @@ class Config {
                   }
                 ]
               },
+              "kind": "http",
               "method": "GET",
               "orig": "/valuation-ratios",
               "parts": [
@@ -1812,6 +1845,7 @@ class Config {
                   }
                 ]
               },
+              "kind": "http",
               "method": "GET",
               "orig": "/balance-sheet-statements",
               "parts": [
@@ -1861,6 +1895,7 @@ class Config {
                   }
                 ]
               },
+              "kind": "http",
               "method": "GET",
               "orig": "/cash-flow-statements",
               "parts": [
@@ -1910,6 +1945,7 @@ class Config {
                   }
                 ]
               },
+              "kind": "http",
               "method": "GET",
               "orig": "/income-statements",
               "parts": [
@@ -1959,6 +1995,7 @@ class Config {
                   }
                 ]
               },
+              "kind": "http",
               "method": "GET",
               "orig": "/international-balance-sheet-statements",
               "parts": [
@@ -2008,6 +2045,7 @@ class Config {
                   }
                 ]
               },
+              "kind": "http",
               "method": "GET",
               "orig": "/international-cash-flow-statements",
               "parts": [
@@ -2057,6 +2095,7 @@ class Config {
                   }
                 ]
               },
+              "kind": "http",
               "method": "GET",
               "orig": "/international-income-statements",
               "parts": [
@@ -2130,6 +2169,7 @@ class Config {
                   }
                 ]
               },
+              "kind": "http",
               "method": "GET",
               "orig": "/forex-minute-prices",
               "parts": [
@@ -2180,6 +2220,7 @@ class Config {
                   }
                 ]
               },
+              "kind": "http",
               "method": "GET",
               "orig": "/forex-prices",
               "parts": [
@@ -2229,6 +2270,7 @@ class Config {
                   }
                 ]
               },
+              "kind": "http",
               "method": "GET",
               "orig": "/forex-quotes",
               "parts": [
@@ -2270,6 +2312,7 @@ class Config {
                   }
                 ]
               },
+              "kind": "http",
               "method": "GET",
               "orig": "/forex-symbols",
               "parts": [
@@ -2334,6 +2377,7 @@ class Config {
                   }
                 ]
               },
+              "kind": "http",
               "method": "GET",
               "orig": "/insider-transactions",
               "parts": [
@@ -2375,6 +2419,7 @@ class Config {
                   }
                 ]
               },
+              "kind": "http",
               "method": "GET",
               "orig": "/house-trading",
               "parts": [
@@ -2415,6 +2460,7 @@ class Config {
                   }
                 ]
               },
+              "kind": "http",
               "method": "GET",
               "orig": "/proposed-sales",
               "parts": [
@@ -2455,6 +2501,7 @@ class Config {
                   }
                 ]
               },
+              "kind": "http",
               "method": "GET",
               "orig": "/senate-trading",
               "parts": [
@@ -2519,6 +2566,7 @@ class Config {
                   }
                 ]
               },
+              "kind": "http",
               "method": "GET",
               "orig": "/institutional-holdings",
               "parts": [
@@ -2560,6 +2608,7 @@ class Config {
                   }
                 ]
               },
+              "kind": "http",
               "method": "GET",
               "orig": "/institutional-investors",
               "parts": [
@@ -2600,6 +2649,7 @@ class Config {
                   }
                 ]
               },
+              "kind": "http",
               "method": "GET",
               "orig": "/institutional-portfolio-statistics",
               "parts": [
@@ -2656,6 +2706,7 @@ class Config {
                   }
                 ]
               },
+              "kind": "http",
               "method": "GET",
               "orig": "/investment-adviser-information",
               "parts": [
@@ -2696,6 +2747,7 @@ class Config {
                   }
                 ]
               },
+              "kind": "http",
               "method": "GET",
               "orig": "/investment-adviser-names",
               "parts": [
@@ -2864,6 +2916,7 @@ class Config {
                   }
                 ]
               },
+              "kind": "http",
               "method": "GET",
               "orig": "/minute-prices",
               "parts": [
@@ -2925,6 +2978,7 @@ class Config {
                   }
                 ]
               },
+              "kind": "http",
               "method": "GET",
               "orig": "/international-stock-prices",
               "parts": [
@@ -2984,6 +3038,7 @@ class Config {
                   }
                 ]
               },
+              "kind": "http",
               "method": "GET",
               "orig": "/latest-prices",
               "parts": [
@@ -3044,6 +3099,7 @@ class Config {
                   }
                 ]
               },
+              "kind": "http",
               "method": "GET",
               "orig": "/stock-prices",
               "parts": [
@@ -3095,6 +3151,7 @@ class Config {
                   }
                 ]
               },
+              "kind": "http",
               "method": "GET",
               "orig": "/stock-quotes",
               "parts": [
@@ -3160,6 +3217,7 @@ class Config {
                   }
                 ]
               },
+              "kind": "http",
               "method": "GET",
               "orig": "/commodity-prices",
               "parts": [
@@ -3219,6 +3277,7 @@ class Config {
                   }
                 ]
               },
+              "kind": "http",
               "method": "GET",
               "orig": "/otc-prices",
               "parts": [
@@ -3269,6 +3328,7 @@ class Config {
                   }
                 ]
               },
+              "kind": "http",
               "method": "GET",
               "orig": "/otc-volume",
               "parts": [
@@ -3343,6 +3403,7 @@ class Config {
                   }
                 ]
               },
+              "kind": "http",
               "method": "GET",
               "orig": "/index-prices",
               "parts": [
@@ -3393,6 +3454,7 @@ class Config {
                   }
                 ]
               },
+              "kind": "http",
               "method": "GET",
               "orig": "/index-constituents",
               "parts": [
@@ -3442,6 +3504,7 @@ class Config {
                   }
                 ]
               },
+              "kind": "http",
               "method": "GET",
               "orig": "/index-quotes",
               "parts": [
@@ -3483,6 +3546,7 @@ class Config {
                   }
                 ]
               },
+              "kind": "http",
               "method": "GET",
               "orig": "/index-symbols",
               "parts": [
@@ -3547,6 +3611,7 @@ class Config {
                   }
                 ]
               },
+              "kind": "http",
               "method": "GET",
               "orig": "/press-releases",
               "parts": [
@@ -3588,6 +3653,7 @@ class Config {
                   }
                 ]
               },
+              "kind": "http",
               "method": "GET",
               "orig": "/fed-press-releases",
               "parts": [
@@ -3628,6 +3694,7 @@ class Config {
                   }
                 ]
               },
+              "kind": "http",
               "method": "GET",
               "orig": "/sec-press-releases",
               "parts": [
@@ -3692,6 +3759,7 @@ class Config {
                   }
                 ]
               },
+              "kind": "http",
               "method": "GET",
               "orig": "/dividends",
               "parts": [
@@ -3741,6 +3809,7 @@ class Config {
                   }
                 ]
               },
+              "kind": "http",
               "method": "GET",
               "orig": "/earnings-releases",
               "parts": [
@@ -3790,6 +3859,7 @@ class Config {
                   }
                 ]
               },
+              "kind": "http",
               "method": "GET",
               "orig": "/short-interest",
               "parts": [
@@ -3839,6 +3909,7 @@ class Config {
                   }
                 ]
               },
+              "kind": "http",
               "method": "GET",
               "orig": "/stock-splits",
               "parts": [
@@ -3880,6 +3951,7 @@ class Config {
                   }
                 ]
               },
+              "kind": "http",
               "method": "GET",
               "orig": "/initial-public-offerings",
               "parts": [
@@ -3944,6 +4016,7 @@ class Config {
                   }
                 ]
               },
+              "kind": "http",
               "method": "GET",
               "orig": "/mutual-fund-holdings",
               "parts": [
@@ -3993,6 +4066,7 @@ class Config {
                   }
                 ]
               },
+              "kind": "http",
               "method": "GET",
               "orig": "/mutual-fund-statistics",
               "parts": [
@@ -4034,6 +4108,7 @@ class Config {
                   }
                 ]
               },
+              "kind": "http",
               "method": "GET",
               "orig": "/mutual-fund-symbols",
               "parts": [
@@ -4128,6 +4203,7 @@ class Config {
                   }
                 ]
               },
+              "kind": "http",
               "method": "GET",
               "orig": "/etf-symbols",
               "parts": [
@@ -4178,6 +4254,7 @@ class Config {
                   }
                 ]
               },
+              "kind": "http",
               "method": "GET",
               "orig": "/international-stock-symbols",
               "parts": [
@@ -4228,6 +4305,7 @@ class Config {
                   }
                 ]
               },
+              "kind": "http",
               "method": "GET",
               "orig": "/otc-symbols",
               "parts": [
@@ -4278,6 +4356,7 @@ class Config {
                   }
                 ]
               },
+              "kind": "http",
               "method": "GET",
               "orig": "/stock-symbols",
               "parts": [
@@ -4319,6 +4398,7 @@ class Config {
                   }
                 ]
               },
+              "kind": "http",
               "method": "GET",
               "orig": "/commodity-symbols",
               "parts": [

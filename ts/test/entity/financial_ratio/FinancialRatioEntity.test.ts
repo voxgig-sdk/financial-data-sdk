@@ -26,8 +26,8 @@ import {
 describe('FinancialRatioEntity', async () => {
 
   // Per-test live pacing. Delay is read from sdk-test-control.json's
-  // `test.live.delayMs`; only sleeps when FINANCIALDATA_TEST_LIVE=TRUE.
-  afterEach(liveDelay('FINANCIALDATA_TEST_LIVE'))
+  // `test.live.delayMs`; only sleeps when FINANCIAL_DATA_TEST_LIVE=TRUE.
+  afterEach(liveDelay('FINANCIAL_DATA_TEST_LIVE'))
 
   test('instance', async () => {
     const testsdk = FinancialDataSDK.test()
@@ -62,7 +62,7 @@ describe('FinancialRatioEntity', async () => {
     // LOAD
     const financial_ratio_ref01_ent = client.FinancialRatio()
     const financial_ratio_ref01_match_dt0: any = {}
-    const financial_ratio_ref01_data_dt0 = await financial_ratio_ref01_ent.load(financial_ratio_ref01_match_dt0)
+    const financial_ratio_ref01_data_dt0 = (await financial_ratio_ref01_ent.load(financial_ratio_ref01_match_dt0)).data()
     assert(null != financial_ratio_ref01_data_dt0)
 
 

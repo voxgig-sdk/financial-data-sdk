@@ -23,8 +23,8 @@ module FinancialDataTestRunner
   end
 
   def self.env_override(m)
-    live = getenv("FINANCIALDATA_TEST_LIVE")
-    override = getenv("FINANCIALDATA_TEST_OVERRIDE")
+    live = getenv("FINANCIAL_DATA_TEST_LIVE")
+    override = getenv("FINANCIAL_DATA_TEST_OVERRIDE")
 
     if live == "TRUE" || override == "TRUE"
       m.each_key do |key|
@@ -44,8 +44,8 @@ module FinancialDataTestRunner
       end
     end
 
-    explain = getenv("FINANCIALDATA_TEST_EXPLAIN")
-    m["FINANCIALDATA_TEST_EXPLAIN"] = explain if explain && !explain.empty?
+    explain = getenv("FINANCIAL_DATA_TEST_EXPLAIN")
+    m["FINANCIAL_DATA_TEST_EXPLAIN"] = explain if explain && !explain.empty?
 
     m
   end
