@@ -23,8 +23,8 @@ class FinancialDataSDK:
         utility = FinancialDataUtility()
         self._utility = utility
 
-        from financialdata_sdk.config import make_config
-        config = make_config()
+        from financialdata_sdk.config import shared_config
+        config = shared_config()
 
         self._rootctx = utility.make_context({
             "client": self,

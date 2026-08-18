@@ -28,7 +28,7 @@ class FinancialDataSDK
     utility = FinancialDataUtility.new
     @_utility = utility
 
-    config = FinancialDataConfig.make_config
+    config = FinancialDataConfig.shared_config
 
     @_rootctx = utility.make_context.call({
       "client" => self,

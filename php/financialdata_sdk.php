@@ -40,7 +40,7 @@ class FinancialDataSDK
         $utility = new FinancialDataUtility();
         $this->_utility = $utility;
 
-        $config = FinancialDataConfig::make_config();
+        $config = FinancialDataConfig::shared_config();
 
         $this->_rootctx = ($utility->make_context)([
             "client" => $this,
