@@ -28,6 +28,9 @@ def make_config():
     return {
         "main": {
             "name": "FinancialData",
+            "slug": "financial-data",
+            "version": "0.0.1",
+            "target": "py",
         },
         "feature": {
             "test": {
