@@ -28,6 +28,7 @@ module FinancialDataConfig
           "options" => {
             "active" => false,
           },
+          "transport" => "base",
         },
       },
       "options" => {
