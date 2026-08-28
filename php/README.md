@@ -38,7 +38,7 @@ $client = new FinancialDataSDK([
 ```php
 try {
     // load() returns the ENTITY — call data_get() for the BasicInformation record (throws on error).
-    $basicinformation = $client->BasicInformation()->load();
+    $basicinformation = $client->BasicInformation()->load(["identifier" => "example_identifier", "key" => "example_key"]);
     print_r($basicinformation);
 } catch (\Throwable $err) {
     echo "Error: " . $err->getMessage();
@@ -53,7 +53,7 @@ Entity operations throw a `\Throwable` on failure, so wrap them in
 
 ```php
 try {
-    $cryptocurrency = $client->CryptoCurrency()->load();
+    $cryptocurrency = $client->CryptoCurrency()->load(["key" => "example"]);
 } catch (\Throwable $err) {
     echo "Error: " . $err->getMessage();
 }
@@ -127,7 +127,7 @@ $client = FinancialDataSDK::test();
 
 // Entity ops return the ENTITY (throws on error);
 // call data_get() for the mock record.
-$cryptocurrency = $client->CryptoCurrency()->load();
+$cryptocurrency = $client->CryptoCurrency()->load(["key" => "example"]);
 print_r($cryptocurrency);
 ```
 
@@ -460,7 +460,7 @@ Create an instance: `$basic_information = $client->BasicInformation();`
 
 ```php
 // load() returns the ENTITY — call data_get() for the BasicInformation record (throws on error).
-$basic_information = $client->BasicInformation()->load();
+$basic_information = $client->BasicInformation()->load(["identifier" => "identifier", "key" => "key"]);
 ```
 
 
@@ -478,7 +478,7 @@ Create an instance: `$crypto_currency = $client->CryptoCurrency();`
 
 ```php
 // load() returns the ENTITY — call data_get() for the CryptoCurrency record (throws on error).
-$crypto_currency = $client->CryptoCurrency()->load();
+$crypto_currency = $client->CryptoCurrency()->load(["key" => "key"]);
 ```
 
 
@@ -496,7 +496,7 @@ Create an instance: `$derivatives_data = $client->DerivativesData();`
 
 ```php
 // load() returns the ENTITY — call data_get() for the DerivativesData record (throws on error).
-$derivatives_data = $client->DerivativesData()->load();
+$derivatives_data = $client->DerivativesData()->load(["key" => "key"]);
 ```
 
 
@@ -514,7 +514,7 @@ Create an instance: `$esg_data = $client->EsgData();`
 
 ```php
 // load() returns the ENTITY — call data_get() for the EsgData record (throws on error).
-$esg_data = $client->EsgData()->load();
+$esg_data = $client->EsgData()->load(["key" => "key"]);
 ```
 
 
@@ -532,7 +532,7 @@ Create an instance: `$etf_data = $client->EtfData();`
 
 ```php
 // load() returns the ENTITY — call data_get() for the EtfData record (throws on error).
-$etf_data = $client->EtfData()->load();
+$etf_data = $client->EtfData()->load(["identifier" => "identifier", "key" => "key"]);
 ```
 
 
@@ -550,7 +550,7 @@ Create an instance: `$event_calendar = $client->EventCalendar();`
 
 ```php
 // load() returns the ENTITY — call data_get() for the EventCalendar record (throws on error).
-$event_calendar = $client->EventCalendar()->load();
+$event_calendar = $client->EventCalendar()->load(["key" => "key"]);
 ```
 
 
@@ -568,7 +568,7 @@ Create an instance: `$financial_ratio = $client->FinancialRatio();`
 
 ```php
 // load() returns the ENTITY — call data_get() for the FinancialRatio record (throws on error).
-$financial_ratio = $client->FinancialRatio()->load();
+$financial_ratio = $client->FinancialRatio()->load(["identifier" => "identifier", "key" => "key"]);
 ```
 
 
@@ -586,7 +586,7 @@ Create an instance: `$financial_statement = $client->FinancialStatement();`
 
 ```php
 // load() returns the ENTITY — call data_get() for the FinancialStatement record (throws on error).
-$financial_statement = $client->FinancialStatement()->load();
+$financial_statement = $client->FinancialStatement()->load(["identifier" => "identifier", "key" => "key"]);
 ```
 
 
@@ -604,7 +604,7 @@ Create an instance: `$forex_data = $client->ForexData();`
 
 ```php
 // load() returns the ENTITY — call data_get() for the ForexData record (throws on error).
-$forex_data = $client->ForexData()->load();
+$forex_data = $client->ForexData()->load(["key" => "key"]);
 ```
 
 
@@ -622,7 +622,7 @@ Create an instance: `$insider_trading = $client->InsiderTrading();`
 
 ```php
 // load() returns the ENTITY — call data_get() for the InsiderTrading record (throws on error).
-$insider_trading = $client->InsiderTrading()->load();
+$insider_trading = $client->InsiderTrading()->load(["key" => "key"]);
 ```
 
 
@@ -640,7 +640,7 @@ Create an instance: `$institutional_trading = $client->InstitutionalTrading();`
 
 ```php
 // load() returns the ENTITY — call data_get() for the InstitutionalTrading record (throws on error).
-$institutional_trading = $client->InstitutionalTrading()->load();
+$institutional_trading = $client->InstitutionalTrading()->load(["key" => "key"]);
 ```
 
 
@@ -658,7 +658,7 @@ Create an instance: `$investment_adviser = $client->InvestmentAdviser();`
 
 ```php
 // load() returns the ENTITY — call data_get() for the InvestmentAdviser record (throws on error).
-$investment_adviser = $client->InvestmentAdviser()->load();
+$investment_adviser = $client->InvestmentAdviser()->load(["key" => "key"]);
 ```
 
 
@@ -694,7 +694,7 @@ Create an instance: `$market_data = $client->MarketData();`
 
 ```php
 // load() returns the ENTITY — call data_get() for the MarketData record (throws on error).
-$market_data = $client->MarketData()->load();
+$market_data = $client->MarketData()->load(["identifier" => "identifier", "key" => "key"]);
 ```
 
 #### Example: List
@@ -719,7 +719,7 @@ Create an instance: `$market_index = $client->MarketIndex();`
 
 ```php
 // load() returns the ENTITY — call data_get() for the MarketIndex record (throws on error).
-$market_index = $client->MarketIndex()->load();
+$market_index = $client->MarketIndex()->load(["key" => "key"]);
 ```
 
 
@@ -737,7 +737,7 @@ Create an instance: `$market_new = $client->MarketNew();`
 
 ```php
 // load() returns the ENTITY — call data_get() for the MarketNew record (throws on error).
-$market_new = $client->MarketNew()->load();
+$market_new = $client->MarketNew()->load(["key" => "key"]);
 ```
 
 
@@ -755,7 +755,7 @@ Create an instance: `$miscellaneous_data = $client->MiscellaneousData();`
 
 ```php
 // load() returns the ENTITY — call data_get() for the MiscellaneousData record (throws on error).
-$miscellaneous_data = $client->MiscellaneousData()->load();
+$miscellaneous_data = $client->MiscellaneousData()->load(["key" => "key"]);
 ```
 
 
@@ -773,7 +773,7 @@ Create an instance: `$mutual_fund = $client->MutualFund();`
 
 ```php
 // load() returns the ENTITY — call data_get() for the MutualFund record (throws on error).
-$mutual_fund = $client->MutualFund()->load();
+$mutual_fund = $client->MutualFund()->load(["key" => "key"]);
 ```
 
 
@@ -802,6 +802,29 @@ Create an instance: `$symbol_list = $client->SymbolList();`
 // list() returns an array of SymbolList records (throws on error).
 $symbol_lists = $client->SymbolList()->list();
 ```
+
+## Features
+
+This SDK ships 1 optional features. Each is **inactive until you
+switch it on**, so an SDK you have not configured behaves exactly as if none of
+them existed — no retries, no cache, no logging, no measurable overhead.
+
+Activate a feature by name in the client options, alongside the options shown
+above:
+
+| Feature | What it does |
+|---|---|
+| [`test`](#test) | In-memory mock transport for testing without a live server |
+
+### test
+
+In-memory mock transport for testing without a live server.
+
+| Option | Default |
+|---|---|
+| `active` | `false` |
+
+Set `feature.test.active` to enable it, then override any of the options above.
 
 
 ## Advanced
@@ -881,7 +904,7 @@ stores the returned data and match criteria internally.
 
 ```php
 $cryptocurrency = $client->CryptoCurrency();
-$cryptocurrency->load();
+$cryptocurrency->load(["key" => "example"]);
 
 // $cryptocurrency->data_get() now returns the cryptocurrency data from the last load
 // $cryptocurrency->match_get() returns the last match criteria

@@ -324,7 +324,7 @@ const basic_information = client.BasicInformation()
 Load a single entity matching the given criteria.
 
 ```ts
-const result = await client.BasicInformation().load()
+const result = await client.BasicInformation().load({ identifier: 'identifier', key: 'key' })
 ```
 
 ### Common Methods
@@ -368,7 +368,7 @@ const crypto_currency = client.CryptoCurrency()
 Load a single entity matching the given criteria.
 
 ```ts
-const result = await client.CryptoCurrency().load()
+const result = await client.CryptoCurrency().load({ key: 'key' })
 ```
 
 ### Common Methods
@@ -412,7 +412,7 @@ const derivatives_data = client.DerivativesData()
 Load a single entity matching the given criteria.
 
 ```ts
-const result = await client.DerivativesData().load()
+const result = await client.DerivativesData().load({ key: 'key' })
 ```
 
 ### Common Methods
@@ -456,7 +456,7 @@ const esg_data = client.EsgData()
 Load a single entity matching the given criteria.
 
 ```ts
-const result = await client.EsgData().load()
+const result = await client.EsgData().load({ key: 'key' })
 ```
 
 ### Common Methods
@@ -500,7 +500,7 @@ const etf_data = client.EtfData()
 Load a single entity matching the given criteria.
 
 ```ts
-const result = await client.EtfData().load()
+const result = await client.EtfData().load({ identifier: 'identifier', key: 'key' })
 ```
 
 ### Common Methods
@@ -544,7 +544,7 @@ const event_calendar = client.EventCalendar()
 Load a single entity matching the given criteria.
 
 ```ts
-const result = await client.EventCalendar().load()
+const result = await client.EventCalendar().load({ key: 'key' })
 ```
 
 ### Common Methods
@@ -588,7 +588,7 @@ const financial_ratio = client.FinancialRatio()
 Load a single entity matching the given criteria.
 
 ```ts
-const result = await client.FinancialRatio().load()
+const result = await client.FinancialRatio().load({ identifier: 'identifier', key: 'key' })
 ```
 
 ### Common Methods
@@ -632,7 +632,7 @@ const financial_statement = client.FinancialStatement()
 Load a single entity matching the given criteria.
 
 ```ts
-const result = await client.FinancialStatement().load()
+const result = await client.FinancialStatement().load({ identifier: 'identifier', key: 'key' })
 ```
 
 ### Common Methods
@@ -676,7 +676,7 @@ const forex_data = client.ForexData()
 Load a single entity matching the given criteria.
 
 ```ts
-const result = await client.ForexData().load()
+const result = await client.ForexData().load({ key: 'key' })
 ```
 
 ### Common Methods
@@ -720,7 +720,7 @@ const insider_trading = client.InsiderTrading()
 Load a single entity matching the given criteria.
 
 ```ts
-const result = await client.InsiderTrading().load()
+const result = await client.InsiderTrading().load({ key: 'key' })
 ```
 
 ### Common Methods
@@ -764,7 +764,7 @@ const institutional_trading = client.InstitutionalTrading()
 Load a single entity matching the given criteria.
 
 ```ts
-const result = await client.InstitutionalTrading().load()
+const result = await client.InstitutionalTrading().load({ key: 'key' })
 ```
 
 ### Common Methods
@@ -808,7 +808,7 @@ const investment_adviser = client.InvestmentAdviser()
 Load a single entity matching the given criteria.
 
 ```ts
-const result = await client.InvestmentAdviser().load()
+const result = await client.InvestmentAdviser().load({ key: 'key' })
 ```
 
 ### Common Methods
@@ -869,7 +869,7 @@ const market_data = client.MarketData()
 List entities matching the given criteria. Returns an array.
 
 ```ts
-const results = await client.MarketData().list()
+const results = await client.MarketData().list({ identifier: "example", key: "example" })
 ```
 
 #### `load(match: object, ctrl?: object)`
@@ -877,7 +877,7 @@ const results = await client.MarketData().list()
 Load a single entity matching the given criteria.
 
 ```ts
-const result = await client.MarketData().load()
+const result = await client.MarketData().load({ identifier: 'identifier', key: 'key' })
 ```
 
 ### Common Methods
@@ -921,7 +921,7 @@ const market_index = client.MarketIndex()
 Load a single entity matching the given criteria.
 
 ```ts
-const result = await client.MarketIndex().load()
+const result = await client.MarketIndex().load({ key: 'key' })
 ```
 
 ### Common Methods
@@ -965,7 +965,7 @@ const market_new = client.MarketNew()
 Load a single entity matching the given criteria.
 
 ```ts
-const result = await client.MarketNew().load()
+const result = await client.MarketNew().load({ key: 'key' })
 ```
 
 ### Common Methods
@@ -1009,7 +1009,7 @@ const miscellaneous_data = client.MiscellaneousData()
 Load a single entity matching the given criteria.
 
 ```ts
-const result = await client.MiscellaneousData().load()
+const result = await client.MiscellaneousData().load({ key: 'key' })
 ```
 
 ### Common Methods
@@ -1053,7 +1053,7 @@ const mutual_fund = client.MutualFund()
 Load a single entity matching the given criteria.
 
 ```ts
-const result = await client.MutualFund().load()
+const result = await client.MutualFund().load({ key: 'key' })
 ```
 
 ### Common Methods
@@ -1106,7 +1106,7 @@ const symbol_list = client.SymbolList()
 List entities matching the given criteria. Returns an array.
 
 ```ts
-const results = await client.SymbolList().list()
+const results = await client.SymbolList().list({ key: "example" })
 ```
 
 ### Common Methods
@@ -1153,4 +1153,42 @@ const client = new FinancialDataSDK({
   }
 })
 ```
+
+
+### Configuring features
+
+Each feature is inactive until switched on, and an SDK with no feature
+configured does no feature work at all. Every option below keeps its default
+unless you name it.
+
+The array form of \`feature\` is significant: several features wrap the
+transport, and the order you list them in is the order they nest.
+
+#### `test`
+
+In-memory mock transport for testing without a live server.
+
+**Configuration**
+
+| Option | Default |
+|---|---|
+| `active` | `false` |
+
+Options above are those the model carries a default for. A feature may
+also accept callback options — a `sink` to receive each record, for
+instance — which have no default and are covered in the full feature
+reference.
+
+**Usage**
+
+Set `feature.test.active` to true in the client options, and override any option above in the same entry. Every option keeps
+its default unless you name it.
+
+**Considerations**
+
+- Attaches to pipeline hooks, not the transport, so activation order does
+  not change what it observes.
+- Installs the BASE transport that the wrapping features wrap, so it must be
+  activated before them.
+- Inactive by default: leaving it out costs nothing at runtime.
 

@@ -164,7 +164,7 @@ $basic_information = $client->BasicInformation();
 Load a single entity matching the given criteria. Throws on error.
 
 ```php
-$result = $client->BasicInformation()->load();
+$result = $client->BasicInformation()->load(["identifier" => "identifier", "key" => "key"]);
 ```
 
 ### Common Methods
@@ -210,7 +210,7 @@ $crypto_currency = $client->CryptoCurrency();
 Load a single entity matching the given criteria. Throws on error.
 
 ```php
-$result = $client->CryptoCurrency()->load();
+$result = $client->CryptoCurrency()->load(["key" => "key"]);
 ```
 
 ### Common Methods
@@ -256,7 +256,7 @@ $derivatives_data = $client->DerivativesData();
 Load a single entity matching the given criteria. Throws on error.
 
 ```php
-$result = $client->DerivativesData()->load();
+$result = $client->DerivativesData()->load(["key" => "key"]);
 ```
 
 ### Common Methods
@@ -302,7 +302,7 @@ $esg_data = $client->EsgData();
 Load a single entity matching the given criteria. Throws on error.
 
 ```php
-$result = $client->EsgData()->load();
+$result = $client->EsgData()->load(["key" => "key"]);
 ```
 
 ### Common Methods
@@ -348,7 +348,7 @@ $etf_data = $client->EtfData();
 Load a single entity matching the given criteria. Throws on error.
 
 ```php
-$result = $client->EtfData()->load();
+$result = $client->EtfData()->load(["identifier" => "identifier", "key" => "key"]);
 ```
 
 ### Common Methods
@@ -394,7 +394,7 @@ $event_calendar = $client->EventCalendar();
 Load a single entity matching the given criteria. Throws on error.
 
 ```php
-$result = $client->EventCalendar()->load();
+$result = $client->EventCalendar()->load(["key" => "key"]);
 ```
 
 ### Common Methods
@@ -440,7 +440,7 @@ $financial_ratio = $client->FinancialRatio();
 Load a single entity matching the given criteria. Throws on error.
 
 ```php
-$result = $client->FinancialRatio()->load();
+$result = $client->FinancialRatio()->load(["identifier" => "identifier", "key" => "key"]);
 ```
 
 ### Common Methods
@@ -486,7 +486,7 @@ $financial_statement = $client->FinancialStatement();
 Load a single entity matching the given criteria. Throws on error.
 
 ```php
-$result = $client->FinancialStatement()->load();
+$result = $client->FinancialStatement()->load(["identifier" => "identifier", "key" => "key"]);
 ```
 
 ### Common Methods
@@ -532,7 +532,7 @@ $forex_data = $client->ForexData();
 Load a single entity matching the given criteria. Throws on error.
 
 ```php
-$result = $client->ForexData()->load();
+$result = $client->ForexData()->load(["key" => "key"]);
 ```
 
 ### Common Methods
@@ -578,7 +578,7 @@ $insider_trading = $client->InsiderTrading();
 Load a single entity matching the given criteria. Throws on error.
 
 ```php
-$result = $client->InsiderTrading()->load();
+$result = $client->InsiderTrading()->load(["key" => "key"]);
 ```
 
 ### Common Methods
@@ -624,7 +624,7 @@ $institutional_trading = $client->InstitutionalTrading();
 Load a single entity matching the given criteria. Throws on error.
 
 ```php
-$result = $client->InstitutionalTrading()->load();
+$result = $client->InstitutionalTrading()->load(["key" => "key"]);
 ```
 
 ### Common Methods
@@ -670,7 +670,7 @@ $investment_adviser = $client->InvestmentAdviser();
 Load a single entity matching the given criteria. Throws on error.
 
 ```php
-$result = $client->InvestmentAdviser()->load();
+$result = $client->InvestmentAdviser()->load(["key" => "key"]);
 ```
 
 ### Common Methods
@@ -741,7 +741,7 @@ $results = $client->MarketData()->list();
 Load a single entity matching the given criteria. Throws on error.
 
 ```php
-$result = $client->MarketData()->load();
+$result = $client->MarketData()->load(["identifier" => "identifier", "key" => "key"]);
 ```
 
 ### Common Methods
@@ -787,7 +787,7 @@ $market_index = $client->MarketIndex();
 Load a single entity matching the given criteria. Throws on error.
 
 ```php
-$result = $client->MarketIndex()->load();
+$result = $client->MarketIndex()->load(["key" => "key"]);
 ```
 
 ### Common Methods
@@ -833,7 +833,7 @@ $market_new = $client->MarketNew();
 Load a single entity matching the given criteria. Throws on error.
 
 ```php
-$result = $client->MarketNew()->load();
+$result = $client->MarketNew()->load(["key" => "key"]);
 ```
 
 ### Common Methods
@@ -879,7 +879,7 @@ $miscellaneous_data = $client->MiscellaneousData();
 Load a single entity matching the given criteria. Throws on error.
 
 ```php
-$result = $client->MiscellaneousData()->load();
+$result = $client->MiscellaneousData()->load(["key" => "key"]);
 ```
 
 ### Common Methods
@@ -925,7 +925,7 @@ $mutual_fund = $client->MutualFund();
 Load a single entity matching the given criteria. Throws on error.
 
 ```php
-$result = $client->MutualFund()->load();
+$result = $client->MutualFund()->load(["key" => "key"]);
 ```
 
 ### Common Methods
@@ -1029,4 +1029,42 @@ $client = new FinancialDataSDK([
   ],
 ]);
 ```
+
+
+### Configuring features
+
+Each feature is inactive until switched on, and an SDK with no feature
+configured does no feature work at all. Every option below keeps its default
+unless you name it.
+
+The array form of \`feature\` is significant: several features wrap the
+transport, and the order you list them in is the order they nest.
+
+#### `test`
+
+In-memory mock transport for testing without a live server.
+
+**Configuration**
+
+| Option | Default |
+|---|---|
+| `active` | `false` |
+
+Options above are those the model carries a default for. A feature may
+also accept callback options — a `sink` to receive each record, for
+instance — which have no default and are covered in the full feature
+reference.
+
+**Usage**
+
+Set `feature.test.active` to true in the client options, and override any option above in the same entry. Every option keeps
+its default unless you name it.
+
+**Considerations**
+
+- Attaches to pipeline hooks, not the transport, so activation order does
+  not change what it observes.
+- Installs the BASE transport that the wrapping features wrap, so it must be
+  activated before them.
+- Inactive by default: leaving it out costs nothing at runtime.
 

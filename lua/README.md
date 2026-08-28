@@ -38,7 +38,7 @@ local client = sdk.new({
 ### 3. Load a basicinformation
 
 ```lua
-local basicinformation, err = client:BasicInformation():load()
+local basicinformation, err = client:BasicInformation():load({ identifier = "example_identifier", key = "example_key" })
 if err then error(err) end
 print(basicinformation)
 ```
@@ -50,7 +50,7 @@ Entity operations return `(value, err)`. Check `err` before using
 the value:
 
 ```lua
-local cryptocurrency, err = client:CryptoCurrency():load()
+local cryptocurrency, err = client:CryptoCurrency():load({ key = "example" })
 if err then error(err) end
 ```
 
@@ -108,7 +108,7 @@ Create a mock client for unit testing — no server required:
 ```lua
 local client = sdk.test()
 
-local result, err = client:CryptoCurrency():load()
+local result, err = client:CryptoCurrency():load({ key = "example" })
 -- result is the returned data; err is set on failure
 ```
 
@@ -440,7 +440,7 @@ Create an instance: `local basic_information = client:BasicInformation(nil)`
 #### Example: Load
 
 ```lua
-local basic_information, err = client:BasicInformation():load()
+local basic_information, err = client:BasicInformation():load({ identifier = "identifier", key = "key" })
 ```
 
 
@@ -457,7 +457,7 @@ Create an instance: `local crypto_currency = client:CryptoCurrency(nil)`
 #### Example: Load
 
 ```lua
-local crypto_currency, err = client:CryptoCurrency():load()
+local crypto_currency, err = client:CryptoCurrency():load({ key = "key" })
 ```
 
 
@@ -474,7 +474,7 @@ Create an instance: `local derivatives_data = client:DerivativesData(nil)`
 #### Example: Load
 
 ```lua
-local derivatives_data, err = client:DerivativesData():load()
+local derivatives_data, err = client:DerivativesData():load({ key = "key" })
 ```
 
 
@@ -491,7 +491,7 @@ Create an instance: `local esg_data = client:EsgData(nil)`
 #### Example: Load
 
 ```lua
-local esg_data, err = client:EsgData():load()
+local esg_data, err = client:EsgData():load({ key = "key" })
 ```
 
 
@@ -508,7 +508,7 @@ Create an instance: `local etf_data = client:EtfData(nil)`
 #### Example: Load
 
 ```lua
-local etf_data, err = client:EtfData():load()
+local etf_data, err = client:EtfData():load({ identifier = "identifier", key = "key" })
 ```
 
 
@@ -525,7 +525,7 @@ Create an instance: `local event_calendar = client:EventCalendar(nil)`
 #### Example: Load
 
 ```lua
-local event_calendar, err = client:EventCalendar():load()
+local event_calendar, err = client:EventCalendar():load({ key = "key" })
 ```
 
 
@@ -542,7 +542,7 @@ Create an instance: `local financial_ratio = client:FinancialRatio(nil)`
 #### Example: Load
 
 ```lua
-local financial_ratio, err = client:FinancialRatio():load()
+local financial_ratio, err = client:FinancialRatio():load({ identifier = "identifier", key = "key" })
 ```
 
 
@@ -559,7 +559,7 @@ Create an instance: `local financial_statement = client:FinancialStatement(nil)`
 #### Example: Load
 
 ```lua
-local financial_statement, err = client:FinancialStatement():load()
+local financial_statement, err = client:FinancialStatement():load({ identifier = "identifier", key = "key" })
 ```
 
 
@@ -576,7 +576,7 @@ Create an instance: `local forex_data = client:ForexData(nil)`
 #### Example: Load
 
 ```lua
-local forex_data, err = client:ForexData():load()
+local forex_data, err = client:ForexData():load({ key = "key" })
 ```
 
 
@@ -593,7 +593,7 @@ Create an instance: `local insider_trading = client:InsiderTrading(nil)`
 #### Example: Load
 
 ```lua
-local insider_trading, err = client:InsiderTrading():load()
+local insider_trading, err = client:InsiderTrading():load({ key = "key" })
 ```
 
 
@@ -610,7 +610,7 @@ Create an instance: `local institutional_trading = client:InstitutionalTrading(n
 #### Example: Load
 
 ```lua
-local institutional_trading, err = client:InstitutionalTrading():load()
+local institutional_trading, err = client:InstitutionalTrading():load({ key = "key" })
 ```
 
 
@@ -627,7 +627,7 @@ Create an instance: `local investment_adviser = client:InvestmentAdviser(nil)`
 #### Example: Load
 
 ```lua
-local investment_adviser, err = client:InvestmentAdviser():load()
+local investment_adviser, err = client:InvestmentAdviser():load({ key = "key" })
 ```
 
 
@@ -662,7 +662,7 @@ Create an instance: `local market_data = client:MarketData(nil)`
 #### Example: Load
 
 ```lua
-local market_data, err = client:MarketData():load()
+local market_data, err = client:MarketData():load({ identifier = "identifier", key = "key" })
 ```
 
 #### Example: List
@@ -685,7 +685,7 @@ Create an instance: `local market_index = client:MarketIndex(nil)`
 #### Example: Load
 
 ```lua
-local market_index, err = client:MarketIndex():load()
+local market_index, err = client:MarketIndex():load({ key = "key" })
 ```
 
 
@@ -702,7 +702,7 @@ Create an instance: `local market_new = client:MarketNew(nil)`
 #### Example: Load
 
 ```lua
-local market_new, err = client:MarketNew():load()
+local market_new, err = client:MarketNew():load({ key = "key" })
 ```
 
 
@@ -719,7 +719,7 @@ Create an instance: `local miscellaneous_data = client:MiscellaneousData(nil)`
 #### Example: Load
 
 ```lua
-local miscellaneous_data, err = client:MiscellaneousData():load()
+local miscellaneous_data, err = client:MiscellaneousData():load({ key = "key" })
 ```
 
 
@@ -736,7 +736,7 @@ Create an instance: `local mutual_fund = client:MutualFund(nil)`
 #### Example: Load
 
 ```lua
-local mutual_fund, err = client:MutualFund():load()
+local mutual_fund, err = client:MutualFund():load({ key = "key" })
 ```
 
 
@@ -764,6 +764,29 @@ Create an instance: `local symbol_list = client:SymbolList(nil)`
 ```lua
 local symbol_lists, err = client:SymbolList():list()
 ```
+
+## Features
+
+This SDK ships 1 optional features. Each is **inactive until you
+switch it on**, so an SDK you have not configured behaves exactly as if none of
+them existed — no retries, no cache, no logging, no measurable overhead.
+
+Activate a feature by name in the client options, alongside the options shown
+above:
+
+| Feature | What it does |
+|---|---|
+| [`test`](#test) | In-memory mock transport for testing without a live server |
+
+### test
+
+In-memory mock transport for testing without a live server.
+
+| Option | Default |
+|---|---|
+| `active` | `false` |
+
+Set `feature.test.active` to enable it, then override any of the options above.
 
 
 ## Advanced
@@ -843,7 +866,7 @@ stores the returned data and match criteria internally.
 
 ```lua
 local cryptocurrency = client:CryptoCurrency()
-cryptocurrency:load()
+cryptocurrency:load({ key = "example" })
 
 -- cryptocurrency:data_get() now returns the cryptocurrency data from the last load
 -- cryptocurrency:match_get() returns the last match criteria

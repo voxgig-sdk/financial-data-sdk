@@ -37,7 +37,7 @@ client = FinancialDataSDK.new({
 ```ruby
 begin
   # load returns the ENTITY — call data_get for the BasicInformation record (raises on error).
-  basicinformation = client.BasicInformation.load()
+  basicinformation = client.BasicInformation.load({ "identifier" => "example_identifier", "key" => "example_key" })
   puts basicinformation
 rescue => err
   warn "load failed: #{err}"
@@ -51,7 +51,7 @@ Entity operations raise on failure, so rescue them:
 
 ```ruby
 begin
-  cryptocurrency = client.CryptoCurrency.load()
+  cryptocurrency = client.CryptoCurrency.load({ "key" => "example" })
 rescue => err
   warn "load failed: #{err}"
 end
@@ -121,7 +121,7 @@ client = FinancialDataSDK.test
 
 # Entity ops return the ENTITY (raises on error);
 # call data_get for the mock record.
-cryptocurrency = client.CryptoCurrency.load()
+cryptocurrency = client.CryptoCurrency.load({ "key" => "example" })
 puts cryptocurrency
 ```
 
@@ -450,7 +450,7 @@ Create an instance: `basic_information = client.BasicInformation`
 
 ```ruby
 # load returns the ENTITY — call data_get for the BasicInformation record (raises on error).
-basic_information = client.BasicInformation.load()
+basic_information = client.BasicInformation.load({ "identifier" => "identifier", "key" => "key" })
 ```
 
 
@@ -468,7 +468,7 @@ Create an instance: `crypto_currency = client.CryptoCurrency`
 
 ```ruby
 # load returns the ENTITY — call data_get for the CryptoCurrency record (raises on error).
-crypto_currency = client.CryptoCurrency.load()
+crypto_currency = client.CryptoCurrency.load({ "key" => "key" })
 ```
 
 
@@ -486,7 +486,7 @@ Create an instance: `derivatives_data = client.DerivativesData`
 
 ```ruby
 # load returns the ENTITY — call data_get for the DerivativesData record (raises on error).
-derivatives_data = client.DerivativesData.load()
+derivatives_data = client.DerivativesData.load({ "key" => "key" })
 ```
 
 
@@ -504,7 +504,7 @@ Create an instance: `esg_data = client.EsgData`
 
 ```ruby
 # load returns the ENTITY — call data_get for the EsgData record (raises on error).
-esg_data = client.EsgData.load()
+esg_data = client.EsgData.load({ "key" => "key" })
 ```
 
 
@@ -522,7 +522,7 @@ Create an instance: `etf_data = client.EtfData`
 
 ```ruby
 # load returns the ENTITY — call data_get for the EtfData record (raises on error).
-etf_data = client.EtfData.load()
+etf_data = client.EtfData.load({ "identifier" => "identifier", "key" => "key" })
 ```
 
 
@@ -540,7 +540,7 @@ Create an instance: `event_calendar = client.EventCalendar`
 
 ```ruby
 # load returns the ENTITY — call data_get for the EventCalendar record (raises on error).
-event_calendar = client.EventCalendar.load()
+event_calendar = client.EventCalendar.load({ "key" => "key" })
 ```
 
 
@@ -558,7 +558,7 @@ Create an instance: `financial_ratio = client.FinancialRatio`
 
 ```ruby
 # load returns the ENTITY — call data_get for the FinancialRatio record (raises on error).
-financial_ratio = client.FinancialRatio.load()
+financial_ratio = client.FinancialRatio.load({ "identifier" => "identifier", "key" => "key" })
 ```
 
 
@@ -576,7 +576,7 @@ Create an instance: `financial_statement = client.FinancialStatement`
 
 ```ruby
 # load returns the ENTITY — call data_get for the FinancialStatement record (raises on error).
-financial_statement = client.FinancialStatement.load()
+financial_statement = client.FinancialStatement.load({ "identifier" => "identifier", "key" => "key" })
 ```
 
 
@@ -594,7 +594,7 @@ Create an instance: `forex_data = client.ForexData`
 
 ```ruby
 # load returns the ENTITY — call data_get for the ForexData record (raises on error).
-forex_data = client.ForexData.load()
+forex_data = client.ForexData.load({ "key" => "key" })
 ```
 
 
@@ -612,7 +612,7 @@ Create an instance: `insider_trading = client.InsiderTrading`
 
 ```ruby
 # load returns the ENTITY — call data_get for the InsiderTrading record (raises on error).
-insider_trading = client.InsiderTrading.load()
+insider_trading = client.InsiderTrading.load({ "key" => "key" })
 ```
 
 
@@ -630,7 +630,7 @@ Create an instance: `institutional_trading = client.InstitutionalTrading`
 
 ```ruby
 # load returns the ENTITY — call data_get for the InstitutionalTrading record (raises on error).
-institutional_trading = client.InstitutionalTrading.load()
+institutional_trading = client.InstitutionalTrading.load({ "key" => "key" })
 ```
 
 
@@ -648,7 +648,7 @@ Create an instance: `investment_adviser = client.InvestmentAdviser`
 
 ```ruby
 # load returns the ENTITY — call data_get for the InvestmentAdviser record (raises on error).
-investment_adviser = client.InvestmentAdviser.load()
+investment_adviser = client.InvestmentAdviser.load({ "key" => "key" })
 ```
 
 
@@ -684,7 +684,7 @@ Create an instance: `market_data = client.MarketData`
 
 ```ruby
 # load returns the ENTITY — call data_get for the MarketData record (raises on error).
-market_data = client.MarketData.load()
+market_data = client.MarketData.load({ "identifier" => "identifier", "key" => "key" })
 ```
 
 #### Example: List
@@ -709,7 +709,7 @@ Create an instance: `market_index = client.MarketIndex`
 
 ```ruby
 # load returns the ENTITY — call data_get for the MarketIndex record (raises on error).
-market_index = client.MarketIndex.load()
+market_index = client.MarketIndex.load({ "key" => "key" })
 ```
 
 
@@ -727,7 +727,7 @@ Create an instance: `market_new = client.MarketNew`
 
 ```ruby
 # load returns the ENTITY — call data_get for the MarketNew record (raises on error).
-market_new = client.MarketNew.load()
+market_new = client.MarketNew.load({ "key" => "key" })
 ```
 
 
@@ -745,7 +745,7 @@ Create an instance: `miscellaneous_data = client.MiscellaneousData`
 
 ```ruby
 # load returns the ENTITY — call data_get for the MiscellaneousData record (raises on error).
-miscellaneous_data = client.MiscellaneousData.load()
+miscellaneous_data = client.MiscellaneousData.load({ "key" => "key" })
 ```
 
 
@@ -763,7 +763,7 @@ Create an instance: `mutual_fund = client.MutualFund`
 
 ```ruby
 # load returns the ENTITY — call data_get for the MutualFund record (raises on error).
-mutual_fund = client.MutualFund.load()
+mutual_fund = client.MutualFund.load({ "key" => "key" })
 ```
 
 
@@ -792,6 +792,29 @@ Create an instance: `symbol_list = client.SymbolList`
 # list returns an Array of SymbolList records (raises on error).
 symbol_lists = client.SymbolList.list
 ```
+
+## Features
+
+This SDK ships 1 optional features. Each is **inactive until you
+switch it on**, so an SDK you have not configured behaves exactly as if none of
+them existed — no retries, no cache, no logging, no measurable overhead.
+
+Activate a feature by name in the client options, alongside the options shown
+above:
+
+| Feature | What it does |
+|---|---|
+| [`test`](#test) | In-memory mock transport for testing without a live server |
+
+### test
+
+In-memory mock transport for testing without a live server.
+
+| Option | Default |
+|---|---|
+| `active` | `false` |
+
+Set `feature.test.active` to enable it, then override any of the options above.
 
 
 ## Advanced
@@ -871,7 +894,7 @@ stores the returned data and match criteria internally.
 
 ```ruby
 cryptocurrency = client.CryptoCurrency
-cryptocurrency.load()
+cryptocurrency.load({ "key" => "example" })
 
 # cryptocurrency.data_get now returns the cryptocurrency data from the last load
 # cryptocurrency.match_get returns the last match criteria

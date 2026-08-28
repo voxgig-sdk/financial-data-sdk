@@ -162,7 +162,7 @@ local basic_information = client:BasicInformation(nil)
 Load a single entity matching the given criteria.
 
 ```lua
-local result, err = client:BasicInformation():load()
+local result, err = client:BasicInformation():load({ identifier = "identifier", key = "key" })
 ```
 
 ### Common Methods
@@ -208,7 +208,7 @@ local crypto_currency = client:CryptoCurrency(nil)
 Load a single entity matching the given criteria.
 
 ```lua
-local result, err = client:CryptoCurrency():load()
+local result, err = client:CryptoCurrency():load({ key = "key" })
 ```
 
 ### Common Methods
@@ -254,7 +254,7 @@ local derivatives_data = client:DerivativesData(nil)
 Load a single entity matching the given criteria.
 
 ```lua
-local result, err = client:DerivativesData():load()
+local result, err = client:DerivativesData():load({ key = "key" })
 ```
 
 ### Common Methods
@@ -300,7 +300,7 @@ local esg_data = client:EsgData(nil)
 Load a single entity matching the given criteria.
 
 ```lua
-local result, err = client:EsgData():load()
+local result, err = client:EsgData():load({ key = "key" })
 ```
 
 ### Common Methods
@@ -346,7 +346,7 @@ local etf_data = client:EtfData(nil)
 Load a single entity matching the given criteria.
 
 ```lua
-local result, err = client:EtfData():load()
+local result, err = client:EtfData():load({ identifier = "identifier", key = "key" })
 ```
 
 ### Common Methods
@@ -392,7 +392,7 @@ local event_calendar = client:EventCalendar(nil)
 Load a single entity matching the given criteria.
 
 ```lua
-local result, err = client:EventCalendar():load()
+local result, err = client:EventCalendar():load({ key = "key" })
 ```
 
 ### Common Methods
@@ -438,7 +438,7 @@ local financial_ratio = client:FinancialRatio(nil)
 Load a single entity matching the given criteria.
 
 ```lua
-local result, err = client:FinancialRatio():load()
+local result, err = client:FinancialRatio():load({ identifier = "identifier", key = "key" })
 ```
 
 ### Common Methods
@@ -484,7 +484,7 @@ local financial_statement = client:FinancialStatement(nil)
 Load a single entity matching the given criteria.
 
 ```lua
-local result, err = client:FinancialStatement():load()
+local result, err = client:FinancialStatement():load({ identifier = "identifier", key = "key" })
 ```
 
 ### Common Methods
@@ -530,7 +530,7 @@ local forex_data = client:ForexData(nil)
 Load a single entity matching the given criteria.
 
 ```lua
-local result, err = client:ForexData():load()
+local result, err = client:ForexData():load({ key = "key" })
 ```
 
 ### Common Methods
@@ -576,7 +576,7 @@ local insider_trading = client:InsiderTrading(nil)
 Load a single entity matching the given criteria.
 
 ```lua
-local result, err = client:InsiderTrading():load()
+local result, err = client:InsiderTrading():load({ key = "key" })
 ```
 
 ### Common Methods
@@ -622,7 +622,7 @@ local institutional_trading = client:InstitutionalTrading(nil)
 Load a single entity matching the given criteria.
 
 ```lua
-local result, err = client:InstitutionalTrading():load()
+local result, err = client:InstitutionalTrading():load({ key = "key" })
 ```
 
 ### Common Methods
@@ -668,7 +668,7 @@ local investment_adviser = client:InvestmentAdviser(nil)
 Load a single entity matching the given criteria.
 
 ```lua
-local result, err = client:InvestmentAdviser():load()
+local result, err = client:InvestmentAdviser():load({ key = "key" })
 ```
 
 ### Common Methods
@@ -739,7 +739,7 @@ local results, err = client:MarketData():list()
 Load a single entity matching the given criteria.
 
 ```lua
-local result, err = client:MarketData():load()
+local result, err = client:MarketData():load({ identifier = "identifier", key = "key" })
 ```
 
 ### Common Methods
@@ -785,7 +785,7 @@ local market_index = client:MarketIndex(nil)
 Load a single entity matching the given criteria.
 
 ```lua
-local result, err = client:MarketIndex():load()
+local result, err = client:MarketIndex():load({ key = "key" })
 ```
 
 ### Common Methods
@@ -831,7 +831,7 @@ local market_new = client:MarketNew(nil)
 Load a single entity matching the given criteria.
 
 ```lua
-local result, err = client:MarketNew():load()
+local result, err = client:MarketNew():load({ key = "key" })
 ```
 
 ### Common Methods
@@ -877,7 +877,7 @@ local miscellaneous_data = client:MiscellaneousData(nil)
 Load a single entity matching the given criteria.
 
 ```lua
-local result, err = client:MiscellaneousData():load()
+local result, err = client:MiscellaneousData():load({ key = "key" })
 ```
 
 ### Common Methods
@@ -923,7 +923,7 @@ local mutual_fund = client:MutualFund(nil)
 Load a single entity matching the given criteria.
 
 ```lua
-local result, err = client:MutualFund():load()
+local result, err = client:MutualFund():load({ key = "key" })
 ```
 
 ### Common Methods
@@ -1027,4 +1027,42 @@ local client = sdk.new({
   },
 })
 ```
+
+
+### Configuring features
+
+Each feature is inactive until switched on, and an SDK with no feature
+configured does no feature work at all. Every option below keeps its default
+unless you name it.
+
+The array form of \`feature\` is significant: several features wrap the
+transport, and the order you list them in is the order they nest.
+
+#### `test`
+
+In-memory mock transport for testing without a live server.
+
+**Configuration**
+
+| Option | Default |
+|---|---|
+| `active` | `false` |
+
+Options above are those the model carries a default for. A feature may
+also accept callback options — a `sink` to receive each record, for
+instance — which have no default and are covered in the full feature
+reference.
+
+**Usage**
+
+Set `feature.test.active` to true in the client options, and override any option above in the same entry. Every option keeps
+its default unless you name it.
+
+**Considerations**
+
+- Attaches to pipeline hooks, not the transport, so activation order does
+  not change what it observes.
+- Installs the BASE transport that the wrapping features wrap, so it must be
+  activated before them.
+- Inactive by default: leaving it out costs nothing at runtime.
 

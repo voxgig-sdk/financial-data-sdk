@@ -20,6 +20,9 @@ class BasicInformation
 /** Request payload for BasicInformation#load. */
 class BasicInformationLoadMatch
 {
+    public ?string $format = null;
+    public string $identifier;
+    public string $key;
 }
 
 /** CryptoCurrency entity data model. */
@@ -30,6 +33,10 @@ class CryptoCurrency
 /** Request payload for CryptoCurrency#load. */
 class CryptoCurrencyLoadMatch
 {
+    public ?string $date = null;
+    public ?string $format = null;
+    public ?string $identifier = null;
+    public string $key;
 }
 
 /** DerivativesData entity data model. */
@@ -40,6 +47,9 @@ class DerivativesData
 /** Request payload for DerivativesData#load. */
 class DerivativesDataLoadMatch
 {
+    public ?string $format = null;
+    public ?string $identifier = null;
+    public string $key;
 }
 
 /** EsgData entity data model. */
@@ -50,6 +60,9 @@ class EsgData
 /** Request payload for EsgData#load. */
 class EsgDataLoadMatch
 {
+    public ?string $format = null;
+    public ?string $identifier = null;
+    public string $key;
 }
 
 /** EtfData entity data model. */
@@ -60,6 +73,9 @@ class EtfData
 /** Request payload for EtfData#load. */
 class EtfDataLoadMatch
 {
+    public ?string $format = null;
+    public string $identifier;
+    public string $key;
 }
 
 /** EventCalendar entity data model. */
@@ -70,6 +86,8 @@ class EventCalendar
 /** Request payload for EventCalendar#load. */
 class EventCalendarLoadMatch
 {
+    public ?string $format = null;
+    public string $key;
 }
 
 /** FinancialRatio entity data model. */
@@ -80,6 +98,9 @@ class FinancialRatio
 /** Request payload for FinancialRatio#load. */
 class FinancialRatioLoadMatch
 {
+    public ?string $format = null;
+    public string $identifier;
+    public string $key;
 }
 
 /** FinancialStatement entity data model. */
@@ -90,6 +111,9 @@ class FinancialStatement
 /** Request payload for FinancialStatement#load. */
 class FinancialStatementLoadMatch
 {
+    public ?string $format = null;
+    public string $identifier;
+    public string $key;
 }
 
 /** ForexData entity data model. */
@@ -100,6 +124,10 @@ class ForexData
 /** Request payload for ForexData#load. */
 class ForexDataLoadMatch
 {
+    public ?string $date = null;
+    public ?string $format = null;
+    public ?string $identifier = null;
+    public string $key;
 }
 
 /** InsiderTrading entity data model. */
@@ -110,6 +138,9 @@ class InsiderTrading
 /** Request payload for InsiderTrading#load. */
 class InsiderTradingLoadMatch
 {
+    public ?string $format = null;
+    public ?string $identifier = null;
+    public string $key;
 }
 
 /** InstitutionalTrading entity data model. */
@@ -120,6 +151,9 @@ class InstitutionalTrading
 /** Request payload for InstitutionalTrading#load. */
 class InstitutionalTradingLoadMatch
 {
+    public ?string $format = null;
+    public ?string $identifier = null;
+    public string $key;
 }
 
 /** InvestmentAdviser entity data model. */
@@ -130,6 +164,8 @@ class InvestmentAdviser
 /** Request payload for InvestmentAdviser#load. */
 class InvestmentAdviserLoadMatch
 {
+    public ?string $format = null;
+    public string $key;
 }
 
 /** MarketData entity data model. */
@@ -152,35 +188,20 @@ class MarketData
 /** Request payload for MarketData#load. */
 class MarketDataLoadMatch
 {
-    public ?float $change = null;
-    public ?float $close = null;
-    public ?string $date = null;
-    public ?float $high = null;
-    public ?float $low = null;
-    public ?float $open = null;
-    public ?float $percentage_change = null;
-    public ?float $price = null;
-    public ?string $registrant_name = null;
-    public ?string $time = null;
-    public ?string $trading_symbol = null;
-    public ?float $volume = null;
+    public ?string $format = null;
+    public string $identifier;
+    public string $key;
+    public ?int $offset = null;
 }
 
 /** Request payload for MarketData#list. */
 class MarketDataListMatch
 {
-    public ?float $change = null;
-    public ?float $close = null;
     public ?string $date = null;
-    public ?float $high = null;
-    public ?float $low = null;
-    public ?float $open = null;
-    public ?float $percentage_change = null;
-    public ?float $price = null;
-    public ?string $registrant_name = null;
-    public ?string $time = null;
-    public ?string $trading_symbol = null;
-    public ?float $volume = null;
+    public ?string $format = null;
+    public string $identifier;
+    public string $key;
+    public ?int $offset = null;
 }
 
 /** MarketIndex entity data model. */
@@ -191,6 +212,10 @@ class MarketIndex
 /** Request payload for MarketIndex#load. */
 class MarketIndexLoadMatch
 {
+    public ?string $format = null;
+    public ?string $identifier = null;
+    public string $key;
+    public ?int $offset = null;
 }
 
 /** MarketNew entity data model. */
@@ -201,6 +226,9 @@ class MarketNew
 /** Request payload for MarketNew#load. */
 class MarketNewLoadMatch
 {
+    public ?string $format = null;
+    public ?string $identifier = null;
+    public string $key;
 }
 
 /** MiscellaneousData entity data model. */
@@ -211,6 +239,9 @@ class MiscellaneousData
 /** Request payload for MiscellaneousData#load. */
 class MiscellaneousDataLoadMatch
 {
+    public ?string $format = null;
+    public ?string $identifier = null;
+    public string $key;
 }
 
 /** MutualFund entity data model. */
@@ -221,6 +252,9 @@ class MutualFund
 /** Request payload for MutualFund#load. */
 class MutualFundLoadMatch
 {
+    public ?string $format = null;
+    public ?string $identifier = null;
+    public string $key;
 }
 
 /** SymbolList entity data model. */
@@ -235,9 +269,8 @@ class SymbolList
 /** Request payload for SymbolList#list. */
 class SymbolListListMatch
 {
-    public ?string $description = null;
-    public ?string $registrant_name = null;
-    public ?string $title_of_security = null;
-    public ?string $trading_symbol = null;
+    public ?string $format = null;
+    public string $key;
+    public ?int $offset = null;
 }
 

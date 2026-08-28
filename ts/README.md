@@ -41,7 +41,7 @@ const client = new FinancialDataSDK({
 
 ```ts
 try {
-  const basicinformation = await client.BasicInformation().load()
+  const basicinformation = await client.BasicInformation().load({ identifier: 'example_identifier', key: 'example_key' })
   console.log(basicinformation)
 } catch (err) {
   console.error('load failed:', err)
@@ -55,7 +55,7 @@ Entity operations reject on failure, so wrap them in `try` / `catch`:
 
 ```ts
 try {
-  const cryptocurrency = await client.CryptoCurrency().load()
+  const cryptocurrency = await client.CryptoCurrency().load({ key: "example" })
   console.log(cryptocurrency)
 } catch (err) {
   console.error('load failed:', err)
@@ -122,7 +122,7 @@ Create a mock client for unit testing — no server required:
 ```ts
 const client = FinancialDataSDK.test()
 
-const cryptocurrency = await client.CryptoCurrency().load()
+const cryptocurrency = await client.CryptoCurrency().load({ key: 'example_key' })
 // cryptocurrency is the entity, populated with mock response data
 // — call cryptocurrency.data() for the record itself
 console.log(cryptocurrency)
@@ -143,7 +143,7 @@ Entity instances remember their last match and data:
 const entity = client.CryptoCurrency()
 
 // First call runs the operation and stores its result
-await entity.load()
+await entity.load({ key: 'example_key' })
 
 // Subsequent calls reuse the stored state
 const data = entity.data()
@@ -503,7 +503,7 @@ Create an instance: `const basic_information = client.BasicInformation()`
 #### Example: Load
 
 ```ts
-const basic_information = await client.BasicInformation().load()
+const basic_information = await client.BasicInformation().load({ identifier: 'identifier', key: 'key' })
 ```
 
 
@@ -520,7 +520,7 @@ Create an instance: `const crypto_currency = client.CryptoCurrency()`
 #### Example: Load
 
 ```ts
-const crypto_currency = await client.CryptoCurrency().load()
+const crypto_currency = await client.CryptoCurrency().load({ key: 'key' })
 ```
 
 
@@ -537,7 +537,7 @@ Create an instance: `const derivatives_data = client.DerivativesData()`
 #### Example: Load
 
 ```ts
-const derivatives_data = await client.DerivativesData().load()
+const derivatives_data = await client.DerivativesData().load({ key: 'key' })
 ```
 
 
@@ -554,7 +554,7 @@ Create an instance: `const esg_data = client.EsgData()`
 #### Example: Load
 
 ```ts
-const esg_data = await client.EsgData().load()
+const esg_data = await client.EsgData().load({ key: 'key' })
 ```
 
 
@@ -571,7 +571,7 @@ Create an instance: `const etf_data = client.EtfData()`
 #### Example: Load
 
 ```ts
-const etf_data = await client.EtfData().load()
+const etf_data = await client.EtfData().load({ identifier: 'identifier', key: 'key' })
 ```
 
 
@@ -588,7 +588,7 @@ Create an instance: `const event_calendar = client.EventCalendar()`
 #### Example: Load
 
 ```ts
-const event_calendar = await client.EventCalendar().load()
+const event_calendar = await client.EventCalendar().load({ key: 'key' })
 ```
 
 
@@ -605,7 +605,7 @@ Create an instance: `const financial_ratio = client.FinancialRatio()`
 #### Example: Load
 
 ```ts
-const financial_ratio = await client.FinancialRatio().load()
+const financial_ratio = await client.FinancialRatio().load({ identifier: 'identifier', key: 'key' })
 ```
 
 
@@ -622,7 +622,7 @@ Create an instance: `const financial_statement = client.FinancialStatement()`
 #### Example: Load
 
 ```ts
-const financial_statement = await client.FinancialStatement().load()
+const financial_statement = await client.FinancialStatement().load({ identifier: 'identifier', key: 'key' })
 ```
 
 
@@ -639,7 +639,7 @@ Create an instance: `const forex_data = client.ForexData()`
 #### Example: Load
 
 ```ts
-const forex_data = await client.ForexData().load()
+const forex_data = await client.ForexData().load({ key: 'key' })
 ```
 
 
@@ -656,7 +656,7 @@ Create an instance: `const insider_trading = client.InsiderTrading()`
 #### Example: Load
 
 ```ts
-const insider_trading = await client.InsiderTrading().load()
+const insider_trading = await client.InsiderTrading().load({ key: 'key' })
 ```
 
 
@@ -673,7 +673,7 @@ Create an instance: `const institutional_trading = client.InstitutionalTrading()
 #### Example: Load
 
 ```ts
-const institutional_trading = await client.InstitutionalTrading().load()
+const institutional_trading = await client.InstitutionalTrading().load({ key: 'key' })
 ```
 
 
@@ -690,7 +690,7 @@ Create an instance: `const investment_adviser = client.InvestmentAdviser()`
 #### Example: Load
 
 ```ts
-const investment_adviser = await client.InvestmentAdviser().load()
+const investment_adviser = await client.InvestmentAdviser().load({ key: 'key' })
 ```
 
 
@@ -725,13 +725,13 @@ Create an instance: `const market_data = client.MarketData()`
 #### Example: Load
 
 ```ts
-const market_data = await client.MarketData().load()
+const market_data = await client.MarketData().load({ identifier: 'identifier', key: 'key' })
 ```
 
 #### Example: List
 
 ```ts
-const market_datas = await client.MarketData().list()
+const market_datas = await client.MarketData().list({ identifier: "example", key: "example" })
 ```
 
 
@@ -748,7 +748,7 @@ Create an instance: `const market_index = client.MarketIndex()`
 #### Example: Load
 
 ```ts
-const market_index = await client.MarketIndex().load()
+const market_index = await client.MarketIndex().load({ key: 'key' })
 ```
 
 
@@ -765,7 +765,7 @@ Create an instance: `const market_new = client.MarketNew()`
 #### Example: Load
 
 ```ts
-const market_new = await client.MarketNew().load()
+const market_new = await client.MarketNew().load({ key: 'key' })
 ```
 
 
@@ -782,7 +782,7 @@ Create an instance: `const miscellaneous_data = client.MiscellaneousData()`
 #### Example: Load
 
 ```ts
-const miscellaneous_data = await client.MiscellaneousData().load()
+const miscellaneous_data = await client.MiscellaneousData().load({ key: 'key' })
 ```
 
 
@@ -799,7 +799,7 @@ Create an instance: `const mutual_fund = client.MutualFund()`
 #### Example: Load
 
 ```ts
-const mutual_fund = await client.MutualFund().load()
+const mutual_fund = await client.MutualFund().load({ key: 'key' })
 ```
 
 
@@ -825,8 +825,31 @@ Create an instance: `const symbol_list = client.SymbolList()`
 #### Example: List
 
 ```ts
-const symbol_lists = await client.SymbolList().list()
+const symbol_lists = await client.SymbolList().list({ key: "example" })
 ```
+
+## Features
+
+This SDK ships 1 optional features. Each is **inactive until you
+switch it on**, so an SDK you have not configured behaves exactly as if none of
+them existed — no retries, no cache, no logging, no measurable overhead.
+
+Activate a feature by name in the client options, alongside the options shown
+above:
+
+| Feature | What it does |
+|---|---|
+| [`test`](#test) | In-memory mock transport for testing without a live server |
+
+### test
+
+In-memory mock transport for testing without a live server.
+
+| Option | Default |
+|---|---|
+| `active` | `false` |
+
+Set `feature.test.active` to enable it, then override any of the options above.
 
 
 ## Advanced
@@ -899,7 +922,7 @@ calls on the same instance can rely on this state.
 
 ```ts
 const cryptocurrency = client.CryptoCurrency()
-await cryptocurrency.load()
+await cryptocurrency.load({ key: "example" })
 
 // cryptocurrency.data() now returns the cryptocurrency data from the last `load`
 // cryptocurrency.match() returns the last match criteria

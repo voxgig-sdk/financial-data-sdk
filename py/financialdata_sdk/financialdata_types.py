@@ -20,96 +20,156 @@ class BasicInformation(TypedDict):
     pass
 
 
-class BasicInformationLoadMatch(TypedDict):
-    pass
+class BasicInformationLoadMatchRequired(TypedDict):
+    identifier: str
+    key: str
+
+
+class BasicInformationLoadMatch(BasicInformationLoadMatchRequired, total=False):
+    format: str
 
 
 class CryptoCurrency(TypedDict):
     pass
 
 
-class CryptoCurrencyLoadMatch(TypedDict):
-    pass
+class CryptoCurrencyLoadMatchRequired(TypedDict):
+    key: str
+
+
+class CryptoCurrencyLoadMatch(CryptoCurrencyLoadMatchRequired, total=False):
+    date: str
+    format: str
+    identifier: str
 
 
 class DerivativesData(TypedDict):
     pass
 
 
-class DerivativesDataLoadMatch(TypedDict):
-    pass
+class DerivativesDataLoadMatchRequired(TypedDict):
+    key: str
+
+
+class DerivativesDataLoadMatch(DerivativesDataLoadMatchRequired, total=False):
+    format: str
+    identifier: str
 
 
 class EsgData(TypedDict):
     pass
 
 
-class EsgDataLoadMatch(TypedDict):
-    pass
+class EsgDataLoadMatchRequired(TypedDict):
+    key: str
+
+
+class EsgDataLoadMatch(EsgDataLoadMatchRequired, total=False):
+    format: str
+    identifier: str
 
 
 class EtfData(TypedDict):
     pass
 
 
-class EtfDataLoadMatch(TypedDict):
-    pass
+class EtfDataLoadMatchRequired(TypedDict):
+    identifier: str
+    key: str
+
+
+class EtfDataLoadMatch(EtfDataLoadMatchRequired, total=False):
+    format: str
 
 
 class EventCalendar(TypedDict):
     pass
 
 
-class EventCalendarLoadMatch(TypedDict):
-    pass
+class EventCalendarLoadMatchRequired(TypedDict):
+    key: str
+
+
+class EventCalendarLoadMatch(EventCalendarLoadMatchRequired, total=False):
+    format: str
 
 
 class FinancialRatio(TypedDict):
     pass
 
 
-class FinancialRatioLoadMatch(TypedDict):
-    pass
+class FinancialRatioLoadMatchRequired(TypedDict):
+    identifier: str
+    key: str
+
+
+class FinancialRatioLoadMatch(FinancialRatioLoadMatchRequired, total=False):
+    format: str
 
 
 class FinancialStatement(TypedDict):
     pass
 
 
-class FinancialStatementLoadMatch(TypedDict):
-    pass
+class FinancialStatementLoadMatchRequired(TypedDict):
+    identifier: str
+    key: str
+
+
+class FinancialStatementLoadMatch(FinancialStatementLoadMatchRequired, total=False):
+    format: str
 
 
 class ForexData(TypedDict):
     pass
 
 
-class ForexDataLoadMatch(TypedDict):
-    pass
+class ForexDataLoadMatchRequired(TypedDict):
+    key: str
+
+
+class ForexDataLoadMatch(ForexDataLoadMatchRequired, total=False):
+    date: str
+    format: str
+    identifier: str
 
 
 class InsiderTrading(TypedDict):
     pass
 
 
-class InsiderTradingLoadMatch(TypedDict):
-    pass
+class InsiderTradingLoadMatchRequired(TypedDict):
+    key: str
+
+
+class InsiderTradingLoadMatch(InsiderTradingLoadMatchRequired, total=False):
+    format: str
+    identifier: str
 
 
 class InstitutionalTrading(TypedDict):
     pass
 
 
-class InstitutionalTradingLoadMatch(TypedDict):
-    pass
+class InstitutionalTradingLoadMatchRequired(TypedDict):
+    key: str
+
+
+class InstitutionalTradingLoadMatch(InstitutionalTradingLoadMatchRequired, total=False):
+    format: str
+    identifier: str
 
 
 class InvestmentAdviser(TypedDict):
     pass
 
 
-class InvestmentAdviserLoadMatch(TypedDict):
-    pass
+class InvestmentAdviserLoadMatchRequired(TypedDict):
+    key: str
+
+
+class InvestmentAdviserLoadMatch(InvestmentAdviserLoadMatchRequired, total=False):
+    format: str
 
 
 class MarketData(TypedDict, total=False):
@@ -127,66 +187,78 @@ class MarketData(TypedDict, total=False):
     volume: float
 
 
-class MarketDataLoadMatch(TypedDict, total=False):
-    change: float
-    close: float
-    date: str
-    high: float
-    low: float
-    open: float
-    percentage_change: float
-    price: float
-    registrant_name: str
-    time: str
-    trading_symbol: str
-    volume: float
+class MarketDataLoadMatchRequired(TypedDict):
+    identifier: str
+    key: str
 
 
-class MarketDataListMatch(TypedDict, total=False):
-    change: float
-    close: float
+class MarketDataLoadMatch(MarketDataLoadMatchRequired, total=False):
+    format: str
+    offset: int
+
+
+class MarketDataListMatchRequired(TypedDict):
+    identifier: str
+    key: str
+
+
+class MarketDataListMatch(MarketDataListMatchRequired, total=False):
     date: str
-    high: float
-    low: float
-    open: float
-    percentage_change: float
-    price: float
-    registrant_name: str
-    time: str
-    trading_symbol: str
-    volume: float
+    format: str
+    offset: int
 
 
 class MarketIndex(TypedDict):
     pass
 
 
-class MarketIndexLoadMatch(TypedDict):
-    pass
+class MarketIndexLoadMatchRequired(TypedDict):
+    key: str
+
+
+class MarketIndexLoadMatch(MarketIndexLoadMatchRequired, total=False):
+    format: str
+    identifier: str
+    offset: int
 
 
 class MarketNew(TypedDict):
     pass
 
 
-class MarketNewLoadMatch(TypedDict):
-    pass
+class MarketNewLoadMatchRequired(TypedDict):
+    key: str
+
+
+class MarketNewLoadMatch(MarketNewLoadMatchRequired, total=False):
+    format: str
+    identifier: str
 
 
 class MiscellaneousData(TypedDict):
     pass
 
 
-class MiscellaneousDataLoadMatch(TypedDict):
-    pass
+class MiscellaneousDataLoadMatchRequired(TypedDict):
+    key: str
+
+
+class MiscellaneousDataLoadMatch(MiscellaneousDataLoadMatchRequired, total=False):
+    format: str
+    identifier: str
 
 
 class MutualFund(TypedDict):
     pass
 
 
-class MutualFundLoadMatch(TypedDict):
-    pass
+class MutualFundLoadMatchRequired(TypedDict):
+    key: str
+
+
+class MutualFundLoadMatch(MutualFundLoadMatchRequired, total=False):
+    format: str
+    identifier: str
 
 
 class SymbolList(TypedDict, total=False):
@@ -196,8 +268,10 @@ class SymbolList(TypedDict, total=False):
     trading_symbol: str
 
 
-class SymbolListListMatch(TypedDict, total=False):
-    description: str
-    registrant_name: str
-    title_of_security: str
-    trading_symbol: str
+class SymbolListListMatchRequired(TypedDict):
+    key: str
+
+
+class SymbolListListMatch(SymbolListListMatchRequired, total=False):
+    format: str
+    offset: int

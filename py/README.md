@@ -45,7 +45,7 @@ client = FinancialDataSDK({
 
 ```python
 try:
-    basicinformation = client.BasicInformation().load()
+    basicinformation = client.BasicInformation().load({"identifier": "example_identifier", "key": "example_key"})
     print(basicinformation)
 except Exception as err:
     print(f"load failed: {err}")
@@ -58,7 +58,7 @@ Entity operations raise on failure, so wrap them in `try` / `except`:
 
 ```python
 try:
-    cryptocurrency = client.CryptoCurrency().load()
+    cryptocurrency = client.CryptoCurrency().load({"key": "example"})
     print(cryptocurrency)
 except Exception as err:
     print(f"load failed: {err}")
@@ -127,7 +127,7 @@ client = FinancialDataSDK.test()
 
 # Entity ops return the ENTITY and raises on error;
 # call data_get() for the record.
-cryptocurrency = client.CryptoCurrency().load()
+cryptocurrency = client.CryptoCurrency().load({"key": "example"})
 # cryptocurrency contains the mock response record
 ```
 
@@ -456,7 +456,7 @@ Create an instance: `basic_information = client.BasicInformation()`
 #### Example: Load
 
 ```python
-basic_information = client.BasicInformation().load()
+basic_information = client.BasicInformation().load({"identifier": "identifier", "key": "key"})
 ```
 
 
@@ -473,7 +473,7 @@ Create an instance: `crypto_currency = client.CryptoCurrency()`
 #### Example: Load
 
 ```python
-crypto_currency = client.CryptoCurrency().load()
+crypto_currency = client.CryptoCurrency().load({"key": "key"})
 ```
 
 
@@ -490,7 +490,7 @@ Create an instance: `derivatives_data = client.DerivativesData()`
 #### Example: Load
 
 ```python
-derivatives_data = client.DerivativesData().load()
+derivatives_data = client.DerivativesData().load({"key": "key"})
 ```
 
 
@@ -507,7 +507,7 @@ Create an instance: `esg_data = client.EsgData()`
 #### Example: Load
 
 ```python
-esg_data = client.EsgData().load()
+esg_data = client.EsgData().load({"key": "key"})
 ```
 
 
@@ -524,7 +524,7 @@ Create an instance: `etf_data = client.EtfData()`
 #### Example: Load
 
 ```python
-etf_data = client.EtfData().load()
+etf_data = client.EtfData().load({"identifier": "identifier", "key": "key"})
 ```
 
 
@@ -541,7 +541,7 @@ Create an instance: `event_calendar = client.EventCalendar()`
 #### Example: Load
 
 ```python
-event_calendar = client.EventCalendar().load()
+event_calendar = client.EventCalendar().load({"key": "key"})
 ```
 
 
@@ -558,7 +558,7 @@ Create an instance: `financial_ratio = client.FinancialRatio()`
 #### Example: Load
 
 ```python
-financial_ratio = client.FinancialRatio().load()
+financial_ratio = client.FinancialRatio().load({"identifier": "identifier", "key": "key"})
 ```
 
 
@@ -575,7 +575,7 @@ Create an instance: `financial_statement = client.FinancialStatement()`
 #### Example: Load
 
 ```python
-financial_statement = client.FinancialStatement().load()
+financial_statement = client.FinancialStatement().load({"identifier": "identifier", "key": "key"})
 ```
 
 
@@ -592,7 +592,7 @@ Create an instance: `forex_data = client.ForexData()`
 #### Example: Load
 
 ```python
-forex_data = client.ForexData().load()
+forex_data = client.ForexData().load({"key": "key"})
 ```
 
 
@@ -609,7 +609,7 @@ Create an instance: `insider_trading = client.InsiderTrading()`
 #### Example: Load
 
 ```python
-insider_trading = client.InsiderTrading().load()
+insider_trading = client.InsiderTrading().load({"key": "key"})
 ```
 
 
@@ -626,7 +626,7 @@ Create an instance: `institutional_trading = client.InstitutionalTrading()`
 #### Example: Load
 
 ```python
-institutional_trading = client.InstitutionalTrading().load()
+institutional_trading = client.InstitutionalTrading().load({"key": "key"})
 ```
 
 
@@ -643,7 +643,7 @@ Create an instance: `investment_adviser = client.InvestmentAdviser()`
 #### Example: Load
 
 ```python
-investment_adviser = client.InvestmentAdviser().load()
+investment_adviser = client.InvestmentAdviser().load({"key": "key"})
 ```
 
 
@@ -678,13 +678,13 @@ Create an instance: `market_data = client.MarketData()`
 #### Example: Load
 
 ```python
-market_data = client.MarketData().load()
+market_data = client.MarketData().load({"identifier": "identifier", "key": "key"})
 ```
 
 #### Example: List
 
 ```python
-market_datas = client.MarketData().list()
+market_datas = client.MarketData().list({"identifier": "example", "key": "example"})
 ```
 
 
@@ -701,7 +701,7 @@ Create an instance: `market_index = client.MarketIndex()`
 #### Example: Load
 
 ```python
-market_index = client.MarketIndex().load()
+market_index = client.MarketIndex().load({"key": "key"})
 ```
 
 
@@ -718,7 +718,7 @@ Create an instance: `market_new = client.MarketNew()`
 #### Example: Load
 
 ```python
-market_new = client.MarketNew().load()
+market_new = client.MarketNew().load({"key": "key"})
 ```
 
 
@@ -735,7 +735,7 @@ Create an instance: `miscellaneous_data = client.MiscellaneousData()`
 #### Example: Load
 
 ```python
-miscellaneous_data = client.MiscellaneousData().load()
+miscellaneous_data = client.MiscellaneousData().load({"key": "key"})
 ```
 
 
@@ -752,7 +752,7 @@ Create an instance: `mutual_fund = client.MutualFund()`
 #### Example: Load
 
 ```python
-mutual_fund = client.MutualFund().load()
+mutual_fund = client.MutualFund().load({"key": "key"})
 ```
 
 
@@ -778,8 +778,31 @@ Create an instance: `symbol_list = client.SymbolList()`
 #### Example: List
 
 ```python
-symbol_lists = client.SymbolList().list()
+symbol_lists = client.SymbolList().list({"key": "example"})
 ```
+
+## Features
+
+This SDK ships 1 optional features. Each is **inactive until you
+switch it on**, so an SDK you have not configured behaves exactly as if none of
+them existed — no retries, no cache, no logging, no measurable overhead.
+
+Activate a feature by name in the client options, alongside the options shown
+above:
+
+| Feature | What it does |
+|---|---|
+| [`test`](#test) | In-memory mock transport for testing without a live server |
+
+### test
+
+In-memory mock transport for testing without a live server.
+
+| Option | Default |
+|---|---|
+| `active` | `false` |
+
+Set `feature.test.active` to enable it, then override any of the options above.
 
 
 ## Advanced
@@ -858,7 +881,7 @@ stores the returned data and match criteria internally.
 
 ```python
 cryptocurrency = client.CryptoCurrency()
-cryptocurrency.load()
+cryptocurrency.load({"key": "example"})
 
 # cryptocurrency.data_get() now returns the cryptocurrency data from the last load
 # cryptocurrency.match_get() returns the last match criteria

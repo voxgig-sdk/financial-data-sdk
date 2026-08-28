@@ -54,7 +54,7 @@ func main() {
     })
 
     // Load a single basicInformation — the value is the loaded record.
-    basicInformation, err := client.BasicInformation(nil).Load(nil, nil)
+    basicInformation, err := client.BasicInformation(nil).Load(map[string]any{"identifier": "example_identifier", "key": "example_key"}, nil)
     if err != nil {
         panic(err)
     }
@@ -69,7 +69,7 @@ Every entity operation returns `(value, error)`. Check `err` before
 using the value — there is no exception to catch:
 
 ```go
-cryptocurrency, err := client.CryptoCurrency(nil).Load(nil, nil)
+cryptocurrency, err := client.CryptoCurrency(nil).Load(map[string]any{"key": "example"}, nil)
 if err != nil {
     // handle err
     return
@@ -139,7 +139,7 @@ Create a mock client for unit testing — no server required:
 client := sdk.Test()
 
 cryptoCurrency, err := client.CryptoCurrency(nil).Load(
-    nil, nil,
+    map[string]any{"key": "example"}, nil,
 )
 if err != nil {
     panic(err)
@@ -474,7 +474,7 @@ Create an instance: `basicInformation := client.BasicInformation(nil)`
 #### Example: Load
 
 ```go
-basicInformation, err := client.BasicInformation(nil).Load(nil, nil)
+basicInformation, err := client.BasicInformation(nil).Load(map[string]any{"identifier": "identifier", "key": "key"}, nil)
 if err != nil {
     panic(err)
 }
@@ -495,7 +495,7 @@ Create an instance: `cryptoCurrency := client.CryptoCurrency(nil)`
 #### Example: Load
 
 ```go
-cryptoCurrency, err := client.CryptoCurrency(nil).Load(nil, nil)
+cryptoCurrency, err := client.CryptoCurrency(nil).Load(map[string]any{"key": "key"}, nil)
 if err != nil {
     panic(err)
 }
@@ -516,7 +516,7 @@ Create an instance: `derivativesData := client.DerivativesData(nil)`
 #### Example: Load
 
 ```go
-derivativesData, err := client.DerivativesData(nil).Load(nil, nil)
+derivativesData, err := client.DerivativesData(nil).Load(map[string]any{"key": "key"}, nil)
 if err != nil {
     panic(err)
 }
@@ -537,7 +537,7 @@ Create an instance: `esgData := client.EsgData(nil)`
 #### Example: Load
 
 ```go
-esgData, err := client.EsgData(nil).Load(nil, nil)
+esgData, err := client.EsgData(nil).Load(map[string]any{"key": "key"}, nil)
 if err != nil {
     panic(err)
 }
@@ -558,7 +558,7 @@ Create an instance: `etfData := client.EtfData(nil)`
 #### Example: Load
 
 ```go
-etfData, err := client.EtfData(nil).Load(nil, nil)
+etfData, err := client.EtfData(nil).Load(map[string]any{"identifier": "identifier", "key": "key"}, nil)
 if err != nil {
     panic(err)
 }
@@ -579,7 +579,7 @@ Create an instance: `eventCalendar := client.EventCalendar(nil)`
 #### Example: Load
 
 ```go
-eventCalendar, err := client.EventCalendar(nil).Load(nil, nil)
+eventCalendar, err := client.EventCalendar(nil).Load(map[string]any{"key": "key"}, nil)
 if err != nil {
     panic(err)
 }
@@ -600,7 +600,7 @@ Create an instance: `financialRatio := client.FinancialRatio(nil)`
 #### Example: Load
 
 ```go
-financialRatio, err := client.FinancialRatio(nil).Load(nil, nil)
+financialRatio, err := client.FinancialRatio(nil).Load(map[string]any{"identifier": "identifier", "key": "key"}, nil)
 if err != nil {
     panic(err)
 }
@@ -621,7 +621,7 @@ Create an instance: `financialStatement := client.FinancialStatement(nil)`
 #### Example: Load
 
 ```go
-financialStatement, err := client.FinancialStatement(nil).Load(nil, nil)
+financialStatement, err := client.FinancialStatement(nil).Load(map[string]any{"identifier": "identifier", "key": "key"}, nil)
 if err != nil {
     panic(err)
 }
@@ -642,7 +642,7 @@ Create an instance: `forexData := client.ForexData(nil)`
 #### Example: Load
 
 ```go
-forexData, err := client.ForexData(nil).Load(nil, nil)
+forexData, err := client.ForexData(nil).Load(map[string]any{"key": "key"}, nil)
 if err != nil {
     panic(err)
 }
@@ -663,7 +663,7 @@ Create an instance: `insiderTrading := client.InsiderTrading(nil)`
 #### Example: Load
 
 ```go
-insiderTrading, err := client.InsiderTrading(nil).Load(nil, nil)
+insiderTrading, err := client.InsiderTrading(nil).Load(map[string]any{"key": "key"}, nil)
 if err != nil {
     panic(err)
 }
@@ -684,7 +684,7 @@ Create an instance: `institutionalTrading := client.InstitutionalTrading(nil)`
 #### Example: Load
 
 ```go
-institutionalTrading, err := client.InstitutionalTrading(nil).Load(nil, nil)
+institutionalTrading, err := client.InstitutionalTrading(nil).Load(map[string]any{"key": "key"}, nil)
 if err != nil {
     panic(err)
 }
@@ -705,7 +705,7 @@ Create an instance: `investmentAdviser := client.InvestmentAdviser(nil)`
 #### Example: Load
 
 ```go
-investmentAdviser, err := client.InvestmentAdviser(nil).Load(nil, nil)
+investmentAdviser, err := client.InvestmentAdviser(nil).Load(map[string]any{"key": "key"}, nil)
 if err != nil {
     panic(err)
 }
@@ -744,7 +744,7 @@ Create an instance: `marketData := client.MarketData(nil)`
 #### Example: Load
 
 ```go
-marketData, err := client.MarketData(nil).Load(nil, nil)
+marketData, err := client.MarketData(nil).Load(map[string]any{"identifier": "identifier", "key": "key"}, nil)
 if err != nil {
     panic(err)
 }
@@ -775,7 +775,7 @@ Create an instance: `marketIndex := client.MarketIndex(nil)`
 #### Example: Load
 
 ```go
-marketIndex, err := client.MarketIndex(nil).Load(nil, nil)
+marketIndex, err := client.MarketIndex(nil).Load(map[string]any{"key": "key"}, nil)
 if err != nil {
     panic(err)
 }
@@ -796,7 +796,7 @@ Create an instance: `marketNew := client.MarketNew(nil)`
 #### Example: Load
 
 ```go
-marketNew, err := client.MarketNew(nil).Load(nil, nil)
+marketNew, err := client.MarketNew(nil).Load(map[string]any{"key": "key"}, nil)
 if err != nil {
     panic(err)
 }
@@ -817,7 +817,7 @@ Create an instance: `miscellaneousData := client.MiscellaneousData(nil)`
 #### Example: Load
 
 ```go
-miscellaneousData, err := client.MiscellaneousData(nil).Load(nil, nil)
+miscellaneousData, err := client.MiscellaneousData(nil).Load(map[string]any{"key": "key"}, nil)
 if err != nil {
     panic(err)
 }
@@ -838,7 +838,7 @@ Create an instance: `mutualFund := client.MutualFund(nil)`
 #### Example: Load
 
 ```go
-mutualFund, err := client.MutualFund(nil).Load(nil, nil)
+mutualFund, err := client.MutualFund(nil).Load(map[string]any{"key": "key"}, nil)
 if err != nil {
     panic(err)
 }
@@ -874,6 +874,29 @@ if err != nil {
 }
 fmt.Println(symbolLists) // the array of records
 ```
+
+## Features
+
+This SDK ships 1 optional features. Each is **inactive until you
+switch it on**, so an SDK you have not configured behaves exactly as if none of
+them existed — no retries, no cache, no logging, no measurable overhead.
+
+Activate a feature by name in the client options, alongside the options shown
+above:
+
+| Feature | What it does |
+|---|---|
+| [`test`](#test) | In-memory mock transport for testing without a live server |
+
+### test
+
+In-memory mock transport for testing without a live server.
+
+| Option | Default |
+|---|---|
+| `active` | `false` |
+
+Set `feature.test.active` to enable it, then override any of the options above.
 
 
 ## Advanced
@@ -950,7 +973,7 @@ stores the returned data and match criteria internally.
 
 ```go
 cryptocurrency := client.CryptoCurrency(nil)
-cryptocurrency.Load(nil, nil)
+cryptocurrency.Load(map[string]any{"key": "example"}, nil)
 
 // cryptocurrency.Data() now returns the cryptocurrency data from the last load
 // cryptocurrency.Match() returns the last match criteria

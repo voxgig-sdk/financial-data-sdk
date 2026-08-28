@@ -170,7 +170,7 @@ fmt.Println(basicInformation.GetName()) // "basic_information"
 Load a single entity matching the given criteria.
 
 ```go
-result, err := client.BasicInformation(nil).Load(nil, nil)
+result, err := client.BasicInformation(nil).Load(map[string]any{"identifier": "identifier", "key": "key"}, nil)
 if err != nil {
     panic(err)
 }
@@ -215,7 +215,7 @@ fmt.Println(cryptoCurrency.GetName()) // "crypto_currency"
 Load a single entity matching the given criteria.
 
 ```go
-result, err := client.CryptoCurrency(nil).Load(nil, nil)
+result, err := client.CryptoCurrency(nil).Load(map[string]any{"key": "key"}, nil)
 if err != nil {
     panic(err)
 }
@@ -260,7 +260,7 @@ fmt.Println(derivativesData.GetName()) // "derivatives_data"
 Load a single entity matching the given criteria.
 
 ```go
-result, err := client.DerivativesData(nil).Load(nil, nil)
+result, err := client.DerivativesData(nil).Load(map[string]any{"key": "key"}, nil)
 if err != nil {
     panic(err)
 }
@@ -305,7 +305,7 @@ fmt.Println(esgData.GetName()) // "esg_data"
 Load a single entity matching the given criteria.
 
 ```go
-result, err := client.EsgData(nil).Load(nil, nil)
+result, err := client.EsgData(nil).Load(map[string]any{"key": "key"}, nil)
 if err != nil {
     panic(err)
 }
@@ -350,7 +350,7 @@ fmt.Println(etfData.GetName()) // "etf_data"
 Load a single entity matching the given criteria.
 
 ```go
-result, err := client.EtfData(nil).Load(nil, nil)
+result, err := client.EtfData(nil).Load(map[string]any{"identifier": "identifier", "key": "key"}, nil)
 if err != nil {
     panic(err)
 }
@@ -395,7 +395,7 @@ fmt.Println(eventCalendar.GetName()) // "event_calendar"
 Load a single entity matching the given criteria.
 
 ```go
-result, err := client.EventCalendar(nil).Load(nil, nil)
+result, err := client.EventCalendar(nil).Load(map[string]any{"key": "key"}, nil)
 if err != nil {
     panic(err)
 }
@@ -440,7 +440,7 @@ fmt.Println(financialRatio.GetName()) // "financial_ratio"
 Load a single entity matching the given criteria.
 
 ```go
-result, err := client.FinancialRatio(nil).Load(nil, nil)
+result, err := client.FinancialRatio(nil).Load(map[string]any{"identifier": "identifier", "key": "key"}, nil)
 if err != nil {
     panic(err)
 }
@@ -485,7 +485,7 @@ fmt.Println(financialStatement.GetName()) // "financial_statement"
 Load a single entity matching the given criteria.
 
 ```go
-result, err := client.FinancialStatement(nil).Load(nil, nil)
+result, err := client.FinancialStatement(nil).Load(map[string]any{"identifier": "identifier", "key": "key"}, nil)
 if err != nil {
     panic(err)
 }
@@ -530,7 +530,7 @@ fmt.Println(forexData.GetName()) // "forex_data"
 Load a single entity matching the given criteria.
 
 ```go
-result, err := client.ForexData(nil).Load(nil, nil)
+result, err := client.ForexData(nil).Load(map[string]any{"key": "key"}, nil)
 if err != nil {
     panic(err)
 }
@@ -575,7 +575,7 @@ fmt.Println(insiderTrading.GetName()) // "insider_trading"
 Load a single entity matching the given criteria.
 
 ```go
-result, err := client.InsiderTrading(nil).Load(nil, nil)
+result, err := client.InsiderTrading(nil).Load(map[string]any{"key": "key"}, nil)
 if err != nil {
     panic(err)
 }
@@ -620,7 +620,7 @@ fmt.Println(institutionalTrading.GetName()) // "institutional_trading"
 Load a single entity matching the given criteria.
 
 ```go
-result, err := client.InstitutionalTrading(nil).Load(nil, nil)
+result, err := client.InstitutionalTrading(nil).Load(map[string]any{"key": "key"}, nil)
 if err != nil {
     panic(err)
 }
@@ -665,7 +665,7 @@ fmt.Println(investmentAdviser.GetName()) // "investment_adviser"
 Load a single entity matching the given criteria.
 
 ```go
-result, err := client.InvestmentAdviser(nil).Load(nil, nil)
+result, err := client.InvestmentAdviser(nil).Load(map[string]any{"key": "key"}, nil)
 if err != nil {
     panic(err)
 }
@@ -739,7 +739,7 @@ fmt.Println(results)
 Load a single entity matching the given criteria.
 
 ```go
-result, err := client.MarketData(nil).Load(nil, nil)
+result, err := client.MarketData(nil).Load(map[string]any{"identifier": "identifier", "key": "key"}, nil)
 if err != nil {
     panic(err)
 }
@@ -784,7 +784,7 @@ fmt.Println(marketIndex.GetName()) // "market_index"
 Load a single entity matching the given criteria.
 
 ```go
-result, err := client.MarketIndex(nil).Load(nil, nil)
+result, err := client.MarketIndex(nil).Load(map[string]any{"key": "key"}, nil)
 if err != nil {
     panic(err)
 }
@@ -829,7 +829,7 @@ fmt.Println(marketNew.GetName()) // "market_new"
 Load a single entity matching the given criteria.
 
 ```go
-result, err := client.MarketNew(nil).Load(nil, nil)
+result, err := client.MarketNew(nil).Load(map[string]any{"key": "key"}, nil)
 if err != nil {
     panic(err)
 }
@@ -874,7 +874,7 @@ fmt.Println(miscellaneousData.GetName()) // "miscellaneous_data"
 Load a single entity matching the given criteria.
 
 ```go
-result, err := client.MiscellaneousData(nil).Load(nil, nil)
+result, err := client.MiscellaneousData(nil).Load(map[string]any{"key": "key"}, nil)
 if err != nil {
     panic(err)
 }
@@ -919,7 +919,7 @@ fmt.Println(mutualFund.GetName()) // "mutual_fund"
 Load a single entity matching the given criteria.
 
 ```go
-result, err := client.MutualFund(nil).Load(nil, nil)
+result, err := client.MutualFund(nil).Load(map[string]any{"key": "key"}, nil)
 if err != nil {
     panic(err)
 }
@@ -1020,4 +1020,42 @@ client := sdk.NewFinancialDataSDK(map[string]any{
     },
 })
 ```
+
+
+### Configuring features
+
+Each feature is inactive until switched on, and an SDK with no feature
+configured does no feature work at all. Every option below keeps its default
+unless you name it.
+
+The array form of \`feature\` is significant: several features wrap the
+transport, and the order you list them in is the order they nest.
+
+#### `test`
+
+In-memory mock transport for testing without a live server.
+
+**Configuration**
+
+| Option | Default |
+|---|---|
+| `active` | `false` |
+
+Options above are those the model carries a default for. A feature may
+also accept callback options — a `sink` to receive each record, for
+instance — which have no default and are covered in the full feature
+reference.
+
+**Usage**
+
+Set `feature.test.active` to true in the client options, and override any option above in the same entry. Every option keeps
+its default unless you name it.
+
+**Considerations**
+
+- Attaches to pipeline hooks, not the transport, so activation order does
+  not change what it observes.
+- Installs the BASE transport that the wrapping features wrap, so it must be
+  activated before them.
+- Inactive by default: leaving it out costs nothing at runtime.
 
