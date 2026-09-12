@@ -38,8 +38,10 @@ main: kit: entity: institutional_trading: {
           }
           method: "GET"
           orig: "/institutional-holdings"
-          parts: [
-            "institutional-holdings"
+          segments: [
+            {
+              lit: "institutional-holdings"
+            }
           ]
           select: {
             exist: [
@@ -75,8 +77,10 @@ main: kit: entity: institutional_trading: {
           }
           method: "GET"
           orig: "/institutional-investors"
-          parts: [
-            "institutional-investors"
+          segments: [
+            {
+              lit: "institutional-investors"
+            }
           ]
           select: {
             exist: [
@@ -111,8 +115,10 @@ main: kit: entity: institutional_trading: {
           }
           method: "GET"
           orig: "/institutional-portfolio-statistics"
-          parts: [
-            "institutional-portfolio-statistics"
+          segments: [
+            {
+              lit: "institutional-portfolio-statistics"
+            }
           ]
           select: {
             exist: [

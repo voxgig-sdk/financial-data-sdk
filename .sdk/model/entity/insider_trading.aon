@@ -38,8 +38,10 @@ main: kit: entity: insider_trading: {
           }
           method: "GET"
           orig: "/insider-transactions"
-          parts: [
-            "insider-transactions"
+          segments: [
+            {
+              lit: "insider-transactions"
+            }
           ]
           select: {
             exist: [
@@ -75,8 +77,10 @@ main: kit: entity: insider_trading: {
           }
           method: "GET"
           orig: "/house-trading"
-          parts: [
-            "house-trading"
+          segments: [
+            {
+              lit: "house-trading"
+            }
           ]
           select: {
             exist: [
@@ -111,8 +115,10 @@ main: kit: entity: insider_trading: {
           }
           method: "GET"
           orig: "/proposed-sales"
-          parts: [
-            "proposed-sales"
+          segments: [
+            {
+              lit: "proposed-sales"
+            }
           ]
           select: {
             exist: [
@@ -147,8 +153,10 @@ main: kit: entity: insider_trading: {
           }
           method: "GET"
           orig: "/senate-trading"
-          parts: [
-            "senate-trading"
+          segments: [
+            {
+              lit: "senate-trading"
+            }
           ]
           select: {
             exist: [

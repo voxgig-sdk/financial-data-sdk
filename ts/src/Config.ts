@@ -10,6 +10,17 @@ const FEATURE_CLASS: Record<string, typeof BaseFeature> = {
 }
 
 
+// Per-feature plugin DEFINITIONS (voxgig/plugin `Definition` values), from
+// the model's active plugin groups. A feature that takes a `plugins` option
+// (secrets over sekreto) reads its own entry; a feature with no plugins has
+// none. Named imports above make each definition statically reachable, so
+// an SDK carries exactly the plugin modules its model selects — the same
+// leanness the old side-effect registry imports bought, without a registry.
+const FEATURE_PLUGINS: Record<string, any[]> = {
+  
+}
+
+
 class Config {
 
   makeFeature(this: any, fn: string) {
@@ -156,8 +167,10 @@ class Config {
               "kind": "http",
               "method": "GET",
               "orig": "/company-information",
-              "parts": [
-                "company-information"
+              "segments": [
+                {
+                  "lit": "company-information"
+                }
               ],
               "select": {
                 "exist": [
@@ -169,7 +182,10 @@ class Config {
               "transform": {
                 "req": "`reqdata`",
                 "res": "`body`"
-              }
+              },
+              "parts": [
+                "company-information"
+              ]
             },
             {
               "args": {
@@ -200,8 +216,10 @@ class Config {
               "kind": "http",
               "method": "GET",
               "orig": "/employee-count",
-              "parts": [
-                "employee-count"
+              "segments": [
+                {
+                  "lit": "employee-count"
+                }
               ],
               "select": {
                 "exist": [
@@ -213,7 +231,10 @@ class Config {
               "transform": {
                 "req": "`reqdata`",
                 "res": "`body`"
-              }
+              },
+              "parts": [
+                "employee-count"
+              ]
             },
             {
               "args": {
@@ -244,8 +265,10 @@ class Config {
               "kind": "http",
               "method": "GET",
               "orig": "/executive-compensation",
-              "parts": [
-                "executive-compensation"
+              "segments": [
+                {
+                  "lit": "executive-compensation"
+                }
               ],
               "select": {
                 "exist": [
@@ -257,7 +280,10 @@ class Config {
               "transform": {
                 "req": "`reqdata`",
                 "res": "`body`"
-              }
+              },
+              "parts": [
+                "executive-compensation"
+              ]
             },
             {
               "args": {
@@ -288,8 +314,10 @@ class Config {
               "kind": "http",
               "method": "GET",
               "orig": "/international-company-information",
-              "parts": [
-                "international-company-information"
+              "segments": [
+                {
+                  "lit": "international-company-information"
+                }
               ],
               "select": {
                 "exist": [
@@ -301,7 +329,10 @@ class Config {
               "transform": {
                 "req": "`reqdata`",
                 "res": "`body`"
-              }
+              },
+              "parts": [
+                "international-company-information"
+              ]
             },
             {
               "args": {
@@ -332,8 +363,10 @@ class Config {
               "kind": "http",
               "method": "GET",
               "orig": "/key-metrics",
-              "parts": [
-                "key-metrics"
+              "segments": [
+                {
+                  "lit": "key-metrics"
+                }
               ],
               "select": {
                 "exist": [
@@ -345,7 +378,10 @@ class Config {
               "transform": {
                 "req": "`reqdata`",
                 "res": "`body`"
-              }
+              },
+              "parts": [
+                "key-metrics"
+              ]
             },
             {
               "args": {
@@ -376,8 +412,10 @@ class Config {
               "kind": "http",
               "method": "GET",
               "orig": "/market-cap",
-              "parts": [
-                "market-cap"
+              "segments": [
+                {
+                  "lit": "market-cap"
+                }
               ],
               "select": {
                 "exist": [
@@ -389,7 +427,10 @@ class Config {
               "transform": {
                 "req": "`reqdata`",
                 "res": "`body`"
-              }
+              },
+              "parts": [
+                "market-cap"
+              ]
             },
             {
               "args": {
@@ -420,8 +461,10 @@ class Config {
               "kind": "http",
               "method": "GET",
               "orig": "/securities-information",
-              "parts": [
-                "securities-information"
+              "segments": [
+                {
+                  "lit": "securities-information"
+                }
               ],
               "select": {
                 "exist": [
@@ -433,7 +476,10 @@ class Config {
               "transform": {
                 "req": "`reqdata`",
                 "res": "`body`"
-              }
+              },
+              "parts": [
+                "securities-information"
+              ]
             }
           ]
         }
@@ -486,8 +532,10 @@ class Config {
               "kind": "http",
               "method": "GET",
               "orig": "/crypto-minute-prices",
-              "parts": [
-                "crypto-minute-prices"
+              "segments": [
+                {
+                  "lit": "crypto-minute-prices"
+                }
               ],
               "select": {
                 "exist": [
@@ -500,7 +548,10 @@ class Config {
               "transform": {
                 "req": "`reqdata`",
                 "res": "`body`"
-              }
+              },
+              "parts": [
+                "crypto-minute-prices"
+              ]
             },
             {
               "args": {
@@ -531,8 +582,10 @@ class Config {
               "kind": "http",
               "method": "GET",
               "orig": "/crypto-information",
-              "parts": [
-                "crypto-information"
+              "segments": [
+                {
+                  "lit": "crypto-information"
+                }
               ],
               "select": {
                 "exist": [
@@ -544,7 +597,10 @@ class Config {
               "transform": {
                 "req": "`reqdata`",
                 "res": "`body`"
-              }
+              },
+              "parts": [
+                "crypto-information"
+              ]
             },
             {
               "args": {
@@ -575,8 +631,10 @@ class Config {
               "kind": "http",
               "method": "GET",
               "orig": "/crypto-prices",
-              "parts": [
-                "crypto-prices"
+              "segments": [
+                {
+                  "lit": "crypto-prices"
+                }
               ],
               "select": {
                 "exist": [
@@ -588,7 +646,10 @@ class Config {
               "transform": {
                 "req": "`reqdata`",
                 "res": "`body`"
-              }
+              },
+              "parts": [
+                "crypto-prices"
+              ]
             },
             {
               "args": {
@@ -619,8 +680,10 @@ class Config {
               "kind": "http",
               "method": "GET",
               "orig": "/crypto-quotes",
-              "parts": [
-                "crypto-quotes"
+              "segments": [
+                {
+                  "lit": "crypto-quotes"
+                }
               ],
               "select": {
                 "exist": [
@@ -632,7 +695,10 @@ class Config {
               "transform": {
                 "req": "`reqdata`",
                 "res": "`body`"
-              }
+              },
+              "parts": [
+                "crypto-quotes"
+              ]
             },
             {
               "args": {
@@ -656,8 +722,10 @@ class Config {
               "kind": "http",
               "method": "GET",
               "orig": "/crypto-symbols",
-              "parts": [
-                "crypto-symbols"
+              "segments": [
+                {
+                  "lit": "crypto-symbols"
+                }
               ],
               "select": {
                 "exist": [
@@ -668,7 +736,10 @@ class Config {
               "transform": {
                 "req": "`reqdata`",
                 "res": "`body`"
-              }
+              },
+              "parts": [
+                "crypto-symbols"
+              ]
             }
           ]
         }
@@ -714,8 +785,10 @@ class Config {
               "kind": "http",
               "method": "GET",
               "orig": "/futures-prices",
-              "parts": [
-                "futures-prices"
+              "segments": [
+                {
+                  "lit": "futures-prices"
+                }
               ],
               "select": {
                 "exist": [
@@ -727,7 +800,10 @@ class Config {
               "transform": {
                 "req": "`reqdata`",
                 "res": "`body`"
-              }
+              },
+              "parts": [
+                "futures-prices"
+              ]
             },
             {
               "args": {
@@ -758,8 +834,10 @@ class Config {
               "kind": "http",
               "method": "GET",
               "orig": "/option-chain",
-              "parts": [
-                "option-chain"
+              "segments": [
+                {
+                  "lit": "option-chain"
+                }
               ],
               "select": {
                 "exist": [
@@ -771,7 +849,10 @@ class Config {
               "transform": {
                 "req": "`reqdata`",
                 "res": "`body`"
-              }
+              },
+              "parts": [
+                "option-chain"
+              ]
             },
             {
               "args": {
@@ -802,8 +883,10 @@ class Config {
               "kind": "http",
               "method": "GET",
               "orig": "/option-greeks",
-              "parts": [
-                "option-greeks"
+              "segments": [
+                {
+                  "lit": "option-greeks"
+                }
               ],
               "select": {
                 "exist": [
@@ -815,7 +898,10 @@ class Config {
               "transform": {
                 "req": "`reqdata`",
                 "res": "`body`"
-              }
+              },
+              "parts": [
+                "option-greeks"
+              ]
             },
             {
               "args": {
@@ -846,8 +932,10 @@ class Config {
               "kind": "http",
               "method": "GET",
               "orig": "/option-prices",
-              "parts": [
-                "option-prices"
+              "segments": [
+                {
+                  "lit": "option-prices"
+                }
               ],
               "select": {
                 "exist": [
@@ -859,7 +947,10 @@ class Config {
               "transform": {
                 "req": "`reqdata`",
                 "res": "`body`"
-              }
+              },
+              "parts": [
+                "option-prices"
+              ]
             },
             {
               "args": {
@@ -883,8 +974,10 @@ class Config {
               "kind": "http",
               "method": "GET",
               "orig": "/futures-symbols",
-              "parts": [
-                "futures-symbols"
+              "segments": [
+                {
+                  "lit": "futures-symbols"
+                }
               ],
               "select": {
                 "exist": [
@@ -895,7 +988,10 @@ class Config {
               "transform": {
                 "req": "`reqdata`",
                 "res": "`body`"
-              }
+              },
+              "parts": [
+                "futures-symbols"
+              ]
             }
           ]
         }
@@ -941,8 +1037,10 @@ class Config {
               "kind": "http",
               "method": "GET",
               "orig": "/esg-ratings",
-              "parts": [
-                "esg-ratings"
+              "segments": [
+                {
+                  "lit": "esg-ratings"
+                }
               ],
               "select": {
                 "exist": [
@@ -954,7 +1052,10 @@ class Config {
               "transform": {
                 "req": "`reqdata`",
                 "res": "`body`"
-              }
+              },
+              "parts": [
+                "esg-ratings"
+              ]
             },
             {
               "args": {
@@ -985,8 +1086,10 @@ class Config {
               "kind": "http",
               "method": "GET",
               "orig": "/esg-scores",
-              "parts": [
-                "esg-scores"
+              "segments": [
+                {
+                  "lit": "esg-scores"
+                }
               ],
               "select": {
                 "exist": [
@@ -998,7 +1101,10 @@ class Config {
               "transform": {
                 "req": "`reqdata`",
                 "res": "`body`"
-              }
+              },
+              "parts": [
+                "esg-scores"
+              ]
             },
             {
               "args": {
@@ -1022,8 +1128,10 @@ class Config {
               "kind": "http",
               "method": "GET",
               "orig": "/industry-esg-scores",
-              "parts": [
-                "industry-esg-scores"
+              "segments": [
+                {
+                  "lit": "industry-esg-scores"
+                }
               ],
               "select": {
                 "exist": [
@@ -1034,7 +1142,10 @@ class Config {
               "transform": {
                 "req": "`reqdata`",
                 "res": "`body`"
-              }
+              },
+              "parts": [
+                "industry-esg-scores"
+              ]
             }
           ]
         }
@@ -1080,8 +1191,10 @@ class Config {
               "kind": "http",
               "method": "GET",
               "orig": "/etf-holdings",
-              "parts": [
-                "etf-holdings"
+              "segments": [
+                {
+                  "lit": "etf-holdings"
+                }
               ],
               "select": {
                 "exist": [
@@ -1093,7 +1206,10 @@ class Config {
               "transform": {
                 "req": "`reqdata`",
                 "res": "`body`"
-              }
+              },
+              "parts": [
+                "etf-holdings"
+              ]
             },
             {
               "args": {
@@ -1124,8 +1240,10 @@ class Config {
               "kind": "http",
               "method": "GET",
               "orig": "/etf-prices",
-              "parts": [
-                "etf-prices"
+              "segments": [
+                {
+                  "lit": "etf-prices"
+                }
               ],
               "select": {
                 "exist": [
@@ -1137,7 +1255,10 @@ class Config {
               "transform": {
                 "req": "`reqdata`",
                 "res": "`body`"
-              }
+              },
+              "parts": [
+                "etf-prices"
+              ]
             },
             {
               "args": {
@@ -1168,8 +1289,10 @@ class Config {
               "kind": "http",
               "method": "GET",
               "orig": "/etf-quotes",
-              "parts": [
-                "etf-quotes"
+              "segments": [
+                {
+                  "lit": "etf-quotes"
+                }
               ],
               "select": {
                 "exist": [
@@ -1181,7 +1304,10 @@ class Config {
               "transform": {
                 "req": "`reqdata`",
                 "res": "`body`"
-              }
+              },
+              "parts": [
+                "etf-quotes"
+              ]
             }
           ]
         }
@@ -1220,8 +1346,10 @@ class Config {
               "kind": "http",
               "method": "GET",
               "orig": "/dividends-calendar",
-              "parts": [
-                "dividends-calendar"
+              "segments": [
+                {
+                  "lit": "dividends-calendar"
+                }
               ],
               "select": {
                 "exist": [
@@ -1232,7 +1360,10 @@ class Config {
               "transform": {
                 "req": "`reqdata`",
                 "res": "`body`"
-              }
+              },
+              "parts": [
+                "dividends-calendar"
+              ]
             },
             {
               "args": {
@@ -1256,8 +1387,10 @@ class Config {
               "kind": "http",
               "method": "GET",
               "orig": "/earnings-calendar",
-              "parts": [
-                "earnings-calendar"
+              "segments": [
+                {
+                  "lit": "earnings-calendar"
+                }
               ],
               "select": {
                 "exist": [
@@ -1268,7 +1401,10 @@ class Config {
               "transform": {
                 "req": "`reqdata`",
                 "res": "`body`"
-              }
+              },
+              "parts": [
+                "earnings-calendar"
+              ]
             },
             {
               "args": {
@@ -1292,8 +1428,10 @@ class Config {
               "kind": "http",
               "method": "GET",
               "orig": "/economic-calendar",
-              "parts": [
-                "economic-calendar"
+              "segments": [
+                {
+                  "lit": "economic-calendar"
+                }
               ],
               "select": {
                 "exist": [
@@ -1304,7 +1442,10 @@ class Config {
               "transform": {
                 "req": "`reqdata`",
                 "res": "`body`"
-              }
+              },
+              "parts": [
+                "economic-calendar"
+              ]
             },
             {
               "args": {
@@ -1328,8 +1469,10 @@ class Config {
               "kind": "http",
               "method": "GET",
               "orig": "/ipo-calendar",
-              "parts": [
-                "ipo-calendar"
+              "segments": [
+                {
+                  "lit": "ipo-calendar"
+                }
               ],
               "select": {
                 "exist": [
@@ -1340,7 +1483,10 @@ class Config {
               "transform": {
                 "req": "`reqdata`",
                 "res": "`body`"
-              }
+              },
+              "parts": [
+                "ipo-calendar"
+              ]
             },
             {
               "args": {
@@ -1364,8 +1510,10 @@ class Config {
               "kind": "http",
               "method": "GET",
               "orig": "/splits-calendar",
-              "parts": [
-                "splits-calendar"
+              "segments": [
+                {
+                  "lit": "splits-calendar"
+                }
               ],
               "select": {
                 "exist": [
@@ -1376,7 +1524,10 @@ class Config {
               "transform": {
                 "req": "`reqdata`",
                 "res": "`body`"
-              }
+              },
+              "parts": [
+                "splits-calendar"
+              ]
             }
           ]
         }
@@ -1422,8 +1573,10 @@ class Config {
               "kind": "http",
               "method": "GET",
               "orig": "/efficiency-ratios",
-              "parts": [
-                "efficiency-ratios"
+              "segments": [
+                {
+                  "lit": "efficiency-ratios"
+                }
               ],
               "select": {
                 "exist": [
@@ -1435,7 +1588,10 @@ class Config {
               "transform": {
                 "req": "`reqdata`",
                 "res": "`body`"
-              }
+              },
+              "parts": [
+                "efficiency-ratios"
+              ]
             },
             {
               "args": {
@@ -1466,8 +1622,10 @@ class Config {
               "kind": "http",
               "method": "GET",
               "orig": "/liquidity-ratios",
-              "parts": [
-                "liquidity-ratios"
+              "segments": [
+                {
+                  "lit": "liquidity-ratios"
+                }
               ],
               "select": {
                 "exist": [
@@ -1479,7 +1637,10 @@ class Config {
               "transform": {
                 "req": "`reqdata`",
                 "res": "`body`"
-              }
+              },
+              "parts": [
+                "liquidity-ratios"
+              ]
             },
             {
               "args": {
@@ -1510,8 +1671,10 @@ class Config {
               "kind": "http",
               "method": "GET",
               "orig": "/profitability-ratios",
-              "parts": [
-                "profitability-ratios"
+              "segments": [
+                {
+                  "lit": "profitability-ratios"
+                }
               ],
               "select": {
                 "exist": [
@@ -1523,7 +1686,10 @@ class Config {
               "transform": {
                 "req": "`reqdata`",
                 "res": "`body`"
-              }
+              },
+              "parts": [
+                "profitability-ratios"
+              ]
             },
             {
               "args": {
@@ -1554,8 +1720,10 @@ class Config {
               "kind": "http",
               "method": "GET",
               "orig": "/solvency-ratios",
-              "parts": [
-                "solvency-ratios"
+              "segments": [
+                {
+                  "lit": "solvency-ratios"
+                }
               ],
               "select": {
                 "exist": [
@@ -1567,7 +1735,10 @@ class Config {
               "transform": {
                 "req": "`reqdata`",
                 "res": "`body`"
-              }
+              },
+              "parts": [
+                "solvency-ratios"
+              ]
             },
             {
               "args": {
@@ -1598,8 +1769,10 @@ class Config {
               "kind": "http",
               "method": "GET",
               "orig": "/valuation-ratios",
-              "parts": [
-                "valuation-ratios"
+              "segments": [
+                {
+                  "lit": "valuation-ratios"
+                }
               ],
               "select": {
                 "exist": [
@@ -1611,7 +1784,10 @@ class Config {
               "transform": {
                 "req": "`reqdata`",
                 "res": "`body`"
-              }
+              },
+              "parts": [
+                "valuation-ratios"
+              ]
             }
           ]
         }
@@ -1657,8 +1833,10 @@ class Config {
               "kind": "http",
               "method": "GET",
               "orig": "/balance-sheet-statements",
-              "parts": [
-                "balance-sheet-statements"
+              "segments": [
+                {
+                  "lit": "balance-sheet-statements"
+                }
               ],
               "select": {
                 "exist": [
@@ -1670,7 +1848,10 @@ class Config {
               "transform": {
                 "req": "`reqdata`",
                 "res": "`body`"
-              }
+              },
+              "parts": [
+                "balance-sheet-statements"
+              ]
             },
             {
               "args": {
@@ -1701,8 +1882,10 @@ class Config {
               "kind": "http",
               "method": "GET",
               "orig": "/cash-flow-statements",
-              "parts": [
-                "cash-flow-statements"
+              "segments": [
+                {
+                  "lit": "cash-flow-statements"
+                }
               ],
               "select": {
                 "exist": [
@@ -1714,7 +1897,10 @@ class Config {
               "transform": {
                 "req": "`reqdata`",
                 "res": "`body`"
-              }
+              },
+              "parts": [
+                "cash-flow-statements"
+              ]
             },
             {
               "args": {
@@ -1745,8 +1931,10 @@ class Config {
               "kind": "http",
               "method": "GET",
               "orig": "/income-statements",
-              "parts": [
-                "income-statements"
+              "segments": [
+                {
+                  "lit": "income-statements"
+                }
               ],
               "select": {
                 "exist": [
@@ -1758,7 +1946,10 @@ class Config {
               "transform": {
                 "req": "`reqdata`",
                 "res": "`body`"
-              }
+              },
+              "parts": [
+                "income-statements"
+              ]
             },
             {
               "args": {
@@ -1789,8 +1980,10 @@ class Config {
               "kind": "http",
               "method": "GET",
               "orig": "/international-balance-sheet-statements",
-              "parts": [
-                "international-balance-sheet-statements"
+              "segments": [
+                {
+                  "lit": "international-balance-sheet-statements"
+                }
               ],
               "select": {
                 "exist": [
@@ -1802,7 +1995,10 @@ class Config {
               "transform": {
                 "req": "`reqdata`",
                 "res": "`body`"
-              }
+              },
+              "parts": [
+                "international-balance-sheet-statements"
+              ]
             },
             {
               "args": {
@@ -1833,8 +2029,10 @@ class Config {
               "kind": "http",
               "method": "GET",
               "orig": "/international-cash-flow-statements",
-              "parts": [
-                "international-cash-flow-statements"
+              "segments": [
+                {
+                  "lit": "international-cash-flow-statements"
+                }
               ],
               "select": {
                 "exist": [
@@ -1846,7 +2044,10 @@ class Config {
               "transform": {
                 "req": "`reqdata`",
                 "res": "`body`"
-              }
+              },
+              "parts": [
+                "international-cash-flow-statements"
+              ]
             },
             {
               "args": {
@@ -1877,8 +2078,10 @@ class Config {
               "kind": "http",
               "method": "GET",
               "orig": "/international-income-statements",
-              "parts": [
-                "international-income-statements"
+              "segments": [
+                {
+                  "lit": "international-income-statements"
+                }
               ],
               "select": {
                 "exist": [
@@ -1890,7 +2093,10 @@ class Config {
               "transform": {
                 "req": "`reqdata`",
                 "res": "`body`"
-              }
+              },
+              "parts": [
+                "international-income-statements"
+              ]
             }
           ]
         }
@@ -1943,8 +2149,10 @@ class Config {
               "kind": "http",
               "method": "GET",
               "orig": "/forex-minute-prices",
-              "parts": [
-                "forex-minute-prices"
+              "segments": [
+                {
+                  "lit": "forex-minute-prices"
+                }
               ],
               "select": {
                 "exist": [
@@ -1957,7 +2165,10 @@ class Config {
               "transform": {
                 "req": "`reqdata`",
                 "res": "`body`"
-              }
+              },
+              "parts": [
+                "forex-minute-prices"
+              ]
             },
             {
               "args": {
@@ -1988,8 +2199,10 @@ class Config {
               "kind": "http",
               "method": "GET",
               "orig": "/forex-prices",
-              "parts": [
-                "forex-prices"
+              "segments": [
+                {
+                  "lit": "forex-prices"
+                }
               ],
               "select": {
                 "exist": [
@@ -2001,7 +2214,10 @@ class Config {
               "transform": {
                 "req": "`reqdata`",
                 "res": "`body`"
-              }
+              },
+              "parts": [
+                "forex-prices"
+              ]
             },
             {
               "args": {
@@ -2032,8 +2248,10 @@ class Config {
               "kind": "http",
               "method": "GET",
               "orig": "/forex-quotes",
-              "parts": [
-                "forex-quotes"
+              "segments": [
+                {
+                  "lit": "forex-quotes"
+                }
               ],
               "select": {
                 "exist": [
@@ -2045,7 +2263,10 @@ class Config {
               "transform": {
                 "req": "`reqdata`",
                 "res": "`body`"
-              }
+              },
+              "parts": [
+                "forex-quotes"
+              ]
             },
             {
               "args": {
@@ -2069,8 +2290,10 @@ class Config {
               "kind": "http",
               "method": "GET",
               "orig": "/forex-symbols",
-              "parts": [
-                "forex-symbols"
+              "segments": [
+                {
+                  "lit": "forex-symbols"
+                }
               ],
               "select": {
                 "exist": [
@@ -2081,7 +2304,10 @@ class Config {
               "transform": {
                 "req": "`reqdata`",
                 "res": "`body`"
-              }
+              },
+              "parts": [
+                "forex-symbols"
+              ]
             }
           ]
         }
@@ -2126,8 +2352,10 @@ class Config {
               "kind": "http",
               "method": "GET",
               "orig": "/insider-transactions",
-              "parts": [
-                "insider-transactions"
+              "segments": [
+                {
+                  "lit": "insider-transactions"
+                }
               ],
               "select": {
                 "exist": [
@@ -2139,7 +2367,10 @@ class Config {
               "transform": {
                 "req": "`reqdata`",
                 "res": "`body`"
-              }
+              },
+              "parts": [
+                "insider-transactions"
+              ]
             },
             {
               "args": {
@@ -2163,8 +2394,10 @@ class Config {
               "kind": "http",
               "method": "GET",
               "orig": "/house-trading",
-              "parts": [
-                "house-trading"
+              "segments": [
+                {
+                  "lit": "house-trading"
+                }
               ],
               "select": {
                 "exist": [
@@ -2175,7 +2408,10 @@ class Config {
               "transform": {
                 "req": "`reqdata`",
                 "res": "`body`"
-              }
+              },
+              "parts": [
+                "house-trading"
+              ]
             },
             {
               "args": {
@@ -2199,8 +2435,10 @@ class Config {
               "kind": "http",
               "method": "GET",
               "orig": "/proposed-sales",
-              "parts": [
-                "proposed-sales"
+              "segments": [
+                {
+                  "lit": "proposed-sales"
+                }
               ],
               "select": {
                 "exist": [
@@ -2211,7 +2449,10 @@ class Config {
               "transform": {
                 "req": "`reqdata`",
                 "res": "`body`"
-              }
+              },
+              "parts": [
+                "proposed-sales"
+              ]
             },
             {
               "args": {
@@ -2235,8 +2476,10 @@ class Config {
               "kind": "http",
               "method": "GET",
               "orig": "/senate-trading",
-              "parts": [
-                "senate-trading"
+              "segments": [
+                {
+                  "lit": "senate-trading"
+                }
               ],
               "select": {
                 "exist": [
@@ -2247,7 +2490,10 @@ class Config {
               "transform": {
                 "req": "`reqdata`",
                 "res": "`body`"
-              }
+              },
+              "parts": [
+                "senate-trading"
+              ]
             }
           ]
         }
@@ -2293,8 +2539,10 @@ class Config {
               "kind": "http",
               "method": "GET",
               "orig": "/institutional-holdings",
-              "parts": [
-                "institutional-holdings"
+              "segments": [
+                {
+                  "lit": "institutional-holdings"
+                }
               ],
               "select": {
                 "exist": [
@@ -2306,7 +2554,10 @@ class Config {
               "transform": {
                 "req": "`reqdata`",
                 "res": "`body`"
-              }
+              },
+              "parts": [
+                "institutional-holdings"
+              ]
             },
             {
               "args": {
@@ -2330,8 +2581,10 @@ class Config {
               "kind": "http",
               "method": "GET",
               "orig": "/institutional-investors",
-              "parts": [
-                "institutional-investors"
+              "segments": [
+                {
+                  "lit": "institutional-investors"
+                }
               ],
               "select": {
                 "exist": [
@@ -2342,7 +2595,10 @@ class Config {
               "transform": {
                 "req": "`reqdata`",
                 "res": "`body`"
-              }
+              },
+              "parts": [
+                "institutional-investors"
+              ]
             },
             {
               "args": {
@@ -2366,8 +2622,10 @@ class Config {
               "kind": "http",
               "method": "GET",
               "orig": "/institutional-portfolio-statistics",
-              "parts": [
-                "institutional-portfolio-statistics"
+              "segments": [
+                {
+                  "lit": "institutional-portfolio-statistics"
+                }
               ],
               "select": {
                 "exist": [
@@ -2378,7 +2636,10 @@ class Config {
               "transform": {
                 "req": "`reqdata`",
                 "res": "`body`"
-              }
+              },
+              "parts": [
+                "institutional-portfolio-statistics"
+              ]
             }
           ]
         }
@@ -2417,8 +2678,10 @@ class Config {
               "kind": "http",
               "method": "GET",
               "orig": "/investment-adviser-information",
-              "parts": [
-                "investment-adviser-information"
+              "segments": [
+                {
+                  "lit": "investment-adviser-information"
+                }
               ],
               "select": {
                 "exist": [
@@ -2429,7 +2692,10 @@ class Config {
               "transform": {
                 "req": "`reqdata`",
                 "res": "`body`"
-              }
+              },
+              "parts": [
+                "investment-adviser-information"
+              ]
             },
             {
               "args": {
@@ -2453,8 +2719,10 @@ class Config {
               "kind": "http",
               "method": "GET",
               "orig": "/investment-adviser-names",
-              "parts": [
-                "investment-adviser-names"
+              "segments": [
+                {
+                  "lit": "investment-adviser-names"
+                }
               ],
               "select": {
                 "exist": [
@@ -2465,7 +2733,10 @@ class Config {
               "transform": {
                 "req": "`reqdata`",
                 "res": "`body`"
-              }
+              },
+              "parts": [
+                "investment-adviser-names"
+              ]
             }
           ]
         }
@@ -2477,34 +2748,42 @@ class Config {
     "market_data": {
       "fields": [
         {
+          "format": "float",
           "name": "change",
           "type": "`$NUMBER`"
         },
         {
+          "format": "float",
           "name": "close",
           "type": "`$NUMBER`"
         },
         {
+          "format": "date",
           "name": "date",
           "type": "`$STRING`"
         },
         {
+          "format": "float",
           "name": "high",
           "type": "`$NUMBER`"
         },
         {
+          "format": "float",
           "name": "low",
           "type": "`$NUMBER`"
         },
         {
+          "format": "float",
           "name": "open",
           "type": "`$NUMBER`"
         },
         {
+          "format": "float",
           "name": "percentage_change",
           "type": "`$NUMBER`"
         },
         {
+          "format": "float",
           "name": "price",
           "type": "`$NUMBER`"
         },
@@ -2521,6 +2800,7 @@ class Config {
           "type": "`$STRING`"
         },
         {
+          "format": "float",
           "name": "volume",
           "type": "`$NUMBER`"
         }
@@ -2576,8 +2856,10 @@ class Config {
               "kind": "http",
               "method": "GET",
               "orig": "/minute-prices",
-              "parts": [
-                "minute-prices"
+              "segments": [
+                {
+                  "lit": "minute-prices"
+                }
               ],
               "select": {
                 "exist": [
@@ -2591,7 +2873,10 @@ class Config {
               "transform": {
                 "req": "`reqdata`",
                 "res": "`body`"
-              }
+              },
+              "parts": [
+                "minute-prices"
+              ]
             },
             {
               "args": {
@@ -2630,8 +2915,10 @@ class Config {
               "kind": "http",
               "method": "GET",
               "orig": "/international-stock-prices",
-              "parts": [
-                "international-stock-prices"
+              "segments": [
+                {
+                  "lit": "international-stock-prices"
+                }
               ],
               "select": {
                 "exist": [
@@ -2644,7 +2931,10 @@ class Config {
               "transform": {
                 "req": "`reqdata`",
                 "res": "`body`"
-              }
+              },
+              "parts": [
+                "international-stock-prices"
+              ]
             },
             {
               "args": {
@@ -2682,8 +2972,10 @@ class Config {
               "kind": "http",
               "method": "GET",
               "orig": "/latest-prices",
-              "parts": [
-                "latest-prices"
+              "segments": [
+                {
+                  "lit": "latest-prices"
+                }
               ],
               "select": {
                 "exist": [
@@ -2696,7 +2988,10 @@ class Config {
               "transform": {
                 "req": "`reqdata`",
                 "res": "`body`"
-              }
+              },
+              "parts": [
+                "latest-prices"
+              ]
             },
             {
               "args": {
@@ -2735,8 +3030,10 @@ class Config {
               "kind": "http",
               "method": "GET",
               "orig": "/stock-prices",
-              "parts": [
-                "stock-prices"
+              "segments": [
+                {
+                  "lit": "stock-prices"
+                }
               ],
               "select": {
                 "exist": [
@@ -2749,7 +3046,10 @@ class Config {
               "transform": {
                 "req": "`reqdata`",
                 "res": "`body`"
-              }
+              },
+              "parts": [
+                "stock-prices"
+              ]
             },
             {
               "args": {
@@ -2781,8 +3081,10 @@ class Config {
               "kind": "http",
               "method": "GET",
               "orig": "/stock-quotes",
-              "parts": [
-                "stock-quotes"
+              "segments": [
+                {
+                  "lit": "stock-quotes"
+                }
               ],
               "select": {
                 "exist": [
@@ -2794,7 +3096,10 @@ class Config {
               "transform": {
                 "req": "`reqdata`",
                 "res": "`body`"
-              }
+              },
+              "parts": [
+                "stock-quotes"
+              ]
             }
           ]
         },
@@ -2838,8 +3143,10 @@ class Config {
               "kind": "http",
               "method": "GET",
               "orig": "/commodity-prices",
-              "parts": [
-                "commodity-prices"
+              "segments": [
+                {
+                  "lit": "commodity-prices"
+                }
               ],
               "select": {
                 "exist": [
@@ -2852,7 +3159,10 @@ class Config {
               "transform": {
                 "req": "`reqdata`",
                 "res": "`body`"
-              }
+              },
+              "parts": [
+                "commodity-prices"
+              ]
             },
             {
               "args": {
@@ -2890,8 +3200,10 @@ class Config {
               "kind": "http",
               "method": "GET",
               "orig": "/otc-prices",
-              "parts": [
-                "otc-prices"
+              "segments": [
+                {
+                  "lit": "otc-prices"
+                }
               ],
               "select": {
                 "exist": [
@@ -2904,7 +3216,10 @@ class Config {
               "transform": {
                 "req": "`reqdata`",
                 "res": "`body`"
-              }
+              },
+              "parts": [
+                "otc-prices"
+              ]
             },
             {
               "args": {
@@ -2935,8 +3250,10 @@ class Config {
               "kind": "http",
               "method": "GET",
               "orig": "/otc-volume",
-              "parts": [
-                "otc-volume"
+              "segments": [
+                {
+                  "lit": "otc-volume"
+                }
               ],
               "select": {
                 "exist": [
@@ -2948,7 +3265,10 @@ class Config {
               "transform": {
                 "req": "`reqdata`",
                 "res": "`body`"
-              }
+              },
+              "parts": [
+                "otc-volume"
+              ]
             }
           ]
         }
@@ -3001,8 +3321,10 @@ class Config {
               "kind": "http",
               "method": "GET",
               "orig": "/index-prices",
-              "parts": [
-                "index-prices"
+              "segments": [
+                {
+                  "lit": "index-prices"
+                }
               ],
               "select": {
                 "exist": [
@@ -3015,7 +3337,10 @@ class Config {
               "transform": {
                 "req": "`reqdata`",
                 "res": "`body`"
-              }
+              },
+              "parts": [
+                "index-prices"
+              ]
             },
             {
               "args": {
@@ -3046,8 +3371,10 @@ class Config {
               "kind": "http",
               "method": "GET",
               "orig": "/index-constituents",
-              "parts": [
-                "index-constituents"
+              "segments": [
+                {
+                  "lit": "index-constituents"
+                }
               ],
               "select": {
                 "exist": [
@@ -3059,7 +3386,10 @@ class Config {
               "transform": {
                 "req": "`reqdata`",
                 "res": "`body`"
-              }
+              },
+              "parts": [
+                "index-constituents"
+              ]
             },
             {
               "args": {
@@ -3090,8 +3420,10 @@ class Config {
               "kind": "http",
               "method": "GET",
               "orig": "/index-quotes",
-              "parts": [
-                "index-quotes"
+              "segments": [
+                {
+                  "lit": "index-quotes"
+                }
               ],
               "select": {
                 "exist": [
@@ -3103,7 +3435,10 @@ class Config {
               "transform": {
                 "req": "`reqdata`",
                 "res": "`body`"
-              }
+              },
+              "parts": [
+                "index-quotes"
+              ]
             },
             {
               "args": {
@@ -3127,8 +3462,10 @@ class Config {
               "kind": "http",
               "method": "GET",
               "orig": "/index-symbols",
-              "parts": [
-                "index-symbols"
+              "segments": [
+                {
+                  "lit": "index-symbols"
+                }
               ],
               "select": {
                 "exist": [
@@ -3139,7 +3476,10 @@ class Config {
               "transform": {
                 "req": "`reqdata`",
                 "res": "`body`"
-              }
+              },
+              "parts": [
+                "index-symbols"
+              ]
             }
           ]
         }
@@ -3184,8 +3524,10 @@ class Config {
               "kind": "http",
               "method": "GET",
               "orig": "/press-releases",
-              "parts": [
-                "press-releases"
+              "segments": [
+                {
+                  "lit": "press-releases"
+                }
               ],
               "select": {
                 "exist": [
@@ -3197,7 +3539,10 @@ class Config {
               "transform": {
                 "req": "`reqdata`",
                 "res": "`body`"
-              }
+              },
+              "parts": [
+                "press-releases"
+              ]
             },
             {
               "args": {
@@ -3221,8 +3566,10 @@ class Config {
               "kind": "http",
               "method": "GET",
               "orig": "/fed-press-releases",
-              "parts": [
-                "fed-press-releases"
+              "segments": [
+                {
+                  "lit": "fed-press-releases"
+                }
               ],
               "select": {
                 "exist": [
@@ -3233,7 +3580,10 @@ class Config {
               "transform": {
                 "req": "`reqdata`",
                 "res": "`body`"
-              }
+              },
+              "parts": [
+                "fed-press-releases"
+              ]
             },
             {
               "args": {
@@ -3257,8 +3607,10 @@ class Config {
               "kind": "http",
               "method": "GET",
               "orig": "/sec-press-releases",
-              "parts": [
-                "sec-press-releases"
+              "segments": [
+                {
+                  "lit": "sec-press-releases"
+                }
               ],
               "select": {
                 "exist": [
@@ -3269,7 +3621,10 @@ class Config {
               "transform": {
                 "req": "`reqdata`",
                 "res": "`body`"
-              }
+              },
+              "parts": [
+                "sec-press-releases"
+              ]
             }
           ]
         }
@@ -3314,8 +3669,10 @@ class Config {
               "kind": "http",
               "method": "GET",
               "orig": "/dividends",
-              "parts": [
-                "dividends"
+              "segments": [
+                {
+                  "lit": "dividends"
+                }
               ],
               "select": {
                 "exist": [
@@ -3327,7 +3684,10 @@ class Config {
               "transform": {
                 "req": "`reqdata`",
                 "res": "`body`"
-              }
+              },
+              "parts": [
+                "dividends"
+              ]
             },
             {
               "args": {
@@ -3357,8 +3717,10 @@ class Config {
               "kind": "http",
               "method": "GET",
               "orig": "/earnings-releases",
-              "parts": [
-                "earnings-releases"
+              "segments": [
+                {
+                  "lit": "earnings-releases"
+                }
               ],
               "select": {
                 "exist": [
@@ -3370,7 +3732,10 @@ class Config {
               "transform": {
                 "req": "`reqdata`",
                 "res": "`body`"
-              }
+              },
+              "parts": [
+                "earnings-releases"
+              ]
             },
             {
               "args": {
@@ -3400,8 +3765,10 @@ class Config {
               "kind": "http",
               "method": "GET",
               "orig": "/short-interest",
-              "parts": [
-                "short-interest"
+              "segments": [
+                {
+                  "lit": "short-interest"
+                }
               ],
               "select": {
                 "exist": [
@@ -3413,7 +3780,10 @@ class Config {
               "transform": {
                 "req": "`reqdata`",
                 "res": "`body`"
-              }
+              },
+              "parts": [
+                "short-interest"
+              ]
             },
             {
               "args": {
@@ -3443,8 +3813,10 @@ class Config {
               "kind": "http",
               "method": "GET",
               "orig": "/stock-splits",
-              "parts": [
-                "stock-splits"
+              "segments": [
+                {
+                  "lit": "stock-splits"
+                }
               ],
               "select": {
                 "exist": [
@@ -3456,7 +3828,10 @@ class Config {
               "transform": {
                 "req": "`reqdata`",
                 "res": "`body`"
-              }
+              },
+              "parts": [
+                "stock-splits"
+              ]
             },
             {
               "args": {
@@ -3480,8 +3855,10 @@ class Config {
               "kind": "http",
               "method": "GET",
               "orig": "/initial-public-offerings",
-              "parts": [
-                "initial-public-offerings"
+              "segments": [
+                {
+                  "lit": "initial-public-offerings"
+                }
               ],
               "select": {
                 "exist": [
@@ -3492,7 +3869,10 @@ class Config {
               "transform": {
                 "req": "`reqdata`",
                 "res": "`body`"
-              }
+              },
+              "parts": [
+                "initial-public-offerings"
+              ]
             }
           ]
         }
@@ -3538,8 +3918,10 @@ class Config {
               "kind": "http",
               "method": "GET",
               "orig": "/mutual-fund-holdings",
-              "parts": [
-                "mutual-fund-holdings"
+              "segments": [
+                {
+                  "lit": "mutual-fund-holdings"
+                }
               ],
               "select": {
                 "exist": [
@@ -3551,7 +3933,10 @@ class Config {
               "transform": {
                 "req": "`reqdata`",
                 "res": "`body`"
-              }
+              },
+              "parts": [
+                "mutual-fund-holdings"
+              ]
             },
             {
               "args": {
@@ -3582,8 +3967,10 @@ class Config {
               "kind": "http",
               "method": "GET",
               "orig": "/mutual-fund-statistics",
-              "parts": [
-                "mutual-fund-statistics"
+              "segments": [
+                {
+                  "lit": "mutual-fund-statistics"
+                }
               ],
               "select": {
                 "exist": [
@@ -3595,7 +3982,10 @@ class Config {
               "transform": {
                 "req": "`reqdata`",
                 "res": "`body`"
-              }
+              },
+              "parts": [
+                "mutual-fund-statistics"
+              ]
             },
             {
               "args": {
@@ -3619,8 +4009,10 @@ class Config {
               "kind": "http",
               "method": "GET",
               "orig": "/mutual-fund-symbols",
-              "parts": [
-                "mutual-fund-symbols"
+              "segments": [
+                {
+                  "lit": "mutual-fund-symbols"
+                }
               ],
               "select": {
                 "exist": [
@@ -3631,7 +4023,10 @@ class Config {
               "transform": {
                 "req": "`reqdata`",
                 "res": "`body`"
-              }
+              },
+              "parts": [
+                "mutual-fund-symbols"
+              ]
             }
           ]
         }
@@ -3694,8 +4089,10 @@ class Config {
               "kind": "http",
               "method": "GET",
               "orig": "/etf-symbols",
-              "parts": [
-                "etf-symbols"
+              "segments": [
+                {
+                  "lit": "etf-symbols"
+                }
               ],
               "select": {
                 "exist": [
@@ -3707,7 +4104,10 @@ class Config {
               "transform": {
                 "req": "`reqdata`",
                 "res": "`body`"
-              }
+              },
+              "parts": [
+                "etf-symbols"
+              ]
             },
             {
               "args": {
@@ -3738,8 +4138,10 @@ class Config {
               "kind": "http",
               "method": "GET",
               "orig": "/international-stock-symbols",
-              "parts": [
-                "international-stock-symbols"
+              "segments": [
+                {
+                  "lit": "international-stock-symbols"
+                }
               ],
               "select": {
                 "exist": [
@@ -3751,7 +4153,10 @@ class Config {
               "transform": {
                 "req": "`reqdata`",
                 "res": "`body`"
-              }
+              },
+              "parts": [
+                "international-stock-symbols"
+              ]
             },
             {
               "args": {
@@ -3782,8 +4187,10 @@ class Config {
               "kind": "http",
               "method": "GET",
               "orig": "/otc-symbols",
-              "parts": [
-                "otc-symbols"
+              "segments": [
+                {
+                  "lit": "otc-symbols"
+                }
               ],
               "select": {
                 "exist": [
@@ -3795,7 +4202,10 @@ class Config {
               "transform": {
                 "req": "`reqdata`",
                 "res": "`body`"
-              }
+              },
+              "parts": [
+                "otc-symbols"
+              ]
             },
             {
               "args": {
@@ -3826,8 +4236,10 @@ class Config {
               "kind": "http",
               "method": "GET",
               "orig": "/stock-symbols",
-              "parts": [
-                "stock-symbols"
+              "segments": [
+                {
+                  "lit": "stock-symbols"
+                }
               ],
               "select": {
                 "exist": [
@@ -3839,7 +4251,10 @@ class Config {
               "transform": {
                 "req": "`reqdata`",
                 "res": "`body`"
-              }
+              },
+              "parts": [
+                "stock-symbols"
+              ]
             },
             {
               "args": {
@@ -3863,8 +4278,10 @@ class Config {
               "kind": "http",
               "method": "GET",
               "orig": "/commodity-symbols",
-              "parts": [
-                "commodity-symbols"
+              "segments": [
+                {
+                  "lit": "commodity-symbols"
+                }
               ],
               "select": {
                 "exist": [
@@ -3875,7 +4292,10 @@ class Config {
               "transform": {
                 "req": "`reqdata`",
                 "res": "`body`"
-              }
+              },
+              "parts": [
+                "commodity-symbols"
+              ]
             }
           ]
         }
@@ -3891,6 +4311,7 @@ class Config {
 const config = new Config()
 
 export {
-  config
+  config,
+  FEATURE_PLUGINS,
 }
 

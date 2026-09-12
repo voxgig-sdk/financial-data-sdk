@@ -38,8 +38,10 @@ main: kit: entity: financial_ratio: {
           }
           method: "GET"
           orig: "/efficiency-ratios"
-          parts: [
-            "efficiency-ratios"
+          segments: [
+            {
+              lit: "efficiency-ratios"
+            }
           ]
           select: {
             exist: [
@@ -82,8 +84,10 @@ main: kit: entity: financial_ratio: {
           }
           method: "GET"
           orig: "/liquidity-ratios"
-          parts: [
-            "liquidity-ratios"
+          segments: [
+            {
+              lit: "liquidity-ratios"
+            }
           ]
           select: {
             exist: [
@@ -126,8 +130,10 @@ main: kit: entity: financial_ratio: {
           }
           method: "GET"
           orig: "/profitability-ratios"
-          parts: [
-            "profitability-ratios"
+          segments: [
+            {
+              lit: "profitability-ratios"
+            }
           ]
           select: {
             exist: [
@@ -170,8 +176,10 @@ main: kit: entity: financial_ratio: {
           }
           method: "GET"
           orig: "/solvency-ratios"
-          parts: [
-            "solvency-ratios"
+          segments: [
+            {
+              lit: "solvency-ratios"
+            }
           ]
           select: {
             exist: [
@@ -214,8 +222,10 @@ main: kit: entity: financial_ratio: {
           }
           method: "GET"
           orig: "/valuation-ratios"
-          parts: [
-            "valuation-ratios"
+          segments: [
+            {
+              lit: "valuation-ratios"
+            }
           ]
           select: {
             exist: [

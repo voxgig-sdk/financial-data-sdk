@@ -45,8 +45,10 @@ main: kit: entity: forex_data: {
           }
           method: "GET"
           orig: "/forex-minute-prices"
-          parts: [
-            "forex-minute-prices"
+          segments: [
+            {
+              lit: "forex-minute-prices"
+            }
           ]
           select: {
             exist: [
@@ -90,8 +92,10 @@ main: kit: entity: forex_data: {
           }
           method: "GET"
           orig: "/forex-prices"
-          parts: [
-            "forex-prices"
+          segments: [
+            {
+              lit: "forex-prices"
+            }
           ]
           select: {
             exist: [
@@ -134,8 +138,10 @@ main: kit: entity: forex_data: {
           }
           method: "GET"
           orig: "/forex-quotes"
-          parts: [
-            "forex-quotes"
+          segments: [
+            {
+              lit: "forex-quotes"
+            }
           ]
           select: {
             exist: [
@@ -171,8 +177,10 @@ main: kit: entity: forex_data: {
           }
           method: "GET"
           orig: "/forex-symbols"
-          parts: [
-            "forex-symbols"
+          segments: [
+            {
+              lit: "forex-symbols"
+            }
           ]
           select: {
             exist: [

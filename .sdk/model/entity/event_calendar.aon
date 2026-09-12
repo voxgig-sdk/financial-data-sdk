@@ -31,8 +31,10 @@ main: kit: entity: event_calendar: {
           }
           method: "GET"
           orig: "/dividends-calendar"
-          parts: [
-            "dividends-calendar"
+          segments: [
+            {
+              lit: "dividends-calendar"
+            }
           ]
           select: {
             exist: [
@@ -67,8 +69,10 @@ main: kit: entity: event_calendar: {
           }
           method: "GET"
           orig: "/earnings-calendar"
-          parts: [
-            "earnings-calendar"
+          segments: [
+            {
+              lit: "earnings-calendar"
+            }
           ]
           select: {
             exist: [
@@ -103,8 +107,10 @@ main: kit: entity: event_calendar: {
           }
           method: "GET"
           orig: "/economic-calendar"
-          parts: [
-            "economic-calendar"
+          segments: [
+            {
+              lit: "economic-calendar"
+            }
           ]
           select: {
             exist: [
@@ -139,8 +145,10 @@ main: kit: entity: event_calendar: {
           }
           method: "GET"
           orig: "/ipo-calendar"
-          parts: [
-            "ipo-calendar"
+          segments: [
+            {
+              lit: "ipo-calendar"
+            }
           ]
           select: {
             exist: [
@@ -175,8 +183,10 @@ main: kit: entity: event_calendar: {
           }
           method: "GET"
           orig: "/splits-calendar"
-          parts: [
-            "splits-calendar"
+          segments: [
+            {
+              lit: "splits-calendar"
+            }
           ]
           select: {
             exist: [

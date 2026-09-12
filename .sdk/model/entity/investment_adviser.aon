@@ -31,8 +31,10 @@ main: kit: entity: investment_adviser: {
           }
           method: "GET"
           orig: "/investment-adviser-information"
-          parts: [
-            "investment-adviser-information"
+          segments: [
+            {
+              lit: "investment-adviser-information"
+            }
           ]
           select: {
             exist: [
@@ -67,8 +69,10 @@ main: kit: entity: investment_adviser: {
           }
           method: "GET"
           orig: "/investment-adviser-names"
-          parts: [
-            "investment-adviser-names"
+          segments: [
+            {
+              lit: "investment-adviser-names"
+            }
           ]
           select: {
             exist: [

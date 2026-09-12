@@ -38,8 +38,10 @@ main: kit: entity: basic_information: {
           }
           method: "GET"
           orig: "/company-information"
-          parts: [
-            "company-information"
+          segments: [
+            {
+              lit: "company-information"
+            }
           ]
           select: {
             exist: [
@@ -82,8 +84,10 @@ main: kit: entity: basic_information: {
           }
           method: "GET"
           orig: "/employee-count"
-          parts: [
-            "employee-count"
+          segments: [
+            {
+              lit: "employee-count"
+            }
           ]
           select: {
             exist: [
@@ -126,8 +130,10 @@ main: kit: entity: basic_information: {
           }
           method: "GET"
           orig: "/executive-compensation"
-          parts: [
-            "executive-compensation"
+          segments: [
+            {
+              lit: "executive-compensation"
+            }
           ]
           select: {
             exist: [
@@ -170,8 +176,10 @@ main: kit: entity: basic_information: {
           }
           method: "GET"
           orig: "/international-company-information"
-          parts: [
-            "international-company-information"
+          segments: [
+            {
+              lit: "international-company-information"
+            }
           ]
           select: {
             exist: [
@@ -214,8 +222,10 @@ main: kit: entity: basic_information: {
           }
           method: "GET"
           orig: "/key-metrics"
-          parts: [
-            "key-metrics"
+          segments: [
+            {
+              lit: "key-metrics"
+            }
           ]
           select: {
             exist: [
@@ -258,8 +268,10 @@ main: kit: entity: basic_information: {
           }
           method: "GET"
           orig: "/market-cap"
-          parts: [
-            "market-cap"
+          segments: [
+            {
+              lit: "market-cap"
+            }
           ]
           select: {
             exist: [
@@ -302,8 +314,10 @@ main: kit: entity: basic_information: {
           }
           method: "GET"
           orig: "/securities-information"
-          parts: [
-            "securities-information"
+          segments: [
+            {
+              lit: "securities-information"
+            }
           ]
           select: {
             exist: [

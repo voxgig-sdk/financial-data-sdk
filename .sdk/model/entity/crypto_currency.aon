@@ -45,8 +45,10 @@ main: kit: entity: crypto_currency: {
           }
           method: "GET"
           orig: "/crypto-minute-prices"
-          parts: [
-            "crypto-minute-prices"
+          segments: [
+            {
+              lit: "crypto-minute-prices"
+            }
           ]
           select: {
             exist: [
@@ -90,8 +92,10 @@ main: kit: entity: crypto_currency: {
           }
           method: "GET"
           orig: "/crypto-information"
-          parts: [
-            "crypto-information"
+          segments: [
+            {
+              lit: "crypto-information"
+            }
           ]
           select: {
             exist: [
@@ -134,8 +138,10 @@ main: kit: entity: crypto_currency: {
           }
           method: "GET"
           orig: "/crypto-prices"
-          parts: [
-            "crypto-prices"
+          segments: [
+            {
+              lit: "crypto-prices"
+            }
           ]
           select: {
             exist: [
@@ -178,8 +184,10 @@ main: kit: entity: crypto_currency: {
           }
           method: "GET"
           orig: "/crypto-quotes"
-          parts: [
-            "crypto-quotes"
+          segments: [
+            {
+              lit: "crypto-quotes"
+            }
           ]
           select: {
             exist: [
@@ -215,8 +223,10 @@ main: kit: entity: crypto_currency: {
           }
           method: "GET"
           orig: "/crypto-symbols"
-          parts: [
-            "crypto-symbols"
+          segments: [
+            {
+              lit: "crypto-symbols"
+            }
           ]
           select: {
             exist: [

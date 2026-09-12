@@ -62,15 +62,17 @@ def symbol_list_direct_setup(mockres)
   env = Runner.env_override({
     "FINANCIAL_DATA_TEST_SYMBOL_LIST_ENTID" => {},
     "FINANCIAL_DATA_TEST_LIVE" => "FALSE",
-    "FINANCIAL_DATA_APIKEY" => "NONE",
+    "FINANCIAL_DATA_APIKEY" => "",
   })
 
   live = env["FINANCIAL_DATA_TEST_LIVE"] == "TRUE"
 
   if live
-    merged_opts = {
+    # Merged so the generated fields win: sdk-test-control.json's
+    # test.client.options adds to the live client, it does not redirect it.
+    merged_opts = Runner.live_client_options.merge({
       "apikey" => env["FINANCIAL_DATA_APIKEY"],
-    }
+    })
     client = FinancialDataSDK.new(merged_opts)
     return {
       client: client,

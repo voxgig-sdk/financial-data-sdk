@@ -38,8 +38,10 @@ main: kit: entity: miscellaneous_data: {
           }
           method: "GET"
           orig: "/dividends"
-          parts: [
-            "dividends"
+          segments: [
+            {
+              lit: "dividends"
+            }
           ]
           select: {
             exist: [
@@ -82,8 +84,10 @@ main: kit: entity: miscellaneous_data: {
           }
           method: "GET"
           orig: "/earnings-releases"
-          parts: [
-            "earnings-releases"
+          segments: [
+            {
+              lit: "earnings-releases"
+            }
           ]
           select: {
             exist: [
@@ -126,8 +130,10 @@ main: kit: entity: miscellaneous_data: {
           }
           method: "GET"
           orig: "/short-interest"
-          parts: [
-            "short-interest"
+          segments: [
+            {
+              lit: "short-interest"
+            }
           ]
           select: {
             exist: [
@@ -170,8 +176,10 @@ main: kit: entity: miscellaneous_data: {
           }
           method: "GET"
           orig: "/stock-splits"
-          parts: [
-            "stock-splits"
+          segments: [
+            {
+              lit: "stock-splits"
+            }
           ]
           select: {
             exist: [
@@ -207,8 +215,10 @@ main: kit: entity: miscellaneous_data: {
           }
           method: "GET"
           orig: "/initial-public-offerings"
-          parts: [
-            "initial-public-offerings"
+          segments: [
+            {
+              lit: "initial-public-offerings"
+            }
           ]
           select: {
             exist: [

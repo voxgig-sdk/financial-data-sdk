@@ -62,8 +62,10 @@ main: kit: entity: symbol_list: {
           }
           method: "GET"
           orig: "/etf-symbols"
-          parts: [
-            "etf-symbols"
+          segments: [
+            {
+              lit: "etf-symbols"
+            }
           ]
           select: {
             exist: [
@@ -107,8 +109,10 @@ main: kit: entity: symbol_list: {
           }
           method: "GET"
           orig: "/international-stock-symbols"
-          parts: [
-            "international-stock-symbols"
+          segments: [
+            {
+              lit: "international-stock-symbols"
+            }
           ]
           select: {
             exist: [
@@ -152,8 +156,10 @@ main: kit: entity: symbol_list: {
           }
           method: "GET"
           orig: "/otc-symbols"
-          parts: [
-            "otc-symbols"
+          segments: [
+            {
+              lit: "otc-symbols"
+            }
           ]
           select: {
             exist: [
@@ -197,8 +203,10 @@ main: kit: entity: symbol_list: {
           }
           method: "GET"
           orig: "/stock-symbols"
-          parts: [
-            "stock-symbols"
+          segments: [
+            {
+              lit: "stock-symbols"
+            }
           ]
           select: {
             exist: [
@@ -234,8 +242,10 @@ main: kit: entity: symbol_list: {
           }
           method: "GET"
           orig: "/commodity-symbols"
-          parts: [
-            "commodity-symbols"
+          segments: [
+            {
+              lit: "commodity-symbols"
+            }
           ]
           select: {
             exist: [

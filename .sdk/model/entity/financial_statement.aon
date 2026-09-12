@@ -38,8 +38,10 @@ main: kit: entity: financial_statement: {
           }
           method: "GET"
           orig: "/balance-sheet-statements"
-          parts: [
-            "balance-sheet-statements"
+          segments: [
+            {
+              lit: "balance-sheet-statements"
+            }
           ]
           select: {
             exist: [
@@ -82,8 +84,10 @@ main: kit: entity: financial_statement: {
           }
           method: "GET"
           orig: "/cash-flow-statements"
-          parts: [
-            "cash-flow-statements"
+          segments: [
+            {
+              lit: "cash-flow-statements"
+            }
           ]
           select: {
             exist: [
@@ -126,8 +130,10 @@ main: kit: entity: financial_statement: {
           }
           method: "GET"
           orig: "/income-statements"
-          parts: [
-            "income-statements"
+          segments: [
+            {
+              lit: "income-statements"
+            }
           ]
           select: {
             exist: [
@@ -170,8 +176,10 @@ main: kit: entity: financial_statement: {
           }
           method: "GET"
           orig: "/international-balance-sheet-statements"
-          parts: [
-            "international-balance-sheet-statements"
+          segments: [
+            {
+              lit: "international-balance-sheet-statements"
+            }
           ]
           select: {
             exist: [
@@ -214,8 +222,10 @@ main: kit: entity: financial_statement: {
           }
           method: "GET"
           orig: "/international-cash-flow-statements"
-          parts: [
-            "international-cash-flow-statements"
+          segments: [
+            {
+              lit: "international-cash-flow-statements"
+            }
           ]
           select: {
             exist: [
@@ -258,8 +268,10 @@ main: kit: entity: financial_statement: {
           }
           method: "GET"
           orig: "/international-income-statements"
-          parts: [
-            "international-income-statements"
+          segments: [
+            {
+              lit: "international-income-statements"
+            }
           ]
           select: {
             exist: [

@@ -58,15 +58,18 @@ def _miscellaneous_data_direct_setup(mockres):
     env = runner.env_override({
         "FINANCIAL_DATA_TEST_MISCELLANEOUS_DATA_ENTID": {},
         "FINANCIAL_DATA_TEST_LIVE": "FALSE",
-        "FINANCIAL_DATA_APIKEY": "NONE",
+        "FINANCIAL_DATA_APIKEY": "",
     })
 
     live = env.get("FINANCIAL_DATA_TEST_LIVE") == "TRUE"
 
     if live:
-        merged_opts = {
+        # sdk-test-control.json's test.client.options seeds the live
+        # client; the generated fields below overwrite anything they name.
+        merged_opts = dict(runner.live_client_options())
+        merged_opts.update({
             "apikey": env.get("FINANCIAL_DATA_APIKEY"),
-        }
+        })
         client = FinancialDataSDK(merged_opts)
         return {
             "client": client,

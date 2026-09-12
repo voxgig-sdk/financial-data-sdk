@@ -38,8 +38,10 @@ main: kit: entity: esg_data: {
           }
           method: "GET"
           orig: "/esg-ratings"
-          parts: [
-            "esg-ratings"
+          segments: [
+            {
+              lit: "esg-ratings"
+            }
           ]
           select: {
             exist: [
@@ -82,8 +84,10 @@ main: kit: entity: esg_data: {
           }
           method: "GET"
           orig: "/esg-scores"
-          parts: [
-            "esg-scores"
+          segments: [
+            {
+              lit: "esg-scores"
+            }
           ]
           select: {
             exist: [
@@ -119,8 +123,10 @@ main: kit: entity: esg_data: {
           }
           method: "GET"
           orig: "/industry-esg-scores"
-          parts: [
-            "industry-esg-scores"
+          segments: [
+            {
+              lit: "industry-esg-scores"
+            }
           ]
           select: {
             exist: [

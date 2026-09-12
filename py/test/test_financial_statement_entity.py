@@ -90,7 +90,7 @@ def _financial_statement_basic_setup(extra):
         "FINANCIAL_DATA_TEST_FINANCIAL_STATEMENT_ENTID": idmap,
         "FINANCIAL_DATA_TEST_LIVE": "FALSE",
         "FINANCIAL_DATA_TEST_EXPLAIN": "FALSE",
-        "FINANCIAL_DATA_APIKEY": "NONE",
+        "FINANCIAL_DATA_APIKEY": "",
     })
 
     idmap_resolved = helpers.to_map(
@@ -100,6 +100,10 @@ def _financial_statement_basic_setup(extra):
 
     if env.get("FINANCIAL_DATA_TEST_LIVE") == "TRUE":
         merged_opts = vs.merge([
+            # FIRST, so the generated fields below win: sdk-test-control.json's
+            # test.client.options adds to the live client, it does not
+            # redirect it.
+            runner.live_client_options(),
             {
                 "apikey": env.get("FINANCIAL_DATA_APIKEY"),
             },

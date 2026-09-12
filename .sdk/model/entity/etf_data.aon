@@ -38,8 +38,10 @@ main: kit: entity: etf_data: {
           }
           method: "GET"
           orig: "/etf-holdings"
-          parts: [
-            "etf-holdings"
+          segments: [
+            {
+              lit: "etf-holdings"
+            }
           ]
           select: {
             exist: [
@@ -82,8 +84,10 @@ main: kit: entity: etf_data: {
           }
           method: "GET"
           orig: "/etf-prices"
-          parts: [
-            "etf-prices"
+          segments: [
+            {
+              lit: "etf-prices"
+            }
           ]
           select: {
             exist: [
@@ -126,8 +130,10 @@ main: kit: entity: etf_data: {
           }
           method: "GET"
           orig: "/etf-quotes"
-          parts: [
-            "etf-quotes"
+          segments: [
+            {
+              lit: "etf-quotes"
+            }
           ]
           select: {
             exist: [

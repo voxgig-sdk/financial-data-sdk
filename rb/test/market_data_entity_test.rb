@@ -123,7 +123,7 @@ def market_data_basic_setup(extra)
     "FINANCIAL_DATA_TEST_MARKET_DATA_ENTID" => idmap,
     "FINANCIAL_DATA_TEST_LIVE" => "FALSE",
     "FINANCIAL_DATA_TEST_EXPLAIN" => "FALSE",
-    "FINANCIAL_DATA_APIKEY" => "NONE",
+    "FINANCIAL_DATA_APIKEY" => "",
   })
 
   idmap_resolved = Helpers.to_map(
@@ -134,6 +134,9 @@ def market_data_basic_setup(extra)
 
   if env["FINANCIAL_DATA_TEST_LIVE"] == "TRUE"
     merged_opts = Vs.merge([
+      # FIRST, so the generated fields below win: sdk-test-control.json's
+      # test.client.options adds to the live client, it does not redirect it.
+      Runner.live_client_options,
       {
         "apikey" => env["FINANCIAL_DATA_APIKEY"],
       },

@@ -46,8 +46,10 @@ main: kit: entity: market_index: {
           }
           method: "GET"
           orig: "/index-prices"
-          parts: [
-            "index-prices"
+          segments: [
+            {
+              lit: "index-prices"
+            }
           ]
           select: {
             exist: [
@@ -91,8 +93,10 @@ main: kit: entity: market_index: {
           }
           method: "GET"
           orig: "/index-constituents"
-          parts: [
-            "index-constituents"
+          segments: [
+            {
+              lit: "index-constituents"
+            }
           ]
           select: {
             exist: [
@@ -135,8 +139,10 @@ main: kit: entity: market_index: {
           }
           method: "GET"
           orig: "/index-quotes"
-          parts: [
-            "index-quotes"
+          segments: [
+            {
+              lit: "index-quotes"
+            }
           ]
           select: {
             exist: [
@@ -172,8 +178,10 @@ main: kit: entity: market_index: {
           }
           method: "GET"
           orig: "/index-symbols"
-          parts: [
-            "index-symbols"
+          segments: [
+            {
+              lit: "index-symbols"
+            }
           ]
           select: {
             exist: [

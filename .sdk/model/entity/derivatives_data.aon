@@ -38,8 +38,10 @@ main: kit: entity: derivatives_data: {
           }
           method: "GET"
           orig: "/futures-prices"
-          parts: [
-            "futures-prices"
+          segments: [
+            {
+              lit: "futures-prices"
+            }
           ]
           select: {
             exist: [
@@ -82,8 +84,10 @@ main: kit: entity: derivatives_data: {
           }
           method: "GET"
           orig: "/option-chain"
-          parts: [
-            "option-chain"
+          segments: [
+            {
+              lit: "option-chain"
+            }
           ]
           select: {
             exist: [
@@ -126,8 +130,10 @@ main: kit: entity: derivatives_data: {
           }
           method: "GET"
           orig: "/option-greeks"
-          parts: [
-            "option-greeks"
+          segments: [
+            {
+              lit: "option-greeks"
+            }
           ]
           select: {
             exist: [
@@ -170,8 +176,10 @@ main: kit: entity: derivatives_data: {
           }
           method: "GET"
           orig: "/option-prices"
-          parts: [
-            "option-prices"
+          segments: [
+            {
+              lit: "option-prices"
+            }
           ]
           select: {
             exist: [
@@ -207,8 +215,10 @@ main: kit: entity: derivatives_data: {
           }
           method: "GET"
           orig: "/futures-symbols"
-          parts: [
-            "futures-symbols"
+          segments: [
+            {
+              lit: "futures-symbols"
+            }
           ]
           select: {
             exist: [

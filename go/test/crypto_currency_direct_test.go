@@ -100,14 +100,22 @@ func crypto_currencyDirectSetup(mockres any) *crypto_currencyDirectSetupResult {
 	env := envOverride(map[string]any{
 		"FINANCIAL_DATA_TEST_CRYPTO_CURRENCY_ENTID": map[string]any{},
 		"FINANCIAL_DATA_TEST_LIVE":    "FALSE",
-		"FINANCIAL_DATA_APIKEY":       "NONE",
+		"FINANCIAL_DATA_APIKEY":       "",
 	})
 
 	live := env["FINANCIAL_DATA_TEST_LIVE"] == "TRUE"
 
 	if live {
-		mergedOpts := map[string]any{
+		// sdk-test-control.json's test.client.options seeds the live
+		// client; the generated fields below overwrite anything they name.
+		mergedOpts := map[string]any{}
+		for k, v := range liveClientOptions() {
+			mergedOpts[k] = v
+		}
+		for k, v := range map[string]any{
 			"apikey": env["FINANCIAL_DATA_APIKEY"],
+		} {
+			mergedOpts[k] = v
 		}
 		client := sdk.NewFinancialDataSDK(mergedOpts)
 

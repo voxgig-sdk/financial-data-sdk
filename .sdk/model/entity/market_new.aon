@@ -38,8 +38,10 @@ main: kit: entity: market_new: {
           }
           method: "GET"
           orig: "/press-releases"
-          parts: [
-            "press-releases"
+          segments: [
+            {
+              lit: "press-releases"
+            }
           ]
           select: {
             exist: [
@@ -75,8 +77,10 @@ main: kit: entity: market_new: {
           }
           method: "GET"
           orig: "/fed-press-releases"
-          parts: [
-            "fed-press-releases"
+          segments: [
+            {
+              lit: "fed-press-releases"
+            }
           ]
           select: {
             exist: [
@@ -111,8 +115,10 @@ main: kit: entity: market_new: {
           }
           method: "GET"
           orig: "/sec-press-releases"
-          parts: [
-            "sec-press-releases"
+          segments: [
+            {
+              lit: "sec-press-releases"
+            }
           ]
           select: {
             exist: [

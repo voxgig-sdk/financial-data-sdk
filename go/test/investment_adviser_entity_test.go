@@ -50,7 +50,7 @@ func TestInvestmentAdviserEntity(t *testing.T) {
 		client := setup.client
 
 		// Bootstrap entity data from existing test data (no create step in flow).
-		investmentAdviserRef01DataRaw := vs.Items(core.ToMapAny(vs.GetPath("existing.investment_adviser", setup.data)))
+		investmentAdviserRef01DataRaw := vs.Items(core.ToMapAny(vs.GetPath(setup.data, "existing.investment_adviser")))
 		var investmentAdviserRef01Data map[string]any
 		if len(investmentAdviserRef01DataRaw) > 0 {
 			investmentAdviserRef01Data = core.ToMapAny(investmentAdviserRef01DataRaw[0][1])
@@ -97,7 +97,7 @@ func investment_adviserBasicSetup(extra map[string]any) *entityTestSetup {
 	client := sdk.TestSDK(options, extra)
 
 	// Generate idmap via transform, matching TS pattern.
-	idmap := vs.Transform(
+	idmap, _ := vs.Transform(
 		[]any{"investment_adviser01", "investment_adviser02", "investment_adviser03"},
 		map[string]any{
 			"`$PACK`": []any{"", map[string]any{
@@ -117,7 +117,7 @@ func investment_adviserBasicSetup(extra map[string]any) *entityTestSetup {
 		"FINANCIAL_DATA_TEST_INVESTMENT_ADVISER_ENTID": idmap,
 		"FINANCIAL_DATA_TEST_LIVE":      "FALSE",
 		"FINANCIAL_DATA_TEST_EXPLAIN":   "FALSE",
-		"FINANCIAL_DATA_APIKEY":         "NONE",
+		"FINANCIAL_DATA_APIKEY":         "",
 	})
 
 	idmapResolved := core.ToMapAny(env["FINANCIAL_DATA_TEST_INVESTMENT_ADVISER_ENTID"])
@@ -126,11 +126,23 @@ func investment_adviserBasicSetup(extra map[string]any) *entityTestSetup {
 	}
 
 	if env["FINANCIAL_DATA_TEST_LIVE"] == "TRUE" {
+		// An empty map, not a nil one: Merge returns nil when its last entry
+		// is nil, and BasicSetup is normally called with no extras - so a
+		// bare nil silently discarded the apikey and server values below.
+		extraOpts := extra
+		if extraOpts == nil {
+			extraOpts = map[string]any{}
+		}
+
 		mergedOpts := vs.Merge([]any{
+			// liveClientOptions() FIRST, so the generated fields below win:
+			// sdk-test-control.json's test.client.options adds to the live
+			// client, it does not redirect it.
+			liveClientOptions(),
 			map[string]any{
 				"apikey": env["FINANCIAL_DATA_APIKEY"],
 			},
-			extra,
+			extraOpts,
 		})
 		client = sdk.NewFinancialDataSDK(core.ToMapAny(mergedOpts))
 	}

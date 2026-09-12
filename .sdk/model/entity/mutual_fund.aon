@@ -38,8 +38,10 @@ main: kit: entity: mutual_fund: {
           }
           method: "GET"
           orig: "/mutual-fund-holdings"
-          parts: [
-            "mutual-fund-holdings"
+          segments: [
+            {
+              lit: "mutual-fund-holdings"
+            }
           ]
           select: {
             exist: [
@@ -82,8 +84,10 @@ main: kit: entity: mutual_fund: {
           }
           method: "GET"
           orig: "/mutual-fund-statistics"
-          parts: [
-            "mutual-fund-statistics"
+          segments: [
+            {
+              lit: "mutual-fund-statistics"
+            }
           ]
           select: {
             exist: [
@@ -119,8 +123,10 @@ main: kit: entity: mutual_fund: {
           }
           method: "GET"
           orig: "/mutual-fund-symbols"
-          parts: [
-            "mutual-fund-symbols"
+          segments: [
+            {
+              lit: "mutual-fund-symbols"
+            }
           ]
           select: {
             exist: [

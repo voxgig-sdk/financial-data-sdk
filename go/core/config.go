@@ -90,8 +90,10 @@ func MakeConfig() map[string]any {
 								"kind": "http",
 								"method": "GET",
 								"orig": "/company-information",
-								"parts": []any{
-									"company-information",
+								"segments": []any{
+									map[string]any{
+										"lit": "company-information",
+									},
 								},
 								"select": map[string]any{
 									"exist": []any{
@@ -103,6 +105,9 @@ func MakeConfig() map[string]any {
 								"transform": map[string]any{
 									"req": "`reqdata`",
 									"res": "`body`",
+								},
+								"parts": []any{
+									"company-information",
 								},
 							},
 							map[string]any{
@@ -134,8 +139,10 @@ func MakeConfig() map[string]any {
 								"kind": "http",
 								"method": "GET",
 								"orig": "/employee-count",
-								"parts": []any{
-									"employee-count",
+								"segments": []any{
+									map[string]any{
+										"lit": "employee-count",
+									},
 								},
 								"select": map[string]any{
 									"exist": []any{
@@ -147,6 +154,9 @@ func MakeConfig() map[string]any {
 								"transform": map[string]any{
 									"req": "`reqdata`",
 									"res": "`body`",
+								},
+								"parts": []any{
+									"employee-count",
 								},
 							},
 							map[string]any{
@@ -178,8 +188,10 @@ func MakeConfig() map[string]any {
 								"kind": "http",
 								"method": "GET",
 								"orig": "/executive-compensation",
-								"parts": []any{
-									"executive-compensation",
+								"segments": []any{
+									map[string]any{
+										"lit": "executive-compensation",
+									},
 								},
 								"select": map[string]any{
 									"exist": []any{
@@ -191,6 +203,9 @@ func MakeConfig() map[string]any {
 								"transform": map[string]any{
 									"req": "`reqdata`",
 									"res": "`body`",
+								},
+								"parts": []any{
+									"executive-compensation",
 								},
 							},
 							map[string]any{
@@ -222,8 +237,10 @@ func MakeConfig() map[string]any {
 								"kind": "http",
 								"method": "GET",
 								"orig": "/international-company-information",
-								"parts": []any{
-									"international-company-information",
+								"segments": []any{
+									map[string]any{
+										"lit": "international-company-information",
+									},
 								},
 								"select": map[string]any{
 									"exist": []any{
@@ -235,6 +252,9 @@ func MakeConfig() map[string]any {
 								"transform": map[string]any{
 									"req": "`reqdata`",
 									"res": "`body`",
+								},
+								"parts": []any{
+									"international-company-information",
 								},
 							},
 							map[string]any{
@@ -266,8 +286,10 @@ func MakeConfig() map[string]any {
 								"kind": "http",
 								"method": "GET",
 								"orig": "/key-metrics",
-								"parts": []any{
-									"key-metrics",
+								"segments": []any{
+									map[string]any{
+										"lit": "key-metrics",
+									},
 								},
 								"select": map[string]any{
 									"exist": []any{
@@ -279,6 +301,9 @@ func MakeConfig() map[string]any {
 								"transform": map[string]any{
 									"req": "`reqdata`",
 									"res": "`body`",
+								},
+								"parts": []any{
+									"key-metrics",
 								},
 							},
 							map[string]any{
@@ -310,8 +335,10 @@ func MakeConfig() map[string]any {
 								"kind": "http",
 								"method": "GET",
 								"orig": "/market-cap",
-								"parts": []any{
-									"market-cap",
+								"segments": []any{
+									map[string]any{
+										"lit": "market-cap",
+									},
 								},
 								"select": map[string]any{
 									"exist": []any{
@@ -323,6 +350,9 @@ func MakeConfig() map[string]any {
 								"transform": map[string]any{
 									"req": "`reqdata`",
 									"res": "`body`",
+								},
+								"parts": []any{
+									"market-cap",
 								},
 							},
 							map[string]any{
@@ -354,8 +384,10 @@ func MakeConfig() map[string]any {
 								"kind": "http",
 								"method": "GET",
 								"orig": "/securities-information",
-								"parts": []any{
-									"securities-information",
+								"segments": []any{
+									map[string]any{
+										"lit": "securities-information",
+									},
 								},
 								"select": map[string]any{
 									"exist": []any{
@@ -367,6 +399,9 @@ func MakeConfig() map[string]any {
 								"transform": map[string]any{
 									"req": "`reqdata`",
 									"res": "`body`",
+								},
+								"parts": []any{
+									"securities-information",
 								},
 							},
 						},
@@ -420,8 +455,10 @@ func MakeConfig() map[string]any {
 								"kind": "http",
 								"method": "GET",
 								"orig": "/crypto-minute-prices",
-								"parts": []any{
-									"crypto-minute-prices",
+								"segments": []any{
+									map[string]any{
+										"lit": "crypto-minute-prices",
+									},
 								},
 								"select": map[string]any{
 									"exist": []any{
@@ -434,6 +471,9 @@ func MakeConfig() map[string]any {
 								"transform": map[string]any{
 									"req": "`reqdata`",
 									"res": "`body`",
+								},
+								"parts": []any{
+									"crypto-minute-prices",
 								},
 							},
 							map[string]any{
@@ -465,8 +505,10 @@ func MakeConfig() map[string]any {
 								"kind": "http",
 								"method": "GET",
 								"orig": "/crypto-information",
-								"parts": []any{
-									"crypto-information",
+								"segments": []any{
+									map[string]any{
+										"lit": "crypto-information",
+									},
 								},
 								"select": map[string]any{
 									"exist": []any{
@@ -478,6 +520,9 @@ func MakeConfig() map[string]any {
 								"transform": map[string]any{
 									"req": "`reqdata`",
 									"res": "`body`",
+								},
+								"parts": []any{
+									"crypto-information",
 								},
 							},
 							map[string]any{
@@ -509,8 +554,10 @@ func MakeConfig() map[string]any {
 								"kind": "http",
 								"method": "GET",
 								"orig": "/crypto-prices",
-								"parts": []any{
-									"crypto-prices",
+								"segments": []any{
+									map[string]any{
+										"lit": "crypto-prices",
+									},
 								},
 								"select": map[string]any{
 									"exist": []any{
@@ -522,6 +569,9 @@ func MakeConfig() map[string]any {
 								"transform": map[string]any{
 									"req": "`reqdata`",
 									"res": "`body`",
+								},
+								"parts": []any{
+									"crypto-prices",
 								},
 							},
 							map[string]any{
@@ -553,8 +603,10 @@ func MakeConfig() map[string]any {
 								"kind": "http",
 								"method": "GET",
 								"orig": "/crypto-quotes",
-								"parts": []any{
-									"crypto-quotes",
+								"segments": []any{
+									map[string]any{
+										"lit": "crypto-quotes",
+									},
 								},
 								"select": map[string]any{
 									"exist": []any{
@@ -566,6 +618,9 @@ func MakeConfig() map[string]any {
 								"transform": map[string]any{
 									"req": "`reqdata`",
 									"res": "`body`",
+								},
+								"parts": []any{
+									"crypto-quotes",
 								},
 							},
 							map[string]any{
@@ -590,8 +645,10 @@ func MakeConfig() map[string]any {
 								"kind": "http",
 								"method": "GET",
 								"orig": "/crypto-symbols",
-								"parts": []any{
-									"crypto-symbols",
+								"segments": []any{
+									map[string]any{
+										"lit": "crypto-symbols",
+									},
 								},
 								"select": map[string]any{
 									"exist": []any{
@@ -602,6 +659,9 @@ func MakeConfig() map[string]any {
 								"transform": map[string]any{
 									"req": "`reqdata`",
 									"res": "`body`",
+								},
+								"parts": []any{
+									"crypto-symbols",
 								},
 							},
 						},
@@ -648,8 +708,10 @@ func MakeConfig() map[string]any {
 								"kind": "http",
 								"method": "GET",
 								"orig": "/futures-prices",
-								"parts": []any{
-									"futures-prices",
+								"segments": []any{
+									map[string]any{
+										"lit": "futures-prices",
+									},
 								},
 								"select": map[string]any{
 									"exist": []any{
@@ -661,6 +723,9 @@ func MakeConfig() map[string]any {
 								"transform": map[string]any{
 									"req": "`reqdata`",
 									"res": "`body`",
+								},
+								"parts": []any{
+									"futures-prices",
 								},
 							},
 							map[string]any{
@@ -692,8 +757,10 @@ func MakeConfig() map[string]any {
 								"kind": "http",
 								"method": "GET",
 								"orig": "/option-chain",
-								"parts": []any{
-									"option-chain",
+								"segments": []any{
+									map[string]any{
+										"lit": "option-chain",
+									},
 								},
 								"select": map[string]any{
 									"exist": []any{
@@ -705,6 +772,9 @@ func MakeConfig() map[string]any {
 								"transform": map[string]any{
 									"req": "`reqdata`",
 									"res": "`body`",
+								},
+								"parts": []any{
+									"option-chain",
 								},
 							},
 							map[string]any{
@@ -736,8 +806,10 @@ func MakeConfig() map[string]any {
 								"kind": "http",
 								"method": "GET",
 								"orig": "/option-greeks",
-								"parts": []any{
-									"option-greeks",
+								"segments": []any{
+									map[string]any{
+										"lit": "option-greeks",
+									},
 								},
 								"select": map[string]any{
 									"exist": []any{
@@ -749,6 +821,9 @@ func MakeConfig() map[string]any {
 								"transform": map[string]any{
 									"req": "`reqdata`",
 									"res": "`body`",
+								},
+								"parts": []any{
+									"option-greeks",
 								},
 							},
 							map[string]any{
@@ -780,8 +855,10 @@ func MakeConfig() map[string]any {
 								"kind": "http",
 								"method": "GET",
 								"orig": "/option-prices",
-								"parts": []any{
-									"option-prices",
+								"segments": []any{
+									map[string]any{
+										"lit": "option-prices",
+									},
 								},
 								"select": map[string]any{
 									"exist": []any{
@@ -793,6 +870,9 @@ func MakeConfig() map[string]any {
 								"transform": map[string]any{
 									"req": "`reqdata`",
 									"res": "`body`",
+								},
+								"parts": []any{
+									"option-prices",
 								},
 							},
 							map[string]any{
@@ -817,8 +897,10 @@ func MakeConfig() map[string]any {
 								"kind": "http",
 								"method": "GET",
 								"orig": "/futures-symbols",
-								"parts": []any{
-									"futures-symbols",
+								"segments": []any{
+									map[string]any{
+										"lit": "futures-symbols",
+									},
 								},
 								"select": map[string]any{
 									"exist": []any{
@@ -829,6 +911,9 @@ func MakeConfig() map[string]any {
 								"transform": map[string]any{
 									"req": "`reqdata`",
 									"res": "`body`",
+								},
+								"parts": []any{
+									"futures-symbols",
 								},
 							},
 						},
@@ -875,8 +960,10 @@ func MakeConfig() map[string]any {
 								"kind": "http",
 								"method": "GET",
 								"orig": "/esg-ratings",
-								"parts": []any{
-									"esg-ratings",
+								"segments": []any{
+									map[string]any{
+										"lit": "esg-ratings",
+									},
 								},
 								"select": map[string]any{
 									"exist": []any{
@@ -888,6 +975,9 @@ func MakeConfig() map[string]any {
 								"transform": map[string]any{
 									"req": "`reqdata`",
 									"res": "`body`",
+								},
+								"parts": []any{
+									"esg-ratings",
 								},
 							},
 							map[string]any{
@@ -919,8 +1009,10 @@ func MakeConfig() map[string]any {
 								"kind": "http",
 								"method": "GET",
 								"orig": "/esg-scores",
-								"parts": []any{
-									"esg-scores",
+								"segments": []any{
+									map[string]any{
+										"lit": "esg-scores",
+									},
 								},
 								"select": map[string]any{
 									"exist": []any{
@@ -932,6 +1024,9 @@ func MakeConfig() map[string]any {
 								"transform": map[string]any{
 									"req": "`reqdata`",
 									"res": "`body`",
+								},
+								"parts": []any{
+									"esg-scores",
 								},
 							},
 							map[string]any{
@@ -956,8 +1051,10 @@ func MakeConfig() map[string]any {
 								"kind": "http",
 								"method": "GET",
 								"orig": "/industry-esg-scores",
-								"parts": []any{
-									"industry-esg-scores",
+								"segments": []any{
+									map[string]any{
+										"lit": "industry-esg-scores",
+									},
 								},
 								"select": map[string]any{
 									"exist": []any{
@@ -968,6 +1065,9 @@ func MakeConfig() map[string]any {
 								"transform": map[string]any{
 									"req": "`reqdata`",
 									"res": "`body`",
+								},
+								"parts": []any{
+									"industry-esg-scores",
 								},
 							},
 						},
@@ -1014,8 +1114,10 @@ func MakeConfig() map[string]any {
 								"kind": "http",
 								"method": "GET",
 								"orig": "/etf-holdings",
-								"parts": []any{
-									"etf-holdings",
+								"segments": []any{
+									map[string]any{
+										"lit": "etf-holdings",
+									},
 								},
 								"select": map[string]any{
 									"exist": []any{
@@ -1027,6 +1129,9 @@ func MakeConfig() map[string]any {
 								"transform": map[string]any{
 									"req": "`reqdata`",
 									"res": "`body`",
+								},
+								"parts": []any{
+									"etf-holdings",
 								},
 							},
 							map[string]any{
@@ -1058,8 +1163,10 @@ func MakeConfig() map[string]any {
 								"kind": "http",
 								"method": "GET",
 								"orig": "/etf-prices",
-								"parts": []any{
-									"etf-prices",
+								"segments": []any{
+									map[string]any{
+										"lit": "etf-prices",
+									},
 								},
 								"select": map[string]any{
 									"exist": []any{
@@ -1071,6 +1178,9 @@ func MakeConfig() map[string]any {
 								"transform": map[string]any{
 									"req": "`reqdata`",
 									"res": "`body`",
+								},
+								"parts": []any{
+									"etf-prices",
 								},
 							},
 							map[string]any{
@@ -1102,8 +1212,10 @@ func MakeConfig() map[string]any {
 								"kind": "http",
 								"method": "GET",
 								"orig": "/etf-quotes",
-								"parts": []any{
-									"etf-quotes",
+								"segments": []any{
+									map[string]any{
+										"lit": "etf-quotes",
+									},
 								},
 								"select": map[string]any{
 									"exist": []any{
@@ -1115,6 +1227,9 @@ func MakeConfig() map[string]any {
 								"transform": map[string]any{
 									"req": "`reqdata`",
 									"res": "`body`",
+								},
+								"parts": []any{
+									"etf-quotes",
 								},
 							},
 						},
@@ -1154,8 +1269,10 @@ func MakeConfig() map[string]any {
 								"kind": "http",
 								"method": "GET",
 								"orig": "/dividends-calendar",
-								"parts": []any{
-									"dividends-calendar",
+								"segments": []any{
+									map[string]any{
+										"lit": "dividends-calendar",
+									},
 								},
 								"select": map[string]any{
 									"exist": []any{
@@ -1166,6 +1283,9 @@ func MakeConfig() map[string]any {
 								"transform": map[string]any{
 									"req": "`reqdata`",
 									"res": "`body`",
+								},
+								"parts": []any{
+									"dividends-calendar",
 								},
 							},
 							map[string]any{
@@ -1190,8 +1310,10 @@ func MakeConfig() map[string]any {
 								"kind": "http",
 								"method": "GET",
 								"orig": "/earnings-calendar",
-								"parts": []any{
-									"earnings-calendar",
+								"segments": []any{
+									map[string]any{
+										"lit": "earnings-calendar",
+									},
 								},
 								"select": map[string]any{
 									"exist": []any{
@@ -1202,6 +1324,9 @@ func MakeConfig() map[string]any {
 								"transform": map[string]any{
 									"req": "`reqdata`",
 									"res": "`body`",
+								},
+								"parts": []any{
+									"earnings-calendar",
 								},
 							},
 							map[string]any{
@@ -1226,8 +1351,10 @@ func MakeConfig() map[string]any {
 								"kind": "http",
 								"method": "GET",
 								"orig": "/economic-calendar",
-								"parts": []any{
-									"economic-calendar",
+								"segments": []any{
+									map[string]any{
+										"lit": "economic-calendar",
+									},
 								},
 								"select": map[string]any{
 									"exist": []any{
@@ -1238,6 +1365,9 @@ func MakeConfig() map[string]any {
 								"transform": map[string]any{
 									"req": "`reqdata`",
 									"res": "`body`",
+								},
+								"parts": []any{
+									"economic-calendar",
 								},
 							},
 							map[string]any{
@@ -1262,8 +1392,10 @@ func MakeConfig() map[string]any {
 								"kind": "http",
 								"method": "GET",
 								"orig": "/ipo-calendar",
-								"parts": []any{
-									"ipo-calendar",
+								"segments": []any{
+									map[string]any{
+										"lit": "ipo-calendar",
+									},
 								},
 								"select": map[string]any{
 									"exist": []any{
@@ -1274,6 +1406,9 @@ func MakeConfig() map[string]any {
 								"transform": map[string]any{
 									"req": "`reqdata`",
 									"res": "`body`",
+								},
+								"parts": []any{
+									"ipo-calendar",
 								},
 							},
 							map[string]any{
@@ -1298,8 +1433,10 @@ func MakeConfig() map[string]any {
 								"kind": "http",
 								"method": "GET",
 								"orig": "/splits-calendar",
-								"parts": []any{
-									"splits-calendar",
+								"segments": []any{
+									map[string]any{
+										"lit": "splits-calendar",
+									},
 								},
 								"select": map[string]any{
 									"exist": []any{
@@ -1310,6 +1447,9 @@ func MakeConfig() map[string]any {
 								"transform": map[string]any{
 									"req": "`reqdata`",
 									"res": "`body`",
+								},
+								"parts": []any{
+									"splits-calendar",
 								},
 							},
 						},
@@ -1356,8 +1496,10 @@ func MakeConfig() map[string]any {
 								"kind": "http",
 								"method": "GET",
 								"orig": "/efficiency-ratios",
-								"parts": []any{
-									"efficiency-ratios",
+								"segments": []any{
+									map[string]any{
+										"lit": "efficiency-ratios",
+									},
 								},
 								"select": map[string]any{
 									"exist": []any{
@@ -1369,6 +1511,9 @@ func MakeConfig() map[string]any {
 								"transform": map[string]any{
 									"req": "`reqdata`",
 									"res": "`body`",
+								},
+								"parts": []any{
+									"efficiency-ratios",
 								},
 							},
 							map[string]any{
@@ -1400,8 +1545,10 @@ func MakeConfig() map[string]any {
 								"kind": "http",
 								"method": "GET",
 								"orig": "/liquidity-ratios",
-								"parts": []any{
-									"liquidity-ratios",
+								"segments": []any{
+									map[string]any{
+										"lit": "liquidity-ratios",
+									},
 								},
 								"select": map[string]any{
 									"exist": []any{
@@ -1413,6 +1560,9 @@ func MakeConfig() map[string]any {
 								"transform": map[string]any{
 									"req": "`reqdata`",
 									"res": "`body`",
+								},
+								"parts": []any{
+									"liquidity-ratios",
 								},
 							},
 							map[string]any{
@@ -1444,8 +1594,10 @@ func MakeConfig() map[string]any {
 								"kind": "http",
 								"method": "GET",
 								"orig": "/profitability-ratios",
-								"parts": []any{
-									"profitability-ratios",
+								"segments": []any{
+									map[string]any{
+										"lit": "profitability-ratios",
+									},
 								},
 								"select": map[string]any{
 									"exist": []any{
@@ -1457,6 +1609,9 @@ func MakeConfig() map[string]any {
 								"transform": map[string]any{
 									"req": "`reqdata`",
 									"res": "`body`",
+								},
+								"parts": []any{
+									"profitability-ratios",
 								},
 							},
 							map[string]any{
@@ -1488,8 +1643,10 @@ func MakeConfig() map[string]any {
 								"kind": "http",
 								"method": "GET",
 								"orig": "/solvency-ratios",
-								"parts": []any{
-									"solvency-ratios",
+								"segments": []any{
+									map[string]any{
+										"lit": "solvency-ratios",
+									},
 								},
 								"select": map[string]any{
 									"exist": []any{
@@ -1501,6 +1658,9 @@ func MakeConfig() map[string]any {
 								"transform": map[string]any{
 									"req": "`reqdata`",
 									"res": "`body`",
+								},
+								"parts": []any{
+									"solvency-ratios",
 								},
 							},
 							map[string]any{
@@ -1532,8 +1692,10 @@ func MakeConfig() map[string]any {
 								"kind": "http",
 								"method": "GET",
 								"orig": "/valuation-ratios",
-								"parts": []any{
-									"valuation-ratios",
+								"segments": []any{
+									map[string]any{
+										"lit": "valuation-ratios",
+									},
 								},
 								"select": map[string]any{
 									"exist": []any{
@@ -1545,6 +1707,9 @@ func MakeConfig() map[string]any {
 								"transform": map[string]any{
 									"req": "`reqdata`",
 									"res": "`body`",
+								},
+								"parts": []any{
+									"valuation-ratios",
 								},
 							},
 						},
@@ -1591,8 +1756,10 @@ func MakeConfig() map[string]any {
 								"kind": "http",
 								"method": "GET",
 								"orig": "/balance-sheet-statements",
-								"parts": []any{
-									"balance-sheet-statements",
+								"segments": []any{
+									map[string]any{
+										"lit": "balance-sheet-statements",
+									},
 								},
 								"select": map[string]any{
 									"exist": []any{
@@ -1604,6 +1771,9 @@ func MakeConfig() map[string]any {
 								"transform": map[string]any{
 									"req": "`reqdata`",
 									"res": "`body`",
+								},
+								"parts": []any{
+									"balance-sheet-statements",
 								},
 							},
 							map[string]any{
@@ -1635,8 +1805,10 @@ func MakeConfig() map[string]any {
 								"kind": "http",
 								"method": "GET",
 								"orig": "/cash-flow-statements",
-								"parts": []any{
-									"cash-flow-statements",
+								"segments": []any{
+									map[string]any{
+										"lit": "cash-flow-statements",
+									},
 								},
 								"select": map[string]any{
 									"exist": []any{
@@ -1648,6 +1820,9 @@ func MakeConfig() map[string]any {
 								"transform": map[string]any{
 									"req": "`reqdata`",
 									"res": "`body`",
+								},
+								"parts": []any{
+									"cash-flow-statements",
 								},
 							},
 							map[string]any{
@@ -1679,8 +1854,10 @@ func MakeConfig() map[string]any {
 								"kind": "http",
 								"method": "GET",
 								"orig": "/income-statements",
-								"parts": []any{
-									"income-statements",
+								"segments": []any{
+									map[string]any{
+										"lit": "income-statements",
+									},
 								},
 								"select": map[string]any{
 									"exist": []any{
@@ -1692,6 +1869,9 @@ func MakeConfig() map[string]any {
 								"transform": map[string]any{
 									"req": "`reqdata`",
 									"res": "`body`",
+								},
+								"parts": []any{
+									"income-statements",
 								},
 							},
 							map[string]any{
@@ -1723,8 +1903,10 @@ func MakeConfig() map[string]any {
 								"kind": "http",
 								"method": "GET",
 								"orig": "/international-balance-sheet-statements",
-								"parts": []any{
-									"international-balance-sheet-statements",
+								"segments": []any{
+									map[string]any{
+										"lit": "international-balance-sheet-statements",
+									},
 								},
 								"select": map[string]any{
 									"exist": []any{
@@ -1736,6 +1918,9 @@ func MakeConfig() map[string]any {
 								"transform": map[string]any{
 									"req": "`reqdata`",
 									"res": "`body`",
+								},
+								"parts": []any{
+									"international-balance-sheet-statements",
 								},
 							},
 							map[string]any{
@@ -1767,8 +1952,10 @@ func MakeConfig() map[string]any {
 								"kind": "http",
 								"method": "GET",
 								"orig": "/international-cash-flow-statements",
-								"parts": []any{
-									"international-cash-flow-statements",
+								"segments": []any{
+									map[string]any{
+										"lit": "international-cash-flow-statements",
+									},
 								},
 								"select": map[string]any{
 									"exist": []any{
@@ -1780,6 +1967,9 @@ func MakeConfig() map[string]any {
 								"transform": map[string]any{
 									"req": "`reqdata`",
 									"res": "`body`",
+								},
+								"parts": []any{
+									"international-cash-flow-statements",
 								},
 							},
 							map[string]any{
@@ -1811,8 +2001,10 @@ func MakeConfig() map[string]any {
 								"kind": "http",
 								"method": "GET",
 								"orig": "/international-income-statements",
-								"parts": []any{
-									"international-income-statements",
+								"segments": []any{
+									map[string]any{
+										"lit": "international-income-statements",
+									},
 								},
 								"select": map[string]any{
 									"exist": []any{
@@ -1824,6 +2016,9 @@ func MakeConfig() map[string]any {
 								"transform": map[string]any{
 									"req": "`reqdata`",
 									"res": "`body`",
+								},
+								"parts": []any{
+									"international-income-statements",
 								},
 							},
 						},
@@ -1877,8 +2072,10 @@ func MakeConfig() map[string]any {
 								"kind": "http",
 								"method": "GET",
 								"orig": "/forex-minute-prices",
-								"parts": []any{
-									"forex-minute-prices",
+								"segments": []any{
+									map[string]any{
+										"lit": "forex-minute-prices",
+									},
 								},
 								"select": map[string]any{
 									"exist": []any{
@@ -1891,6 +2088,9 @@ func MakeConfig() map[string]any {
 								"transform": map[string]any{
 									"req": "`reqdata`",
 									"res": "`body`",
+								},
+								"parts": []any{
+									"forex-minute-prices",
 								},
 							},
 							map[string]any{
@@ -1922,8 +2122,10 @@ func MakeConfig() map[string]any {
 								"kind": "http",
 								"method": "GET",
 								"orig": "/forex-prices",
-								"parts": []any{
-									"forex-prices",
+								"segments": []any{
+									map[string]any{
+										"lit": "forex-prices",
+									},
 								},
 								"select": map[string]any{
 									"exist": []any{
@@ -1935,6 +2137,9 @@ func MakeConfig() map[string]any {
 								"transform": map[string]any{
 									"req": "`reqdata`",
 									"res": "`body`",
+								},
+								"parts": []any{
+									"forex-prices",
 								},
 							},
 							map[string]any{
@@ -1966,8 +2171,10 @@ func MakeConfig() map[string]any {
 								"kind": "http",
 								"method": "GET",
 								"orig": "/forex-quotes",
-								"parts": []any{
-									"forex-quotes",
+								"segments": []any{
+									map[string]any{
+										"lit": "forex-quotes",
+									},
 								},
 								"select": map[string]any{
 									"exist": []any{
@@ -1979,6 +2186,9 @@ func MakeConfig() map[string]any {
 								"transform": map[string]any{
 									"req": "`reqdata`",
 									"res": "`body`",
+								},
+								"parts": []any{
+									"forex-quotes",
 								},
 							},
 							map[string]any{
@@ -2003,8 +2213,10 @@ func MakeConfig() map[string]any {
 								"kind": "http",
 								"method": "GET",
 								"orig": "/forex-symbols",
-								"parts": []any{
-									"forex-symbols",
+								"segments": []any{
+									map[string]any{
+										"lit": "forex-symbols",
+									},
 								},
 								"select": map[string]any{
 									"exist": []any{
@@ -2015,6 +2227,9 @@ func MakeConfig() map[string]any {
 								"transform": map[string]any{
 									"req": "`reqdata`",
 									"res": "`body`",
+								},
+								"parts": []any{
+									"forex-symbols",
 								},
 							},
 						},
@@ -2060,8 +2275,10 @@ func MakeConfig() map[string]any {
 								"kind": "http",
 								"method": "GET",
 								"orig": "/insider-transactions",
-								"parts": []any{
-									"insider-transactions",
+								"segments": []any{
+									map[string]any{
+										"lit": "insider-transactions",
+									},
 								},
 								"select": map[string]any{
 									"exist": []any{
@@ -2073,6 +2290,9 @@ func MakeConfig() map[string]any {
 								"transform": map[string]any{
 									"req": "`reqdata`",
 									"res": "`body`",
+								},
+								"parts": []any{
+									"insider-transactions",
 								},
 							},
 							map[string]any{
@@ -2097,8 +2317,10 @@ func MakeConfig() map[string]any {
 								"kind": "http",
 								"method": "GET",
 								"orig": "/house-trading",
-								"parts": []any{
-									"house-trading",
+								"segments": []any{
+									map[string]any{
+										"lit": "house-trading",
+									},
 								},
 								"select": map[string]any{
 									"exist": []any{
@@ -2109,6 +2331,9 @@ func MakeConfig() map[string]any {
 								"transform": map[string]any{
 									"req": "`reqdata`",
 									"res": "`body`",
+								},
+								"parts": []any{
+									"house-trading",
 								},
 							},
 							map[string]any{
@@ -2133,8 +2358,10 @@ func MakeConfig() map[string]any {
 								"kind": "http",
 								"method": "GET",
 								"orig": "/proposed-sales",
-								"parts": []any{
-									"proposed-sales",
+								"segments": []any{
+									map[string]any{
+										"lit": "proposed-sales",
+									},
 								},
 								"select": map[string]any{
 									"exist": []any{
@@ -2145,6 +2372,9 @@ func MakeConfig() map[string]any {
 								"transform": map[string]any{
 									"req": "`reqdata`",
 									"res": "`body`",
+								},
+								"parts": []any{
+									"proposed-sales",
 								},
 							},
 							map[string]any{
@@ -2169,8 +2399,10 @@ func MakeConfig() map[string]any {
 								"kind": "http",
 								"method": "GET",
 								"orig": "/senate-trading",
-								"parts": []any{
-									"senate-trading",
+								"segments": []any{
+									map[string]any{
+										"lit": "senate-trading",
+									},
 								},
 								"select": map[string]any{
 									"exist": []any{
@@ -2181,6 +2413,9 @@ func MakeConfig() map[string]any {
 								"transform": map[string]any{
 									"req": "`reqdata`",
 									"res": "`body`",
+								},
+								"parts": []any{
+									"senate-trading",
 								},
 							},
 						},
@@ -2227,8 +2462,10 @@ func MakeConfig() map[string]any {
 								"kind": "http",
 								"method": "GET",
 								"orig": "/institutional-holdings",
-								"parts": []any{
-									"institutional-holdings",
+								"segments": []any{
+									map[string]any{
+										"lit": "institutional-holdings",
+									},
 								},
 								"select": map[string]any{
 									"exist": []any{
@@ -2240,6 +2477,9 @@ func MakeConfig() map[string]any {
 								"transform": map[string]any{
 									"req": "`reqdata`",
 									"res": "`body`",
+								},
+								"parts": []any{
+									"institutional-holdings",
 								},
 							},
 							map[string]any{
@@ -2264,8 +2504,10 @@ func MakeConfig() map[string]any {
 								"kind": "http",
 								"method": "GET",
 								"orig": "/institutional-investors",
-								"parts": []any{
-									"institutional-investors",
+								"segments": []any{
+									map[string]any{
+										"lit": "institutional-investors",
+									},
 								},
 								"select": map[string]any{
 									"exist": []any{
@@ -2276,6 +2518,9 @@ func MakeConfig() map[string]any {
 								"transform": map[string]any{
 									"req": "`reqdata`",
 									"res": "`body`",
+								},
+								"parts": []any{
+									"institutional-investors",
 								},
 							},
 							map[string]any{
@@ -2300,8 +2545,10 @@ func MakeConfig() map[string]any {
 								"kind": "http",
 								"method": "GET",
 								"orig": "/institutional-portfolio-statistics",
-								"parts": []any{
-									"institutional-portfolio-statistics",
+								"segments": []any{
+									map[string]any{
+										"lit": "institutional-portfolio-statistics",
+									},
 								},
 								"select": map[string]any{
 									"exist": []any{
@@ -2312,6 +2559,9 @@ func MakeConfig() map[string]any {
 								"transform": map[string]any{
 									"req": "`reqdata`",
 									"res": "`body`",
+								},
+								"parts": []any{
+									"institutional-portfolio-statistics",
 								},
 							},
 						},
@@ -2351,8 +2601,10 @@ func MakeConfig() map[string]any {
 								"kind": "http",
 								"method": "GET",
 								"orig": "/investment-adviser-information",
-								"parts": []any{
-									"investment-adviser-information",
+								"segments": []any{
+									map[string]any{
+										"lit": "investment-adviser-information",
+									},
 								},
 								"select": map[string]any{
 									"exist": []any{
@@ -2363,6 +2615,9 @@ func MakeConfig() map[string]any {
 								"transform": map[string]any{
 									"req": "`reqdata`",
 									"res": "`body`",
+								},
+								"parts": []any{
+									"investment-adviser-information",
 								},
 							},
 							map[string]any{
@@ -2387,8 +2642,10 @@ func MakeConfig() map[string]any {
 								"kind": "http",
 								"method": "GET",
 								"orig": "/investment-adviser-names",
-								"parts": []any{
-									"investment-adviser-names",
+								"segments": []any{
+									map[string]any{
+										"lit": "investment-adviser-names",
+									},
 								},
 								"select": map[string]any{
 									"exist": []any{
@@ -2399,6 +2656,9 @@ func MakeConfig() map[string]any {
 								"transform": map[string]any{
 									"req": "`reqdata`",
 									"res": "`body`",
+								},
+								"parts": []any{
+									"investment-adviser-names",
 								},
 							},
 						},
@@ -2411,34 +2671,42 @@ func MakeConfig() map[string]any {
 			"market_data": map[string]any{
 				"fields": []any{
 					map[string]any{
+						"format": "float",
 						"name": "change",
 						"type": "`$NUMBER`",
 					},
 					map[string]any{
+						"format": "float",
 						"name": "close",
 						"type": "`$NUMBER`",
 					},
 					map[string]any{
+						"format": "date",
 						"name": "date",
 						"type": "`$STRING`",
 					},
 					map[string]any{
+						"format": "float",
 						"name": "high",
 						"type": "`$NUMBER`",
 					},
 					map[string]any{
+						"format": "float",
 						"name": "low",
 						"type": "`$NUMBER`",
 					},
 					map[string]any{
+						"format": "float",
 						"name": "open",
 						"type": "`$NUMBER`",
 					},
 					map[string]any{
+						"format": "float",
 						"name": "percentage_change",
 						"type": "`$NUMBER`",
 					},
 					map[string]any{
+						"format": "float",
 						"name": "price",
 						"type": "`$NUMBER`",
 					},
@@ -2455,6 +2723,7 @@ func MakeConfig() map[string]any {
 						"type": "`$STRING`",
 					},
 					map[string]any{
+						"format": "float",
 						"name": "volume",
 						"type": "`$NUMBER`",
 					},
@@ -2510,8 +2779,10 @@ func MakeConfig() map[string]any {
 								"kind": "http",
 								"method": "GET",
 								"orig": "/minute-prices",
-								"parts": []any{
-									"minute-prices",
+								"segments": []any{
+									map[string]any{
+										"lit": "minute-prices",
+									},
 								},
 								"select": map[string]any{
 									"exist": []any{
@@ -2525,6 +2796,9 @@ func MakeConfig() map[string]any {
 								"transform": map[string]any{
 									"req": "`reqdata`",
 									"res": "`body`",
+								},
+								"parts": []any{
+									"minute-prices",
 								},
 							},
 							map[string]any{
@@ -2564,8 +2838,10 @@ func MakeConfig() map[string]any {
 								"kind": "http",
 								"method": "GET",
 								"orig": "/international-stock-prices",
-								"parts": []any{
-									"international-stock-prices",
+								"segments": []any{
+									map[string]any{
+										"lit": "international-stock-prices",
+									},
 								},
 								"select": map[string]any{
 									"exist": []any{
@@ -2578,6 +2854,9 @@ func MakeConfig() map[string]any {
 								"transform": map[string]any{
 									"req": "`reqdata`",
 									"res": "`body`",
+								},
+								"parts": []any{
+									"international-stock-prices",
 								},
 							},
 							map[string]any{
@@ -2616,8 +2895,10 @@ func MakeConfig() map[string]any {
 								"kind": "http",
 								"method": "GET",
 								"orig": "/latest-prices",
-								"parts": []any{
-									"latest-prices",
+								"segments": []any{
+									map[string]any{
+										"lit": "latest-prices",
+									},
 								},
 								"select": map[string]any{
 									"exist": []any{
@@ -2630,6 +2911,9 @@ func MakeConfig() map[string]any {
 								"transform": map[string]any{
 									"req": "`reqdata`",
 									"res": "`body`",
+								},
+								"parts": []any{
+									"latest-prices",
 								},
 							},
 							map[string]any{
@@ -2669,8 +2953,10 @@ func MakeConfig() map[string]any {
 								"kind": "http",
 								"method": "GET",
 								"orig": "/stock-prices",
-								"parts": []any{
-									"stock-prices",
+								"segments": []any{
+									map[string]any{
+										"lit": "stock-prices",
+									},
 								},
 								"select": map[string]any{
 									"exist": []any{
@@ -2683,6 +2969,9 @@ func MakeConfig() map[string]any {
 								"transform": map[string]any{
 									"req": "`reqdata`",
 									"res": "`body`",
+								},
+								"parts": []any{
+									"stock-prices",
 								},
 							},
 							map[string]any{
@@ -2715,8 +3004,10 @@ func MakeConfig() map[string]any {
 								"kind": "http",
 								"method": "GET",
 								"orig": "/stock-quotes",
-								"parts": []any{
-									"stock-quotes",
+								"segments": []any{
+									map[string]any{
+										"lit": "stock-quotes",
+									},
 								},
 								"select": map[string]any{
 									"exist": []any{
@@ -2728,6 +3019,9 @@ func MakeConfig() map[string]any {
 								"transform": map[string]any{
 									"req": "`reqdata`",
 									"res": "`body`",
+								},
+								"parts": []any{
+									"stock-quotes",
 								},
 							},
 						},
@@ -2772,8 +3066,10 @@ func MakeConfig() map[string]any {
 								"kind": "http",
 								"method": "GET",
 								"orig": "/commodity-prices",
-								"parts": []any{
-									"commodity-prices",
+								"segments": []any{
+									map[string]any{
+										"lit": "commodity-prices",
+									},
 								},
 								"select": map[string]any{
 									"exist": []any{
@@ -2786,6 +3082,9 @@ func MakeConfig() map[string]any {
 								"transform": map[string]any{
 									"req": "`reqdata`",
 									"res": "`body`",
+								},
+								"parts": []any{
+									"commodity-prices",
 								},
 							},
 							map[string]any{
@@ -2824,8 +3123,10 @@ func MakeConfig() map[string]any {
 								"kind": "http",
 								"method": "GET",
 								"orig": "/otc-prices",
-								"parts": []any{
-									"otc-prices",
+								"segments": []any{
+									map[string]any{
+										"lit": "otc-prices",
+									},
 								},
 								"select": map[string]any{
 									"exist": []any{
@@ -2838,6 +3139,9 @@ func MakeConfig() map[string]any {
 								"transform": map[string]any{
 									"req": "`reqdata`",
 									"res": "`body`",
+								},
+								"parts": []any{
+									"otc-prices",
 								},
 							},
 							map[string]any{
@@ -2869,8 +3173,10 @@ func MakeConfig() map[string]any {
 								"kind": "http",
 								"method": "GET",
 								"orig": "/otc-volume",
-								"parts": []any{
-									"otc-volume",
+								"segments": []any{
+									map[string]any{
+										"lit": "otc-volume",
+									},
 								},
 								"select": map[string]any{
 									"exist": []any{
@@ -2882,6 +3188,9 @@ func MakeConfig() map[string]any {
 								"transform": map[string]any{
 									"req": "`reqdata`",
 									"res": "`body`",
+								},
+								"parts": []any{
+									"otc-volume",
 								},
 							},
 						},
@@ -2935,8 +3244,10 @@ func MakeConfig() map[string]any {
 								"kind": "http",
 								"method": "GET",
 								"orig": "/index-prices",
-								"parts": []any{
-									"index-prices",
+								"segments": []any{
+									map[string]any{
+										"lit": "index-prices",
+									},
 								},
 								"select": map[string]any{
 									"exist": []any{
@@ -2949,6 +3260,9 @@ func MakeConfig() map[string]any {
 								"transform": map[string]any{
 									"req": "`reqdata`",
 									"res": "`body`",
+								},
+								"parts": []any{
+									"index-prices",
 								},
 							},
 							map[string]any{
@@ -2980,8 +3294,10 @@ func MakeConfig() map[string]any {
 								"kind": "http",
 								"method": "GET",
 								"orig": "/index-constituents",
-								"parts": []any{
-									"index-constituents",
+								"segments": []any{
+									map[string]any{
+										"lit": "index-constituents",
+									},
 								},
 								"select": map[string]any{
 									"exist": []any{
@@ -2993,6 +3309,9 @@ func MakeConfig() map[string]any {
 								"transform": map[string]any{
 									"req": "`reqdata`",
 									"res": "`body`",
+								},
+								"parts": []any{
+									"index-constituents",
 								},
 							},
 							map[string]any{
@@ -3024,8 +3343,10 @@ func MakeConfig() map[string]any {
 								"kind": "http",
 								"method": "GET",
 								"orig": "/index-quotes",
-								"parts": []any{
-									"index-quotes",
+								"segments": []any{
+									map[string]any{
+										"lit": "index-quotes",
+									},
 								},
 								"select": map[string]any{
 									"exist": []any{
@@ -3037,6 +3358,9 @@ func MakeConfig() map[string]any {
 								"transform": map[string]any{
 									"req": "`reqdata`",
 									"res": "`body`",
+								},
+								"parts": []any{
+									"index-quotes",
 								},
 							},
 							map[string]any{
@@ -3061,8 +3385,10 @@ func MakeConfig() map[string]any {
 								"kind": "http",
 								"method": "GET",
 								"orig": "/index-symbols",
-								"parts": []any{
-									"index-symbols",
+								"segments": []any{
+									map[string]any{
+										"lit": "index-symbols",
+									},
 								},
 								"select": map[string]any{
 									"exist": []any{
@@ -3073,6 +3399,9 @@ func MakeConfig() map[string]any {
 								"transform": map[string]any{
 									"req": "`reqdata`",
 									"res": "`body`",
+								},
+								"parts": []any{
+									"index-symbols",
 								},
 							},
 						},
@@ -3118,8 +3447,10 @@ func MakeConfig() map[string]any {
 								"kind": "http",
 								"method": "GET",
 								"orig": "/press-releases",
-								"parts": []any{
-									"press-releases",
+								"segments": []any{
+									map[string]any{
+										"lit": "press-releases",
+									},
 								},
 								"select": map[string]any{
 									"exist": []any{
@@ -3131,6 +3462,9 @@ func MakeConfig() map[string]any {
 								"transform": map[string]any{
 									"req": "`reqdata`",
 									"res": "`body`",
+								},
+								"parts": []any{
+									"press-releases",
 								},
 							},
 							map[string]any{
@@ -3155,8 +3489,10 @@ func MakeConfig() map[string]any {
 								"kind": "http",
 								"method": "GET",
 								"orig": "/fed-press-releases",
-								"parts": []any{
-									"fed-press-releases",
+								"segments": []any{
+									map[string]any{
+										"lit": "fed-press-releases",
+									},
 								},
 								"select": map[string]any{
 									"exist": []any{
@@ -3167,6 +3503,9 @@ func MakeConfig() map[string]any {
 								"transform": map[string]any{
 									"req": "`reqdata`",
 									"res": "`body`",
+								},
+								"parts": []any{
+									"fed-press-releases",
 								},
 							},
 							map[string]any{
@@ -3191,8 +3530,10 @@ func MakeConfig() map[string]any {
 								"kind": "http",
 								"method": "GET",
 								"orig": "/sec-press-releases",
-								"parts": []any{
-									"sec-press-releases",
+								"segments": []any{
+									map[string]any{
+										"lit": "sec-press-releases",
+									},
 								},
 								"select": map[string]any{
 									"exist": []any{
@@ -3203,6 +3544,9 @@ func MakeConfig() map[string]any {
 								"transform": map[string]any{
 									"req": "`reqdata`",
 									"res": "`body`",
+								},
+								"parts": []any{
+									"sec-press-releases",
 								},
 							},
 						},
@@ -3248,8 +3592,10 @@ func MakeConfig() map[string]any {
 								"kind": "http",
 								"method": "GET",
 								"orig": "/dividends",
-								"parts": []any{
-									"dividends",
+								"segments": []any{
+									map[string]any{
+										"lit": "dividends",
+									},
 								},
 								"select": map[string]any{
 									"exist": []any{
@@ -3261,6 +3607,9 @@ func MakeConfig() map[string]any {
 								"transform": map[string]any{
 									"req": "`reqdata`",
 									"res": "`body`",
+								},
+								"parts": []any{
+									"dividends",
 								},
 							},
 							map[string]any{
@@ -3291,8 +3640,10 @@ func MakeConfig() map[string]any {
 								"kind": "http",
 								"method": "GET",
 								"orig": "/earnings-releases",
-								"parts": []any{
-									"earnings-releases",
+								"segments": []any{
+									map[string]any{
+										"lit": "earnings-releases",
+									},
 								},
 								"select": map[string]any{
 									"exist": []any{
@@ -3304,6 +3655,9 @@ func MakeConfig() map[string]any {
 								"transform": map[string]any{
 									"req": "`reqdata`",
 									"res": "`body`",
+								},
+								"parts": []any{
+									"earnings-releases",
 								},
 							},
 							map[string]any{
@@ -3334,8 +3688,10 @@ func MakeConfig() map[string]any {
 								"kind": "http",
 								"method": "GET",
 								"orig": "/short-interest",
-								"parts": []any{
-									"short-interest",
+								"segments": []any{
+									map[string]any{
+										"lit": "short-interest",
+									},
 								},
 								"select": map[string]any{
 									"exist": []any{
@@ -3347,6 +3703,9 @@ func MakeConfig() map[string]any {
 								"transform": map[string]any{
 									"req": "`reqdata`",
 									"res": "`body`",
+								},
+								"parts": []any{
+									"short-interest",
 								},
 							},
 							map[string]any{
@@ -3377,8 +3736,10 @@ func MakeConfig() map[string]any {
 								"kind": "http",
 								"method": "GET",
 								"orig": "/stock-splits",
-								"parts": []any{
-									"stock-splits",
+								"segments": []any{
+									map[string]any{
+										"lit": "stock-splits",
+									},
 								},
 								"select": map[string]any{
 									"exist": []any{
@@ -3390,6 +3751,9 @@ func MakeConfig() map[string]any {
 								"transform": map[string]any{
 									"req": "`reqdata`",
 									"res": "`body`",
+								},
+								"parts": []any{
+									"stock-splits",
 								},
 							},
 							map[string]any{
@@ -3414,8 +3778,10 @@ func MakeConfig() map[string]any {
 								"kind": "http",
 								"method": "GET",
 								"orig": "/initial-public-offerings",
-								"parts": []any{
-									"initial-public-offerings",
+								"segments": []any{
+									map[string]any{
+										"lit": "initial-public-offerings",
+									},
 								},
 								"select": map[string]any{
 									"exist": []any{
@@ -3426,6 +3792,9 @@ func MakeConfig() map[string]any {
 								"transform": map[string]any{
 									"req": "`reqdata`",
 									"res": "`body`",
+								},
+								"parts": []any{
+									"initial-public-offerings",
 								},
 							},
 						},
@@ -3472,8 +3841,10 @@ func MakeConfig() map[string]any {
 								"kind": "http",
 								"method": "GET",
 								"orig": "/mutual-fund-holdings",
-								"parts": []any{
-									"mutual-fund-holdings",
+								"segments": []any{
+									map[string]any{
+										"lit": "mutual-fund-holdings",
+									},
 								},
 								"select": map[string]any{
 									"exist": []any{
@@ -3485,6 +3856,9 @@ func MakeConfig() map[string]any {
 								"transform": map[string]any{
 									"req": "`reqdata`",
 									"res": "`body`",
+								},
+								"parts": []any{
+									"mutual-fund-holdings",
 								},
 							},
 							map[string]any{
@@ -3516,8 +3890,10 @@ func MakeConfig() map[string]any {
 								"kind": "http",
 								"method": "GET",
 								"orig": "/mutual-fund-statistics",
-								"parts": []any{
-									"mutual-fund-statistics",
+								"segments": []any{
+									map[string]any{
+										"lit": "mutual-fund-statistics",
+									},
 								},
 								"select": map[string]any{
 									"exist": []any{
@@ -3529,6 +3905,9 @@ func MakeConfig() map[string]any {
 								"transform": map[string]any{
 									"req": "`reqdata`",
 									"res": "`body`",
+								},
+								"parts": []any{
+									"mutual-fund-statistics",
 								},
 							},
 							map[string]any{
@@ -3553,8 +3932,10 @@ func MakeConfig() map[string]any {
 								"kind": "http",
 								"method": "GET",
 								"orig": "/mutual-fund-symbols",
-								"parts": []any{
-									"mutual-fund-symbols",
+								"segments": []any{
+									map[string]any{
+										"lit": "mutual-fund-symbols",
+									},
 								},
 								"select": map[string]any{
 									"exist": []any{
@@ -3565,6 +3946,9 @@ func MakeConfig() map[string]any {
 								"transform": map[string]any{
 									"req": "`reqdata`",
 									"res": "`body`",
+								},
+								"parts": []any{
+									"mutual-fund-symbols",
 								},
 							},
 						},
@@ -3628,8 +4012,10 @@ func MakeConfig() map[string]any {
 								"kind": "http",
 								"method": "GET",
 								"orig": "/etf-symbols",
-								"parts": []any{
-									"etf-symbols",
+								"segments": []any{
+									map[string]any{
+										"lit": "etf-symbols",
+									},
 								},
 								"select": map[string]any{
 									"exist": []any{
@@ -3641,6 +4027,9 @@ func MakeConfig() map[string]any {
 								"transform": map[string]any{
 									"req": "`reqdata`",
 									"res": "`body`",
+								},
+								"parts": []any{
+									"etf-symbols",
 								},
 							},
 							map[string]any{
@@ -3672,8 +4061,10 @@ func MakeConfig() map[string]any {
 								"kind": "http",
 								"method": "GET",
 								"orig": "/international-stock-symbols",
-								"parts": []any{
-									"international-stock-symbols",
+								"segments": []any{
+									map[string]any{
+										"lit": "international-stock-symbols",
+									},
 								},
 								"select": map[string]any{
 									"exist": []any{
@@ -3685,6 +4076,9 @@ func MakeConfig() map[string]any {
 								"transform": map[string]any{
 									"req": "`reqdata`",
 									"res": "`body`",
+								},
+								"parts": []any{
+									"international-stock-symbols",
 								},
 							},
 							map[string]any{
@@ -3716,8 +4110,10 @@ func MakeConfig() map[string]any {
 								"kind": "http",
 								"method": "GET",
 								"orig": "/otc-symbols",
-								"parts": []any{
-									"otc-symbols",
+								"segments": []any{
+									map[string]any{
+										"lit": "otc-symbols",
+									},
 								},
 								"select": map[string]any{
 									"exist": []any{
@@ -3729,6 +4125,9 @@ func MakeConfig() map[string]any {
 								"transform": map[string]any{
 									"req": "`reqdata`",
 									"res": "`body`",
+								},
+								"parts": []any{
+									"otc-symbols",
 								},
 							},
 							map[string]any{
@@ -3760,8 +4159,10 @@ func MakeConfig() map[string]any {
 								"kind": "http",
 								"method": "GET",
 								"orig": "/stock-symbols",
-								"parts": []any{
-									"stock-symbols",
+								"segments": []any{
+									map[string]any{
+										"lit": "stock-symbols",
+									},
 								},
 								"select": map[string]any{
 									"exist": []any{
@@ -3773,6 +4174,9 @@ func MakeConfig() map[string]any {
 								"transform": map[string]any{
 									"req": "`reqdata`",
 									"res": "`body`",
+								},
+								"parts": []any{
+									"stock-symbols",
 								},
 							},
 							map[string]any{
@@ -3797,8 +4201,10 @@ func MakeConfig() map[string]any {
 								"kind": "http",
 								"method": "GET",
 								"orig": "/commodity-symbols",
-								"parts": []any{
-									"commodity-symbols",
+								"segments": []any{
+									map[string]any{
+										"lit": "commodity-symbols",
+									},
 								},
 								"select": map[string]any{
 									"exist": []any{
@@ -3810,6 +4216,9 @@ func MakeConfig() map[string]any {
 									"req": "`reqdata`",
 									"res": "`body`",
 								},
+								"parts": []any{
+									"commodity-symbols",
+								},
 							},
 						},
 					},
@@ -3820,6 +4229,17 @@ func MakeConfig() map[string]any {
 			},
 		},
 	}
+}
+
+// The plugin definitions the model selected per feature, as []any so a
+// feature package can consume them without core naming its types. Empty
+// when no active feature declares active plugin groups for this target.
+var featurePlugins = map[string][]any{
+}
+
+// FeaturePlugins is the definitions list for one feature's chain.
+func FeaturePlugins(name string) []any {
+	return featurePlugins[name]
 }
 
 var (

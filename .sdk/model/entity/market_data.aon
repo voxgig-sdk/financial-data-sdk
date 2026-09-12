@@ -6,41 +6,49 @@ main: kit: entity: market_data: {
 
   fields: [
     {
+      format: "float"
       name: "change"
       req: false
       type: "`$NUMBER`"
     }
     {
+      format: "float"
       name: "close"
       req: false
       type: "`$NUMBER`"
     }
     {
+      format: "date"
       name: "date"
       req: false
       type: "`$STRING`"
     }
     {
+      format: "float"
       name: "high"
       req: false
       type: "`$NUMBER`"
     }
     {
+      format: "float"
       name: "low"
       req: false
       type: "`$NUMBER`"
     }
     {
+      format: "float"
       name: "open"
       req: false
       type: "`$NUMBER`"
     }
     {
+      format: "float"
       name: "percentage_change"
       req: false
       type: "`$NUMBER`"
     }
     {
+      format: "float"
       name: "price"
       req: false
       type: "`$NUMBER`"
@@ -61,6 +69,7 @@ main: kit: entity: market_data: {
       type: "`$STRING`"
     }
     {
+      format: "float"
       name: "volume"
       req: false
       type: "`$NUMBER`"
@@ -118,8 +127,10 @@ main: kit: entity: market_data: {
           }
           method: "GET"
           orig: "/minute-prices"
-          parts: [
-            "minute-prices"
+          segments: [
+            {
+              lit: "minute-prices"
+            }
           ]
           select: {
             exist: [
@@ -173,8 +184,10 @@ main: kit: entity: market_data: {
           }
           method: "GET"
           orig: "/international-stock-prices"
-          parts: [
-            "international-stock-prices"
+          segments: [
+            {
+              lit: "international-stock-prices"
+            }
           ]
           select: {
             exist: [
@@ -226,8 +239,10 @@ main: kit: entity: market_data: {
           }
           method: "GET"
           orig: "/latest-prices"
-          parts: [
-            "latest-prices"
+          segments: [
+            {
+              lit: "latest-prices"
+            }
           ]
           select: {
             exist: [
@@ -280,8 +295,10 @@ main: kit: entity: market_data: {
           }
           method: "GET"
           orig: "/stock-prices"
-          parts: [
-            "stock-prices"
+          segments: [
+            {
+              lit: "stock-prices"
+            }
           ]
           select: {
             exist: [
@@ -326,8 +343,10 @@ main: kit: entity: market_data: {
           }
           method: "GET"
           orig: "/stock-quotes"
-          parts: [
-            "stock-quotes"
+          segments: [
+            {
+              lit: "stock-quotes"
+            }
           ]
           select: {
             exist: [
@@ -383,8 +402,10 @@ main: kit: entity: market_data: {
           }
           method: "GET"
           orig: "/commodity-prices"
-          parts: [
-            "commodity-prices"
+          segments: [
+            {
+              lit: "commodity-prices"
+            }
           ]
           select: {
             exist: [
@@ -436,8 +457,10 @@ main: kit: entity: market_data: {
           }
           method: "GET"
           orig: "/otc-prices"
-          parts: [
-            "otc-prices"
+          segments: [
+            {
+              lit: "otc-prices"
+            }
           ]
           select: {
             exist: [
@@ -481,8 +504,10 @@ main: kit: entity: market_data: {
           }
           method: "GET"
           orig: "/otc-volume"
-          parts: [
-            "otc-volume"
+          segments: [
+            {
+              lit: "otc-volume"
+            }
           ]
           select: {
             exist: [
