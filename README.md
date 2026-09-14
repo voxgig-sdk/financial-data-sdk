@@ -105,7 +105,7 @@ local result, err = client:CryptoCurrency():load({ key = "example" })
 
 | Language | Package | Install |
 | --- | --- | --- |
-| TypeScript | `@voxgig-sdk/financial-data` | publish pending — [install from git tag](https://github.com/voxgig-sdk/financial-data-sdk/releases) |
+| TypeScript | `@voxgig-sdk/financial-data-sdk` | publish pending — [install from git tag](https://github.com/voxgig-sdk/financial-data-sdk/releases) |
 | Python | `voxgig-sdk-financial-data` | publish pending — [install from git tag](https://github.com/voxgig-sdk/financial-data-sdk/releases) |
 | PHP | `voxgig-sdk/financial-data` | publish pending — [install from git tag](https://github.com/voxgig-sdk/financial-data-sdk/releases) |
 | Golang | `github.com/voxgig-sdk/financial-data-sdk/go` | `go get github.com/voxgig-sdk/financial-data-sdk/go@latest` |
@@ -119,7 +119,7 @@ local result, err = client:CryptoCurrency():load({ key = "example" })
 ### TypeScript
 
 ```ts
-import { FinancialDataSDK } from '@voxgig-sdk/financial-data'
+import { FinancialDataSDK } from '@voxgig-sdk/financial-data-sdk'
 
 const client = new FinancialDataSDK({
   apikey: process.env.FINANCIAL_DATA_APIKEY,

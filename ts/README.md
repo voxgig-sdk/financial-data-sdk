@@ -28,7 +28,7 @@ loading a specific record.
 ### 1. Create a client
 
 ```ts
-import { FinancialDataSDK } from '@voxgig-sdk/financial-data'
+import { FinancialDataSDK } from '@voxgig-sdk/financial-data-sdk'
 
 const client = new FinancialDataSDK({
   apikey: process.env.FINANCIAL_DATA_APIKEY,
@@ -911,7 +911,7 @@ financial-data/
 Import the SDK from the package root:
 
 ```ts
-import { FinancialDataSDK } from '@voxgig-sdk/financial-data'
+import { FinancialDataSDK } from '@voxgig-sdk/financial-data-sdk'
 ```
 
 ### Entity state
