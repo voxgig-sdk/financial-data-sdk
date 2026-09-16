@@ -16,5 +16,248 @@
     "forex_data": {
       "forex_data_ref01": {}
     }
+  },
+  "requests": {
+    "GET /forex-minute-prices": {
+      "provenance": "operation-contract",
+      "contract": {
+        "operationId": "getForexMinutePrices",
+        "parameters": [
+          {
+            "description": "The forex pair symbol.",
+            "in": "query",
+            "name": "identifier",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "description": "The date in YYYY-MM-DD format.",
+            "in": "query",
+            "name": "date",
+            "required": true,
+            "schema": {
+              "format": "date",
+              "type": "string"
+            }
+          },
+          {
+            "description": "The format of the returned data.",
+            "in": "query",
+            "name": "format",
+            "required": false,
+            "schema": {
+              "default": "json",
+              "enum": [
+                "json",
+                "csv"
+              ],
+              "type": "string"
+            }
+          },
+          {
+            "description": "API key for authentication",
+            "in": "query",
+            "name": "key",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "protocol": "http",
+        "responses": {
+          "200": {
+            "description": "Successful response"
+          }
+        },
+        "security": [
+          {
+            "ApiKeyAuth": []
+          }
+        ],
+        "securitySchemes": {
+          "ApiKeyAuth": {
+            "description": "API key for authentication. Append ?key=API_KEY to each request URL or &key=API_KEY if other query parameters exist.",
+            "in": "query",
+            "name": "key",
+            "type": "apiKey"
+          }
+        },
+        "securitySource": "definition"
+      }
+    },
+    "GET /forex-prices": {
+      "provenance": "operation-contract",
+      "contract": {
+        "operationId": "getForexPrices",
+        "parameters": [
+          {
+            "description": "The forex pair symbol.",
+            "in": "query",
+            "name": "identifier",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "description": "The format of the returned data.",
+            "in": "query",
+            "name": "format",
+            "required": false,
+            "schema": {
+              "default": "json",
+              "enum": [
+                "json",
+                "csv"
+              ],
+              "type": "string"
+            }
+          },
+          {
+            "description": "API key for authentication",
+            "in": "query",
+            "name": "key",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "protocol": "http",
+        "responses": {
+          "200": {
+            "description": "Successful response"
+          }
+        },
+        "security": [
+          {
+            "ApiKeyAuth": []
+          }
+        ],
+        "securitySchemes": {
+          "ApiKeyAuth": {
+            "description": "API key for authentication. Append ?key=API_KEY to each request URL or &key=API_KEY if other query parameters exist.",
+            "in": "query",
+            "name": "key",
+            "type": "apiKey"
+          }
+        },
+        "securitySource": "definition"
+      }
+    },
+    "GET /forex-quotes": {
+      "provenance": "operation-contract",
+      "contract": {
+        "operationId": "getForexQuotes",
+        "parameters": [
+          {
+            "description": "The forex pair symbols (comma-separated).",
+            "in": "query",
+            "name": "identifiers",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "description": "The format of the returned data.",
+            "in": "query",
+            "name": "format",
+            "required": false,
+            "schema": {
+              "default": "json",
+              "enum": [
+                "json",
+                "csv"
+              ],
+              "type": "string"
+            }
+          },
+          {
+            "description": "API key for authentication",
+            "in": "query",
+            "name": "key",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "protocol": "http",
+        "responses": {
+          "200": {
+            "description": "Successful response"
+          }
+        },
+        "security": [
+          {
+            "ApiKeyAuth": []
+          }
+        ],
+        "securitySchemes": {
+          "ApiKeyAuth": {
+            "description": "API key for authentication. Append ?key=API_KEY to each request URL or &key=API_KEY if other query parameters exist.",
+            "in": "query",
+            "name": "key",
+            "type": "apiKey"
+          }
+        },
+        "securitySource": "definition"
+      }
+    },
+    "GET /forex-symbols": {
+      "provenance": "operation-contract",
+      "contract": {
+        "operationId": "getForexSymbols",
+        "parameters": [
+          {
+            "description": "The format of the returned data.",
+            "in": "query",
+            "name": "format",
+            "required": false,
+            "schema": {
+              "default": "json",
+              "enum": [
+                "json",
+                "csv"
+              ],
+              "type": "string"
+            }
+          },
+          {
+            "description": "API key for authentication",
+            "in": "query",
+            "name": "key",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "protocol": "http",
+        "responses": {
+          "200": {
+            "description": "Successful response"
+          }
+        },
+        "security": [
+          {
+            "ApiKeyAuth": []
+          }
+        ],
+        "securitySchemes": {
+          "ApiKeyAuth": {
+            "description": "API key for authentication. Append ?key=API_KEY to each request URL or &key=API_KEY if other query parameters exist.",
+            "in": "query",
+            "name": "key",
+            "type": "apiKey"
+          }
+        },
+        "securitySource": "definition"
+      }
+    }
   }
 }

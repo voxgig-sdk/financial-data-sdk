@@ -1,12 +1,18 @@
 # FinancialData SDK feature factory
 
 from financialdata_sdk.feature.base_feature import FinancialDataBaseFeature
+from financialdata_sdk.feature.ratelimit_feature import FinancialDataRatelimitFeature
+from financialdata_sdk.feature.retry_feature import FinancialDataRetryFeature
 from financialdata_sdk.feature.test_feature import FinancialDataTestFeature
+from financialdata_sdk.feature.timeout_feature import FinancialDataTimeoutFeature
 
 
 _FEATURES = {
     "base": lambda: FinancialDataBaseFeature(),
+    "ratelimit": lambda: FinancialDataRatelimitFeature(),
+    "retry": lambda: FinancialDataRetryFeature(),
     "test": lambda: FinancialDataTestFeature(),
+    "timeout": lambda: FinancialDataTimeoutFeature(),
 }
 
 

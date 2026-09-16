@@ -16,5 +16,427 @@
     "basic_information": {
       "basic_information_ref01": {}
     }
+  },
+  "requests": {
+    "GET /company-information": {
+      "provenance": "operation-contract",
+      "contract": {
+        "operationId": "getCompanyInformation",
+        "parameters": [
+          {
+            "description": "The trading symbol.",
+            "in": "query",
+            "name": "identifier",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "description": "The format of the returned data.",
+            "in": "query",
+            "name": "format",
+            "required": false,
+            "schema": {
+              "default": "json",
+              "enum": [
+                "json",
+                "csv"
+              ],
+              "type": "string"
+            }
+          },
+          {
+            "description": "API key for authentication",
+            "in": "query",
+            "name": "key",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "protocol": "http",
+        "responses": {
+          "200": {
+            "description": "Successful response"
+          }
+        },
+        "security": [
+          {
+            "ApiKeyAuth": []
+          }
+        ],
+        "securitySchemes": {
+          "ApiKeyAuth": {
+            "description": "API key for authentication. Append ?key=API_KEY to each request URL or &key=API_KEY if other query parameters exist.",
+            "in": "query",
+            "name": "key",
+            "type": "apiKey"
+          }
+        },
+        "securitySource": "definition"
+      }
+    },
+    "GET /employee-count": {
+      "provenance": "operation-contract",
+      "contract": {
+        "operationId": "getEmployeeCount",
+        "parameters": [
+          {
+            "description": "The trading symbol.",
+            "in": "query",
+            "name": "identifier",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "description": "The format of the returned data.",
+            "in": "query",
+            "name": "format",
+            "required": false,
+            "schema": {
+              "default": "json",
+              "enum": [
+                "json",
+                "csv"
+              ],
+              "type": "string"
+            }
+          },
+          {
+            "description": "API key for authentication",
+            "in": "query",
+            "name": "key",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "protocol": "http",
+        "responses": {
+          "200": {
+            "description": "Successful response"
+          }
+        },
+        "security": [
+          {
+            "ApiKeyAuth": []
+          }
+        ],
+        "securitySchemes": {
+          "ApiKeyAuth": {
+            "description": "API key for authentication. Append ?key=API_KEY to each request URL or &key=API_KEY if other query parameters exist.",
+            "in": "query",
+            "name": "key",
+            "type": "apiKey"
+          }
+        },
+        "securitySource": "definition"
+      }
+    },
+    "GET /executive-compensation": {
+      "provenance": "operation-contract",
+      "contract": {
+        "operationId": "getExecutiveCompensation",
+        "parameters": [
+          {
+            "description": "The trading symbol.",
+            "in": "query",
+            "name": "identifier",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "description": "The format of the returned data.",
+            "in": "query",
+            "name": "format",
+            "required": false,
+            "schema": {
+              "default": "json",
+              "enum": [
+                "json",
+                "csv"
+              ],
+              "type": "string"
+            }
+          },
+          {
+            "description": "API key for authentication",
+            "in": "query",
+            "name": "key",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "protocol": "http",
+        "responses": {
+          "200": {
+            "description": "Successful response"
+          }
+        },
+        "security": [
+          {
+            "ApiKeyAuth": []
+          }
+        ],
+        "securitySchemes": {
+          "ApiKeyAuth": {
+            "description": "API key for authentication. Append ?key=API_KEY to each request URL or &key=API_KEY if other query parameters exist.",
+            "in": "query",
+            "name": "key",
+            "type": "apiKey"
+          }
+        },
+        "securitySource": "definition"
+      }
+    },
+    "GET /international-company-information": {
+      "provenance": "operation-contract",
+      "contract": {
+        "operationId": "getInternationalCompanyInformation",
+        "parameters": [
+          {
+            "description": "The trading symbol.",
+            "in": "query",
+            "name": "identifier",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "description": "The format of the returned data.",
+            "in": "query",
+            "name": "format",
+            "required": false,
+            "schema": {
+              "default": "json",
+              "enum": [
+                "json",
+                "csv"
+              ],
+              "type": "string"
+            }
+          },
+          {
+            "description": "API key for authentication",
+            "in": "query",
+            "name": "key",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "protocol": "http",
+        "responses": {
+          "200": {
+            "description": "Successful response"
+          }
+        },
+        "security": [
+          {
+            "ApiKeyAuth": []
+          }
+        ],
+        "securitySchemes": {
+          "ApiKeyAuth": {
+            "description": "API key for authentication. Append ?key=API_KEY to each request URL or &key=API_KEY if other query parameters exist.",
+            "in": "query",
+            "name": "key",
+            "type": "apiKey"
+          }
+        },
+        "securitySource": "definition"
+      }
+    },
+    "GET /key-metrics": {
+      "provenance": "operation-contract",
+      "contract": {
+        "operationId": "getKeyMetrics",
+        "parameters": [
+          {
+            "description": "The trading symbol.",
+            "in": "query",
+            "name": "identifier",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "description": "The format of the returned data.",
+            "in": "query",
+            "name": "format",
+            "required": false,
+            "schema": {
+              "default": "json",
+              "enum": [
+                "json",
+                "csv"
+              ],
+              "type": "string"
+            }
+          },
+          {
+            "description": "API key for authentication",
+            "in": "query",
+            "name": "key",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "protocol": "http",
+        "responses": {
+          "200": {
+            "description": "Successful response"
+          }
+        },
+        "security": [
+          {
+            "ApiKeyAuth": []
+          }
+        ],
+        "securitySchemes": {
+          "ApiKeyAuth": {
+            "description": "API key for authentication. Append ?key=API_KEY to each request URL or &key=API_KEY if other query parameters exist.",
+            "in": "query",
+            "name": "key",
+            "type": "apiKey"
+          }
+        },
+        "securitySource": "definition"
+      }
+    },
+    "GET /market-cap": {
+      "provenance": "operation-contract",
+      "contract": {
+        "operationId": "getMarketCap",
+        "parameters": [
+          {
+            "description": "The trading symbol.",
+            "in": "query",
+            "name": "identifier",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "description": "The format of the returned data.",
+            "in": "query",
+            "name": "format",
+            "required": false,
+            "schema": {
+              "default": "json",
+              "enum": [
+                "json",
+                "csv"
+              ],
+              "type": "string"
+            }
+          },
+          {
+            "description": "API key for authentication",
+            "in": "query",
+            "name": "key",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "protocol": "http",
+        "responses": {
+          "200": {
+            "description": "Successful response"
+          }
+        },
+        "security": [
+          {
+            "ApiKeyAuth": []
+          }
+        ],
+        "securitySchemes": {
+          "ApiKeyAuth": {
+            "description": "API key for authentication. Append ?key=API_KEY to each request URL or &key=API_KEY if other query parameters exist.",
+            "in": "query",
+            "name": "key",
+            "type": "apiKey"
+          }
+        },
+        "securitySource": "definition"
+      }
+    },
+    "GET /securities-information": {
+      "provenance": "operation-contract",
+      "contract": {
+        "operationId": "getSecuritiesInformation",
+        "parameters": [
+          {
+            "description": "The trading symbol.",
+            "in": "query",
+            "name": "identifier",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "description": "The format of the returned data.",
+            "in": "query",
+            "name": "format",
+            "required": false,
+            "schema": {
+              "default": "json",
+              "enum": [
+                "json",
+                "csv"
+              ],
+              "type": "string"
+            }
+          },
+          {
+            "description": "API key for authentication",
+            "in": "query",
+            "name": "key",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "protocol": "http",
+        "responses": {
+          "200": {
+            "description": "Successful response"
+          }
+        },
+        "security": [
+          {
+            "ApiKeyAuth": []
+          }
+        ],
+        "securitySchemes": {
+          "ApiKeyAuth": {
+            "description": "API key for authentication. Append ?key=API_KEY to each request URL or &key=API_KEY if other query parameters exist.",
+            "in": "query",
+            "name": "key",
+            "type": "apiKey"
+          }
+        },
+        "securitySource": "definition"
+      }
+    }
   }
 }

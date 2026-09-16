@@ -30,5 +30,406 @@
         "trading_symbol": "sa3"
       }
     }
+  },
+  "requests": {
+    "GET /etf-symbols": {
+      "provenance": "operation-contract",
+      "contract": {
+        "operationId": "getEtfSymbols",
+        "parameters": [
+          {
+            "description": "The initial position of the record subset, which indicates how many records to skip. Defaults to 0.",
+            "in": "query",
+            "name": "offset",
+            "required": false,
+            "schema": {
+              "default": 0,
+              "example": 500,
+              "type": "integer"
+            }
+          },
+          {
+            "description": "The format of the returned data, either JSON or CSV. Defaults to JSON.",
+            "in": "query",
+            "name": "format",
+            "required": false,
+            "schema": {
+              "default": "json",
+              "enum": [
+                "json",
+                "csv"
+              ],
+              "type": "string"
+            }
+          },
+          {
+            "description": "API key for authentication",
+            "in": "query",
+            "name": "key",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "protocol": "http",
+        "responses": {
+          "200": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "items": {
+                    "properties": {
+                      "description": {
+                        "example": "AAF First Priority CLO Bond ETF",
+                        "type": "string"
+                      },
+                      "trading_symbol": {
+                        "example": "AAA",
+                        "type": "string"
+                      }
+                    },
+                    "type": "object"
+                  },
+                  "type": "array"
+                }
+              }
+            },
+            "description": "Successful response"
+          }
+        },
+        "security": [
+          {
+            "ApiKeyAuth": []
+          }
+        ],
+        "securitySchemes": {
+          "ApiKeyAuth": {
+            "description": "API key for authentication. Append ?key=API_KEY to each request URL or &key=API_KEY if other query parameters exist.",
+            "in": "query",
+            "name": "key",
+            "type": "apiKey"
+          }
+        },
+        "securitySource": "definition"
+      }
+    },
+    "GET /international-stock-symbols": {
+      "provenance": "operation-contract",
+      "contract": {
+        "operationId": "getInternationalStockSymbols",
+        "parameters": [
+          {
+            "description": "The initial position of the record subset, which indicates how many records to skip. Defaults to 0.",
+            "in": "query",
+            "name": "offset",
+            "required": false,
+            "schema": {
+              "default": 0,
+              "example": 500,
+              "type": "integer"
+            }
+          },
+          {
+            "description": "The format of the returned data, either JSON or CSV. Defaults to JSON.",
+            "in": "query",
+            "name": "format",
+            "required": false,
+            "schema": {
+              "default": "json",
+              "enum": [
+                "json",
+                "csv"
+              ],
+              "type": "string"
+            }
+          },
+          {
+            "description": "API key for authentication",
+            "in": "query",
+            "name": "key",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "protocol": "http",
+        "responses": {
+          "200": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "items": {
+                    "properties": {
+                      "registrant_name": {
+                        "example": "HiteJinro Co., Ltd.",
+                        "type": "string"
+                      },
+                      "trading_symbol": {
+                        "example": "000080.KS",
+                        "type": "string"
+                      }
+                    },
+                    "type": "object"
+                  },
+                  "type": "array"
+                }
+              }
+            },
+            "description": "Successful response"
+          }
+        },
+        "security": [
+          {
+            "ApiKeyAuth": []
+          }
+        ],
+        "securitySchemes": {
+          "ApiKeyAuth": {
+            "description": "API key for authentication. Append ?key=API_KEY to each request URL or &key=API_KEY if other query parameters exist.",
+            "in": "query",
+            "name": "key",
+            "type": "apiKey"
+          }
+        },
+        "securitySource": "definition"
+      }
+    },
+    "GET /otc-symbols": {
+      "provenance": "operation-contract",
+      "contract": {
+        "operationId": "getOtcSymbols",
+        "parameters": [
+          {
+            "description": "The initial position of the record subset, which indicates how many records to skip. Defaults to 0.",
+            "in": "query",
+            "name": "offset",
+            "required": false,
+            "schema": {
+              "default": 0,
+              "example": 500,
+              "type": "integer"
+            }
+          },
+          {
+            "description": "The format of the returned data, either JSON or CSV. Defaults to JSON.",
+            "in": "query",
+            "name": "format",
+            "required": false,
+            "schema": {
+              "default": "json",
+              "enum": [
+                "json",
+                "csv"
+              ],
+              "type": "string"
+            }
+          },
+          {
+            "description": "API key for authentication",
+            "in": "query",
+            "name": "key",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "protocol": "http",
+        "responses": {
+          "200": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "items": {
+                    "properties": {
+                      "title_of_security": {
+                        "example": "Aareal Bank AG Unsponsored American Depository Receipt (Germany)",
+                        "type": "string"
+                      },
+                      "trading_symbol": {
+                        "example": "AAALY",
+                        "type": "string"
+                      }
+                    },
+                    "type": "object"
+                  },
+                  "type": "array"
+                }
+              }
+            },
+            "description": "Successful response"
+          }
+        },
+        "security": [
+          {
+            "ApiKeyAuth": []
+          }
+        ],
+        "securitySchemes": {
+          "ApiKeyAuth": {
+            "description": "API key for authentication. Append ?key=API_KEY to each request URL or &key=API_KEY if other query parameters exist.",
+            "in": "query",
+            "name": "key",
+            "type": "apiKey"
+          }
+        },
+        "securitySource": "definition"
+      }
+    },
+    "GET /stock-symbols": {
+      "provenance": "operation-contract",
+      "contract": {
+        "operationId": "getStockSymbols",
+        "parameters": [
+          {
+            "description": "The initial position of the record subset, which indicates how many records to skip. Defaults to 0.",
+            "in": "query",
+            "name": "offset",
+            "required": false,
+            "schema": {
+              "default": 0,
+              "example": 500,
+              "type": "integer"
+            }
+          },
+          {
+            "description": "The format of the returned data, either JSON (JavaScript Object Notation) or CSV (Comma Separated Values). Defaults to JSON.",
+            "in": "query",
+            "name": "format",
+            "required": false,
+            "schema": {
+              "default": "json",
+              "enum": [
+                "json",
+                "csv"
+              ],
+              "type": "string"
+            }
+          },
+          {
+            "description": "API key for authentication",
+            "in": "query",
+            "name": "key",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "protocol": "http",
+        "responses": {
+          "200": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "items": {
+                    "properties": {
+                      "registrant_name": {
+                        "example": "AGILENT TECHNOLOGIES, INC.",
+                        "type": "string"
+                      },
+                      "trading_symbol": {
+                        "example": "A",
+                        "type": "string"
+                      }
+                    },
+                    "type": "object"
+                  },
+                  "type": "array"
+                }
+              }
+            },
+            "description": "Successful response"
+          }
+        },
+        "security": [
+          {
+            "ApiKeyAuth": []
+          }
+        ],
+        "securitySchemes": {
+          "ApiKeyAuth": {
+            "description": "API key for authentication. Append ?key=API_KEY to each request URL or &key=API_KEY if other query parameters exist.",
+            "in": "query",
+            "name": "key",
+            "type": "apiKey"
+          }
+        },
+        "securitySource": "definition"
+      }
+    },
+    "GET /commodity-symbols": {
+      "provenance": "operation-contract",
+      "contract": {
+        "operationId": "getCommoditySymbols",
+        "parameters": [
+          {
+            "description": "The format of the returned data, either JSON or CSV. Defaults to JSON.",
+            "in": "query",
+            "name": "format",
+            "required": false,
+            "schema": {
+              "default": "json",
+              "enum": [
+                "json",
+                "csv"
+              ],
+              "type": "string"
+            }
+          },
+          {
+            "description": "API key for authentication",
+            "in": "query",
+            "name": "key",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "protocol": "http",
+        "responses": {
+          "200": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "items": {
+                    "properties": {
+                      "description": {
+                        "example": "Brent Crude Oil Futures (NYMEX)",
+                        "type": "string"
+                      },
+                      "trading_symbol": {
+                        "example": "BZ",
+                        "type": "string"
+                      }
+                    },
+                    "type": "object"
+                  },
+                  "type": "array"
+                }
+              }
+            },
+            "description": "Successful response"
+          }
+        },
+        "security": [
+          {
+            "ApiKeyAuth": []
+          }
+        ],
+        "securitySchemes": {
+          "ApiKeyAuth": {
+            "description": "API key for authentication. Append ?key=API_KEY to each request URL or &key=API_KEY if other query parameters exist.",
+            "in": "query",
+            "name": "key",
+            "type": "apiKey"
+          }
+        },
+        "securitySource": "definition"
+      }
+    }
   }
 }

@@ -125,6 +125,12 @@ main: kit: entity: market_data: {
               }
             ]
           }
+          contract: {
+            id: "GET /minute-prices"
+            json: "{\"operationId\":\"getMinutePrices\",\"parameters\":[{\"description\":\"The trading symbol for a security.\",\"in\":\"query\",\"name\":\"identifier\",\"required\":true,\"schema\":{\"example\":\"MSFT\",\"type\":\"string\"}},{\"description\":\"The date in YYYY-MM-DD format.\",\"in\":\"query\",\"name\":\"date\",\"required\":true,\"schema\":{\"example\":\"2020-01-15\",\"format\":\"date\",\"type\":\"string\"}},{\"description\":\"The initial position of the record subset, which indicates how many records to skip. Defaults to 0.\",\"in\":\"query\",\"name\":\"offset\",\"required\":false,\"schema\":{\"default\":0,\"example\":300,\"type\":\"integer\"}},{\"description\":\"The format of the returned data, either JSON or CSV. Defaults to JSON.\",\"in\":\"query\",\"name\":\"format\",\"required\":false,\"schema\":{\"default\":\"json\",\"enum\":[\"json\",\"csv\"],\"type\":\"string\"}},{\"description\":\"API key for authentication\",\"in\":\"query\",\"name\":\"key\",\"required\":true,\"schema\":{\"type\":\"string\"}}],\"protocol\":\"http\",\"responses\":{\"200\":{\"content\":{\"application/json\":{\"schema\":{\"items\":{\"properties\":{\"close\":{\"example\":163.25,\"format\":\"float\",\"type\":\"number\"},\"high\":{\"example\":163.26,\"format\":\"float\",\"type\":\"number\"},\"low\":{\"example\":163.1,\"format\":\"float\",\"type\":\"number\"},\"open\":{\"example\":163.14,\"format\":\"float\",\"type\":\"number\"},\"time\":{\"example\":\"2020-01-15 20:59:00\",\"type\":\"string\"},\"trading_symbol\":{\"example\":\"MSFT\",\"type\":\"string\"},\"volume\":{\"example\":5633,\"format\":\"float\",\"type\":\"number\"}},\"type\":\"object\"},\"type\":\"array\"}}},\"description\":\"Successful response\"}},\"security\":[{\"ApiKeyAuth\":[]}],\"securitySchemes\":{\"ApiKeyAuth\":{\"description\":\"API key for authentication. Append ?key=API_KEY to each request URL or &key=API_KEY if other query parameters exist.\",\"in\":\"query\",\"name\":\"key\",\"type\":\"apiKey\"}},\"securitySource\":\"definition\"}"
+            source: "openapi3"
+            version: 1
+          }
           method: "GET"
           orig: "/minute-prices"
           segments: [
@@ -182,6 +188,12 @@ main: kit: entity: market_data: {
               }
             ]
           }
+          contract: {
+            id: "GET /international-stock-prices"
+            json: "{\"operationId\":\"getInternationalStockPrices\",\"parameters\":[{\"description\":\"The trading symbol for a security.\",\"in\":\"query\",\"name\":\"identifier\",\"required\":true,\"schema\":{\"example\":\"SHEL.L\",\"type\":\"string\"}},{\"description\":\"The initial position of the record subset, which indicates how many records to skip. Defaults to 0.\",\"in\":\"query\",\"name\":\"offset\",\"required\":false,\"schema\":{\"default\":0,\"example\":300,\"type\":\"integer\"}},{\"description\":\"The format of the returned data, either JSON or CSV. Defaults to JSON.\",\"in\":\"query\",\"name\":\"format\",\"required\":false,\"schema\":{\"default\":\"json\",\"enum\":[\"json\",\"csv\"],\"type\":\"string\"}},{\"description\":\"API key for authentication\",\"in\":\"query\",\"name\":\"key\",\"required\":true,\"schema\":{\"type\":\"string\"}}],\"protocol\":\"http\",\"responses\":{\"200\":{\"content\":{\"application/json\":{\"schema\":{\"items\":{\"properties\":{\"close\":{\"example\":2486.5,\"format\":\"float\",\"type\":\"number\"},\"date\":{\"example\":\"2025-05-02\",\"format\":\"date\",\"type\":\"string\"},\"high\":{\"example\":2543.5,\"format\":\"float\",\"type\":\"number\"},\"low\":{\"example\":2461.5,\"format\":\"float\",\"type\":\"number\"},\"open\":{\"example\":2493,\"format\":\"float\",\"type\":\"number\"},\"trading_symbol\":{\"example\":\"SHEL.L\",\"type\":\"string\"},\"volume\":{\"example\":12476281,\"format\":\"float\",\"type\":\"number\"}},\"type\":\"object\"},\"type\":\"array\"}}},\"description\":\"Successful response\"}},\"security\":[{\"ApiKeyAuth\":[]}],\"securitySchemes\":{\"ApiKeyAuth\":{\"description\":\"API key for authentication. Append ?key=API_KEY to each request URL or &key=API_KEY if other query parameters exist.\",\"in\":\"query\",\"name\":\"key\",\"type\":\"apiKey\"}},\"securitySource\":\"definition\"}"
+            source: "openapi3"
+            version: 1
+          }
           method: "GET"
           orig: "/international-stock-prices"
           segments: [
@@ -236,6 +248,12 @@ main: kit: entity: market_data: {
                 type: "`$INTEGER`"
               }
             ]
+          }
+          contract: {
+            id: "GET /latest-prices"
+            json: "{\"operationId\":\"getLatestPrices\",\"parameters\":[{\"description\":\"The trading symbol for a security.\",\"in\":\"query\",\"name\":\"identifier\",\"required\":true,\"schema\":{\"type\":\"string\"}},{\"description\":\"The initial position of the record subset, which indicates how many records to skip. Defaults to 0.\",\"in\":\"query\",\"name\":\"offset\",\"required\":false,\"schema\":{\"default\":0,\"type\":\"integer\"}},{\"description\":\"The format of the returned data, either JSON or CSV. Defaults to JSON.\",\"in\":\"query\",\"name\":\"format\",\"required\":false,\"schema\":{\"default\":\"json\",\"enum\":[\"json\",\"csv\"],\"type\":\"string\"}},{\"description\":\"API key for authentication\",\"in\":\"query\",\"name\":\"key\",\"required\":true,\"schema\":{\"type\":\"string\"}}],\"protocol\":\"http\",\"responses\":{\"200\":{\"content\":{\"application/json\":{\"schema\":{\"items\":{\"properties\":{\"close\":{\"format\":\"float\",\"type\":\"number\"},\"high\":{\"format\":\"float\",\"type\":\"number\"},\"low\":{\"format\":\"float\",\"type\":\"number\"},\"open\":{\"format\":\"float\",\"type\":\"number\"},\"time\":{\"type\":\"string\"},\"trading_symbol\":{\"type\":\"string\"},\"volume\":{\"format\":\"float\",\"type\":\"number\"}},\"type\":\"object\"},\"type\":\"array\"}}},\"description\":\"Successful response\"}},\"security\":[{\"ApiKeyAuth\":[]}],\"securitySchemes\":{\"ApiKeyAuth\":{\"description\":\"API key for authentication. Append ?key=API_KEY to each request URL or &key=API_KEY if other query parameters exist.\",\"in\":\"query\",\"name\":\"key\",\"type\":\"apiKey\"}},\"securitySource\":\"definition\"}"
+            source: "openapi3"
+            version: 1
           }
           method: "GET"
           orig: "/latest-prices"
@@ -293,6 +311,12 @@ main: kit: entity: market_data: {
               }
             ]
           }
+          contract: {
+            id: "GET /stock-prices"
+            json: "{\"operationId\":\"getStockPrices\",\"parameters\":[{\"description\":\"The trading symbol for a security.\",\"in\":\"query\",\"name\":\"identifier\",\"required\":true,\"schema\":{\"example\":\"MSFT\",\"type\":\"string\"}},{\"description\":\"The initial position of the record subset, which indicates how many records to skip. Defaults to 0.\",\"in\":\"query\",\"name\":\"offset\",\"required\":false,\"schema\":{\"default\":0,\"example\":300,\"type\":\"integer\"}},{\"description\":\"The format of the returned data, either JSON or CSV. Defaults to JSON.\",\"in\":\"query\",\"name\":\"format\",\"required\":false,\"schema\":{\"default\":\"json\",\"enum\":[\"json\",\"csv\"],\"type\":\"string\"}},{\"description\":\"API key for authentication\",\"in\":\"query\",\"name\":\"key\",\"required\":true,\"schema\":{\"type\":\"string\"}}],\"protocol\":\"http\",\"responses\":{\"200\":{\"content\":{\"application/json\":{\"schema\":{\"items\":{\"properties\":{\"close\":{\"example\":437.42,\"format\":\"float\",\"type\":\"number\"},\"date\":{\"example\":\"2024-12-04\",\"format\":\"date\",\"type\":\"string\"},\"high\":{\"example\":439.67,\"format\":\"float\",\"type\":\"number\"},\"low\":{\"example\":432.63,\"format\":\"float\",\"type\":\"number\"},\"open\":{\"example\":433.03,\"format\":\"float\",\"type\":\"number\"},\"trading_symbol\":{\"example\":\"MSFT\",\"type\":\"string\"},\"volume\":{\"example\":26009430,\"format\":\"float\",\"type\":\"number\"}},\"type\":\"object\"},\"type\":\"array\"}}},\"description\":\"Successful response\"}},\"security\":[{\"ApiKeyAuth\":[]}],\"securitySchemes\":{\"ApiKeyAuth\":{\"description\":\"API key for authentication. Append ?key=API_KEY to each request URL or &key=API_KEY if other query parameters exist.\",\"in\":\"query\",\"name\":\"key\",\"type\":\"apiKey\"}},\"securitySource\":\"definition\"}"
+            source: "openapi3"
+            version: 1
+          }
           method: "GET"
           orig: "/stock-prices"
           segments: [
@@ -340,6 +364,12 @@ main: kit: entity: market_data: {
                 type: "`$STRING`"
               }
             ]
+          }
+          contract: {
+            id: "GET /stock-quotes"
+            json: "{\"operationId\":\"getStockQuotes\",\"parameters\":[{\"description\":\"The trading symbols for the securities (comma-separated).\",\"in\":\"query\",\"name\":\"identifiers\",\"required\":true,\"schema\":{\"example\":\"MSFT,AAPL\",\"type\":\"string\"}},{\"description\":\"The format of the returned data, either JSON or CSV. Defaults to JSON.\",\"in\":\"query\",\"name\":\"format\",\"required\":false,\"schema\":{\"default\":\"json\",\"enum\":[\"json\",\"csv\"],\"type\":\"string\"}},{\"description\":\"API key for authentication\",\"in\":\"query\",\"name\":\"key\",\"required\":true,\"schema\":{\"type\":\"string\"}}],\"protocol\":\"http\",\"responses\":{\"200\":{\"content\":{\"application/json\":{\"schema\":{\"items\":{\"properties\":{\"change\":{\"example\":8.36,\"format\":\"float\",\"type\":\"number\"},\"percentage_change\":{\"example\":3.64,\"format\":\"float\",\"type\":\"number\"},\"price\":{\"example\":238.08,\"format\":\"float\",\"type\":\"number\"},\"registrant_name\":{\"example\":\"Apple Inc.\",\"type\":\"string\"},\"time\":{\"example\":\"2025-09-02 15:56:00\",\"type\":\"string\"},\"trading_symbol\":{\"example\":\"AAPL\",\"type\":\"string\"}},\"type\":\"object\"},\"type\":\"array\"}}},\"description\":\"Successful response\"}},\"security\":[{\"ApiKeyAuth\":[]}],\"securitySchemes\":{\"ApiKeyAuth\":{\"description\":\"API key for authentication. Append ?key=API_KEY to each request URL or &key=API_KEY if other query parameters exist.\",\"in\":\"query\",\"name\":\"key\",\"type\":\"apiKey\"}},\"securitySource\":\"definition\"}"
+            source: "openapi3"
+            version: 1
           }
           method: "GET"
           orig: "/stock-quotes"
@@ -400,6 +430,12 @@ main: kit: entity: market_data: {
               }
             ]
           }
+          contract: {
+            id: "GET /commodity-prices"
+            json: "{\"operationId\":\"getCommodityPrices\",\"parameters\":[{\"description\":\"The trading symbol for a commodity.\",\"in\":\"query\",\"name\":\"identifier\",\"required\":true,\"schema\":{\"type\":\"string\"}},{\"description\":\"The initial position of the record subset.\",\"in\":\"query\",\"name\":\"offset\",\"required\":false,\"schema\":{\"default\":0,\"type\":\"integer\"}},{\"description\":\"The format of the returned data.\",\"in\":\"query\",\"name\":\"format\",\"required\":false,\"schema\":{\"default\":\"json\",\"enum\":[\"json\",\"csv\"],\"type\":\"string\"}},{\"description\":\"API key for authentication\",\"in\":\"query\",\"name\":\"key\",\"required\":true,\"schema\":{\"type\":\"string\"}}],\"protocol\":\"http\",\"responses\":{\"200\":{\"description\":\"Successful response\"}},\"security\":[{\"ApiKeyAuth\":[]}],\"securitySchemes\":{\"ApiKeyAuth\":{\"description\":\"API key for authentication. Append ?key=API_KEY to each request URL or &key=API_KEY if other query parameters exist.\",\"in\":\"query\",\"name\":\"key\",\"type\":\"apiKey\"}},\"securitySource\":\"definition\"}"
+            source: "openapi3"
+            version: 1
+          }
           method: "GET"
           orig: "/commodity-prices"
           segments: [
@@ -455,6 +491,12 @@ main: kit: entity: market_data: {
               }
             ]
           }
+          contract: {
+            id: "GET /otc-prices"
+            json: "{\"operationId\":\"getOtcPrices\",\"parameters\":[{\"description\":\"The trading symbol for an OTC security.\",\"in\":\"query\",\"name\":\"identifier\",\"required\":true,\"schema\":{\"type\":\"string\"}},{\"description\":\"The initial position of the record subset.\",\"in\":\"query\",\"name\":\"offset\",\"required\":false,\"schema\":{\"default\":0,\"type\":\"integer\"}},{\"description\":\"The format of the returned data.\",\"in\":\"query\",\"name\":\"format\",\"required\":false,\"schema\":{\"default\":\"json\",\"enum\":[\"json\",\"csv\"],\"type\":\"string\"}},{\"description\":\"API key for authentication\",\"in\":\"query\",\"name\":\"key\",\"required\":true,\"schema\":{\"type\":\"string\"}}],\"protocol\":\"http\",\"responses\":{\"200\":{\"description\":\"Successful response\"}},\"security\":[{\"ApiKeyAuth\":[]}],\"securitySchemes\":{\"ApiKeyAuth\":{\"description\":\"API key for authentication. Append ?key=API_KEY to each request URL or &key=API_KEY if other query parameters exist.\",\"in\":\"query\",\"name\":\"key\",\"type\":\"apiKey\"}},\"securitySource\":\"definition\"}"
+            source: "openapi3"
+            version: 1
+          }
           method: "GET"
           orig: "/otc-prices"
           segments: [
@@ -501,6 +543,12 @@ main: kit: entity: market_data: {
                 type: "`$STRING`"
               }
             ]
+          }
+          contract: {
+            id: "GET /otc-volume"
+            json: "{\"operationId\":\"getOtcVolume\",\"parameters\":[{\"description\":\"The trading symbol for an OTC security.\",\"in\":\"query\",\"name\":\"identifier\",\"required\":true,\"schema\":{\"type\":\"string\"}},{\"description\":\"The format of the returned data.\",\"in\":\"query\",\"name\":\"format\",\"required\":false,\"schema\":{\"default\":\"json\",\"enum\":[\"json\",\"csv\"],\"type\":\"string\"}},{\"description\":\"API key for authentication\",\"in\":\"query\",\"name\":\"key\",\"required\":true,\"schema\":{\"type\":\"string\"}}],\"protocol\":\"http\",\"responses\":{\"200\":{\"description\":\"Successful response\"}},\"security\":[{\"ApiKeyAuth\":[]}],\"securitySchemes\":{\"ApiKeyAuth\":{\"description\":\"API key for authentication. Append ?key=API_KEY to each request URL or &key=API_KEY if other query parameters exist.\",\"in\":\"query\",\"name\":\"key\",\"type\":\"apiKey\"}},\"securitySource\":\"definition\"}"
+            source: "openapi3"
+            version: 1
           }
           method: "GET"
           orig: "/otc-volume"

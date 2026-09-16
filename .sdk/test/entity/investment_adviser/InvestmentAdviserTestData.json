@@ -16,5 +16,109 @@
     "investment_adviser": {
       "investment_adviser_ref01": {}
     }
+  },
+  "requests": {
+    "GET /investment-adviser-information": {
+      "provenance": "operation-contract",
+      "contract": {
+        "operationId": "getInvestmentAdviserInformation",
+        "parameters": [
+          {
+            "description": "The format of the returned data.",
+            "in": "query",
+            "name": "format",
+            "required": false,
+            "schema": {
+              "default": "json",
+              "enum": [
+                "json",
+                "csv"
+              ],
+              "type": "string"
+            }
+          },
+          {
+            "description": "API key for authentication",
+            "in": "query",
+            "name": "key",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "protocol": "http",
+        "responses": {
+          "200": {
+            "description": "Successful response"
+          }
+        },
+        "security": [
+          {
+            "ApiKeyAuth": []
+          }
+        ],
+        "securitySchemes": {
+          "ApiKeyAuth": {
+            "description": "API key for authentication. Append ?key=API_KEY to each request URL or &key=API_KEY if other query parameters exist.",
+            "in": "query",
+            "name": "key",
+            "type": "apiKey"
+          }
+        },
+        "securitySource": "definition"
+      }
+    },
+    "GET /investment-adviser-names": {
+      "provenance": "operation-contract",
+      "contract": {
+        "operationId": "getInvestmentAdviserNames",
+        "parameters": [
+          {
+            "description": "The format of the returned data.",
+            "in": "query",
+            "name": "format",
+            "required": false,
+            "schema": {
+              "default": "json",
+              "enum": [
+                "json",
+                "csv"
+              ],
+              "type": "string"
+            }
+          },
+          {
+            "description": "API key for authentication",
+            "in": "query",
+            "name": "key",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "protocol": "http",
+        "responses": {
+          "200": {
+            "description": "Successful response"
+          }
+        },
+        "security": [
+          {
+            "ApiKeyAuth": []
+          }
+        ],
+        "securitySchemes": {
+          "ApiKeyAuth": {
+            "description": "API key for authentication. Append ?key=API_KEY to each request URL or &key=API_KEY if other query parameters exist.",
+            "in": "query",
+            "name": "key",
+            "type": "apiKey"
+          }
+        },
+        "securitySource": "definition"
+      }
+    }
   }
 }
