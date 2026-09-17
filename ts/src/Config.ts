@@ -123,6 +123,8 @@ class Config {
 
     auth: {
       prefix: '',
+      in: 'query',
+      name: 'key',
     },
 
     headers: {
@@ -131,60 +133,60 @@ class Config {
 
     entity: {
       
-      basic_information: {
-      },
-
-      crypto_currency: {
-      },
-
-      derivatives_data: {
-      },
-
-      esg_data: {
-      },
-
-      etf_data: {
-      },
-
-      event_calendar: {
-      },
-
-      financial_ratio: {
-      },
-
-      financial_statement: {
-      },
-
-      forex_data: {
-      },
-
-      insider_trading: {
-      },
-
-      institutional_trading: {
-      },
-
-      investment_adviser: {
-      },
-
-      market_data: {
-      },
-
-      market_index: {
-      },
-
-      market_new: {
-      },
-
-      miscellaneous_data: {
-      },
-
-      mutual_fund: {
-      },
-
-      symbol_list: {
-      },
-
+        basic_information: {
+        },
+  
+        crypto_currency: {
+        },
+  
+        derivatives_data: {
+        },
+  
+        esg_data: {
+        },
+  
+        etf_data: {
+        },
+  
+        event_calendar: {
+        },
+  
+        financial_ratio: {
+        },
+  
+        financial_statement: {
+        },
+  
+        forex_data: {
+        },
+  
+        insider_trading: {
+        },
+  
+        institutional_trading: {
+        },
+  
+        investment_adviser: {
+        },
+  
+        market_data: {
+        },
+  
+        market_index: {
+        },
+  
+        market_new: {
+        },
+  
+        miscellaneous_data: {
+        },
+  
+        mutual_fund: {
+        },
+  
+        symbol_list: {
+        },
+  
     }
   }
 

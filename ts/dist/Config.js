@@ -104,6 +104,8 @@ class Config {
         base: "https://financialdata.net/api/v1",
         auth: {
             prefix: '',
+            in: 'query',
+            name: 'key',
         },
         headers: {
             "content-type": "application/json"
