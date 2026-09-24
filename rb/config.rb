@@ -126,31 +126,6 @@ module FinancialDataConfig
               "name" => "load",
               "points" => [
                 {
-                  "args" => {
-                    "query" => [
-                      {
-                        "example" => "json",
-                        "kind" => "query",
-                        "name" => "format",
-                        "orig" => "format",
-                        "type" => "`$STRING`",
-                      },
-                      {
-                        "kind" => "query",
-                        "name" => "identifier",
-                        "orig" => "identifier",
-                        "reqd" => true,
-                        "type" => "`$STRING`",
-                      },
-                      {
-                        "kind" => "query",
-                        "name" => "key",
-                        "orig" => "key",
-                        "reqd" => true,
-                        "type" => "`$STRING`",
-                      },
-                    ],
-                  },
                   "kind" => "http",
                   "method" => "GET",
                   "orig" => "/company-information",
@@ -159,6 +134,39 @@ module FinancialDataConfig
                       "lit" => "company-information",
                     },
                   ],
+                  "parts" => [
+                    "company-information",
+                  ],
+                  "rename" => {},
+                  "transform" => {
+                    "req" => "`reqdata`",
+                    "res" => "`body`",
+                  },
+                  "args" => {
+                    "query" => [
+                      {
+                        "name" => "format",
+                        "orig" => "format",
+                        "type" => "`$STRING`",
+                        "kind" => "query",
+                        "example" => "json",
+                      },
+                      {
+                        "name" => "identifier",
+                        "orig" => "identifier",
+                        "type" => "`$STRING`",
+                        "kind" => "query",
+                        "reqd" => true,
+                      },
+                      {
+                        "name" => "key",
+                        "orig" => "key",
+                        "type" => "`$STRING`",
+                        "kind" => "query",
+                        "reqd" => true,
+                      },
+                    ],
+                  },
                   "select" => {
                     "exist" => [
                       "format",
@@ -166,40 +174,8 @@ module FinancialDataConfig
                       "key",
                     ],
                   },
-                  "transform" => {
-                    "req" => "`reqdata`",
-                    "res" => "`body`",
-                  },
-                  "parts" => [
-                    "company-information",
-                  ],
                 },
                 {
-                  "args" => {
-                    "query" => [
-                      {
-                        "example" => "json",
-                        "kind" => "query",
-                        "name" => "format",
-                        "orig" => "format",
-                        "type" => "`$STRING`",
-                      },
-                      {
-                        "kind" => "query",
-                        "name" => "identifier",
-                        "orig" => "identifier",
-                        "reqd" => true,
-                        "type" => "`$STRING`",
-                      },
-                      {
-                        "kind" => "query",
-                        "name" => "key",
-                        "orig" => "key",
-                        "reqd" => true,
-                        "type" => "`$STRING`",
-                      },
-                    ],
-                  },
                   "kind" => "http",
                   "method" => "GET",
                   "orig" => "/employee-count",
@@ -208,6 +184,39 @@ module FinancialDataConfig
                       "lit" => "employee-count",
                     },
                   ],
+                  "parts" => [
+                    "employee-count",
+                  ],
+                  "rename" => {},
+                  "transform" => {
+                    "req" => "`reqdata`",
+                    "res" => "`body`",
+                  },
+                  "args" => {
+                    "query" => [
+                      {
+                        "name" => "format",
+                        "orig" => "format",
+                        "type" => "`$STRING`",
+                        "kind" => "query",
+                        "example" => "json",
+                      },
+                      {
+                        "name" => "identifier",
+                        "orig" => "identifier",
+                        "type" => "`$STRING`",
+                        "kind" => "query",
+                        "reqd" => true,
+                      },
+                      {
+                        "name" => "key",
+                        "orig" => "key",
+                        "type" => "`$STRING`",
+                        "kind" => "query",
+                        "reqd" => true,
+                      },
+                    ],
+                  },
                   "select" => {
                     "exist" => [
                       "format",
@@ -215,40 +224,8 @@ module FinancialDataConfig
                       "key",
                     ],
                   },
-                  "transform" => {
-                    "req" => "`reqdata`",
-                    "res" => "`body`",
-                  },
-                  "parts" => [
-                    "employee-count",
-                  ],
                 },
                 {
-                  "args" => {
-                    "query" => [
-                      {
-                        "example" => "json",
-                        "kind" => "query",
-                        "name" => "format",
-                        "orig" => "format",
-                        "type" => "`$STRING`",
-                      },
-                      {
-                        "kind" => "query",
-                        "name" => "identifier",
-                        "orig" => "identifier",
-                        "reqd" => true,
-                        "type" => "`$STRING`",
-                      },
-                      {
-                        "kind" => "query",
-                        "name" => "key",
-                        "orig" => "key",
-                        "reqd" => true,
-                        "type" => "`$STRING`",
-                      },
-                    ],
-                  },
                   "kind" => "http",
                   "method" => "GET",
                   "orig" => "/executive-compensation",
@@ -257,6 +234,39 @@ module FinancialDataConfig
                       "lit" => "executive-compensation",
                     },
                   ],
+                  "parts" => [
+                    "executive-compensation",
+                  ],
+                  "rename" => {},
+                  "transform" => {
+                    "req" => "`reqdata`",
+                    "res" => "`body`",
+                  },
+                  "args" => {
+                    "query" => [
+                      {
+                        "name" => "format",
+                        "orig" => "format",
+                        "type" => "`$STRING`",
+                        "kind" => "query",
+                        "example" => "json",
+                      },
+                      {
+                        "name" => "identifier",
+                        "orig" => "identifier",
+                        "type" => "`$STRING`",
+                        "kind" => "query",
+                        "reqd" => true,
+                      },
+                      {
+                        "name" => "key",
+                        "orig" => "key",
+                        "type" => "`$STRING`",
+                        "kind" => "query",
+                        "reqd" => true,
+                      },
+                    ],
+                  },
                   "select" => {
                     "exist" => [
                       "format",
@@ -264,40 +274,8 @@ module FinancialDataConfig
                       "key",
                     ],
                   },
-                  "transform" => {
-                    "req" => "`reqdata`",
-                    "res" => "`body`",
-                  },
-                  "parts" => [
-                    "executive-compensation",
-                  ],
                 },
                 {
-                  "args" => {
-                    "query" => [
-                      {
-                        "example" => "json",
-                        "kind" => "query",
-                        "name" => "format",
-                        "orig" => "format",
-                        "type" => "`$STRING`",
-                      },
-                      {
-                        "kind" => "query",
-                        "name" => "identifier",
-                        "orig" => "identifier",
-                        "reqd" => true,
-                        "type" => "`$STRING`",
-                      },
-                      {
-                        "kind" => "query",
-                        "name" => "key",
-                        "orig" => "key",
-                        "reqd" => true,
-                        "type" => "`$STRING`",
-                      },
-                    ],
-                  },
                   "kind" => "http",
                   "method" => "GET",
                   "orig" => "/international-company-information",
@@ -306,6 +284,39 @@ module FinancialDataConfig
                       "lit" => "international-company-information",
                     },
                   ],
+                  "parts" => [
+                    "international-company-information",
+                  ],
+                  "rename" => {},
+                  "transform" => {
+                    "req" => "`reqdata`",
+                    "res" => "`body`",
+                  },
+                  "args" => {
+                    "query" => [
+                      {
+                        "name" => "format",
+                        "orig" => "format",
+                        "type" => "`$STRING`",
+                        "kind" => "query",
+                        "example" => "json",
+                      },
+                      {
+                        "name" => "identifier",
+                        "orig" => "identifier",
+                        "type" => "`$STRING`",
+                        "kind" => "query",
+                        "reqd" => true,
+                      },
+                      {
+                        "name" => "key",
+                        "orig" => "key",
+                        "type" => "`$STRING`",
+                        "kind" => "query",
+                        "reqd" => true,
+                      },
+                    ],
+                  },
                   "select" => {
                     "exist" => [
                       "format",
@@ -313,40 +324,8 @@ module FinancialDataConfig
                       "key",
                     ],
                   },
-                  "transform" => {
-                    "req" => "`reqdata`",
-                    "res" => "`body`",
-                  },
-                  "parts" => [
-                    "international-company-information",
-                  ],
                 },
                 {
-                  "args" => {
-                    "query" => [
-                      {
-                        "example" => "json",
-                        "kind" => "query",
-                        "name" => "format",
-                        "orig" => "format",
-                        "type" => "`$STRING`",
-                      },
-                      {
-                        "kind" => "query",
-                        "name" => "identifier",
-                        "orig" => "identifier",
-                        "reqd" => true,
-                        "type" => "`$STRING`",
-                      },
-                      {
-                        "kind" => "query",
-                        "name" => "key",
-                        "orig" => "key",
-                        "reqd" => true,
-                        "type" => "`$STRING`",
-                      },
-                    ],
-                  },
                   "kind" => "http",
                   "method" => "GET",
                   "orig" => "/key-metrics",
@@ -355,6 +334,39 @@ module FinancialDataConfig
                       "lit" => "key-metrics",
                     },
                   ],
+                  "parts" => [
+                    "key-metrics",
+                  ],
+                  "rename" => {},
+                  "transform" => {
+                    "req" => "`reqdata`",
+                    "res" => "`body`",
+                  },
+                  "args" => {
+                    "query" => [
+                      {
+                        "name" => "format",
+                        "orig" => "format",
+                        "type" => "`$STRING`",
+                        "kind" => "query",
+                        "example" => "json",
+                      },
+                      {
+                        "name" => "identifier",
+                        "orig" => "identifier",
+                        "type" => "`$STRING`",
+                        "kind" => "query",
+                        "reqd" => true,
+                      },
+                      {
+                        "name" => "key",
+                        "orig" => "key",
+                        "type" => "`$STRING`",
+                        "kind" => "query",
+                        "reqd" => true,
+                      },
+                    ],
+                  },
                   "select" => {
                     "exist" => [
                       "format",
@@ -362,40 +374,8 @@ module FinancialDataConfig
                       "key",
                     ],
                   },
-                  "transform" => {
-                    "req" => "`reqdata`",
-                    "res" => "`body`",
-                  },
-                  "parts" => [
-                    "key-metrics",
-                  ],
                 },
                 {
-                  "args" => {
-                    "query" => [
-                      {
-                        "example" => "json",
-                        "kind" => "query",
-                        "name" => "format",
-                        "orig" => "format",
-                        "type" => "`$STRING`",
-                      },
-                      {
-                        "kind" => "query",
-                        "name" => "identifier",
-                        "orig" => "identifier",
-                        "reqd" => true,
-                        "type" => "`$STRING`",
-                      },
-                      {
-                        "kind" => "query",
-                        "name" => "key",
-                        "orig" => "key",
-                        "reqd" => true,
-                        "type" => "`$STRING`",
-                      },
-                    ],
-                  },
                   "kind" => "http",
                   "method" => "GET",
                   "orig" => "/market-cap",
@@ -404,6 +384,39 @@ module FinancialDataConfig
                       "lit" => "market-cap",
                     },
                   ],
+                  "parts" => [
+                    "market-cap",
+                  ],
+                  "rename" => {},
+                  "transform" => {
+                    "req" => "`reqdata`",
+                    "res" => "`body`",
+                  },
+                  "args" => {
+                    "query" => [
+                      {
+                        "name" => "format",
+                        "orig" => "format",
+                        "type" => "`$STRING`",
+                        "kind" => "query",
+                        "example" => "json",
+                      },
+                      {
+                        "name" => "identifier",
+                        "orig" => "identifier",
+                        "type" => "`$STRING`",
+                        "kind" => "query",
+                        "reqd" => true,
+                      },
+                      {
+                        "name" => "key",
+                        "orig" => "key",
+                        "type" => "`$STRING`",
+                        "kind" => "query",
+                        "reqd" => true,
+                      },
+                    ],
+                  },
                   "select" => {
                     "exist" => [
                       "format",
@@ -411,40 +424,8 @@ module FinancialDataConfig
                       "key",
                     ],
                   },
-                  "transform" => {
-                    "req" => "`reqdata`",
-                    "res" => "`body`",
-                  },
-                  "parts" => [
-                    "market-cap",
-                  ],
                 },
                 {
-                  "args" => {
-                    "query" => [
-                      {
-                        "example" => "json",
-                        "kind" => "query",
-                        "name" => "format",
-                        "orig" => "format",
-                        "type" => "`$STRING`",
-                      },
-                      {
-                        "kind" => "query",
-                        "name" => "identifier",
-                        "orig" => "identifier",
-                        "reqd" => true,
-                        "type" => "`$STRING`",
-                      },
-                      {
-                        "kind" => "query",
-                        "name" => "key",
-                        "orig" => "key",
-                        "reqd" => true,
-                        "type" => "`$STRING`",
-                      },
-                    ],
-                  },
                   "kind" => "http",
                   "method" => "GET",
                   "orig" => "/securities-information",
@@ -453,6 +434,39 @@ module FinancialDataConfig
                       "lit" => "securities-information",
                     },
                   ],
+                  "parts" => [
+                    "securities-information",
+                  ],
+                  "rename" => {},
+                  "transform" => {
+                    "req" => "`reqdata`",
+                    "res" => "`body`",
+                  },
+                  "args" => {
+                    "query" => [
+                      {
+                        "name" => "format",
+                        "orig" => "format",
+                        "type" => "`$STRING`",
+                        "kind" => "query",
+                        "example" => "json",
+                      },
+                      {
+                        "name" => "identifier",
+                        "orig" => "identifier",
+                        "type" => "`$STRING`",
+                        "kind" => "query",
+                        "reqd" => true,
+                      },
+                      {
+                        "name" => "key",
+                        "orig" => "key",
+                        "type" => "`$STRING`",
+                        "kind" => "query",
+                        "reqd" => true,
+                      },
+                    ],
+                  },
                   "select" => {
                     "exist" => [
                       "format",
@@ -460,13 +474,6 @@ module FinancialDataConfig
                       "key",
                     ],
                   },
-                  "transform" => {
-                    "req" => "`reqdata`",
-                    "res" => "`body`",
-                  },
-                  "parts" => [
-                    "securities-information",
-                  ],
                 },
               ],
             },
@@ -484,38 +491,6 @@ module FinancialDataConfig
               "name" => "load",
               "points" => [
                 {
-                  "args" => {
-                    "query" => [
-                      {
-                        "kind" => "query",
-                        "name" => "date",
-                        "orig" => "date",
-                        "reqd" => true,
-                        "type" => "`$STRING`",
-                      },
-                      {
-                        "example" => "json",
-                        "kind" => "query",
-                        "name" => "format",
-                        "orig" => "format",
-                        "type" => "`$STRING`",
-                      },
-                      {
-                        "kind" => "query",
-                        "name" => "identifier",
-                        "orig" => "identifier",
-                        "reqd" => true,
-                        "type" => "`$STRING`",
-                      },
-                      {
-                        "kind" => "query",
-                        "name" => "key",
-                        "orig" => "key",
-                        "reqd" => true,
-                        "type" => "`$STRING`",
-                      },
-                    ],
-                  },
                   "kind" => "http",
                   "method" => "GET",
                   "orig" => "/crypto-minute-prices",
@@ -524,6 +499,46 @@ module FinancialDataConfig
                       "lit" => "crypto-minute-prices",
                     },
                   ],
+                  "parts" => [
+                    "crypto-minute-prices",
+                  ],
+                  "rename" => {},
+                  "transform" => {
+                    "req" => "`reqdata`",
+                    "res" => "`body`",
+                  },
+                  "args" => {
+                    "query" => [
+                      {
+                        "name" => "date",
+                        "orig" => "date",
+                        "type" => "`$STRING`",
+                        "kind" => "query",
+                        "reqd" => true,
+                      },
+                      {
+                        "name" => "format",
+                        "orig" => "format",
+                        "type" => "`$STRING`",
+                        "kind" => "query",
+                        "example" => "json",
+                      },
+                      {
+                        "name" => "identifier",
+                        "orig" => "identifier",
+                        "type" => "`$STRING`",
+                        "kind" => "query",
+                        "reqd" => true,
+                      },
+                      {
+                        "name" => "key",
+                        "orig" => "key",
+                        "type" => "`$STRING`",
+                        "kind" => "query",
+                        "reqd" => true,
+                      },
+                    ],
+                  },
                   "select" => {
                     "exist" => [
                       "date",
@@ -532,40 +547,8 @@ module FinancialDataConfig
                       "key",
                     ],
                   },
-                  "transform" => {
-                    "req" => "`reqdata`",
-                    "res" => "`body`",
-                  },
-                  "parts" => [
-                    "crypto-minute-prices",
-                  ],
                 },
                 {
-                  "args" => {
-                    "query" => [
-                      {
-                        "example" => "json",
-                        "kind" => "query",
-                        "name" => "format",
-                        "orig" => "format",
-                        "type" => "`$STRING`",
-                      },
-                      {
-                        "kind" => "query",
-                        "name" => "identifier",
-                        "orig" => "identifier",
-                        "reqd" => true,
-                        "type" => "`$STRING`",
-                      },
-                      {
-                        "kind" => "query",
-                        "name" => "key",
-                        "orig" => "key",
-                        "reqd" => true,
-                        "type" => "`$STRING`",
-                      },
-                    ],
-                  },
                   "kind" => "http",
                   "method" => "GET",
                   "orig" => "/crypto-information",
@@ -574,6 +557,39 @@ module FinancialDataConfig
                       "lit" => "crypto-information",
                     },
                   ],
+                  "parts" => [
+                    "crypto-information",
+                  ],
+                  "rename" => {},
+                  "transform" => {
+                    "req" => "`reqdata`",
+                    "res" => "`body`",
+                  },
+                  "args" => {
+                    "query" => [
+                      {
+                        "name" => "format",
+                        "orig" => "format",
+                        "type" => "`$STRING`",
+                        "kind" => "query",
+                        "example" => "json",
+                      },
+                      {
+                        "name" => "identifier",
+                        "orig" => "identifier",
+                        "type" => "`$STRING`",
+                        "kind" => "query",
+                        "reqd" => true,
+                      },
+                      {
+                        "name" => "key",
+                        "orig" => "key",
+                        "type" => "`$STRING`",
+                        "kind" => "query",
+                        "reqd" => true,
+                      },
+                    ],
+                  },
                   "select" => {
                     "exist" => [
                       "format",
@@ -581,40 +597,8 @@ module FinancialDataConfig
                       "key",
                     ],
                   },
-                  "transform" => {
-                    "req" => "`reqdata`",
-                    "res" => "`body`",
-                  },
-                  "parts" => [
-                    "crypto-information",
-                  ],
                 },
                 {
-                  "args" => {
-                    "query" => [
-                      {
-                        "example" => "json",
-                        "kind" => "query",
-                        "name" => "format",
-                        "orig" => "format",
-                        "type" => "`$STRING`",
-                      },
-                      {
-                        "kind" => "query",
-                        "name" => "identifier",
-                        "orig" => "identifier",
-                        "reqd" => true,
-                        "type" => "`$STRING`",
-                      },
-                      {
-                        "kind" => "query",
-                        "name" => "key",
-                        "orig" => "key",
-                        "reqd" => true,
-                        "type" => "`$STRING`",
-                      },
-                    ],
-                  },
                   "kind" => "http",
                   "method" => "GET",
                   "orig" => "/crypto-prices",
@@ -623,6 +607,39 @@ module FinancialDataConfig
                       "lit" => "crypto-prices",
                     },
                   ],
+                  "parts" => [
+                    "crypto-prices",
+                  ],
+                  "rename" => {},
+                  "transform" => {
+                    "req" => "`reqdata`",
+                    "res" => "`body`",
+                  },
+                  "args" => {
+                    "query" => [
+                      {
+                        "name" => "format",
+                        "orig" => "format",
+                        "type" => "`$STRING`",
+                        "kind" => "query",
+                        "example" => "json",
+                      },
+                      {
+                        "name" => "identifier",
+                        "orig" => "identifier",
+                        "type" => "`$STRING`",
+                        "kind" => "query",
+                        "reqd" => true,
+                      },
+                      {
+                        "name" => "key",
+                        "orig" => "key",
+                        "type" => "`$STRING`",
+                        "kind" => "query",
+                        "reqd" => true,
+                      },
+                    ],
+                  },
                   "select" => {
                     "exist" => [
                       "format",
@@ -630,40 +647,8 @@ module FinancialDataConfig
                       "key",
                     ],
                   },
-                  "transform" => {
-                    "req" => "`reqdata`",
-                    "res" => "`body`",
-                  },
-                  "parts" => [
-                    "crypto-prices",
-                  ],
                 },
                 {
-                  "args" => {
-                    "query" => [
-                      {
-                        "example" => "json",
-                        "kind" => "query",
-                        "name" => "format",
-                        "orig" => "format",
-                        "type" => "`$STRING`",
-                      },
-                      {
-                        "kind" => "query",
-                        "name" => "identifier",
-                        "orig" => "identifier",
-                        "reqd" => true,
-                        "type" => "`$STRING`",
-                      },
-                      {
-                        "kind" => "query",
-                        "name" => "key",
-                        "orig" => "key",
-                        "reqd" => true,
-                        "type" => "`$STRING`",
-                      },
-                    ],
-                  },
                   "kind" => "http",
                   "method" => "GET",
                   "orig" => "/crypto-quotes",
@@ -672,6 +657,39 @@ module FinancialDataConfig
                       "lit" => "crypto-quotes",
                     },
                   ],
+                  "parts" => [
+                    "crypto-quotes",
+                  ],
+                  "rename" => {},
+                  "transform" => {
+                    "req" => "`reqdata`",
+                    "res" => "`body`",
+                  },
+                  "args" => {
+                    "query" => [
+                      {
+                        "name" => "format",
+                        "orig" => "format",
+                        "type" => "`$STRING`",
+                        "kind" => "query",
+                        "example" => "json",
+                      },
+                      {
+                        "name" => "identifier",
+                        "orig" => "identifier",
+                        "type" => "`$STRING`",
+                        "kind" => "query",
+                        "reqd" => true,
+                      },
+                      {
+                        "name" => "key",
+                        "orig" => "key",
+                        "type" => "`$STRING`",
+                        "kind" => "query",
+                        "reqd" => true,
+                      },
+                    ],
+                  },
                   "select" => {
                     "exist" => [
                       "format",
@@ -679,33 +697,8 @@ module FinancialDataConfig
                       "key",
                     ],
                   },
-                  "transform" => {
-                    "req" => "`reqdata`",
-                    "res" => "`body`",
-                  },
-                  "parts" => [
-                    "crypto-quotes",
-                  ],
                 },
                 {
-                  "args" => {
-                    "query" => [
-                      {
-                        "example" => "json",
-                        "kind" => "query",
-                        "name" => "format",
-                        "orig" => "format",
-                        "type" => "`$STRING`",
-                      },
-                      {
-                        "kind" => "query",
-                        "name" => "key",
-                        "orig" => "key",
-                        "reqd" => true,
-                        "type" => "`$STRING`",
-                      },
-                    ],
-                  },
                   "kind" => "http",
                   "method" => "GET",
                   "orig" => "/crypto-symbols",
@@ -714,19 +707,38 @@ module FinancialDataConfig
                       "lit" => "crypto-symbols",
                     },
                   ],
+                  "parts" => [
+                    "crypto-symbols",
+                  ],
+                  "rename" => {},
+                  "transform" => {
+                    "req" => "`reqdata`",
+                    "res" => "`body`",
+                  },
+                  "args" => {
+                    "query" => [
+                      {
+                        "name" => "format",
+                        "orig" => "format",
+                        "type" => "`$STRING`",
+                        "kind" => "query",
+                        "example" => "json",
+                      },
+                      {
+                        "name" => "key",
+                        "orig" => "key",
+                        "type" => "`$STRING`",
+                        "kind" => "query",
+                        "reqd" => true,
+                      },
+                    ],
+                  },
                   "select" => {
                     "exist" => [
                       "format",
                       "key",
                     ],
                   },
-                  "transform" => {
-                    "req" => "`reqdata`",
-                    "res" => "`body`",
-                  },
-                  "parts" => [
-                    "crypto-symbols",
-                  ],
                 },
               ],
             },
@@ -744,31 +756,6 @@ module FinancialDataConfig
               "name" => "load",
               "points" => [
                 {
-                  "args" => {
-                    "query" => [
-                      {
-                        "example" => "json",
-                        "kind" => "query",
-                        "name" => "format",
-                        "orig" => "format",
-                        "type" => "`$STRING`",
-                      },
-                      {
-                        "kind" => "query",
-                        "name" => "identifier",
-                        "orig" => "identifier",
-                        "reqd" => true,
-                        "type" => "`$STRING`",
-                      },
-                      {
-                        "kind" => "query",
-                        "name" => "key",
-                        "orig" => "key",
-                        "reqd" => true,
-                        "type" => "`$STRING`",
-                      },
-                    ],
-                  },
                   "kind" => "http",
                   "method" => "GET",
                   "orig" => "/futures-prices",
@@ -777,6 +764,39 @@ module FinancialDataConfig
                       "lit" => "futures-prices",
                     },
                   ],
+                  "parts" => [
+                    "futures-prices",
+                  ],
+                  "rename" => {},
+                  "transform" => {
+                    "req" => "`reqdata`",
+                    "res" => "`body`",
+                  },
+                  "args" => {
+                    "query" => [
+                      {
+                        "name" => "format",
+                        "orig" => "format",
+                        "type" => "`$STRING`",
+                        "kind" => "query",
+                        "example" => "json",
+                      },
+                      {
+                        "name" => "identifier",
+                        "orig" => "identifier",
+                        "type" => "`$STRING`",
+                        "kind" => "query",
+                        "reqd" => true,
+                      },
+                      {
+                        "name" => "key",
+                        "orig" => "key",
+                        "type" => "`$STRING`",
+                        "kind" => "query",
+                        "reqd" => true,
+                      },
+                    ],
+                  },
                   "select" => {
                     "exist" => [
                       "format",
@@ -784,40 +804,8 @@ module FinancialDataConfig
                       "key",
                     ],
                   },
-                  "transform" => {
-                    "req" => "`reqdata`",
-                    "res" => "`body`",
-                  },
-                  "parts" => [
-                    "futures-prices",
-                  ],
                 },
                 {
-                  "args" => {
-                    "query" => [
-                      {
-                        "example" => "json",
-                        "kind" => "query",
-                        "name" => "format",
-                        "orig" => "format",
-                        "type" => "`$STRING`",
-                      },
-                      {
-                        "kind" => "query",
-                        "name" => "identifier",
-                        "orig" => "identifier",
-                        "reqd" => true,
-                        "type" => "`$STRING`",
-                      },
-                      {
-                        "kind" => "query",
-                        "name" => "key",
-                        "orig" => "key",
-                        "reqd" => true,
-                        "type" => "`$STRING`",
-                      },
-                    ],
-                  },
                   "kind" => "http",
                   "method" => "GET",
                   "orig" => "/option-chain",
@@ -826,6 +814,39 @@ module FinancialDataConfig
                       "lit" => "option-chain",
                     },
                   ],
+                  "parts" => [
+                    "option-chain",
+                  ],
+                  "rename" => {},
+                  "transform" => {
+                    "req" => "`reqdata`",
+                    "res" => "`body`",
+                  },
+                  "args" => {
+                    "query" => [
+                      {
+                        "name" => "format",
+                        "orig" => "format",
+                        "type" => "`$STRING`",
+                        "kind" => "query",
+                        "example" => "json",
+                      },
+                      {
+                        "name" => "identifier",
+                        "orig" => "identifier",
+                        "type" => "`$STRING`",
+                        "kind" => "query",
+                        "reqd" => true,
+                      },
+                      {
+                        "name" => "key",
+                        "orig" => "key",
+                        "type" => "`$STRING`",
+                        "kind" => "query",
+                        "reqd" => true,
+                      },
+                    ],
+                  },
                   "select" => {
                     "exist" => [
                       "format",
@@ -833,40 +854,8 @@ module FinancialDataConfig
                       "key",
                     ],
                   },
-                  "transform" => {
-                    "req" => "`reqdata`",
-                    "res" => "`body`",
-                  },
-                  "parts" => [
-                    "option-chain",
-                  ],
                 },
                 {
-                  "args" => {
-                    "query" => [
-                      {
-                        "example" => "json",
-                        "kind" => "query",
-                        "name" => "format",
-                        "orig" => "format",
-                        "type" => "`$STRING`",
-                      },
-                      {
-                        "kind" => "query",
-                        "name" => "identifier",
-                        "orig" => "identifier",
-                        "reqd" => true,
-                        "type" => "`$STRING`",
-                      },
-                      {
-                        "kind" => "query",
-                        "name" => "key",
-                        "orig" => "key",
-                        "reqd" => true,
-                        "type" => "`$STRING`",
-                      },
-                    ],
-                  },
                   "kind" => "http",
                   "method" => "GET",
                   "orig" => "/option-greeks",
@@ -875,6 +864,39 @@ module FinancialDataConfig
                       "lit" => "option-greeks",
                     },
                   ],
+                  "parts" => [
+                    "option-greeks",
+                  ],
+                  "rename" => {},
+                  "transform" => {
+                    "req" => "`reqdata`",
+                    "res" => "`body`",
+                  },
+                  "args" => {
+                    "query" => [
+                      {
+                        "name" => "format",
+                        "orig" => "format",
+                        "type" => "`$STRING`",
+                        "kind" => "query",
+                        "example" => "json",
+                      },
+                      {
+                        "name" => "identifier",
+                        "orig" => "identifier",
+                        "type" => "`$STRING`",
+                        "kind" => "query",
+                        "reqd" => true,
+                      },
+                      {
+                        "name" => "key",
+                        "orig" => "key",
+                        "type" => "`$STRING`",
+                        "kind" => "query",
+                        "reqd" => true,
+                      },
+                    ],
+                  },
                   "select" => {
                     "exist" => [
                       "format",
@@ -882,40 +904,8 @@ module FinancialDataConfig
                       "key",
                     ],
                   },
-                  "transform" => {
-                    "req" => "`reqdata`",
-                    "res" => "`body`",
-                  },
-                  "parts" => [
-                    "option-greeks",
-                  ],
                 },
                 {
-                  "args" => {
-                    "query" => [
-                      {
-                        "example" => "json",
-                        "kind" => "query",
-                        "name" => "format",
-                        "orig" => "format",
-                        "type" => "`$STRING`",
-                      },
-                      {
-                        "kind" => "query",
-                        "name" => "identifier",
-                        "orig" => "identifier",
-                        "reqd" => true,
-                        "type" => "`$STRING`",
-                      },
-                      {
-                        "kind" => "query",
-                        "name" => "key",
-                        "orig" => "key",
-                        "reqd" => true,
-                        "type" => "`$STRING`",
-                      },
-                    ],
-                  },
                   "kind" => "http",
                   "method" => "GET",
                   "orig" => "/option-prices",
@@ -924,6 +914,39 @@ module FinancialDataConfig
                       "lit" => "option-prices",
                     },
                   ],
+                  "parts" => [
+                    "option-prices",
+                  ],
+                  "rename" => {},
+                  "transform" => {
+                    "req" => "`reqdata`",
+                    "res" => "`body`",
+                  },
+                  "args" => {
+                    "query" => [
+                      {
+                        "name" => "format",
+                        "orig" => "format",
+                        "type" => "`$STRING`",
+                        "kind" => "query",
+                        "example" => "json",
+                      },
+                      {
+                        "name" => "identifier",
+                        "orig" => "identifier",
+                        "type" => "`$STRING`",
+                        "kind" => "query",
+                        "reqd" => true,
+                      },
+                      {
+                        "name" => "key",
+                        "orig" => "key",
+                        "type" => "`$STRING`",
+                        "kind" => "query",
+                        "reqd" => true,
+                      },
+                    ],
+                  },
                   "select" => {
                     "exist" => [
                       "format",
@@ -931,33 +954,8 @@ module FinancialDataConfig
                       "key",
                     ],
                   },
-                  "transform" => {
-                    "req" => "`reqdata`",
-                    "res" => "`body`",
-                  },
-                  "parts" => [
-                    "option-prices",
-                  ],
                 },
                 {
-                  "args" => {
-                    "query" => [
-                      {
-                        "example" => "json",
-                        "kind" => "query",
-                        "name" => "format",
-                        "orig" => "format",
-                        "type" => "`$STRING`",
-                      },
-                      {
-                        "kind" => "query",
-                        "name" => "key",
-                        "orig" => "key",
-                        "reqd" => true,
-                        "type" => "`$STRING`",
-                      },
-                    ],
-                  },
                   "kind" => "http",
                   "method" => "GET",
                   "orig" => "/futures-symbols",
@@ -966,19 +964,38 @@ module FinancialDataConfig
                       "lit" => "futures-symbols",
                     },
                   ],
+                  "parts" => [
+                    "futures-symbols",
+                  ],
+                  "rename" => {},
+                  "transform" => {
+                    "req" => "`reqdata`",
+                    "res" => "`body`",
+                  },
+                  "args" => {
+                    "query" => [
+                      {
+                        "name" => "format",
+                        "orig" => "format",
+                        "type" => "`$STRING`",
+                        "kind" => "query",
+                        "example" => "json",
+                      },
+                      {
+                        "name" => "key",
+                        "orig" => "key",
+                        "type" => "`$STRING`",
+                        "kind" => "query",
+                        "reqd" => true,
+                      },
+                    ],
+                  },
                   "select" => {
                     "exist" => [
                       "format",
                       "key",
                     ],
                   },
-                  "transform" => {
-                    "req" => "`reqdata`",
-                    "res" => "`body`",
-                  },
-                  "parts" => [
-                    "futures-symbols",
-                  ],
                 },
               ],
             },
@@ -996,31 +1013,6 @@ module FinancialDataConfig
               "name" => "load",
               "points" => [
                 {
-                  "args" => {
-                    "query" => [
-                      {
-                        "example" => "json",
-                        "kind" => "query",
-                        "name" => "format",
-                        "orig" => "format",
-                        "type" => "`$STRING`",
-                      },
-                      {
-                        "kind" => "query",
-                        "name" => "identifier",
-                        "orig" => "identifier",
-                        "reqd" => true,
-                        "type" => "`$STRING`",
-                      },
-                      {
-                        "kind" => "query",
-                        "name" => "key",
-                        "orig" => "key",
-                        "reqd" => true,
-                        "type" => "`$STRING`",
-                      },
-                    ],
-                  },
                   "kind" => "http",
                   "method" => "GET",
                   "orig" => "/esg-ratings",
@@ -1029,6 +1021,39 @@ module FinancialDataConfig
                       "lit" => "esg-ratings",
                     },
                   ],
+                  "parts" => [
+                    "esg-ratings",
+                  ],
+                  "rename" => {},
+                  "transform" => {
+                    "req" => "`reqdata`",
+                    "res" => "`body`",
+                  },
+                  "args" => {
+                    "query" => [
+                      {
+                        "name" => "format",
+                        "orig" => "format",
+                        "type" => "`$STRING`",
+                        "kind" => "query",
+                        "example" => "json",
+                      },
+                      {
+                        "name" => "identifier",
+                        "orig" => "identifier",
+                        "type" => "`$STRING`",
+                        "kind" => "query",
+                        "reqd" => true,
+                      },
+                      {
+                        "name" => "key",
+                        "orig" => "key",
+                        "type" => "`$STRING`",
+                        "kind" => "query",
+                        "reqd" => true,
+                      },
+                    ],
+                  },
                   "select" => {
                     "exist" => [
                       "format",
@@ -1036,40 +1061,8 @@ module FinancialDataConfig
                       "key",
                     ],
                   },
-                  "transform" => {
-                    "req" => "`reqdata`",
-                    "res" => "`body`",
-                  },
-                  "parts" => [
-                    "esg-ratings",
-                  ],
                 },
                 {
-                  "args" => {
-                    "query" => [
-                      {
-                        "example" => "json",
-                        "kind" => "query",
-                        "name" => "format",
-                        "orig" => "format",
-                        "type" => "`$STRING`",
-                      },
-                      {
-                        "kind" => "query",
-                        "name" => "identifier",
-                        "orig" => "identifier",
-                        "reqd" => true,
-                        "type" => "`$STRING`",
-                      },
-                      {
-                        "kind" => "query",
-                        "name" => "key",
-                        "orig" => "key",
-                        "reqd" => true,
-                        "type" => "`$STRING`",
-                      },
-                    ],
-                  },
                   "kind" => "http",
                   "method" => "GET",
                   "orig" => "/esg-scores",
@@ -1078,6 +1071,39 @@ module FinancialDataConfig
                       "lit" => "esg-scores",
                     },
                   ],
+                  "parts" => [
+                    "esg-scores",
+                  ],
+                  "rename" => {},
+                  "transform" => {
+                    "req" => "`reqdata`",
+                    "res" => "`body`",
+                  },
+                  "args" => {
+                    "query" => [
+                      {
+                        "name" => "format",
+                        "orig" => "format",
+                        "type" => "`$STRING`",
+                        "kind" => "query",
+                        "example" => "json",
+                      },
+                      {
+                        "name" => "identifier",
+                        "orig" => "identifier",
+                        "type" => "`$STRING`",
+                        "kind" => "query",
+                        "reqd" => true,
+                      },
+                      {
+                        "name" => "key",
+                        "orig" => "key",
+                        "type" => "`$STRING`",
+                        "kind" => "query",
+                        "reqd" => true,
+                      },
+                    ],
+                  },
                   "select" => {
                     "exist" => [
                       "format",
@@ -1085,33 +1111,8 @@ module FinancialDataConfig
                       "key",
                     ],
                   },
-                  "transform" => {
-                    "req" => "`reqdata`",
-                    "res" => "`body`",
-                  },
-                  "parts" => [
-                    "esg-scores",
-                  ],
                 },
                 {
-                  "args" => {
-                    "query" => [
-                      {
-                        "example" => "json",
-                        "kind" => "query",
-                        "name" => "format",
-                        "orig" => "format",
-                        "type" => "`$STRING`",
-                      },
-                      {
-                        "kind" => "query",
-                        "name" => "key",
-                        "orig" => "key",
-                        "reqd" => true,
-                        "type" => "`$STRING`",
-                      },
-                    ],
-                  },
                   "kind" => "http",
                   "method" => "GET",
                   "orig" => "/industry-esg-scores",
@@ -1120,19 +1121,38 @@ module FinancialDataConfig
                       "lit" => "industry-esg-scores",
                     },
                   ],
+                  "parts" => [
+                    "industry-esg-scores",
+                  ],
+                  "rename" => {},
+                  "transform" => {
+                    "req" => "`reqdata`",
+                    "res" => "`body`",
+                  },
+                  "args" => {
+                    "query" => [
+                      {
+                        "name" => "format",
+                        "orig" => "format",
+                        "type" => "`$STRING`",
+                        "kind" => "query",
+                        "example" => "json",
+                      },
+                      {
+                        "name" => "key",
+                        "orig" => "key",
+                        "type" => "`$STRING`",
+                        "kind" => "query",
+                        "reqd" => true,
+                      },
+                    ],
+                  },
                   "select" => {
                     "exist" => [
                       "format",
                       "key",
                     ],
                   },
-                  "transform" => {
-                    "req" => "`reqdata`",
-                    "res" => "`body`",
-                  },
-                  "parts" => [
-                    "industry-esg-scores",
-                  ],
                 },
               ],
             },
@@ -1150,31 +1170,6 @@ module FinancialDataConfig
               "name" => "load",
               "points" => [
                 {
-                  "args" => {
-                    "query" => [
-                      {
-                        "example" => "json",
-                        "kind" => "query",
-                        "name" => "format",
-                        "orig" => "format",
-                        "type" => "`$STRING`",
-                      },
-                      {
-                        "kind" => "query",
-                        "name" => "identifier",
-                        "orig" => "identifier",
-                        "reqd" => true,
-                        "type" => "`$STRING`",
-                      },
-                      {
-                        "kind" => "query",
-                        "name" => "key",
-                        "orig" => "key",
-                        "reqd" => true,
-                        "type" => "`$STRING`",
-                      },
-                    ],
-                  },
                   "kind" => "http",
                   "method" => "GET",
                   "orig" => "/etf-holdings",
@@ -1183,6 +1178,39 @@ module FinancialDataConfig
                       "lit" => "etf-holdings",
                     },
                   ],
+                  "parts" => [
+                    "etf-holdings",
+                  ],
+                  "rename" => {},
+                  "transform" => {
+                    "req" => "`reqdata`",
+                    "res" => "`body`",
+                  },
+                  "args" => {
+                    "query" => [
+                      {
+                        "name" => "format",
+                        "orig" => "format",
+                        "type" => "`$STRING`",
+                        "kind" => "query",
+                        "example" => "json",
+                      },
+                      {
+                        "name" => "identifier",
+                        "orig" => "identifier",
+                        "type" => "`$STRING`",
+                        "kind" => "query",
+                        "reqd" => true,
+                      },
+                      {
+                        "name" => "key",
+                        "orig" => "key",
+                        "type" => "`$STRING`",
+                        "kind" => "query",
+                        "reqd" => true,
+                      },
+                    ],
+                  },
                   "select" => {
                     "exist" => [
                       "format",
@@ -1190,40 +1218,8 @@ module FinancialDataConfig
                       "key",
                     ],
                   },
-                  "transform" => {
-                    "req" => "`reqdata`",
-                    "res" => "`body`",
-                  },
-                  "parts" => [
-                    "etf-holdings",
-                  ],
                 },
                 {
-                  "args" => {
-                    "query" => [
-                      {
-                        "example" => "json",
-                        "kind" => "query",
-                        "name" => "format",
-                        "orig" => "format",
-                        "type" => "`$STRING`",
-                      },
-                      {
-                        "kind" => "query",
-                        "name" => "identifier",
-                        "orig" => "identifier",
-                        "reqd" => true,
-                        "type" => "`$STRING`",
-                      },
-                      {
-                        "kind" => "query",
-                        "name" => "key",
-                        "orig" => "key",
-                        "reqd" => true,
-                        "type" => "`$STRING`",
-                      },
-                    ],
-                  },
                   "kind" => "http",
                   "method" => "GET",
                   "orig" => "/etf-prices",
@@ -1232,6 +1228,39 @@ module FinancialDataConfig
                       "lit" => "etf-prices",
                     },
                   ],
+                  "parts" => [
+                    "etf-prices",
+                  ],
+                  "rename" => {},
+                  "transform" => {
+                    "req" => "`reqdata`",
+                    "res" => "`body`",
+                  },
+                  "args" => {
+                    "query" => [
+                      {
+                        "name" => "format",
+                        "orig" => "format",
+                        "type" => "`$STRING`",
+                        "kind" => "query",
+                        "example" => "json",
+                      },
+                      {
+                        "name" => "identifier",
+                        "orig" => "identifier",
+                        "type" => "`$STRING`",
+                        "kind" => "query",
+                        "reqd" => true,
+                      },
+                      {
+                        "name" => "key",
+                        "orig" => "key",
+                        "type" => "`$STRING`",
+                        "kind" => "query",
+                        "reqd" => true,
+                      },
+                    ],
+                  },
                   "select" => {
                     "exist" => [
                       "format",
@@ -1239,40 +1268,8 @@ module FinancialDataConfig
                       "key",
                     ],
                   },
-                  "transform" => {
-                    "req" => "`reqdata`",
-                    "res" => "`body`",
-                  },
-                  "parts" => [
-                    "etf-prices",
-                  ],
                 },
                 {
-                  "args" => {
-                    "query" => [
-                      {
-                        "example" => "json",
-                        "kind" => "query",
-                        "name" => "format",
-                        "orig" => "format",
-                        "type" => "`$STRING`",
-                      },
-                      {
-                        "kind" => "query",
-                        "name" => "identifier",
-                        "orig" => "identifier",
-                        "reqd" => true,
-                        "type" => "`$STRING`",
-                      },
-                      {
-                        "kind" => "query",
-                        "name" => "key",
-                        "orig" => "key",
-                        "reqd" => true,
-                        "type" => "`$STRING`",
-                      },
-                    ],
-                  },
                   "kind" => "http",
                   "method" => "GET",
                   "orig" => "/etf-quotes",
@@ -1281,6 +1278,39 @@ module FinancialDataConfig
                       "lit" => "etf-quotes",
                     },
                   ],
+                  "parts" => [
+                    "etf-quotes",
+                  ],
+                  "rename" => {},
+                  "transform" => {
+                    "req" => "`reqdata`",
+                    "res" => "`body`",
+                  },
+                  "args" => {
+                    "query" => [
+                      {
+                        "name" => "format",
+                        "orig" => "format",
+                        "type" => "`$STRING`",
+                        "kind" => "query",
+                        "example" => "json",
+                      },
+                      {
+                        "name" => "identifier",
+                        "orig" => "identifier",
+                        "type" => "`$STRING`",
+                        "kind" => "query",
+                        "reqd" => true,
+                      },
+                      {
+                        "name" => "key",
+                        "orig" => "key",
+                        "type" => "`$STRING`",
+                        "kind" => "query",
+                        "reqd" => true,
+                      },
+                    ],
+                  },
                   "select" => {
                     "exist" => [
                       "format",
@@ -1288,13 +1318,6 @@ module FinancialDataConfig
                       "key",
                     ],
                   },
-                  "transform" => {
-                    "req" => "`reqdata`",
-                    "res" => "`body`",
-                  },
-                  "parts" => [
-                    "etf-quotes",
-                  ],
                 },
               ],
             },
@@ -1312,24 +1335,6 @@ module FinancialDataConfig
               "name" => "load",
               "points" => [
                 {
-                  "args" => {
-                    "query" => [
-                      {
-                        "example" => "json",
-                        "kind" => "query",
-                        "name" => "format",
-                        "orig" => "format",
-                        "type" => "`$STRING`",
-                      },
-                      {
-                        "kind" => "query",
-                        "name" => "key",
-                        "orig" => "key",
-                        "reqd" => true,
-                        "type" => "`$STRING`",
-                      },
-                    ],
-                  },
                   "kind" => "http",
                   "method" => "GET",
                   "orig" => "/dividends-calendar",
@@ -1338,39 +1343,40 @@ module FinancialDataConfig
                       "lit" => "dividends-calendar",
                     },
                   ],
+                  "parts" => [
+                    "dividends-calendar",
+                  ],
+                  "rename" => {},
+                  "transform" => {
+                    "req" => "`reqdata`",
+                    "res" => "`body`",
+                  },
+                  "args" => {
+                    "query" => [
+                      {
+                        "name" => "format",
+                        "orig" => "format",
+                        "type" => "`$STRING`",
+                        "kind" => "query",
+                        "example" => "json",
+                      },
+                      {
+                        "name" => "key",
+                        "orig" => "key",
+                        "type" => "`$STRING`",
+                        "kind" => "query",
+                        "reqd" => true,
+                      },
+                    ],
+                  },
                   "select" => {
                     "exist" => [
                       "format",
                       "key",
                     ],
                   },
-                  "transform" => {
-                    "req" => "`reqdata`",
-                    "res" => "`body`",
-                  },
-                  "parts" => [
-                    "dividends-calendar",
-                  ],
                 },
                 {
-                  "args" => {
-                    "query" => [
-                      {
-                        "example" => "json",
-                        "kind" => "query",
-                        "name" => "format",
-                        "orig" => "format",
-                        "type" => "`$STRING`",
-                      },
-                      {
-                        "kind" => "query",
-                        "name" => "key",
-                        "orig" => "key",
-                        "reqd" => true,
-                        "type" => "`$STRING`",
-                      },
-                    ],
-                  },
                   "kind" => "http",
                   "method" => "GET",
                   "orig" => "/earnings-calendar",
@@ -1379,39 +1385,40 @@ module FinancialDataConfig
                       "lit" => "earnings-calendar",
                     },
                   ],
+                  "parts" => [
+                    "earnings-calendar",
+                  ],
+                  "rename" => {},
+                  "transform" => {
+                    "req" => "`reqdata`",
+                    "res" => "`body`",
+                  },
+                  "args" => {
+                    "query" => [
+                      {
+                        "name" => "format",
+                        "orig" => "format",
+                        "type" => "`$STRING`",
+                        "kind" => "query",
+                        "example" => "json",
+                      },
+                      {
+                        "name" => "key",
+                        "orig" => "key",
+                        "type" => "`$STRING`",
+                        "kind" => "query",
+                        "reqd" => true,
+                      },
+                    ],
+                  },
                   "select" => {
                     "exist" => [
                       "format",
                       "key",
                     ],
                   },
-                  "transform" => {
-                    "req" => "`reqdata`",
-                    "res" => "`body`",
-                  },
-                  "parts" => [
-                    "earnings-calendar",
-                  ],
                 },
                 {
-                  "args" => {
-                    "query" => [
-                      {
-                        "example" => "json",
-                        "kind" => "query",
-                        "name" => "format",
-                        "orig" => "format",
-                        "type" => "`$STRING`",
-                      },
-                      {
-                        "kind" => "query",
-                        "name" => "key",
-                        "orig" => "key",
-                        "reqd" => true,
-                        "type" => "`$STRING`",
-                      },
-                    ],
-                  },
                   "kind" => "http",
                   "method" => "GET",
                   "orig" => "/economic-calendar",
@@ -1420,39 +1427,40 @@ module FinancialDataConfig
                       "lit" => "economic-calendar",
                     },
                   ],
+                  "parts" => [
+                    "economic-calendar",
+                  ],
+                  "rename" => {},
+                  "transform" => {
+                    "req" => "`reqdata`",
+                    "res" => "`body`",
+                  },
+                  "args" => {
+                    "query" => [
+                      {
+                        "name" => "format",
+                        "orig" => "format",
+                        "type" => "`$STRING`",
+                        "kind" => "query",
+                        "example" => "json",
+                      },
+                      {
+                        "name" => "key",
+                        "orig" => "key",
+                        "type" => "`$STRING`",
+                        "kind" => "query",
+                        "reqd" => true,
+                      },
+                    ],
+                  },
                   "select" => {
                     "exist" => [
                       "format",
                       "key",
                     ],
                   },
-                  "transform" => {
-                    "req" => "`reqdata`",
-                    "res" => "`body`",
-                  },
-                  "parts" => [
-                    "economic-calendar",
-                  ],
                 },
                 {
-                  "args" => {
-                    "query" => [
-                      {
-                        "example" => "json",
-                        "kind" => "query",
-                        "name" => "format",
-                        "orig" => "format",
-                        "type" => "`$STRING`",
-                      },
-                      {
-                        "kind" => "query",
-                        "name" => "key",
-                        "orig" => "key",
-                        "reqd" => true,
-                        "type" => "`$STRING`",
-                      },
-                    ],
-                  },
                   "kind" => "http",
                   "method" => "GET",
                   "orig" => "/ipo-calendar",
@@ -1461,39 +1469,40 @@ module FinancialDataConfig
                       "lit" => "ipo-calendar",
                     },
                   ],
+                  "parts" => [
+                    "ipo-calendar",
+                  ],
+                  "rename" => {},
+                  "transform" => {
+                    "req" => "`reqdata`",
+                    "res" => "`body`",
+                  },
+                  "args" => {
+                    "query" => [
+                      {
+                        "name" => "format",
+                        "orig" => "format",
+                        "type" => "`$STRING`",
+                        "kind" => "query",
+                        "example" => "json",
+                      },
+                      {
+                        "name" => "key",
+                        "orig" => "key",
+                        "type" => "`$STRING`",
+                        "kind" => "query",
+                        "reqd" => true,
+                      },
+                    ],
+                  },
                   "select" => {
                     "exist" => [
                       "format",
                       "key",
                     ],
                   },
-                  "transform" => {
-                    "req" => "`reqdata`",
-                    "res" => "`body`",
-                  },
-                  "parts" => [
-                    "ipo-calendar",
-                  ],
                 },
                 {
-                  "args" => {
-                    "query" => [
-                      {
-                        "example" => "json",
-                        "kind" => "query",
-                        "name" => "format",
-                        "orig" => "format",
-                        "type" => "`$STRING`",
-                      },
-                      {
-                        "kind" => "query",
-                        "name" => "key",
-                        "orig" => "key",
-                        "reqd" => true,
-                        "type" => "`$STRING`",
-                      },
-                    ],
-                  },
                   "kind" => "http",
                   "method" => "GET",
                   "orig" => "/splits-calendar",
@@ -1502,19 +1511,38 @@ module FinancialDataConfig
                       "lit" => "splits-calendar",
                     },
                   ],
+                  "parts" => [
+                    "splits-calendar",
+                  ],
+                  "rename" => {},
+                  "transform" => {
+                    "req" => "`reqdata`",
+                    "res" => "`body`",
+                  },
+                  "args" => {
+                    "query" => [
+                      {
+                        "name" => "format",
+                        "orig" => "format",
+                        "type" => "`$STRING`",
+                        "kind" => "query",
+                        "example" => "json",
+                      },
+                      {
+                        "name" => "key",
+                        "orig" => "key",
+                        "type" => "`$STRING`",
+                        "kind" => "query",
+                        "reqd" => true,
+                      },
+                    ],
+                  },
                   "select" => {
                     "exist" => [
                       "format",
                       "key",
                     ],
                   },
-                  "transform" => {
-                    "req" => "`reqdata`",
-                    "res" => "`body`",
-                  },
-                  "parts" => [
-                    "splits-calendar",
-                  ],
                 },
               ],
             },
@@ -1532,31 +1560,6 @@ module FinancialDataConfig
               "name" => "load",
               "points" => [
                 {
-                  "args" => {
-                    "query" => [
-                      {
-                        "example" => "json",
-                        "kind" => "query",
-                        "name" => "format",
-                        "orig" => "format",
-                        "type" => "`$STRING`",
-                      },
-                      {
-                        "kind" => "query",
-                        "name" => "identifier",
-                        "orig" => "identifier",
-                        "reqd" => true,
-                        "type" => "`$STRING`",
-                      },
-                      {
-                        "kind" => "query",
-                        "name" => "key",
-                        "orig" => "key",
-                        "reqd" => true,
-                        "type" => "`$STRING`",
-                      },
-                    ],
-                  },
                   "kind" => "http",
                   "method" => "GET",
                   "orig" => "/efficiency-ratios",
@@ -1565,6 +1568,39 @@ module FinancialDataConfig
                       "lit" => "efficiency-ratios",
                     },
                   ],
+                  "parts" => [
+                    "efficiency-ratios",
+                  ],
+                  "rename" => {},
+                  "transform" => {
+                    "req" => "`reqdata`",
+                    "res" => "`body`",
+                  },
+                  "args" => {
+                    "query" => [
+                      {
+                        "name" => "format",
+                        "orig" => "format",
+                        "type" => "`$STRING`",
+                        "kind" => "query",
+                        "example" => "json",
+                      },
+                      {
+                        "name" => "identifier",
+                        "orig" => "identifier",
+                        "type" => "`$STRING`",
+                        "kind" => "query",
+                        "reqd" => true,
+                      },
+                      {
+                        "name" => "key",
+                        "orig" => "key",
+                        "type" => "`$STRING`",
+                        "kind" => "query",
+                        "reqd" => true,
+                      },
+                    ],
+                  },
                   "select" => {
                     "exist" => [
                       "format",
@@ -1572,40 +1608,8 @@ module FinancialDataConfig
                       "key",
                     ],
                   },
-                  "transform" => {
-                    "req" => "`reqdata`",
-                    "res" => "`body`",
-                  },
-                  "parts" => [
-                    "efficiency-ratios",
-                  ],
                 },
                 {
-                  "args" => {
-                    "query" => [
-                      {
-                        "example" => "json",
-                        "kind" => "query",
-                        "name" => "format",
-                        "orig" => "format",
-                        "type" => "`$STRING`",
-                      },
-                      {
-                        "kind" => "query",
-                        "name" => "identifier",
-                        "orig" => "identifier",
-                        "reqd" => true,
-                        "type" => "`$STRING`",
-                      },
-                      {
-                        "kind" => "query",
-                        "name" => "key",
-                        "orig" => "key",
-                        "reqd" => true,
-                        "type" => "`$STRING`",
-                      },
-                    ],
-                  },
                   "kind" => "http",
                   "method" => "GET",
                   "orig" => "/liquidity-ratios",
@@ -1614,6 +1618,39 @@ module FinancialDataConfig
                       "lit" => "liquidity-ratios",
                     },
                   ],
+                  "parts" => [
+                    "liquidity-ratios",
+                  ],
+                  "rename" => {},
+                  "transform" => {
+                    "req" => "`reqdata`",
+                    "res" => "`body`",
+                  },
+                  "args" => {
+                    "query" => [
+                      {
+                        "name" => "format",
+                        "orig" => "format",
+                        "type" => "`$STRING`",
+                        "kind" => "query",
+                        "example" => "json",
+                      },
+                      {
+                        "name" => "identifier",
+                        "orig" => "identifier",
+                        "type" => "`$STRING`",
+                        "kind" => "query",
+                        "reqd" => true,
+                      },
+                      {
+                        "name" => "key",
+                        "orig" => "key",
+                        "type" => "`$STRING`",
+                        "kind" => "query",
+                        "reqd" => true,
+                      },
+                    ],
+                  },
                   "select" => {
                     "exist" => [
                       "format",
@@ -1621,40 +1658,8 @@ module FinancialDataConfig
                       "key",
                     ],
                   },
-                  "transform" => {
-                    "req" => "`reqdata`",
-                    "res" => "`body`",
-                  },
-                  "parts" => [
-                    "liquidity-ratios",
-                  ],
                 },
                 {
-                  "args" => {
-                    "query" => [
-                      {
-                        "example" => "json",
-                        "kind" => "query",
-                        "name" => "format",
-                        "orig" => "format",
-                        "type" => "`$STRING`",
-                      },
-                      {
-                        "kind" => "query",
-                        "name" => "identifier",
-                        "orig" => "identifier",
-                        "reqd" => true,
-                        "type" => "`$STRING`",
-                      },
-                      {
-                        "kind" => "query",
-                        "name" => "key",
-                        "orig" => "key",
-                        "reqd" => true,
-                        "type" => "`$STRING`",
-                      },
-                    ],
-                  },
                   "kind" => "http",
                   "method" => "GET",
                   "orig" => "/profitability-ratios",
@@ -1663,6 +1668,39 @@ module FinancialDataConfig
                       "lit" => "profitability-ratios",
                     },
                   ],
+                  "parts" => [
+                    "profitability-ratios",
+                  ],
+                  "rename" => {},
+                  "transform" => {
+                    "req" => "`reqdata`",
+                    "res" => "`body`",
+                  },
+                  "args" => {
+                    "query" => [
+                      {
+                        "name" => "format",
+                        "orig" => "format",
+                        "type" => "`$STRING`",
+                        "kind" => "query",
+                        "example" => "json",
+                      },
+                      {
+                        "name" => "identifier",
+                        "orig" => "identifier",
+                        "type" => "`$STRING`",
+                        "kind" => "query",
+                        "reqd" => true,
+                      },
+                      {
+                        "name" => "key",
+                        "orig" => "key",
+                        "type" => "`$STRING`",
+                        "kind" => "query",
+                        "reqd" => true,
+                      },
+                    ],
+                  },
                   "select" => {
                     "exist" => [
                       "format",
@@ -1670,40 +1708,8 @@ module FinancialDataConfig
                       "key",
                     ],
                   },
-                  "transform" => {
-                    "req" => "`reqdata`",
-                    "res" => "`body`",
-                  },
-                  "parts" => [
-                    "profitability-ratios",
-                  ],
                 },
                 {
-                  "args" => {
-                    "query" => [
-                      {
-                        "example" => "json",
-                        "kind" => "query",
-                        "name" => "format",
-                        "orig" => "format",
-                        "type" => "`$STRING`",
-                      },
-                      {
-                        "kind" => "query",
-                        "name" => "identifier",
-                        "orig" => "identifier",
-                        "reqd" => true,
-                        "type" => "`$STRING`",
-                      },
-                      {
-                        "kind" => "query",
-                        "name" => "key",
-                        "orig" => "key",
-                        "reqd" => true,
-                        "type" => "`$STRING`",
-                      },
-                    ],
-                  },
                   "kind" => "http",
                   "method" => "GET",
                   "orig" => "/solvency-ratios",
@@ -1712,6 +1718,39 @@ module FinancialDataConfig
                       "lit" => "solvency-ratios",
                     },
                   ],
+                  "parts" => [
+                    "solvency-ratios",
+                  ],
+                  "rename" => {},
+                  "transform" => {
+                    "req" => "`reqdata`",
+                    "res" => "`body`",
+                  },
+                  "args" => {
+                    "query" => [
+                      {
+                        "name" => "format",
+                        "orig" => "format",
+                        "type" => "`$STRING`",
+                        "kind" => "query",
+                        "example" => "json",
+                      },
+                      {
+                        "name" => "identifier",
+                        "orig" => "identifier",
+                        "type" => "`$STRING`",
+                        "kind" => "query",
+                        "reqd" => true,
+                      },
+                      {
+                        "name" => "key",
+                        "orig" => "key",
+                        "type" => "`$STRING`",
+                        "kind" => "query",
+                        "reqd" => true,
+                      },
+                    ],
+                  },
                   "select" => {
                     "exist" => [
                       "format",
@@ -1719,40 +1758,8 @@ module FinancialDataConfig
                       "key",
                     ],
                   },
-                  "transform" => {
-                    "req" => "`reqdata`",
-                    "res" => "`body`",
-                  },
-                  "parts" => [
-                    "solvency-ratios",
-                  ],
                 },
                 {
-                  "args" => {
-                    "query" => [
-                      {
-                        "example" => "json",
-                        "kind" => "query",
-                        "name" => "format",
-                        "orig" => "format",
-                        "type" => "`$STRING`",
-                      },
-                      {
-                        "kind" => "query",
-                        "name" => "identifier",
-                        "orig" => "identifier",
-                        "reqd" => true,
-                        "type" => "`$STRING`",
-                      },
-                      {
-                        "kind" => "query",
-                        "name" => "key",
-                        "orig" => "key",
-                        "reqd" => true,
-                        "type" => "`$STRING`",
-                      },
-                    ],
-                  },
                   "kind" => "http",
                   "method" => "GET",
                   "orig" => "/valuation-ratios",
@@ -1761,6 +1768,39 @@ module FinancialDataConfig
                       "lit" => "valuation-ratios",
                     },
                   ],
+                  "parts" => [
+                    "valuation-ratios",
+                  ],
+                  "rename" => {},
+                  "transform" => {
+                    "req" => "`reqdata`",
+                    "res" => "`body`",
+                  },
+                  "args" => {
+                    "query" => [
+                      {
+                        "name" => "format",
+                        "orig" => "format",
+                        "type" => "`$STRING`",
+                        "kind" => "query",
+                        "example" => "json",
+                      },
+                      {
+                        "name" => "identifier",
+                        "orig" => "identifier",
+                        "type" => "`$STRING`",
+                        "kind" => "query",
+                        "reqd" => true,
+                      },
+                      {
+                        "name" => "key",
+                        "orig" => "key",
+                        "type" => "`$STRING`",
+                        "kind" => "query",
+                        "reqd" => true,
+                      },
+                    ],
+                  },
                   "select" => {
                     "exist" => [
                       "format",
@@ -1768,13 +1808,6 @@ module FinancialDataConfig
                       "key",
                     ],
                   },
-                  "transform" => {
-                    "req" => "`reqdata`",
-                    "res" => "`body`",
-                  },
-                  "parts" => [
-                    "valuation-ratios",
-                  ],
                 },
               ],
             },
@@ -1792,31 +1825,6 @@ module FinancialDataConfig
               "name" => "load",
               "points" => [
                 {
-                  "args" => {
-                    "query" => [
-                      {
-                        "example" => "json",
-                        "kind" => "query",
-                        "name" => "format",
-                        "orig" => "format",
-                        "type" => "`$STRING`",
-                      },
-                      {
-                        "kind" => "query",
-                        "name" => "identifier",
-                        "orig" => "identifier",
-                        "reqd" => true,
-                        "type" => "`$STRING`",
-                      },
-                      {
-                        "kind" => "query",
-                        "name" => "key",
-                        "orig" => "key",
-                        "reqd" => true,
-                        "type" => "`$STRING`",
-                      },
-                    ],
-                  },
                   "kind" => "http",
                   "method" => "GET",
                   "orig" => "/balance-sheet-statements",
@@ -1825,6 +1833,39 @@ module FinancialDataConfig
                       "lit" => "balance-sheet-statements",
                     },
                   ],
+                  "parts" => [
+                    "balance-sheet-statements",
+                  ],
+                  "rename" => {},
+                  "transform" => {
+                    "req" => "`reqdata`",
+                    "res" => "`body`",
+                  },
+                  "args" => {
+                    "query" => [
+                      {
+                        "name" => "format",
+                        "orig" => "format",
+                        "type" => "`$STRING`",
+                        "kind" => "query",
+                        "example" => "json",
+                      },
+                      {
+                        "name" => "identifier",
+                        "orig" => "identifier",
+                        "type" => "`$STRING`",
+                        "kind" => "query",
+                        "reqd" => true,
+                      },
+                      {
+                        "name" => "key",
+                        "orig" => "key",
+                        "type" => "`$STRING`",
+                        "kind" => "query",
+                        "reqd" => true,
+                      },
+                    ],
+                  },
                   "select" => {
                     "exist" => [
                       "format",
@@ -1832,40 +1873,8 @@ module FinancialDataConfig
                       "key",
                     ],
                   },
-                  "transform" => {
-                    "req" => "`reqdata`",
-                    "res" => "`body`",
-                  },
-                  "parts" => [
-                    "balance-sheet-statements",
-                  ],
                 },
                 {
-                  "args" => {
-                    "query" => [
-                      {
-                        "example" => "json",
-                        "kind" => "query",
-                        "name" => "format",
-                        "orig" => "format",
-                        "type" => "`$STRING`",
-                      },
-                      {
-                        "kind" => "query",
-                        "name" => "identifier",
-                        "orig" => "identifier",
-                        "reqd" => true,
-                        "type" => "`$STRING`",
-                      },
-                      {
-                        "kind" => "query",
-                        "name" => "key",
-                        "orig" => "key",
-                        "reqd" => true,
-                        "type" => "`$STRING`",
-                      },
-                    ],
-                  },
                   "kind" => "http",
                   "method" => "GET",
                   "orig" => "/cash-flow-statements",
@@ -1874,6 +1883,39 @@ module FinancialDataConfig
                       "lit" => "cash-flow-statements",
                     },
                   ],
+                  "parts" => [
+                    "cash-flow-statements",
+                  ],
+                  "rename" => {},
+                  "transform" => {
+                    "req" => "`reqdata`",
+                    "res" => "`body`",
+                  },
+                  "args" => {
+                    "query" => [
+                      {
+                        "name" => "format",
+                        "orig" => "format",
+                        "type" => "`$STRING`",
+                        "kind" => "query",
+                        "example" => "json",
+                      },
+                      {
+                        "name" => "identifier",
+                        "orig" => "identifier",
+                        "type" => "`$STRING`",
+                        "kind" => "query",
+                        "reqd" => true,
+                      },
+                      {
+                        "name" => "key",
+                        "orig" => "key",
+                        "type" => "`$STRING`",
+                        "kind" => "query",
+                        "reqd" => true,
+                      },
+                    ],
+                  },
                   "select" => {
                     "exist" => [
                       "format",
@@ -1881,40 +1923,8 @@ module FinancialDataConfig
                       "key",
                     ],
                   },
-                  "transform" => {
-                    "req" => "`reqdata`",
-                    "res" => "`body`",
-                  },
-                  "parts" => [
-                    "cash-flow-statements",
-                  ],
                 },
                 {
-                  "args" => {
-                    "query" => [
-                      {
-                        "example" => "json",
-                        "kind" => "query",
-                        "name" => "format",
-                        "orig" => "format",
-                        "type" => "`$STRING`",
-                      },
-                      {
-                        "kind" => "query",
-                        "name" => "identifier",
-                        "orig" => "identifier",
-                        "reqd" => true,
-                        "type" => "`$STRING`",
-                      },
-                      {
-                        "kind" => "query",
-                        "name" => "key",
-                        "orig" => "key",
-                        "reqd" => true,
-                        "type" => "`$STRING`",
-                      },
-                    ],
-                  },
                   "kind" => "http",
                   "method" => "GET",
                   "orig" => "/income-statements",
@@ -1923,6 +1933,39 @@ module FinancialDataConfig
                       "lit" => "income-statements",
                     },
                   ],
+                  "parts" => [
+                    "income-statements",
+                  ],
+                  "rename" => {},
+                  "transform" => {
+                    "req" => "`reqdata`",
+                    "res" => "`body`",
+                  },
+                  "args" => {
+                    "query" => [
+                      {
+                        "name" => "format",
+                        "orig" => "format",
+                        "type" => "`$STRING`",
+                        "kind" => "query",
+                        "example" => "json",
+                      },
+                      {
+                        "name" => "identifier",
+                        "orig" => "identifier",
+                        "type" => "`$STRING`",
+                        "kind" => "query",
+                        "reqd" => true,
+                      },
+                      {
+                        "name" => "key",
+                        "orig" => "key",
+                        "type" => "`$STRING`",
+                        "kind" => "query",
+                        "reqd" => true,
+                      },
+                    ],
+                  },
                   "select" => {
                     "exist" => [
                       "format",
@@ -1930,40 +1973,8 @@ module FinancialDataConfig
                       "key",
                     ],
                   },
-                  "transform" => {
-                    "req" => "`reqdata`",
-                    "res" => "`body`",
-                  },
-                  "parts" => [
-                    "income-statements",
-                  ],
                 },
                 {
-                  "args" => {
-                    "query" => [
-                      {
-                        "example" => "json",
-                        "kind" => "query",
-                        "name" => "format",
-                        "orig" => "format",
-                        "type" => "`$STRING`",
-                      },
-                      {
-                        "kind" => "query",
-                        "name" => "identifier",
-                        "orig" => "identifier",
-                        "reqd" => true,
-                        "type" => "`$STRING`",
-                      },
-                      {
-                        "kind" => "query",
-                        "name" => "key",
-                        "orig" => "key",
-                        "reqd" => true,
-                        "type" => "`$STRING`",
-                      },
-                    ],
-                  },
                   "kind" => "http",
                   "method" => "GET",
                   "orig" => "/international-balance-sheet-statements",
@@ -1972,6 +1983,39 @@ module FinancialDataConfig
                       "lit" => "international-balance-sheet-statements",
                     },
                   ],
+                  "parts" => [
+                    "international-balance-sheet-statements",
+                  ],
+                  "rename" => {},
+                  "transform" => {
+                    "req" => "`reqdata`",
+                    "res" => "`body`",
+                  },
+                  "args" => {
+                    "query" => [
+                      {
+                        "name" => "format",
+                        "orig" => "format",
+                        "type" => "`$STRING`",
+                        "kind" => "query",
+                        "example" => "json",
+                      },
+                      {
+                        "name" => "identifier",
+                        "orig" => "identifier",
+                        "type" => "`$STRING`",
+                        "kind" => "query",
+                        "reqd" => true,
+                      },
+                      {
+                        "name" => "key",
+                        "orig" => "key",
+                        "type" => "`$STRING`",
+                        "kind" => "query",
+                        "reqd" => true,
+                      },
+                    ],
+                  },
                   "select" => {
                     "exist" => [
                       "format",
@@ -1979,40 +2023,8 @@ module FinancialDataConfig
                       "key",
                     ],
                   },
-                  "transform" => {
-                    "req" => "`reqdata`",
-                    "res" => "`body`",
-                  },
-                  "parts" => [
-                    "international-balance-sheet-statements",
-                  ],
                 },
                 {
-                  "args" => {
-                    "query" => [
-                      {
-                        "example" => "json",
-                        "kind" => "query",
-                        "name" => "format",
-                        "orig" => "format",
-                        "type" => "`$STRING`",
-                      },
-                      {
-                        "kind" => "query",
-                        "name" => "identifier",
-                        "orig" => "identifier",
-                        "reqd" => true,
-                        "type" => "`$STRING`",
-                      },
-                      {
-                        "kind" => "query",
-                        "name" => "key",
-                        "orig" => "key",
-                        "reqd" => true,
-                        "type" => "`$STRING`",
-                      },
-                    ],
-                  },
                   "kind" => "http",
                   "method" => "GET",
                   "orig" => "/international-cash-flow-statements",
@@ -2021,6 +2033,39 @@ module FinancialDataConfig
                       "lit" => "international-cash-flow-statements",
                     },
                   ],
+                  "parts" => [
+                    "international-cash-flow-statements",
+                  ],
+                  "rename" => {},
+                  "transform" => {
+                    "req" => "`reqdata`",
+                    "res" => "`body`",
+                  },
+                  "args" => {
+                    "query" => [
+                      {
+                        "name" => "format",
+                        "orig" => "format",
+                        "type" => "`$STRING`",
+                        "kind" => "query",
+                        "example" => "json",
+                      },
+                      {
+                        "name" => "identifier",
+                        "orig" => "identifier",
+                        "type" => "`$STRING`",
+                        "kind" => "query",
+                        "reqd" => true,
+                      },
+                      {
+                        "name" => "key",
+                        "orig" => "key",
+                        "type" => "`$STRING`",
+                        "kind" => "query",
+                        "reqd" => true,
+                      },
+                    ],
+                  },
                   "select" => {
                     "exist" => [
                       "format",
@@ -2028,40 +2073,8 @@ module FinancialDataConfig
                       "key",
                     ],
                   },
-                  "transform" => {
-                    "req" => "`reqdata`",
-                    "res" => "`body`",
-                  },
-                  "parts" => [
-                    "international-cash-flow-statements",
-                  ],
                 },
                 {
-                  "args" => {
-                    "query" => [
-                      {
-                        "example" => "json",
-                        "kind" => "query",
-                        "name" => "format",
-                        "orig" => "format",
-                        "type" => "`$STRING`",
-                      },
-                      {
-                        "kind" => "query",
-                        "name" => "identifier",
-                        "orig" => "identifier",
-                        "reqd" => true,
-                        "type" => "`$STRING`",
-                      },
-                      {
-                        "kind" => "query",
-                        "name" => "key",
-                        "orig" => "key",
-                        "reqd" => true,
-                        "type" => "`$STRING`",
-                      },
-                    ],
-                  },
                   "kind" => "http",
                   "method" => "GET",
                   "orig" => "/international-income-statements",
@@ -2070,6 +2083,39 @@ module FinancialDataConfig
                       "lit" => "international-income-statements",
                     },
                   ],
+                  "parts" => [
+                    "international-income-statements",
+                  ],
+                  "rename" => {},
+                  "transform" => {
+                    "req" => "`reqdata`",
+                    "res" => "`body`",
+                  },
+                  "args" => {
+                    "query" => [
+                      {
+                        "name" => "format",
+                        "orig" => "format",
+                        "type" => "`$STRING`",
+                        "kind" => "query",
+                        "example" => "json",
+                      },
+                      {
+                        "name" => "identifier",
+                        "orig" => "identifier",
+                        "type" => "`$STRING`",
+                        "kind" => "query",
+                        "reqd" => true,
+                      },
+                      {
+                        "name" => "key",
+                        "orig" => "key",
+                        "type" => "`$STRING`",
+                        "kind" => "query",
+                        "reqd" => true,
+                      },
+                    ],
+                  },
                   "select" => {
                     "exist" => [
                       "format",
@@ -2077,13 +2123,6 @@ module FinancialDataConfig
                       "key",
                     ],
                   },
-                  "transform" => {
-                    "req" => "`reqdata`",
-                    "res" => "`body`",
-                  },
-                  "parts" => [
-                    "international-income-statements",
-                  ],
                 },
               ],
             },
@@ -2101,38 +2140,6 @@ module FinancialDataConfig
               "name" => "load",
               "points" => [
                 {
-                  "args" => {
-                    "query" => [
-                      {
-                        "kind" => "query",
-                        "name" => "date",
-                        "orig" => "date",
-                        "reqd" => true,
-                        "type" => "`$STRING`",
-                      },
-                      {
-                        "example" => "json",
-                        "kind" => "query",
-                        "name" => "format",
-                        "orig" => "format",
-                        "type" => "`$STRING`",
-                      },
-                      {
-                        "kind" => "query",
-                        "name" => "identifier",
-                        "orig" => "identifier",
-                        "reqd" => true,
-                        "type" => "`$STRING`",
-                      },
-                      {
-                        "kind" => "query",
-                        "name" => "key",
-                        "orig" => "key",
-                        "reqd" => true,
-                        "type" => "`$STRING`",
-                      },
-                    ],
-                  },
                   "kind" => "http",
                   "method" => "GET",
                   "orig" => "/forex-minute-prices",
@@ -2141,6 +2148,46 @@ module FinancialDataConfig
                       "lit" => "forex-minute-prices",
                     },
                   ],
+                  "parts" => [
+                    "forex-minute-prices",
+                  ],
+                  "rename" => {},
+                  "transform" => {
+                    "req" => "`reqdata`",
+                    "res" => "`body`",
+                  },
+                  "args" => {
+                    "query" => [
+                      {
+                        "name" => "date",
+                        "orig" => "date",
+                        "type" => "`$STRING`",
+                        "kind" => "query",
+                        "reqd" => true,
+                      },
+                      {
+                        "name" => "format",
+                        "orig" => "format",
+                        "type" => "`$STRING`",
+                        "kind" => "query",
+                        "example" => "json",
+                      },
+                      {
+                        "name" => "identifier",
+                        "orig" => "identifier",
+                        "type" => "`$STRING`",
+                        "kind" => "query",
+                        "reqd" => true,
+                      },
+                      {
+                        "name" => "key",
+                        "orig" => "key",
+                        "type" => "`$STRING`",
+                        "kind" => "query",
+                        "reqd" => true,
+                      },
+                    ],
+                  },
                   "select" => {
                     "exist" => [
                       "date",
@@ -2149,40 +2196,8 @@ module FinancialDataConfig
                       "key",
                     ],
                   },
-                  "transform" => {
-                    "req" => "`reqdata`",
-                    "res" => "`body`",
-                  },
-                  "parts" => [
-                    "forex-minute-prices",
-                  ],
                 },
                 {
-                  "args" => {
-                    "query" => [
-                      {
-                        "example" => "json",
-                        "kind" => "query",
-                        "name" => "format",
-                        "orig" => "format",
-                        "type" => "`$STRING`",
-                      },
-                      {
-                        "kind" => "query",
-                        "name" => "identifier",
-                        "orig" => "identifier",
-                        "reqd" => true,
-                        "type" => "`$STRING`",
-                      },
-                      {
-                        "kind" => "query",
-                        "name" => "key",
-                        "orig" => "key",
-                        "reqd" => true,
-                        "type" => "`$STRING`",
-                      },
-                    ],
-                  },
                   "kind" => "http",
                   "method" => "GET",
                   "orig" => "/forex-prices",
@@ -2191,6 +2206,39 @@ module FinancialDataConfig
                       "lit" => "forex-prices",
                     },
                   ],
+                  "parts" => [
+                    "forex-prices",
+                  ],
+                  "rename" => {},
+                  "transform" => {
+                    "req" => "`reqdata`",
+                    "res" => "`body`",
+                  },
+                  "args" => {
+                    "query" => [
+                      {
+                        "name" => "format",
+                        "orig" => "format",
+                        "type" => "`$STRING`",
+                        "kind" => "query",
+                        "example" => "json",
+                      },
+                      {
+                        "name" => "identifier",
+                        "orig" => "identifier",
+                        "type" => "`$STRING`",
+                        "kind" => "query",
+                        "reqd" => true,
+                      },
+                      {
+                        "name" => "key",
+                        "orig" => "key",
+                        "type" => "`$STRING`",
+                        "kind" => "query",
+                        "reqd" => true,
+                      },
+                    ],
+                  },
                   "select" => {
                     "exist" => [
                       "format",
@@ -2198,40 +2246,8 @@ module FinancialDataConfig
                       "key",
                     ],
                   },
-                  "transform" => {
-                    "req" => "`reqdata`",
-                    "res" => "`body`",
-                  },
-                  "parts" => [
-                    "forex-prices",
-                  ],
                 },
                 {
-                  "args" => {
-                    "query" => [
-                      {
-                        "example" => "json",
-                        "kind" => "query",
-                        "name" => "format",
-                        "orig" => "format",
-                        "type" => "`$STRING`",
-                      },
-                      {
-                        "kind" => "query",
-                        "name" => "identifier",
-                        "orig" => "identifier",
-                        "reqd" => true,
-                        "type" => "`$STRING`",
-                      },
-                      {
-                        "kind" => "query",
-                        "name" => "key",
-                        "orig" => "key",
-                        "reqd" => true,
-                        "type" => "`$STRING`",
-                      },
-                    ],
-                  },
                   "kind" => "http",
                   "method" => "GET",
                   "orig" => "/forex-quotes",
@@ -2240,6 +2256,39 @@ module FinancialDataConfig
                       "lit" => "forex-quotes",
                     },
                   ],
+                  "parts" => [
+                    "forex-quotes",
+                  ],
+                  "rename" => {},
+                  "transform" => {
+                    "req" => "`reqdata`",
+                    "res" => "`body`",
+                  },
+                  "args" => {
+                    "query" => [
+                      {
+                        "name" => "format",
+                        "orig" => "format",
+                        "type" => "`$STRING`",
+                        "kind" => "query",
+                        "example" => "json",
+                      },
+                      {
+                        "name" => "identifier",
+                        "orig" => "identifier",
+                        "type" => "`$STRING`",
+                        "kind" => "query",
+                        "reqd" => true,
+                      },
+                      {
+                        "name" => "key",
+                        "orig" => "key",
+                        "type" => "`$STRING`",
+                        "kind" => "query",
+                        "reqd" => true,
+                      },
+                    ],
+                  },
                   "select" => {
                     "exist" => [
                       "format",
@@ -2247,33 +2296,8 @@ module FinancialDataConfig
                       "key",
                     ],
                   },
-                  "transform" => {
-                    "req" => "`reqdata`",
-                    "res" => "`body`",
-                  },
-                  "parts" => [
-                    "forex-quotes",
-                  ],
                 },
                 {
-                  "args" => {
-                    "query" => [
-                      {
-                        "example" => "json",
-                        "kind" => "query",
-                        "name" => "format",
-                        "orig" => "format",
-                        "type" => "`$STRING`",
-                      },
-                      {
-                        "kind" => "query",
-                        "name" => "key",
-                        "orig" => "key",
-                        "reqd" => true,
-                        "type" => "`$STRING`",
-                      },
-                    ],
-                  },
                   "kind" => "http",
                   "method" => "GET",
                   "orig" => "/forex-symbols",
@@ -2282,19 +2306,38 @@ module FinancialDataConfig
                       "lit" => "forex-symbols",
                     },
                   ],
+                  "parts" => [
+                    "forex-symbols",
+                  ],
+                  "rename" => {},
+                  "transform" => {
+                    "req" => "`reqdata`",
+                    "res" => "`body`",
+                  },
+                  "args" => {
+                    "query" => [
+                      {
+                        "name" => "format",
+                        "orig" => "format",
+                        "type" => "`$STRING`",
+                        "kind" => "query",
+                        "example" => "json",
+                      },
+                      {
+                        "name" => "key",
+                        "orig" => "key",
+                        "type" => "`$STRING`",
+                        "kind" => "query",
+                        "reqd" => true,
+                      },
+                    ],
+                  },
                   "select" => {
                     "exist" => [
                       "format",
                       "key",
                     ],
                   },
-                  "transform" => {
-                    "req" => "`reqdata`",
-                    "res" => "`body`",
-                  },
-                  "parts" => [
-                    "forex-symbols",
-                  ],
                 },
               ],
             },
@@ -2312,30 +2355,6 @@ module FinancialDataConfig
               "name" => "load",
               "points" => [
                 {
-                  "args" => {
-                    "query" => [
-                      {
-                        "example" => "json",
-                        "kind" => "query",
-                        "name" => "format",
-                        "orig" => "format",
-                        "type" => "`$STRING`",
-                      },
-                      {
-                        "kind" => "query",
-                        "name" => "identifier",
-                        "orig" => "identifier",
-                        "type" => "`$STRING`",
-                      },
-                      {
-                        "kind" => "query",
-                        "name" => "key",
-                        "orig" => "key",
-                        "reqd" => true,
-                        "type" => "`$STRING`",
-                      },
-                    ],
-                  },
                   "kind" => "http",
                   "method" => "GET",
                   "orig" => "/insider-transactions",
@@ -2344,6 +2363,38 @@ module FinancialDataConfig
                       "lit" => "insider-transactions",
                     },
                   ],
+                  "parts" => [
+                    "insider-transactions",
+                  ],
+                  "rename" => {},
+                  "transform" => {
+                    "req" => "`reqdata`",
+                    "res" => "`body`",
+                  },
+                  "args" => {
+                    "query" => [
+                      {
+                        "name" => "format",
+                        "orig" => "format",
+                        "type" => "`$STRING`",
+                        "kind" => "query",
+                        "example" => "json",
+                      },
+                      {
+                        "name" => "identifier",
+                        "orig" => "identifier",
+                        "type" => "`$STRING`",
+                        "kind" => "query",
+                      },
+                      {
+                        "name" => "key",
+                        "orig" => "key",
+                        "type" => "`$STRING`",
+                        "kind" => "query",
+                        "reqd" => true,
+                      },
+                    ],
+                  },
                   "select" => {
                     "exist" => [
                       "format",
@@ -2351,33 +2402,8 @@ module FinancialDataConfig
                       "key",
                     ],
                   },
-                  "transform" => {
-                    "req" => "`reqdata`",
-                    "res" => "`body`",
-                  },
-                  "parts" => [
-                    "insider-transactions",
-                  ],
                 },
                 {
-                  "args" => {
-                    "query" => [
-                      {
-                        "example" => "json",
-                        "kind" => "query",
-                        "name" => "format",
-                        "orig" => "format",
-                        "type" => "`$STRING`",
-                      },
-                      {
-                        "kind" => "query",
-                        "name" => "key",
-                        "orig" => "key",
-                        "reqd" => true,
-                        "type" => "`$STRING`",
-                      },
-                    ],
-                  },
                   "kind" => "http",
                   "method" => "GET",
                   "orig" => "/house-trading",
@@ -2386,39 +2412,40 @@ module FinancialDataConfig
                       "lit" => "house-trading",
                     },
                   ],
+                  "parts" => [
+                    "house-trading",
+                  ],
+                  "rename" => {},
+                  "transform" => {
+                    "req" => "`reqdata`",
+                    "res" => "`body`",
+                  },
+                  "args" => {
+                    "query" => [
+                      {
+                        "name" => "format",
+                        "orig" => "format",
+                        "type" => "`$STRING`",
+                        "kind" => "query",
+                        "example" => "json",
+                      },
+                      {
+                        "name" => "key",
+                        "orig" => "key",
+                        "type" => "`$STRING`",
+                        "kind" => "query",
+                        "reqd" => true,
+                      },
+                    ],
+                  },
                   "select" => {
                     "exist" => [
                       "format",
                       "key",
                     ],
                   },
-                  "transform" => {
-                    "req" => "`reqdata`",
-                    "res" => "`body`",
-                  },
-                  "parts" => [
-                    "house-trading",
-                  ],
                 },
                 {
-                  "args" => {
-                    "query" => [
-                      {
-                        "example" => "json",
-                        "kind" => "query",
-                        "name" => "format",
-                        "orig" => "format",
-                        "type" => "`$STRING`",
-                      },
-                      {
-                        "kind" => "query",
-                        "name" => "key",
-                        "orig" => "key",
-                        "reqd" => true,
-                        "type" => "`$STRING`",
-                      },
-                    ],
-                  },
                   "kind" => "http",
                   "method" => "GET",
                   "orig" => "/proposed-sales",
@@ -2427,39 +2454,40 @@ module FinancialDataConfig
                       "lit" => "proposed-sales",
                     },
                   ],
+                  "parts" => [
+                    "proposed-sales",
+                  ],
+                  "rename" => {},
+                  "transform" => {
+                    "req" => "`reqdata`",
+                    "res" => "`body`",
+                  },
+                  "args" => {
+                    "query" => [
+                      {
+                        "name" => "format",
+                        "orig" => "format",
+                        "type" => "`$STRING`",
+                        "kind" => "query",
+                        "example" => "json",
+                      },
+                      {
+                        "name" => "key",
+                        "orig" => "key",
+                        "type" => "`$STRING`",
+                        "kind" => "query",
+                        "reqd" => true,
+                      },
+                    ],
+                  },
                   "select" => {
                     "exist" => [
                       "format",
                       "key",
                     ],
                   },
-                  "transform" => {
-                    "req" => "`reqdata`",
-                    "res" => "`body`",
-                  },
-                  "parts" => [
-                    "proposed-sales",
-                  ],
                 },
                 {
-                  "args" => {
-                    "query" => [
-                      {
-                        "example" => "json",
-                        "kind" => "query",
-                        "name" => "format",
-                        "orig" => "format",
-                        "type" => "`$STRING`",
-                      },
-                      {
-                        "kind" => "query",
-                        "name" => "key",
-                        "orig" => "key",
-                        "reqd" => true,
-                        "type" => "`$STRING`",
-                      },
-                    ],
-                  },
                   "kind" => "http",
                   "method" => "GET",
                   "orig" => "/senate-trading",
@@ -2468,19 +2496,38 @@ module FinancialDataConfig
                       "lit" => "senate-trading",
                     },
                   ],
+                  "parts" => [
+                    "senate-trading",
+                  ],
+                  "rename" => {},
+                  "transform" => {
+                    "req" => "`reqdata`",
+                    "res" => "`body`",
+                  },
+                  "args" => {
+                    "query" => [
+                      {
+                        "name" => "format",
+                        "orig" => "format",
+                        "type" => "`$STRING`",
+                        "kind" => "query",
+                        "example" => "json",
+                      },
+                      {
+                        "name" => "key",
+                        "orig" => "key",
+                        "type" => "`$STRING`",
+                        "kind" => "query",
+                        "reqd" => true,
+                      },
+                    ],
+                  },
                   "select" => {
                     "exist" => [
                       "format",
                       "key",
                     ],
                   },
-                  "transform" => {
-                    "req" => "`reqdata`",
-                    "res" => "`body`",
-                  },
-                  "parts" => [
-                    "senate-trading",
-                  ],
                 },
               ],
             },
@@ -2498,31 +2545,6 @@ module FinancialDataConfig
               "name" => "load",
               "points" => [
                 {
-                  "args" => {
-                    "query" => [
-                      {
-                        "example" => "json",
-                        "kind" => "query",
-                        "name" => "format",
-                        "orig" => "format",
-                        "type" => "`$STRING`",
-                      },
-                      {
-                        "kind" => "query",
-                        "name" => "identifier",
-                        "orig" => "identifier",
-                        "reqd" => true,
-                        "type" => "`$STRING`",
-                      },
-                      {
-                        "kind" => "query",
-                        "name" => "key",
-                        "orig" => "key",
-                        "reqd" => true,
-                        "type" => "`$STRING`",
-                      },
-                    ],
-                  },
                   "kind" => "http",
                   "method" => "GET",
                   "orig" => "/institutional-holdings",
@@ -2531,6 +2553,39 @@ module FinancialDataConfig
                       "lit" => "institutional-holdings",
                     },
                   ],
+                  "parts" => [
+                    "institutional-holdings",
+                  ],
+                  "rename" => {},
+                  "transform" => {
+                    "req" => "`reqdata`",
+                    "res" => "`body`",
+                  },
+                  "args" => {
+                    "query" => [
+                      {
+                        "name" => "format",
+                        "orig" => "format",
+                        "type" => "`$STRING`",
+                        "kind" => "query",
+                        "example" => "json",
+                      },
+                      {
+                        "name" => "identifier",
+                        "orig" => "identifier",
+                        "type" => "`$STRING`",
+                        "kind" => "query",
+                        "reqd" => true,
+                      },
+                      {
+                        "name" => "key",
+                        "orig" => "key",
+                        "type" => "`$STRING`",
+                        "kind" => "query",
+                        "reqd" => true,
+                      },
+                    ],
+                  },
                   "select" => {
                     "exist" => [
                       "format",
@@ -2538,33 +2593,8 @@ module FinancialDataConfig
                       "key",
                     ],
                   },
-                  "transform" => {
-                    "req" => "`reqdata`",
-                    "res" => "`body`",
-                  },
-                  "parts" => [
-                    "institutional-holdings",
-                  ],
                 },
                 {
-                  "args" => {
-                    "query" => [
-                      {
-                        "example" => "json",
-                        "kind" => "query",
-                        "name" => "format",
-                        "orig" => "format",
-                        "type" => "`$STRING`",
-                      },
-                      {
-                        "kind" => "query",
-                        "name" => "key",
-                        "orig" => "key",
-                        "reqd" => true,
-                        "type" => "`$STRING`",
-                      },
-                    ],
-                  },
                   "kind" => "http",
                   "method" => "GET",
                   "orig" => "/institutional-investors",
@@ -2573,39 +2603,40 @@ module FinancialDataConfig
                       "lit" => "institutional-investors",
                     },
                   ],
+                  "parts" => [
+                    "institutional-investors",
+                  ],
+                  "rename" => {},
+                  "transform" => {
+                    "req" => "`reqdata`",
+                    "res" => "`body`",
+                  },
+                  "args" => {
+                    "query" => [
+                      {
+                        "name" => "format",
+                        "orig" => "format",
+                        "type" => "`$STRING`",
+                        "kind" => "query",
+                        "example" => "json",
+                      },
+                      {
+                        "name" => "key",
+                        "orig" => "key",
+                        "type" => "`$STRING`",
+                        "kind" => "query",
+                        "reqd" => true,
+                      },
+                    ],
+                  },
                   "select" => {
                     "exist" => [
                       "format",
                       "key",
                     ],
                   },
-                  "transform" => {
-                    "req" => "`reqdata`",
-                    "res" => "`body`",
-                  },
-                  "parts" => [
-                    "institutional-investors",
-                  ],
                 },
                 {
-                  "args" => {
-                    "query" => [
-                      {
-                        "example" => "json",
-                        "kind" => "query",
-                        "name" => "format",
-                        "orig" => "format",
-                        "type" => "`$STRING`",
-                      },
-                      {
-                        "kind" => "query",
-                        "name" => "key",
-                        "orig" => "key",
-                        "reqd" => true,
-                        "type" => "`$STRING`",
-                      },
-                    ],
-                  },
                   "kind" => "http",
                   "method" => "GET",
                   "orig" => "/institutional-portfolio-statistics",
@@ -2614,19 +2645,38 @@ module FinancialDataConfig
                       "lit" => "institutional-portfolio-statistics",
                     },
                   ],
+                  "parts" => [
+                    "institutional-portfolio-statistics",
+                  ],
+                  "rename" => {},
+                  "transform" => {
+                    "req" => "`reqdata`",
+                    "res" => "`body`",
+                  },
+                  "args" => {
+                    "query" => [
+                      {
+                        "name" => "format",
+                        "orig" => "format",
+                        "type" => "`$STRING`",
+                        "kind" => "query",
+                        "example" => "json",
+                      },
+                      {
+                        "name" => "key",
+                        "orig" => "key",
+                        "type" => "`$STRING`",
+                        "kind" => "query",
+                        "reqd" => true,
+                      },
+                    ],
+                  },
                   "select" => {
                     "exist" => [
                       "format",
                       "key",
                     ],
                   },
-                  "transform" => {
-                    "req" => "`reqdata`",
-                    "res" => "`body`",
-                  },
-                  "parts" => [
-                    "institutional-portfolio-statistics",
-                  ],
                 },
               ],
             },
@@ -2644,24 +2694,6 @@ module FinancialDataConfig
               "name" => "load",
               "points" => [
                 {
-                  "args" => {
-                    "query" => [
-                      {
-                        "example" => "json",
-                        "kind" => "query",
-                        "name" => "format",
-                        "orig" => "format",
-                        "type" => "`$STRING`",
-                      },
-                      {
-                        "kind" => "query",
-                        "name" => "key",
-                        "orig" => "key",
-                        "reqd" => true,
-                        "type" => "`$STRING`",
-                      },
-                    ],
-                  },
                   "kind" => "http",
                   "method" => "GET",
                   "orig" => "/investment-adviser-information",
@@ -2670,39 +2702,40 @@ module FinancialDataConfig
                       "lit" => "investment-adviser-information",
                     },
                   ],
+                  "parts" => [
+                    "investment-adviser-information",
+                  ],
+                  "rename" => {},
+                  "transform" => {
+                    "req" => "`reqdata`",
+                    "res" => "`body`",
+                  },
+                  "args" => {
+                    "query" => [
+                      {
+                        "name" => "format",
+                        "orig" => "format",
+                        "type" => "`$STRING`",
+                        "kind" => "query",
+                        "example" => "json",
+                      },
+                      {
+                        "name" => "key",
+                        "orig" => "key",
+                        "type" => "`$STRING`",
+                        "kind" => "query",
+                        "reqd" => true,
+                      },
+                    ],
+                  },
                   "select" => {
                     "exist" => [
                       "format",
                       "key",
                     ],
                   },
-                  "transform" => {
-                    "req" => "`reqdata`",
-                    "res" => "`body`",
-                  },
-                  "parts" => [
-                    "investment-adviser-information",
-                  ],
                 },
                 {
-                  "args" => {
-                    "query" => [
-                      {
-                        "example" => "json",
-                        "kind" => "query",
-                        "name" => "format",
-                        "orig" => "format",
-                        "type" => "`$STRING`",
-                      },
-                      {
-                        "kind" => "query",
-                        "name" => "key",
-                        "orig" => "key",
-                        "reqd" => true,
-                        "type" => "`$STRING`",
-                      },
-                    ],
-                  },
                   "kind" => "http",
                   "method" => "GET",
                   "orig" => "/investment-adviser-names",
@@ -2711,19 +2744,38 @@ module FinancialDataConfig
                       "lit" => "investment-adviser-names",
                     },
                   ],
+                  "parts" => [
+                    "investment-adviser-names",
+                  ],
+                  "rename" => {},
+                  "transform" => {
+                    "req" => "`reqdata`",
+                    "res" => "`body`",
+                  },
+                  "args" => {
+                    "query" => [
+                      {
+                        "name" => "format",
+                        "orig" => "format",
+                        "type" => "`$STRING`",
+                        "kind" => "query",
+                        "example" => "json",
+                      },
+                      {
+                        "name" => "key",
+                        "orig" => "key",
+                        "type" => "`$STRING`",
+                        "kind" => "query",
+                        "reqd" => true,
+                      },
+                    ],
+                  },
                   "select" => {
                     "exist" => [
                       "format",
                       "key",
                     ],
                   },
-                  "transform" => {
-                    "req" => "`reqdata`",
-                    "res" => "`body`",
-                  },
-                  "parts" => [
-                    "investment-adviser-names",
-                  ],
                 },
               ],
             },
@@ -2735,61 +2787,73 @@ module FinancialDataConfig
         "market_data" => {
           "fields" => [
             {
-              "format" => "float",
               "name" => "change",
+              "title" => "Change",
               "type" => "`$NUMBER`",
+              "format" => "float",
             },
             {
-              "format" => "float",
               "name" => "close",
+              "title" => "Close",
               "type" => "`$NUMBER`",
+              "format" => "float",
             },
             {
-              "format" => "date",
               "name" => "date",
+              "title" => "Date",
               "type" => "`$STRING`",
+              "format" => "date",
             },
             {
-              "format" => "float",
               "name" => "high",
+              "title" => "High",
               "type" => "`$NUMBER`",
+              "format" => "float",
             },
             {
-              "format" => "float",
               "name" => "low",
+              "title" => "Low",
               "type" => "`$NUMBER`",
+              "format" => "float",
             },
             {
-              "format" => "float",
               "name" => "open",
+              "title" => "Open",
               "type" => "`$NUMBER`",
+              "format" => "float",
             },
             {
-              "format" => "float",
               "name" => "percentage_change",
+              "title" => "Percentage Change",
               "type" => "`$NUMBER`",
+              "format" => "float",
             },
             {
-              "format" => "float",
               "name" => "price",
+              "title" => "Price",
               "type" => "`$NUMBER`",
+              "format" => "float",
             },
             {
               "name" => "registrant_name",
+              "title" => "Registrant Name",
               "type" => "`$STRING`",
             },
             {
               "name" => "time",
+              "title" => "Time",
               "type" => "`$STRING`",
             },
             {
               "name" => "trading_symbol",
+              "title" => "Trading Symbol",
               "type" => "`$STRING`",
             },
             {
-              "format" => "float",
               "name" => "volume",
+              "title" => "Volume",
               "type" => "`$NUMBER`",
+              "format" => "float",
             },
           ],
           "name" => "market_data",
@@ -2799,47 +2863,6 @@ module FinancialDataConfig
               "name" => "list",
               "points" => [
                 {
-                  "args" => {
-                    "query" => [
-                      {
-                        "example" => "2020-01-15",
-                        "kind" => "query",
-                        "name" => "date",
-                        "orig" => "date",
-                        "reqd" => true,
-                        "type" => "`$STRING`",
-                      },
-                      {
-                        "example" => "json",
-                        "kind" => "query",
-                        "name" => "format",
-                        "orig" => "format",
-                        "type" => "`$STRING`",
-                      },
-                      {
-                        "example" => "MSFT",
-                        "kind" => "query",
-                        "name" => "identifier",
-                        "orig" => "identifier",
-                        "reqd" => true,
-                        "type" => "`$STRING`",
-                      },
-                      {
-                        "kind" => "query",
-                        "name" => "key",
-                        "orig" => "key",
-                        "reqd" => true,
-                        "type" => "`$STRING`",
-                      },
-                      {
-                        "example" => 300,
-                        "kind" => "query",
-                        "name" => "offset",
-                        "orig" => "offset",
-                        "type" => "`$INTEGER`",
-                      },
-                    ],
-                  },
                   "kind" => "http",
                   "method" => "GET",
                   "orig" => "/minute-prices",
@@ -2848,6 +2871,55 @@ module FinancialDataConfig
                       "lit" => "minute-prices",
                     },
                   ],
+                  "parts" => [
+                    "minute-prices",
+                  ],
+                  "rename" => {},
+                  "transform" => {
+                    "req" => "`reqdata`",
+                    "res" => "`body`",
+                  },
+                  "args" => {
+                    "query" => [
+                      {
+                        "name" => "date",
+                        "orig" => "date",
+                        "type" => "`$STRING`",
+                        "kind" => "query",
+                        "reqd" => true,
+                        "example" => "2020-01-15",
+                      },
+                      {
+                        "name" => "format",
+                        "orig" => "format",
+                        "type" => "`$STRING`",
+                        "kind" => "query",
+                        "example" => "json",
+                      },
+                      {
+                        "name" => "identifier",
+                        "orig" => "identifier",
+                        "type" => "`$STRING`",
+                        "kind" => "query",
+                        "reqd" => true,
+                        "example" => "MSFT",
+                      },
+                      {
+                        "name" => "key",
+                        "orig" => "key",
+                        "type" => "`$STRING`",
+                        "kind" => "query",
+                        "reqd" => true,
+                      },
+                      {
+                        "name" => "offset",
+                        "orig" => "offset",
+                        "type" => "`$INTEGER`",
+                        "kind" => "query",
+                        "example" => 300,
+                      },
+                    ],
+                  },
                   "select" => {
                     "exist" => [
                       "date",
@@ -2857,48 +2929,8 @@ module FinancialDataConfig
                       "offset",
                     ],
                   },
-                  "transform" => {
-                    "req" => "`reqdata`",
-                    "res" => "`body`",
-                  },
-                  "parts" => [
-                    "minute-prices",
-                  ],
                 },
                 {
-                  "args" => {
-                    "query" => [
-                      {
-                        "example" => "json",
-                        "kind" => "query",
-                        "name" => "format",
-                        "orig" => "format",
-                        "type" => "`$STRING`",
-                      },
-                      {
-                        "example" => "SHEL.L",
-                        "kind" => "query",
-                        "name" => "identifier",
-                        "orig" => "identifier",
-                        "reqd" => true,
-                        "type" => "`$STRING`",
-                      },
-                      {
-                        "kind" => "query",
-                        "name" => "key",
-                        "orig" => "key",
-                        "reqd" => true,
-                        "type" => "`$STRING`",
-                      },
-                      {
-                        "example" => 300,
-                        "kind" => "query",
-                        "name" => "offset",
-                        "orig" => "offset",
-                        "type" => "`$INTEGER`",
-                      },
-                    ],
-                  },
                   "kind" => "http",
                   "method" => "GET",
                   "orig" => "/international-stock-prices",
@@ -2907,6 +2939,47 @@ module FinancialDataConfig
                       "lit" => "international-stock-prices",
                     },
                   ],
+                  "parts" => [
+                    "international-stock-prices",
+                  ],
+                  "rename" => {},
+                  "transform" => {
+                    "req" => "`reqdata`",
+                    "res" => "`body`",
+                  },
+                  "args" => {
+                    "query" => [
+                      {
+                        "name" => "format",
+                        "orig" => "format",
+                        "type" => "`$STRING`",
+                        "kind" => "query",
+                        "example" => "json",
+                      },
+                      {
+                        "name" => "identifier",
+                        "orig" => "identifier",
+                        "type" => "`$STRING`",
+                        "kind" => "query",
+                        "reqd" => true,
+                        "example" => "SHEL.L",
+                      },
+                      {
+                        "name" => "key",
+                        "orig" => "key",
+                        "type" => "`$STRING`",
+                        "kind" => "query",
+                        "reqd" => true,
+                      },
+                      {
+                        "name" => "offset",
+                        "orig" => "offset",
+                        "type" => "`$INTEGER`",
+                        "kind" => "query",
+                        "example" => 300,
+                      },
+                    ],
+                  },
                   "select" => {
                     "exist" => [
                       "format",
@@ -2915,47 +2988,8 @@ module FinancialDataConfig
                       "offset",
                     ],
                   },
-                  "transform" => {
-                    "req" => "`reqdata`",
-                    "res" => "`body`",
-                  },
-                  "parts" => [
-                    "international-stock-prices",
-                  ],
                 },
                 {
-                  "args" => {
-                    "query" => [
-                      {
-                        "example" => "json",
-                        "kind" => "query",
-                        "name" => "format",
-                        "orig" => "format",
-                        "type" => "`$STRING`",
-                      },
-                      {
-                        "kind" => "query",
-                        "name" => "identifier",
-                        "orig" => "identifier",
-                        "reqd" => true,
-                        "type" => "`$STRING`",
-                      },
-                      {
-                        "kind" => "query",
-                        "name" => "key",
-                        "orig" => "key",
-                        "reqd" => true,
-                        "type" => "`$STRING`",
-                      },
-                      {
-                        "example" => 0,
-                        "kind" => "query",
-                        "name" => "offset",
-                        "orig" => "offset",
-                        "type" => "`$INTEGER`",
-                      },
-                    ],
-                  },
                   "kind" => "http",
                   "method" => "GET",
                   "orig" => "/latest-prices",
@@ -2964,6 +2998,46 @@ module FinancialDataConfig
                       "lit" => "latest-prices",
                     },
                   ],
+                  "parts" => [
+                    "latest-prices",
+                  ],
+                  "rename" => {},
+                  "transform" => {
+                    "req" => "`reqdata`",
+                    "res" => "`body`",
+                  },
+                  "args" => {
+                    "query" => [
+                      {
+                        "name" => "format",
+                        "orig" => "format",
+                        "type" => "`$STRING`",
+                        "kind" => "query",
+                        "example" => "json",
+                      },
+                      {
+                        "name" => "identifier",
+                        "orig" => "identifier",
+                        "type" => "`$STRING`",
+                        "kind" => "query",
+                        "reqd" => true,
+                      },
+                      {
+                        "name" => "key",
+                        "orig" => "key",
+                        "type" => "`$STRING`",
+                        "kind" => "query",
+                        "reqd" => true,
+                      },
+                      {
+                        "name" => "offset",
+                        "orig" => "offset",
+                        "type" => "`$INTEGER`",
+                        "kind" => "query",
+                        "example" => 0,
+                      },
+                    ],
+                  },
                   "select" => {
                     "exist" => [
                       "format",
@@ -2972,48 +3046,8 @@ module FinancialDataConfig
                       "offset",
                     ],
                   },
-                  "transform" => {
-                    "req" => "`reqdata`",
-                    "res" => "`body`",
-                  },
-                  "parts" => [
-                    "latest-prices",
-                  ],
                 },
                 {
-                  "args" => {
-                    "query" => [
-                      {
-                        "example" => "json",
-                        "kind" => "query",
-                        "name" => "format",
-                        "orig" => "format",
-                        "type" => "`$STRING`",
-                      },
-                      {
-                        "example" => "MSFT",
-                        "kind" => "query",
-                        "name" => "identifier",
-                        "orig" => "identifier",
-                        "reqd" => true,
-                        "type" => "`$STRING`",
-                      },
-                      {
-                        "kind" => "query",
-                        "name" => "key",
-                        "orig" => "key",
-                        "reqd" => true,
-                        "type" => "`$STRING`",
-                      },
-                      {
-                        "example" => 300,
-                        "kind" => "query",
-                        "name" => "offset",
-                        "orig" => "offset",
-                        "type" => "`$INTEGER`",
-                      },
-                    ],
-                  },
                   "kind" => "http",
                   "method" => "GET",
                   "orig" => "/stock-prices",
@@ -3022,6 +3056,47 @@ module FinancialDataConfig
                       "lit" => "stock-prices",
                     },
                   ],
+                  "parts" => [
+                    "stock-prices",
+                  ],
+                  "rename" => {},
+                  "transform" => {
+                    "req" => "`reqdata`",
+                    "res" => "`body`",
+                  },
+                  "args" => {
+                    "query" => [
+                      {
+                        "name" => "format",
+                        "orig" => "format",
+                        "type" => "`$STRING`",
+                        "kind" => "query",
+                        "example" => "json",
+                      },
+                      {
+                        "name" => "identifier",
+                        "orig" => "identifier",
+                        "type" => "`$STRING`",
+                        "kind" => "query",
+                        "reqd" => true,
+                        "example" => "MSFT",
+                      },
+                      {
+                        "name" => "key",
+                        "orig" => "key",
+                        "type" => "`$STRING`",
+                        "kind" => "query",
+                        "reqd" => true,
+                      },
+                      {
+                        "name" => "offset",
+                        "orig" => "offset",
+                        "type" => "`$INTEGER`",
+                        "kind" => "query",
+                        "example" => 300,
+                      },
+                    ],
+                  },
                   "select" => {
                     "exist" => [
                       "format",
@@ -3030,41 +3105,8 @@ module FinancialDataConfig
                       "offset",
                     ],
                   },
-                  "transform" => {
-                    "req" => "`reqdata`",
-                    "res" => "`body`",
-                  },
-                  "parts" => [
-                    "stock-prices",
-                  ],
                 },
                 {
-                  "args" => {
-                    "query" => [
-                      {
-                        "example" => "json",
-                        "kind" => "query",
-                        "name" => "format",
-                        "orig" => "format",
-                        "type" => "`$STRING`",
-                      },
-                      {
-                        "example" => "MSFT,AAPL",
-                        "kind" => "query",
-                        "name" => "identifier",
-                        "orig" => "identifier",
-                        "reqd" => true,
-                        "type" => "`$STRING`",
-                      },
-                      {
-                        "kind" => "query",
-                        "name" => "key",
-                        "orig" => "key",
-                        "reqd" => true,
-                        "type" => "`$STRING`",
-                      },
-                    ],
-                  },
                   "kind" => "http",
                   "method" => "GET",
                   "orig" => "/stock-quotes",
@@ -3073,6 +3115,40 @@ module FinancialDataConfig
                       "lit" => "stock-quotes",
                     },
                   ],
+                  "parts" => [
+                    "stock-quotes",
+                  ],
+                  "rename" => {},
+                  "transform" => {
+                    "req" => "`reqdata`",
+                    "res" => "`body`",
+                  },
+                  "args" => {
+                    "query" => [
+                      {
+                        "name" => "format",
+                        "orig" => "format",
+                        "type" => "`$STRING`",
+                        "kind" => "query",
+                        "example" => "json",
+                      },
+                      {
+                        "name" => "identifier",
+                        "orig" => "identifier",
+                        "type" => "`$STRING`",
+                        "kind" => "query",
+                        "reqd" => true,
+                        "example" => "MSFT,AAPL",
+                      },
+                      {
+                        "name" => "key",
+                        "orig" => "key",
+                        "type" => "`$STRING`",
+                        "kind" => "query",
+                        "reqd" => true,
+                      },
+                    ],
+                  },
                   "select" => {
                     "exist" => [
                       "format",
@@ -3080,13 +3156,6 @@ module FinancialDataConfig
                       "key",
                     ],
                   },
-                  "transform" => {
-                    "req" => "`reqdata`",
-                    "res" => "`body`",
-                  },
-                  "parts" => [
-                    "stock-quotes",
-                  ],
                 },
               ],
             },
@@ -3095,38 +3164,6 @@ module FinancialDataConfig
               "name" => "load",
               "points" => [
                 {
-                  "args" => {
-                    "query" => [
-                      {
-                        "example" => "json",
-                        "kind" => "query",
-                        "name" => "format",
-                        "orig" => "format",
-                        "type" => "`$STRING`",
-                      },
-                      {
-                        "kind" => "query",
-                        "name" => "identifier",
-                        "orig" => "identifier",
-                        "reqd" => true,
-                        "type" => "`$STRING`",
-                      },
-                      {
-                        "kind" => "query",
-                        "name" => "key",
-                        "orig" => "key",
-                        "reqd" => true,
-                        "type" => "`$STRING`",
-                      },
-                      {
-                        "example" => 0,
-                        "kind" => "query",
-                        "name" => "offset",
-                        "orig" => "offset",
-                        "type" => "`$INTEGER`",
-                      },
-                    ],
-                  },
                   "kind" => "http",
                   "method" => "GET",
                   "orig" => "/commodity-prices",
@@ -3135,6 +3172,46 @@ module FinancialDataConfig
                       "lit" => "commodity-prices",
                     },
                   ],
+                  "parts" => [
+                    "commodity-prices",
+                  ],
+                  "rename" => {},
+                  "transform" => {
+                    "req" => "`reqdata`",
+                    "res" => "`body`",
+                  },
+                  "args" => {
+                    "query" => [
+                      {
+                        "name" => "format",
+                        "orig" => "format",
+                        "type" => "`$STRING`",
+                        "kind" => "query",
+                        "example" => "json",
+                      },
+                      {
+                        "name" => "identifier",
+                        "orig" => "identifier",
+                        "type" => "`$STRING`",
+                        "kind" => "query",
+                        "reqd" => true,
+                      },
+                      {
+                        "name" => "key",
+                        "orig" => "key",
+                        "type" => "`$STRING`",
+                        "kind" => "query",
+                        "reqd" => true,
+                      },
+                      {
+                        "name" => "offset",
+                        "orig" => "offset",
+                        "type" => "`$INTEGER`",
+                        "kind" => "query",
+                        "example" => 0,
+                      },
+                    ],
+                  },
                   "select" => {
                     "exist" => [
                       "format",
@@ -3143,47 +3220,8 @@ module FinancialDataConfig
                       "offset",
                     ],
                   },
-                  "transform" => {
-                    "req" => "`reqdata`",
-                    "res" => "`body`",
-                  },
-                  "parts" => [
-                    "commodity-prices",
-                  ],
                 },
                 {
-                  "args" => {
-                    "query" => [
-                      {
-                        "example" => "json",
-                        "kind" => "query",
-                        "name" => "format",
-                        "orig" => "format",
-                        "type" => "`$STRING`",
-                      },
-                      {
-                        "kind" => "query",
-                        "name" => "identifier",
-                        "orig" => "identifier",
-                        "reqd" => true,
-                        "type" => "`$STRING`",
-                      },
-                      {
-                        "kind" => "query",
-                        "name" => "key",
-                        "orig" => "key",
-                        "reqd" => true,
-                        "type" => "`$STRING`",
-                      },
-                      {
-                        "example" => 0,
-                        "kind" => "query",
-                        "name" => "offset",
-                        "orig" => "offset",
-                        "type" => "`$INTEGER`",
-                      },
-                    ],
-                  },
                   "kind" => "http",
                   "method" => "GET",
                   "orig" => "/otc-prices",
@@ -3192,6 +3230,46 @@ module FinancialDataConfig
                       "lit" => "otc-prices",
                     },
                   ],
+                  "parts" => [
+                    "otc-prices",
+                  ],
+                  "rename" => {},
+                  "transform" => {
+                    "req" => "`reqdata`",
+                    "res" => "`body`",
+                  },
+                  "args" => {
+                    "query" => [
+                      {
+                        "name" => "format",
+                        "orig" => "format",
+                        "type" => "`$STRING`",
+                        "kind" => "query",
+                        "example" => "json",
+                      },
+                      {
+                        "name" => "identifier",
+                        "orig" => "identifier",
+                        "type" => "`$STRING`",
+                        "kind" => "query",
+                        "reqd" => true,
+                      },
+                      {
+                        "name" => "key",
+                        "orig" => "key",
+                        "type" => "`$STRING`",
+                        "kind" => "query",
+                        "reqd" => true,
+                      },
+                      {
+                        "name" => "offset",
+                        "orig" => "offset",
+                        "type" => "`$INTEGER`",
+                        "kind" => "query",
+                        "example" => 0,
+                      },
+                    ],
+                  },
                   "select" => {
                     "exist" => [
                       "format",
@@ -3200,40 +3278,8 @@ module FinancialDataConfig
                       "offset",
                     ],
                   },
-                  "transform" => {
-                    "req" => "`reqdata`",
-                    "res" => "`body`",
-                  },
-                  "parts" => [
-                    "otc-prices",
-                  ],
                 },
                 {
-                  "args" => {
-                    "query" => [
-                      {
-                        "example" => "json",
-                        "kind" => "query",
-                        "name" => "format",
-                        "orig" => "format",
-                        "type" => "`$STRING`",
-                      },
-                      {
-                        "kind" => "query",
-                        "name" => "identifier",
-                        "orig" => "identifier",
-                        "reqd" => true,
-                        "type" => "`$STRING`",
-                      },
-                      {
-                        "kind" => "query",
-                        "name" => "key",
-                        "orig" => "key",
-                        "reqd" => true,
-                        "type" => "`$STRING`",
-                      },
-                    ],
-                  },
                   "kind" => "http",
                   "method" => "GET",
                   "orig" => "/otc-volume",
@@ -3242,6 +3288,39 @@ module FinancialDataConfig
                       "lit" => "otc-volume",
                     },
                   ],
+                  "parts" => [
+                    "otc-volume",
+                  ],
+                  "rename" => {},
+                  "transform" => {
+                    "req" => "`reqdata`",
+                    "res" => "`body`",
+                  },
+                  "args" => {
+                    "query" => [
+                      {
+                        "name" => "format",
+                        "orig" => "format",
+                        "type" => "`$STRING`",
+                        "kind" => "query",
+                        "example" => "json",
+                      },
+                      {
+                        "name" => "identifier",
+                        "orig" => "identifier",
+                        "type" => "`$STRING`",
+                        "kind" => "query",
+                        "reqd" => true,
+                      },
+                      {
+                        "name" => "key",
+                        "orig" => "key",
+                        "type" => "`$STRING`",
+                        "kind" => "query",
+                        "reqd" => true,
+                      },
+                    ],
+                  },
                   "select" => {
                     "exist" => [
                       "format",
@@ -3249,13 +3328,6 @@ module FinancialDataConfig
                       "key",
                     ],
                   },
-                  "transform" => {
-                    "req" => "`reqdata`",
-                    "res" => "`body`",
-                  },
-                  "parts" => [
-                    "otc-volume",
-                  ],
                 },
               ],
             },
@@ -3273,38 +3345,6 @@ module FinancialDataConfig
               "name" => "load",
               "points" => [
                 {
-                  "args" => {
-                    "query" => [
-                      {
-                        "example" => "json",
-                        "kind" => "query",
-                        "name" => "format",
-                        "orig" => "format",
-                        "type" => "`$STRING`",
-                      },
-                      {
-                        "kind" => "query",
-                        "name" => "identifier",
-                        "orig" => "identifier",
-                        "reqd" => true,
-                        "type" => "`$STRING`",
-                      },
-                      {
-                        "kind" => "query",
-                        "name" => "key",
-                        "orig" => "key",
-                        "reqd" => true,
-                        "type" => "`$STRING`",
-                      },
-                      {
-                        "example" => 0,
-                        "kind" => "query",
-                        "name" => "offset",
-                        "orig" => "offset",
-                        "type" => "`$INTEGER`",
-                      },
-                    ],
-                  },
                   "kind" => "http",
                   "method" => "GET",
                   "orig" => "/index-prices",
@@ -3313,6 +3353,46 @@ module FinancialDataConfig
                       "lit" => "index-prices",
                     },
                   ],
+                  "parts" => [
+                    "index-prices",
+                  ],
+                  "rename" => {},
+                  "transform" => {
+                    "req" => "`reqdata`",
+                    "res" => "`body`",
+                  },
+                  "args" => {
+                    "query" => [
+                      {
+                        "name" => "format",
+                        "orig" => "format",
+                        "type" => "`$STRING`",
+                        "kind" => "query",
+                        "example" => "json",
+                      },
+                      {
+                        "name" => "identifier",
+                        "orig" => "identifier",
+                        "type" => "`$STRING`",
+                        "kind" => "query",
+                        "reqd" => true,
+                      },
+                      {
+                        "name" => "key",
+                        "orig" => "key",
+                        "type" => "`$STRING`",
+                        "kind" => "query",
+                        "reqd" => true,
+                      },
+                      {
+                        "name" => "offset",
+                        "orig" => "offset",
+                        "type" => "`$INTEGER`",
+                        "kind" => "query",
+                        "example" => 0,
+                      },
+                    ],
+                  },
                   "select" => {
                     "exist" => [
                       "format",
@@ -3321,40 +3401,8 @@ module FinancialDataConfig
                       "offset",
                     ],
                   },
-                  "transform" => {
-                    "req" => "`reqdata`",
-                    "res" => "`body`",
-                  },
-                  "parts" => [
-                    "index-prices",
-                  ],
                 },
                 {
-                  "args" => {
-                    "query" => [
-                      {
-                        "example" => "json",
-                        "kind" => "query",
-                        "name" => "format",
-                        "orig" => "format",
-                        "type" => "`$STRING`",
-                      },
-                      {
-                        "kind" => "query",
-                        "name" => "identifier",
-                        "orig" => "identifier",
-                        "reqd" => true,
-                        "type" => "`$STRING`",
-                      },
-                      {
-                        "kind" => "query",
-                        "name" => "key",
-                        "orig" => "key",
-                        "reqd" => true,
-                        "type" => "`$STRING`",
-                      },
-                    ],
-                  },
                   "kind" => "http",
                   "method" => "GET",
                   "orig" => "/index-constituents",
@@ -3363,6 +3411,39 @@ module FinancialDataConfig
                       "lit" => "index-constituents",
                     },
                   ],
+                  "parts" => [
+                    "index-constituents",
+                  ],
+                  "rename" => {},
+                  "transform" => {
+                    "req" => "`reqdata`",
+                    "res" => "`body`",
+                  },
+                  "args" => {
+                    "query" => [
+                      {
+                        "name" => "format",
+                        "orig" => "format",
+                        "type" => "`$STRING`",
+                        "kind" => "query",
+                        "example" => "json",
+                      },
+                      {
+                        "name" => "identifier",
+                        "orig" => "identifier",
+                        "type" => "`$STRING`",
+                        "kind" => "query",
+                        "reqd" => true,
+                      },
+                      {
+                        "name" => "key",
+                        "orig" => "key",
+                        "type" => "`$STRING`",
+                        "kind" => "query",
+                        "reqd" => true,
+                      },
+                    ],
+                  },
                   "select" => {
                     "exist" => [
                       "format",
@@ -3370,40 +3451,8 @@ module FinancialDataConfig
                       "key",
                     ],
                   },
-                  "transform" => {
-                    "req" => "`reqdata`",
-                    "res" => "`body`",
-                  },
-                  "parts" => [
-                    "index-constituents",
-                  ],
                 },
                 {
-                  "args" => {
-                    "query" => [
-                      {
-                        "example" => "json",
-                        "kind" => "query",
-                        "name" => "format",
-                        "orig" => "format",
-                        "type" => "`$STRING`",
-                      },
-                      {
-                        "kind" => "query",
-                        "name" => "identifier",
-                        "orig" => "identifier",
-                        "reqd" => true,
-                        "type" => "`$STRING`",
-                      },
-                      {
-                        "kind" => "query",
-                        "name" => "key",
-                        "orig" => "key",
-                        "reqd" => true,
-                        "type" => "`$STRING`",
-                      },
-                    ],
-                  },
                   "kind" => "http",
                   "method" => "GET",
                   "orig" => "/index-quotes",
@@ -3412,6 +3461,39 @@ module FinancialDataConfig
                       "lit" => "index-quotes",
                     },
                   ],
+                  "parts" => [
+                    "index-quotes",
+                  ],
+                  "rename" => {},
+                  "transform" => {
+                    "req" => "`reqdata`",
+                    "res" => "`body`",
+                  },
+                  "args" => {
+                    "query" => [
+                      {
+                        "name" => "format",
+                        "orig" => "format",
+                        "type" => "`$STRING`",
+                        "kind" => "query",
+                        "example" => "json",
+                      },
+                      {
+                        "name" => "identifier",
+                        "orig" => "identifier",
+                        "type" => "`$STRING`",
+                        "kind" => "query",
+                        "reqd" => true,
+                      },
+                      {
+                        "name" => "key",
+                        "orig" => "key",
+                        "type" => "`$STRING`",
+                        "kind" => "query",
+                        "reqd" => true,
+                      },
+                    ],
+                  },
                   "select" => {
                     "exist" => [
                       "format",
@@ -3419,33 +3501,8 @@ module FinancialDataConfig
                       "key",
                     ],
                   },
-                  "transform" => {
-                    "req" => "`reqdata`",
-                    "res" => "`body`",
-                  },
-                  "parts" => [
-                    "index-quotes",
-                  ],
                 },
                 {
-                  "args" => {
-                    "query" => [
-                      {
-                        "example" => "json",
-                        "kind" => "query",
-                        "name" => "format",
-                        "orig" => "format",
-                        "type" => "`$STRING`",
-                      },
-                      {
-                        "kind" => "query",
-                        "name" => "key",
-                        "orig" => "key",
-                        "reqd" => true,
-                        "type" => "`$STRING`",
-                      },
-                    ],
-                  },
                   "kind" => "http",
                   "method" => "GET",
                   "orig" => "/index-symbols",
@@ -3454,19 +3511,38 @@ module FinancialDataConfig
                       "lit" => "index-symbols",
                     },
                   ],
+                  "parts" => [
+                    "index-symbols",
+                  ],
+                  "rename" => {},
+                  "transform" => {
+                    "req" => "`reqdata`",
+                    "res" => "`body`",
+                  },
+                  "args" => {
+                    "query" => [
+                      {
+                        "name" => "format",
+                        "orig" => "format",
+                        "type" => "`$STRING`",
+                        "kind" => "query",
+                        "example" => "json",
+                      },
+                      {
+                        "name" => "key",
+                        "orig" => "key",
+                        "type" => "`$STRING`",
+                        "kind" => "query",
+                        "reqd" => true,
+                      },
+                    ],
+                  },
                   "select" => {
                     "exist" => [
                       "format",
                       "key",
                     ],
                   },
-                  "transform" => {
-                    "req" => "`reqdata`",
-                    "res" => "`body`",
-                  },
-                  "parts" => [
-                    "index-symbols",
-                  ],
                 },
               ],
             },
@@ -3484,30 +3560,6 @@ module FinancialDataConfig
               "name" => "load",
               "points" => [
                 {
-                  "args" => {
-                    "query" => [
-                      {
-                        "example" => "json",
-                        "kind" => "query",
-                        "name" => "format",
-                        "orig" => "format",
-                        "type" => "`$STRING`",
-                      },
-                      {
-                        "kind" => "query",
-                        "name" => "identifier",
-                        "orig" => "identifier",
-                        "type" => "`$STRING`",
-                      },
-                      {
-                        "kind" => "query",
-                        "name" => "key",
-                        "orig" => "key",
-                        "reqd" => true,
-                        "type" => "`$STRING`",
-                      },
-                    ],
-                  },
                   "kind" => "http",
                   "method" => "GET",
                   "orig" => "/press-releases",
@@ -3516,6 +3568,38 @@ module FinancialDataConfig
                       "lit" => "press-releases",
                     },
                   ],
+                  "parts" => [
+                    "press-releases",
+                  ],
+                  "rename" => {},
+                  "transform" => {
+                    "req" => "`reqdata`",
+                    "res" => "`body`",
+                  },
+                  "args" => {
+                    "query" => [
+                      {
+                        "name" => "format",
+                        "orig" => "format",
+                        "type" => "`$STRING`",
+                        "kind" => "query",
+                        "example" => "json",
+                      },
+                      {
+                        "name" => "identifier",
+                        "orig" => "identifier",
+                        "type" => "`$STRING`",
+                        "kind" => "query",
+                      },
+                      {
+                        "name" => "key",
+                        "orig" => "key",
+                        "type" => "`$STRING`",
+                        "kind" => "query",
+                        "reqd" => true,
+                      },
+                    ],
+                  },
                   "select" => {
                     "exist" => [
                       "format",
@@ -3523,33 +3607,8 @@ module FinancialDataConfig
                       "key",
                     ],
                   },
-                  "transform" => {
-                    "req" => "`reqdata`",
-                    "res" => "`body`",
-                  },
-                  "parts" => [
-                    "press-releases",
-                  ],
                 },
                 {
-                  "args" => {
-                    "query" => [
-                      {
-                        "example" => "json",
-                        "kind" => "query",
-                        "name" => "format",
-                        "orig" => "format",
-                        "type" => "`$STRING`",
-                      },
-                      {
-                        "kind" => "query",
-                        "name" => "key",
-                        "orig" => "key",
-                        "reqd" => true,
-                        "type" => "`$STRING`",
-                      },
-                    ],
-                  },
                   "kind" => "http",
                   "method" => "GET",
                   "orig" => "/fed-press-releases",
@@ -3558,39 +3617,40 @@ module FinancialDataConfig
                       "lit" => "fed-press-releases",
                     },
                   ],
+                  "parts" => [
+                    "fed-press-releases",
+                  ],
+                  "rename" => {},
+                  "transform" => {
+                    "req" => "`reqdata`",
+                    "res" => "`body`",
+                  },
+                  "args" => {
+                    "query" => [
+                      {
+                        "name" => "format",
+                        "orig" => "format",
+                        "type" => "`$STRING`",
+                        "kind" => "query",
+                        "example" => "json",
+                      },
+                      {
+                        "name" => "key",
+                        "orig" => "key",
+                        "type" => "`$STRING`",
+                        "kind" => "query",
+                        "reqd" => true,
+                      },
+                    ],
+                  },
                   "select" => {
                     "exist" => [
                       "format",
                       "key",
                     ],
                   },
-                  "transform" => {
-                    "req" => "`reqdata`",
-                    "res" => "`body`",
-                  },
-                  "parts" => [
-                    "fed-press-releases",
-                  ],
                 },
                 {
-                  "args" => {
-                    "query" => [
-                      {
-                        "example" => "json",
-                        "kind" => "query",
-                        "name" => "format",
-                        "orig" => "format",
-                        "type" => "`$STRING`",
-                      },
-                      {
-                        "kind" => "query",
-                        "name" => "key",
-                        "orig" => "key",
-                        "reqd" => true,
-                        "type" => "`$STRING`",
-                      },
-                    ],
-                  },
                   "kind" => "http",
                   "method" => "GET",
                   "orig" => "/sec-press-releases",
@@ -3599,19 +3659,38 @@ module FinancialDataConfig
                       "lit" => "sec-press-releases",
                     },
                   ],
+                  "parts" => [
+                    "sec-press-releases",
+                  ],
+                  "rename" => {},
+                  "transform" => {
+                    "req" => "`reqdata`",
+                    "res" => "`body`",
+                  },
+                  "args" => {
+                    "query" => [
+                      {
+                        "name" => "format",
+                        "orig" => "format",
+                        "type" => "`$STRING`",
+                        "kind" => "query",
+                        "example" => "json",
+                      },
+                      {
+                        "name" => "key",
+                        "orig" => "key",
+                        "type" => "`$STRING`",
+                        "kind" => "query",
+                        "reqd" => true,
+                      },
+                    ],
+                  },
                   "select" => {
                     "exist" => [
                       "format",
                       "key",
                     ],
                   },
-                  "transform" => {
-                    "req" => "`reqdata`",
-                    "res" => "`body`",
-                  },
-                  "parts" => [
-                    "sec-press-releases",
-                  ],
                 },
               ],
             },
@@ -3629,30 +3708,6 @@ module FinancialDataConfig
               "name" => "load",
               "points" => [
                 {
-                  "args" => {
-                    "query" => [
-                      {
-                        "example" => "json",
-                        "kind" => "query",
-                        "name" => "format",
-                        "orig" => "format",
-                        "type" => "`$STRING`",
-                      },
-                      {
-                        "kind" => "query",
-                        "name" => "identifier",
-                        "orig" => "identifier",
-                        "type" => "`$STRING`",
-                      },
-                      {
-                        "kind" => "query",
-                        "name" => "key",
-                        "orig" => "key",
-                        "reqd" => true,
-                        "type" => "`$STRING`",
-                      },
-                    ],
-                  },
                   "kind" => "http",
                   "method" => "GET",
                   "orig" => "/dividends",
@@ -3661,6 +3716,38 @@ module FinancialDataConfig
                       "lit" => "dividends",
                     },
                   ],
+                  "parts" => [
+                    "dividends",
+                  ],
+                  "rename" => {},
+                  "transform" => {
+                    "req" => "`reqdata`",
+                    "res" => "`body`",
+                  },
+                  "args" => {
+                    "query" => [
+                      {
+                        "name" => "format",
+                        "orig" => "format",
+                        "type" => "`$STRING`",
+                        "kind" => "query",
+                        "example" => "json",
+                      },
+                      {
+                        "name" => "identifier",
+                        "orig" => "identifier",
+                        "type" => "`$STRING`",
+                        "kind" => "query",
+                      },
+                      {
+                        "name" => "key",
+                        "orig" => "key",
+                        "type" => "`$STRING`",
+                        "kind" => "query",
+                        "reqd" => true,
+                      },
+                    ],
+                  },
                   "select" => {
                     "exist" => [
                       "format",
@@ -3668,39 +3755,8 @@ module FinancialDataConfig
                       "key",
                     ],
                   },
-                  "transform" => {
-                    "req" => "`reqdata`",
-                    "res" => "`body`",
-                  },
-                  "parts" => [
-                    "dividends",
-                  ],
                 },
                 {
-                  "args" => {
-                    "query" => [
-                      {
-                        "example" => "json",
-                        "kind" => "query",
-                        "name" => "format",
-                        "orig" => "format",
-                        "type" => "`$STRING`",
-                      },
-                      {
-                        "kind" => "query",
-                        "name" => "identifier",
-                        "orig" => "identifier",
-                        "type" => "`$STRING`",
-                      },
-                      {
-                        "kind" => "query",
-                        "name" => "key",
-                        "orig" => "key",
-                        "reqd" => true,
-                        "type" => "`$STRING`",
-                      },
-                    ],
-                  },
                   "kind" => "http",
                   "method" => "GET",
                   "orig" => "/earnings-releases",
@@ -3709,6 +3765,38 @@ module FinancialDataConfig
                       "lit" => "earnings-releases",
                     },
                   ],
+                  "parts" => [
+                    "earnings-releases",
+                  ],
+                  "rename" => {},
+                  "transform" => {
+                    "req" => "`reqdata`",
+                    "res" => "`body`",
+                  },
+                  "args" => {
+                    "query" => [
+                      {
+                        "name" => "format",
+                        "orig" => "format",
+                        "type" => "`$STRING`",
+                        "kind" => "query",
+                        "example" => "json",
+                      },
+                      {
+                        "name" => "identifier",
+                        "orig" => "identifier",
+                        "type" => "`$STRING`",
+                        "kind" => "query",
+                      },
+                      {
+                        "name" => "key",
+                        "orig" => "key",
+                        "type" => "`$STRING`",
+                        "kind" => "query",
+                        "reqd" => true,
+                      },
+                    ],
+                  },
                   "select" => {
                     "exist" => [
                       "format",
@@ -3716,39 +3804,8 @@ module FinancialDataConfig
                       "key",
                     ],
                   },
-                  "transform" => {
-                    "req" => "`reqdata`",
-                    "res" => "`body`",
-                  },
-                  "parts" => [
-                    "earnings-releases",
-                  ],
                 },
                 {
-                  "args" => {
-                    "query" => [
-                      {
-                        "example" => "json",
-                        "kind" => "query",
-                        "name" => "format",
-                        "orig" => "format",
-                        "type" => "`$STRING`",
-                      },
-                      {
-                        "kind" => "query",
-                        "name" => "identifier",
-                        "orig" => "identifier",
-                        "type" => "`$STRING`",
-                      },
-                      {
-                        "kind" => "query",
-                        "name" => "key",
-                        "orig" => "key",
-                        "reqd" => true,
-                        "type" => "`$STRING`",
-                      },
-                    ],
-                  },
                   "kind" => "http",
                   "method" => "GET",
                   "orig" => "/short-interest",
@@ -3757,6 +3814,38 @@ module FinancialDataConfig
                       "lit" => "short-interest",
                     },
                   ],
+                  "parts" => [
+                    "short-interest",
+                  ],
+                  "rename" => {},
+                  "transform" => {
+                    "req" => "`reqdata`",
+                    "res" => "`body`",
+                  },
+                  "args" => {
+                    "query" => [
+                      {
+                        "name" => "format",
+                        "orig" => "format",
+                        "type" => "`$STRING`",
+                        "kind" => "query",
+                        "example" => "json",
+                      },
+                      {
+                        "name" => "identifier",
+                        "orig" => "identifier",
+                        "type" => "`$STRING`",
+                        "kind" => "query",
+                      },
+                      {
+                        "name" => "key",
+                        "orig" => "key",
+                        "type" => "`$STRING`",
+                        "kind" => "query",
+                        "reqd" => true,
+                      },
+                    ],
+                  },
                   "select" => {
                     "exist" => [
                       "format",
@@ -3764,39 +3853,8 @@ module FinancialDataConfig
                       "key",
                     ],
                   },
-                  "transform" => {
-                    "req" => "`reqdata`",
-                    "res" => "`body`",
-                  },
-                  "parts" => [
-                    "short-interest",
-                  ],
                 },
                 {
-                  "args" => {
-                    "query" => [
-                      {
-                        "example" => "json",
-                        "kind" => "query",
-                        "name" => "format",
-                        "orig" => "format",
-                        "type" => "`$STRING`",
-                      },
-                      {
-                        "kind" => "query",
-                        "name" => "identifier",
-                        "orig" => "identifier",
-                        "type" => "`$STRING`",
-                      },
-                      {
-                        "kind" => "query",
-                        "name" => "key",
-                        "orig" => "key",
-                        "reqd" => true,
-                        "type" => "`$STRING`",
-                      },
-                    ],
-                  },
                   "kind" => "http",
                   "method" => "GET",
                   "orig" => "/stock-splits",
@@ -3805,6 +3863,38 @@ module FinancialDataConfig
                       "lit" => "stock-splits",
                     },
                   ],
+                  "parts" => [
+                    "stock-splits",
+                  ],
+                  "rename" => {},
+                  "transform" => {
+                    "req" => "`reqdata`",
+                    "res" => "`body`",
+                  },
+                  "args" => {
+                    "query" => [
+                      {
+                        "name" => "format",
+                        "orig" => "format",
+                        "type" => "`$STRING`",
+                        "kind" => "query",
+                        "example" => "json",
+                      },
+                      {
+                        "name" => "identifier",
+                        "orig" => "identifier",
+                        "type" => "`$STRING`",
+                        "kind" => "query",
+                      },
+                      {
+                        "name" => "key",
+                        "orig" => "key",
+                        "type" => "`$STRING`",
+                        "kind" => "query",
+                        "reqd" => true,
+                      },
+                    ],
+                  },
                   "select" => {
                     "exist" => [
                       "format",
@@ -3812,33 +3902,8 @@ module FinancialDataConfig
                       "key",
                     ],
                   },
-                  "transform" => {
-                    "req" => "`reqdata`",
-                    "res" => "`body`",
-                  },
-                  "parts" => [
-                    "stock-splits",
-                  ],
                 },
                 {
-                  "args" => {
-                    "query" => [
-                      {
-                        "example" => "json",
-                        "kind" => "query",
-                        "name" => "format",
-                        "orig" => "format",
-                        "type" => "`$STRING`",
-                      },
-                      {
-                        "kind" => "query",
-                        "name" => "key",
-                        "orig" => "key",
-                        "reqd" => true,
-                        "type" => "`$STRING`",
-                      },
-                    ],
-                  },
                   "kind" => "http",
                   "method" => "GET",
                   "orig" => "/initial-public-offerings",
@@ -3847,19 +3912,38 @@ module FinancialDataConfig
                       "lit" => "initial-public-offerings",
                     },
                   ],
+                  "parts" => [
+                    "initial-public-offerings",
+                  ],
+                  "rename" => {},
+                  "transform" => {
+                    "req" => "`reqdata`",
+                    "res" => "`body`",
+                  },
+                  "args" => {
+                    "query" => [
+                      {
+                        "name" => "format",
+                        "orig" => "format",
+                        "type" => "`$STRING`",
+                        "kind" => "query",
+                        "example" => "json",
+                      },
+                      {
+                        "name" => "key",
+                        "orig" => "key",
+                        "type" => "`$STRING`",
+                        "kind" => "query",
+                        "reqd" => true,
+                      },
+                    ],
+                  },
                   "select" => {
                     "exist" => [
                       "format",
                       "key",
                     ],
                   },
-                  "transform" => {
-                    "req" => "`reqdata`",
-                    "res" => "`body`",
-                  },
-                  "parts" => [
-                    "initial-public-offerings",
-                  ],
                 },
               ],
             },
@@ -3877,31 +3961,6 @@ module FinancialDataConfig
               "name" => "load",
               "points" => [
                 {
-                  "args" => {
-                    "query" => [
-                      {
-                        "example" => "json",
-                        "kind" => "query",
-                        "name" => "format",
-                        "orig" => "format",
-                        "type" => "`$STRING`",
-                      },
-                      {
-                        "kind" => "query",
-                        "name" => "identifier",
-                        "orig" => "identifier",
-                        "reqd" => true,
-                        "type" => "`$STRING`",
-                      },
-                      {
-                        "kind" => "query",
-                        "name" => "key",
-                        "orig" => "key",
-                        "reqd" => true,
-                        "type" => "`$STRING`",
-                      },
-                    ],
-                  },
                   "kind" => "http",
                   "method" => "GET",
                   "orig" => "/mutual-fund-holdings",
@@ -3910,6 +3969,39 @@ module FinancialDataConfig
                       "lit" => "mutual-fund-holdings",
                     },
                   ],
+                  "parts" => [
+                    "mutual-fund-holdings",
+                  ],
+                  "rename" => {},
+                  "transform" => {
+                    "req" => "`reqdata`",
+                    "res" => "`body`",
+                  },
+                  "args" => {
+                    "query" => [
+                      {
+                        "name" => "format",
+                        "orig" => "format",
+                        "type" => "`$STRING`",
+                        "kind" => "query",
+                        "example" => "json",
+                      },
+                      {
+                        "name" => "identifier",
+                        "orig" => "identifier",
+                        "type" => "`$STRING`",
+                        "kind" => "query",
+                        "reqd" => true,
+                      },
+                      {
+                        "name" => "key",
+                        "orig" => "key",
+                        "type" => "`$STRING`",
+                        "kind" => "query",
+                        "reqd" => true,
+                      },
+                    ],
+                  },
                   "select" => {
                     "exist" => [
                       "format",
@@ -3917,40 +4009,8 @@ module FinancialDataConfig
                       "key",
                     ],
                   },
-                  "transform" => {
-                    "req" => "`reqdata`",
-                    "res" => "`body`",
-                  },
-                  "parts" => [
-                    "mutual-fund-holdings",
-                  ],
                 },
                 {
-                  "args" => {
-                    "query" => [
-                      {
-                        "example" => "json",
-                        "kind" => "query",
-                        "name" => "format",
-                        "orig" => "format",
-                        "type" => "`$STRING`",
-                      },
-                      {
-                        "kind" => "query",
-                        "name" => "identifier",
-                        "orig" => "identifier",
-                        "reqd" => true,
-                        "type" => "`$STRING`",
-                      },
-                      {
-                        "kind" => "query",
-                        "name" => "key",
-                        "orig" => "key",
-                        "reqd" => true,
-                        "type" => "`$STRING`",
-                      },
-                    ],
-                  },
                   "kind" => "http",
                   "method" => "GET",
                   "orig" => "/mutual-fund-statistics",
@@ -3959,6 +4019,39 @@ module FinancialDataConfig
                       "lit" => "mutual-fund-statistics",
                     },
                   ],
+                  "parts" => [
+                    "mutual-fund-statistics",
+                  ],
+                  "rename" => {},
+                  "transform" => {
+                    "req" => "`reqdata`",
+                    "res" => "`body`",
+                  },
+                  "args" => {
+                    "query" => [
+                      {
+                        "name" => "format",
+                        "orig" => "format",
+                        "type" => "`$STRING`",
+                        "kind" => "query",
+                        "example" => "json",
+                      },
+                      {
+                        "name" => "identifier",
+                        "orig" => "identifier",
+                        "type" => "`$STRING`",
+                        "kind" => "query",
+                        "reqd" => true,
+                      },
+                      {
+                        "name" => "key",
+                        "orig" => "key",
+                        "type" => "`$STRING`",
+                        "kind" => "query",
+                        "reqd" => true,
+                      },
+                    ],
+                  },
                   "select" => {
                     "exist" => [
                       "format",
@@ -3966,33 +4059,8 @@ module FinancialDataConfig
                       "key",
                     ],
                   },
-                  "transform" => {
-                    "req" => "`reqdata`",
-                    "res" => "`body`",
-                  },
-                  "parts" => [
-                    "mutual-fund-statistics",
-                  ],
                 },
                 {
-                  "args" => {
-                    "query" => [
-                      {
-                        "example" => "json",
-                        "kind" => "query",
-                        "name" => "format",
-                        "orig" => "format",
-                        "type" => "`$STRING`",
-                      },
-                      {
-                        "kind" => "query",
-                        "name" => "key",
-                        "orig" => "key",
-                        "reqd" => true,
-                        "type" => "`$STRING`",
-                      },
-                    ],
-                  },
                   "kind" => "http",
                   "method" => "GET",
                   "orig" => "/mutual-fund-symbols",
@@ -4001,19 +4069,38 @@ module FinancialDataConfig
                       "lit" => "mutual-fund-symbols",
                     },
                   ],
+                  "parts" => [
+                    "mutual-fund-symbols",
+                  ],
+                  "rename" => {},
+                  "transform" => {
+                    "req" => "`reqdata`",
+                    "res" => "`body`",
+                  },
+                  "args" => {
+                    "query" => [
+                      {
+                        "name" => "format",
+                        "orig" => "format",
+                        "type" => "`$STRING`",
+                        "kind" => "query",
+                        "example" => "json",
+                      },
+                      {
+                        "name" => "key",
+                        "orig" => "key",
+                        "type" => "`$STRING`",
+                        "kind" => "query",
+                        "reqd" => true,
+                      },
+                    ],
+                  },
                   "select" => {
                     "exist" => [
                       "format",
                       "key",
                     ],
                   },
-                  "transform" => {
-                    "req" => "`reqdata`",
-                    "res" => "`body`",
-                  },
-                  "parts" => [
-                    "mutual-fund-symbols",
-                  ],
                 },
               ],
             },
@@ -4026,18 +4113,22 @@ module FinancialDataConfig
           "fields" => [
             {
               "name" => "description",
+              "title" => "Description",
               "type" => "`$STRING`",
             },
             {
               "name" => "registrant_name",
+              "title" => "Registrant Name",
               "type" => "`$STRING`",
             },
             {
               "name" => "title_of_security",
+              "title" => "Title Of Security",
               "type" => "`$STRING`",
             },
             {
               "name" => "trading_symbol",
+              "title" => "Trading Symbol",
               "type" => "`$STRING`",
             },
           ],
@@ -4048,31 +4139,6 @@ module FinancialDataConfig
               "name" => "list",
               "points" => [
                 {
-                  "args" => {
-                    "query" => [
-                      {
-                        "example" => "json",
-                        "kind" => "query",
-                        "name" => "format",
-                        "orig" => "format",
-                        "type" => "`$STRING`",
-                      },
-                      {
-                        "kind" => "query",
-                        "name" => "key",
-                        "orig" => "key",
-                        "reqd" => true,
-                        "type" => "`$STRING`",
-                      },
-                      {
-                        "example" => 500,
-                        "kind" => "query",
-                        "name" => "offset",
-                        "orig" => "offset",
-                        "type" => "`$INTEGER`",
-                      },
-                    ],
-                  },
                   "kind" => "http",
                   "method" => "GET",
                   "orig" => "/etf-symbols",
@@ -4081,6 +4147,39 @@ module FinancialDataConfig
                       "lit" => "etf-symbols",
                     },
                   ],
+                  "parts" => [
+                    "etf-symbols",
+                  ],
+                  "rename" => {},
+                  "transform" => {
+                    "req" => "`reqdata`",
+                    "res" => "`body`",
+                  },
+                  "args" => {
+                    "query" => [
+                      {
+                        "name" => "format",
+                        "orig" => "format",
+                        "type" => "`$STRING`",
+                        "kind" => "query",
+                        "example" => "json",
+                      },
+                      {
+                        "name" => "key",
+                        "orig" => "key",
+                        "type" => "`$STRING`",
+                        "kind" => "query",
+                        "reqd" => true,
+                      },
+                      {
+                        "name" => "offset",
+                        "orig" => "offset",
+                        "type" => "`$INTEGER`",
+                        "kind" => "query",
+                        "example" => 500,
+                      },
+                    ],
+                  },
                   "select" => {
                     "exist" => [
                       "format",
@@ -4088,40 +4187,8 @@ module FinancialDataConfig
                       "offset",
                     ],
                   },
-                  "transform" => {
-                    "req" => "`reqdata`",
-                    "res" => "`body`",
-                  },
-                  "parts" => [
-                    "etf-symbols",
-                  ],
                 },
                 {
-                  "args" => {
-                    "query" => [
-                      {
-                        "example" => "json",
-                        "kind" => "query",
-                        "name" => "format",
-                        "orig" => "format",
-                        "type" => "`$STRING`",
-                      },
-                      {
-                        "kind" => "query",
-                        "name" => "key",
-                        "orig" => "key",
-                        "reqd" => true,
-                        "type" => "`$STRING`",
-                      },
-                      {
-                        "example" => 500,
-                        "kind" => "query",
-                        "name" => "offset",
-                        "orig" => "offset",
-                        "type" => "`$INTEGER`",
-                      },
-                    ],
-                  },
                   "kind" => "http",
                   "method" => "GET",
                   "orig" => "/international-stock-symbols",
@@ -4130,6 +4197,39 @@ module FinancialDataConfig
                       "lit" => "international-stock-symbols",
                     },
                   ],
+                  "parts" => [
+                    "international-stock-symbols",
+                  ],
+                  "rename" => {},
+                  "transform" => {
+                    "req" => "`reqdata`",
+                    "res" => "`body`",
+                  },
+                  "args" => {
+                    "query" => [
+                      {
+                        "name" => "format",
+                        "orig" => "format",
+                        "type" => "`$STRING`",
+                        "kind" => "query",
+                        "example" => "json",
+                      },
+                      {
+                        "name" => "key",
+                        "orig" => "key",
+                        "type" => "`$STRING`",
+                        "kind" => "query",
+                        "reqd" => true,
+                      },
+                      {
+                        "name" => "offset",
+                        "orig" => "offset",
+                        "type" => "`$INTEGER`",
+                        "kind" => "query",
+                        "example" => 500,
+                      },
+                    ],
+                  },
                   "select" => {
                     "exist" => [
                       "format",
@@ -4137,40 +4237,8 @@ module FinancialDataConfig
                       "offset",
                     ],
                   },
-                  "transform" => {
-                    "req" => "`reqdata`",
-                    "res" => "`body`",
-                  },
-                  "parts" => [
-                    "international-stock-symbols",
-                  ],
                 },
                 {
-                  "args" => {
-                    "query" => [
-                      {
-                        "example" => "json",
-                        "kind" => "query",
-                        "name" => "format",
-                        "orig" => "format",
-                        "type" => "`$STRING`",
-                      },
-                      {
-                        "kind" => "query",
-                        "name" => "key",
-                        "orig" => "key",
-                        "reqd" => true,
-                        "type" => "`$STRING`",
-                      },
-                      {
-                        "example" => 500,
-                        "kind" => "query",
-                        "name" => "offset",
-                        "orig" => "offset",
-                        "type" => "`$INTEGER`",
-                      },
-                    ],
-                  },
                   "kind" => "http",
                   "method" => "GET",
                   "orig" => "/otc-symbols",
@@ -4179,6 +4247,39 @@ module FinancialDataConfig
                       "lit" => "otc-symbols",
                     },
                   ],
+                  "parts" => [
+                    "otc-symbols",
+                  ],
+                  "rename" => {},
+                  "transform" => {
+                    "req" => "`reqdata`",
+                    "res" => "`body`",
+                  },
+                  "args" => {
+                    "query" => [
+                      {
+                        "name" => "format",
+                        "orig" => "format",
+                        "type" => "`$STRING`",
+                        "kind" => "query",
+                        "example" => "json",
+                      },
+                      {
+                        "name" => "key",
+                        "orig" => "key",
+                        "type" => "`$STRING`",
+                        "kind" => "query",
+                        "reqd" => true,
+                      },
+                      {
+                        "name" => "offset",
+                        "orig" => "offset",
+                        "type" => "`$INTEGER`",
+                        "kind" => "query",
+                        "example" => 500,
+                      },
+                    ],
+                  },
                   "select" => {
                     "exist" => [
                       "format",
@@ -4186,40 +4287,8 @@ module FinancialDataConfig
                       "offset",
                     ],
                   },
-                  "transform" => {
-                    "req" => "`reqdata`",
-                    "res" => "`body`",
-                  },
-                  "parts" => [
-                    "otc-symbols",
-                  ],
                 },
                 {
-                  "args" => {
-                    "query" => [
-                      {
-                        "example" => "json",
-                        "kind" => "query",
-                        "name" => "format",
-                        "orig" => "format",
-                        "type" => "`$STRING`",
-                      },
-                      {
-                        "kind" => "query",
-                        "name" => "key",
-                        "orig" => "key",
-                        "reqd" => true,
-                        "type" => "`$STRING`",
-                      },
-                      {
-                        "example" => 500,
-                        "kind" => "query",
-                        "name" => "offset",
-                        "orig" => "offset",
-                        "type" => "`$INTEGER`",
-                      },
-                    ],
-                  },
                   "kind" => "http",
                   "method" => "GET",
                   "orig" => "/stock-symbols",
@@ -4228,6 +4297,39 @@ module FinancialDataConfig
                       "lit" => "stock-symbols",
                     },
                   ],
+                  "parts" => [
+                    "stock-symbols",
+                  ],
+                  "rename" => {},
+                  "transform" => {
+                    "req" => "`reqdata`",
+                    "res" => "`body`",
+                  },
+                  "args" => {
+                    "query" => [
+                      {
+                        "name" => "format",
+                        "orig" => "format",
+                        "type" => "`$STRING`",
+                        "kind" => "query",
+                        "example" => "json",
+                      },
+                      {
+                        "name" => "key",
+                        "orig" => "key",
+                        "type" => "`$STRING`",
+                        "kind" => "query",
+                        "reqd" => true,
+                      },
+                      {
+                        "name" => "offset",
+                        "orig" => "offset",
+                        "type" => "`$INTEGER`",
+                        "kind" => "query",
+                        "example" => 500,
+                      },
+                    ],
+                  },
                   "select" => {
                     "exist" => [
                       "format",
@@ -4235,33 +4337,8 @@ module FinancialDataConfig
                       "offset",
                     ],
                   },
-                  "transform" => {
-                    "req" => "`reqdata`",
-                    "res" => "`body`",
-                  },
-                  "parts" => [
-                    "stock-symbols",
-                  ],
                 },
                 {
-                  "args" => {
-                    "query" => [
-                      {
-                        "example" => "json",
-                        "kind" => "query",
-                        "name" => "format",
-                        "orig" => "format",
-                        "type" => "`$STRING`",
-                      },
-                      {
-                        "kind" => "query",
-                        "name" => "key",
-                        "orig" => "key",
-                        "reqd" => true,
-                        "type" => "`$STRING`",
-                      },
-                    ],
-                  },
                   "kind" => "http",
                   "method" => "GET",
                   "orig" => "/commodity-symbols",
@@ -4270,19 +4347,38 @@ module FinancialDataConfig
                       "lit" => "commodity-symbols",
                     },
                   ],
+                  "parts" => [
+                    "commodity-symbols",
+                  ],
+                  "rename" => {},
+                  "transform" => {
+                    "req" => "`reqdata`",
+                    "res" => "`body`",
+                  },
+                  "args" => {
+                    "query" => [
+                      {
+                        "name" => "format",
+                        "orig" => "format",
+                        "type" => "`$STRING`",
+                        "kind" => "query",
+                        "example" => "json",
+                      },
+                      {
+                        "name" => "key",
+                        "orig" => "key",
+                        "type" => "`$STRING`",
+                        "kind" => "query",
+                        "reqd" => true,
+                      },
+                    ],
+                  },
                   "select" => {
                     "exist" => [
                       "format",
                       "key",
                     ],
                   },
-                  "transform" => {
-                    "req" => "`reqdata`",
-                    "res" => "`body`",
-                  },
-                  "parts" => [
-                    "commodity-symbols",
-                  ],
                 },
               ],
             },

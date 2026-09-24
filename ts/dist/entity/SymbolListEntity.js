@@ -2,7 +2,6 @@
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.SymbolListEntity = void 0;
 const FinancialDataEntityBase_1 = require("../FinancialDataEntityBase");
-// TODO: needs Entity superclass
 class SymbolListEntity extends FinancialDataEntityBase_1.FinancialDataEntityBase {
     constructor(client, entopts) {
         super(client, entopts);

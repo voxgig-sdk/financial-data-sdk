@@ -1,7 +1,7 @@
 // Typed models for the FinancialData SDK.
 //
-// GENERATED from the API model: main.kit.entity.<e>.fields[] and per-op
-// params (op.<name>.points[].args.params[]). Field/param types come from the
+// GENERATED from the API model: main.kit.entity.<e>.fields{} and per-op
+// params (op.<name>.points[].g.params[]). Field/param types come from the
 // canonical type sentinels via @voxgig/sdkgen canonToType (source of truth:
 // @voxgig/apidef VALID_CANON). Do not edit by hand.
 package entity
@@ -146,18 +146,6 @@ type InvestmentAdviserLoadMatch struct {
 
 // MarketData is the typed data model for the market_data entity.
 type MarketData struct {
-	Change *float64 `json:"change,omitempty"`
-	Close *float64 `json:"close,omitempty"`
-	Date *string `json:"date,omitempty"`
-	High *float64 `json:"high,omitempty"`
-	Low *float64 `json:"low,omitempty"`
-	Open *float64 `json:"open,omitempty"`
-	PercentageChange *float64 `json:"percentage_change,omitempty"`
-	Price *float64 `json:"price,omitempty"`
-	RegistrantName *string `json:"registrant_name,omitempty"`
-	Time *string `json:"time,omitempty"`
-	TradingSymbol *string `json:"trading_symbol,omitempty"`
-	Volume *float64 `json:"volume,omitempty"`
 }
 
 // MarketDataLoadMatch is the typed request payload for MarketData.LoadTyped.
@@ -224,10 +212,6 @@ type MutualFundLoadMatch struct {
 
 // SymbolList is the typed data model for the symbol_list entity.
 type SymbolList struct {
-	Description *string `json:"description,omitempty"`
-	RegistrantName *string `json:"registrant_name,omitempty"`
-	TitleOfSecurity *string `json:"title_of_security,omitempty"`
-	TradingSymbol *string `json:"trading_symbol,omitempty"`
 }
 
 // SymbolListListMatch is the typed request payload for SymbolList.ListTyped.

@@ -19,7 +19,6 @@ import type {
   SymbolListListMatch,
 } from '../FinancialDataTypes'
 
-// TODO: needs Entity superclass
 class SymbolListEntity extends FinancialDataEntityBase<SymbolList> {
 
   constructor(client: FinancialDataSDK, entopts: any) {

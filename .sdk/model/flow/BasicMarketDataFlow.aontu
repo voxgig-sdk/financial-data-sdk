@@ -1,0 +1,40 @@
+# BasicMarketDataFlow
+
+main: kit: flow: BasicMarketDataFlow:
+{
+  entity: "market_data",
+  kind: "basic",
+  name: "BasicMarketDataFlow",
+  step: [
+    {
+      o: "list",
+      v: [
+        {
+          apply: "ItemExists",
+          def: {
+            ref: "market_data_ref01"
+          }
+        }
+      ]
+    }
+
+    {
+      i: {
+        ref: "market_data_ref01",
+        srcdatavar: "market_data_ref01_data",
+        suffix: "_dt0"
+      }
+
+      o: "load",
+      v: [
+        {
+          apply: "TextFieldMark",
+          def: {
+            mark: "Mark01-market_data_ref01"
+          }
+        }
+      ]
+    }
+  ],
+  "key$": "BasicMarketDataFlow"
+}
