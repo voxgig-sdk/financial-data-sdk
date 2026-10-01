@@ -664,7 +664,7 @@ local function make_config()
                     },
                     {
                       ["name"] = "identifier",
-                      ["orig"] = "identifier",
+                      ["orig"] = "identifiers",
                       ["type"] = "`$STRING`",
                       ["kind"] = "query",
                       ["reqd"] = true,
@@ -1285,7 +1285,7 @@ local function make_config()
                     },
                     {
                       ["name"] = "identifier",
-                      ["orig"] = "identifier",
+                      ["orig"] = "identifiers",
                       ["type"] = "`$STRING`",
                       ["kind"] = "query",
                       ["reqd"] = true,
@@ -2263,7 +2263,7 @@ local function make_config()
                     },
                     {
                       ["name"] = "identifier",
-                      ["orig"] = "identifier",
+                      ["orig"] = "identifiers",
                       ["type"] = "`$STRING`",
                       ["kind"] = "query",
                       ["reqd"] = true,
@@ -3122,7 +3122,7 @@ local function make_config()
                     },
                     {
                       ["name"] = "identifier",
-                      ["orig"] = "identifier",
+                      ["orig"] = "identifiers",
                       ["type"] = "`$STRING`",
                       ["kind"] = "query",
                       ["reqd"] = true,
@@ -3468,7 +3468,7 @@ local function make_config()
                     },
                     {
                       ["name"] = "identifier",
-                      ["orig"] = "identifier",
+                      ["orig"] = "identifiers",
                       ["type"] = "`$STRING`",
                       ["kind"] = "query",
                       ["reqd"] = true,

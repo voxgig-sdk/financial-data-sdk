@@ -693,7 +693,7 @@ def make_config():
                     },
                     {
                       "name": "identifier",
-                      "orig": "identifier",
+                      "orig": "identifiers",
                       "type": "`$STRING`",
                       "kind": "query",
                       "reqd": True,
@@ -1314,7 +1314,7 @@ def make_config():
                     },
                     {
                       "name": "identifier",
-                      "orig": "identifier",
+                      "orig": "identifiers",
                       "type": "`$STRING`",
                       "kind": "query",
                       "reqd": True,
@@ -2292,7 +2292,7 @@ def make_config():
                     },
                     {
                       "name": "identifier",
-                      "orig": "identifier",
+                      "orig": "identifiers",
                       "type": "`$STRING`",
                       "kind": "query",
                       "reqd": True,
@@ -3151,7 +3151,7 @@ def make_config():
                     },
                     {
                       "name": "identifier",
-                      "orig": "identifier",
+                      "orig": "identifiers",
                       "type": "`$STRING`",
                       "kind": "query",
                       "reqd": True,
@@ -3497,7 +3497,7 @@ def make_config():
                     },
                     {
                       "name": "identifier",
-                      "orig": "identifier",
+                      "orig": "identifiers",
                       "type": "`$STRING`",
                       "kind": "query",
                       "reqd": True,

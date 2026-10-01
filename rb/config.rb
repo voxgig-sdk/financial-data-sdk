@@ -676,7 +676,7 @@ module FinancialDataConfig
                       },
                       {
                         "name" => "identifier",
-                        "orig" => "identifier",
+                        "orig" => "identifiers",
                         "type" => "`$STRING`",
                         "kind" => "query",
                         "reqd" => true,
@@ -1297,7 +1297,7 @@ module FinancialDataConfig
                       },
                       {
                         "name" => "identifier",
-                        "orig" => "identifier",
+                        "orig" => "identifiers",
                         "type" => "`$STRING`",
                         "kind" => "query",
                         "reqd" => true,
@@ -2275,7 +2275,7 @@ module FinancialDataConfig
                       },
                       {
                         "name" => "identifier",
-                        "orig" => "identifier",
+                        "orig" => "identifiers",
                         "type" => "`$STRING`",
                         "kind" => "query",
                         "reqd" => true,
@@ -3134,7 +3134,7 @@ module FinancialDataConfig
                       },
                       {
                         "name" => "identifier",
-                        "orig" => "identifier",
+                        "orig" => "identifiers",
                         "type" => "`$STRING`",
                         "kind" => "query",
                         "reqd" => true,
@@ -3480,7 +3480,7 @@ module FinancialDataConfig
                       },
                       {
                         "name" => "identifier",
-                        "orig" => "identifier",
+                        "orig" => "identifiers",
                         "type" => "`$STRING`",
                         "kind" => "query",
                         "reqd" => true,

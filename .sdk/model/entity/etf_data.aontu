@@ -130,7 +130,7 @@ main: kit: entity: etf_data: {
               {
                 k: "query"
                 n: "identifier"
-                or: "identifier"
+                or: "identifiers"
                 r: true
                 t: "`$STRING`"
               }

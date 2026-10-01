@@ -139,7 +139,7 @@ main: kit: entity: market_index: {
               {
                 k: "query"
                 n: "identifier"
-                or: "identifier"
+                or: "identifiers"
                 r: true
                 t: "`$STRING`"
               }

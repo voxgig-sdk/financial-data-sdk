@@ -37,6 +37,8 @@ require_once __DIR__ . '/TransformResponse.php';
 
 FinancialDataUtility::setRegistrar(function (FinancialDataUtility $u): void {
     $u->clean = [FinancialDataClean::class, 'call'];
+    $u->clean_add = [FinancialDataClean::class, 'add'];
+    $u->clean_explain = [FinancialDataDone::class, 'clean_explain'];
     $u->done = [FinancialDataDone::class, 'call'];
     $u->make_error = [FinancialDataMakeError::class, 'call'];
     $u->feature_add = [FinancialDataFeatureAdd::class, 'call'];

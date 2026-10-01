@@ -365,7 +365,7 @@ main: kit: entity: market_data: {
                 ex: "MSFT,AAPL"
                 k: "query"
                 n: "identifier"
-                or: "identifier"
+                or: "identifiers"
                 r: true
                 t: "`$STRING`"
               }

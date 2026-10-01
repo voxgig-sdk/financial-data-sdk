@@ -138,7 +138,7 @@ main: kit: entity: forex_data: {
               {
                 k: "query"
                 n: "identifier"
-                or: "identifier"
+                or: "identifiers"
                 r: true
                 t: "`$STRING`"
               }

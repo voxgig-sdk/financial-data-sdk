@@ -744,7 +744,7 @@ class Config {
                   },
                   {
                     "name": "identifier",
-                    "orig": "identifier",
+                    "orig": "identifiers",
                     "type": "`$STRING`",
                     "kind": "query",
                     "reqd": true
@@ -1365,7 +1365,7 @@ class Config {
                   },
                   {
                     "name": "identifier",
-                    "orig": "identifier",
+                    "orig": "identifiers",
                     "type": "`$STRING`",
                     "kind": "query",
                     "reqd": true
@@ -2343,7 +2343,7 @@ class Config {
                   },
                   {
                     "name": "identifier",
-                    "orig": "identifier",
+                    "orig": "identifiers",
                     "type": "`$STRING`",
                     "kind": "query",
                     "reqd": true
@@ -3202,7 +3202,7 @@ class Config {
                   },
                   {
                     "name": "identifier",
-                    "orig": "identifier",
+                    "orig": "identifiers",
                     "type": "`$STRING`",
                     "kind": "query",
                     "reqd": true,
@@ -3548,7 +3548,7 @@ class Config {
                   },
                   {
                     "name": "identifier",
-                    "orig": "identifier",
+                    "orig": "identifiers",
                     "type": "`$STRING`",
                     "kind": "query",
                     "reqd": true

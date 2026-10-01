@@ -33,6 +33,8 @@ require_relative 'transform_response'
 
 FinancialDataUtility.registrar = ->(u) {
   u.clean = FinancialDataUtilities::Clean
+  u.clean_add = FinancialDataUtilities::CleanAdd
+  u.clean_explain = FinancialDataUtilities::CleanExplain
   u.done = FinancialDataUtilities::Done
   u.make_error = FinancialDataUtilities::MakeError
   u.feature_add = FinancialDataUtilities::FeatureAdd
