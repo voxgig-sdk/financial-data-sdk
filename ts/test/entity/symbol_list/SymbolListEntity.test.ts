@@ -9,7 +9,7 @@ import { createLiveTransport } from '../../live-runner'
 import { runLiveEntity } from '../../live-entity'
 
 
-import { FinancialDataSDK, BaseFeature, stdutil } from '../../..'
+import { FinancialDataSDK, BaseFeature, config, stdutil } from '../../..'
 
 import {
   envOverride,
@@ -41,6 +41,64 @@ describe('SymbolListEntity', async () => {
   })
 
 
+  class FailHook extends BaseFeature {
+    name = 'failhook'
+    version = '0.0.1'
+    active = true
+    unexpected = 0
+    init() { }
+    PreSpec() { throw new Error('symbol_list hook failed') }
+    PreUnexpected() { this.unexpected++ }
+  }
+
+  test('stream-error', async () => {
+    const offline = { net: { offline: true } }
+    await assert.rejects(async () => {
+      for await (const _item of FinancialDataSDK.test(offline).SymbolList().stream('list')) { }
+    }, /offline/)
+
+    for await (const _item of FinancialDataSDK.test(offline).SymbolList()
+      .stream('list', undefined, { ctrl: { throw: false } })) { }
+
+    if (null != (config as any).feature?.rbac) {
+      const denied = FinancialDataSDK.test(undefined, { feature: { rbac: { active: true, deny: true } } })
+      await assert.rejects(async () => {
+        for await (const _item of denied.SymbolList().stream('list')) { }
+      }, (err: any) => 'rbac_denied' === err.code)
+    }
+  })
+
+  test('stream-ctrl', async () => {
+    const explain: any = {}
+    const ctrl: any = { explain }
+    for await (const _item of FinancialDataSDK.test().SymbolList().stream('list', undefined, { ctrl })) { }
+    assert.deepStrictEqual(Object.keys(ctrl), ['explain'])
+    assert(explain === ctrl.explain && 0 < Object.keys(explain).length)
+  })
+
+  test('unexpected', async () => {
+    const hook = new FailHook()
+    const client = new FinancialDataSDK({ feature: { test: { active: true } }, extend: [hook] })
+    await assert.rejects(client.SymbolList().list(), /hook failed/)
+    assert(0 < hook.unexpected)
+
+    const fired = hook.unexpected
+    assert.strictEqual(await client.SymbolList().list(undefined, { throw: false }), undefined)
+    assert(fired < hook.unexpected)
+  })
+
+  test('validate', async (t) => {
+    if (null == (config as any).feature?.validate) {
+      t.skip('feature not present in this SDK: validate')
+      return
+    }
+    const client = FinancialDataSDK.test(undefined, { feature: { validate: { active: true } } })
+    await assert.rejects(client.SymbolList().list({"format":1,"key":"x"} as any),
+      (err: any) => 'validate_failed' === err.code)
+  })
+
+
+
   test('basic', async (t) => {
 
     const live = 'TRUE' === process.env.FINANCIAL_DATA_TEST_LIVE
@@ -51,7 +109,7 @@ describe('SymbolListEntity', async () => {
     
     const setup = basicSetup()
     if (setup.live) {
-      return runLiveEntity(setup, {"active":true,"alias":{"field":{}},"fields":{"description":{"a":true,"h":"Description","n":"description","r":false,"t":"`$STRING`","key$":"description","index$":0},"registrant_name":{"a":true,"h":"Registrant Name","n":"registrant_name","r":false,"t":"`$STRING`","key$":"registrant_name","index$":1},"title_of_security":{"a":true,"h":"Title Of Security","n":"title_of_security","r":false,"t":"`$STRING`","key$":"title_of_security","index$":2},"trading_symbol":{"a":true,"h":"Trading Symbol","n":"trading_symbol","r":false,"t":"`$STRING`","key$":"trading_symbol","index$":3}},"name":"symbol_list","op":{"list":{"input":"data","name":"list","points":[{"a":true,"co":{"id":"GET /etf-symbols","source":"openapi3","version":2},"g":{"query":[{"a":true,"ex":"json","k":"query","n":"format","or":"format","r":false,"t":"`$STRING`","index$":0},{"a":true,"k":"query","n":"key","or":"key","r":true,"t":"`$STRING`","index$":1},{"a":true,"ex":500,"k":"query","n":"offset","or":"offset","r":false,"t":"`$INTEGER`","index$":2}]},"k":"http","m":"GET","o":"/etf-symbols","q":{"exist":["format","key","offset"]},"r":{},"s":[{"lit":"etf-symbols"}],"t":{"req":"`reqdata`","res":"`body`"},"index$":0},{"a":true,"co":{"id":"GET /international-stock-symbols","source":"openapi3","version":2},"g":{"query":[{"a":true,"ex":"json","k":"query","n":"format","or":"format","r":false,"t":"`$STRING`","index$":0},{"a":true,"k":"query","n":"key","or":"key","r":true,"t":"`$STRING`","index$":1},{"a":true,"ex":500,"k":"query","n":"offset","or":"offset","r":false,"t":"`$INTEGER`","index$":2}]},"k":"http","m":"GET","o":"/international-stock-symbols","q":{"exist":["format","key","offset"]},"r":{},"s":[{"lit":"international-stock-symbols"}],"t":{"req":"`reqdata`","res":"`body`"},"index$":1},{"a":true,"co":{"id":"GET /otc-symbols","source":"openapi3","version":2},"g":{"query":[{"a":true,"ex":"json","k":"query","n":"format","or":"format","r":false,"t":"`$STRING`","index$":0},{"a":true,"k":"query","n":"key","or":"key","r":true,"t":"`$STRING`","index$":1},{"a":true,"ex":500,"k":"query","n":"offset","or":"offset","r":false,"t":"`$INTEGER`","index$":2}]},"k":"http","m":"GET","o":"/otc-symbols","q":{"exist":["format","key","offset"]},"r":{},"s":[{"lit":"otc-symbols"}],"t":{"req":"`reqdata`","res":"`body`"},"index$":2},{"a":true,"co":{"id":"GET /stock-symbols","source":"openapi3","version":2},"g":{"query":[{"a":true,"ex":"json","k":"query","n":"format","or":"format","r":false,"t":"`$STRING`","index$":0},{"a":true,"k":"query","n":"key","or":"key","r":true,"t":"`$STRING`","index$":1},{"a":true,"ex":500,"k":"query","n":"offset","or":"offset","r":false,"t":"`$INTEGER`","index$":2}]},"k":"http","m":"GET","o":"/stock-symbols","q":{"exist":["format","key","offset"]},"r":{},"s":[{"lit":"stock-symbols"}],"t":{"req":"`reqdata`","res":"`body`"},"index$":3},{"a":true,"co":{"id":"GET /commodity-symbols","source":"openapi3","version":2},"g":{"query":[{"a":true,"ex":"json","k":"query","n":"format","or":"format","r":false,"t":"`$STRING`","index$":0},{"a":true,"k":"query","n":"key","or":"key","r":true,"t":"`$STRING`","index$":1}]},"k":"http","m":"GET","o":"/commodity-symbols","q":{"exist":["format","key"]},"r":{},"s":[{"lit":"commodity-symbols"}],"t":{"req":"`reqdata`","res":"`body`"},"index$":4}],"key$":"list"}},"relations":{"ancestors":[]},"key$":"symbol_list","name__orig":"symbol_list","Name":"SymbolList","name_":"symbol_list","name-":"symbol-list","NAME":"SYMBOL_LIST","index$":17}, {"active":true,"entity":"symbol_list","key$":"BasicSymbolListFlow","kind":"basic","name":"BasicSymbolListFlow","param":{},"step":[{"a":true,"d":{},"i":{},"m":{},"o":"list","s":[],"v":[{"apply":"ItemExists","def":{"ref":"symbol_list_ref01"}}],"index$":0}]}, 'SymbolList', {"GET /etf-symbols":{"protocol":"http","parameters":[{"name":"offset","in":"query","description":"The initial position of the record subset, which indicates how many records to skip. Defaults to 0.","required":false,"schema":{"type":"integer","default":0,"example":500},"index$":0},{"name":"format","in":"query","description":"The format of the returned data, either JSON or CSV. Defaults to JSON.","required":false,"schema":{"type":"string","enum":["json","csv"],"default":"json"},"index$":1},{"name":"key","in":"query","description":"API key for authentication","required":true,"schema":{"type":"string"},"index$":2}]},"GET /international-stock-symbols":{"protocol":"http","parameters":[{"name":"offset","in":"query","description":"The initial position of the record subset, which indicates how many records to skip. Defaults to 0.","required":false,"schema":{"type":"integer","default":0,"example":500},"index$":0},{"name":"format","in":"query","description":"The format of the returned data, either JSON or CSV. Defaults to JSON.","required":false,"schema":{"type":"string","enum":["json","csv"],"default":"json"},"index$":1},{"name":"key","in":"query","description":"API key for authentication","required":true,"schema":{"type":"string"},"index$":2}]},"GET /otc-symbols":{"protocol":"http","parameters":[{"name":"offset","in":"query","description":"The initial position of the record subset, which indicates how many records to skip. Defaults to 0.","required":false,"schema":{"type":"integer","default":0,"example":500},"index$":0},{"name":"format","in":"query","description":"The format of the returned data, either JSON or CSV. Defaults to JSON.","required":false,"schema":{"type":"string","enum":["json","csv"],"default":"json"},"index$":1},{"name":"key","in":"query","description":"API key for authentication","required":true,"schema":{"type":"string"},"index$":2}]},"GET /stock-symbols":{"protocol":"http","parameters":[{"name":"offset","in":"query","description":"The initial position of the record subset, which indicates how many records to skip. Defaults to 0.","required":false,"schema":{"type":"integer","default":0,"example":500},"index$":0},{"name":"format","in":"query","description":"The format of the returned data, either JSON (JavaScript Object Notation) or CSV (Comma Separated Values). Defaults to JSON.","required":false,"schema":{"type":"string","enum":["json","csv"],"default":"json"},"index$":1},{"name":"key","in":"query","description":"API key for authentication","required":true,"schema":{"type":"string"},"index$":2}]},"GET /commodity-symbols":{"protocol":"http","parameters":[{"name":"format","in":"query","description":"The format of the returned data, either JSON or CSV. Defaults to JSON.","required":false,"schema":{"type":"string","enum":["json","csv"],"default":"json"},"index$":0},{"name":"key","in":"query","description":"API key for authentication","required":true,"schema":{"type":"string"},"index$":1}]}})
+      return runLiveEntity(setup, {"active":true,"alias":{"field":{}},"fields":{"description":{"a":true,"h":"Description","n":"description","r":false,"t":"`$STRING`","key$":"description","index$":0},"registrant_name":{"a":true,"h":"Registrant Name","n":"registrant_name","r":false,"t":"`$STRING`","key$":"registrant_name","index$":1},"title_of_security":{"a":true,"h":"Title Of Security","n":"title_of_security","r":false,"t":"`$STRING`","key$":"title_of_security","index$":2},"trading_symbol":{"a":true,"h":"Trading Symbol","n":"trading_symbol","r":false,"t":"`$STRING`","key$":"trading_symbol","index$":3}},"name":"symbol_list","op":{"list":{"input":"data","name":"list","points":[{"a":true,"co":{"id":"GET /commodity-symbols","source":"openapi3","version":2},"g":{"query":[{"a":true,"ex":"json","k":"query","n":"format","or":"format","r":false,"t":"`$STRING`","index$":0},{"a":true,"k":"query","n":"key","or":"key","r":true,"t":"`$STRING`","index$":1}]},"k":"http","m":"GET","o":"/commodity-symbols","q":{"exist":["key"]},"r":{},"rs":{"kind":"json","media":"application/json"},"s":[{"lit":"commodity-symbols"}],"t":{"req":"`reqdata`","res":"`body`"},"index$":0},{"a":true,"co":{"id":"GET /etf-symbols","source":"openapi3","version":2},"g":{"query":[{"a":true,"ex":"json","k":"query","n":"format","or":"format","r":false,"t":"`$STRING`","index$":0},{"a":true,"k":"query","n":"key","or":"key","r":true,"t":"`$STRING`","index$":1},{"a":true,"ex":500,"k":"query","n":"offset","or":"offset","r":false,"t":"`$INTEGER`","index$":2}]},"k":"http","m":"GET","o":"/etf-symbols","q":{"exist":["key"]},"r":{},"rs":{"kind":"json","media":"application/json"},"s":[{"lit":"etf-symbols"}],"t":{"req":"`reqdata`","res":"`body`"},"index$":1},{"a":true,"co":{"id":"GET /international-stock-symbols","source":"openapi3","version":2},"g":{"query":[{"a":true,"ex":"json","k":"query","n":"format","or":"format","r":false,"t":"`$STRING`","index$":0},{"a":true,"k":"query","n":"key","or":"key","r":true,"t":"`$STRING`","index$":1},{"a":true,"ex":500,"k":"query","n":"offset","or":"offset","r":false,"t":"`$INTEGER`","index$":2}]},"k":"http","m":"GET","o":"/international-stock-symbols","q":{"exist":["key"]},"r":{},"rs":{"kind":"json","media":"application/json"},"s":[{"lit":"international-stock-symbols"}],"t":{"req":"`reqdata`","res":"`body`"},"index$":2},{"a":true,"co":{"id":"GET /otc-symbols","source":"openapi3","version":2},"g":{"query":[{"a":true,"ex":"json","k":"query","n":"format","or":"format","r":false,"t":"`$STRING`","index$":0},{"a":true,"k":"query","n":"key","or":"key","r":true,"t":"`$STRING`","index$":1},{"a":true,"ex":500,"k":"query","n":"offset","or":"offset","r":false,"t":"`$INTEGER`","index$":2}]},"k":"http","m":"GET","o":"/otc-symbols","q":{"exist":["key"]},"r":{},"rs":{"kind":"json","media":"application/json"},"s":[{"lit":"otc-symbols"}],"t":{"req":"`reqdata`","res":"`body`"},"index$":3},{"a":true,"co":{"id":"GET /stock-symbols","source":"openapi3","version":2},"g":{"query":[{"a":true,"ex":"json","k":"query","n":"format","or":"format","r":false,"t":"`$STRING`","index$":0},{"a":true,"k":"query","n":"key","or":"key","r":true,"t":"`$STRING`","index$":1},{"a":true,"ex":500,"k":"query","n":"offset","or":"offset","r":false,"t":"`$INTEGER`","index$":2}]},"k":"http","m":"GET","o":"/stock-symbols","q":{"exist":["key"]},"r":{},"rs":{"kind":"json","media":"application/json"},"s":[{"lit":"stock-symbols"}],"t":{"req":"`reqdata`","res":"`body`"},"index$":4}],"key$":"list"}},"relations":{"ancestors":[]},"key$":"symbol_list","name__orig":"symbol_list","Name":"SymbolList","name_":"symbol_list","name-":"symbol-list","NAME":"SYMBOL_LIST","index$":17}, {"active":true,"entity":"symbol_list","key$":"BasicSymbolListFlow","kind":"basic","name":"BasicSymbolListFlow","param":{},"step":[{"a":true,"d":{},"i":{},"m":{},"o":"list","s":[],"v":[{"apply":"ItemExists","def":{"ref":"symbol_list_ref01"}}],"index$":0}]}, 'SymbolList', {"GET /commodity-symbols":{"protocol":"http","parameters":[{"name":"format","in":"query","description":"The format of the returned data, either JSON or CSV. Defaults to JSON.","required":false,"schema":{"type":"string","enum":["json","csv"],"default":"json"},"index$":0},{"name":"key","in":"query","description":"API key for authentication","required":true,"schema":{"type":"string"},"index$":1}]},"GET /etf-symbols":{"protocol":"http","parameters":[{"name":"offset","in":"query","description":"The initial position of the record subset, which indicates how many records to skip. Defaults to 0.","required":false,"schema":{"type":"integer","default":0,"example":500},"index$":0},{"name":"format","in":"query","description":"The format of the returned data, either JSON or CSV. Defaults to JSON.","required":false,"schema":{"type":"string","enum":["json","csv"],"default":"json"},"index$":1},{"name":"key","in":"query","description":"API key for authentication","required":true,"schema":{"type":"string"},"index$":2}]},"GET /international-stock-symbols":{"protocol":"http","parameters":[{"name":"offset","in":"query","description":"The initial position of the record subset, which indicates how many records to skip. Defaults to 0.","required":false,"schema":{"type":"integer","default":0,"example":500},"index$":0},{"name":"format","in":"query","description":"The format of the returned data, either JSON or CSV. Defaults to JSON.","required":false,"schema":{"type":"string","enum":["json","csv"],"default":"json"},"index$":1},{"name":"key","in":"query","description":"API key for authentication","required":true,"schema":{"type":"string"},"index$":2}]},"GET /otc-symbols":{"protocol":"http","parameters":[{"name":"offset","in":"query","description":"The initial position of the record subset, which indicates how many records to skip. Defaults to 0.","required":false,"schema":{"type":"integer","default":0,"example":500},"index$":0},{"name":"format","in":"query","description":"The format of the returned data, either JSON or CSV. Defaults to JSON.","required":false,"schema":{"type":"string","enum":["json","csv"],"default":"json"},"index$":1},{"name":"key","in":"query","description":"API key for authentication","required":true,"schema":{"type":"string"},"index$":2}]},"GET /stock-symbols":{"protocol":"http","parameters":[{"name":"offset","in":"query","description":"The initial position of the record subset, which indicates how many records to skip. Defaults to 0.","required":false,"schema":{"type":"integer","default":0,"example":500},"index$":0},{"name":"format","in":"query","description":"The format of the returned data, either JSON (JavaScript Object Notation) or CSV (Comma Separated Values). Defaults to JSON.","required":false,"schema":{"type":"string","enum":["json","csv"],"default":"json"},"index$":1},{"name":"key","in":"query","description":"API key for authentication","required":true,"schema":{"type":"string"},"index$":2}]}}, { strict: LIVE_STRICT, t })
     }
     const client = setup.client
     const struct = setup.struct
@@ -72,6 +130,12 @@ describe('SymbolListEntity', async () => {
 })
 
 
+
+// main.kit.test.live.strict is true (the default is true): a live
+// request that fails, or a live test missing an input it needs,
+// fails the test.
+// An account with no record for a test to read skips it either way.
+const LIVE_STRICT = true
 
 function basicSetup(extra?: any) {
   // TODO: fix test def options

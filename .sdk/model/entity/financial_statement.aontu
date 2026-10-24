@@ -45,7 +45,6 @@ main: kit: entity: financial_statement: {
           o: "/balance-sheet-statements"
           q: {
             exist: [
-              "format"
               "identifier"
               "key"
             ]
@@ -96,7 +95,6 @@ main: kit: entity: financial_statement: {
           o: "/cash-flow-statements"
           q: {
             exist: [
-              "format"
               "identifier"
               "key"
             ]
@@ -147,7 +145,6 @@ main: kit: entity: financial_statement: {
           o: "/income-statements"
           q: {
             exist: [
-              "format"
               "identifier"
               "key"
             ]
@@ -198,7 +195,6 @@ main: kit: entity: financial_statement: {
           o: "/international-balance-sheet-statements"
           q: {
             exist: [
-              "format"
               "identifier"
               "key"
             ]
@@ -249,7 +245,6 @@ main: kit: entity: financial_statement: {
           o: "/international-cash-flow-statements"
           q: {
             exist: [
-              "format"
               "identifier"
               "key"
             ]
@@ -300,7 +295,6 @@ main: kit: entity: financial_statement: {
           o: "/international-income-statements"
           q: {
             exist: [
-              "format"
               "identifier"
               "key"
             ]

@@ -169,8 +169,8 @@ Use this map to locate a capability. Consult the entity reference before supplyi
 | ForexData | `load` | `GET /forex-prices` | Required |
 | ForexData | `load` | `GET /forex-quotes` | Required |
 | ForexData | `load` | `GET /forex-symbols` | Required |
-| InsiderTrading | `load` | `GET /insider-transactions` | Required |
 | InsiderTrading | `load` | `GET /house-trading` | Required |
+| InsiderTrading | `load` | `GET /insider-transactions` | Required |
 | InsiderTrading | `load` | `GET /proposed-sales` | Required |
 | InsiderTrading | `load` | `GET /senate-trading` | Required |
 | InstitutionalTrading | `load` | `GET /institutional-holdings` | Required |
@@ -186,26 +186,26 @@ Use this map to locate a capability. Consult the entity reference before supplyi
 | MarketData | `load` | `GET /commodity-prices` | Required |
 | MarketData | `load` | `GET /otc-prices` | Required |
 | MarketData | `load` | `GET /otc-volume` | Required |
-| MarketIndex | `load` | `GET /index-prices` | Required |
 | MarketIndex | `load` | `GET /index-constituents` | Required |
+| MarketIndex | `load` | `GET /index-prices` | Required |
 | MarketIndex | `load` | `GET /index-quotes` | Required |
 | MarketIndex | `load` | `GET /index-symbols` | Required |
-| MarketNew | `load` | `GET /press-releases` | Required |
 | MarketNew | `load` | `GET /fed-press-releases` | Required |
+| MarketNew | `load` | `GET /press-releases` | Required |
 | MarketNew | `load` | `GET /sec-press-releases` | Required |
 | MiscellaneousData | `load` | `GET /dividends` | Required |
 | MiscellaneousData | `load` | `GET /earnings-releases` | Required |
+| MiscellaneousData | `load` | `GET /initial-public-offerings` | Required |
 | MiscellaneousData | `load` | `GET /short-interest` | Required |
 | MiscellaneousData | `load` | `GET /stock-splits` | Required |
-| MiscellaneousData | `load` | `GET /initial-public-offerings` | Required |
 | MutualFund | `load` | `GET /mutual-fund-holdings` | Required |
 | MutualFund | `load` | `GET /mutual-fund-statistics` | Required |
 | MutualFund | `load` | `GET /mutual-fund-symbols` | Required |
+| SymbolList | `list` | `GET /commodity-symbols` | Required |
 | SymbolList | `list` | `GET /etf-symbols` | Required |
 | SymbolList | `list` | `GET /international-stock-symbols` | Required |
 | SymbolList | `list` | `GET /otc-symbols` | Required |
 | SymbolList | `list` | `GET /stock-symbols` | Required |
-| SymbolList | `list` | `GET /commodity-symbols` | Required |
 
 ## Connect to the API
 
@@ -213,7 +213,7 @@ Use this map to locate a capability. Consult the entity reference before supplyi
 
 The default credential is sent in the `key` query.
 
-API key for authentication. Append ?key=API_KEY to each request URL or &amp;key=API_KEY if other query parameters exist.
+API key for authentication. Append ?key=`API_KEY` to each request URL or &amp;key=`API_KEY` if other query parameters exist.
 
 Check authentication for the route you plan to call. A route that declares no authentication can be used without credentials; this does not change the requirements of other routes. Keep credentials in environment variables or a configured secret provider, and keep them out of source control and logs.
 

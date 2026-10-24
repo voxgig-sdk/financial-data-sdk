@@ -139,8 +139,8 @@ class InsiderTrading
 class InsiderTradingLoadMatch
 {
     public ?string $format = null;
-    public ?string $identifier = null;
     public string $key;
+    public ?string $identifier = null;
 }
 
 /** InstitutionalTrading entity data model. */
@@ -227,8 +227,8 @@ class MarketNew
 class MarketNewLoadMatch
 {
     public ?string $format = null;
-    public ?string $identifier = null;
     public string $key;
+    public ?string $identifier = null;
 }
 
 /** MiscellaneousData entity data model. */

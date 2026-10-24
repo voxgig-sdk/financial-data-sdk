@@ -16,7 +16,7 @@ go get github.com/voxgig-sdk/financial-data-sdk/go@latest
 ```
 
 The Go module proxy resolves the version from the `go/vX.Y.Z` GitHub
-release tag — see [Releases](https://github.com/voxgig-sdk/financial-data-sdk/releases) for the available versions.
+release tag — see [Tags](https://github.com/voxgig-sdk/financial-data-sdk/tags) for the available versions.
 
 To vendor from a local checkout instead, clone this repo alongside your
 project and add a `replace` directive pointing at the checked-out
@@ -30,14 +30,15 @@ go mod edit -replace github.com/voxgig-sdk/financial-data-sdk/go=../financial-da
 ## Tutorial: your first API call
 
 This tutorial walks through creating a client, listing entities, and
-loading a specific record.
+loading a specific record. The client sends the API key as the `key` query parameter.
 
 ### Quickstart
 
 A complete program: create a client, then call the entity operations.
-Each operation returns `(value, error)` — the value is the data itself
-(there is no `{ok, data}` wrapper), so check `err` and use the value
-directly.
+Each operation returns `(value, error)` — the value is the entity, and for
+`List` a `[]any` of entities, one per record (there is no `{ok, data}`
+wrapper), so check `err` and read a record through the entity's
+`Data()`.
 
 ```go
 package main
@@ -53,12 +54,12 @@ func main() {
         "apikey": os.Getenv("FINANCIAL_DATA_APIKEY"),
     })
 
-    // Load a single basicInformation — the value is the loaded record.
+    // Load a single basicInformation — the value is the entity; Data() reads its record.
     basicInformation, err := client.BasicInformation(nil).Load(map[string]any{"identifier": "example_identifier", "key": "example_key"}, nil)
     if err != nil {
         panic(err)
     }
-    fmt.Println(basicInformation)
+    fmt.Println(basicInformation.(sdk.Entity).Data())
 }
 ```
 
@@ -144,7 +145,7 @@ cryptoCurrency, err := client.CryptoCurrency(nil).Load(
 if err != nil {
     panic(err)
 }
-fmt.Println(cryptoCurrency) // the returned mock data
+fmt.Println(cryptoCurrency.(sdk.Entity).Data()) // the entity's mock record
 ```
 
 ### Use a custom fetch function
@@ -248,8 +249,8 @@ All entities implement the `FinancialDataEntity` interface.
 
 | Method | Signature | Description |
 | --- | --- | --- |
-| `Load` | `(reqmatch, ctrl map[string]any) (any, error)` | Load a single entity by match criteria. |
-| `List` | `(reqmatch, ctrl map[string]any) (any, error)` | List entities matching the criteria. |
+| `Load` | `(reqmatch, ctrl map[string]any) (any, error)` | Load a single entity by match criteria, and return it. |
+| `List` | `(reqmatch, ctrl map[string]any) (any, error)` | List entities matching the criteria, one per record. |
 | `Data` | `(args ...any) any` | Get or set entity data. |
 | `Match` | `(args ...any) any` | Get or set entity match criteria. |
 | `Make` | `() Entity` | Create a new instance with the same options. |
@@ -257,21 +258,21 @@ All entities implement the `FinancialDataEntity` interface.
 
 ### Result shape
 
-Entity operations return `(value, error)`. The `value` is the
-operation's data **directly** — there is no wrapper:
+Entity operations return `(value, error)`. The `value` is the entity
+itself — there is no wrapper:
 
 | Operation | `value` |
 | --- | --- |
-| `Load` | the entity record (`map[string]any`) |
-| `List` | a `[]any` of entity records |
+| `Load` | the entity, whose `Data()` reads its record (`map[string]any`) |
+| `List` | a `[]any` of entities, one per record |
 
 Check `err` first, then use the value directly (or the typed
 `...Typed` variants, which return the entity's model struct and a typed
 slice):
 
-    basicInformation, err := client.BasicInformation(nil).Load(nil, nil)
+    basicInformation, err := client.BasicInformation(nil).Load(map[string]any{"identifier": "example", "key": "example"}, nil)
     if err != nil { /* handle */ }
-    // basicInformation is the returned record
+    // basicInformation is the entity; basicInformation.(sdk.Entity).Data() reads its record
 
 Only `Direct()` returns a response envelope — a `map[string]any` with
 `"ok"`, `"status"`, `"headers"`, and `"data"` keys.
@@ -366,7 +367,7 @@ API path: `/forex-minute-prices`
 
 Operations: Load.
 
-API path: `/insider-transactions`
+API path: `/house-trading`
 
 #### InstitutionalTrading
 
@@ -414,7 +415,7 @@ API path: `/minute-prices`
 
 Operations: Load.
 
-API path: `/index-prices`
+API path: `/index-constituents`
 
 #### MarketNew
 
@@ -423,7 +424,7 @@ API path: `/index-prices`
 
 Operations: Load.
 
-API path: `/press-releases`
+API path: `/fed-press-releases`
 
 #### MiscellaneousData
 
@@ -454,7 +455,7 @@ API path: `/mutual-fund-holdings`
 
 Operations: List.
 
-API path: `/etf-symbols`
+API path: `/commodity-symbols`
 
 
 
@@ -478,7 +479,7 @@ basicInformation, err := client.BasicInformation(nil).Load(map[string]any{"ident
 if err != nil {
     panic(err)
 }
-fmt.Println(basicInformation) // the loaded record
+fmt.Println(basicInformation.(sdk.Entity).Data()) // the loaded entity's record
 ```
 
 
@@ -499,7 +500,7 @@ cryptoCurrency, err := client.CryptoCurrency(nil).Load(map[string]any{"key": "ke
 if err != nil {
     panic(err)
 }
-fmt.Println(cryptoCurrency) // the loaded record
+fmt.Println(cryptoCurrency.(sdk.Entity).Data()) // the loaded entity's record
 ```
 
 
@@ -520,7 +521,7 @@ derivativesData, err := client.DerivativesData(nil).Load(map[string]any{"key": "
 if err != nil {
     panic(err)
 }
-fmt.Println(derivativesData) // the loaded record
+fmt.Println(derivativesData.(sdk.Entity).Data()) // the loaded entity's record
 ```
 
 
@@ -541,7 +542,7 @@ esgData, err := client.EsgData(nil).Load(map[string]any{"key": "key"}, nil)
 if err != nil {
     panic(err)
 }
-fmt.Println(esgData) // the loaded record
+fmt.Println(esgData.(sdk.Entity).Data()) // the loaded entity's record
 ```
 
 
@@ -562,7 +563,7 @@ etfData, err := client.EtfData(nil).Load(map[string]any{"identifier": "identifie
 if err != nil {
     panic(err)
 }
-fmt.Println(etfData) // the loaded record
+fmt.Println(etfData.(sdk.Entity).Data()) // the loaded entity's record
 ```
 
 
@@ -583,7 +584,7 @@ eventCalendar, err := client.EventCalendar(nil).Load(map[string]any{"key": "key"
 if err != nil {
     panic(err)
 }
-fmt.Println(eventCalendar) // the loaded record
+fmt.Println(eventCalendar.(sdk.Entity).Data()) // the loaded entity's record
 ```
 
 
@@ -604,7 +605,7 @@ financialRatio, err := client.FinancialRatio(nil).Load(map[string]any{"identifie
 if err != nil {
     panic(err)
 }
-fmt.Println(financialRatio) // the loaded record
+fmt.Println(financialRatio.(sdk.Entity).Data()) // the loaded entity's record
 ```
 
 
@@ -625,7 +626,7 @@ financialStatement, err := client.FinancialStatement(nil).Load(map[string]any{"i
 if err != nil {
     panic(err)
 }
-fmt.Println(financialStatement) // the loaded record
+fmt.Println(financialStatement.(sdk.Entity).Data()) // the loaded entity's record
 ```
 
 
@@ -646,7 +647,7 @@ forexData, err := client.ForexData(nil).Load(map[string]any{"key": "key"}, nil)
 if err != nil {
     panic(err)
 }
-fmt.Println(forexData) // the loaded record
+fmt.Println(forexData.(sdk.Entity).Data()) // the loaded entity's record
 ```
 
 
@@ -667,7 +668,7 @@ insiderTrading, err := client.InsiderTrading(nil).Load(map[string]any{"key": "ke
 if err != nil {
     panic(err)
 }
-fmt.Println(insiderTrading) // the loaded record
+fmt.Println(insiderTrading.(sdk.Entity).Data()) // the loaded entity's record
 ```
 
 
@@ -688,7 +689,7 @@ institutionalTrading, err := client.InstitutionalTrading(nil).Load(map[string]an
 if err != nil {
     panic(err)
 }
-fmt.Println(institutionalTrading) // the loaded record
+fmt.Println(institutionalTrading.(sdk.Entity).Data()) // the loaded entity's record
 ```
 
 
@@ -709,7 +710,7 @@ investmentAdviser, err := client.InvestmentAdviser(nil).Load(map[string]any{"key
 if err != nil {
     panic(err)
 }
-fmt.Println(investmentAdviser) // the loaded record
+fmt.Println(investmentAdviser.(sdk.Entity).Data()) // the loaded entity's record
 ```
 
 
@@ -748,17 +749,20 @@ marketData, err := client.MarketData(nil).Load(map[string]any{"identifier": "ide
 if err != nil {
     panic(err)
 }
-fmt.Println(marketData) // the loaded record
+fmt.Println(marketData.(sdk.Entity).Data()) // the loaded entity's record
 ```
 
 #### Example: List
 
 ```go
-marketDatas, err := client.MarketData(nil).List(nil, nil)
+marketDatas, err := client.MarketData(nil).List(map[string]any{"identifier": "example", "key": "example"}, nil)
 if err != nil {
     panic(err)
 }
-fmt.Println(marketDatas) // the array of records
+// A []any of entities, one per record.
+for _, item := range marketDatas.([]any) {
+    fmt.Println(item.(sdk.Entity).Data())
+}
 ```
 
 
@@ -779,7 +783,7 @@ marketIndex, err := client.MarketIndex(nil).Load(map[string]any{"key": "key"}, n
 if err != nil {
     panic(err)
 }
-fmt.Println(marketIndex) // the loaded record
+fmt.Println(marketIndex.(sdk.Entity).Data()) // the loaded entity's record
 ```
 
 
@@ -800,7 +804,7 @@ marketNew, err := client.MarketNew(nil).Load(map[string]any{"key": "key"}, nil)
 if err != nil {
     panic(err)
 }
-fmt.Println(marketNew) // the loaded record
+fmt.Println(marketNew.(sdk.Entity).Data()) // the loaded entity's record
 ```
 
 
@@ -821,7 +825,7 @@ miscellaneousData, err := client.MiscellaneousData(nil).Load(map[string]any{"key
 if err != nil {
     panic(err)
 }
-fmt.Println(miscellaneousData) // the loaded record
+fmt.Println(miscellaneousData.(sdk.Entity).Data()) // the loaded entity's record
 ```
 
 
@@ -842,7 +846,7 @@ mutualFund, err := client.MutualFund(nil).Load(map[string]any{"key": "key"}, nil
 if err != nil {
     panic(err)
 }
-fmt.Println(mutualFund) // the loaded record
+fmt.Println(mutualFund.(sdk.Entity).Data()) // the loaded entity's record
 ```
 
 
@@ -868,11 +872,14 @@ Create an instance: `symbolList := client.SymbolList(nil)`
 #### Example: List
 
 ```go
-symbolLists, err := client.SymbolList(nil).List(nil, nil)
+symbolLists, err := client.SymbolList(nil).List(map[string]any{"key": "example"}, nil)
 if err != nil {
     panic(err)
 }
-fmt.Println(symbolLists) // the array of records
+// A []any of entities, one per record.
+for _, item := range symbolLists.([]any) {
+    fmt.Println(item.(sdk.Entity).Data())
+}
 ```
 
 ## Features
@@ -1009,7 +1016,9 @@ The Go SDK uses `map[string]any` throughout rather than typed structs.
 This mirrors the dynamic nature of the API and keeps the SDK
 flexible — no code generation is needed when the API schema changes.
 
-Use `core.ToMapAny()` to safely cast results and nested data.
+An operation returns the entity, and its `Data()` returns the record. Use
+`core.ToMapAny()` to safely cast that record, or data nested in it, to
+`map[string]any`: it returns `nil` for anything else, an entity included.
 
 ### Package structure
 

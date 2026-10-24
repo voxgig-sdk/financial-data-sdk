@@ -1,0 +1,277 @@
+{
+  point: "warning"
+  note: "Points GET /company-information, GET /employee-count, GET /executive-compensation, GET /international-company-information, GET /key-metrics, GET /market-cap and GET /securities-information on entity=basic_information op=load have the same selector (exist: identifier,key), so only GET /company-information is ever chosen. An action or another entity in guide.aontu tells them apart."
+  entity: "basic_information"
+  op: "load"
+  points: [
+    "GET /company-information"
+    "GET /employee-count"
+    "GET /executive-compensation"
+    "GET /international-company-information"
+    "GET /key-metrics"
+    "GET /market-cap"
+    "GET /securities-information"
+  ]
+
+}
+
+
+{
+  point: "warning"
+  note: "Points GET /crypto-information, GET /crypto-prices and GET /crypto-quotes on entity=crypto_currency op=load have the same selector (exist: identifier,key), so only GET /crypto-information is ever chosen. An action or another entity in guide.aontu tells them apart."
+  entity: "crypto_currency"
+  op: "load"
+  points: [
+    "GET /crypto-information"
+    "GET /crypto-prices"
+    "GET /crypto-quotes"
+  ]
+
+}
+
+
+{
+  point: "warning"
+  note: "Points GET /futures-prices, GET /option-chain, GET /option-greeks and GET /option-prices on entity=derivatives_data op=load have the same selector (exist: identifier,key), so only GET /futures-prices is ever chosen. An action or another entity in guide.aontu tells them apart."
+  entity: "derivatives_data"
+  op: "load"
+  points: [
+    "GET /futures-prices"
+    "GET /option-chain"
+    "GET /option-greeks"
+    "GET /option-prices"
+  ]
+
+}
+
+
+{
+  point: "warning"
+  note: "Points GET /esg-ratings and GET /esg-scores on entity=esg_data op=load have the same selector (exist: identifier,key), so only GET /esg-ratings is ever chosen. An action or another entity in guide.aontu tells them apart."
+  entity: "esg_data"
+  op: "load"
+  points: [
+    "GET /esg-ratings"
+    "GET /esg-scores"
+  ]
+
+}
+
+
+{
+  point: "warning"
+  note: "Points GET /etf-holdings, GET /etf-prices and GET /etf-quotes on entity=etf_data op=load have the same selector (exist: identifier,key), so only GET /etf-holdings is ever chosen. An action or another entity in guide.aontu tells them apart."
+  entity: "etf_data"
+  op: "load"
+  points: [
+    "GET /etf-holdings"
+    "GET /etf-prices"
+    "GET /etf-quotes"
+  ]
+
+}
+
+
+{
+  point: "warning"
+  note: "Points GET /dividends-calendar, GET /earnings-calendar, GET /economic-calendar, GET /ipo-calendar and GET /splits-calendar on entity=event_calendar op=load have the same selector (exist: key), so only GET /dividends-calendar is ever chosen. An action or another entity in guide.aontu tells them apart."
+  entity: "event_calendar"
+  op: "load"
+  points: [
+    "GET /dividends-calendar"
+    "GET /earnings-calendar"
+    "GET /economic-calendar"
+    "GET /ipo-calendar"
+    "GET /splits-calendar"
+  ]
+
+}
+
+
+{
+  point: "warning"
+  note: "Points GET /efficiency-ratios, GET /liquidity-ratios, GET /profitability-ratios, GET /solvency-ratios and GET /valuation-ratios on entity=financial_ratio op=load have the same selector (exist: identifier,key), so only GET /efficiency-ratios is ever chosen. An action or another entity in guide.aontu tells them apart."
+  entity: "financial_ratio"
+  op: "load"
+  points: [
+    "GET /efficiency-ratios"
+    "GET /liquidity-ratios"
+    "GET /profitability-ratios"
+    "GET /solvency-ratios"
+    "GET /valuation-ratios"
+  ]
+
+}
+
+
+{
+  point: "warning"
+  note: "Points GET /balance-sheet-statements, GET /cash-flow-statements, GET /income-statements, GET /international-balance-sheet-statements, GET /international-cash-flow-statements and GET /international-income-statements on entity=financial_statement op=load have the same selector (exist: identifier,key), so only GET /balance-sheet-statements is ever chosen. An action or another entity in guide.aontu tells them apart."
+  entity: "financial_statement"
+  op: "load"
+  points: [
+    "GET /balance-sheet-statements"
+    "GET /cash-flow-statements"
+    "GET /income-statements"
+    "GET /international-balance-sheet-statements"
+    "GET /international-cash-flow-statements"
+    "GET /international-income-statements"
+  ]
+
+}
+
+
+{
+  point: "warning"
+  note: "Points GET /forex-prices and GET /forex-quotes on entity=forex_data op=load have the same selector (exist: identifier,key), so only GET /forex-prices is ever chosen. An action or another entity in guide.aontu tells them apart."
+  entity: "forex_data"
+  op: "load"
+  points: [
+    "GET /forex-prices"
+    "GET /forex-quotes"
+  ]
+
+}
+
+
+{
+  point: "warning"
+  note: "Points GET /house-trading, GET /insider-transactions, GET /proposed-sales and GET /senate-trading on entity=insider_trading op=load have the same selector (exist: key), so only GET /house-trading is ever chosen. An action or another entity in guide.aontu tells them apart."
+  entity: "insider_trading"
+  op: "load"
+  points: [
+    "GET /house-trading"
+    "GET /insider-transactions"
+    "GET /proposed-sales"
+    "GET /senate-trading"
+  ]
+
+}
+
+
+{
+  point: "warning"
+  note: "Points GET /institutional-investors and GET /institutional-portfolio-statistics on entity=institutional_trading op=load have the same selector (exist: key), so only GET /institutional-investors is ever chosen. An action or another entity in guide.aontu tells them apart."
+  entity: "institutional_trading"
+  op: "load"
+  points: [
+    "GET /institutional-investors"
+    "GET /institutional-portfolio-statistics"
+  ]
+
+}
+
+
+{
+  point: "warning"
+  note: "Points GET /investment-adviser-information and GET /investment-adviser-names on entity=investment_adviser op=load have the same selector (exist: key), so only GET /investment-adviser-information is ever chosen. An action or another entity in guide.aontu tells them apart."
+  entity: "investment_adviser"
+  op: "load"
+  points: [
+    "GET /investment-adviser-information"
+    "GET /investment-adviser-names"
+  ]
+
+}
+
+
+{
+  point: "warning"
+  note: "Points GET /international-stock-prices, GET /latest-prices, GET /stock-prices and GET /stock-quotes on entity=market_data op=list have the same selector (exist: identifier,key), so only GET /international-stock-prices is ever chosen. An action or another entity in guide.aontu tells them apart."
+  entity: "market_data"
+  op: "list"
+  points: [
+    "GET /international-stock-prices"
+    "GET /latest-prices"
+    "GET /stock-prices"
+    "GET /stock-quotes"
+  ]
+
+}
+
+
+{
+  point: "warning"
+  note: "Points GET /commodity-prices, GET /otc-prices and GET /otc-volume on entity=market_data op=load have the same selector (exist: identifier,key), so only GET /commodity-prices is ever chosen. An action or another entity in guide.aontu tells them apart."
+  entity: "market_data"
+  op: "load"
+  points: [
+    "GET /commodity-prices"
+    "GET /otc-prices"
+    "GET /otc-volume"
+  ]
+
+}
+
+
+{
+  point: "warning"
+  note: "Points GET /index-constituents, GET /index-prices and GET /index-quotes on entity=market_index op=load have the same selector (exist: identifier,key), so only GET /index-constituents is ever chosen. An action or another entity in guide.aontu tells them apart."
+  entity: "market_index"
+  op: "load"
+  points: [
+    "GET /index-constituents"
+    "GET /index-prices"
+    "GET /index-quotes"
+  ]
+
+}
+
+
+{
+  point: "warning"
+  note: "Points GET /fed-press-releases, GET /press-releases and GET /sec-press-releases on entity=market_new op=load have the same selector (exist: key), so only GET /fed-press-releases is ever chosen. An action or another entity in guide.aontu tells them apart."
+  entity: "market_new"
+  op: "load"
+  points: [
+    "GET /fed-press-releases"
+    "GET /press-releases"
+    "GET /sec-press-releases"
+  ]
+
+}
+
+
+{
+  point: "warning"
+  note: "Points GET /dividends, GET /earnings-releases, GET /initial-public-offerings, GET /short-interest and GET /stock-splits on entity=miscellaneous_data op=load have the same selector (exist: key), so only GET /dividends is ever chosen. An action or another entity in guide.aontu tells them apart."
+  entity: "miscellaneous_data"
+  op: "load"
+  points: [
+    "GET /dividends"
+    "GET /earnings-releases"
+    "GET /initial-public-offerings"
+    "GET /short-interest"
+    "GET /stock-splits"
+  ]
+
+}
+
+
+{
+  point: "warning"
+  note: "Points GET /mutual-fund-holdings and GET /mutual-fund-statistics on entity=mutual_fund op=load have the same selector (exist: identifier,key), so only GET /mutual-fund-holdings is ever chosen. An action or another entity in guide.aontu tells them apart."
+  entity: "mutual_fund"
+  op: "load"
+  points: [
+    "GET /mutual-fund-holdings"
+    "GET /mutual-fund-statistics"
+  ]
+
+}
+
+
+{
+  point: "warning"
+  note: "Points GET /commodity-symbols, GET /etf-symbols, GET /international-stock-symbols, GET /otc-symbols and GET /stock-symbols on entity=symbol_list op=list have the same selector (exist: key), so only GET /commodity-symbols is ever chosen. An action or another entity in guide.aontu tells them apart."
+  entity: "symbol_list"
+  op: "list"
+  points: [
+    "GET /commodity-symbols"
+    "GET /etf-symbols"
+    "GET /international-stock-symbols"
+    "GET /otc-symbols"
+    "GET /stock-symbols"
+  ]
+
+}

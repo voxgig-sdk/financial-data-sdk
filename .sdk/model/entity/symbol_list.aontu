@@ -38,6 +38,52 @@ main: kit: entity: symbol_list: {
       points: [
         {
           co: {
+            id: "GET /commodity-symbols"
+            source: "openapi3"
+            version: 2
+          }
+          g: {
+            query: [
+              {
+                ex: "json"
+                k: "query"
+                n: "format"
+                or: "format"
+                r: false
+                t: "`$STRING`"
+              }
+              {
+                k: "query"
+                n: "key"
+                or: "key"
+                r: true
+                t: "`$STRING`"
+              }
+            ]
+          }
+          m: "GET"
+          o: "/commodity-symbols"
+          q: {
+            exist: [
+              "key"
+            ]
+          }
+          rs: {
+            kind: "json"
+            media: "application/json"
+          }
+          s: [
+            {
+              lit: "commodity-symbols"
+            }
+          ]
+          t: {
+            req: "`reqdata`"
+            res: "`body`"
+          }
+        }
+        {
+          co: {
             id: "GET /etf-symbols"
             source: "openapi3"
             version: 2
@@ -73,10 +119,12 @@ main: kit: entity: symbol_list: {
           o: "/etf-symbols"
           q: {
             exist: [
-              "format"
               "key"
-              "offset"
             ]
+          }
+          rs: {
+            kind: "json"
+            media: "application/json"
           }
           s: [
             {
@@ -125,10 +173,12 @@ main: kit: entity: symbol_list: {
           o: "/international-stock-symbols"
           q: {
             exist: [
-              "format"
               "key"
-              "offset"
             ]
+          }
+          rs: {
+            kind: "json"
+            media: "application/json"
           }
           s: [
             {
@@ -177,10 +227,12 @@ main: kit: entity: symbol_list: {
           o: "/otc-symbols"
           q: {
             exist: [
-              "format"
               "key"
-              "offset"
             ]
+          }
+          rs: {
+            kind: "json"
+            media: "application/json"
           }
           s: [
             {
@@ -229,57 +281,16 @@ main: kit: entity: symbol_list: {
           o: "/stock-symbols"
           q: {
             exist: [
-              "format"
               "key"
-              "offset"
             ]
+          }
+          rs: {
+            kind: "json"
+            media: "application/json"
           }
           s: [
             {
               lit: "stock-symbols"
-            }
-          ]
-          t: {
-            req: "`reqdata`"
-            res: "`body`"
-          }
-        }
-        {
-          co: {
-            id: "GET /commodity-symbols"
-            source: "openapi3"
-            version: 2
-          }
-          g: {
-            query: [
-              {
-                ex: "json"
-                k: "query"
-                n: "format"
-                or: "format"
-                r: false
-                t: "`$STRING`"
-              }
-              {
-                k: "query"
-                n: "key"
-                or: "key"
-                r: true
-                t: "`$STRING`"
-              }
-            ]
-          }
-          m: "GET"
-          o: "/commodity-symbols"
-          q: {
-            exist: [
-              "format"
-              "key"
-            ]
-          }
-          s: [
-            {
-              lit: "commodity-symbols"
             }
           ]
           t: {

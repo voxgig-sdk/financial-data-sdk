@@ -11,6 +11,48 @@ main: kit: entity: market_new: {
       points: [
         {
           co: {
+            id: "GET /fed-press-releases"
+            source: "openapi3"
+            version: 2
+          }
+          g: {
+            query: [
+              {
+                ex: "json"
+                k: "query"
+                n: "format"
+                or: "format"
+                r: false
+                t: "`$STRING`"
+              }
+              {
+                k: "query"
+                n: "key"
+                or: "key"
+                r: true
+                t: "`$STRING`"
+              }
+            ]
+          }
+          m: "GET"
+          o: "/fed-press-releases"
+          q: {
+            exist: [
+              "key"
+            ]
+          }
+          s: [
+            {
+              lit: "fed-press-releases"
+            }
+          ]
+          t: {
+            req: "`reqdata`"
+            res: "`body`"
+          }
+        }
+        {
+          co: {
             id: "GET /press-releases"
             source: "openapi3"
             version: 2
@@ -45,57 +87,12 @@ main: kit: entity: market_new: {
           o: "/press-releases"
           q: {
             exist: [
-              "format"
-              "identifier"
               "key"
             ]
           }
           s: [
             {
               lit: "press-releases"
-            }
-          ]
-          t: {
-            req: "`reqdata`"
-            res: "`body`"
-          }
-        }
-        {
-          co: {
-            id: "GET /fed-press-releases"
-            source: "openapi3"
-            version: 2
-          }
-          g: {
-            query: [
-              {
-                ex: "json"
-                k: "query"
-                n: "format"
-                or: "format"
-                r: false
-                t: "`$STRING`"
-              }
-              {
-                k: "query"
-                n: "key"
-                or: "key"
-                r: true
-                t: "`$STRING`"
-              }
-            ]
-          }
-          m: "GET"
-          o: "/fed-press-releases"
-          q: {
-            exist: [
-              "format"
-              "key"
-            ]
-          }
-          s: [
-            {
-              lit: "fed-press-releases"
             }
           ]
           t: {
@@ -132,7 +129,6 @@ main: kit: entity: market_new: {
           o: "/sec-press-releases"
           q: {
             exist: [
-              "format"
               "key"
             ]
           }

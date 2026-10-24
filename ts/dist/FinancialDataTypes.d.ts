@@ -66,8 +66,8 @@ export interface InsiderTrading {
 }
 export interface InsiderTradingLoadMatch {
     format?: string;
-    identifier?: string;
     key: string;
+    identifier?: string;
 }
 export interface InstitutionalTrading {
 }
@@ -121,8 +121,8 @@ export interface MarketNew {
 }
 export interface MarketNewLoadMatch {
     format?: string;
-    identifier?: string;
     key: string;
+    identifier?: string;
 }
 export interface MiscellaneousData {
 }

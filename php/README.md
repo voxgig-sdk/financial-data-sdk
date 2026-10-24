@@ -12,7 +12,7 @@ The SDK exposes the API as capitalised, semantic **Entities** — for example `$
 
 ## Install
 This package is not yet published to Packagist. Install it from the
-GitHub release tag (`php/vX.Y.Z`, see [Releases](https://github.com/voxgig-sdk/financial-data-sdk/releases)), or
+GitHub release tag (`php/vX.Y.Z`, see [Tags](https://github.com/voxgig-sdk/financial-data-sdk/tags)), or
 from a clone as a Composer path repository:
 
 ```bash
@@ -25,7 +25,7 @@ composer require voxgig-sdk/financial-data-sdk:@dev
 ## Tutorial: your first API call
 
 This tutorial walks through creating a client, listing entities, and
-loading a specific record.
+loading a specific record. The client sends the API key as the `key` query parameter.
 
 ### 1. Create a client
 
@@ -239,8 +239,8 @@ All entities share the same interface.
 
 | Method | Signature | Description |
 | --- | --- | --- |
-| `load` | `($reqmatch, $ctrl): array` | Load a single entity by match criteria. |
-| `list` | `(?array $reqmatch = null, $ctrl): array` | List entities matching the criteria (call with no argument to list all). |
+| `load` | `($reqmatch, $ctrl): mixed` | Load a single entity by match criteria, and return it. |
+| `list` | `(?array $reqmatch = null, $ctrl): mixed` | List entities matching the criteria (call with no argument to list all), one per record. |
 | `data_get` | `(): array` | Get entity data. |
 | `data_set` | `($data): void` | Set entity data. |
 | `match_get` | `(): array` | Get entity match criteria. |
@@ -250,9 +250,9 @@ All entities share the same interface.
 
 ### Result shape
 
-Entity operations return the ENTITY (call data_get() for the record) (an `array` for single-entity
-ops, a `list` for `list`) and throw on error. Wrap calls in
-`try`/`catch` to handle failures.
+Entity operations return the entity, and `list` an `array` of entities, one
+per record; an entity's `data_get()` reads its record (an `array`). They
+throw on error, so wrap calls in `try`/`catch` to handle failures.
 
 The `direct()` escape hatch never throws — it returns a result `array`
 you branch on via `$result["ok"]`:
@@ -356,7 +356,7 @@ API path: `/forex-minute-prices`
 
 Operations: Load.
 
-API path: `/insider-transactions`
+API path: `/house-trading`
 
 #### InstitutionalTrading
 
@@ -404,7 +404,7 @@ API path: `/minute-prices`
 
 Operations: Load.
 
-API path: `/index-prices`
+API path: `/index-constituents`
 
 #### MarketNew
 
@@ -413,7 +413,7 @@ API path: `/index-prices`
 
 Operations: Load.
 
-API path: `/press-releases`
+API path: `/fed-press-releases`
 
 #### MiscellaneousData
 
@@ -444,7 +444,7 @@ API path: `/mutual-fund-holdings`
 
 Operations: List.
 
-API path: `/etf-symbols`
+API path: `/commodity-symbols`
 
 
 
@@ -705,8 +705,8 @@ $market_data = $client->MarketData()->load(["identifier" => "identifier", "key" 
 #### Example: List
 
 ```php
-// list() returns an array of MarketData records (throws on error).
-$market_datas = $client->MarketData()->list();
+// list() returns an array of MarketData entities, one per record (throws on error).
+$market_datas = $client->MarketData()->list(["identifier" => "example", "key" => "example"]);
 ```
 
 
@@ -804,8 +804,8 @@ Create an instance: `$symbol_list = $client->SymbolList();`
 #### Example: List
 
 ```php
-// list() returns an array of SymbolList records (throws on error).
-$symbol_lists = $client->SymbolList()->list();
+// list() returns an array of SymbolList entities, one per record (throws on error).
+$symbol_lists = $client->SymbolList()->list(["key" => "example"]);
 ```
 
 ## Features

@@ -18,12 +18,12 @@
     }
   },
   "requests": {
-    "GET /insider-transactions": {
+    "GET /house-trading": {
       "provenance": "operation-contract",
       "version": 2,
       "source": "openapi3"
     },
-    "GET /house-trading": {
+    "GET /insider-transactions": {
       "provenance": "operation-contract",
       "version": 2,
       "source": "openapi3"

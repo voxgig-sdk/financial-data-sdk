@@ -11,6 +11,48 @@ main: kit: entity: insider_trading: {
       points: [
         {
           co: {
+            id: "GET /house-trading"
+            source: "openapi3"
+            version: 2
+          }
+          g: {
+            query: [
+              {
+                ex: "json"
+                k: "query"
+                n: "format"
+                or: "format"
+                r: false
+                t: "`$STRING`"
+              }
+              {
+                k: "query"
+                n: "key"
+                or: "key"
+                r: true
+                t: "`$STRING`"
+              }
+            ]
+          }
+          m: "GET"
+          o: "/house-trading"
+          q: {
+            exist: [
+              "key"
+            ]
+          }
+          s: [
+            {
+              lit: "house-trading"
+            }
+          ]
+          t: {
+            req: "`reqdata`"
+            res: "`body`"
+          }
+        }
+        {
+          co: {
             id: "GET /insider-transactions"
             source: "openapi3"
             version: 2
@@ -45,57 +87,12 @@ main: kit: entity: insider_trading: {
           o: "/insider-transactions"
           q: {
             exist: [
-              "format"
-              "identifier"
               "key"
             ]
           }
           s: [
             {
               lit: "insider-transactions"
-            }
-          ]
-          t: {
-            req: "`reqdata`"
-            res: "`body`"
-          }
-        }
-        {
-          co: {
-            id: "GET /house-trading"
-            source: "openapi3"
-            version: 2
-          }
-          g: {
-            query: [
-              {
-                ex: "json"
-                k: "query"
-                n: "format"
-                or: "format"
-                r: false
-                t: "`$STRING`"
-              }
-              {
-                k: "query"
-                n: "key"
-                or: "key"
-                r: true
-                t: "`$STRING`"
-              }
-            ]
-          }
-          m: "GET"
-          o: "/house-trading"
-          q: {
-            exist: [
-              "format"
-              "key"
-            ]
-          }
-          s: [
-            {
-              lit: "house-trading"
             }
           ]
           t: {
@@ -132,7 +129,6 @@ main: kit: entity: insider_trading: {
           o: "/proposed-sales"
           q: {
             exist: [
-              "format"
               "key"
             ]
           }
@@ -175,7 +171,6 @@ main: kit: entity: insider_trading: {
           o: "/senate-trading"
           q: {
             exist: [
-              "format"
               "key"
             ]
           }

@@ -45,7 +45,6 @@ main: kit: entity: institutional_trading: {
           o: "/institutional-holdings"
           q: {
             exist: [
-              "format"
               "identifier"
               "key"
             ]
@@ -89,7 +88,6 @@ main: kit: entity: institutional_trading: {
           o: "/institutional-investors"
           q: {
             exist: [
-              "format"
               "key"
             ]
           }
@@ -132,7 +130,6 @@ main: kit: entity: institutional_trading: {
           o: "/institutional-portfolio-statistics"
           q: {
             exist: [
-              "format"
               "key"
             ]
           }

@@ -24,6 +24,19 @@ import { FinancialDataEntityBase } from './FinancialDataEntityBase';
 import { Utility } from './utility/Utility';
 import { BaseFeature } from './feature/base/BaseFeature';
 declare const stdutil: Utility;
+type DirectResult = {
+    ok: false;
+    err: any;
+    status?: undefined;
+    headers?: undefined;
+    data?: undefined;
+} | {
+    ok: boolean;
+    status: number;
+    headers: any;
+    data: any;
+    err?: any;
+};
 declare class FinancialDataSDK {
     _mode: string;
     _options: any;
@@ -34,32 +47,8 @@ declare class FinancialDataSDK {
     options(): any;
     utility(): any;
     prepare(fetchargs?: any): Promise<any>;
-    direct(fetchargs?: any): Promise<Error | {
-        ok: boolean;
-        err: any;
-        status?: undefined;
-        headers?: undefined;
-        data?: undefined;
-    } | {
-        ok: boolean;
-        status: number;
-        headers: any;
-        data: any;
-        err?: undefined;
-    }>;
-    _rawRequest(fetchargs?: any): Promise<Error | {
-        ok: boolean;
-        err: any;
-        status?: undefined;
-        headers?: undefined;
-        data?: undefined;
-    } | {
-        ok: boolean;
-        status: number;
-        headers: any;
-        data: any;
-        err?: undefined;
-    }>;
+    direct(fetchargs?: any): Promise<DirectResult>;
+    _rawRequest(fetchargs?: any): Promise<DirectResult>;
     graphql(query: string, variables?: any, ctrl?: any): Promise<any>;
     BasicInformation(entopts?: Record<string, any>): BasicInformationEntity;
     CryptoCurrency(entopts?: Record<string, any>): CryptoCurrencyEntity;
@@ -89,3 +78,4 @@ declare class FinancialDataSDK {
 }
 declare const SDK: typeof FinancialDataSDK;
 export { stdutil, config, BaseFeature, FinancialDataEntityBase, FinancialDataSDK, SDK, };
+export type { DirectResult };

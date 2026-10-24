@@ -18,12 +18,12 @@
     }
   },
   "requests": {
-    "GET /press-releases": {
+    "GET /fed-press-releases": {
       "provenance": "operation-contract",
       "version": 2,
       "source": "openapi3"
     },
-    "GET /fed-press-releases": {
+    "GET /press-releases": {
       "provenance": "operation-contract",
       "version": 2,
       "source": "openapi3"

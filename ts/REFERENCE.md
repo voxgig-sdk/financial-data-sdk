@@ -292,8 +292,10 @@ Make a direct HTTP request to any API endpoint.
 | `fetchargs.headers` | `object` | Request headers (merged with defaults). |
 | `fetchargs.body` | `any` | Request body (objects are JSON-serialized). |
 | `fetchargs.ctrl` | `object` | Control options (e.g. `{ explain: true }`). |
+| `fetchargs.ctrl.signal` | `AbortSignal` | Aborts the request in flight: `ok` is then `false` and `err.code` is `request_aborted`. |
 
-**Returns:** `Promise<{ ok, status, headers, data } | Error>`
+**Returns:** `Promise<{ ok, status, headers, data }>`. On a failure
+`ok` is `false` and `err` holds the error.
 
 #### `prepare(fetchargs?: object)`
 
@@ -308,6 +310,15 @@ Alias for `FinancialDataSDK.test()`.
 
 **Returns:** `FinancialDataSDK` instance in test mode.
 
+#### Cancelling a call
+
+Every entity operation takes an optional `ctrl` object after its match or
+data, and an `AbortSignal` in `ctrl.signal` cancels the request in flight.
+The operation then rejects with an error whose `code` is
+`request_aborted` and whose `cause` is the signal's reason. A request
+whose signal has already aborted is not sent. `stream()` takes the signal
+as `callopts.signal`, and ends when it aborts.
+
 
 ---
 
@@ -321,7 +332,7 @@ const basic_information = client.BasicInformation()
 
 #### `load(match: object, ctrl?: object)`
 
-Load a single entity matching the given criteria.
+Load a single entity matching the given criteria. Resolves to the entity, whose record `data()` reads.
 
 ```ts
 const result = await client.BasicInformation().load({ identifier: 'identifier', key: 'key' })
@@ -365,7 +376,7 @@ const crypto_currency = client.CryptoCurrency()
 
 #### `load(match: object, ctrl?: object)`
 
-Load a single entity matching the given criteria.
+Load a single entity matching the given criteria. Resolves to the entity, whose record `data()` reads.
 
 ```ts
 const result = await client.CryptoCurrency().load({ key: 'key' })
@@ -409,7 +420,7 @@ const derivatives_data = client.DerivativesData()
 
 #### `load(match: object, ctrl?: object)`
 
-Load a single entity matching the given criteria.
+Load a single entity matching the given criteria. Resolves to the entity, whose record `data()` reads.
 
 ```ts
 const result = await client.DerivativesData().load({ key: 'key' })
@@ -453,7 +464,7 @@ const esg_data = client.EsgData()
 
 #### `load(match: object, ctrl?: object)`
 
-Load a single entity matching the given criteria.
+Load a single entity matching the given criteria. Resolves to the entity, whose record `data()` reads.
 
 ```ts
 const result = await client.EsgData().load({ key: 'key' })
@@ -497,7 +508,7 @@ const etf_data = client.EtfData()
 
 #### `load(match: object, ctrl?: object)`
 
-Load a single entity matching the given criteria.
+Load a single entity matching the given criteria. Resolves to the entity, whose record `data()` reads.
 
 ```ts
 const result = await client.EtfData().load({ identifier: 'identifier', key: 'key' })
@@ -541,7 +552,7 @@ const event_calendar = client.EventCalendar()
 
 #### `load(match: object, ctrl?: object)`
 
-Load a single entity matching the given criteria.
+Load a single entity matching the given criteria. Resolves to the entity, whose record `data()` reads.
 
 ```ts
 const result = await client.EventCalendar().load({ key: 'key' })
@@ -585,7 +596,7 @@ const financial_ratio = client.FinancialRatio()
 
 #### `load(match: object, ctrl?: object)`
 
-Load a single entity matching the given criteria.
+Load a single entity matching the given criteria. Resolves to the entity, whose record `data()` reads.
 
 ```ts
 const result = await client.FinancialRatio().load({ identifier: 'identifier', key: 'key' })
@@ -629,7 +640,7 @@ const financial_statement = client.FinancialStatement()
 
 #### `load(match: object, ctrl?: object)`
 
-Load a single entity matching the given criteria.
+Load a single entity matching the given criteria. Resolves to the entity, whose record `data()` reads.
 
 ```ts
 const result = await client.FinancialStatement().load({ identifier: 'identifier', key: 'key' })
@@ -673,7 +684,7 @@ const forex_data = client.ForexData()
 
 #### `load(match: object, ctrl?: object)`
 
-Load a single entity matching the given criteria.
+Load a single entity matching the given criteria. Resolves to the entity, whose record `data()` reads.
 
 ```ts
 const result = await client.ForexData().load({ key: 'key' })
@@ -717,7 +728,7 @@ const insider_trading = client.InsiderTrading()
 
 #### `load(match: object, ctrl?: object)`
 
-Load a single entity matching the given criteria.
+Load a single entity matching the given criteria. Resolves to the entity, whose record `data()` reads.
 
 ```ts
 const result = await client.InsiderTrading().load({ key: 'key' })
@@ -761,7 +772,7 @@ const institutional_trading = client.InstitutionalTrading()
 
 #### `load(match: object, ctrl?: object)`
 
-Load a single entity matching the given criteria.
+Load a single entity matching the given criteria. Resolves to the entity, whose record `data()` reads.
 
 ```ts
 const result = await client.InstitutionalTrading().load({ key: 'key' })
@@ -805,7 +816,7 @@ const investment_adviser = client.InvestmentAdviser()
 
 #### `load(match: object, ctrl?: object)`
 
-Load a single entity matching the given criteria.
+Load a single entity matching the given criteria. Resolves to the entity, whose record `data()` reads.
 
 ```ts
 const result = await client.InvestmentAdviser().load({ key: 'key' })
@@ -866,7 +877,7 @@ const market_data = client.MarketData()
 
 #### `list(match: object, ctrl?: object)`
 
-List entities matching the given criteria. Returns an array.
+List entities matching the given criteria. Resolves to an array of entities, one per record.
 
 ```ts
 const results = await client.MarketData().list({ identifier: "example", key: "example" })
@@ -874,7 +885,7 @@ const results = await client.MarketData().list({ identifier: "example", key: "ex
 
 #### `load(match: object, ctrl?: object)`
 
-Load a single entity matching the given criteria.
+Load a single entity matching the given criteria. Resolves to the entity, whose record `data()` reads.
 
 ```ts
 const result = await client.MarketData().load({ identifier: 'identifier', key: 'key' })
@@ -918,7 +929,7 @@ const market_index = client.MarketIndex()
 
 #### `load(match: object, ctrl?: object)`
 
-Load a single entity matching the given criteria.
+Load a single entity matching the given criteria. Resolves to the entity, whose record `data()` reads.
 
 ```ts
 const result = await client.MarketIndex().load({ key: 'key' })
@@ -962,7 +973,7 @@ const market_new = client.MarketNew()
 
 #### `load(match: object, ctrl?: object)`
 
-Load a single entity matching the given criteria.
+Load a single entity matching the given criteria. Resolves to the entity, whose record `data()` reads.
 
 ```ts
 const result = await client.MarketNew().load({ key: 'key' })
@@ -1006,7 +1017,7 @@ const miscellaneous_data = client.MiscellaneousData()
 
 #### `load(match: object, ctrl?: object)`
 
-Load a single entity matching the given criteria.
+Load a single entity matching the given criteria. Resolves to the entity, whose record `data()` reads.
 
 ```ts
 const result = await client.MiscellaneousData().load({ key: 'key' })
@@ -1050,7 +1061,7 @@ const mutual_fund = client.MutualFund()
 
 #### `load(match: object, ctrl?: object)`
 
-Load a single entity matching the given criteria.
+Load a single entity matching the given criteria. Resolves to the entity, whose record `data()` reads.
 
 ```ts
 const result = await client.MutualFund().load({ key: 'key' })
@@ -1103,7 +1114,7 @@ const symbol_list = client.SymbolList()
 
 #### `list(match: object, ctrl?: object)`
 
-List entities matching the given criteria. Returns an array.
+List entities matching the given criteria. Resolves to an array of entities, one per record.
 
 ```ts
 const results = await client.SymbolList().list({ key: "example" })
@@ -1294,6 +1305,7 @@ Timeout.
 | Option | Type |
 |---|---|
 | `clearTimer` | function |
+| `now` | function |
 | `setTimer` | function |
 
 These take no default: the feature behaves one way when you supply them and

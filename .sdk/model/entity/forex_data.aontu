@@ -53,7 +53,6 @@ main: kit: entity: forex_data: {
           q: {
             exist: [
               "date"
-              "format"
               "identifier"
               "key"
             ]
@@ -104,7 +103,6 @@ main: kit: entity: forex_data: {
           o: "/forex-prices"
           q: {
             exist: [
-              "format"
               "identifier"
               "key"
             ]
@@ -155,7 +153,6 @@ main: kit: entity: forex_data: {
           o: "/forex-quotes"
           q: {
             exist: [
-              "format"
               "identifier"
               "key"
             ]
@@ -199,7 +196,6 @@ main: kit: entity: forex_data: {
           o: "/forex-symbols"
           q: {
             exist: [
-              "format"
               "key"
             ]
           }

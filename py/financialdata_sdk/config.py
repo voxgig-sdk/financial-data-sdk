@@ -96,6 +96,7 @@ def make_config():
         },
         "optspec": {
           "clearTimer": "`$FUNCTION`",
+          "now": "`$FUNCTION`",
           "setTimer": "`$FUNCTION`",
         },
         "strict": False,
@@ -186,7 +187,6 @@ def make_config():
                 },
                 "select": {
                   "exist": [
-                    "format",
                     "identifier",
                     "key",
                   ],
@@ -236,7 +236,6 @@ def make_config():
                 },
                 "select": {
                   "exist": [
-                    "format",
                     "identifier",
                     "key",
                   ],
@@ -286,7 +285,6 @@ def make_config():
                 },
                 "select": {
                   "exist": [
-                    "format",
                     "identifier",
                     "key",
                   ],
@@ -336,7 +334,6 @@ def make_config():
                 },
                 "select": {
                   "exist": [
-                    "format",
                     "identifier",
                     "key",
                   ],
@@ -386,7 +383,6 @@ def make_config():
                 },
                 "select": {
                   "exist": [
-                    "format",
                     "identifier",
                     "key",
                   ],
@@ -436,7 +432,6 @@ def make_config():
                 },
                 "select": {
                   "exist": [
-                    "format",
                     "identifier",
                     "key",
                   ],
@@ -486,7 +481,6 @@ def make_config():
                 },
                 "select": {
                   "exist": [
-                    "format",
                     "identifier",
                     "key",
                   ],
@@ -559,7 +553,6 @@ def make_config():
                 "select": {
                   "exist": [
                     "date",
-                    "format",
                     "identifier",
                     "key",
                   ],
@@ -609,7 +602,6 @@ def make_config():
                 },
                 "select": {
                   "exist": [
-                    "format",
                     "identifier",
                     "key",
                   ],
@@ -659,7 +651,6 @@ def make_config():
                 },
                 "select": {
                   "exist": [
-                    "format",
                     "identifier",
                     "key",
                   ],
@@ -709,7 +700,6 @@ def make_config():
                 },
                 "select": {
                   "exist": [
-                    "format",
                     "identifier",
                     "key",
                   ],
@@ -752,7 +742,6 @@ def make_config():
                 },
                 "select": {
                   "exist": [
-                    "format",
                     "key",
                   ],
                 },
@@ -816,7 +805,6 @@ def make_config():
                 },
                 "select": {
                   "exist": [
-                    "format",
                     "identifier",
                     "key",
                   ],
@@ -866,7 +854,6 @@ def make_config():
                 },
                 "select": {
                   "exist": [
-                    "format",
                     "identifier",
                     "key",
                   ],
@@ -916,7 +903,6 @@ def make_config():
                 },
                 "select": {
                   "exist": [
-                    "format",
                     "identifier",
                     "key",
                   ],
@@ -966,7 +952,6 @@ def make_config():
                 },
                 "select": {
                   "exist": [
-                    "format",
                     "identifier",
                     "key",
                   ],
@@ -1009,7 +994,6 @@ def make_config():
                 },
                 "select": {
                   "exist": [
-                    "format",
                     "key",
                   ],
                 },
@@ -1073,7 +1057,6 @@ def make_config():
                 },
                 "select": {
                   "exist": [
-                    "format",
                     "identifier",
                     "key",
                   ],
@@ -1123,7 +1106,6 @@ def make_config():
                 },
                 "select": {
                   "exist": [
-                    "format",
                     "identifier",
                     "key",
                   ],
@@ -1166,7 +1148,6 @@ def make_config():
                 },
                 "select": {
                   "exist": [
-                    "format",
                     "key",
                   ],
                 },
@@ -1230,7 +1211,6 @@ def make_config():
                 },
                 "select": {
                   "exist": [
-                    "format",
                     "identifier",
                     "key",
                   ],
@@ -1280,7 +1260,6 @@ def make_config():
                 },
                 "select": {
                   "exist": [
-                    "format",
                     "identifier",
                     "key",
                   ],
@@ -1330,7 +1309,6 @@ def make_config():
                 },
                 "select": {
                   "exist": [
-                    "format",
                     "identifier",
                     "key",
                   ],
@@ -1388,7 +1366,6 @@ def make_config():
                 },
                 "select": {
                   "exist": [
-                    "format",
                     "key",
                   ],
                 },
@@ -1430,7 +1407,6 @@ def make_config():
                 },
                 "select": {
                   "exist": [
-                    "format",
                     "key",
                   ],
                 },
@@ -1472,7 +1448,6 @@ def make_config():
                 },
                 "select": {
                   "exist": [
-                    "format",
                     "key",
                   ],
                 },
@@ -1514,7 +1489,6 @@ def make_config():
                 },
                 "select": {
                   "exist": [
-                    "format",
                     "key",
                   ],
                 },
@@ -1556,7 +1530,6 @@ def make_config():
                 },
                 "select": {
                   "exist": [
-                    "format",
                     "key",
                   ],
                 },
@@ -1620,7 +1593,6 @@ def make_config():
                 },
                 "select": {
                   "exist": [
-                    "format",
                     "identifier",
                     "key",
                   ],
@@ -1670,7 +1642,6 @@ def make_config():
                 },
                 "select": {
                   "exist": [
-                    "format",
                     "identifier",
                     "key",
                   ],
@@ -1720,7 +1691,6 @@ def make_config():
                 },
                 "select": {
                   "exist": [
-                    "format",
                     "identifier",
                     "key",
                   ],
@@ -1770,7 +1740,6 @@ def make_config():
                 },
                 "select": {
                   "exist": [
-                    "format",
                     "identifier",
                     "key",
                   ],
@@ -1820,7 +1789,6 @@ def make_config():
                 },
                 "select": {
                   "exist": [
-                    "format",
                     "identifier",
                     "key",
                   ],
@@ -1885,7 +1853,6 @@ def make_config():
                 },
                 "select": {
                   "exist": [
-                    "format",
                     "identifier",
                     "key",
                   ],
@@ -1935,7 +1902,6 @@ def make_config():
                 },
                 "select": {
                   "exist": [
-                    "format",
                     "identifier",
                     "key",
                   ],
@@ -1985,7 +1951,6 @@ def make_config():
                 },
                 "select": {
                   "exist": [
-                    "format",
                     "identifier",
                     "key",
                   ],
@@ -2035,7 +2000,6 @@ def make_config():
                 },
                 "select": {
                   "exist": [
-                    "format",
                     "identifier",
                     "key",
                   ],
@@ -2085,7 +2049,6 @@ def make_config():
                 },
                 "select": {
                   "exist": [
-                    "format",
                     "identifier",
                     "key",
                   ],
@@ -2135,7 +2098,6 @@ def make_config():
                 },
                 "select": {
                   "exist": [
-                    "format",
                     "identifier",
                     "key",
                   ],
@@ -2208,7 +2170,6 @@ def make_config():
                 "select": {
                   "exist": [
                     "date",
-                    "format",
                     "identifier",
                     "key",
                   ],
@@ -2258,7 +2219,6 @@ def make_config():
                 },
                 "select": {
                   "exist": [
-                    "format",
                     "identifier",
                     "key",
                   ],
@@ -2308,7 +2268,6 @@ def make_config():
                 },
                 "select": {
                   "exist": [
-                    "format",
                     "identifier",
                     "key",
                   ],
@@ -2351,7 +2310,6 @@ def make_config():
                 },
                 "select": {
                   "exist": [
-                    "format",
                     "key",
                   ],
                 },
@@ -2371,6 +2329,47 @@ def make_config():
             "input": "data",
             "name": "load",
             "points": [
+              {
+                "kind": "http",
+                "method": "GET",
+                "orig": "/house-trading",
+                "segments": [
+                  {
+                    "lit": "house-trading",
+                  },
+                ],
+                "parts": [
+                  "house-trading",
+                ],
+                "rename": {},
+                "transform": {
+                  "req": "`reqdata`",
+                  "res": "`body`",
+                },
+                "args": {
+                  "query": [
+                    {
+                      "name": "format",
+                      "orig": "format",
+                      "type": "`$STRING`",
+                      "kind": "query",
+                      "example": "json",
+                    },
+                    {
+                      "name": "key",
+                      "orig": "key",
+                      "type": "`$STRING`",
+                      "kind": "query",
+                      "reqd": True,
+                    },
+                  ],
+                },
+                "select": {
+                  "exist": [
+                    "key",
+                  ],
+                },
+              },
               {
                 "kind": "http",
                 "method": "GET",
@@ -2414,50 +2413,6 @@ def make_config():
                 },
                 "select": {
                   "exist": [
-                    "format",
-                    "identifier",
-                    "key",
-                  ],
-                },
-              },
-              {
-                "kind": "http",
-                "method": "GET",
-                "orig": "/house-trading",
-                "segments": [
-                  {
-                    "lit": "house-trading",
-                  },
-                ],
-                "parts": [
-                  "house-trading",
-                ],
-                "rename": {},
-                "transform": {
-                  "req": "`reqdata`",
-                  "res": "`body`",
-                },
-                "args": {
-                  "query": [
-                    {
-                      "name": "format",
-                      "orig": "format",
-                      "type": "`$STRING`",
-                      "kind": "query",
-                      "example": "json",
-                    },
-                    {
-                      "name": "key",
-                      "orig": "key",
-                      "type": "`$STRING`",
-                      "kind": "query",
-                      "reqd": True,
-                    },
-                  ],
-                },
-                "select": {
-                  "exist": [
-                    "format",
                     "key",
                   ],
                 },
@@ -2499,7 +2454,6 @@ def make_config():
                 },
                 "select": {
                   "exist": [
-                    "format",
                     "key",
                   ],
                 },
@@ -2541,7 +2495,6 @@ def make_config():
                 },
                 "select": {
                   "exist": [
-                    "format",
                     "key",
                   ],
                 },
@@ -2605,7 +2558,6 @@ def make_config():
                 },
                 "select": {
                   "exist": [
-                    "format",
                     "identifier",
                     "key",
                   ],
@@ -2648,7 +2600,6 @@ def make_config():
                 },
                 "select": {
                   "exist": [
-                    "format",
                     "key",
                   ],
                 },
@@ -2690,7 +2641,6 @@ def make_config():
                 },
                 "select": {
                   "exist": [
-                    "format",
                     "key",
                   ],
                 },
@@ -2747,7 +2697,6 @@ def make_config():
                 },
                 "select": {
                   "exist": [
-                    "format",
                     "key",
                   ],
                 },
@@ -2789,7 +2738,6 @@ def make_config():
                 },
                 "select": {
                   "exist": [
-                    "format",
                     "key",
                   ],
                 },
@@ -2905,6 +2853,7 @@ def make_config():
                       "kind": "query",
                       "reqd": True,
                       "example": "2020-01-15",
+                      "field": True,
                     },
                     {
                       "name": "format",
@@ -2940,11 +2889,13 @@ def make_config():
                 "select": {
                   "exist": [
                     "date",
-                    "format",
                     "identifier",
                     "key",
-                    "offset",
                   ],
+                },
+                "response": {
+                  "kind": "json",
+                  "media": "application/json",
                 },
               },
               {
@@ -2999,11 +2950,13 @@ def make_config():
                 },
                 "select": {
                   "exist": [
-                    "format",
                     "identifier",
                     "key",
-                    "offset",
                   ],
+                },
+                "response": {
+                  "kind": "json",
+                  "media": "application/json",
                 },
               },
               {
@@ -3057,11 +3010,13 @@ def make_config():
                 },
                 "select": {
                   "exist": [
-                    "format",
                     "identifier",
                     "key",
-                    "offset",
                   ],
+                },
+                "response": {
+                  "kind": "json",
+                  "media": "application/json",
                 },
               },
               {
@@ -3116,11 +3071,13 @@ def make_config():
                 },
                 "select": {
                   "exist": [
-                    "format",
                     "identifier",
                     "key",
-                    "offset",
                   ],
+                },
+                "response": {
+                  "kind": "json",
+                  "media": "application/json",
                 },
               },
               {
@@ -3168,10 +3125,13 @@ def make_config():
                 },
                 "select": {
                   "exist": [
-                    "format",
                     "identifier",
                     "key",
                   ],
+                },
+                "response": {
+                  "kind": "json",
+                  "media": "application/json",
                 },
               },
             ],
@@ -3231,10 +3191,8 @@ def make_config():
                 },
                 "select": {
                   "exist": [
-                    "format",
                     "identifier",
                     "key",
-                    "offset",
                   ],
                 },
               },
@@ -3289,10 +3247,8 @@ def make_config():
                 },
                 "select": {
                   "exist": [
-                    "format",
                     "identifier",
                     "key",
-                    "offset",
                   ],
                 },
               },
@@ -3340,7 +3296,6 @@ def make_config():
                 },
                 "select": {
                   "exist": [
-                    "format",
                     "identifier",
                     "key",
                   ],
@@ -3361,6 +3316,55 @@ def make_config():
             "input": "data",
             "name": "load",
             "points": [
+              {
+                "kind": "http",
+                "method": "GET",
+                "orig": "/index-constituents",
+                "segments": [
+                  {
+                    "lit": "index-constituents",
+                  },
+                ],
+                "parts": [
+                  "index-constituents",
+                ],
+                "rename": {},
+                "transform": {
+                  "req": "`reqdata`",
+                  "res": "`body`",
+                },
+                "args": {
+                  "query": [
+                    {
+                      "name": "format",
+                      "orig": "format",
+                      "type": "`$STRING`",
+                      "kind": "query",
+                      "example": "json",
+                    },
+                    {
+                      "name": "identifier",
+                      "orig": "identifier",
+                      "type": "`$STRING`",
+                      "kind": "query",
+                      "reqd": True,
+                    },
+                    {
+                      "name": "key",
+                      "orig": "key",
+                      "type": "`$STRING`",
+                      "kind": "query",
+                      "reqd": True,
+                    },
+                  ],
+                },
+                "select": {
+                  "exist": [
+                    "identifier",
+                    "key",
+                  ],
+                },
+              },
               {
                 "kind": "http",
                 "method": "GET",
@@ -3412,58 +3416,6 @@ def make_config():
                 },
                 "select": {
                   "exist": [
-                    "format",
-                    "identifier",
-                    "key",
-                    "offset",
-                  ],
-                },
-              },
-              {
-                "kind": "http",
-                "method": "GET",
-                "orig": "/index-constituents",
-                "segments": [
-                  {
-                    "lit": "index-constituents",
-                  },
-                ],
-                "parts": [
-                  "index-constituents",
-                ],
-                "rename": {},
-                "transform": {
-                  "req": "`reqdata`",
-                  "res": "`body`",
-                },
-                "args": {
-                  "query": [
-                    {
-                      "name": "format",
-                      "orig": "format",
-                      "type": "`$STRING`",
-                      "kind": "query",
-                      "example": "json",
-                    },
-                    {
-                      "name": "identifier",
-                      "orig": "identifier",
-                      "type": "`$STRING`",
-                      "kind": "query",
-                      "reqd": True,
-                    },
-                    {
-                      "name": "key",
-                      "orig": "key",
-                      "type": "`$STRING`",
-                      "kind": "query",
-                      "reqd": True,
-                    },
-                  ],
-                },
-                "select": {
-                  "exist": [
-                    "format",
                     "identifier",
                     "key",
                   ],
@@ -3513,7 +3465,6 @@ def make_config():
                 },
                 "select": {
                   "exist": [
-                    "format",
                     "identifier",
                     "key",
                   ],
@@ -3556,7 +3507,6 @@ def make_config():
                 },
                 "select": {
                   "exist": [
-                    "format",
                     "key",
                   ],
                 },
@@ -3576,6 +3526,47 @@ def make_config():
             "input": "data",
             "name": "load",
             "points": [
+              {
+                "kind": "http",
+                "method": "GET",
+                "orig": "/fed-press-releases",
+                "segments": [
+                  {
+                    "lit": "fed-press-releases",
+                  },
+                ],
+                "parts": [
+                  "fed-press-releases",
+                ],
+                "rename": {},
+                "transform": {
+                  "req": "`reqdata`",
+                  "res": "`body`",
+                },
+                "args": {
+                  "query": [
+                    {
+                      "name": "format",
+                      "orig": "format",
+                      "type": "`$STRING`",
+                      "kind": "query",
+                      "example": "json",
+                    },
+                    {
+                      "name": "key",
+                      "orig": "key",
+                      "type": "`$STRING`",
+                      "kind": "query",
+                      "reqd": True,
+                    },
+                  ],
+                },
+                "select": {
+                  "exist": [
+                    "key",
+                  ],
+                },
+              },
               {
                 "kind": "http",
                 "method": "GET",
@@ -3619,50 +3610,6 @@ def make_config():
                 },
                 "select": {
                   "exist": [
-                    "format",
-                    "identifier",
-                    "key",
-                  ],
-                },
-              },
-              {
-                "kind": "http",
-                "method": "GET",
-                "orig": "/fed-press-releases",
-                "segments": [
-                  {
-                    "lit": "fed-press-releases",
-                  },
-                ],
-                "parts": [
-                  "fed-press-releases",
-                ],
-                "rename": {},
-                "transform": {
-                  "req": "`reqdata`",
-                  "res": "`body`",
-                },
-                "args": {
-                  "query": [
-                    {
-                      "name": "format",
-                      "orig": "format",
-                      "type": "`$STRING`",
-                      "kind": "query",
-                      "example": "json",
-                    },
-                    {
-                      "name": "key",
-                      "orig": "key",
-                      "type": "`$STRING`",
-                      "kind": "query",
-                      "reqd": True,
-                    },
-                  ],
-                },
-                "select": {
-                  "exist": [
-                    "format",
                     "key",
                   ],
                 },
@@ -3704,7 +3651,6 @@ def make_config():
                 },
                 "select": {
                   "exist": [
-                    "format",
                     "key",
                   ],
                 },
@@ -3767,8 +3713,6 @@ def make_config():
                 },
                 "select": {
                   "exist": [
-                    "format",
-                    "identifier",
                     "key",
                   ],
                 },
@@ -3816,8 +3760,47 @@ def make_config():
                 },
                 "select": {
                   "exist": [
-                    "format",
-                    "identifier",
+                    "key",
+                  ],
+                },
+              },
+              {
+                "kind": "http",
+                "method": "GET",
+                "orig": "/initial-public-offerings",
+                "segments": [
+                  {
+                    "lit": "initial-public-offerings",
+                  },
+                ],
+                "parts": [
+                  "initial-public-offerings",
+                ],
+                "rename": {},
+                "transform": {
+                  "req": "`reqdata`",
+                  "res": "`body`",
+                },
+                "args": {
+                  "query": [
+                    {
+                      "name": "format",
+                      "orig": "format",
+                      "type": "`$STRING`",
+                      "kind": "query",
+                      "example": "json",
+                    },
+                    {
+                      "name": "key",
+                      "orig": "key",
+                      "type": "`$STRING`",
+                      "kind": "query",
+                      "reqd": True,
+                    },
+                  ],
+                },
+                "select": {
+                  "exist": [
                     "key",
                   ],
                 },
@@ -3865,8 +3848,6 @@ def make_config():
                 },
                 "select": {
                   "exist": [
-                    "format",
-                    "identifier",
                     "key",
                   ],
                 },
@@ -3914,50 +3895,6 @@ def make_config():
                 },
                 "select": {
                   "exist": [
-                    "format",
-                    "identifier",
-                    "key",
-                  ],
-                },
-              },
-              {
-                "kind": "http",
-                "method": "GET",
-                "orig": "/initial-public-offerings",
-                "segments": [
-                  {
-                    "lit": "initial-public-offerings",
-                  },
-                ],
-                "parts": [
-                  "initial-public-offerings",
-                ],
-                "rename": {},
-                "transform": {
-                  "req": "`reqdata`",
-                  "res": "`body`",
-                },
-                "args": {
-                  "query": [
-                    {
-                      "name": "format",
-                      "orig": "format",
-                      "type": "`$STRING`",
-                      "kind": "query",
-                      "example": "json",
-                    },
-                    {
-                      "name": "key",
-                      "orig": "key",
-                      "type": "`$STRING`",
-                      "kind": "query",
-                      "reqd": True,
-                    },
-                  ],
-                },
-                "select": {
-                  "exist": [
-                    "format",
                     "key",
                   ],
                 },
@@ -4021,7 +3958,6 @@ def make_config():
                 },
                 "select": {
                   "exist": [
-                    "format",
                     "identifier",
                     "key",
                   ],
@@ -4071,7 +4007,6 @@ def make_config():
                 },
                 "select": {
                   "exist": [
-                    "format",
                     "identifier",
                     "key",
                   ],
@@ -4114,7 +4049,6 @@ def make_config():
                 },
                 "select": {
                   "exist": [
-                    "format",
                     "key",
                   ],
                 },
@@ -4155,6 +4089,51 @@ def make_config():
             "input": "data",
             "name": "list",
             "points": [
+              {
+                "kind": "http",
+                "method": "GET",
+                "orig": "/commodity-symbols",
+                "segments": [
+                  {
+                    "lit": "commodity-symbols",
+                  },
+                ],
+                "parts": [
+                  "commodity-symbols",
+                ],
+                "rename": {},
+                "transform": {
+                  "req": "`reqdata`",
+                  "res": "`body`",
+                },
+                "args": {
+                  "query": [
+                    {
+                      "name": "format",
+                      "orig": "format",
+                      "type": "`$STRING`",
+                      "kind": "query",
+                      "example": "json",
+                    },
+                    {
+                      "name": "key",
+                      "orig": "key",
+                      "type": "`$STRING`",
+                      "kind": "query",
+                      "reqd": True,
+                    },
+                  ],
+                },
+                "select": {
+                  "exist": [
+                    "key",
+                  ],
+                },
+                "response": {
+                  "kind": "json",
+                  "media": "application/json",
+                },
+              },
               {
                 "kind": "http",
                 "method": "GET",
@@ -4199,10 +4178,12 @@ def make_config():
                 },
                 "select": {
                   "exist": [
-                    "format",
                     "key",
-                    "offset",
                   ],
+                },
+                "response": {
+                  "kind": "json",
+                  "media": "application/json",
                 },
               },
               {
@@ -4249,10 +4230,12 @@ def make_config():
                 },
                 "select": {
                   "exist": [
-                    "format",
                     "key",
-                    "offset",
                   ],
+                },
+                "response": {
+                  "kind": "json",
+                  "media": "application/json",
                 },
               },
               {
@@ -4299,10 +4282,12 @@ def make_config():
                 },
                 "select": {
                   "exist": [
-                    "format",
                     "key",
-                    "offset",
                   ],
+                },
+                "response": {
+                  "kind": "json",
+                  "media": "application/json",
                 },
               },
               {
@@ -4349,52 +4334,12 @@ def make_config():
                 },
                 "select": {
                   "exist": [
-                    "format",
-                    "key",
-                    "offset",
-                  ],
-                },
-              },
-              {
-                "kind": "http",
-                "method": "GET",
-                "orig": "/commodity-symbols",
-                "segments": [
-                  {
-                    "lit": "commodity-symbols",
-                  },
-                ],
-                "parts": [
-                  "commodity-symbols",
-                ],
-                "rename": {},
-                "transform": {
-                  "req": "`reqdata`",
-                  "res": "`body`",
-                },
-                "args": {
-                  "query": [
-                    {
-                      "name": "format",
-                      "orig": "format",
-                      "type": "`$STRING`",
-                      "kind": "query",
-                      "example": "json",
-                    },
-                    {
-                      "name": "key",
-                      "orig": "key",
-                      "type": "`$STRING`",
-                      "kind": "query",
-                      "reqd": True,
-                    },
-                  ],
-                },
-                "select": {
-                  "exist": [
-                    "format",
                     "key",
                   ],
+                },
+                "response": {
+                  "kind": "json",
+                  "media": "application/json",
                 },
               },
             ],

@@ -159,7 +159,7 @@ local basic_information = client:BasicInformation(nil)
 
 #### `load(reqmatch, ctrl) -> any, err`
 
-Load a single entity matching the given criteria.
+Load a single entity matching the given criteria. Returns the entity, whose record `data_get()` reads, or `nil` and an error on failure.
 
 ```lua
 local result, err = client:BasicInformation():load({ identifier = "identifier", key = "key" })
@@ -205,7 +205,7 @@ local crypto_currency = client:CryptoCurrency(nil)
 
 #### `load(reqmatch, ctrl) -> any, err`
 
-Load a single entity matching the given criteria.
+Load a single entity matching the given criteria. Returns the entity, whose record `data_get()` reads, or `nil` and an error on failure.
 
 ```lua
 local result, err = client:CryptoCurrency():load({ key = "key" })
@@ -251,7 +251,7 @@ local derivatives_data = client:DerivativesData(nil)
 
 #### `load(reqmatch, ctrl) -> any, err`
 
-Load a single entity matching the given criteria.
+Load a single entity matching the given criteria. Returns the entity, whose record `data_get()` reads, or `nil` and an error on failure.
 
 ```lua
 local result, err = client:DerivativesData():load({ key = "key" })
@@ -297,7 +297,7 @@ local esg_data = client:EsgData(nil)
 
 #### `load(reqmatch, ctrl) -> any, err`
 
-Load a single entity matching the given criteria.
+Load a single entity matching the given criteria. Returns the entity, whose record `data_get()` reads, or `nil` and an error on failure.
 
 ```lua
 local result, err = client:EsgData():load({ key = "key" })
@@ -343,7 +343,7 @@ local etf_data = client:EtfData(nil)
 
 #### `load(reqmatch, ctrl) -> any, err`
 
-Load a single entity matching the given criteria.
+Load a single entity matching the given criteria. Returns the entity, whose record `data_get()` reads, or `nil` and an error on failure.
 
 ```lua
 local result, err = client:EtfData():load({ identifier = "identifier", key = "key" })
@@ -389,7 +389,7 @@ local event_calendar = client:EventCalendar(nil)
 
 #### `load(reqmatch, ctrl) -> any, err`
 
-Load a single entity matching the given criteria.
+Load a single entity matching the given criteria. Returns the entity, whose record `data_get()` reads, or `nil` and an error on failure.
 
 ```lua
 local result, err = client:EventCalendar():load({ key = "key" })
@@ -435,7 +435,7 @@ local financial_ratio = client:FinancialRatio(nil)
 
 #### `load(reqmatch, ctrl) -> any, err`
 
-Load a single entity matching the given criteria.
+Load a single entity matching the given criteria. Returns the entity, whose record `data_get()` reads, or `nil` and an error on failure.
 
 ```lua
 local result, err = client:FinancialRatio():load({ identifier = "identifier", key = "key" })
@@ -481,7 +481,7 @@ local financial_statement = client:FinancialStatement(nil)
 
 #### `load(reqmatch, ctrl) -> any, err`
 
-Load a single entity matching the given criteria.
+Load a single entity matching the given criteria. Returns the entity, whose record `data_get()` reads, or `nil` and an error on failure.
 
 ```lua
 local result, err = client:FinancialStatement():load({ identifier = "identifier", key = "key" })
@@ -527,7 +527,7 @@ local forex_data = client:ForexData(nil)
 
 #### `load(reqmatch, ctrl) -> any, err`
 
-Load a single entity matching the given criteria.
+Load a single entity matching the given criteria. Returns the entity, whose record `data_get()` reads, or `nil` and an error on failure.
 
 ```lua
 local result, err = client:ForexData():load({ key = "key" })
@@ -573,7 +573,7 @@ local insider_trading = client:InsiderTrading(nil)
 
 #### `load(reqmatch, ctrl) -> any, err`
 
-Load a single entity matching the given criteria.
+Load a single entity matching the given criteria. Returns the entity, whose record `data_get()` reads, or `nil` and an error on failure.
 
 ```lua
 local result, err = client:InsiderTrading():load({ key = "key" })
@@ -619,7 +619,7 @@ local institutional_trading = client:InstitutionalTrading(nil)
 
 #### `load(reqmatch, ctrl) -> any, err`
 
-Load a single entity matching the given criteria.
+Load a single entity matching the given criteria. Returns the entity, whose record `data_get()` reads, or `nil` and an error on failure.
 
 ```lua
 local result, err = client:InstitutionalTrading():load({ key = "key" })
@@ -665,7 +665,7 @@ local investment_adviser = client:InvestmentAdviser(nil)
 
 #### `load(reqmatch, ctrl) -> any, err`
 
-Load a single entity matching the given criteria.
+Load a single entity matching the given criteria. Returns the entity, whose record `data_get()` reads, or `nil` and an error on failure.
 
 ```lua
 local result, err = client:InvestmentAdviser():load({ key = "key" })
@@ -728,15 +728,15 @@ local market_data = client:MarketData(nil)
 
 #### `list(reqmatch, ctrl) -> any, err`
 
-List entities matching the given criteria. Returns an array.
+List entities matching the given criteria. Returns an array of entities, one per record, or `nil` and an error on failure.
 
 ```lua
-local results, err = client:MarketData():list()
+local results, err = client:MarketData():list({ identifier = "example", key = "example" })
 ```
 
 #### `load(reqmatch, ctrl) -> any, err`
 
-Load a single entity matching the given criteria.
+Load a single entity matching the given criteria. Returns the entity, whose record `data_get()` reads, or `nil` and an error on failure.
 
 ```lua
 local result, err = client:MarketData():load({ identifier = "identifier", key = "key" })
@@ -782,7 +782,7 @@ local market_index = client:MarketIndex(nil)
 
 #### `load(reqmatch, ctrl) -> any, err`
 
-Load a single entity matching the given criteria.
+Load a single entity matching the given criteria. Returns the entity, whose record `data_get()` reads, or `nil` and an error on failure.
 
 ```lua
 local result, err = client:MarketIndex():load({ key = "key" })
@@ -828,7 +828,7 @@ local market_new = client:MarketNew(nil)
 
 #### `load(reqmatch, ctrl) -> any, err`
 
-Load a single entity matching the given criteria.
+Load a single entity matching the given criteria. Returns the entity, whose record `data_get()` reads, or `nil` and an error on failure.
 
 ```lua
 local result, err = client:MarketNew():load({ key = "key" })
@@ -874,7 +874,7 @@ local miscellaneous_data = client:MiscellaneousData(nil)
 
 #### `load(reqmatch, ctrl) -> any, err`
 
-Load a single entity matching the given criteria.
+Load a single entity matching the given criteria. Returns the entity, whose record `data_get()` reads, or `nil` and an error on failure.
 
 ```lua
 local result, err = client:MiscellaneousData():load({ key = "key" })
@@ -920,7 +920,7 @@ local mutual_fund = client:MutualFund(nil)
 
 #### `load(reqmatch, ctrl) -> any, err`
 
-Load a single entity matching the given criteria.
+Load a single entity matching the given criteria. Returns the entity, whose record `data_get()` reads, or `nil` and an error on failure.
 
 ```lua
 local result, err = client:MutualFund():load({ key = "key" })
@@ -975,10 +975,10 @@ local symbol_list = client:SymbolList(nil)
 
 #### `list(reqmatch, ctrl) -> any, err`
 
-List entities matching the given criteria. Returns an array.
+List entities matching the given criteria. Returns an array of entities, one per record, or `nil` and an error on failure.
 
 ```lua
-local results, err = client:SymbolList():list()
+local results, err = client:SymbolList():list({ key = "example" })
 ```
 
 ### Common Methods
@@ -1168,6 +1168,7 @@ Timeout.
 | Option | Type |
 |---|---|
 | `clearTimer` | function |
+| `now` | function |
 | `setTimer` | function |
 
 These take no default: the feature behaves one way when you supply them and

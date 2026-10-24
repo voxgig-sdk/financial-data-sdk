@@ -119,8 +119,8 @@ type InsiderTrading struct {
 // InsiderTradingLoadMatch is the typed request payload for InsiderTrading.LoadTyped.
 type InsiderTradingLoadMatch struct {
 	Format *string `json:"format,omitempty"`
-	Identifier *string `json:"identifier,omitempty"`
 	Key string `json:"key"`
+	Identifier *string `json:"identifier,omitempty"`
 }
 
 // InstitutionalTrading is the typed data model for the institutional_trading entity.
@@ -184,8 +184,8 @@ type MarketNew struct {
 // MarketNewLoadMatch is the typed request payload for MarketNew.LoadTyped.
 type MarketNewLoadMatch struct {
 	Format *string `json:"format,omitempty"`
-	Identifier *string `json:"identifier,omitempty"`
 	Key string `json:"key"`
+	Identifier *string `json:"identifier,omitempty"`
 }
 
 // MiscellaneousData is the typed data model for the miscellaneous_data entity.

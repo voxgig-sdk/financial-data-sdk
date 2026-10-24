@@ -9,7 +9,7 @@ import { createLiveTransport } from '../../live-runner'
 import { runLiveEntity } from '../../live-entity'
 
 
-import { FinancialDataSDK, BaseFeature, stdutil } from '../../..'
+import { FinancialDataSDK, BaseFeature, config, stdutil } from '../../..'
 
 import {
   envOverride,
@@ -41,6 +41,18 @@ describe('InstitutionalTradingEntity', async () => {
   })
 
 
+  test('validate', async (t) => {
+    if (null == (config as any).feature?.validate) {
+      t.skip('feature not present in this SDK: validate')
+      return
+    }
+    const client = FinancialDataSDK.test(undefined, { feature: { validate: { active: true } } })
+    await assert.rejects(client.InstitutionalTrading().load({"format":1,"key":"x"} as any),
+      (err: any) => 'validate_failed' === err.code)
+  })
+
+
+
   test('basic', async (t) => {
 
     const live = 'TRUE' === process.env.FINANCIAL_DATA_TEST_LIVE
@@ -51,7 +63,7 @@ describe('InstitutionalTradingEntity', async () => {
     
     const setup = basicSetup()
     if (setup.live) {
-      return runLiveEntity(setup, {"active":true,"alias":{"field":{}},"fields":{},"name":"institutional_trading","op":{"load":{"input":"data","name":"load","points":[{"a":true,"co":{"id":"GET /institutional-holdings","source":"openapi3","version":2},"g":{"query":[{"a":true,"ex":"json","k":"query","n":"format","or":"format","r":false,"t":"`$STRING`","index$":0},{"a":true,"k":"query","n":"identifier","or":"identifier","r":true,"t":"`$STRING`","index$":1},{"a":true,"k":"query","n":"key","or":"key","r":true,"t":"`$STRING`","index$":2}]},"k":"http","m":"GET","o":"/institutional-holdings","q":{"exist":["format","identifier","key"]},"r":{},"s":[{"lit":"institutional-holdings"}],"t":{"req":"`reqdata`","res":"`body`"},"index$":0},{"a":true,"co":{"id":"GET /institutional-investors","source":"openapi3","version":2},"g":{"query":[{"a":true,"ex":"json","k":"query","n":"format","or":"format","r":false,"t":"`$STRING`","index$":0},{"a":true,"k":"query","n":"key","or":"key","r":true,"t":"`$STRING`","index$":1}]},"k":"http","m":"GET","o":"/institutional-investors","q":{"exist":["format","key"]},"r":{},"s":[{"lit":"institutional-investors"}],"t":{"req":"`reqdata`","res":"`body`"},"index$":1},{"a":true,"co":{"id":"GET /institutional-portfolio-statistics","source":"openapi3","version":2},"g":{"query":[{"a":true,"ex":"json","k":"query","n":"format","or":"format","r":false,"t":"`$STRING`","index$":0},{"a":true,"k":"query","n":"key","or":"key","r":true,"t":"`$STRING`","index$":1}]},"k":"http","m":"GET","o":"/institutional-portfolio-statistics","q":{"exist":["format","key"]},"r":{},"s":[{"lit":"institutional-portfolio-statistics"}],"t":{"req":"`reqdata`","res":"`body`"},"index$":2}],"key$":"load"}},"relations":{"ancestors":[]},"key$":"institutional_trading","name__orig":"institutional_trading","Name":"InstitutionalTrading","name_":"institutional_trading","name-":"institutional-trading","NAME":"INSTITUTIONAL_TRADING","index$":10}, {"active":true,"entity":"institutional_trading","key$":"BasicInstitutionalTradingFlow","kind":"basic","name":"BasicInstitutionalTradingFlow","param":{},"step":[{"a":true,"d":{},"i":{"ref":"institutional_trading_ref01","srcdatavar":"institutional_trading_ref01_data","suffix":"_dt0"},"m":{},"o":"load","s":[],"v":[{"apply":"TextFieldMark","def":{"mark":"Mark01-institutional_trading_ref01"}}],"index$":0}]}, 'InstitutionalTrading', {"GET /institutional-holdings":{"protocol":"http","parameters":[{"name":"identifier","in":"query","description":"The trading symbol.","required":true,"schema":{"type":"string"},"index$":0},{"name":"format","in":"query","description":"The format of the returned data.","required":false,"schema":{"type":"string","enum":["json","csv"],"default":"json"},"index$":1},{"name":"key","in":"query","description":"API key for authentication","required":true,"schema":{"type":"string"},"index$":2}]},"GET /institutional-investors":{"protocol":"http","parameters":[{"name":"format","in":"query","description":"The format of the returned data.","required":false,"schema":{"type":"string","enum":["json","csv"],"default":"json"},"index$":0},{"name":"key","in":"query","description":"API key for authentication","required":true,"schema":{"type":"string"},"index$":1}]},"GET /institutional-portfolio-statistics":{"protocol":"http","parameters":[{"name":"format","in":"query","description":"The format of the returned data.","required":false,"schema":{"type":"string","enum":["json","csv"],"default":"json"},"index$":0},{"name":"key","in":"query","description":"API key for authentication","required":true,"schema":{"type":"string"},"index$":1}]}})
+      return runLiveEntity(setup, {"active":true,"alias":{"field":{}},"fields":{},"name":"institutional_trading","op":{"load":{"input":"data","name":"load","points":[{"a":true,"co":{"id":"GET /institutional-holdings","source":"openapi3","version":2},"g":{"query":[{"a":true,"ex":"json","k":"query","n":"format","or":"format","r":false,"t":"`$STRING`","index$":0},{"a":true,"k":"query","n":"identifier","or":"identifier","r":true,"t":"`$STRING`","index$":1},{"a":true,"k":"query","n":"key","or":"key","r":true,"t":"`$STRING`","index$":2}]},"k":"http","m":"GET","o":"/institutional-holdings","q":{"exist":["identifier","key"]},"r":{},"s":[{"lit":"institutional-holdings"}],"t":{"req":"`reqdata`","res":"`body`"},"index$":0},{"a":true,"co":{"id":"GET /institutional-investors","source":"openapi3","version":2},"g":{"query":[{"a":true,"ex":"json","k":"query","n":"format","or":"format","r":false,"t":"`$STRING`","index$":0},{"a":true,"k":"query","n":"key","or":"key","r":true,"t":"`$STRING`","index$":1}]},"k":"http","m":"GET","o":"/institutional-investors","q":{"exist":["key"]},"r":{},"s":[{"lit":"institutional-investors"}],"t":{"req":"`reqdata`","res":"`body`"},"index$":1},{"a":true,"co":{"id":"GET /institutional-portfolio-statistics","source":"openapi3","version":2},"g":{"query":[{"a":true,"ex":"json","k":"query","n":"format","or":"format","r":false,"t":"`$STRING`","index$":0},{"a":true,"k":"query","n":"key","or":"key","r":true,"t":"`$STRING`","index$":1}]},"k":"http","m":"GET","o":"/institutional-portfolio-statistics","q":{"exist":["key"]},"r":{},"s":[{"lit":"institutional-portfolio-statistics"}],"t":{"req":"`reqdata`","res":"`body`"},"index$":2}],"key$":"load"}},"relations":{"ancestors":[]},"key$":"institutional_trading","name__orig":"institutional_trading","Name":"InstitutionalTrading","name_":"institutional_trading","name-":"institutional-trading","NAME":"INSTITUTIONAL_TRADING","index$":10}, {"active":true,"entity":"institutional_trading","key$":"BasicInstitutionalTradingFlow","kind":"basic","name":"BasicInstitutionalTradingFlow","param":{},"step":[{"a":true,"d":{},"i":{"ref":"institutional_trading_ref01","srcdatavar":"institutional_trading_ref01_data","suffix":"_dt0"},"m":{},"o":"load","s":[],"v":[{"apply":"TextFieldMark","def":{"mark":"Mark01-institutional_trading_ref01"}}],"index$":0}]}, 'InstitutionalTrading', {"GET /institutional-holdings":{"protocol":"http","parameters":[{"name":"identifier","in":"query","description":"The trading symbol.","required":true,"schema":{"type":"string"},"index$":0},{"name":"format","in":"query","description":"The format of the returned data.","required":false,"schema":{"type":"string","enum":["json","csv"],"default":"json"},"index$":1},{"name":"key","in":"query","description":"API key for authentication","required":true,"schema":{"type":"string"},"index$":2}]},"GET /institutional-investors":{"protocol":"http","parameters":[{"name":"format","in":"query","description":"The format of the returned data.","required":false,"schema":{"type":"string","enum":["json","csv"],"default":"json"},"index$":0},{"name":"key","in":"query","description":"API key for authentication","required":true,"schema":{"type":"string"},"index$":1}]},"GET /institutional-portfolio-statistics":{"protocol":"http","parameters":[{"name":"format","in":"query","description":"The format of the returned data.","required":false,"schema":{"type":"string","enum":["json","csv"],"default":"json"},"index$":0},{"name":"key","in":"query","description":"API key for authentication","required":true,"schema":{"type":"string"},"index$":1}]}}, { strict: LIVE_STRICT, t })
     }
     const client = setup.client
     const struct = setup.struct
@@ -72,6 +84,12 @@ describe('InstitutionalTradingEntity', async () => {
 })
 
 
+
+// main.kit.test.live.strict is true (the default is true): a live
+// request that fails, or a live test missing an input it needs,
+// fails the test.
+// An account with no record for a test to read skips it either way.
+const LIVE_STRICT = true
 
 function basicSetup(extra?: any) {
   // TODO: fix test def options

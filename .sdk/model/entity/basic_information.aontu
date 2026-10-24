@@ -45,7 +45,6 @@ main: kit: entity: basic_information: {
           o: "/company-information"
           q: {
             exist: [
-              "format"
               "identifier"
               "key"
             ]
@@ -96,7 +95,6 @@ main: kit: entity: basic_information: {
           o: "/employee-count"
           q: {
             exist: [
-              "format"
               "identifier"
               "key"
             ]
@@ -147,7 +145,6 @@ main: kit: entity: basic_information: {
           o: "/executive-compensation"
           q: {
             exist: [
-              "format"
               "identifier"
               "key"
             ]
@@ -198,7 +195,6 @@ main: kit: entity: basic_information: {
           o: "/international-company-information"
           q: {
             exist: [
-              "format"
               "identifier"
               "key"
             ]
@@ -249,7 +245,6 @@ main: kit: entity: basic_information: {
           o: "/key-metrics"
           q: {
             exist: [
-              "format"
               "identifier"
               "key"
             ]
@@ -300,7 +295,6 @@ main: kit: entity: basic_information: {
           o: "/market-cap"
           q: {
             exist: [
-              "format"
               "identifier"
               "key"
             ]
@@ -351,7 +345,6 @@ main: kit: entity: basic_information: {
           o: "/securities-information"
           q: {
             exist: [
-              "format"
               "identifier"
               "key"
             ]

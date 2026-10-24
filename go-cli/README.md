@@ -21,6 +21,7 @@ export FINANCIAL_DATA_APIKEY=sk_live_xxx
 # 4. Each command line is ONE boru expression, run against the API:
 ./financial-data-cli load 1 basic_information            # {id:1} shorthand
 ./financial-data-cli load '{id:1}' basic_information       # explicit match map
+./financial-data-cli list market_data
 
 # 5. Override the API base URL for a single call
 FINANCIAL_DATA_BASE=https://api.example.com ./financial-data-cli load 1 basic_information

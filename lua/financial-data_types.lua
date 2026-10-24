@@ -74,8 +74,8 @@
 
 ---@class InsiderTradingLoadMatch
 ---@field format? string
----@field identifier? string
 ---@field key string
+---@field identifier? string
 
 ---@class InstitutionalTrading
 
@@ -129,8 +129,8 @@
 
 ---@class MarketNewLoadMatch
 ---@field format? string
----@field identifier? string
 ---@field key string
+---@field identifier? string
 
 ---@class MiscellaneousData
 

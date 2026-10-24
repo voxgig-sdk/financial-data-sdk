@@ -53,7 +53,6 @@ main: kit: entity: crypto_currency: {
           q: {
             exist: [
               "date"
-              "format"
               "identifier"
               "key"
             ]
@@ -104,7 +103,6 @@ main: kit: entity: crypto_currency: {
           o: "/crypto-information"
           q: {
             exist: [
-              "format"
               "identifier"
               "key"
             ]
@@ -155,7 +153,6 @@ main: kit: entity: crypto_currency: {
           o: "/crypto-prices"
           q: {
             exist: [
-              "format"
               "identifier"
               "key"
             ]
@@ -206,7 +203,6 @@ main: kit: entity: crypto_currency: {
           o: "/crypto-quotes"
           q: {
             exist: [
-              "format"
               "identifier"
               "key"
             ]
@@ -250,7 +246,6 @@ main: kit: entity: crypto_currency: {
           o: "/crypto-symbols"
           q: {
             exist: [
-              "format"
               "key"
             ]
           }

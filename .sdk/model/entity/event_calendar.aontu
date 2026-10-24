@@ -38,7 +38,6 @@ main: kit: entity: event_calendar: {
           o: "/dividends-calendar"
           q: {
             exist: [
-              "format"
               "key"
             ]
           }
@@ -81,7 +80,6 @@ main: kit: entity: event_calendar: {
           o: "/earnings-calendar"
           q: {
             exist: [
-              "format"
               "key"
             ]
           }
@@ -124,7 +122,6 @@ main: kit: entity: event_calendar: {
           o: "/economic-calendar"
           q: {
             exist: [
-              "format"
               "key"
             ]
           }
@@ -167,7 +164,6 @@ main: kit: entity: event_calendar: {
           o: "/ipo-calendar"
           q: {
             exist: [
-              "format"
               "key"
             ]
           }
@@ -210,7 +206,6 @@ main: kit: entity: event_calendar: {
           o: "/splits-calendar"
           q: {
             exist: [
-              "format"
               "key"
             ]
           }

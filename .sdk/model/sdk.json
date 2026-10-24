@@ -144,7 +144,6 @@
                   "o": "/company-information",
                   "q": {
                     "exist": [
-                      "format",
                       "identifier",
                       "key"
                     ]
@@ -201,7 +200,6 @@
                   "o": "/employee-count",
                   "q": {
                     "exist": [
-                      "format",
                       "identifier",
                       "key"
                     ]
@@ -258,7 +256,6 @@
                   "o": "/executive-compensation",
                   "q": {
                     "exist": [
-                      "format",
                       "identifier",
                       "key"
                     ]
@@ -315,7 +312,6 @@
                   "o": "/international-company-information",
                   "q": {
                     "exist": [
-                      "format",
                       "identifier",
                       "key"
                     ]
@@ -372,7 +368,6 @@
                   "o": "/key-metrics",
                   "q": {
                     "exist": [
-                      "format",
                       "identifier",
                       "key"
                     ]
@@ -429,7 +424,6 @@
                   "o": "/market-cap",
                   "q": {
                     "exist": [
-                      "format",
                       "identifier",
                       "key"
                     ]
@@ -486,7 +480,6 @@
                   "o": "/securities-information",
                   "q": {
                     "exist": [
-                      "format",
                       "identifier",
                       "key"
                     ]
@@ -571,7 +564,6 @@
                   "q": {
                     "exist": [
                       "date",
-                      "format",
                       "identifier",
                       "key"
                     ]
@@ -628,7 +620,6 @@
                   "o": "/crypto-information",
                   "q": {
                     "exist": [
-                      "format",
                       "identifier",
                       "key"
                     ]
@@ -685,7 +676,6 @@
                   "o": "/crypto-prices",
                   "q": {
                     "exist": [
-                      "format",
                       "identifier",
                       "key"
                     ]
@@ -742,7 +732,6 @@
                   "o": "/crypto-quotes",
                   "q": {
                     "exist": [
-                      "format",
                       "identifier",
                       "key"
                     ]
@@ -791,7 +780,6 @@
                   "o": "/crypto-symbols",
                   "q": {
                     "exist": [
-                      "format",
                       "key"
                     ]
                   },
@@ -866,7 +854,6 @@
                   "o": "/futures-prices",
                   "q": {
                     "exist": [
-                      "format",
                       "identifier",
                       "key"
                     ]
@@ -923,7 +910,6 @@
                   "o": "/option-chain",
                   "q": {
                     "exist": [
-                      "format",
                       "identifier",
                       "key"
                     ]
@@ -980,7 +966,6 @@
                   "o": "/option-greeks",
                   "q": {
                     "exist": [
-                      "format",
                       "identifier",
                       "key"
                     ]
@@ -1037,7 +1022,6 @@
                   "o": "/option-prices",
                   "q": {
                     "exist": [
-                      "format",
                       "identifier",
                       "key"
                     ]
@@ -1086,7 +1070,6 @@
                   "o": "/futures-symbols",
                   "q": {
                     "exist": [
-                      "format",
                       "key"
                     ]
                   },
@@ -1161,7 +1144,6 @@
                   "o": "/esg-ratings",
                   "q": {
                     "exist": [
-                      "format",
                       "identifier",
                       "key"
                     ]
@@ -1218,7 +1200,6 @@
                   "o": "/esg-scores",
                   "q": {
                     "exist": [
-                      "format",
                       "identifier",
                       "key"
                     ]
@@ -1267,7 +1248,6 @@
                   "o": "/industry-esg-scores",
                   "q": {
                     "exist": [
-                      "format",
                       "key"
                     ]
                   },
@@ -1342,7 +1322,6 @@
                   "o": "/etf-holdings",
                   "q": {
                     "exist": [
-                      "format",
                       "identifier",
                       "key"
                     ]
@@ -1399,7 +1378,6 @@
                   "o": "/etf-prices",
                   "q": {
                     "exist": [
-                      "format",
                       "identifier",
                       "key"
                     ]
@@ -1456,7 +1434,6 @@
                   "o": "/etf-quotes",
                   "q": {
                     "exist": [
-                      "format",
                       "identifier",
                       "key"
                     ]
@@ -1524,7 +1501,6 @@
                   "o": "/dividends-calendar",
                   "q": {
                     "exist": [
-                      "format",
                       "key"
                     ]
                   },
@@ -1572,7 +1548,6 @@
                   "o": "/earnings-calendar",
                   "q": {
                     "exist": [
-                      "format",
                       "key"
                     ]
                   },
@@ -1620,7 +1595,6 @@
                   "o": "/economic-calendar",
                   "q": {
                     "exist": [
-                      "format",
                       "key"
                     ]
                   },
@@ -1668,7 +1642,6 @@
                   "o": "/ipo-calendar",
                   "q": {
                     "exist": [
-                      "format",
                       "key"
                     ]
                   },
@@ -1716,7 +1689,6 @@
                   "o": "/splits-calendar",
                   "q": {
                     "exist": [
-                      "format",
                       "key"
                     ]
                   },
@@ -1791,7 +1763,6 @@
                   "o": "/efficiency-ratios",
                   "q": {
                     "exist": [
-                      "format",
                       "identifier",
                       "key"
                     ]
@@ -1848,7 +1819,6 @@
                   "o": "/liquidity-ratios",
                   "q": {
                     "exist": [
-                      "format",
                       "identifier",
                       "key"
                     ]
@@ -1905,7 +1875,6 @@
                   "o": "/profitability-ratios",
                   "q": {
                     "exist": [
-                      "format",
                       "identifier",
                       "key"
                     ]
@@ -1962,7 +1931,6 @@
                   "o": "/solvency-ratios",
                   "q": {
                     "exist": [
-                      "format",
                       "identifier",
                       "key"
                     ]
@@ -2019,7 +1987,6 @@
                   "o": "/valuation-ratios",
                   "q": {
                     "exist": [
-                      "format",
                       "identifier",
                       "key"
                     ]
@@ -2095,7 +2062,6 @@
                   "o": "/balance-sheet-statements",
                   "q": {
                     "exist": [
-                      "format",
                       "identifier",
                       "key"
                     ]
@@ -2152,7 +2118,6 @@
                   "o": "/cash-flow-statements",
                   "q": {
                     "exist": [
-                      "format",
                       "identifier",
                       "key"
                     ]
@@ -2209,7 +2174,6 @@
                   "o": "/income-statements",
                   "q": {
                     "exist": [
-                      "format",
                       "identifier",
                       "key"
                     ]
@@ -2266,7 +2230,6 @@
                   "o": "/international-balance-sheet-statements",
                   "q": {
                     "exist": [
-                      "format",
                       "identifier",
                       "key"
                     ]
@@ -2323,7 +2286,6 @@
                   "o": "/international-cash-flow-statements",
                   "q": {
                     "exist": [
-                      "format",
                       "identifier",
                       "key"
                     ]
@@ -2380,7 +2342,6 @@
                   "o": "/international-income-statements",
                   "q": {
                     "exist": [
-                      "format",
                       "identifier",
                       "key"
                     ]
@@ -2465,7 +2426,6 @@
                   "q": {
                     "exist": [
                       "date",
-                      "format",
                       "identifier",
                       "key"
                     ]
@@ -2522,7 +2482,6 @@
                   "o": "/forex-prices",
                   "q": {
                     "exist": [
-                      "format",
                       "identifier",
                       "key"
                     ]
@@ -2579,7 +2538,6 @@
                   "o": "/forex-quotes",
                   "q": {
                     "exist": [
-                      "format",
                       "identifier",
                       "key"
                     ]
@@ -2628,7 +2586,6 @@
                   "o": "/forex-symbols",
                   "q": {
                     "exist": [
-                      "format",
                       "key"
                     ]
                   },
@@ -2662,6 +2619,53 @@
               "input": "data",
               "name": "load",
               "points": [
+                {
+                  "a": true,
+                  "co": {
+                    "id": "GET /house-trading",
+                    "source": "openapi3",
+                    "version": 2
+                  },
+                  "g": {
+                    "query": [
+                      {
+                        "a": true,
+                        "ex": "json",
+                        "k": "query",
+                        "n": "format",
+                        "or": "format",
+                        "r": false,
+                        "t": "`$STRING`"
+                      },
+                      {
+                        "a": true,
+                        "k": "query",
+                        "n": "key",
+                        "or": "key",
+                        "r": true,
+                        "t": "`$STRING`"
+                      }
+                    ]
+                  },
+                  "k": "http",
+                  "m": "GET",
+                  "o": "/house-trading",
+                  "q": {
+                    "exist": [
+                      "key"
+                    ]
+                  },
+                  "r": {},
+                  "s": [
+                    {
+                      "lit": "house-trading"
+                    }
+                  ],
+                  "t": {
+                    "req": "`reqdata`",
+                    "res": "`body`"
+                  }
+                },
                 {
                   "a": true,
                   "co": {
@@ -2703,8 +2707,6 @@
                   "o": "/insider-transactions",
                   "q": {
                     "exist": [
-                      "format",
-                      "identifier",
                       "key"
                     ]
                   },
@@ -2712,54 +2714,6 @@
                   "s": [
                     {
                       "lit": "insider-transactions"
-                    }
-                  ],
-                  "t": {
-                    "req": "`reqdata`",
-                    "res": "`body`"
-                  }
-                },
-                {
-                  "a": true,
-                  "co": {
-                    "id": "GET /house-trading",
-                    "source": "openapi3",
-                    "version": 2
-                  },
-                  "g": {
-                    "query": [
-                      {
-                        "a": true,
-                        "ex": "json",
-                        "k": "query",
-                        "n": "format",
-                        "or": "format",
-                        "r": false,
-                        "t": "`$STRING`"
-                      },
-                      {
-                        "a": true,
-                        "k": "query",
-                        "n": "key",
-                        "or": "key",
-                        "r": true,
-                        "t": "`$STRING`"
-                      }
-                    ]
-                  },
-                  "k": "http",
-                  "m": "GET",
-                  "o": "/house-trading",
-                  "q": {
-                    "exist": [
-                      "format",
-                      "key"
-                    ]
-                  },
-                  "r": {},
-                  "s": [
-                    {
-                      "lit": "house-trading"
                     }
                   ],
                   "t": {
@@ -2800,7 +2754,6 @@
                   "o": "/proposed-sales",
                   "q": {
                     "exist": [
-                      "format",
                       "key"
                     ]
                   },
@@ -2848,7 +2801,6 @@
                   "o": "/senate-trading",
                   "q": {
                     "exist": [
-                      "format",
                       "key"
                     ]
                   },
@@ -2923,7 +2875,6 @@
                   "o": "/institutional-holdings",
                   "q": {
                     "exist": [
-                      "format",
                       "identifier",
                       "key"
                     ]
@@ -2972,7 +2923,6 @@
                   "o": "/institutional-investors",
                   "q": {
                     "exist": [
-                      "format",
                       "key"
                     ]
                   },
@@ -3020,7 +2970,6 @@
                   "o": "/institutional-portfolio-statistics",
                   "q": {
                     "exist": [
-                      "format",
                       "key"
                     ]
                   },
@@ -3087,7 +3036,6 @@
                   "o": "/investment-adviser-information",
                   "q": {
                     "exist": [
-                      "format",
                       "key"
                     ]
                   },
@@ -3135,7 +3083,6 @@
                   "o": "/investment-adviser-names",
                   "q": {
                     "exist": [
-                      "format",
                       "key"
                     ]
                   },
@@ -3324,13 +3271,15 @@
                   "q": {
                     "exist": [
                       "date",
-                      "format",
                       "identifier",
-                      "key",
-                      "offset"
+                      "key"
                     ]
                   },
                   "r": {},
+                  "rs": {
+                    "kind": "json",
+                    "media": "application/json"
+                  },
                   "s": [
                     {
                       "lit": "minute-prices"
@@ -3392,13 +3341,15 @@
                   "o": "/international-stock-prices",
                   "q": {
                     "exist": [
-                      "format",
                       "identifier",
-                      "key",
-                      "offset"
+                      "key"
                     ]
                   },
                   "r": {},
+                  "rs": {
+                    "kind": "json",
+                    "media": "application/json"
+                  },
                   "s": [
                     {
                       "lit": "international-stock-prices"
@@ -3459,13 +3410,15 @@
                   "o": "/latest-prices",
                   "q": {
                     "exist": [
-                      "format",
                       "identifier",
-                      "key",
-                      "offset"
+                      "key"
                     ]
                   },
                   "r": {},
+                  "rs": {
+                    "kind": "json",
+                    "media": "application/json"
+                  },
                   "s": [
                     {
                       "lit": "latest-prices"
@@ -3527,13 +3480,15 @@
                   "o": "/stock-prices",
                   "q": {
                     "exist": [
-                      "format",
                       "identifier",
-                      "key",
-                      "offset"
+                      "key"
                     ]
                   },
                   "r": {},
+                  "rs": {
+                    "kind": "json",
+                    "media": "application/json"
+                  },
                   "s": [
                     {
                       "lit": "stock-prices"
@@ -3586,12 +3541,15 @@
                   "o": "/stock-quotes",
                   "q": {
                     "exist": [
-                      "format",
                       "identifier",
                       "key"
                     ]
                   },
                   "r": {},
+                  "rs": {
+                    "kind": "json",
+                    "media": "application/json"
+                  },
                   "s": [
                     {
                       "lit": "stock-quotes"
@@ -3658,10 +3616,8 @@
                   "o": "/commodity-prices",
                   "q": {
                     "exist": [
-                      "format",
                       "identifier",
-                      "key",
-                      "offset"
+                      "key"
                     ]
                   },
                   "r": {},
@@ -3725,10 +3681,8 @@
                   "o": "/otc-prices",
                   "q": {
                     "exist": [
-                      "format",
                       "identifier",
-                      "key",
-                      "offset"
+                      "key"
                     ]
                   },
                   "r": {},
@@ -3783,7 +3737,6 @@
                   "o": "/otc-volume",
                   "q": {
                     "exist": [
-                      "format",
                       "identifier",
                       "key"
                     ]
@@ -3818,6 +3771,62 @@
               "input": "data",
               "name": "load",
               "points": [
+                {
+                  "a": true,
+                  "co": {
+                    "id": "GET /index-constituents",
+                    "source": "openapi3",
+                    "version": 2
+                  },
+                  "g": {
+                    "query": [
+                      {
+                        "a": true,
+                        "ex": "json",
+                        "k": "query",
+                        "n": "format",
+                        "or": "format",
+                        "r": false,
+                        "t": "`$STRING`"
+                      },
+                      {
+                        "a": true,
+                        "k": "query",
+                        "n": "identifier",
+                        "or": "identifier",
+                        "r": true,
+                        "t": "`$STRING`"
+                      },
+                      {
+                        "a": true,
+                        "k": "query",
+                        "n": "key",
+                        "or": "key",
+                        "r": true,
+                        "t": "`$STRING`"
+                      }
+                    ]
+                  },
+                  "k": "http",
+                  "m": "GET",
+                  "o": "/index-constituents",
+                  "q": {
+                    "exist": [
+                      "identifier",
+                      "key"
+                    ]
+                  },
+                  "r": {},
+                  "s": [
+                    {
+                      "lit": "index-constituents"
+                    }
+                  ],
+                  "t": {
+                    "req": "`reqdata`",
+                    "res": "`body`"
+                  }
+                },
                 {
                   "a": true,
                   "co": {
@@ -3868,65 +3877,6 @@
                   "o": "/index-prices",
                   "q": {
                     "exist": [
-                      "format",
-                      "identifier",
-                      "key",
-                      "offset"
-                    ]
-                  },
-                  "r": {},
-                  "s": [
-                    {
-                      "lit": "index-prices"
-                    }
-                  ],
-                  "t": {
-                    "req": "`reqdata`",
-                    "res": "`body`"
-                  }
-                },
-                {
-                  "a": true,
-                  "co": {
-                    "id": "GET /index-constituents",
-                    "source": "openapi3",
-                    "version": 2
-                  },
-                  "g": {
-                    "query": [
-                      {
-                        "a": true,
-                        "ex": "json",
-                        "k": "query",
-                        "n": "format",
-                        "or": "format",
-                        "r": false,
-                        "t": "`$STRING`"
-                      },
-                      {
-                        "a": true,
-                        "k": "query",
-                        "n": "identifier",
-                        "or": "identifier",
-                        "r": true,
-                        "t": "`$STRING`"
-                      },
-                      {
-                        "a": true,
-                        "k": "query",
-                        "n": "key",
-                        "or": "key",
-                        "r": true,
-                        "t": "`$STRING`"
-                      }
-                    ]
-                  },
-                  "k": "http",
-                  "m": "GET",
-                  "o": "/index-constituents",
-                  "q": {
-                    "exist": [
-                      "format",
                       "identifier",
                       "key"
                     ]
@@ -3934,7 +3884,7 @@
                   "r": {},
                   "s": [
                     {
-                      "lit": "index-constituents"
+                      "lit": "index-prices"
                     }
                   ],
                   "t": {
@@ -3983,7 +3933,6 @@
                   "o": "/index-quotes",
                   "q": {
                     "exist": [
-                      "format",
                       "identifier",
                       "key"
                     ]
@@ -4032,7 +3981,6 @@
                   "o": "/index-symbols",
                   "q": {
                     "exist": [
-                      "format",
                       "key"
                     ]
                   },
@@ -4066,6 +4014,53 @@
               "input": "data",
               "name": "load",
               "points": [
+                {
+                  "a": true,
+                  "co": {
+                    "id": "GET /fed-press-releases",
+                    "source": "openapi3",
+                    "version": 2
+                  },
+                  "g": {
+                    "query": [
+                      {
+                        "a": true,
+                        "ex": "json",
+                        "k": "query",
+                        "n": "format",
+                        "or": "format",
+                        "r": false,
+                        "t": "`$STRING`"
+                      },
+                      {
+                        "a": true,
+                        "k": "query",
+                        "n": "key",
+                        "or": "key",
+                        "r": true,
+                        "t": "`$STRING`"
+                      }
+                    ]
+                  },
+                  "k": "http",
+                  "m": "GET",
+                  "o": "/fed-press-releases",
+                  "q": {
+                    "exist": [
+                      "key"
+                    ]
+                  },
+                  "r": {},
+                  "s": [
+                    {
+                      "lit": "fed-press-releases"
+                    }
+                  ],
+                  "t": {
+                    "req": "`reqdata`",
+                    "res": "`body`"
+                  }
+                },
                 {
                   "a": true,
                   "co": {
@@ -4107,8 +4102,6 @@
                   "o": "/press-releases",
                   "q": {
                     "exist": [
-                      "format",
-                      "identifier",
                       "key"
                     ]
                   },
@@ -4116,54 +4109,6 @@
                   "s": [
                     {
                       "lit": "press-releases"
-                    }
-                  ],
-                  "t": {
-                    "req": "`reqdata`",
-                    "res": "`body`"
-                  }
-                },
-                {
-                  "a": true,
-                  "co": {
-                    "id": "GET /fed-press-releases",
-                    "source": "openapi3",
-                    "version": 2
-                  },
-                  "g": {
-                    "query": [
-                      {
-                        "a": true,
-                        "ex": "json",
-                        "k": "query",
-                        "n": "format",
-                        "or": "format",
-                        "r": false,
-                        "t": "`$STRING`"
-                      },
-                      {
-                        "a": true,
-                        "k": "query",
-                        "n": "key",
-                        "or": "key",
-                        "r": true,
-                        "t": "`$STRING`"
-                      }
-                    ]
-                  },
-                  "k": "http",
-                  "m": "GET",
-                  "o": "/fed-press-releases",
-                  "q": {
-                    "exist": [
-                      "format",
-                      "key"
-                    ]
-                  },
-                  "r": {},
-                  "s": [
-                    {
-                      "lit": "fed-press-releases"
                     }
                   ],
                   "t": {
@@ -4204,7 +4149,6 @@
                   "o": "/sec-press-releases",
                   "q": {
                     "exist": [
-                      "format",
                       "key"
                     ]
                   },
@@ -4279,8 +4223,6 @@
                   "o": "/dividends",
                   "q": {
                     "exist": [
-                      "format",
-                      "identifier",
                       "key"
                     ]
                   },
@@ -4336,8 +4278,6 @@
                   "o": "/earnings-releases",
                   "q": {
                     "exist": [
-                      "format",
-                      "identifier",
                       "key"
                     ]
                   },
@@ -4345,6 +4285,53 @@
                   "s": [
                     {
                       "lit": "earnings-releases"
+                    }
+                  ],
+                  "t": {
+                    "req": "`reqdata`",
+                    "res": "`body`"
+                  }
+                },
+                {
+                  "a": true,
+                  "co": {
+                    "id": "GET /initial-public-offerings",
+                    "source": "openapi3",
+                    "version": 2
+                  },
+                  "g": {
+                    "query": [
+                      {
+                        "a": true,
+                        "ex": "json",
+                        "k": "query",
+                        "n": "format",
+                        "or": "format",
+                        "r": false,
+                        "t": "`$STRING`"
+                      },
+                      {
+                        "a": true,
+                        "k": "query",
+                        "n": "key",
+                        "or": "key",
+                        "r": true,
+                        "t": "`$STRING`"
+                      }
+                    ]
+                  },
+                  "k": "http",
+                  "m": "GET",
+                  "o": "/initial-public-offerings",
+                  "q": {
+                    "exist": [
+                      "key"
+                    ]
+                  },
+                  "r": {},
+                  "s": [
+                    {
+                      "lit": "initial-public-offerings"
                     }
                   ],
                   "t": {
@@ -4393,8 +4380,6 @@
                   "o": "/short-interest",
                   "q": {
                     "exist": [
-                      "format",
-                      "identifier",
                       "key"
                     ]
                   },
@@ -4450,8 +4435,6 @@
                   "o": "/stock-splits",
                   "q": {
                     "exist": [
-                      "format",
-                      "identifier",
                       "key"
                     ]
                   },
@@ -4459,54 +4442,6 @@
                   "s": [
                     {
                       "lit": "stock-splits"
-                    }
-                  ],
-                  "t": {
-                    "req": "`reqdata`",
-                    "res": "`body`"
-                  }
-                },
-                {
-                  "a": true,
-                  "co": {
-                    "id": "GET /initial-public-offerings",
-                    "source": "openapi3",
-                    "version": 2
-                  },
-                  "g": {
-                    "query": [
-                      {
-                        "a": true,
-                        "ex": "json",
-                        "k": "query",
-                        "n": "format",
-                        "or": "format",
-                        "r": false,
-                        "t": "`$STRING`"
-                      },
-                      {
-                        "a": true,
-                        "k": "query",
-                        "n": "key",
-                        "or": "key",
-                        "r": true,
-                        "t": "`$STRING`"
-                      }
-                    ]
-                  },
-                  "k": "http",
-                  "m": "GET",
-                  "o": "/initial-public-offerings",
-                  "q": {
-                    "exist": [
-                      "format",
-                      "key"
-                    ]
-                  },
-                  "r": {},
-                  "s": [
-                    {
-                      "lit": "initial-public-offerings"
                     }
                   ],
                   "t": {
@@ -4574,7 +4509,6 @@
                   "o": "/mutual-fund-holdings",
                   "q": {
                     "exist": [
-                      "format",
                       "identifier",
                       "key"
                     ]
@@ -4631,7 +4565,6 @@
                   "o": "/mutual-fund-statistics",
                   "q": {
                     "exist": [
-                      "format",
                       "identifier",
                       "key"
                     ]
@@ -4680,7 +4613,6 @@
                   "o": "/mutual-fund-symbols",
                   "q": {
                     "exist": [
-                      "format",
                       "key"
                     ]
                   },
@@ -4746,6 +4678,57 @@
                 {
                   "a": true,
                   "co": {
+                    "id": "GET /commodity-symbols",
+                    "source": "openapi3",
+                    "version": 2
+                  },
+                  "g": {
+                    "query": [
+                      {
+                        "a": true,
+                        "ex": "json",
+                        "k": "query",
+                        "n": "format",
+                        "or": "format",
+                        "r": false,
+                        "t": "`$STRING`"
+                      },
+                      {
+                        "a": true,
+                        "k": "query",
+                        "n": "key",
+                        "or": "key",
+                        "r": true,
+                        "t": "`$STRING`"
+                      }
+                    ]
+                  },
+                  "k": "http",
+                  "m": "GET",
+                  "o": "/commodity-symbols",
+                  "q": {
+                    "exist": [
+                      "key"
+                    ]
+                  },
+                  "r": {},
+                  "rs": {
+                    "kind": "json",
+                    "media": "application/json"
+                  },
+                  "s": [
+                    {
+                      "lit": "commodity-symbols"
+                    }
+                  ],
+                  "t": {
+                    "req": "`reqdata`",
+                    "res": "`body`"
+                  }
+                },
+                {
+                  "a": true,
+                  "co": {
                     "id": "GET /etf-symbols",
                     "source": "openapi3",
                     "version": 2
@@ -4785,12 +4768,14 @@
                   "o": "/etf-symbols",
                   "q": {
                     "exist": [
-                      "format",
-                      "key",
-                      "offset"
+                      "key"
                     ]
                   },
                   "r": {},
+                  "rs": {
+                    "kind": "json",
+                    "media": "application/json"
+                  },
                   "s": [
                     {
                       "lit": "etf-symbols"
@@ -4843,12 +4828,14 @@
                   "o": "/international-stock-symbols",
                   "q": {
                     "exist": [
-                      "format",
-                      "key",
-                      "offset"
+                      "key"
                     ]
                   },
                   "r": {},
+                  "rs": {
+                    "kind": "json",
+                    "media": "application/json"
+                  },
                   "s": [
                     {
                       "lit": "international-stock-symbols"
@@ -4901,12 +4888,14 @@
                   "o": "/otc-symbols",
                   "q": {
                     "exist": [
-                      "format",
-                      "key",
-                      "offset"
+                      "key"
                     ]
                   },
                   "r": {},
+                  "rs": {
+                    "kind": "json",
+                    "media": "application/json"
+                  },
                   "s": [
                     {
                       "lit": "otc-symbols"
@@ -4959,63 +4948,17 @@
                   "o": "/stock-symbols",
                   "q": {
                     "exist": [
-                      "format",
-                      "key",
-                      "offset"
-                    ]
-                  },
-                  "r": {},
-                  "s": [
-                    {
-                      "lit": "stock-symbols"
-                    }
-                  ],
-                  "t": {
-                    "req": "`reqdata`",
-                    "res": "`body`"
-                  }
-                },
-                {
-                  "a": true,
-                  "co": {
-                    "id": "GET /commodity-symbols",
-                    "source": "openapi3",
-                    "version": 2
-                  },
-                  "g": {
-                    "query": [
-                      {
-                        "a": true,
-                        "ex": "json",
-                        "k": "query",
-                        "n": "format",
-                        "or": "format",
-                        "r": false,
-                        "t": "`$STRING`"
-                      },
-                      {
-                        "a": true,
-                        "k": "query",
-                        "n": "key",
-                        "or": "key",
-                        "r": true,
-                        "t": "`$STRING`"
-                      }
-                    ]
-                  },
-                  "k": "http",
-                  "m": "GET",
-                  "o": "/commodity-symbols",
-                  "q": {
-                    "exist": [
-                      "format",
                       "key"
                     ]
                   },
                   "r": {},
+                  "rs": {
+                    "kind": "json",
+                    "media": "application/json"
+                  },
                   "s": [
                     {
-                      "lit": "commodity-symbols"
+                      "lit": "stock-symbols"
                     }
                   ],
                   "t": {
@@ -5353,6 +5296,7 @@
             },
             "optspec": {
               "clearTimer": "`$FUNCTION`",
+              "now": "`$FUNCTION`",
               "setTimer": "`$FUNCTION`"
             },
             "strict": false
@@ -6023,7 +5967,7 @@
       "optspec": {
         "allow": {
           "method": "GET,PUT,POST,PATCH,DELETE,OPTIONS",
-          "op": "create,update,load,list,remove,command,direct,graphql"
+          "op": "create,update,patch,load,list,remove,command,direct,graphql"
         },
         "apikey": "",
         "auth": {
@@ -6076,6 +6020,11 @@
         "top": {
           "active": true
         }
+      },
+      "publisher": {
+        "name": "",
+        "security": "",
+        "url": ""
       },
       "repo": {
         "host": "github.com",
@@ -6306,7 +6255,10 @@
             "version": "0.0.1"
           },
           "superseded": [],
-          "title": "Go MCP server"
+          "title": "Go MCP server",
+          "tool": {
+            "write": false
+          }
         },
         "lua": {
           "active": true,
@@ -6683,6 +6635,17 @@
           "base": "",
           "strict": true
         }
+      },
+      "text": {
+        "about_md": "",
+        "docs_url": "",
+        "entity_desc": {},
+        "homepage": "",
+        "meta_source": "",
+        "summary": "",
+        "tagline": "",
+        "title": "",
+        "website": ""
       }
     }
   },

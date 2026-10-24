@@ -45,8 +45,6 @@ main: kit: entity: miscellaneous_data: {
           o: "/dividends"
           q: {
             exist: [
-              "format"
-              "identifier"
               "key"
             ]
           }
@@ -96,14 +94,54 @@ main: kit: entity: miscellaneous_data: {
           o: "/earnings-releases"
           q: {
             exist: [
-              "format"
-              "identifier"
               "key"
             ]
           }
           s: [
             {
               lit: "earnings-releases"
+            }
+          ]
+          t: {
+            req: "`reqdata`"
+            res: "`body`"
+          }
+        }
+        {
+          co: {
+            id: "GET /initial-public-offerings"
+            source: "openapi3"
+            version: 2
+          }
+          g: {
+            query: [
+              {
+                ex: "json"
+                k: "query"
+                n: "format"
+                or: "format"
+                r: false
+                t: "`$STRING`"
+              }
+              {
+                k: "query"
+                n: "key"
+                or: "key"
+                r: true
+                t: "`$STRING`"
+              }
+            ]
+          }
+          m: "GET"
+          o: "/initial-public-offerings"
+          q: {
+            exist: [
+              "key"
+            ]
+          }
+          s: [
+            {
+              lit: "initial-public-offerings"
             }
           ]
           t: {
@@ -147,8 +185,6 @@ main: kit: entity: miscellaneous_data: {
           o: "/short-interest"
           q: {
             exist: [
-              "format"
-              "identifier"
               "key"
             ]
           }
@@ -198,57 +234,12 @@ main: kit: entity: miscellaneous_data: {
           o: "/stock-splits"
           q: {
             exist: [
-              "format"
-              "identifier"
               "key"
             ]
           }
           s: [
             {
               lit: "stock-splits"
-            }
-          ]
-          t: {
-            req: "`reqdata`"
-            res: "`body`"
-          }
-        }
-        {
-          co: {
-            id: "GET /initial-public-offerings"
-            source: "openapi3"
-            version: 2
-          }
-          g: {
-            query: [
-              {
-                ex: "json"
-                k: "query"
-                n: "format"
-                or: "format"
-                r: false
-                t: "`$STRING`"
-              }
-              {
-                k: "query"
-                n: "key"
-                or: "key"
-                r: true
-                t: "`$STRING`"
-              }
-            ]
-          }
-          m: "GET"
-          o: "/initial-public-offerings"
-          q: {
-            exist: [
-              "format"
-              "key"
-            ]
-          }
-          s: [
-            {
-              lit: "initial-public-offerings"
             }
           ]
           t: {

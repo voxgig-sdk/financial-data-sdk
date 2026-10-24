@@ -17,16 +17,35 @@ const PLAN: any[] = [
     "args": [],
     "select": {
       "date": "v1",
-      "format": "v1",
       "identifier": "v1",
-      "key": "v1"
+      "key": "v1",
+      "format": "json"
     },
     "headers": [],
+    "cookies": [],
     "query": [
       "identifier",
       "date",
       "format",
       "key"
+    ],
+    "queryArgs": [
+      {
+        "name": "date",
+        "wire": "date"
+      },
+      {
+        "name": "format",
+        "wire": "format"
+      },
+      {
+        "name": "identifier",
+        "wire": "identifier"
+      },
+      {
+        "name": "key",
+        "wire": "key"
+      }
     ],
     "auth": [
       [
@@ -38,7 +57,8 @@ const PLAN: any[] = [
     ],
     "status": 200,
     "sample": null,
-    "idField": "id"
+    "idField": "id",
+    "ownQuery": "key"
   },
   {
     "entity": "crypto_currency",
@@ -48,13 +68,24 @@ const PLAN: any[] = [
     "path": "/crypto-symbols",
     "args": [],
     "select": {
-      "format": "v1",
-      "key": "v1"
+      "key": "v1",
+      "format": "json"
     },
     "headers": [],
+    "cookies": [],
     "query": [
       "format",
       "key"
+    ],
+    "queryArgs": [
+      {
+        "name": "format",
+        "wire": "format"
+      },
+      {
+        "name": "key",
+        "wire": "key"
+      }
     ],
     "auth": [
       [
@@ -66,7 +97,8 @@ const PLAN: any[] = [
     ],
     "status": 200,
     "sample": null,
-    "idField": "id"
+    "idField": "id",
+    "ownQuery": "key"
   },
   {
     "entity": "derivatives_data",
@@ -76,13 +108,24 @@ const PLAN: any[] = [
     "path": "/futures-symbols",
     "args": [],
     "select": {
-      "format": "v1",
-      "key": "v1"
+      "key": "v1",
+      "format": "json"
     },
     "headers": [],
+    "cookies": [],
     "query": [
       "format",
       "key"
+    ],
+    "queryArgs": [
+      {
+        "name": "format",
+        "wire": "format"
+      },
+      {
+        "name": "key",
+        "wire": "key"
+      }
     ],
     "auth": [
       [
@@ -94,7 +137,8 @@ const PLAN: any[] = [
     ],
     "status": 200,
     "sample": null,
-    "idField": "id"
+    "idField": "id",
+    "ownQuery": "key"
   },
   {
     "entity": "esg_data",
@@ -104,13 +148,24 @@ const PLAN: any[] = [
     "path": "/industry-esg-scores",
     "args": [],
     "select": {
-      "format": "v1",
-      "key": "v1"
+      "key": "v1",
+      "format": "json"
     },
     "headers": [],
+    "cookies": [],
     "query": [
       "format",
       "key"
+    ],
+    "queryArgs": [
+      {
+        "name": "format",
+        "wire": "format"
+      },
+      {
+        "name": "key",
+        "wire": "key"
+      }
     ],
     "auth": [
       [
@@ -122,7 +177,8 @@ const PLAN: any[] = [
     ],
     "status": 200,
     "sample": null,
-    "idField": "id"
+    "idField": "id",
+    "ownQuery": "key"
   },
   {
     "entity": "forex_data",
@@ -133,16 +189,35 @@ const PLAN: any[] = [
     "args": [],
     "select": {
       "date": "v1",
-      "format": "v1",
       "identifier": "v1",
-      "key": "v1"
+      "key": "v1",
+      "format": "json"
     },
     "headers": [],
+    "cookies": [],
     "query": [
       "identifier",
       "date",
       "format",
       "key"
+    ],
+    "queryArgs": [
+      {
+        "name": "date",
+        "wire": "date"
+      },
+      {
+        "name": "format",
+        "wire": "format"
+      },
+      {
+        "name": "identifier",
+        "wire": "identifier"
+      },
+      {
+        "name": "key",
+        "wire": "key"
+      }
     ],
     "auth": [
       [
@@ -154,7 +229,8 @@ const PLAN: any[] = [
     ],
     "status": 200,
     "sample": null,
-    "idField": "id"
+    "idField": "id",
+    "ownQuery": "key"
   },
   {
     "entity": "forex_data",
@@ -164,13 +240,24 @@ const PLAN: any[] = [
     "path": "/forex-symbols",
     "args": [],
     "select": {
-      "format": "v1",
-      "key": "v1"
+      "key": "v1",
+      "format": "json"
     },
     "headers": [],
+    "cookies": [],
     "query": [
       "format",
       "key"
+    ],
+    "queryArgs": [
+      {
+        "name": "format",
+        "wire": "format"
+      },
+      {
+        "name": "key",
+        "wire": "key"
+      }
     ],
     "auth": [
       [
@@ -182,37 +269,8 @@ const PLAN: any[] = [
     ],
     "status": 200,
     "sample": null,
-    "idField": "id"
-  },
-  {
-    "entity": "insider_trading",
-    "accessor": "InsiderTrading",
-    "op": "load",
-    "method": "GET",
-    "path": "/insider-transactions",
-    "args": [],
-    "select": {
-      "format": "v1",
-      "identifier": "v1",
-      "key": "v1"
-    },
-    "headers": [],
-    "query": [
-      "identifier",
-      "format",
-      "key"
-    ],
-    "auth": [
-      [
-        {
-          "in": "query",
-          "name": "key"
-        }
-      ]
-    ],
-    "status": 200,
-    "sample": null,
-    "idField": "id"
+    "idField": "id",
+    "ownQuery": "key"
   },
   {
     "entity": "institutional_trading",
@@ -222,15 +280,30 @@ const PLAN: any[] = [
     "path": "/institutional-holdings",
     "args": [],
     "select": {
-      "format": "v1",
       "identifier": "v1",
-      "key": "v1"
+      "key": "v1",
+      "format": "json"
     },
     "headers": [],
+    "cookies": [],
     "query": [
       "identifier",
       "format",
       "key"
+    ],
+    "queryArgs": [
+      {
+        "name": "format",
+        "wire": "format"
+      },
+      {
+        "name": "identifier",
+        "wire": "identifier"
+      },
+      {
+        "name": "key",
+        "wire": "key"
+      }
     ],
     "auth": [
       [
@@ -242,7 +315,8 @@ const PLAN: any[] = [
     ],
     "status": 200,
     "sample": null,
-    "idField": "id"
+    "idField": "id",
+    "ownQuery": "key"
   },
   {
     "entity": "market_data",
@@ -253,18 +327,44 @@ const PLAN: any[] = [
     "args": [],
     "select": {
       "date": "2020-01-15",
-      "format": "v1",
       "identifier": "MSFT",
       "key": "v1",
+      "format": "json",
       "offset": 300
     },
     "headers": [],
+    "cookies": [],
+    "responseMedia": [
+      "application/json"
+    ],
     "query": [
       "identifier",
       "date",
       "offset",
       "format",
       "key"
+    ],
+    "queryArgs": [
+      {
+        "name": "date",
+        "wire": "date"
+      },
+      {
+        "name": "format",
+        "wire": "format"
+      },
+      {
+        "name": "identifier",
+        "wire": "identifier"
+      },
+      {
+        "name": "key",
+        "wire": "key"
+      },
+      {
+        "name": "offset",
+        "wire": "offset"
+      }
     ],
     "auth": [
       [
@@ -286,108 +386,8 @@ const PLAN: any[] = [
         "volume": 5633
       }
     ],
-    "idField": "id"
-  },
-  {
-    "entity": "market_data",
-    "accessor": "MarketData",
-    "op": "list",
-    "method": "GET",
-    "path": "/stock-quotes",
-    "args": [],
-    "select": {
-      "format": "v1",
-      "identifier": "v1",
-      "key": "v1"
-    },
-    "headers": [],
-    "query": [
-      "identifiers",
-      "format",
-      "key"
-    ],
-    "auth": [
-      [
-        {
-          "in": "query",
-          "name": "key"
-        }
-      ]
-    ],
-    "status": 200,
-    "sample": [
-      {
-        "trading_symbol": "AAPL",
-        "registrant_name": "Apple Inc.",
-        "time": "2025-09-02 15:56:00",
-        "price": 238.08,
-        "change": 8.36,
-        "percentage_change": 3.64
-      }
-    ],
-    "idField": "id"
-  },
-  {
-    "entity": "market_data",
-    "accessor": "MarketData",
-    "op": "load",
-    "method": "GET",
-    "path": "/otc-volume",
-    "args": [],
-    "select": {
-      "format": "v1",
-      "identifier": "v1",
-      "key": "v1"
-    },
-    "headers": [],
-    "query": [
-      "identifier",
-      "format",
-      "key"
-    ],
-    "auth": [
-      [
-        {
-          "in": "query",
-          "name": "key"
-        }
-      ]
-    ],
-    "status": 200,
-    "sample": null,
-    "idField": "id"
-  },
-  {
-    "entity": "market_index",
-    "accessor": "MarketIndex",
-    "op": "load",
-    "method": "GET",
-    "path": "/index-prices",
-    "args": [],
-    "select": {
-      "format": "v1",
-      "identifier": "v1",
-      "key": "v1",
-      "offset": "v1"
-    },
-    "headers": [],
-    "query": [
-      "identifier",
-      "offset",
-      "format",
-      "key"
-    ],
-    "auth": [
-      [
-        {
-          "in": "query",
-          "name": "key"
-        }
-      ]
-    ],
-    "status": 200,
-    "sample": null,
-    "idField": "id"
+    "idField": "id",
+    "ownQuery": "key"
   },
   {
     "entity": "market_index",
@@ -397,13 +397,24 @@ const PLAN: any[] = [
     "path": "/index-symbols",
     "args": [],
     "select": {
-      "format": "v1",
-      "key": "v1"
+      "key": "v1",
+      "format": "json"
     },
     "headers": [],
+    "cookies": [],
     "query": [
       "format",
       "key"
+    ],
+    "queryArgs": [
+      {
+        "name": "format",
+        "wire": "format"
+      },
+      {
+        "name": "key",
+        "wire": "key"
+      }
     ],
     "auth": [
       [
@@ -415,65 +426,8 @@ const PLAN: any[] = [
     ],
     "status": 200,
     "sample": null,
-    "idField": "id"
-  },
-  {
-    "entity": "market_new",
-    "accessor": "MarketNew",
-    "op": "load",
-    "method": "GET",
-    "path": "/press-releases",
-    "args": [],
-    "select": {
-      "format": "v1",
-      "identifier": "v1",
-      "key": "v1"
-    },
-    "headers": [],
-    "query": [
-      "identifier",
-      "format",
-      "key"
-    ],
-    "auth": [
-      [
-        {
-          "in": "query",
-          "name": "key"
-        }
-      ]
-    ],
-    "status": 200,
-    "sample": null,
-    "idField": "id"
-  },
-  {
-    "entity": "miscellaneous_data",
-    "accessor": "MiscellaneousData",
-    "op": "load",
-    "method": "GET",
-    "path": "/initial-public-offerings",
-    "args": [],
-    "select": {
-      "format": "v1",
-      "key": "v1"
-    },
-    "headers": [],
-    "query": [
-      "format",
-      "key"
-    ],
-    "auth": [
-      [
-        {
-          "in": "query",
-          "name": "key"
-        }
-      ]
-    ],
-    "status": 200,
-    "sample": null,
-    "idField": "id"
+    "idField": "id",
+    "ownQuery": "key"
   },
   {
     "entity": "mutual_fund",
@@ -483,13 +437,24 @@ const PLAN: any[] = [
     "path": "/mutual-fund-symbols",
     "args": [],
     "select": {
-      "format": "v1",
-      "key": "v1"
+      "key": "v1",
+      "format": "json"
     },
     "headers": [],
+    "cookies": [],
     "query": [
       "format",
       "key"
+    ],
+    "queryArgs": [
+      {
+        "name": "format",
+        "wire": "format"
+      },
+      {
+        "name": "key",
+        "wire": "key"
+      }
     ],
     "auth": [
       [
@@ -501,40 +466,8 @@ const PLAN: any[] = [
     ],
     "status": 200,
     "sample": null,
-    "idField": "id"
-  },
-  {
-    "entity": "symbol_list",
-    "accessor": "SymbolList",
-    "op": "list",
-    "method": "GET",
-    "path": "/commodity-symbols",
-    "args": [],
-    "select": {
-      "format": "v1",
-      "key": "v1"
-    },
-    "headers": [],
-    "query": [
-      "format",
-      "key"
-    ],
-    "auth": [
-      [
-        {
-          "in": "query",
-          "name": "key"
-        }
-      ]
-    ],
-    "status": 200,
-    "sample": [
-      {
-        "trading_symbol": "BZ",
-        "description": "Brent Crude Oil Futures (NYMEX)"
-      }
-    ],
-    "idField": "id"
+    "idField": "id",
+    "ownQuery": "key"
   }
 ]
 

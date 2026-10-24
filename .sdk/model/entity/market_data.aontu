@@ -147,11 +147,13 @@ main: kit: entity: market_data: {
           q: {
             exist: [
               "date"
-              "format"
               "identifier"
               "key"
-              "offset"
             ]
+          }
+          rs: {
+            kind: "json"
+            media: "application/json"
           }
           s: [
             {
@@ -208,11 +210,13 @@ main: kit: entity: market_data: {
           o: "/international-stock-prices"
           q: {
             exist: [
-              "format"
               "identifier"
               "key"
-              "offset"
             ]
+          }
+          rs: {
+            kind: "json"
+            media: "application/json"
           }
           s: [
             {
@@ -268,11 +272,13 @@ main: kit: entity: market_data: {
           o: "/latest-prices"
           q: {
             exist: [
-              "format"
               "identifier"
               "key"
-              "offset"
             ]
+          }
+          rs: {
+            kind: "json"
+            media: "application/json"
           }
           s: [
             {
@@ -329,11 +335,13 @@ main: kit: entity: market_data: {
           o: "/stock-prices"
           q: {
             exist: [
-              "format"
               "identifier"
               "key"
-              "offset"
             ]
+          }
+          rs: {
+            kind: "json"
+            media: "application/json"
           }
           s: [
             {
@@ -382,10 +390,13 @@ main: kit: entity: market_data: {
           o: "/stock-quotes"
           q: {
             exist: [
-              "format"
               "identifier"
               "key"
             ]
+          }
+          rs: {
+            kind: "json"
+            media: "application/json"
           }
           s: [
             {
@@ -446,10 +457,8 @@ main: kit: entity: market_data: {
           o: "/commodity-prices"
           q: {
             exist: [
-              "format"
               "identifier"
               "key"
-              "offset"
             ]
           }
           s: [
@@ -506,10 +515,8 @@ main: kit: entity: market_data: {
           o: "/otc-prices"
           q: {
             exist: [
-              "format"
               "identifier"
               "key"
-              "offset"
             ]
           }
           s: [
@@ -558,7 +565,6 @@ main: kit: entity: market_data: {
           o: "/otc-volume"
           q: {
             exist: [
-              "format"
               "identifier"
               "key"
             ]

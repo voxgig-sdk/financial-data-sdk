@@ -45,7 +45,6 @@ main: kit: entity: mutual_fund: {
           o: "/mutual-fund-holdings"
           q: {
             exist: [
-              "format"
               "identifier"
               "key"
             ]
@@ -96,7 +95,6 @@ main: kit: entity: mutual_fund: {
           o: "/mutual-fund-statistics"
           q: {
             exist: [
-              "format"
               "identifier"
               "key"
             ]
@@ -140,7 +138,6 @@ main: kit: entity: mutual_fund: {
           o: "/mutual-fund-symbols"
           q: {
             exist: [
-              "format"
               "key"
             ]
           }

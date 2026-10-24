@@ -12,7 +12,7 @@ The SDK exposes the API as capitalised, semantic **Entities** — for example `c
 
 ## Install
 This package is not yet published to RubyGems. Install it from the
-GitHub release tag (`rb/vX.Y.Z`, see [Releases](https://github.com/voxgig-sdk/financial-data-sdk/releases)), or
+GitHub release tag (`rb/vX.Y.Z`, see [Tags](https://github.com/voxgig-sdk/financial-data-sdk/tags)), or
 from a clone:
 
 ```bash
@@ -29,7 +29,7 @@ gem "voxgig-sdk-financial-data-sdk", path: "./financial-data-sdk/rb"
 ## Tutorial: your first API call
 
 This tutorial walks through creating a client, listing entities, and
-loading a specific record.
+loading a specific record. The client sends the API key as the `key` query parameter.
 
 ### 1. Create a client
 
@@ -47,7 +47,7 @@ client = FinancialDataSDK.new({
 begin
   # load returns the ENTITY — call data_get for the BasicInformation record (raises on error).
   basicinformation = client.BasicInformation.load({ "identifier" => "example_identifier", "key" => "example_key" })
-  puts basicinformation
+  puts basicinformation.data_get
 rescue => err
   warn "load failed: #{err}"
 end
@@ -129,9 +129,9 @@ Create a mock client for unit testing — no server required:
 client = FinancialDataSDK.test
 
 # Entity ops return the ENTITY (raises on error);
-# call data_get for the mock record.
+# data_get reads its mock record.
 cryptocurrency = client.CryptoCurrency.load({ "key" => "example" })
-puts cryptocurrency
+puts cryptocurrency.data_get
 ```
 
 ### Use a custom fetch function
@@ -234,8 +234,8 @@ All entities share the same interface.
 
 | Method | Signature | Description |
 | --- | --- | --- |
-| `load` | `(reqmatch, ctrl) -> any` | Load a single entity by match criteria. Raises on error. |
-| `list` | `(reqmatch = nil, ctrl) -> Array` | List entities matching the criteria (call with no argument to list all). Raises on error. |
+| `load` | `(reqmatch, ctrl) -> any` | Load a single entity by match criteria, and return it. Raises on error. |
+| `list` | `(reqmatch = nil, ctrl) -> Array` | List entities matching the criteria (call with no argument to list all), one per record. Raises on error. |
 | `data_get` | `() -> Hash` | Get entity data. |
 | `data_set` | `(data)` | Set entity data. |
 | `match_get` | `() -> Hash` | Get entity match criteria. |
@@ -245,9 +245,10 @@ All entities share the same interface.
 
 ### Result shape
 
-Entity operations return the result data directly. On failure they
-raise a `FinancialDataError` (a `StandardError` subclass), so wrap
-calls in `begin`/`rescue` where you need to handle errors.
+Entity operations return the entity, and `list` an `Array` of entities, one
+per record; an entity's `data_get` reads its record. On failure they raise a
+`FinancialDataError` (a `StandardError` subclass), so wrap calls in
+`begin`/`rescue` where you need to handle errors.
 
 The `direct` escape hatch is the exception: it never raises and instead
 returns a result `Hash` with these keys:
@@ -350,7 +351,7 @@ API path: `/forex-minute-prices`
 
 Operations: Load.
 
-API path: `/insider-transactions`
+API path: `/house-trading`
 
 #### InstitutionalTrading
 
@@ -398,7 +399,7 @@ API path: `/minute-prices`
 
 Operations: Load.
 
-API path: `/index-prices`
+API path: `/index-constituents`
 
 #### MarketNew
 
@@ -407,7 +408,7 @@ API path: `/index-prices`
 
 Operations: Load.
 
-API path: `/press-releases`
+API path: `/fed-press-releases`
 
 #### MiscellaneousData
 
@@ -438,7 +439,7 @@ API path: `/mutual-fund-holdings`
 
 Operations: List.
 
-API path: `/etf-symbols`
+API path: `/commodity-symbols`
 
 
 
@@ -699,8 +700,9 @@ market_data = client.MarketData.load({ "identifier" => "identifier", "key" => "k
 #### Example: List
 
 ```ruby
-# list returns an Array of MarketData records (raises on error).
-market_datas = client.MarketData.list
+# list returns an Array of MarketData entities, one per record (raises on error).
+market_datas = client.MarketData.list({ "identifier" => "example", "key" => "example" })
+market_datas.each { |item| puts item.data_get }
 ```
 
 
@@ -798,8 +800,9 @@ Create an instance: `symbol_list = client.SymbolList`
 #### Example: List
 
 ```ruby
-# list returns an Array of SymbolList records (raises on error).
-symbol_lists = client.SymbolList.list
+# list returns an Array of SymbolList entities, one per record (raises on error).
+symbol_lists = client.SymbolList.list({ "key" => "example" })
+symbol_lists.each { |item| puts item.data_get }
 ```
 
 ## Features

@@ -3,11 +3,16 @@ declare(strict_types=1);
 
 // FinancialData SDK utility: prepare_body
 
+require_once __DIR__ . '/Media.php';
+
 class FinancialDataPrepareBody
 {
     public static function call(FinancialDataContext $ctx): mixed
     {
         if ($ctx->op->input === 'data') {
+            if (FinancialDataMedia::isRawRequest($ctx->point)) {
+                return FinancialDataMedia::rawBody($ctx->reqdata);
+            }
             $body = ($ctx->utility->transform_request)($ctx);
             // PHP cannot tell an empty map from an empty list, and this
             // vendored struct answers [] where the canonical transform

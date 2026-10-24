@@ -32,6 +32,11 @@
     }
   },
   "requests": {
+    "GET /commodity-symbols": {
+      "provenance": "operation-contract",
+      "version": 2,
+      "source": "openapi3"
+    },
     "GET /etf-symbols": {
       "provenance": "operation-contract",
       "version": 2,
@@ -48,11 +53,6 @@
       "source": "openapi3"
     },
     "GET /stock-symbols": {
-      "provenance": "operation-contract",
-      "version": 2,
-      "source": "openapi3"
-    },
-    "GET /commodity-symbols": {
       "provenance": "operation-contract",
       "version": 2,
       "source": "openapi3"

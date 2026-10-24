@@ -45,7 +45,6 @@ main: kit: entity: derivatives_data: {
           o: "/futures-prices"
           q: {
             exist: [
-              "format"
               "identifier"
               "key"
             ]
@@ -96,7 +95,6 @@ main: kit: entity: derivatives_data: {
           o: "/option-chain"
           q: {
             exist: [
-              "format"
               "identifier"
               "key"
             ]
@@ -147,7 +145,6 @@ main: kit: entity: derivatives_data: {
           o: "/option-greeks"
           q: {
             exist: [
-              "format"
               "identifier"
               "key"
             ]
@@ -198,7 +195,6 @@ main: kit: entity: derivatives_data: {
           o: "/option-prices"
           q: {
             exist: [
-              "format"
               "identifier"
               "key"
             ]
@@ -242,7 +238,6 @@ main: kit: entity: derivatives_data: {
           o: "/futures-symbols"
           q: {
             exist: [
-              "format"
               "key"
             ]
           }

@@ -11,6 +11,56 @@ main: kit: entity: market_index: {
       points: [
         {
           co: {
+            id: "GET /index-constituents"
+            source: "openapi3"
+            version: 2
+          }
+          g: {
+            query: [
+              {
+                ex: "json"
+                k: "query"
+                n: "format"
+                or: "format"
+                r: false
+                t: "`$STRING`"
+              }
+              {
+                k: "query"
+                n: "identifier"
+                or: "identifier"
+                r: true
+                t: "`$STRING`"
+              }
+              {
+                k: "query"
+                n: "key"
+                or: "key"
+                r: true
+                t: "`$STRING`"
+              }
+            ]
+          }
+          m: "GET"
+          o: "/index-constituents"
+          q: {
+            exist: [
+              "identifier"
+              "key"
+            ]
+          }
+          s: [
+            {
+              lit: "index-constituents"
+            }
+          ]
+          t: {
+            req: "`reqdata`"
+            res: "`body`"
+          }
+        }
+        {
+          co: {
             id: "GET /index-prices"
             source: "openapi3"
             version: 2
@@ -53,66 +103,13 @@ main: kit: entity: market_index: {
           o: "/index-prices"
           q: {
             exist: [
-              "format"
               "identifier"
               "key"
-              "offset"
             ]
           }
           s: [
             {
               lit: "index-prices"
-            }
-          ]
-          t: {
-            req: "`reqdata`"
-            res: "`body`"
-          }
-        }
-        {
-          co: {
-            id: "GET /index-constituents"
-            source: "openapi3"
-            version: 2
-          }
-          g: {
-            query: [
-              {
-                ex: "json"
-                k: "query"
-                n: "format"
-                or: "format"
-                r: false
-                t: "`$STRING`"
-              }
-              {
-                k: "query"
-                n: "identifier"
-                or: "identifier"
-                r: true
-                t: "`$STRING`"
-              }
-              {
-                k: "query"
-                n: "key"
-                or: "key"
-                r: true
-                t: "`$STRING`"
-              }
-            ]
-          }
-          m: "GET"
-          o: "/index-constituents"
-          q: {
-            exist: [
-              "format"
-              "identifier"
-              "key"
-            ]
-          }
-          s: [
-            {
-              lit: "index-constituents"
             }
           ]
           t: {
@@ -156,7 +153,6 @@ main: kit: entity: market_index: {
           o: "/index-quotes"
           q: {
             exist: [
-              "format"
               "identifier"
               "key"
             ]
@@ -200,7 +196,6 @@ main: kit: entity: market_index: {
           o: "/index-symbols"
           q: {
             exist: [
-              "format"
               "key"
             ]
           }

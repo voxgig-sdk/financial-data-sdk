@@ -12,7 +12,7 @@ It exposes the API as capitalised, semantic **Entities** — e.g. `client:BasicI
 
 ## Install
 This package is not yet published to LuaRocks. Install it from the
-GitHub release tag (`lua/vX.Y.Z`, see [Releases](https://github.com/voxgig-sdk/financial-data-sdk/releases)),
+GitHub release tag (`lua/vX.Y.Z`, see [Tags](https://github.com/voxgig-sdk/financial-data-sdk/tags)),
 or add the source directory to your `LUA_PATH`:
 
 ```bash
@@ -23,7 +23,7 @@ export LUA_PATH="path/to/lua/?.lua;path/to/lua/?/init.lua;;"
 ## Tutorial: your first API call
 
 This tutorial walks through creating a client, listing entities, and
-loading a specific record.
+loading a specific record. The client sends the API key as the `key` query parameter.
 
 ### 1. Create a client
 
@@ -37,10 +37,12 @@ local client = sdk.new({
 
 ### 3. Load a basicinformation
 
+`load` returns the entity; `data_get()` reads its record.
+
 ```lua
 local basicinformation, err = client:BasicInformation():load({ identifier = "example_identifier", key = "example_key" })
 if err then error(err) end
-print(basicinformation)
+for k, val in pairs(basicinformation:data_get()) do print(k, val) end
 ```
 
 
@@ -109,7 +111,7 @@ Create a mock client for unit testing — no server required:
 local client = sdk.test()
 
 local result, err = client:CryptoCurrency():load({ key = "example" })
--- result is the returned data; err is set on failure
+-- result is the entity; data_get() reads its mock record; err is set on failure
 ```
 
 ### Use a custom fetch function
@@ -214,8 +216,8 @@ All entities share the same interface.
 
 | Method | Signature | Description |
 | --- | --- | --- |
-| `load` | `(reqmatch, ctrl) -> any, err` | Load a single entity by match criteria. |
-| `list` | `(reqmatch, ctrl) -> any, err` | List entities matching the criteria. |
+| `load` | `(reqmatch, ctrl) -> any, err` | Load a single entity by match criteria, and return it. |
+| `list` | `(reqmatch, ctrl) -> any, err` | List entities matching the criteria, one per record. |
 | `data_get` | `() -> table` | Get entity data. |
 | `data_set` | `(data)` | Set entity data. |
 | `match_get` | `() -> table` | Get entity match criteria. |
@@ -225,19 +227,19 @@ All entities share the same interface.
 
 ### Result shape
 
-Entity operations return `(value, err)`. The `value` is the operation's
-data **directly** — there is no wrapper:
+Entity operations return `(value, err)`. The `value` is the entity
+itself — there is no wrapper:
 
 | Operation | `value` |
 | --- | --- |
-| `load` | the entity record (a `table`) |
-| `list` | an array (`table`) of entity records |
+| `load` | the entity, whose `data_get()` reads its record (a `table`) |
+| `list` | an array (`table`) of entities, one per record |
 
 Check `err` first (it is non-`nil` on failure), then use `value`:
 
-    local basic_information, err = client:BasicInformation():load()
+    local basic_information, err = client:BasicInformation():load({ identifier = "example", key = "example" })
     if err then error(err) end
-    -- basic_information is the loaded record
+    -- basic_information is the loaded entity
 
 Only `direct()` returns a response envelope — a `table` with `ok`,
 `status`, `headers`, and `data` keys.
@@ -332,7 +334,7 @@ API path: `/forex-minute-prices`
 
 Operations: Load.
 
-API path: `/insider-transactions`
+API path: `/house-trading`
 
 #### InstitutionalTrading
 
@@ -380,7 +382,7 @@ API path: `/minute-prices`
 
 Operations: Load.
 
-API path: `/index-prices`
+API path: `/index-constituents`
 
 #### MarketNew
 
@@ -389,7 +391,7 @@ API path: `/index-prices`
 
 Operations: Load.
 
-API path: `/press-releases`
+API path: `/fed-press-releases`
 
 #### MiscellaneousData
 
@@ -420,7 +422,7 @@ API path: `/mutual-fund-holdings`
 
 Operations: List.
 
-API path: `/etf-symbols`
+API path: `/commodity-symbols`
 
 
 
@@ -668,7 +670,7 @@ local market_data, err = client:MarketData():load({ identifier = "identifier", k
 #### Example: List
 
 ```lua
-local market_datas, err = client:MarketData():list()
+local market_datas, err = client:MarketData():list({ identifier = "example", key = "example" })
 ```
 
 
@@ -762,7 +764,7 @@ Create an instance: `local symbol_list = client:SymbolList(nil)`
 #### Example: List
 
 ```lua
-local symbol_lists, err = client:SymbolList():list()
+local symbol_lists, err = client:SymbolList():list({ key = "example" })
 ```
 
 ## Features

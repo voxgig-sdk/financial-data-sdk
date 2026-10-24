@@ -45,7 +45,6 @@ main: kit: entity: etf_data: {
           o: "/etf-holdings"
           q: {
             exist: [
-              "format"
               "identifier"
               "key"
             ]
@@ -96,7 +95,6 @@ main: kit: entity: etf_data: {
           o: "/etf-prices"
           q: {
             exist: [
-              "format"
               "identifier"
               "key"
             ]
@@ -147,7 +145,6 @@ main: kit: entity: etf_data: {
           o: "/etf-quotes"
           q: {
             exist: [
-              "format"
               "identifier"
               "key"
             ]

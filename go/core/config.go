@@ -71,6 +71,7 @@ func MakeConfig() map[string]any {
 				},
 				"optspec": map[string]any{
 					"clearTimer": "`$FUNCTION`",
+					"now": "`$FUNCTION`",
 					"setTimer": "`$FUNCTION`",
 				},
 				"strict": false,
@@ -161,7 +162,6 @@ func MakeConfig() map[string]any {
 								},
 								"select": map[string]any{
 									"exist": []any{
-										"format",
 										"identifier",
 										"key",
 									},
@@ -211,7 +211,6 @@ func MakeConfig() map[string]any {
 								},
 								"select": map[string]any{
 									"exist": []any{
-										"format",
 										"identifier",
 										"key",
 									},
@@ -261,7 +260,6 @@ func MakeConfig() map[string]any {
 								},
 								"select": map[string]any{
 									"exist": []any{
-										"format",
 										"identifier",
 										"key",
 									},
@@ -311,7 +309,6 @@ func MakeConfig() map[string]any {
 								},
 								"select": map[string]any{
 									"exist": []any{
-										"format",
 										"identifier",
 										"key",
 									},
@@ -361,7 +358,6 @@ func MakeConfig() map[string]any {
 								},
 								"select": map[string]any{
 									"exist": []any{
-										"format",
 										"identifier",
 										"key",
 									},
@@ -411,7 +407,6 @@ func MakeConfig() map[string]any {
 								},
 								"select": map[string]any{
 									"exist": []any{
-										"format",
 										"identifier",
 										"key",
 									},
@@ -461,7 +456,6 @@ func MakeConfig() map[string]any {
 								},
 								"select": map[string]any{
 									"exist": []any{
-										"format",
 										"identifier",
 										"key",
 									},
@@ -534,7 +528,6 @@ func MakeConfig() map[string]any {
 								"select": map[string]any{
 									"exist": []any{
 										"date",
-										"format",
 										"identifier",
 										"key",
 									},
@@ -584,7 +577,6 @@ func MakeConfig() map[string]any {
 								},
 								"select": map[string]any{
 									"exist": []any{
-										"format",
 										"identifier",
 										"key",
 									},
@@ -634,7 +626,6 @@ func MakeConfig() map[string]any {
 								},
 								"select": map[string]any{
 									"exist": []any{
-										"format",
 										"identifier",
 										"key",
 									},
@@ -684,7 +675,6 @@ func MakeConfig() map[string]any {
 								},
 								"select": map[string]any{
 									"exist": []any{
-										"format",
 										"identifier",
 										"key",
 									},
@@ -727,7 +717,6 @@ func MakeConfig() map[string]any {
 								},
 								"select": map[string]any{
 									"exist": []any{
-										"format",
 										"key",
 									},
 								},
@@ -791,7 +780,6 @@ func MakeConfig() map[string]any {
 								},
 								"select": map[string]any{
 									"exist": []any{
-										"format",
 										"identifier",
 										"key",
 									},
@@ -841,7 +829,6 @@ func MakeConfig() map[string]any {
 								},
 								"select": map[string]any{
 									"exist": []any{
-										"format",
 										"identifier",
 										"key",
 									},
@@ -891,7 +878,6 @@ func MakeConfig() map[string]any {
 								},
 								"select": map[string]any{
 									"exist": []any{
-										"format",
 										"identifier",
 										"key",
 									},
@@ -941,7 +927,6 @@ func MakeConfig() map[string]any {
 								},
 								"select": map[string]any{
 									"exist": []any{
-										"format",
 										"identifier",
 										"key",
 									},
@@ -984,7 +969,6 @@ func MakeConfig() map[string]any {
 								},
 								"select": map[string]any{
 									"exist": []any{
-										"format",
 										"key",
 									},
 								},
@@ -1048,7 +1032,6 @@ func MakeConfig() map[string]any {
 								},
 								"select": map[string]any{
 									"exist": []any{
-										"format",
 										"identifier",
 										"key",
 									},
@@ -1098,7 +1081,6 @@ func MakeConfig() map[string]any {
 								},
 								"select": map[string]any{
 									"exist": []any{
-										"format",
 										"identifier",
 										"key",
 									},
@@ -1141,7 +1123,6 @@ func MakeConfig() map[string]any {
 								},
 								"select": map[string]any{
 									"exist": []any{
-										"format",
 										"key",
 									},
 								},
@@ -1205,7 +1186,6 @@ func MakeConfig() map[string]any {
 								},
 								"select": map[string]any{
 									"exist": []any{
-										"format",
 										"identifier",
 										"key",
 									},
@@ -1255,7 +1235,6 @@ func MakeConfig() map[string]any {
 								},
 								"select": map[string]any{
 									"exist": []any{
-										"format",
 										"identifier",
 										"key",
 									},
@@ -1305,7 +1284,6 @@ func MakeConfig() map[string]any {
 								},
 								"select": map[string]any{
 									"exist": []any{
-										"format",
 										"identifier",
 										"key",
 									},
@@ -1363,7 +1341,6 @@ func MakeConfig() map[string]any {
 								},
 								"select": map[string]any{
 									"exist": []any{
-										"format",
 										"key",
 									},
 								},
@@ -1405,7 +1382,6 @@ func MakeConfig() map[string]any {
 								},
 								"select": map[string]any{
 									"exist": []any{
-										"format",
 										"key",
 									},
 								},
@@ -1447,7 +1423,6 @@ func MakeConfig() map[string]any {
 								},
 								"select": map[string]any{
 									"exist": []any{
-										"format",
 										"key",
 									},
 								},
@@ -1489,7 +1464,6 @@ func MakeConfig() map[string]any {
 								},
 								"select": map[string]any{
 									"exist": []any{
-										"format",
 										"key",
 									},
 								},
@@ -1531,7 +1505,6 @@ func MakeConfig() map[string]any {
 								},
 								"select": map[string]any{
 									"exist": []any{
-										"format",
 										"key",
 									},
 								},
@@ -1595,7 +1568,6 @@ func MakeConfig() map[string]any {
 								},
 								"select": map[string]any{
 									"exist": []any{
-										"format",
 										"identifier",
 										"key",
 									},
@@ -1645,7 +1617,6 @@ func MakeConfig() map[string]any {
 								},
 								"select": map[string]any{
 									"exist": []any{
-										"format",
 										"identifier",
 										"key",
 									},
@@ -1695,7 +1666,6 @@ func MakeConfig() map[string]any {
 								},
 								"select": map[string]any{
 									"exist": []any{
-										"format",
 										"identifier",
 										"key",
 									},
@@ -1745,7 +1715,6 @@ func MakeConfig() map[string]any {
 								},
 								"select": map[string]any{
 									"exist": []any{
-										"format",
 										"identifier",
 										"key",
 									},
@@ -1795,7 +1764,6 @@ func MakeConfig() map[string]any {
 								},
 								"select": map[string]any{
 									"exist": []any{
-										"format",
 										"identifier",
 										"key",
 									},
@@ -1860,7 +1828,6 @@ func MakeConfig() map[string]any {
 								},
 								"select": map[string]any{
 									"exist": []any{
-										"format",
 										"identifier",
 										"key",
 									},
@@ -1910,7 +1877,6 @@ func MakeConfig() map[string]any {
 								},
 								"select": map[string]any{
 									"exist": []any{
-										"format",
 										"identifier",
 										"key",
 									},
@@ -1960,7 +1926,6 @@ func MakeConfig() map[string]any {
 								},
 								"select": map[string]any{
 									"exist": []any{
-										"format",
 										"identifier",
 										"key",
 									},
@@ -2010,7 +1975,6 @@ func MakeConfig() map[string]any {
 								},
 								"select": map[string]any{
 									"exist": []any{
-										"format",
 										"identifier",
 										"key",
 									},
@@ -2060,7 +2024,6 @@ func MakeConfig() map[string]any {
 								},
 								"select": map[string]any{
 									"exist": []any{
-										"format",
 										"identifier",
 										"key",
 									},
@@ -2110,7 +2073,6 @@ func MakeConfig() map[string]any {
 								},
 								"select": map[string]any{
 									"exist": []any{
-										"format",
 										"identifier",
 										"key",
 									},
@@ -2183,7 +2145,6 @@ func MakeConfig() map[string]any {
 								"select": map[string]any{
 									"exist": []any{
 										"date",
-										"format",
 										"identifier",
 										"key",
 									},
@@ -2233,7 +2194,6 @@ func MakeConfig() map[string]any {
 								},
 								"select": map[string]any{
 									"exist": []any{
-										"format",
 										"identifier",
 										"key",
 									},
@@ -2283,7 +2243,6 @@ func MakeConfig() map[string]any {
 								},
 								"select": map[string]any{
 									"exist": []any{
-										"format",
 										"identifier",
 										"key",
 									},
@@ -2326,7 +2285,6 @@ func MakeConfig() map[string]any {
 								},
 								"select": map[string]any{
 									"exist": []any{
-										"format",
 										"key",
 									},
 								},
@@ -2346,6 +2304,47 @@ func MakeConfig() map[string]any {
 						"input": "data",
 						"name": "load",
 						"points": []any{
+							map[string]any{
+								"kind": "http",
+								"method": "GET",
+								"orig": "/house-trading",
+								"segments": []any{
+									map[string]any{
+										"lit": "house-trading",
+									},
+								},
+								"parts": []any{
+									"house-trading",
+								},
+								"rename": map[string]any{},
+								"transform": map[string]any{
+									"req": "`reqdata`",
+									"res": "`body`",
+								},
+								"args": map[string]any{
+									"query": []any{
+										map[string]any{
+											"name": "format",
+											"orig": "format",
+											"type": "`$STRING`",
+											"kind": "query",
+											"example": "json",
+										},
+										map[string]any{
+											"name": "key",
+											"orig": "key",
+											"type": "`$STRING`",
+											"kind": "query",
+											"reqd": true,
+										},
+									},
+								},
+								"select": map[string]any{
+									"exist": []any{
+										"key",
+									},
+								},
+							},
 							map[string]any{
 								"kind": "http",
 								"method": "GET",
@@ -2389,50 +2388,6 @@ func MakeConfig() map[string]any {
 								},
 								"select": map[string]any{
 									"exist": []any{
-										"format",
-										"identifier",
-										"key",
-									},
-								},
-							},
-							map[string]any{
-								"kind": "http",
-								"method": "GET",
-								"orig": "/house-trading",
-								"segments": []any{
-									map[string]any{
-										"lit": "house-trading",
-									},
-								},
-								"parts": []any{
-									"house-trading",
-								},
-								"rename": map[string]any{},
-								"transform": map[string]any{
-									"req": "`reqdata`",
-									"res": "`body`",
-								},
-								"args": map[string]any{
-									"query": []any{
-										map[string]any{
-											"name": "format",
-											"orig": "format",
-											"type": "`$STRING`",
-											"kind": "query",
-											"example": "json",
-										},
-										map[string]any{
-											"name": "key",
-											"orig": "key",
-											"type": "`$STRING`",
-											"kind": "query",
-											"reqd": true,
-										},
-									},
-								},
-								"select": map[string]any{
-									"exist": []any{
-										"format",
 										"key",
 									},
 								},
@@ -2474,7 +2429,6 @@ func MakeConfig() map[string]any {
 								},
 								"select": map[string]any{
 									"exist": []any{
-										"format",
 										"key",
 									},
 								},
@@ -2516,7 +2470,6 @@ func MakeConfig() map[string]any {
 								},
 								"select": map[string]any{
 									"exist": []any{
-										"format",
 										"key",
 									},
 								},
@@ -2580,7 +2533,6 @@ func MakeConfig() map[string]any {
 								},
 								"select": map[string]any{
 									"exist": []any{
-										"format",
 										"identifier",
 										"key",
 									},
@@ -2623,7 +2575,6 @@ func MakeConfig() map[string]any {
 								},
 								"select": map[string]any{
 									"exist": []any{
-										"format",
 										"key",
 									},
 								},
@@ -2665,7 +2616,6 @@ func MakeConfig() map[string]any {
 								},
 								"select": map[string]any{
 									"exist": []any{
-										"format",
 										"key",
 									},
 								},
@@ -2722,7 +2672,6 @@ func MakeConfig() map[string]any {
 								},
 								"select": map[string]any{
 									"exist": []any{
-										"format",
 										"key",
 									},
 								},
@@ -2764,7 +2713,6 @@ func MakeConfig() map[string]any {
 								},
 								"select": map[string]any{
 									"exist": []any{
-										"format",
 										"key",
 									},
 								},
@@ -2880,6 +2828,7 @@ func MakeConfig() map[string]any {
 											"kind": "query",
 											"reqd": true,
 											"example": "2020-01-15",
+											"field": true,
 										},
 										map[string]any{
 											"name": "format",
@@ -2915,11 +2864,13 @@ func MakeConfig() map[string]any {
 								"select": map[string]any{
 									"exist": []any{
 										"date",
-										"format",
 										"identifier",
 										"key",
-										"offset",
 									},
+								},
+								"response": map[string]any{
+									"kind": "json",
+									"media": "application/json",
 								},
 							},
 							map[string]any{
@@ -2974,11 +2925,13 @@ func MakeConfig() map[string]any {
 								},
 								"select": map[string]any{
 									"exist": []any{
-										"format",
 										"identifier",
 										"key",
-										"offset",
 									},
+								},
+								"response": map[string]any{
+									"kind": "json",
+									"media": "application/json",
 								},
 							},
 							map[string]any{
@@ -3032,11 +2985,13 @@ func MakeConfig() map[string]any {
 								},
 								"select": map[string]any{
 									"exist": []any{
-										"format",
 										"identifier",
 										"key",
-										"offset",
 									},
+								},
+								"response": map[string]any{
+									"kind": "json",
+									"media": "application/json",
 								},
 							},
 							map[string]any{
@@ -3091,11 +3046,13 @@ func MakeConfig() map[string]any {
 								},
 								"select": map[string]any{
 									"exist": []any{
-										"format",
 										"identifier",
 										"key",
-										"offset",
 									},
+								},
+								"response": map[string]any{
+									"kind": "json",
+									"media": "application/json",
 								},
 							},
 							map[string]any{
@@ -3143,10 +3100,13 @@ func MakeConfig() map[string]any {
 								},
 								"select": map[string]any{
 									"exist": []any{
-										"format",
 										"identifier",
 										"key",
 									},
+								},
+								"response": map[string]any{
+									"kind": "json",
+									"media": "application/json",
 								},
 							},
 						},
@@ -3206,10 +3166,8 @@ func MakeConfig() map[string]any {
 								},
 								"select": map[string]any{
 									"exist": []any{
-										"format",
 										"identifier",
 										"key",
-										"offset",
 									},
 								},
 							},
@@ -3264,10 +3222,8 @@ func MakeConfig() map[string]any {
 								},
 								"select": map[string]any{
 									"exist": []any{
-										"format",
 										"identifier",
 										"key",
-										"offset",
 									},
 								},
 							},
@@ -3315,7 +3271,6 @@ func MakeConfig() map[string]any {
 								},
 								"select": map[string]any{
 									"exist": []any{
-										"format",
 										"identifier",
 										"key",
 									},
@@ -3336,6 +3291,55 @@ func MakeConfig() map[string]any {
 						"input": "data",
 						"name": "load",
 						"points": []any{
+							map[string]any{
+								"kind": "http",
+								"method": "GET",
+								"orig": "/index-constituents",
+								"segments": []any{
+									map[string]any{
+										"lit": "index-constituents",
+									},
+								},
+								"parts": []any{
+									"index-constituents",
+								},
+								"rename": map[string]any{},
+								"transform": map[string]any{
+									"req": "`reqdata`",
+									"res": "`body`",
+								},
+								"args": map[string]any{
+									"query": []any{
+										map[string]any{
+											"name": "format",
+											"orig": "format",
+											"type": "`$STRING`",
+											"kind": "query",
+											"example": "json",
+										},
+										map[string]any{
+											"name": "identifier",
+											"orig": "identifier",
+											"type": "`$STRING`",
+											"kind": "query",
+											"reqd": true,
+										},
+										map[string]any{
+											"name": "key",
+											"orig": "key",
+											"type": "`$STRING`",
+											"kind": "query",
+											"reqd": true,
+										},
+									},
+								},
+								"select": map[string]any{
+									"exist": []any{
+										"identifier",
+										"key",
+									},
+								},
+							},
 							map[string]any{
 								"kind": "http",
 								"method": "GET",
@@ -3387,58 +3391,6 @@ func MakeConfig() map[string]any {
 								},
 								"select": map[string]any{
 									"exist": []any{
-										"format",
-										"identifier",
-										"key",
-										"offset",
-									},
-								},
-							},
-							map[string]any{
-								"kind": "http",
-								"method": "GET",
-								"orig": "/index-constituents",
-								"segments": []any{
-									map[string]any{
-										"lit": "index-constituents",
-									},
-								},
-								"parts": []any{
-									"index-constituents",
-								},
-								"rename": map[string]any{},
-								"transform": map[string]any{
-									"req": "`reqdata`",
-									"res": "`body`",
-								},
-								"args": map[string]any{
-									"query": []any{
-										map[string]any{
-											"name": "format",
-											"orig": "format",
-											"type": "`$STRING`",
-											"kind": "query",
-											"example": "json",
-										},
-										map[string]any{
-											"name": "identifier",
-											"orig": "identifier",
-											"type": "`$STRING`",
-											"kind": "query",
-											"reqd": true,
-										},
-										map[string]any{
-											"name": "key",
-											"orig": "key",
-											"type": "`$STRING`",
-											"kind": "query",
-											"reqd": true,
-										},
-									},
-								},
-								"select": map[string]any{
-									"exist": []any{
-										"format",
 										"identifier",
 										"key",
 									},
@@ -3488,7 +3440,6 @@ func MakeConfig() map[string]any {
 								},
 								"select": map[string]any{
 									"exist": []any{
-										"format",
 										"identifier",
 										"key",
 									},
@@ -3531,7 +3482,6 @@ func MakeConfig() map[string]any {
 								},
 								"select": map[string]any{
 									"exist": []any{
-										"format",
 										"key",
 									},
 								},
@@ -3551,6 +3501,47 @@ func MakeConfig() map[string]any {
 						"input": "data",
 						"name": "load",
 						"points": []any{
+							map[string]any{
+								"kind": "http",
+								"method": "GET",
+								"orig": "/fed-press-releases",
+								"segments": []any{
+									map[string]any{
+										"lit": "fed-press-releases",
+									},
+								},
+								"parts": []any{
+									"fed-press-releases",
+								},
+								"rename": map[string]any{},
+								"transform": map[string]any{
+									"req": "`reqdata`",
+									"res": "`body`",
+								},
+								"args": map[string]any{
+									"query": []any{
+										map[string]any{
+											"name": "format",
+											"orig": "format",
+											"type": "`$STRING`",
+											"kind": "query",
+											"example": "json",
+										},
+										map[string]any{
+											"name": "key",
+											"orig": "key",
+											"type": "`$STRING`",
+											"kind": "query",
+											"reqd": true,
+										},
+									},
+								},
+								"select": map[string]any{
+									"exist": []any{
+										"key",
+									},
+								},
+							},
 							map[string]any{
 								"kind": "http",
 								"method": "GET",
@@ -3594,50 +3585,6 @@ func MakeConfig() map[string]any {
 								},
 								"select": map[string]any{
 									"exist": []any{
-										"format",
-										"identifier",
-										"key",
-									},
-								},
-							},
-							map[string]any{
-								"kind": "http",
-								"method": "GET",
-								"orig": "/fed-press-releases",
-								"segments": []any{
-									map[string]any{
-										"lit": "fed-press-releases",
-									},
-								},
-								"parts": []any{
-									"fed-press-releases",
-								},
-								"rename": map[string]any{},
-								"transform": map[string]any{
-									"req": "`reqdata`",
-									"res": "`body`",
-								},
-								"args": map[string]any{
-									"query": []any{
-										map[string]any{
-											"name": "format",
-											"orig": "format",
-											"type": "`$STRING`",
-											"kind": "query",
-											"example": "json",
-										},
-										map[string]any{
-											"name": "key",
-											"orig": "key",
-											"type": "`$STRING`",
-											"kind": "query",
-											"reqd": true,
-										},
-									},
-								},
-								"select": map[string]any{
-									"exist": []any{
-										"format",
 										"key",
 									},
 								},
@@ -3679,7 +3626,6 @@ func MakeConfig() map[string]any {
 								},
 								"select": map[string]any{
 									"exist": []any{
-										"format",
 										"key",
 									},
 								},
@@ -3742,8 +3688,6 @@ func MakeConfig() map[string]any {
 								},
 								"select": map[string]any{
 									"exist": []any{
-										"format",
-										"identifier",
 										"key",
 									},
 								},
@@ -3791,8 +3735,47 @@ func MakeConfig() map[string]any {
 								},
 								"select": map[string]any{
 									"exist": []any{
-										"format",
-										"identifier",
+										"key",
+									},
+								},
+							},
+							map[string]any{
+								"kind": "http",
+								"method": "GET",
+								"orig": "/initial-public-offerings",
+								"segments": []any{
+									map[string]any{
+										"lit": "initial-public-offerings",
+									},
+								},
+								"parts": []any{
+									"initial-public-offerings",
+								},
+								"rename": map[string]any{},
+								"transform": map[string]any{
+									"req": "`reqdata`",
+									"res": "`body`",
+								},
+								"args": map[string]any{
+									"query": []any{
+										map[string]any{
+											"name": "format",
+											"orig": "format",
+											"type": "`$STRING`",
+											"kind": "query",
+											"example": "json",
+										},
+										map[string]any{
+											"name": "key",
+											"orig": "key",
+											"type": "`$STRING`",
+											"kind": "query",
+											"reqd": true,
+										},
+									},
+								},
+								"select": map[string]any{
+									"exist": []any{
 										"key",
 									},
 								},
@@ -3840,8 +3823,6 @@ func MakeConfig() map[string]any {
 								},
 								"select": map[string]any{
 									"exist": []any{
-										"format",
-										"identifier",
 										"key",
 									},
 								},
@@ -3889,50 +3870,6 @@ func MakeConfig() map[string]any {
 								},
 								"select": map[string]any{
 									"exist": []any{
-										"format",
-										"identifier",
-										"key",
-									},
-								},
-							},
-							map[string]any{
-								"kind": "http",
-								"method": "GET",
-								"orig": "/initial-public-offerings",
-								"segments": []any{
-									map[string]any{
-										"lit": "initial-public-offerings",
-									},
-								},
-								"parts": []any{
-									"initial-public-offerings",
-								},
-								"rename": map[string]any{},
-								"transform": map[string]any{
-									"req": "`reqdata`",
-									"res": "`body`",
-								},
-								"args": map[string]any{
-									"query": []any{
-										map[string]any{
-											"name": "format",
-											"orig": "format",
-											"type": "`$STRING`",
-											"kind": "query",
-											"example": "json",
-										},
-										map[string]any{
-											"name": "key",
-											"orig": "key",
-											"type": "`$STRING`",
-											"kind": "query",
-											"reqd": true,
-										},
-									},
-								},
-								"select": map[string]any{
-									"exist": []any{
-										"format",
 										"key",
 									},
 								},
@@ -3996,7 +3933,6 @@ func MakeConfig() map[string]any {
 								},
 								"select": map[string]any{
 									"exist": []any{
-										"format",
 										"identifier",
 										"key",
 									},
@@ -4046,7 +3982,6 @@ func MakeConfig() map[string]any {
 								},
 								"select": map[string]any{
 									"exist": []any{
-										"format",
 										"identifier",
 										"key",
 									},
@@ -4089,7 +4024,6 @@ func MakeConfig() map[string]any {
 								},
 								"select": map[string]any{
 									"exist": []any{
-										"format",
 										"key",
 									},
 								},
@@ -4130,6 +4064,51 @@ func MakeConfig() map[string]any {
 						"input": "data",
 						"name": "list",
 						"points": []any{
+							map[string]any{
+								"kind": "http",
+								"method": "GET",
+								"orig": "/commodity-symbols",
+								"segments": []any{
+									map[string]any{
+										"lit": "commodity-symbols",
+									},
+								},
+								"parts": []any{
+									"commodity-symbols",
+								},
+								"rename": map[string]any{},
+								"transform": map[string]any{
+									"req": "`reqdata`",
+									"res": "`body`",
+								},
+								"args": map[string]any{
+									"query": []any{
+										map[string]any{
+											"name": "format",
+											"orig": "format",
+											"type": "`$STRING`",
+											"kind": "query",
+											"example": "json",
+										},
+										map[string]any{
+											"name": "key",
+											"orig": "key",
+											"type": "`$STRING`",
+											"kind": "query",
+											"reqd": true,
+										},
+									},
+								},
+								"select": map[string]any{
+									"exist": []any{
+										"key",
+									},
+								},
+								"response": map[string]any{
+									"kind": "json",
+									"media": "application/json",
+								},
+							},
 							map[string]any{
 								"kind": "http",
 								"method": "GET",
@@ -4174,10 +4153,12 @@ func MakeConfig() map[string]any {
 								},
 								"select": map[string]any{
 									"exist": []any{
-										"format",
 										"key",
-										"offset",
 									},
+								},
+								"response": map[string]any{
+									"kind": "json",
+									"media": "application/json",
 								},
 							},
 							map[string]any{
@@ -4224,10 +4205,12 @@ func MakeConfig() map[string]any {
 								},
 								"select": map[string]any{
 									"exist": []any{
-										"format",
 										"key",
-										"offset",
 									},
+								},
+								"response": map[string]any{
+									"kind": "json",
+									"media": "application/json",
 								},
 							},
 							map[string]any{
@@ -4274,10 +4257,12 @@ func MakeConfig() map[string]any {
 								},
 								"select": map[string]any{
 									"exist": []any{
-										"format",
 										"key",
-										"offset",
 									},
+								},
+								"response": map[string]any{
+									"kind": "json",
+									"media": "application/json",
 								},
 							},
 							map[string]any{
@@ -4324,52 +4309,12 @@ func MakeConfig() map[string]any {
 								},
 								"select": map[string]any{
 									"exist": []any{
-										"format",
-										"key",
-										"offset",
-									},
-								},
-							},
-							map[string]any{
-								"kind": "http",
-								"method": "GET",
-								"orig": "/commodity-symbols",
-								"segments": []any{
-									map[string]any{
-										"lit": "commodity-symbols",
-									},
-								},
-								"parts": []any{
-									"commodity-symbols",
-								},
-								"rename": map[string]any{},
-								"transform": map[string]any{
-									"req": "`reqdata`",
-									"res": "`body`",
-								},
-								"args": map[string]any{
-									"query": []any{
-										map[string]any{
-											"name": "format",
-											"orig": "format",
-											"type": "`$STRING`",
-											"kind": "query",
-											"example": "json",
-										},
-										map[string]any{
-											"name": "key",
-											"orig": "key",
-											"type": "`$STRING`",
-											"kind": "query",
-											"reqd": true,
-										},
-									},
-								},
-								"select": map[string]any{
-									"exist": []any{
-										"format",
 										"key",
 									},
+								},
+								"response": map[string]any{
+									"kind": "json",
+									"media": "application/json",
 								},
 							},
 						},

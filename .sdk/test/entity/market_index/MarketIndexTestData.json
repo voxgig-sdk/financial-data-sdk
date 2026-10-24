@@ -18,12 +18,12 @@
     }
   },
   "requests": {
-    "GET /index-prices": {
+    "GET /index-constituents": {
       "provenance": "operation-contract",
       "version": 2,
       "source": "openapi3"
     },
-    "GET /index-constituents": {
+    "GET /index-prices": {
       "provenance": "operation-contract",
       "version": 2,
       "source": "openapi3"

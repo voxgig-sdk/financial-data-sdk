@@ -161,7 +161,7 @@ $basic_information = $client->BasicInformation();
 
 #### `load(array $reqmatch, ?array $ctrl = null): mixed`
 
-Load a single entity matching the given criteria. Throws on error.
+Load a single entity matching the given criteria. Returns the entity, whose record `data_get()` reads, and throws on error.
 
 ```php
 $result = $client->BasicInformation()->load(["identifier" => "identifier", "key" => "key"]);
@@ -207,7 +207,7 @@ $crypto_currency = $client->CryptoCurrency();
 
 #### `load(array $reqmatch, ?array $ctrl = null): mixed`
 
-Load a single entity matching the given criteria. Throws on error.
+Load a single entity matching the given criteria. Returns the entity, whose record `data_get()` reads, and throws on error.
 
 ```php
 $result = $client->CryptoCurrency()->load(["key" => "key"]);
@@ -253,7 +253,7 @@ $derivatives_data = $client->DerivativesData();
 
 #### `load(array $reqmatch, ?array $ctrl = null): mixed`
 
-Load a single entity matching the given criteria. Throws on error.
+Load a single entity matching the given criteria. Returns the entity, whose record `data_get()` reads, and throws on error.
 
 ```php
 $result = $client->DerivativesData()->load(["key" => "key"]);
@@ -299,7 +299,7 @@ $esg_data = $client->EsgData();
 
 #### `load(array $reqmatch, ?array $ctrl = null): mixed`
 
-Load a single entity matching the given criteria. Throws on error.
+Load a single entity matching the given criteria. Returns the entity, whose record `data_get()` reads, and throws on error.
 
 ```php
 $result = $client->EsgData()->load(["key" => "key"]);
@@ -345,7 +345,7 @@ $etf_data = $client->EtfData();
 
 #### `load(array $reqmatch, ?array $ctrl = null): mixed`
 
-Load a single entity matching the given criteria. Throws on error.
+Load a single entity matching the given criteria. Returns the entity, whose record `data_get()` reads, and throws on error.
 
 ```php
 $result = $client->EtfData()->load(["identifier" => "identifier", "key" => "key"]);
@@ -391,7 +391,7 @@ $event_calendar = $client->EventCalendar();
 
 #### `load(array $reqmatch, ?array $ctrl = null): mixed`
 
-Load a single entity matching the given criteria. Throws on error.
+Load a single entity matching the given criteria. Returns the entity, whose record `data_get()` reads, and throws on error.
 
 ```php
 $result = $client->EventCalendar()->load(["key" => "key"]);
@@ -437,7 +437,7 @@ $financial_ratio = $client->FinancialRatio();
 
 #### `load(array $reqmatch, ?array $ctrl = null): mixed`
 
-Load a single entity matching the given criteria. Throws on error.
+Load a single entity matching the given criteria. Returns the entity, whose record `data_get()` reads, and throws on error.
 
 ```php
 $result = $client->FinancialRatio()->load(["identifier" => "identifier", "key" => "key"]);
@@ -483,7 +483,7 @@ $financial_statement = $client->FinancialStatement();
 
 #### `load(array $reqmatch, ?array $ctrl = null): mixed`
 
-Load a single entity matching the given criteria. Throws on error.
+Load a single entity matching the given criteria. Returns the entity, whose record `data_get()` reads, and throws on error.
 
 ```php
 $result = $client->FinancialStatement()->load(["identifier" => "identifier", "key" => "key"]);
@@ -529,7 +529,7 @@ $forex_data = $client->ForexData();
 
 #### `load(array $reqmatch, ?array $ctrl = null): mixed`
 
-Load a single entity matching the given criteria. Throws on error.
+Load a single entity matching the given criteria. Returns the entity, whose record `data_get()` reads, and throws on error.
 
 ```php
 $result = $client->ForexData()->load(["key" => "key"]);
@@ -575,7 +575,7 @@ $insider_trading = $client->InsiderTrading();
 
 #### `load(array $reqmatch, ?array $ctrl = null): mixed`
 
-Load a single entity matching the given criteria. Throws on error.
+Load a single entity matching the given criteria. Returns the entity, whose record `data_get()` reads, and throws on error.
 
 ```php
 $result = $client->InsiderTrading()->load(["key" => "key"]);
@@ -621,7 +621,7 @@ $institutional_trading = $client->InstitutionalTrading();
 
 #### `load(array $reqmatch, ?array $ctrl = null): mixed`
 
-Load a single entity matching the given criteria. Throws on error.
+Load a single entity matching the given criteria. Returns the entity, whose record `data_get()` reads, and throws on error.
 
 ```php
 $result = $client->InstitutionalTrading()->load(["key" => "key"]);
@@ -667,7 +667,7 @@ $investment_adviser = $client->InvestmentAdviser();
 
 #### `load(array $reqmatch, ?array $ctrl = null): mixed`
 
-Load a single entity matching the given criteria. Throws on error.
+Load a single entity matching the given criteria. Returns the entity, whose record `data_get()` reads, and throws on error.
 
 ```php
 $result = $client->InvestmentAdviser()->load(["key" => "key"]);
@@ -730,15 +730,15 @@ $market_data = $client->MarketData();
 
 #### `list(?array $reqmatch = null, ?array $ctrl = null): mixed`
 
-List entities matching the given criteria (call with no argument to list all). Returns an array. Throws on error.
+List entities matching the given criteria (call with no argument to list all). Returns an array of entities, one per record, and throws on error.
 
 ```php
-$results = $client->MarketData()->list();
+$results = $client->MarketData()->list(["identifier" => "example", "key" => "example"]);
 ```
 
 #### `load(array $reqmatch, ?array $ctrl = null): mixed`
 
-Load a single entity matching the given criteria. Throws on error.
+Load a single entity matching the given criteria. Returns the entity, whose record `data_get()` reads, and throws on error.
 
 ```php
 $result = $client->MarketData()->load(["identifier" => "identifier", "key" => "key"]);
@@ -784,7 +784,7 @@ $market_index = $client->MarketIndex();
 
 #### `load(array $reqmatch, ?array $ctrl = null): mixed`
 
-Load a single entity matching the given criteria. Throws on error.
+Load a single entity matching the given criteria. Returns the entity, whose record `data_get()` reads, and throws on error.
 
 ```php
 $result = $client->MarketIndex()->load(["key" => "key"]);
@@ -830,7 +830,7 @@ $market_new = $client->MarketNew();
 
 #### `load(array $reqmatch, ?array $ctrl = null): mixed`
 
-Load a single entity matching the given criteria. Throws on error.
+Load a single entity matching the given criteria. Returns the entity, whose record `data_get()` reads, and throws on error.
 
 ```php
 $result = $client->MarketNew()->load(["key" => "key"]);
@@ -876,7 +876,7 @@ $miscellaneous_data = $client->MiscellaneousData();
 
 #### `load(array $reqmatch, ?array $ctrl = null): mixed`
 
-Load a single entity matching the given criteria. Throws on error.
+Load a single entity matching the given criteria. Returns the entity, whose record `data_get()` reads, and throws on error.
 
 ```php
 $result = $client->MiscellaneousData()->load(["key" => "key"]);
@@ -922,7 +922,7 @@ $mutual_fund = $client->MutualFund();
 
 #### `load(array $reqmatch, ?array $ctrl = null): mixed`
 
-Load a single entity matching the given criteria. Throws on error.
+Load a single entity matching the given criteria. Returns the entity, whose record `data_get()` reads, and throws on error.
 
 ```php
 $result = $client->MutualFund()->load(["key" => "key"]);
@@ -977,10 +977,10 @@ $symbol_list = $client->SymbolList();
 
 #### `list(?array $reqmatch = null, ?array $ctrl = null): mixed`
 
-List entities matching the given criteria (call with no argument to list all). Returns an array. Throws on error.
+List entities matching the given criteria (call with no argument to list all). Returns an array of entities, one per record, and throws on error.
 
 ```php
-$results = $client->SymbolList()->list();
+$results = $client->SymbolList()->list(["key" => "example"]);
 ```
 
 ### Common Methods
@@ -1170,6 +1170,7 @@ Timeout.
 | Option | Type |
 |---|---|
 | `clearTimer` | function |
+| `now` | function |
 | `setTimer` | function |
 
 These take no default: the feature behaves one way when you supply them and

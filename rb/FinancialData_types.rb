@@ -210,15 +210,15 @@ end
 # @!attribute [rw] format
 #   @return [String, nil]
 #
-# @!attribute [rw] identifier
-#   @return [String, nil]
-#
 # @!attribute [rw] key
 #   @return [String]
+#
+# @!attribute [rw] identifier
+#   @return [String, nil]
 InsiderTradingLoadMatch = Struct.new(
   :format,
-  :identifier,
   :key,
+  :identifier,
   keyword_init: true
 )
 
@@ -393,15 +393,15 @@ end
 # @!attribute [rw] format
 #   @return [String, nil]
 #
-# @!attribute [rw] identifier
-#   @return [String, nil]
-#
 # @!attribute [rw] key
 #   @return [String]
+#
+# @!attribute [rw] identifier
+#   @return [String, nil]
 MarketNewLoadMatch = Struct.new(
   :format,
-  :identifier,
   :key,
+  :identifier,
   keyword_init: true
 )
 

@@ -28,17 +28,17 @@
       "version": 2,
       "source": "openapi3"
     },
+    "GET /initial-public-offerings": {
+      "provenance": "operation-contract",
+      "version": 2,
+      "source": "openapi3"
+    },
     "GET /short-interest": {
       "provenance": "operation-contract",
       "version": 2,
       "source": "openapi3"
     },
     "GET /stock-splits": {
-      "provenance": "operation-contract",
-      "version": 2,
-      "source": "openapi3"
-    },
-    "GET /initial-public-offerings": {
       "provenance": "operation-contract",
       "version": 2,
       "source": "openapi3"

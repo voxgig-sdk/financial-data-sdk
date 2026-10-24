@@ -38,7 +38,6 @@ main: kit: entity: investment_adviser: {
           o: "/investment-adviser-information"
           q: {
             exist: [
-              "format"
               "key"
             ]
           }
@@ -81,7 +80,6 @@ main: kit: entity: investment_adviser: {
           o: "/investment-adviser-names"
           q: {
             exist: [
-              "format"
               "key"
             ]
           }
